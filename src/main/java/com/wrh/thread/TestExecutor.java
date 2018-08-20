@@ -23,12 +23,22 @@ public class TestExecutor  {
         Thread t3 = new MyThread();
         Thread t4 = new MyThread();
         Thread t5 = new MyThread();
+        Thread t6 = new MyThread();
+        Thread t7 = new MyThread();
+        Thread t8 = new MyThread();
+        Thread t9 = new MyThread();
+        Thread t10 = new MyThread();
 
         service.execute(t1);
         service.execute(t2);
         service.execute(t3);
         service.execute(t4);
         service.execute(t5);
+        service.execute(t6);
+        service.execute(t7);
+        service.execute(t8);
+        service.execute(t9);
+        service.execute(t10);
 
         service.shutdown();
     }
