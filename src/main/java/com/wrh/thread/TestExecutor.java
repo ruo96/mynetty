@@ -1,9 +1,11 @@
 package com.wrh.thread;
 
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 
-import java.util.concurrent.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 /**
  * @Created by wrh
@@ -15,31 +17,21 @@ import java.util.concurrent.*;
 public class TestExecutor  {
 
     public static void main(String[] args) {
-        ExecutorService service = Executors.newFixedThreadPool(3);
-        /*为什么这个不能运行呢*/
-//        ScheduledExecutorService service = new ScheduledThreadPoolExecutor(5,new BasicThreadFactory.Builder().namingPattern("example-scheduled-pool-%d").daemon(true).build());
+
+
+        ScheduledExecutorService pool = Executors.newScheduledThreadPool(2);
         Thread t1 = new MyThread();
         Thread t2 = new MyThread();
         Thread t3 = new MyThread();
         Thread t4 = new MyThread();
         Thread t5 = new MyThread();
-        Thread t6 = new MyThread();
-        Thread t7 = new MyThread();
-        Thread t8 = new MyThread();
-        Thread t9 = new MyThread();
-        Thread t10 = new MyThread();
 
-        service.execute(t1);
-        service.execute(t2);
-        service.execute(t3);
-        service.execute(t4);
-        service.execute(t5);
-        service.execute(t6);
-        service.execute(t7);
-        service.execute(t8);
-        service.execute(t9);
-        service.execute(t10);
+        pool.execute(t1);
+        pool.execute(t2);
+        pool.execute(t3);
+        pool.schedule(t4,10, MILLISECONDS);
+        pool.schedule(t5,10, MILLISECONDS);
 
-        service.shutdown();
+        pool.shutdown();
     }
 }
