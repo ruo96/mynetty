@@ -1,6 +1,8 @@
 package com.wrh.thread.threeCreateMethods;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.User;
+import org.springframework.util.StopWatch;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -12,6 +14,7 @@ import java.util.concurrent.FutureTask;
  * @Date: Created in 下午 4:05 2018/8/28 0028
  * @Modified By:
  */
+@Slf4j
 public class TestThreeCreatThreadMethod {
 
     static class Thread1 extends Thread{
@@ -39,6 +42,10 @@ public class TestThreeCreatThreadMethod {
     }
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
+
+
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
         Thread t1 = new Thread1();
 
         Thread t2 = new Thread(new Thread2());
@@ -51,5 +58,7 @@ public class TestThreeCreatThreadMethod {
         t3.start();
 
         System.out.println(ft.get());
+        stopWatch.stop();
+        log.info("===>  Time: {}", stopWatch.prettyPrint());
     }
 }
