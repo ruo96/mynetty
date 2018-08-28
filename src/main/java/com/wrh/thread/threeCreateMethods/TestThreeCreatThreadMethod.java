@@ -4,10 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.User;
 import org.springframework.util.StopWatch;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.FutureTask;
+import java.util.concurrent.*;
 
 /**
  * @Created by wrh
@@ -79,5 +76,11 @@ public class TestThreeCreatThreadMethod {
         Thread t4 = new Thread((Runnable) future);
         t4.start();
         log.info("future is : {}",future.get());
+
+        /**
+         * 这两个类是绝对线程安全的
+         */
+        CopyOnWriteArrayList copyOnWriteArrayList = new CopyOnWriteArrayList();
+        CopyOnWriteArraySet copyOnWriteArraySet = new CopyOnWriteArraySet();
     }
 }
