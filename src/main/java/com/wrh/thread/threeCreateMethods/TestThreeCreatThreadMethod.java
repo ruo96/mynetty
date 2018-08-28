@@ -6,6 +6,7 @@ import org.springframework.util.StopWatch;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 
 /**
@@ -40,6 +41,15 @@ public class TestThreeCreatThreadMethod {
             return "java";
         }
     }
+    static class Thread4 implements Callable<String>{
+
+        @Override
+        public String call() throws Exception {
+            System.out.println("thread4 run...");
+            return "ai";
+        }
+    }
+
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
@@ -51,14 +61,23 @@ public class TestThreeCreatThreadMethod {
         Thread t2 = new Thread(new Thread2());
 
         FutureTask<String> ft = new FutureTask<String>(new Thread3());
+
+
         Thread t3 = new Thread(ft);
 
         t1.start();
         t2.start();
         t3.start();
 
+
         System.out.println(ft.get());
         stopWatch.stop();
         log.info("===>  Time: {}", stopWatch.prettyPrint());
+
+
+        Future future = new FutureTask(new Thread4());
+        Thread t4 = new Thread((Runnable) future);
+        t4.start();
+        log.info("future is : {}",future.get());
     }
 }
