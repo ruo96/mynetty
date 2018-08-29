@@ -2,6 +2,8 @@ package com.wrh.thread.deadLock;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.Hashtable;
+
 /**
  * @Created by wrh
  * @Description:
@@ -52,6 +54,9 @@ public class TestDeadLock {
                 log.info("thread 2 end!");
             }
         }.start();
+
+        Hashtable<String, String> hashtable = new Hashtable<>();
+        hashtable.size();
     }
 
 }
