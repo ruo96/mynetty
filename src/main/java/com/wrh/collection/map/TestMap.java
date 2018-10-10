@@ -61,8 +61,15 @@ public class TestMap {
 */
         System.out.println(TestMap.getAccountIdByUUId());
 
-
-
+        try {
+            Thread.sleep(1000L);
+            System.out.println("sleep done");
+            return;
+        } catch (InterruptedException e) {
+            System.out.println("catch exception");
+        }finally {
+            System.out.println("finally");
+        }
 
 
     }
