@@ -1,7 +1,8 @@
 package com.wrh.map;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import lombok.extern.slf4j.Slf4j;
+
+import java.util.*;
 
 /**
  * @Created by wrh
@@ -9,10 +10,11 @@ import java.util.Map;
  * @Date: Created in 上午 9:28 2018/10/10 0010
  * @Modified By:
  */
+@Slf4j
 public class TestLinkedHashMap {
 
     public static void main(String[] args) {
-        LinkedHashMap<String, String> accessOrderedMap = new LinkedHashMap<String, String>(16,0.75F,true){
+        /*LinkedHashMap<String, String> accessOrderedMap = new LinkedHashMap<String, String>(16,0.75F,true){
             @Override
             protected boolean removeEldestEntry(Map.Entry<String,String> eldest){
                 return size()>3;
@@ -41,6 +43,16 @@ public class TestLinkedHashMap {
         accessOrderedMap.forEach((k,v) -> {
             System.out.println(k + ":" + v);
         });
+
+        List<String> list = new ArrayList<>();
+        log.info("size is : {}", list.size());*/
+
+        Map<String,String> map = new HashMap<>();
+        map.put("123","1");
+        map.put("456",null);
+
+        System.out.println("size: " + map.size());
+        System.out.println("map: " + map);
 
     }
 }

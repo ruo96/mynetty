@@ -1,14 +1,21 @@
 package com.wrh.string;
 
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+
+import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
+
 /**
  * @Created by wrh
  * @Description:
  * @Date: Created in 下午 5:26 2018/9/28 0028
  * @Modified By:
  */
+@Slf4j
 public class TestString {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
         /*String origin = new String("123");
         String s = "123";
         String s1 = "123".intern();
@@ -40,10 +47,32 @@ public class TestString {
         System.out.println(s3 == s4);*/
 
 
-        Long a = new Long(3);
+        /*Long a = new Long(3);
         Long b = new Long(3);
         System.out.println(a.longValue()==b.longValue());
-        System.out.println(a==b);
+        System.out.println(a==b);*/
+
+        String i = "中国人名就123";
+        System.out.println("汉字的一个长度为:{}"+i.length());
+
+        int valLen = i.getBytes("gbk").length;
+        System.out.println("长度为:{}"+valLen);
+
+        int len = 10;
+
+
+        String val = StringUtils.leftPad(i, len, ' ');
+        log.info("补了之后为:[{}]",val);
+        log.info("补了之后的长度为:[{}]",val.length());
+
+        byte[] valBytes = val.getBytes("gbk");
+        log.info("getBytes 后的长度为:{}",valBytes.length);
+        log.info("getBytes 后的数据为:{}", Arrays.asList(valBytes));
+
+        byte[] valBytes1 = val.getBytes();
+        log.info("getBytes 后的长度为:{}",valBytes1.length);
+        log.info("getBytes 后的数据为:{}", Arrays.asList(valBytes1));
+
 
     }
 }
