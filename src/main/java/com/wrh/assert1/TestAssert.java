@@ -12,6 +12,6 @@ public class TestAssert {
     public static void main(String[] args) {
         String i = "123";
         i = null;
-        Assert.notNull(i,"must not null");
+        Assert.notNull(i,"不能为空");
     }
 }

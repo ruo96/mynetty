@@ -1,8 +1,10 @@
 package com.wrh.bytes;
 
+import com.alibaba.fastjson.JSON;
 import com.google.common.primitives.Bytes;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @Created by wrh
@@ -35,6 +37,13 @@ public class TestBytes {
         Integer i1 = -129;
         Integer i2 = -129;
         System.out.println("i1 == i2: " + (i1 == i2));
+
+
+        int[] test = new int[]{1,2,3,4};
+        List list = Arrays.asList(test);
+        System.out.println("list size is : " + list.size());
+        System.out.println(JSON.toJSONString(list));
+        System.out.println(list.get(0).getClass());
 
     }
 }
