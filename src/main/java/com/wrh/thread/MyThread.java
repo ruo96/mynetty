@@ -16,5 +16,11 @@ public class MyThread extends Thread {
     @Override
     public void run(){
         log.info("{}正在执行......",Thread.currentThread().getName());
+        log.info("线程组为:{}",Thread.currentThread().getThreadGroup().getName());  /*main*/
+    }
+
+    public static void main(String[] args) {
+        MyThread thread = new MyThread();
+        thread.start();
     }
 }

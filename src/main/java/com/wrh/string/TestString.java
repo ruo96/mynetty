@@ -51,6 +51,8 @@ public class TestString {
         Long b = new Long(3);
         System.out.println(a.longValue()==b.longValue());
         System.out.println(a==b);*/
+        String mm = "中国";
+        System.out.println("中国的长度为: {}" + mm.length());
 
         String i = "中国人名就123";
         System.out.println("汉字的一个长度为:{}"+i.length());

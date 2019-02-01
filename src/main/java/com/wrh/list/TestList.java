@@ -1,6 +1,7 @@
 package com.wrh.list;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 /**
@@ -17,5 +18,12 @@ public class TestList {
         Vector<String> vector = new Vector<String>();
         vector.add("this is list");
         System.out.println(listOne.equals(vector));
+
+        handleList(listOne);
+        System.out.println("handle: " + listOne);
+    }
+
+    private static void handleList(List list){
+        list.add("123");
     }
 }

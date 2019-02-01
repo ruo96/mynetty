@@ -57,10 +57,32 @@ public class TestJoin {
                 e.printStackTrace();
             }
         });
+
+        Thread thread1 = new Thread(()->{
+            /*try {
+                System.out.println("***");
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }*/
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            while(true){
+
+                System.out.println("****");
+            }
+
+
+        });
         thread.start();
-        TimeUnit.SECONDS.sleep(5);
-        System.out.println("main sleep done!");
-        thread.join();
+        thread1.start();
+        System.out.println("main start sleep");
+//        TimeUnit.SECONDS.sleep(5);
+//        System.out.println("main sleep done!");
+        thread1.join();
         System.out.println("main done");
 
 
