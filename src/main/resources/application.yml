@@ -1,0 +1,23 @@
+server:
+  port: 9094
+
+spring:
+  application:
+    name: mynetty
+
+
+
+
+# logging
+logging:
+  path: logs
+  level:
+    com.wrh.mapper: debug
+    org.springframework: warn
+    com.wrh: debug
+    org.apache.ibatis.io.ResolverUtil: info
+
+
+
+
+
