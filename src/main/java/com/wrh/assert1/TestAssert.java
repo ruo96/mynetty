@@ -10,8 +10,24 @@ import org.springframework.util.Assert;
  */
 public class TestAssert {
     public static void main(String[] args) {
-        String i = "123";
+        /*String i = "123";
         i = null;
-        Assert.notNull(i,"不能为空");
+        Assert.notNull(i,"不能为空");*/
+
+
+        String a = "/home/pack/123.zip";
+        System.out.println(a.substring(a.lastIndexOf("/")+1));
+
+        String b = "3";
+        System.out.println("==="+Integer.valueOf(b));
+
+        String  path = "/ftp/data/csc/1/auto-1-112900000120190417006.zip";
+        int num = path.lastIndexOf("/");
+        System.out.println("num: " + num);
+        System.out.println("path: " + path.substring(0,num));  //path.substring(0,index),path.substring(index+1)
+        System.out.println("file: " + path.substring(num+1));  //path.substring(0,index),path.substring(index+1)
+        System.out.println("replace: " + path.substring(0,num).replace("/ftp/data/csc/",""));
+        String newPath = path.substring(0,num);
+        System.out.println("newPath: " + newPath.substring(newPath.lastIndexOf("/") + 1));
     }
 }
