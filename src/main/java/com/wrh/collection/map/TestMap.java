@@ -42,7 +42,7 @@ public class TestMap {
 //        try{
             field = Integer.class.getDeclaredField("value");
             field.setAccessible(true);
-            field.set(mm,101);
+            field.TestSet(mm,101);
             Integer nn = 128;
             System.out.println(mm);
             System.out.println(nn);

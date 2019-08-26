@@ -4,10 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.DateUtils;
 
 import java.sql.Timestamp;
-import java.time.Clock;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.Period;
+import java.time.*;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -38,6 +35,9 @@ public class TestDateTime {
         System.out.println(System.currentTimeMillis());
         System.out.println(Calendar.getInstance().getTimeInMillis());
         System.out.println(Clock.systemDefaultZone().millis());
+
+
+        System.out.println(LocalDateTime.now());
 
 
         String a = "1a";

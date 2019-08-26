@@ -179,6 +179,28 @@ public class ElasticSearchTest {
     }
 
     @Test
+    public void testMyNewInsert() throws UnknownHostException {
+
+        System.out.println("-------------begin------------");
+        Student student = new Student();
+        ElasticsearchUtils elasticsearchUtils = new ElasticsearchUtils();
+        for (int i = 0; i < 1; i++) {
+            student = new Student();
+            student.setName("name" + i);
+            student.setId(i);
+
+            String id = "id_" + i;
+            try {
+//                elasticsearchUtils.insert("school","student",id,new Gson().toJson(student));
+                elasticsearchUtils.insertJsonData("newschool","student",id,new Gson().toJson(student));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("--------------end---------------");
+    }
+
+    @Test
     public void testMyPageSearch() throws UnknownHostException {
 
         System.out.println("-------------begin------------");
@@ -187,10 +209,10 @@ public class ElasticSearchTest {
 
         SearchResponse response = elasticsearchUtils.getClient()
                                     .prepareSearch("school").setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
-                                    .setSize(200).setScroll(new TimeValue(20000)).execute().actionGet();
+                                    .setSize(500).setScroll(new TimeValue(20000)).execute().actionGet();
         long totalCount = response.getHits().getTotalHits();
 //        int page = (int)totalCount*1.0/(200);
-        int page = (int)Math.ceil(totalCount*1.0/200);
+        int page = (int)Math.ceil(totalCount*1.0/500);
         System.out.println("总页数为："+page);
 
         System.out.println("totalCount: " + totalCount);
@@ -214,11 +236,11 @@ public class ElasticSearchTest {
             System.out.println("=====page" + i + "===count: " + response.getHits().getHits().length + "=======  done!!!!!");
         }
 
-        System.out.println("===set num:" + set.size());
+        System.out.println("===TestSet num:" + set.size());
         System.out.println(set);
 
         Set<String> notExist = new TreeSet<>();
-        for (int i = 0; i < 10000 ; i++) {
+        for (int i = 0; i < totalCount ; i++) {
             String data = "content_id_"+i;
             if(set.contains(data)){
 
@@ -230,6 +252,13 @@ public class ElasticSearchTest {
         System.out.println("not exist: " + notExist);
         System.out.println("--------------end---------------");
     }
+
+    @Test
+    public void getScanData(){}
+    {
+
+    }
+
 
 
 

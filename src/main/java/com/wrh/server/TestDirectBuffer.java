@@ -4,8 +4,8 @@ import com.wrh.utils.DLP;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
-import sun.nio.cs.CharsetMapping;
+
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -19,7 +19,6 @@ import java.nio.charset.CharsetEncoder;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Map;
-import java.util.Random;
 import java.util.Set;
 
 /**

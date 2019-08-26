@@ -7,4 +7,23 @@ package com.wrh.basic;
  * @Modified By:
  */
 public class TestTryCatch {
+    public static void main(String[] args) {
+        int i = tryCatch();
+        System.out.println(i);
+    }
+
+    private static int tryCatch() {
+
+        try{
+            System.out.println("return 1");
+            throw  new Exception();
+//            return 1;
+        }catch (Exception e){
+            System.out.println("return 2");
+            return 2;
+        }finally {
+            System.out.println("return 3");
+            return 3;
+        }
+    }
 }

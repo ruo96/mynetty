@@ -1,9 +1,9 @@
 package com.wrh.server;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+
 
 import java.nio.ByteBuffer;
 
@@ -14,9 +14,10 @@ import java.nio.ByteBuffer;
  * @Modified By:
  */
 @Slf4j
+@SpringBootTest
 public class TestBuffer {
 
-    ByteBuffer b;
+    /*ByteBuffer b;
     String s1;
     @Test
     @Before
@@ -58,7 +59,7 @@ public class TestBuffer {
 
     @Test
     public void testRewind(){
-        /*重复读的模式*/
+        *//*重复读的模式*//*
         testReadByte();
         b.rewind();
     }
@@ -67,13 +68,13 @@ public class TestBuffer {
     public void testClear(){
         testReadByte();
         b.clear();
-        /*数据依然存在,当时处于遗忘状态*/
+        *//*数据依然存在,当时处于遗忘状态*//*
         log.info("clear之后, b中数据:{}",(char)(b.get()));
     }
 
     @Test
     public void testMark(){
-        /*mark标记*/
+        *//*mark标记*//*
         testPut();
         b.mark();
         testPut1();
@@ -97,5 +98,5 @@ public class TestBuffer {
         log.info("当前位置为:{}",b.position());
         log.info("读取限制为:{}",b.limit());
         log.info(" :{}",b.capacity());
-    }
+    }*/
 }

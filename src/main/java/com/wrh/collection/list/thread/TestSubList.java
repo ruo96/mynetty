@@ -1,5 +1,8 @@
 package com.wrh.collection.list.thread;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @Created by wrh
  * @Description:
@@ -7,4 +10,15 @@ package com.wrh.collection.list.thread;
  * @Modified By:
  */
 public class TestSubList {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < 50; i++) {
+            list.add(String.valueOf(i));
+        }
+        System.out.println("size:" + list.size());
+
+        List<String> a = list.subList(0,10);
+        System.out.println(" a size:  " + a.size());
+        System.out.println(a);
+    }
 }

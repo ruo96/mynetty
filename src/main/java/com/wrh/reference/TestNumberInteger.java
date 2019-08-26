@@ -7,4 +7,13 @@ package com.wrh.reference;
  * @Modified By:
  */
 public class TestNumberInteger {
+    public static void main(String[] args) {
+        Integer i = 0;
+        addNum (i);
+        System.out.println(i);
+    }
+
+    private static void addNum(Integer i) {
+        i++;
+    }
 }

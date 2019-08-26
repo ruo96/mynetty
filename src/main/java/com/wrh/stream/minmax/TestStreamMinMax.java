@@ -1,11 +1,9 @@
 package com.wrh.stream.minmax;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @Created by wrh

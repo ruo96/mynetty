@@ -29,7 +29,7 @@ public class TestBitMap {
             }
             i++;
         }
-        System.out.println("bit set: " + bitSet);
+        System.out.println("bit TestSet: " + bitSet);
         return output;
     }
     //测试

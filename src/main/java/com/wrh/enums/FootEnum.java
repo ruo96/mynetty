@@ -6,5 +6,8 @@ package com.wrh.enums;
  * @Date: Created in 下午 4:42 2019/5/21 0021
  * @Modified By:
  */
-public class FootEnum {
+public enum FootEnum {
+    APPLE,
+    ORANGE,
+    PEAR
 }
