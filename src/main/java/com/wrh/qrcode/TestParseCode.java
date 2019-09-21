@@ -15,8 +15,8 @@ import java.util.Set;
 public class TestParseCode {
     public static void main(String[] args) {
 
-//        String code = "523010Aew24ADKv3zSjiEa-AAgAAQmzQSQLa_DLhgeSK0goNsO6Cuap9pUMFGs4ThM";
-        String code = "NTEyMDEwAAEABwAAAhVGGQVyQZNhAAAAAQQGiTGEzohJ4uxK3tk48qYg6wIY1JvfneV07aTm";
+        String code = "513010AehW4AAeJnxx8ZC9AAAgAASw7pEQ...gk6Vebv_1O3TVtWZbQCr";
+//        String code = "NTEyMDEwAAEABwAAAhVGGQVyQZNhAAAAAQQGiTGEzohJ4uxK3tk48qYg6wIY1JvfneV07aTm";
 
         CodeInfo codeInfo = null;
         Set<String> set = new HashSet<>();
@@ -30,6 +30,8 @@ public class TestParseCode {
             e.printStackTrace();
         }
         log.info("===> {}",codeInfo);
+
+
 
 
     }
