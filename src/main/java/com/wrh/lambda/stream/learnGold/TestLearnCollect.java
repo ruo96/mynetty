@@ -1,4 +1,4 @@
-package com.wrh.stream.learnGold;
+package com.wrh.lambda.stream.learnGold;
 
 import java.util.ArrayList;
 import java.util.HashSet;

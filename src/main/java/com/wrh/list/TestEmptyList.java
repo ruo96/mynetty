@@ -128,5 +128,36 @@ public class TestEmptyList {
         });
         log.info("===> after : lists: {}",JSON.toJSONString(lists));
         log.info("===> after : map: {}",JSON.toJSONString(map));
+
+
+        List<String> list = new ArrayList<>();
+        List<String> list3 = null;
+        log.info("===> empty size is: {}",list.size());
+        log.info("===> empty size is: {}",list3.size());
+    }
+
+    /**
+     * 查看交集的使用
+     */
+    @Test
+    public void test4(){
+        List<String> l1 = new ArrayList<>();
+        l1.add("1");
+        l1.add("2");
+        l1.add("3");
+        l1.add("4");
+        l1.add("5");
+
+        List<String> l2 = new ArrayList<>();
+        l2.add("1");
+        l2.add("2");
+        l2.add("3");
+
+        l1.retainAll(l2);
+
+
+        log.info("===> after : l1: {}",JSON.toJSONString(l1));
+        log.info("===> after : l2: {}",JSON.toJSONString(l2));
+
     }
 }

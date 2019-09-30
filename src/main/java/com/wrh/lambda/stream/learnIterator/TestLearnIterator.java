@@ -1,4 +1,4 @@
-package com.wrh.stream.learnIterator;
+package com.wrh.lambda.stream.learnIterator;
 
 import java.util.Arrays;
 import java.util.Iterator;

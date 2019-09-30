@@ -1,4 +1,4 @@
-package com.wrh.stream.minmax;
+package com.wrh.lambda.stream.minmax;
 
 import lombok.extern.slf4j.Slf4j;
 

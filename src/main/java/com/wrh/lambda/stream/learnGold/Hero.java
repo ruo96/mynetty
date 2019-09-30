@@ -1,4 +1,4 @@
-package com.wrh.stream.learnGold;
+package com.wrh.lambda.stream.learnGold;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;

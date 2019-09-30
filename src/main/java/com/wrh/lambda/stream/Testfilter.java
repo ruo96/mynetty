@@ -1,4 +1,4 @@
-package com.wrh.stream;
+package com.wrh.lambda.stream;
 
 import com.wrh.elasticsearch.Student;
 
