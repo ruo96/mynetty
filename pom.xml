@@ -265,6 +265,12 @@
 			<artifactId>junit</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>uk.com.robust-it</groupId>
+			<artifactId>cloning</artifactId>
+			<version>1.9.12</version>
+		</dependency>
+
 
 	</dependencies>
 

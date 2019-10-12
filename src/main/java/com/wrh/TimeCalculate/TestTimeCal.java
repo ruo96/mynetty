@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.util.StopWatch;
 
+import java.time.Instant;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -21,5 +22,13 @@ public class TestTimeCal {
         TimeUnit.SECONDS.sleep(3);
         stopWatch.stop();
         log.info("===> stop计时：{}",stopWatch.getTotalTimeSeconds());
+    }
+
+
+    @Test
+    public void test1() throws InterruptedException {
+        Instant instant = Instant.now();
+        log.info("{}",instant.getNano());
+
     }
 }

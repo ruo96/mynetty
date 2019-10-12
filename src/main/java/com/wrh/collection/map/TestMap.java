@@ -1,10 +1,11 @@
 package com.wrh.collection.map;
 
+import com.alibaba.fastjson.JSON;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
+
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * @Created by wrh
@@ -12,6 +13,7 @@ import java.util.UUID;
  * @Date: Created in 上午 8:14 2018/9/17 0017
  * @Modified By:
  */
+@Slf4j
 public class TestMap {
 
     public static String getAccountIdByUUId() {
@@ -71,6 +73,58 @@ public class TestMap {
             System.out.println("finally");
         }
 
+
+    }
+
+    @Test
+    public void test(){
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+
+        map.put(1,list);
+
+        log.info("===> map is : {}", JSON.toJSONString(list));
+
+        map.get(1).add(5);
+        log.info("===> map is : {}", JSON.toJSONString(list));
+
+    }
+
+    @Test
+    public void test1(){
+
+        Map<Integer, Map<String, Integer>> productIdMap = new HashMap<>();
+
+        Map<String, Integer> map = new HashMap<>();
+        map.put("1",1);
+
+        productIdMap.put(1000, map);
+
+        log.info("===> productIdMap is : {}", JSON.toJSONString(productIdMap));
+
+        productIdMap.get(1000).put("2", 2);
+        log.info("===> productIdMap is : {}", JSON.toJSONString(productIdMap));
+
+    }
+
+    @Test
+    public void test2(){
+
+        Map<Integer, Integer> productIdMap = new HashMap<>();
+
+        productIdMap.put(1,1);
+
+        Map<Integer, Integer> productIdMapNew = new HashMap<>(productIdMap);
+
+        productIdMap.put(2,2);
+
+        log.info("===> productIdMap is : {}", JSON.toJSONString(productIdMap));
+
+        log.info("===> productIdMapNew is : {}", JSON.toJSONString(productIdMapNew));
 
     }
 }

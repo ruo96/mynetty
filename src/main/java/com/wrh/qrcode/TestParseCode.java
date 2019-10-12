@@ -15,7 +15,7 @@ import java.util.Set;
 public class TestParseCode {
     public static void main(String[] args) {
 
-        String code = "513010Aer-YADUG_7HLJ-mWAAgAARg40G5d8fJHqsL1rwlSSRE__TMMvLGsiHAqLI4";
+        String code = "523010Aew0IADKOkEWUvzpIAAgAASwEnSByAciTeuIHHQxnbKqpSzN0Py97SOFeRWo";
 //        String code = "NTEyMDEwAAEABwAAAhVGGQVyQZNhAAAAAQQGiTGEzohJ4uxK3tk48qYg6wIY1JvfneV07aTm";
 
         CodeInfo codeInfo = null;

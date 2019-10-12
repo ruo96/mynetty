@@ -90,4 +90,55 @@ public class TestArrayList {
         stopWatch1.stop();
         log.info("=== result time is :{}",stopWatch1.getTotalTimeSeconds());
     }
+
+    @Test
+    public void test1(){
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+
+        List<Integer> list1 = new ArrayList<>(list);
+
+        list.add(6);
+
+        log.info("===> list: {}",JSON.toJSONString(list));
+        log.info("===> list1: {}",JSON.toJSONString(list1));
+    }
+
+    @Test
+    public void test2(){
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        
+
+        List<Integer> list1 = getReturnResult(list);
+
+        log.info("===> list: {}",JSON.toJSONString(list));
+        log.info("===> list1: {}",JSON.toJSONString(list1));
+    }
+
+    private List<Integer> getReturnResult(List<Integer> list) {
+
+        List<Integer> bills = Lists.newArrayList();
+        List<Integer> newList = list.stream().map(f->{
+            if(f > 3){
+                log.info("===> if : {}",f);
+                return Lists.newArrayList(9);
+            }else {
+                log.info("===> else : {}",f);
+                bills.add(f);
+                log.info("===> else  bills : {}",bills);
+                return bills;
+            }
+        }).collect(ArrayList::new, ArrayList::addAll, ArrayList::addAll);
+
+        return newList;
+    }
 }
