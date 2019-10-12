@@ -2,9 +2,11 @@ package com.wrh.copy.utils;
 
 import com.alibaba.fastjson.JSON;
 import com.rits.cloning.Cloner;
+import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Created by wrh
@@ -70,5 +72,28 @@ public class DeepCopyUtils {
         String json = JSON.toJSONString(object);
         return JSON.parseArray(json, destclas);
     }
+
+    /**
+     * 和上面的方式是一样的
+     * @param list
+     * @param <T>
+     * @return
+     */
+    public static <T> List copyList(List<T> list) {
+        if (CollectionUtils.isEmpty(list)) {
+            return new ArrayList();
+        }
+        return JSON.parseArray(JSON.toJSONString(list), list.get(0).getClass());
+    }
+
+    /**
+     *
+     * @param map
+     * @return
+     */
+    public static Map<String, Object> copyMap(Map map) {
+        return JSON.parseObject(JSON.toJSONString(map));
+    }
+
 
 }

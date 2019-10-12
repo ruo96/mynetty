@@ -2,12 +2,14 @@ package com.wrh.copy;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.wrh.copy.utils.DeepCopyUtils;
 import com.wrh.copy.vo.NodeProperty;
 import com.wrh.copy.vo.StageNode;
 import lombok.extern.slf4j.Slf4j;
 
 
+import org.apache.commons.collections4.MapUtils;
 import org.apache.http.client.utils.CloneUtils;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
@@ -224,10 +226,12 @@ public class TestDeepCopy {
         vo.setCars(Lists.newArrayList("benz","bwm"));
         vo.setHide(true);
         vo.setShow(true);
+        vo.setMap(Maps.newHashMap());
 
         DeepCopyVo vo1 = new DeepCopyVo();
 
         BeanUtils.copyProperties(vo,vo1);
+        vo1.setMap(DeepCopyUtils.copyMap(vo.getMap()));
 //        vo1 = DeepCopyUtils.clone(vo);
 
         log.info("=== vo is :{}",JSON.toJSONString(vo));
@@ -241,6 +245,7 @@ public class TestDeepCopy {
         vo.getCars().add("dazhong");
         vo.setHide(false);
         vo.setShow(false);
+        vo.getMap().put("1","map");
         log.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         log.info("=== vo is :{}",JSON.toJSONString(vo));
         log.info("=== vo1 is :{}",JSON.toJSONString(vo1));

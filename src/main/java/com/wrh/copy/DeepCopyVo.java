@@ -5,6 +5,7 @@ import lombok.Data;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Created by wrh
@@ -31,5 +32,7 @@ public class DeepCopyVo {
     private boolean hide;
 
     private Boolean show;
+
+    private Map<String, Object> map;
 
 }

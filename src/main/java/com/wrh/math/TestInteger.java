@@ -1,5 +1,6 @@
 package com.wrh.math;
 
+import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.search.aggregations.metrics.ParsedSingleValueNumericMetricsAggregation;
 import org.junit.Test;
 
@@ -9,6 +10,7 @@ import org.junit.Test;
  * @Date: Created in 上午 9:58 2019/6/11 0011
  * @Modified By:
  */
+@Slf4j
 public class TestInteger {
     public static void main(String[] args) {
         Integer i1 = 123;
@@ -90,5 +92,35 @@ public class TestInteger {
             return 2;
         }
     }
+
+    @Test
+    public void test3(){
+        boolean groupId = checkGroupId("abc1");
+        System.out.println(groupId);
+
+
+    }
+
+    private boolean checkGroupId(String collectGroupId) {
+        boolean result = false;
+
+        int groupId;
+        try {
+            groupId = Integer.parseInt(collectGroupId);
+        } catch (NumberFormatException e) {
+            log.info("===> 库跑批，组id{}解析异常， e: {}", collectGroupId, e);
+            return result;
+        }
+
+        log.info("=====> ");
+        if( groupId > 10){
+            return true;
+        }else {
+            return false;
+        }
+
+    }
+
+
 
 }

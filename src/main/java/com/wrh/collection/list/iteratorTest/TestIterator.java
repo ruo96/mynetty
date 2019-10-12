@@ -134,4 +134,49 @@ public class TestIterator {
 
         return list;
     }
+
+
+    @Test
+    public void test2(){
+
+        List<IteratorVo> total = new ArrayList<>();
+
+        IteratorVo it1 = new IteratorVo();
+        it1.setBrand("w1");
+        it1.setNum(11);
+//        it1.setCars(getDeepCopyVoList());
+
+        IteratorVo it2 = new IteratorVo();
+        it2.setBrand("w2");
+        it2.setNum(22);
+//        it2.setCars(getDeepCopyVoList2());
+
+        IteratorVo it3 = new IteratorVo();
+        it3.setBrand("w3");
+        it3.setNum(33);
+//        it3.setCars(getDeepCopyVoList2());
+
+        total.add(it1);
+        total.add(it2);
+        total.add(it3);
+
+        log.info("===> before total: {}",JSON.toJSONString(total));
+
+
+        Iterator<IteratorVo> iterator = total.iterator();
+        while(iterator.hasNext()){
+            IteratorVo v1 = iterator.next();
+
+            if(v1.getBrand().equals("w2")){
+                iterator.remove();
+                continue;
+            }else {
+                v1.setNum(999);
+            }
+        }
+        log.info("===> after total: {}",JSON.toJSONString(total));
+
+
+
+    }
 }
