@@ -36,7 +36,7 @@ public class TestAes {
         System.out.println("body体的hash_body值(): " + sha256_str);
 
 
-        String auth = "{\"companyId\":\"1130\",\"clientid\":\"18\",\"hashbody\":\"" + sha256_str + "\"}";
+        String auth = "{\"companyId\": \"8054\",\"clientid\":\"6\",\"timestamp\":\"20190505134257\",\"hashbody\": \"QjFBNUFBMjJBRjZFMzM2RkZGMEQzMUUwOEIwQzA2N0QyMjYxRkNFNDlDM0RCMjkwREVDRDJBOUEyRjUwMTIwQg==\",\"encType\":\"1\"}";
 
         System.out.println("认证数据: " + auth);
 

@@ -34,4 +34,9 @@ public class TestTime {
 
         System.out.println(t5.format(formatter));
     }
+
+    @Test
+    public void test1(){
+        log.info("=== timestamp: {}",System.currentTimeMillis());
+    }
 }

@@ -141,6 +141,15 @@ public class TestMap {
         map.put(3,3);
         map.put(4,4);
 
+        /*最高效率*/
+        Set<Map.Entry<Integer,Integer>> entrySet = map.entrySet();
+        Iterator<Map.Entry<Integer,Integer>> iterator = entrySet.iterator();
+        while (iterator.hasNext()){
+            Map.Entry<Integer,Integer> entry = iterator.next();
+            log.info("===> set key: {}  value: {}",entry.getKey(),entry.getValue());
+        }
+
+
         // 1. entrySet遍历，在键和值都需要时使用（最常用）
         for(Map.Entry<Integer, Integer> entry : map.entrySet()){
             log.info("===> key: {}   value: {}" ,entry.getKey(), entry.getValue());
@@ -171,6 +180,36 @@ public class TestMap {
 
 
 
+
+    }
+
+    @Test
+    public void test4(){
+
+        Map<Integer, Integer> productIdMap = new HashMap<>();
+
+        productIdMap.put(null,1);
+
+        Map<Integer, Integer> productIdMapNew = new HashMap<>(productIdMap);
+
+        productIdMap.put(null,2);
+
+        log.info("===> productIdMap is : {}", JSON.toJSONString(productIdMap));
+        log.info("===> productIdMap value is : {}", productIdMap.get(null));
+
+        log.info("===> productIdMapNew is : {}", JSON.toJSONString(productIdMapNew));
+        log.info("===> productIdMapNew  value is : {}", productIdMapNew.get(null));
+
+        if(productIdMap.containsKey(null)){
+            System.out.println("with null key");
+        }
+
+        /**
+         * 随便不允许key为null，但是编译期是无法检查出来的
+         */
+        Map<Integer, Integer> table1 = new Hashtable<>();
+        table1.put(null,1);
+        log.info("===> table1 is : {}", JSON.toJSONString(table1));
 
     }
 }

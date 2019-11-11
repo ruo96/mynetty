@@ -16,7 +16,7 @@ public class GetEncData {
     private static String key = "zcsmart.key";
     private static String iv = "zcsmart.iv";
 
-    private static String body = "{\"data\":{\"account\":\"xy04\",\"password\":\"12345678\"}}";
+    private static String body = "{\"companyId\": 8054, \"pageIndex\": 1,\"pageSize\": 2}";
 
 
 
@@ -33,9 +33,10 @@ public class GetEncData {
         //hash_body
         byte[] sha256Byte = SHA256Util.getServerHash_C(encData);
         String sha256_str = Base64.encodeBase64String(sha256Byte);
+//        String sha256_str = Base64.encodeBase64URLSafeString(sha256Byte);
         System.out.println("body体的hash_body值(): " + sha256_str);
 
-        String auth = "{\"companyId\":\"1130\",\"clientid\":\"18\",\"hashbody\":\"" + sha256_str + "\"}";
+        String auth = "{\"companyId\":\"8054\",\"clientid\":\"6\",\"timestamp\":\"20191018101757\",\"hashbody\":\"" + sha256_str + "\"}";
 
         System.out.println("认证数据: " + auth);
         String signData = iaes.signData(auth);

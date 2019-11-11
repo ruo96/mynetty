@@ -1,5 +1,6 @@
 package com.wrh.qrcode;
 
+import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashSet;
@@ -15,8 +16,7 @@ import java.util.Set;
 public class TestParseCode {
     public static void main(String[] args) {
 
-        String code = "523010Aew0IADKOkEWUvzpIAAgAASwEnSByAciTeuIHHQxnbKqpSzN0Py97SOFeRWo";
-//        String code = "NTEyMDEwAAEABwAAAhVGGQVyQZNhAAAAAQQGiTGEzohJ4uxK3tk48qYg6wIY1JvfneV07aTm";
+        String code = "513010AejUIAAQOn2F3cLI2AAgAAQBshCR7mVoeRYAh5yXbVqwrhEs9_AL05zBBnEU";
 
         CodeInfo codeInfo = null;
         Set<String> set = new HashSet<>();
@@ -24,7 +24,8 @@ public class TestParseCode {
             for (int i = 0; i < 1 ; i++) {
 
                 codeInfo = CodeParserFactory.parseCode(code);
-                set.add(codeInfo.getCodeId());
+                log.info(" codeInfo: {}", JSON.toJSONString(codeInfo));
+//                set.add(codeInfo.getCodeId());
             }
         } catch (Exception e) {
             e.printStackTrace();

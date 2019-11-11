@@ -1,5 +1,6 @@
 package com.wrh.assert1;
 
+import org.junit.Test;
 import org.springframework.util.Assert;
 
 /**
@@ -29,5 +30,12 @@ public class TestAssert {
         System.out.println("replace: " + path.substring(0,num).replace("/ftp/data/csc/",""));
         String newPath = path.substring(0,num);
         System.out.println("newPath: " + newPath.substring(newPath.lastIndexOf("/") + 1));
+    }
+
+    @Test
+    public void test(){
+        int i1 = 100;
+        int i2 = 100;
+        assert i1 != i2;
     }
 }

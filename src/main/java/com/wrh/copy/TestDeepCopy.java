@@ -4,12 +4,15 @@ import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.wrh.copy.utils.DeepCopyUtils;
+import com.wrh.copy.vo.BeamCopySaveVo;
+import com.wrh.copy.vo.BeamCopyVo;
 import com.wrh.copy.vo.NodeProperty;
 import com.wrh.copy.vo.StageNode;
 import lombok.extern.slf4j.Slf4j;
 
 
 import org.apache.commons.collections4.MapUtils;
+import org.apache.commons.lang3.tuple.Pair;
 import org.apache.http.client.utils.CloneUtils;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
@@ -249,5 +252,94 @@ public class TestDeepCopy {
         log.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         log.info("=== vo is :{}",JSON.toJSONString(vo));
         log.info("=== vo1 is :{}",JSON.toJSONString(vo1));
+    }
+
+
+    /**
+     * 29、如何实现对象克隆？
+     * 答：有两种方式：
+     * 1). 实现Cloneable接口并重写Object类中的clone()方法；
+     * 2). 实现Serializable接口，通过对象的序列化和反序列化实现克隆，可以实现真正的深度克隆，代码如下。
+     * https://www.cnblogs.com/gjack/p/8901464.html
+     * @throws Exception
+     */
+    @Test
+    public void test7() throws Exception {
+
+        DeepCopyVo vo = new DeepCopyVo();
+        vo.setName("w1");
+        vo.setAge(18);
+        vo.setMoney(100);
+        vo.setFirstChar('A');
+        vo.setFirstCharacter('A');
+        vo.setCars(Lists.newArrayList("benz","bwm"));
+        vo.setHide(true);
+        vo.setShow(true);
+        vo.setMap(Maps.newHashMap());
+
+        DeepCopyVo vo1 = new DeepCopyVo();
+
+        vo1 = DeepCopyUtils.deepClone(vo);
+
+        log.info("=== vo is :{}",JSON.toJSONString(vo));
+        log.info("=== vo1 is :{}",JSON.toJSONString(vo1));
+
+        vo.setName("w11");
+        vo.setAge(19);
+        vo.setMoney(200);
+        vo.setFirstChar('B');
+        vo.setFirstCharacter('B');
+        vo.getCars().add("dazhong");
+        vo.setHide(false);
+        vo.setShow(false);
+        vo.getMap().put("1","map");
+        log.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        log.info("=== vo is :{}",JSON.toJSONString(vo));
+        log.info("=== vo1 is :{}",JSON.toJSONString(vo1));
+    }
+
+    @Test
+    public void test8(){
+        BeamCopyVo beamCopyVo = new BeamCopyVo();
+        beamCopyVo.setName("wrh");
+        beamCopyVo.setCars(new String[]{"benz","bmw","hongqi"});
+
+        StageNode stageNode = new StageNode();
+        stageNode.setStageId(1);
+        stageNode.setParentStageId(2);
+        stageNode.setSortCode(3);
+        stageNode.setStageName("节点1");
+        stageNode.setThirdPartyFlag(4);
+
+
+        List<NodeProperty> nodeProperties = new ArrayList<>();
+        for (int i = 0; i < 2; i++) {
+            NodeProperty nodeProperty = new NodeProperty();
+            nodeProperty.setStageId(i);
+            nodeProperties.add(nodeProperty);
+        }
+
+        stageNode.setProperties(nodeProperties);
+
+
+
+        beamCopyVo.setStageNode(stageNode);
+
+        log.info("===> beamCopyVo :{}", JSON.toJSONString(beamCopyVo));
+
+        BeamCopySaveVo beamCopySaveVo = new BeamCopySaveVo();
+        BeanUtils.copyProperties(beamCopyVo,beamCopySaveVo);
+
+        log.info("===> beamCopySaveVo :{}", JSON.toJSONString(beamCopySaveVo));
+
+        beamCopySaveVo.setCars(JSON.toJSONString(beamCopyVo.getCars()));
+        beamCopySaveVo.setStageNode(JSON.toJSONString(beamCopyVo.getStageNode()));
+        log.info("===> beamCopySaveVo new :{}", JSON.toJSONString(beamCopySaveVo));
+
+//        String[] codes = beamCopySaveVo.getCars().
+        String[] codes = JSON.parseObject(beamCopySaveVo.getCars(),String[].class);
+        log.info("===> codes: {}", JSON.toJSONString(codes));
+
+        Pair<String, Integer> pair = Pair.of("1",1);
     }
 }

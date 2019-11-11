@@ -6,9 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.util.StopWatch;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -140,5 +138,59 @@ public class TestArrayList {
         }).collect(ArrayList::new, ArrayList::addAll, ArrayList::addAll);
 
         return newList;
+    }
+
+    /**
+     * 简单的list去重
+     */
+    @Test
+    public void test3(){
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(3);
+        list.add(3);
+
+
+        Set<Integer> set = new HashSet<>(list);
+
+        log.info("===> list: {}",JSON.toJSONString(list));
+        log.info("===> set: {}",JSON.toJSONString(set));
+    }
+
+    @Test
+    public void test4(){
+
+        String[] array = new String[]{"w1"};
+
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(3);
+        list.add(3);
+
+
+        Set<Integer> set = new HashSet<>(list);
+
+        log.info("===> list: {}",JSON.toJSONString(list));
+        log.info("===> set: {}",JSON.toJSONString(set));
+    }
+
+    @Test
+    public void test5(){
+
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+
+        Set<Integer> set = new HashSet<>(list);
+
+        log.info("===> list: {}",JSON.toJSONString(list));
+        log.info("===> set: {}",JSON.toJSONString(set));
     }
 }

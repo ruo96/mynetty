@@ -2,6 +2,7 @@ package com.wrh.copy;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -14,7 +15,10 @@ import java.util.Map;
  * @Modified By:
  */
 @Data
-public class DeepCopyVo {
+public class DeepCopyVo implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private String name;
 
     private Integer age;

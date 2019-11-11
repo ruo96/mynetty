@@ -1,11 +1,31 @@
-server:
-  port: 9094
+
 
 spring:
   application:
     name: mynetty
+  mail:
+    host: smtp.163.com
+    port: 465
+    username: wrh_1096
+    password: wrh163
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    default-encoding: utf-8
+    ssl: true
+    auth: true
+    timeout: 5000
 
 
+server:
+  port: 9999
+  servlet:
+    context-path: /mynetty
 
 
 # logging
@@ -16,8 +36,6 @@ logging:
     org.springframework: warn
     com.wrh: debug
     org.apache.ibatis.io.ResolverUtil: info
-
-
 
 
 

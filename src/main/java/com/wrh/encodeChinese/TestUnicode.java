@@ -78,4 +78,16 @@ public class TestUnicode {
 
 
     }
+
+    @Test
+    public void test() throws UnsupportedEncodingException {
+
+        String s1 = "你好";
+        String s2 = new String(s1.getBytes("GB2312"), "ISO-8859-1");
+
+        log.info("===> {}",s1);
+        log.info("===> {}",s2);
+
+    }
+
 }

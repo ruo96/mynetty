@@ -1,6 +1,7 @@
 package com.wrh.thread;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
 
 /**
  * @Created by wrh
@@ -29,5 +30,10 @@ public class TestBasoc {
         new Thread(TestBasoc::readBook).start();
 //        new Thread(TestBasoc::watchMovie).start();
         watchMovie();
+    }
+
+    @Test
+    public void test(){
+
     }
 }

@@ -15,7 +15,7 @@ public class GetDecData {
     private static String key = "zcsmart.key";
     private static String iv = "zcsmart.iv";
 
-    private static String body = "KzYZ9vup\\/ToEhz6tQRBnraenMsEJB4FnVX7dEmj57FxTZvVZmprAseyrgSTE52i3nKDG90BkAn4NU+MhpeqYB+nnHnB94XqJJ8tV1WPgRUYwdSoPfV5bQMHU2IUtv4p4t3GXvQV9HzaWbV\\/ELuwqfoTXnTGdQa3u0cC5K1seVmFCWNd8rpM0Zh7fawS9v97XB3uYHZmzAXFtjfNj\\/D7MBXdeiVfEFeyYjTOx9rlTQSMwWaOZEbRVvuk3xQSxor7hH\\/ODfbcQ0ylx1P9eDMc6VA==";
+    private static String body = "lnEFrpToGmrLtQCKig2oGpnpEm+I4lEkNwqSzjZivWjGkuRuqe9tQlo8h9pbTdHA";
 
 
     public static void main(String[] args) {

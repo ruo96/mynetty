@@ -121,6 +121,21 @@ public class TestInteger {
 
     }
 
+    @Test
+    public void test5(){
+        Integer i1 = 130;
+        Integer i2 = 130;
+
+        if(i1 == i2){
+            log.info("i1==i2");
+        }
+
+        if(i1.equals(i2)){
+            log.info("i1.equals(i2)");
+        }
+
+    }
+
 
 
 }
