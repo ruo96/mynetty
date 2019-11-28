@@ -1,6 +1,8 @@
 package com.wrh.enums;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
 
 /**
  * @Created by wrh
@@ -8,6 +10,7 @@ import org.apache.commons.lang3.StringUtils;
  * @Date: Created in 下午 4:42 2019/5/21 0021
  * @Modified By:
  */
+@Slf4j
 public class TestEnum {
     public static void main(String[] args) {
         System.out.println(FootEnum.APPLE.name());
@@ -20,6 +23,20 @@ public class TestEnum {
         System.out.println(companyId);
         companyId = StringUtils.substring(companyId, -4);
         System.out.println(companyId);
+
+    }
+
+    @Test
+    public void test1(){
+
+        FieldEnum fieldEnum = FieldEnum.getByKey("VARIETY_CODE");
+        log.info("===> key: {}  val: {}",fieldEnum.key(),fieldEnum.val());
+
+        FieldEnum fieldEnum1 = FieldEnum.getByVal("品种编码");
+        log.info("===> key: {}  val: {}",fieldEnum1.key(),fieldEnum1.val());
+
+        FieldEnum fieldEnum2 = FieldEnum.getByVal("投入品编码");
+        log.info("===> key: {}  val: {}",fieldEnum2.key(),fieldEnum2.val());
 
     }
 }

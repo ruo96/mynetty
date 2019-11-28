@@ -1,9 +1,8 @@
 package com.wrh.threadlocal;
 
+import org.junit.Test;
 import org.springframework.beans.factory.Aware;
 import org.springframework.beans.factory.config.BeanPostProcessor;
-import org.springframework.context.ApplicationContextAware;
-
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -43,9 +42,13 @@ public class TestThreadLocal {
 //        ApplicationContextAware;
 
 //        ApplicationContextAwareProcessor applicationContextAwareProcessor
-
-
-
-
     }
+
+    @Test
+    public void test(){
+       ThreadLocal<String> threadLocal = new ThreadLocal<>();
+       threadLocal.set("wrh");
+        System.out.println(threadLocal.get());
+    }
+
 }

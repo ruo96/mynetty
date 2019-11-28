@@ -1,179 +1,84 @@
-2019-11-11 10:43:16.962  INFO 120028 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on JT3Q9CAJRJ5FX5M with PID 120028 (started by Administrator in D:\0 pro\mynetty)
-2019-11-11 10:43:16.966 DEBUG 120028 --- [main] com.wrh.MynettyApplication               : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.7.RELEASE
-2019-11-11 10:43:16.968  INFO 120028 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2019-11-11 10:43:19.082  INFO 120028 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-11-11 10:43:19.082  INFO 120028 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2019-11-11 10:43:19.087  INFO 120028 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_112\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Program Files (x86)\OpenVPN\bin;D:\green\gradle-2.13\gradle-2.13\bin;D:\Program Files\TortoiseSVN\bin:C:\Users\Administrator\Desktop\bin\bin;C:\Program Files\Git\cmd;D:\Java\apache-maven-3.2.5\bin;C:\Program Files\Java\jdk1.8.0_131\bin;;D:\zookeeper/bin;D:\zookeeper/conf;D:\python\python38\Scripts\;D:\python\python38\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\CVSNT\;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Java\jdk1.8.0_131\jre\bin;%MAVEN_HOME%\bin;D:\Dev\mysql-5.7.11;D:\Program Files\Docker Toolbox;D:\Program Files\Microsoft VS Code\bin;D:\python\PyCharm 2019.2.3\bin;;.]
-2019-11-11 10:43:19.257  INFO 120028 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-11-11 10:43:19.404  INFO 120028 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2019-11-11 10:43:19.856  WARN 120028 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'annotationController' method 
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudent(com.wrh.annotate.annotation.Student)
-to {[/student],methods=[POST]}: There is already 'annotationController' bean method
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudentWithMsg(com.wrh.annotate.annotation.Student,org.springframework.validation.BindingResult) mapped.
-2019-11-11 10:43:19.859  INFO 120028 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2019-11-11 10:43:19.927 ERROR 120028 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'annotationController' method 
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudent(com.wrh.annotate.annotation.Student)
-to {[/student],methods=[POST]}: There is already 'annotationController' bean method
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudentWithMsg(com.wrh.annotate.annotation.Student,org.springframework.validation.BindingResult) mapped.
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1699)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:573)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246)
-	at com.wrh.MynettyApplication.main(MynettyApplication.java:21)
-Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'annotationController' method 
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudent(com.wrh.annotate.annotation.Student)
-to {[/student],methods=[POST]}: There is already 'annotationController' bean method
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudentWithMsg(com.wrh.annotate.annotation.Student,org.springframework.validation.BindingResult) mapped.
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.assertUniqueMethodMapping(AbstractHandlerMethodMapping.java:580)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:265)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$1(AbstractHandlerMethodMapping.java:250)
-	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:248)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:218)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:188)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:136)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1758)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1695)
-	... 16 common frames omitted
-
-2019-11-11 10:45:45.509  INFO 120876 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on JT3Q9CAJRJ5FX5M with PID 120876 (started by Administrator in D:\0 pro\mynetty)
-2019-11-11 10:45:45.512 DEBUG 120876 --- [main] com.wrh.MynettyApplication               : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.7.RELEASE
-2019-11-11 10:45:45.514  INFO 120876 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2019-11-11 10:45:47.186  INFO 120876 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-11-11 10:45:47.187  INFO 120876 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2019-11-11 10:45:47.191  INFO 120876 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_112\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Program Files (x86)\OpenVPN\bin;D:\green\gradle-2.13\gradle-2.13\bin;D:\Program Files\TortoiseSVN\bin:C:\Users\Administrator\Desktop\bin\bin;C:\Program Files\Git\cmd;D:\Java\apache-maven-3.2.5\bin;C:\Program Files\Java\jdk1.8.0_131\bin;;D:\zookeeper/bin;D:\zookeeper/conf;D:\python\python38\Scripts\;D:\python\python38\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\CVSNT\;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Java\jdk1.8.0_131\jre\bin;%MAVEN_HOME%\bin;D:\Dev\mysql-5.7.11;D:\Program Files\Docker Toolbox;D:\Program Files\Microsoft VS Code\bin;D:\python\PyCharm 2019.2.3\bin;;.]
-2019-11-11 10:45:47.343  INFO 120876 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-11-11 10:45:47.899  WARN 120876 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'annotationController' method 
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudentWithMsg(com.wrh.annotate.annotation.Student,org.springframework.validation.BindingResult)
-to {[/student],methods=[POST]}: There is already 'annotationController' bean method
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudent(com.wrh.annotate.annotation.Student) mapped.
-2019-11-11 10:45:47.902  INFO 120876 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2019-11-11 10:45:47.948 ERROR 120876 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'annotationController' method 
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudentWithMsg(com.wrh.annotate.annotation.Student,org.springframework.validation.BindingResult)
-to {[/student],methods=[POST]}: There is already 'annotationController' bean method
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudent(com.wrh.annotate.annotation.Student) mapped.
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1699)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:573)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246)
-	at com.wrh.MynettyApplication.main(MynettyApplication.java:21)
-Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'annotationController' method 
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudentWithMsg(com.wrh.annotate.annotation.Student,org.springframework.validation.BindingResult)
-to {[/student],methods=[POST]}: There is already 'annotationController' bean method
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudent(com.wrh.annotate.annotation.Student) mapped.
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.assertUniqueMethodMapping(AbstractHandlerMethodMapping.java:580)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:265)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$1(AbstractHandlerMethodMapping.java:250)
-	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:248)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:218)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:188)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:136)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1758)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1695)
-	... 16 common frames omitted
-
-2019-11-11 10:50:16.639  INFO 120916 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on JT3Q9CAJRJ5FX5M with PID 120916 (started by Administrator in D:\0 pro\mynetty)
-2019-11-11 10:50:16.642 DEBUG 120916 --- [main] com.wrh.MynettyApplication               : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.7.RELEASE
-2019-11-11 10:50:16.644  INFO 120916 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2019-11-11 10:50:18.334  INFO 120916 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-11-11 10:50:18.335  INFO 120916 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2019-11-11 10:50:18.339  INFO 120916 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_112\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Program Files (x86)\OpenVPN\bin;D:\green\gradle-2.13\gradle-2.13\bin;D:\Program Files\TortoiseSVN\bin:C:\Users\Administrator\Desktop\bin\bin;C:\Program Files\Git\cmd;D:\Java\apache-maven-3.2.5\bin;C:\Program Files\Java\jdk1.8.0_131\bin;;D:\zookeeper/bin;D:\zookeeper/conf;D:\python\python38\Scripts\;D:\python\python38\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\CVSNT\;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Java\jdk1.8.0_131\jre\bin;%MAVEN_HOME%\bin;D:\Dev\mysql-5.7.11;D:\Program Files\Docker Toolbox;D:\Program Files\Microsoft VS Code\bin;D:\python\PyCharm 2019.2.3\bin;;.]
-2019-11-11 10:50:18.477  INFO 120916 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/ops]    : Initializing Spring embedded WebApplicationContext
-2019-11-11 10:50:18.606  INFO 120916 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2019-11-11 10:50:18.995  WARN 120916 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'annotationController' method 
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudent(com.wrh.annotate.annotation.Student)
-to {[/student],methods=[POST]}: There is already 'annotationController' bean method
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudentWithMsg(com.wrh.annotate.annotation.Student,org.springframework.validation.BindingResult) mapped.
-2019-11-11 10:50:18.998  INFO 120916 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2019-11-11 10:50:19.046 ERROR 120916 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'annotationController' method 
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudent(com.wrh.annotate.annotation.Student)
-to {[/student],methods=[POST]}: There is already 'annotationController' bean method
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudentWithMsg(com.wrh.annotate.annotation.Student,org.springframework.validation.BindingResult) mapped.
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1699)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:573)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246)
-	at com.wrh.MynettyApplication.main(MynettyApplication.java:22)
-Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'annotationController' method 
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudent(com.wrh.annotate.annotation.Student)
-to {[/student],methods=[POST]}: There is already 'annotationController' bean method
-public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudentWithMsg(com.wrh.annotate.annotation.Student,org.springframework.validation.BindingResult) mapped.
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.assertUniqueMethodMapping(AbstractHandlerMethodMapping.java:580)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:544)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:265)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$1(AbstractHandlerMethodMapping.java:250)
-	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:248)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:218)
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:188)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:136)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1758)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1695)
-	... 16 common frames omitted
-
-2019-11-11 10:51:13.731  INFO 122012 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on JT3Q9CAJRJ5FX5M with PID 122012 (started by Administrator in D:\0 pro\mynetty)
-2019-11-11 10:51:13.735 DEBUG 122012 --- [main] com.wrh.MynettyApplication               : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.7.RELEASE
-2019-11-11 10:51:13.737  INFO 122012 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2019-11-11 10:51:15.285  INFO 122012 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-11-11 10:51:15.286  INFO 122012 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2019-11-11 10:51:15.290  INFO 122012 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_112\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Program Files (x86)\OpenVPN\bin;D:\green\gradle-2.13\gradle-2.13\bin;D:\Program Files\TortoiseSVN\bin:C:\Users\Administrator\Desktop\bin\bin;C:\Program Files\Git\cmd;D:\Java\apache-maven-3.2.5\bin;C:\Program Files\Java\jdk1.8.0_131\bin;;D:\zookeeper/bin;D:\zookeeper/conf;D:\python\python38\Scripts\;D:\python\python38\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\CVSNT\;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Java\jdk1.8.0_131\jre\bin;%MAVEN_HOME%\bin;D:\Dev\mysql-5.7.11;D:\Program Files\Docker Toolbox;D:\Program Files\Microsoft VS Code\bin;D:\python\PyCharm 2019.2.3\bin;;.]
-2019-11-11 10:51:15.465  INFO 122012 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/ops]    : Initializing Spring embedded WebApplicationContext
-2019-11-11 10:51:15.605  INFO 122012 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2019-11-11 10:51:16.470  WARN 122012 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2019-11-11 10:51:16.611  INFO 122012 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 4.177 seconds (JVM running for 6.422)
-2019-11-11 10:52:46.157  INFO 121800 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on JT3Q9CAJRJ5FX5M with PID 121800 (started by Administrator in D:\0 pro\mynetty)
-2019-11-11 10:52:46.159 DEBUG 121800 --- [main] com.wrh.MynettyApplication               : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.7.RELEASE
-2019-11-11 10:52:46.161  INFO 121800 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2019-11-11 10:52:47.930  INFO 121800 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-11-11 10:52:47.931  INFO 121800 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2019-11-11 10:52:47.937  INFO 121800 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_112\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Program Files (x86)\OpenVPN\bin;D:\green\gradle-2.13\gradle-2.13\bin;D:\Program Files\TortoiseSVN\bin:C:\Users\Administrator\Desktop\bin\bin;C:\Program Files\Git\cmd;D:\Java\apache-maven-3.2.5\bin;C:\Program Files\Java\jdk1.8.0_131\bin;;D:\zookeeper/bin;D:\zookeeper/conf;D:\python\python38\Scripts\;D:\python\python38\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\CVSNT\;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Java\jdk1.8.0_131\jre\bin;%MAVEN_HOME%\bin;D:\Dev\mysql-5.7.11;D:\Program Files\Docker Toolbox;D:\Program Files\Microsoft VS Code\bin;D:\python\PyCharm 2019.2.3\bin;;.]
-2019-11-11 10:52:48.134  INFO 121800 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2019-11-11 10:52:48.324  INFO 121800 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2019-11-11 10:52:49.231  WARN 121800 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2019-11-11 10:52:49.371  INFO 121800 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 4.579 seconds (JVM running for 7.048)
-2019-11-11 10:53:33.327  INFO 121800 --- [http-nio-9999-exec-2] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-11-12 15:39:46.008  INFO 142168 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on JT3Q9CAJRJ5FX5M with PID 142168 (started by Administrator in D:\0 pro\mynetty)
+2019-11-12 15:39:46.023 DEBUG 142168 --- [main] com.wrh.MynettyApplication               : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.7.RELEASE
+2019-11-12 15:39:46.025  INFO 142168 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2019-11-12 15:39:48.375  INFO 142168 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-12 15:39:48.376  INFO 142168 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2019-11-12 15:39:48.383  INFO 142168 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_112\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Program Files (x86)\OpenVPN\bin;D:\green\gradle-2.13\gradle-2.13\bin;D:\Program Files\TortoiseSVN\bin:C:\Users\Administrator\Desktop\bin\bin;C:\Program Files\Git\cmd;D:\Java\apache-maven-3.2.5\bin;C:\Program Files\Java\jdk1.8.0_131\bin;;D:\zookeeper/bin;D:\zookeeper/conf;D:\python\python38\Scripts\;D:\python\python38\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\CVSNT\;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Java\jdk1.8.0_131\jre\bin;%MAVEN_HOME%\bin;D:\Dev\mysql-5.7.11;D:\Program Files\Docker Toolbox;D:\Program Files\Microsoft VS Code\bin;D:\python\PyCharm 2019.2.3\bin;;.]
+2019-11-12 15:39:48.546  INFO 142168 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2019-11-12 15:39:48.738  INFO 142168 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2019-11-12 15:39:49.644  WARN 142168 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2019-11-12 15:39:49.797  INFO 142168 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 6.145 seconds (JVM running for 8.419)
+2019-11-12 15:40:25.938  INFO 142168 --- [http-nio-9999-exec-2] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-11-12 15:40:26.040  INFO 142168 --- [http-nio-9999-exec-2] com.wrh.basic.service.BasicServiceImpl   : ===>{"name":"a","num":1}
+2019-11-12 15:40:26.041  INFO 142168 --- [http-nio-9999-exec-2] com.wrh.basic.service.BasicServiceImpl   : ===>{"hashCodeName":"wrhnull","name":"a","num":1}
+2019-11-12 15:40:26.068  INFO 142168 --- [http-nio-9999-exec-2] com.wrh.filter.LogCosFilter              : cost time: 103
+2019-11-12 15:41:11.772  INFO 147696 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on JT3Q9CAJRJ5FX5M with PID 147696 (started by Administrator in D:\0 pro\mynetty)
+2019-11-12 15:41:11.833 DEBUG 147696 --- [main] com.wrh.MynettyApplication               : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.7.RELEASE
+2019-11-12 15:41:11.835  INFO 147696 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2019-11-12 15:41:13.657  INFO 147696 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-12 15:41:13.658  INFO 147696 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2019-11-12 15:41:13.663  INFO 147696 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_112\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Program Files (x86)\OpenVPN\bin;D:\green\gradle-2.13\gradle-2.13\bin;D:\Program Files\TortoiseSVN\bin:C:\Users\Administrator\Desktop\bin\bin;C:\Program Files\Git\cmd;D:\Java\apache-maven-3.2.5\bin;C:\Program Files\Java\jdk1.8.0_131\bin;;D:\zookeeper/bin;D:\zookeeper/conf;D:\python\python38\Scripts\;D:\python\python38\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\CVSNT\;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Java\jdk1.8.0_131\jre\bin;%MAVEN_HOME%\bin;D:\Dev\mysql-5.7.11;D:\Program Files\Docker Toolbox;D:\Program Files\Microsoft VS Code\bin;D:\python\PyCharm 2019.2.3\bin;;.]
+2019-11-12 15:41:13.826  INFO 147696 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2019-11-12 15:41:14.012  INFO 147696 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2019-11-12 15:41:14.802  WARN 147696 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2019-11-12 15:41:14.943  INFO 147696 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 4.186 seconds (JVM running for 6.82)
+2019-11-12 15:42:03.779  INFO 147048 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on JT3Q9CAJRJ5FX5M with PID 147048 (started by Administrator in D:\0 pro\mynetty)
+2019-11-12 15:42:03.782 DEBUG 147048 --- [main] com.wrh.MynettyApplication               : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.7.RELEASE
+2019-11-12 15:42:03.784  INFO 147048 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2019-11-12 15:42:05.976  INFO 147048 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-12 15:42:05.977  INFO 147048 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2019-11-12 15:42:05.981  INFO 147048 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_112\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Program Files (x86)\OpenVPN\bin;D:\green\gradle-2.13\gradle-2.13\bin;D:\Program Files\TortoiseSVN\bin:C:\Users\Administrator\Desktop\bin\bin;C:\Program Files\Git\cmd;D:\Java\apache-maven-3.2.5\bin;C:\Program Files\Java\jdk1.8.0_131\bin;;D:\zookeeper/bin;D:\zookeeper/conf;D:\python\python38\Scripts\;D:\python\python38\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\CVSNT\;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Java\jdk1.8.0_131\jre\bin;%MAVEN_HOME%\bin;D:\Dev\mysql-5.7.11;D:\Program Files\Docker Toolbox;D:\Program Files\Microsoft VS Code\bin;D:\python\PyCharm 2019.2.3\bin;;.]
+2019-11-12 15:42:06.118  INFO 147048 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2019-11-12 15:42:06.275  INFO 147048 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2019-11-12 15:42:07.081  WARN 147048 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2019-11-12 15:42:07.221  INFO 147048 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 4.517 seconds (JVM running for 6.665)
+2019-11-12 15:42:15.547  INFO 147048 --- [http-nio-9999-exec-2] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-11-12 15:42:15.587  INFO 147048 --- [http-nio-9999-exec-2] com.wrh.basic.service.BasicServiceImpl   :  service key: aaabbbccc
+2019-11-12 15:42:15.646  INFO 147048 --- [http-nio-9999-exec-2] com.wrh.basic.service.BasicServiceImpl   : ===>{"name":"a","num":1}
+2019-11-12 15:42:15.646  INFO 147048 --- [http-nio-9999-exec-2] com.wrh.basic.service.BasicServiceImpl   : ===>{"hashCodeName":"wrhnull","name":"a","num":1}
+2019-11-12 15:42:15.668  INFO 147048 --- [http-nio-9999-exec-2] com.wrh.filter.LogCosFilter              : cost time: 95
+2019-11-12 15:49:13.761  INFO 148244 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on JT3Q9CAJRJ5FX5M with PID 148244 (started by Administrator in D:\0 pro\mynetty)
+2019-11-12 15:49:13.763 DEBUG 148244 --- [main] com.wrh.MynettyApplication               : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.7.RELEASE
+2019-11-12 15:49:13.765  INFO 148244 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2019-11-12 15:49:15.715  INFO 148244 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-12 15:49:15.716  INFO 148244 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2019-11-12 15:49:15.723  INFO 148244 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_112\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Program Files (x86)\OpenVPN\bin;D:\green\gradle-2.13\gradle-2.13\bin;D:\Program Files\TortoiseSVN\bin:C:\Users\Administrator\Desktop\bin\bin;C:\Program Files\Git\cmd;D:\Java\apache-maven-3.2.5\bin;C:\Program Files\Java\jdk1.8.0_131\bin;;D:\zookeeper/bin;D:\zookeeper/conf;D:\python\python38\Scripts\;D:\python\python38\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\CVSNT\;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Java\jdk1.8.0_131\jre\bin;%MAVEN_HOME%\bin;D:\Dev\mysql-5.7.11;D:\Program Files\Docker Toolbox;D:\Program Files\Microsoft VS Code\bin;D:\python\PyCharm 2019.2.3\bin;;.]
+2019-11-12 15:49:15.904  INFO 148244 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2019-11-12 15:49:16.096  INFO 148244 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2019-11-12 15:49:17.080  WARN 148244 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2019-11-12 15:49:17.241  INFO 148244 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 4.332 seconds (JVM running for 9.743)
+2019-11-12 15:49:23.718  INFO 148244 --- [http-nio-9999-exec-2] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-11-12 15:49:23.764  INFO 148244 --- [http-nio-9999-exec-2] com.wrh.basic.service.BasicServiceImpl   :  service key: aaabbbccc
+2019-11-12 15:49:23.834  INFO 148244 --- [http-nio-9999-exec-2] com.wrh.basic.service.BasicServiceImpl   : ===>{"name":"a","num":1}
+2019-11-12 15:49:23.834  INFO 148244 --- [http-nio-9999-exec-2] com.wrh.basic.service.BasicServiceImpl   : ===>{"hashCodeName":"wrhnull","name":"a","num":1}
+2019-11-12 15:49:23.862  INFO 148244 --- [http-nio-9999-exec-2] com.wrh.filter.LogCosFilter              : cost time: 112
+2019-11-12 15:54:40.838  INFO 125400 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on JT3Q9CAJRJ5FX5M with PID 125400 (started by Administrator in D:\0 pro\mynetty)
+2019-11-12 15:54:40.840 DEBUG 125400 --- [main] com.wrh.MynettyApplication               : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.7.RELEASE
+2019-11-12 15:54:40.842  INFO 125400 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2019-11-12 15:54:42.757  INFO 125400 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-12 15:54:42.758  INFO 125400 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2019-11-12 15:54:42.763  INFO 125400 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_112\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Program Files (x86)\OpenVPN\bin;D:\green\gradle-2.13\gradle-2.13\bin;D:\Program Files\TortoiseSVN\bin:C:\Users\Administrator\Desktop\bin\bin;C:\Program Files\Git\cmd;D:\Java\apache-maven-3.2.5\bin;C:\Program Files\Java\jdk1.8.0_131\bin;;D:\zookeeper/bin;D:\zookeeper/conf;D:\python\python38\Scripts\;D:\python\python38\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\CVSNT\;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Java\jdk1.8.0_131\jre\bin;%MAVEN_HOME%\bin;D:\Dev\mysql-5.7.11;D:\Program Files\Docker Toolbox;D:\Program Files\Microsoft VS Code\bin;D:\python\PyCharm 2019.2.3\bin;;.]
+2019-11-12 15:54:42.941  INFO 125400 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2019-11-12 15:54:43.126  INFO 125400 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2019-11-12 15:54:43.846  WARN 125400 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2019-11-12 15:54:44.117  INFO 125400 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 4.49 seconds (JVM running for 6.808)
+2019-11-12 15:54:48.739  INFO 125400 --- [http-nio-9999-exec-2] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-11-12 15:54:48.785  INFO 125400 --- [http-nio-9999-exec-2] com.wrh.basic.service.BasicServiceImpl   :  service key: aaabbbccc
+2019-11-12 15:54:48.849  INFO 125400 --- [http-nio-9999-exec-2] com.wrh.basic.service.BasicServiceImpl   : ===>{"name":"a","num":1}
+2019-11-12 15:54:48.849  INFO 125400 --- [http-nio-9999-exec-2] com.wrh.basic.service.BasicServiceImpl   : ===>{"hashCodeName":"wrhnull","name":"a","num":1}
+2019-11-12 15:54:48.871  INFO 125400 --- [http-nio-9999-exec-2] com.wrh.filter.LogCosFilter              : cost time: 101
+2019-11-12 15:55:19.722  INFO 144888 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on JT3Q9CAJRJ5FX5M with PID 144888 (started by Administrator in D:\0 pro\mynetty)
+2019-11-12 15:55:19.725 DEBUG 144888 --- [main] com.wrh.MynettyApplication               : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.7.RELEASE
+2019-11-12 15:55:19.727  INFO 144888 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2019-11-12 15:55:22.536  INFO 144888 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-12 15:55:22.537  INFO 144888 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2019-11-12 15:55:22.542  INFO 144888 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8.0_112\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Program Files (x86)\OpenVPN\bin;D:\green\gradle-2.13\gradle-2.13\bin;D:\Program Files\TortoiseSVN\bin:C:\Users\Administrator\Desktop\bin\bin;C:\Program Files\Git\cmd;D:\Java\apache-maven-3.2.5\bin;C:\Program Files\Java\jdk1.8.0_131\bin;;D:\zookeeper/bin;D:\zookeeper/conf;D:\python\python38\Scripts\;D:\python\python38\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\CVSNT\;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Java\jdk1.8.0_131\jre\bin;%MAVEN_HOME%\bin;D:\Dev\mysql-5.7.11;D:\Program Files\Docker Toolbox;D:\Program Files\Microsoft VS Code\bin;D:\python\PyCharm 2019.2.3\bin;;.]
+2019-11-12 15:55:22.702  INFO 144888 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2019-11-12 15:55:22.898  INFO 144888 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2019-11-12 15:55:23.727  WARN 144888 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2019-11-12 15:55:23.877  INFO 144888 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 5.357 seconds (JVM running for 7.991)
+2019-11-12 15:55:33.920  INFO 144888 --- [http-nio-9999-exec-2] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-11-12 15:55:33.964  INFO 144888 --- [http-nio-9999-exec-2] com.wrh.basic.service.BasicServiceImpl   :  service key: aaabbbccc
+2019-11-12 15:55:34.033  INFO 144888 --- [http-nio-9999-exec-2] com.wrh.basic.service.BasicServiceImpl   : ===>{"name":"a","num":1}
+2019-11-12 15:55:34.034  INFO 144888 --- [http-nio-9999-exec-2] com.wrh.basic.service.BasicServiceImpl   : ===>{"hashCodeName":"wrhnull","name":"a","num":1}
+2019-11-12 15:55:34.057  INFO 144888 --- [http-nio-9999-exec-2] com.wrh.filter.LogCosFilter              : cost time: 107

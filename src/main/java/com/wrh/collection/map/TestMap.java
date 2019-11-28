@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-import java.lang.reflect.Field;
 import java.util.*;
 
 /**
@@ -164,7 +163,7 @@ public class TestMap {
         for (Integer value : map.values()) {
             System.out.println("key = " + value);
         }
-        // 3. 使用Iterator遍历
+        // 3. 使用Iterator
         Iterator<Map.Entry<Integer, Integer>> it = map.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry<Integer, Integer> entry = it.next();
@@ -211,5 +210,44 @@ public class TestMap {
         table1.put(null,1);
         log.info("===> table1 is : {}", JSON.toJSONString(table1));
 
+    }
+
+    @Test
+    public void test5() throws InterruptedException {
+        HashMapThread thread1 = new HashMapThread();
+        HashMapThread thread2 = new HashMapThread();
+        HashMapThread thread3 = new HashMapThread();
+        HashMapThread thread4 = new HashMapThread();
+        HashMapThread thread5 = new HashMapThread();
+        thread1.start();
+        thread2.start();
+        thread3.start();
+        thread4.start();
+        thread5.start();
+
+        thread1.join();
+        thread2.join();
+        thread3.join();
+        thread4.join();
+        thread5.join();
+    }
+
+    @Test
+    public void test6(){
+        Map<String,Set<String>> map = new HashMap<>();
+        Set<String> set = new HashSet<>();
+        set.add("1");
+        set.add("2");
+        set.add("3");
+        set.add("4");
+        set.add("5");
+
+        map.put("1",set);
+        log.info("===> map: {}",JSON.toJSONString(map));
+        log.info("===> set: {}",JSON.toJSONString(set));
+
+        set = null;
+        log.info("===> map: {}",JSON.toJSONString(map));
+        log.info("===> set: {}",JSON.toJSONString(set));
     }
 }

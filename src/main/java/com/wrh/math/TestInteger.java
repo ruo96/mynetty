@@ -1,7 +1,6 @@
 package com.wrh.math;
 
 import lombok.extern.slf4j.Slf4j;
-import org.elasticsearch.search.aggregations.metrics.ParsedSingleValueNumericMetricsAggregation;
 import org.junit.Test;
 
 /**
@@ -133,6 +132,17 @@ public class TestInteger {
         if(i1.equals(i2)){
             log.info("i1.equals(i2)");
         }
+
+    }
+
+    @Test
+    public void test6(){
+        int i = 0;
+        int j = i++;
+        int k =  ++i;
+        log.info("===> {}",i);
+        log.info("===> {}",j);
+        log.info("===> {}",k);
 
     }
 

@@ -5,7 +5,10 @@ import com.wrh.basicUse.vo.ChangVo;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
+import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -75,5 +78,87 @@ public class TestBasicUse {
 
         log.info("===> map2: {}",map2);
         log.info("===> map: {}",map);
+    }
+
+    @Test
+    public void test3(){
+        int i = 1;
+        Integer j = 1;
+        log.info("===> i ==j :{}", i==j);
+
+        int i1 = 2000;
+        Integer j1 = 2000;
+        log.info("===> i1 ==j1 :{}", i1==j1);
+
+        int i2 = 2000;
+        Integer j2 = new Integer(2000);
+        log.info("===> i2 ==j2 :{}", i2==j2);
+
+        int i3 = 2000;
+        Integer j3 = new Integer(2000);
+        log.info("===> j3==i3 :{}", j3==i3);
+    }
+
+
+    @Test
+    public void test4(){
+//        Integer i =null;
+//        int j = i;
+        log.info("===> {}",Runtime.getRuntime().availableProcessors());
+
+    }
+
+    @Test
+    public void test5(){
+        Integer i = 12;
+        Integer j = 12;
+
+        log.info("+++>{}",i == j);
+
+        Integer i1 = 129;
+        Integer j1 = 129;
+
+        log.info("+++>{}",i1 == j1);
+        log.info("+++>{}",i1.equals(j1));
+
+    }
+
+    @Test
+    public void test6(){
+        BigDecimal a = new BigDecimal("1.3336");
+        BigDecimal b = new BigDecimal("0.9");
+        log.info("===>{}",a.compareTo(b) );
+
+        BigDecimal c = a.setScale(3,BigDecimal.ROUND_HALF_DOWN);
+        BigDecimal d = a.setScale(3,BigDecimal.ROUND_HALF_UP);
+        BigDecimal e = a.setScale(3,BigDecimal.ROUND_HALF_EVEN);
+        BigDecimal f = a.setScale(3,BigDecimal.ROUND_DOWN);
+        BigDecimal g = a.setScale(3,BigDecimal.ROUND_CEILING);
+        BigDecimal h = a.setScale(3,BigDecimal.ROUND_FLOOR);
+        log.info("=c==>{}",c );
+        log.info("=d==>{}",d );
+        log.info("=e==>{}",e );
+        log.info("=f==>{}",f );
+        log.info("=g==>{}",g );
+        log.info("=h==>{}",h );
+
+    }
+
+    @Test
+    public void test7(){
+        BigDecimal a = BigDecimal.valueOf(0.1);
+        BigDecimal b = BigDecimal.valueOf(0.09);
+        log.info("===>{}", a.subtract(b));
+
+    }
+
+    @Test
+    public void test8(){
+        List<String> list = Arrays.asList("1","2","3");
+        log.info("===>{}", JSON.toJSONString(list));
+
+        //这个是不支持的
+        list.add("4");
+        log.info("===>{}", JSON.toJSONString(list));
     }
 }

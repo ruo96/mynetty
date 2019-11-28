@@ -1,5 +1,6 @@
 package com.wrh.annotate.annotation;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +14,7 @@ import javax.validation.Valid;
  * @Date: Created in 上午 10:40 2019/11/11 0011
  * @Modified By:
  */
+@Slf4j
 @RestController
 public class AnnotationController {
 
@@ -27,6 +29,7 @@ public class AnnotationController {
         if(bindingResult.hasErrors()){
             return bindingResult.getAllErrors().get(0).getDefaultMessage();
         }
+        log.info("===>  controller over");
         return  "student created";
     }
 }

@@ -16,7 +16,7 @@ import java.util.Set;
 public class TestParseCode {
     public static void main(String[] args) {
 
-        String code = "513010AejUIAAQOn2F3cLI2AAgAAQBshCR7mVoeRYAh5yXbVqwrhEs9_AL05zBBnEU";
+        String code = "513010AATpYAACGwwAdBimEAAgAASMQAAAiEAI55Vdwer8jx6TO2yDpq-9gXkC-LfS";
 
         CodeInfo codeInfo = null;
         Set<String> set = new HashSet<>();

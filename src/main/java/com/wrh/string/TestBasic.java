@@ -2,8 +2,11 @@ package com.wrh.string;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.elasticsearch.common.unit.TimeValue;
+import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @Created by wrh
@@ -68,6 +71,53 @@ public class TestBasic {
 
 
 
+
+    }
+
+    @Test
+    public void test1(){
+       String a = "1234567890";
+       log.info("a.length is : {}",a.length());
+
+       String b = a.substring(a.length() - 5);
+       log.info("===>{}",b);
+
+        String c = a.substring(0,a.length() - 5);
+        log.info("===>{}",c);
+    }
+
+    @Test
+    public void test2(){
+        AtomicInteger atomicInteger = new AtomicInteger(2);
+        System.out.println(atomicInteger);
+    }
+    
+    @Test
+    public void test(){
+        TimeValue t = TimeValue.timeValueMinutes(30);
+        System.out.println(t.getDays());
+        System.out.println(t.getSeconds());
+        System.out.println(t.getHours());
+    }
+
+    @Test
+    public void test3(){
+
+//        String  data = "1300.023";
+        String  data = "1300.000";
+
+        float dataF = Float.valueOf(data);
+        float data2 = (int)Math.round(dataF*100)/100f;
+
+        /*DecimalFormat df = new DecimalFormat("0.00");
+        String CNY = df.format(data);
+        Double cny = Double.parseDouble(CNY);*/
+        log.info("===>dataF {}",dataF);
+        log.info("===>data2 {}",data2);
+
+
+        String date = "2019-11-21 13:12:33";
+        log.info("===> [{}]",date.substring(0,10));
 
     }
 }
