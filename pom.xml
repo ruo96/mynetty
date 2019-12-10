@@ -37,6 +37,12 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
 		<dependency>
@@ -285,6 +291,53 @@
 			<version>1.9.12</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.eljah</groupId>
+			<artifactId>xmindjbehaveplugin</artifactId>
+			<version>0.8</version>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>5.0.7</version>
+		</dependency>
+
+		<!--<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+			<version>2.2.6.RELEASE</version>
+		</dependency>-->
+
+		<!--但是，我想告诉你，为了简化开发环节验证Kafka相关功能，Spring-Kafka-Test已经封装了
+		Kafka-test提供了注解式的一键开启Kafka Server的功能，使用起来也是超级简单。
+		本文后面的所有测试用例的Kafka都是使用这种嵌入式服务提供的。-->
+		<!--<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka-test</artifactId>
+			<version>2.2.6.RELEASE</version>
+			<scope>test</scope>
+		</dependency>-->
+		<!--<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka-test</artifactId>
+		</dependency>-->
+
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.9.0</version>
+		</dependency>
 
 	</dependencies>
 

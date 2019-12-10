@@ -1,4 +1,4 @@
-package com.wrh.map;
+package com.wrh.collection.map.map;
 
 import com.alibaba.fastjson.JSON;
 

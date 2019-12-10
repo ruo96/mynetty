@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class BasicServiceImpl implements BasicService {
 
-    @Value("${key.cq}")
+    @Value("${cq.key}")
     private String key;
 
     @Override

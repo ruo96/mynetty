@@ -1,4 +1,4 @@
-package com.wrh.map;
+package com.wrh.collection.map.map;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

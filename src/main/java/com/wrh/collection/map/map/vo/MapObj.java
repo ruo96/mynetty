@@ -1,4 +1,4 @@
-package com.wrh.map.vo;
+package com.wrh.collection.map.map.vo;
 
 import lombok.Data;
 

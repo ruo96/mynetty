@@ -1,7 +1,7 @@
-package com.wrh.map;
+package com.wrh.collection.map.map;
 
 import com.alibaba.fastjson.JSON;
-import com.wrh.map.vo.MapObj;
+import com.wrh.collection.map.map.vo.MapObj;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 

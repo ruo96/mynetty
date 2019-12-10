@@ -1,4 +1,4 @@
-package com.wrh.map;
+package com.wrh.collection.map.map;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
