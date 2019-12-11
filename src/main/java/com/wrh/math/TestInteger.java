@@ -3,6 +3,9 @@ package com.wrh.math;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+
 /**
  * @Created by wrh
  * @Description:
@@ -145,6 +148,59 @@ public class TestInteger {
         log.info("===> {}",k);
 
     }
+
+    @Test
+    public void test7(){
+//        byte[] a = {0x11};
+        byte x[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x11};
+        long b = longFrom8Bytes(x,0,false);
+        log.info("b:{}",b);
+
+        long c = bytesTolong(x,0,false);
+        log.info("c:{}",c);
+
+    }
+
+
+    /**
+     * 将字节数组转为long<br>
+     * 如果input为null,或offset指定的剩余数组长度不足8字节则抛出异常
+     * @param input
+     * @param offset 起始偏移量
+     * @param littleEndian 输入数组是否小端模式
+     * @return
+     */public static long longFrom8Bytes(byte[] input, int offset, Boolean littleEndian){
+        long value=0;
+        // 循环读取每个字节通过移位运算完成long的8个字节拼装
+        for (int  count=0;count<8;++count){
+            int shift=(littleEndian?count:(7-count))<<3;
+            value |=((long)0xff<< shift) & ((long)input[offset+count] << shift);
+        }
+        return value;}
+
+    /**
+     * 利用 {@link java.nio.ByteBuffer}实现byte[]转long
+     * @param input
+     * @param offset
+     * @param littleEndian 输入数组是否小端模式
+     * @return
+     */public static long bytesTolong(byte[] input, int offset, Boolean littleEndian) {
+        // 将byte[] 封装为 ByteBuffer
+        ByteBuffer buffer = ByteBuffer.wrap(input,offset,8);
+        if(littleEndian){
+            // ByteBuffer.order(ByteOrder) 方法指定字节序,即大小端模式(BIG_ENDIAN/LITTLE_ENDIAN)
+            // ByteBuffer 默认为大端(BIG_ENDIAN)模式
+            buffer.order(ByteOrder.LITTLE_ENDIAN);
+        }
+        return buffer.getLong();}
+
+     @Test
+     public void test8(){
+         int i = 1;
+         int j = 2;
+         int k = i|j;
+         System.out.println(k);
+     }
 
 
 

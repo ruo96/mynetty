@@ -1,7 +1,6 @@
 package com.wrh.thread.threadPool;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -42,5 +41,15 @@ public class testThreadPool {
 
         TimeUnit.SECONDS.sleep(4);
         log.info("主线程{}结束",Thread.currentThread().getName());
+    }
+
+    @Test
+    public void test1(){
+//        ExecutorService service = new ThreadPoolExecutor(1,1,);
+        ExecutorService service = Executors.newSingleThreadExecutor();
+        ExecutorService service1 = Executors.newFixedThreadPool(1);
+        ExecutorService service2 = Executors.newCachedThreadPool();
+        ExecutorService service3 = Executors.newScheduledThreadPool(1);
+        ExecutorService service4 = Executors.newSingleThreadExecutor();
     }
 }
