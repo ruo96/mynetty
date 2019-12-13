@@ -1,8 +1,11 @@
 package com.wrh.math;
 
+import com.google.common.util.concurrent.RateLimiter;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
@@ -200,6 +203,19 @@ public class TestInteger {
          int j = 2;
          int k = i|j;
          System.out.println(k);
+     }
+
+     @Test
+     public void test9() throws UnknownHostException {
+         String addr = InetAddress.getLocalHost().getHostAddress();
+         log.info("addr: {}",addr);
+
+         String getHostName = InetAddress.getLocalHost().getHostName();
+         String getAddress = String.valueOf(InetAddress.getLocalHost().getAddress());
+         log.info("getHostName: {}",getHostName);
+         log.info("getAddress: {}",getAddress);
+
+         RateLimiter limiter = RateLimiter.create(2);
      }
 
 
