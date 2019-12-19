@@ -46,7 +46,7 @@ logging:
   level:
     com.wrh.mapper: debug
     org.springframework: warn
-    com.wrh: debug
+    com.wrh: info
     org.apache.ibatis.io.ResolverUtil: info
 
 cq:

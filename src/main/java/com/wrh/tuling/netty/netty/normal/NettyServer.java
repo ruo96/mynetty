@@ -1,4 +1,4 @@
-package com.wrh.tuling.netty.netty;
+package com.wrh.tuling.netty.netty.normal;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

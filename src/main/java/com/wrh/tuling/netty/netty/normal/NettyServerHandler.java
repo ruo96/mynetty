@@ -1,4 +1,4 @@
-package com.wrh.tuling.netty.netty;
+package com.wrh.tuling.netty.netty.normal;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
