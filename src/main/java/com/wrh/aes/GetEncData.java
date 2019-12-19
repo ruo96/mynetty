@@ -1,8 +1,8 @@
 package com.wrh.aes;
 
-import com.zcsmart.aes.IAES;
-import com.zcsmart.aes.en.AESModule;
-import com.zcsmart.aes.impl.AES192Impl;
+//import com.zcsmart.aes.IAES;
+//import com.zcsmart.aes.en.AESModule;
+//i/mport com.zcsmart.aes.impl.AES192Impl;
 import org.apache.commons.codec.binary.Base64;
 
 /**
@@ -20,7 +20,7 @@ public class GetEncData {
 
 
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
         IAES iaes = new AES192Impl();
         String str = "";
@@ -44,5 +44,5 @@ public class GetEncData {
 
         String plain = iaes.decDataBase64(encData, AESModule.AES_192_CBC_PKCS7, key, iv);
         System.out.println("解密明文: " + plain);
-    }
+    }*/
 }

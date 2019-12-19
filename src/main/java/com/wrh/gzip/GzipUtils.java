@@ -32,7 +32,7 @@ public class GzipUtils {
             gzip.close();
             // 这里增加base64编码
             byte[] compressed = out.toByteArray();
-            compress = new sun.misc.BASE64Encoder().encodeBuffer(compressed);
+//            compress = new sun.misc.BASE64Encoder().encodeBuffer(compressed);
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -62,8 +62,8 @@ public class GzipUtils {
         try {
             out = new ByteArrayOutputStream();
             // 这里增加base64解码
-            byte[] compressed = new sun.misc.BASE64Decoder().decodeBuffer(str);
-            in = new ByteArrayInputStream(compressed);
+//            byte[] compressed = new sun.misc.BASE64Decoder().decodeBuffer(str);
+//            in = new ByteArrayInputStream(compressed);
             gzip = new GZIPInputStream(in);
             byte[] buffer = new byte[1024];
             int offset = -1;

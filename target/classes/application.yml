@@ -1,0 +1,59 @@
+
+
+spring:
+  application:
+    name: mynetty
+  mail:
+    host: smtp.163.com
+    port: 465
+    username: wrh_1096
+    password: wrh163
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    default-encoding: utf-8
+    ssl: true
+    auth: true
+    timeout: 5000
+    ##REDIS配置
+    redis:
+      database: 3
+      host: 172.18.90.7
+      password: ''
+      pool:
+        max-active: 60
+        max-idle: 10
+        max-wait: -1
+        min-idle: 0
+      port: 6380
+      timeout: 3000
+
+
+server:
+  port: 9999
+  servlet:
+    context-path: /mynetty
+
+
+# logging
+logging:
+  path: logs
+  level:
+    com.wrh.mapper: debug
+    org.springframework: warn
+    com.wrh: debug
+    org.apache.ibatis.io.ResolverUtil: info
+
+cq:
+  key: aaabbbccc
+
+redis:
+  prefix: myown-
+
+
+

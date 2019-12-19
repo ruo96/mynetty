@@ -1,8 +1,8 @@
 package com.wrh.aes;
 
-import com.zcsmart.aes.IAES;
-import com.zcsmart.aes.en.AESModule;
-import com.zcsmart.aes.impl.AES192Impl;
+//import com.zcsmart.aes.IAES;
+//import com.zcsmart.aes.en.AESModule;
+//import com.zcsmart.aes.impl.AES192Impl;
 
 /**
  * @Created by wrh
@@ -19,8 +19,8 @@ public class GetDecData {
 
 
     public static void main(String[] args) {
-        IAES iaes = new AES192Impl();
-        String plain = iaes.decDataBase64(body, AESModule.AES_192_CBC_PKCS7, key, iv);
-        System.out.println("解密明文: " + plain);
+        //IAES iaes = new AES192Impl();
+       // String plain = iaes.decDataBase64(body, AESModule.AES_192_CBC_PKCS7, key, iv);
+        //System.out.println("解密明文: " + plain);
     }
 }

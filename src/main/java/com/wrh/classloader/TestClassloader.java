@@ -3,7 +3,6 @@ package com.wrh.classloader;
 import com.wrh.classloader.vo.ClassA;
 import com.wrh.classloader.vo.ClassB;
 import lombok.extern.slf4j.Slf4j;
-import sun.security.ec.SunEC;
 
 import org.junit.Test;
 
@@ -24,7 +23,7 @@ public class TestClassloader {
         System.out.println("boo+" +
                 "tstrap: " + String.class.getClassLoader());
         System.out.println("TestClassloader classloader: " + TestClassloader.class.getClassLoader());
-        System.out.println("SunEC classloader: " + SunEC.class.getClassLoader());
+//        System.out.println("SunEC classloader: " + SunEC.class.getClassLoader());
         System.out.println(System.getProperty("sun.boot.class.path"));
         System.out.println(System.getProperty("java.ext.dirs"));
         System.out.println(System.getProperty("java.class.path"));

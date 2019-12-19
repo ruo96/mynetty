@@ -1,0 +1,43 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.wrh.config.ZidingyiConfig",
+      "name": "",
+      "type": "com.wrh.config.ZidingyiConfig"
+    },
+    {
+      "sourceType": "com.wrh.property.TestConfiguration",
+      "name": "database",
+      "type": "com.wrh.property.TestConfiguration"
+    },
+    {
+      "sourceType": "com.wrh.annotate.TestAnaotate",
+      "name": "server",
+      "type": "com.wrh.annotate.TestAnaotate"
+    },
+    {
+      "sourceType": "com.wrh.redis.RedisConfig",
+      "name": "spring.redis",
+      "type": "com.wrh.redis.RedisConfig"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.wrh.property.TestConfiguration",
+      "name": "database.ip",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.wrh.property.TestConfiguration",
+      "defaultValue": 0,
+      "name": "database.port",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.wrh.config.ZidingyiConfig",
+      "name": "user",
+      "type": "java.lang.String"
+    }
+  ]
+}
