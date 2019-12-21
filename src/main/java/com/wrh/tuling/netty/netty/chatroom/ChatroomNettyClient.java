@@ -7,6 +7,10 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.string.StringDecoder;
+import io.netty.handler.codec.string.StringEncoder;
+
+import java.util.Scanner;
 
 public class ChatroomNettyClient {
     public static void main(String[] args) throws Exception {
@@ -23,14 +27,25 @@ public class ChatroomNettyClient {
                         @Override
                         protected void initChannel(SocketChannel channel) throws Exception {
                             //加入处理器
+                            channel.pipeline().addLast("decoder", new StringDecoder());
+                            channel.pipeline().addLast("encoder", new StringEncoder());
                             channel.pipeline().addLast(new ChatroomNettyClientHandler());
                         }
                     });
-            System.out.println("netty client start");
+            System.out.println("聊天室客户端启动！ ");
+
+
             //启动客户端去连接服务器端
             ChannelFuture channelFuture = bootstrap.connect("127.0.0.1", 9000).sync();
             //对关闭通道进行监听
-            channelFuture.channel().closeFuture().sync();
+//            channelFuture.channel().closeFuture().sync();
+
+            Scanner scanner = new Scanner(System.in);
+            while (scanner.hasNextLine()) {
+                String msg = scanner.nextLine();
+                //通过 channel 发送到服务器端
+                channelFuture.channel().writeAndFlush(msg);
+            }
         } finally {
             group.shutdownGracefully();
         }

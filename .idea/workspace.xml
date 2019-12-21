@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8435ee1f-ca05-425e-827c-7c78e68917b6" name="Default Changelist" comment="xiugai">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/chatroom/ChatroomNettyClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/chatroom/ChatroomNettyClientHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/chatroom/ChatroomNettyServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/chatroom/ChatroomNettyServerHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/NettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/normal/NettyClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/NettyClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/normal/NettyClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/normal/NettyServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/NettyServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/normal/NettyServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/chatroom/ChatroomNettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/chatroom/ChatroomNettyClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/chatroom/ChatroomNettyClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/chatroom/ChatroomNettyClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/chatroom/ChatroomNettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/chatroom/ChatroomNettyServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/chatroom/ChatroomNettyServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/tuling/netty/netty/chatroom/ChatroomNettyServerHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,6 +166,7 @@
       <workItem from="1576733526441" duration="25000" />
       <workItem from="1576733575791" duration="3328000" />
       <workItem from="1576737197816" duration="14237000" />
+      <workItem from="1576896044077" duration="7692000" />
     </task>
     <task id="LOCAL-00001" summary="xiugai">
       <created>1576736666275</created>
@@ -191,34 +186,34 @@
     <option name="LAST_COMMIT_MESSAGE" value="xiugai" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576765712199">
+    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576936342520">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1576765712199" />
-    <state x="488" y="71" key="#com.intellij.ide.util.MemberChooser" timestamp="1576745720045">
+    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1576936342520" />
+    <state x="488" y="71" key="#com.intellij.ide.util.MemberChooser" timestamp="1576936258552">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="71" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1576745720045" />
+    <state x="488" y="71" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1576936258552" />
     <state x="161" y="0" key="CommitChangelistDialog2" timestamp="1576737282557">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="161" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576737282557" />
-    <state width="1322" height="86" key="GridCell.Tab.0.bottom" timestamp="1576769102368">
+    <state width="1322" height="178" key="GridCell.Tab.0.bottom" timestamp="1576937591205">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="86" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576769102368" />
-    <state width="1322" height="86" key="GridCell.Tab.0.center" timestamp="1576769102367">
+    <state width="1322" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576937591205" />
+    <state width="1322" height="178" key="GridCell.Tab.0.center" timestamp="1576937591205">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="86" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576769102367" />
-    <state width="1322" height="86" key="GridCell.Tab.0.left" timestamp="1576769102367">
+    <state width="1322" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576937591205" />
+    <state width="1322" height="178" key="GridCell.Tab.0.left" timestamp="1576937591205">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="86" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576769102367" />
-    <state width="1322" height="86" key="GridCell.Tab.0.right" timestamp="1576769102368">
+    <state width="1322" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576937591205" />
+    <state width="1322" height="178" key="GridCell.Tab.0.right" timestamp="1576937591205">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="86" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576769102368" />
+    <state width="1322" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576937591205" />
     <state x="186" y="0" key="SettingsEditor" timestamp="1576737124347">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -227,9 +222,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="87" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1576736669614" />
-    <state x="375" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1576737199748">
+    <state x="375" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1576896068581">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="375" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1576737199748" />
+    <state x="375" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1576896068581" />
   </component>
 </project>

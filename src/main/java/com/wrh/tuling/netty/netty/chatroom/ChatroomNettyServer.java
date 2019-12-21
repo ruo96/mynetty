@@ -8,6 +8,8 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.codec.string.StringDecoder;
+import io.netty.handler.codec.string.StringEncoder;
 
 
 public class ChatroomNettyServer {
@@ -30,6 +32,8 @@ public class ChatroomNettyServer {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
                             //对workerGroup的SocketChannel设置处理器codec
+                            ch.pipeline().addLast("decoder", new StringDecoder());
+                            ch.pipeline().addLast("encoder", new StringEncoder());
                             ch.pipeline().addLast(new ChatroomNettyServerHandler());
                         }
                     });
