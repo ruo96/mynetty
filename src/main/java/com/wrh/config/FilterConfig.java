@@ -18,7 +18,7 @@ public class FilterConfig {
     public FilterRegistrationBean registFilter()  {
         FilterRegistrationBean registration =  new  FilterRegistrationBean();
         registration.setFilter(new LogCosFilter());
-        registration.addUrlPatterns("/*");
+        registration.addUrlPatterns("/gogogo");
         registration.setName("LogCostFilter");
         registration.setOrder(1);
         return registration;

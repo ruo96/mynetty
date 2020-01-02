@@ -21,13 +21,13 @@ public class MyInterceptor extends HandlerInterceptorAdapter {
     long start =  System.currentTimeMillis();
     @Override
     public  boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o)  throws  Exception  {
-        log.info("===> interceptor preHandle start");
+        log.info("===> interceptor preHandle 启动");
         start =  System.currentTimeMillis();
         return  true;
     }
     @Override
     public  void postHandle(HttpServletRequest httpServletRequest,  HttpServletResponse httpServletResponse,  Object o,  ModelAndView modelAndView)  throws  Exception  {
-        log.info("Interceptor cost={}",(System.currentTimeMillis()-start));
+        log.info("Interceptor 调用 cost={}",(System.currentTimeMillis()-start));
     }
     @Override
     public  void afterCompletion(HttpServletRequest httpServletRequest,  HttpServletResponse httpServletResponse,  Object o,  Exception e)  throws  Exception  {

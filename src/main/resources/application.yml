@@ -1,5 +1,3 @@
-
-
 spring:
   application:
     name: mynetty
@@ -21,17 +19,17 @@ spring:
     auth: true
     timeout: 5000
     ##REDIS配置
-    redis:
-      database: 3
-      host: 172.18.90.7
-      password: ''
-      pool:
-        max-active: 60
-        max-idle: 10
-        max-wait: -1
-        min-idle: 0
-      port: 6380
-      timeout: 3000
+  redis:
+    database: 3
+    host: 172.18.90.7
+    password: ''
+    pool:
+      max-active: 60
+      max-idle: 10
+      max-wait: -1
+      min-idle: 0
+    port: 6380
+    timeout: 3000
 
 
 server:

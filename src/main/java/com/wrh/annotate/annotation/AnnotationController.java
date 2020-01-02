@@ -4,9 +4,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.time.LocalDateTime;
 
 /**
  * @Created by wrh
@@ -20,6 +22,7 @@ public class AnnotationController {
 
     @PostMapping("/student")
     public String addStudent(@Valid @RequestBody Student student){
+        log.info("===> enter student!! time: {}", LocalDateTime.now());
         return "student created";
     }
 

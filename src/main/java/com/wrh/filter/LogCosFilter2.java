@@ -8,7 +8,7 @@ import java.io.IOException;
 
 /**
  * @Created by wrh
- * @Description:
+ * @Description: 这个是通过注解来生效的
  * @Date: Created in 下午 2:23 2019/11/11 0011
  * @Modified By:
  */
@@ -17,7 +17,7 @@ import java.io.IOException;
 public class LogCosFilter2 implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-
+        log.info("----------------------->过滤器 2 被创建");
     }
 
     @Override

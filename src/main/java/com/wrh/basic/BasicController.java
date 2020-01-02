@@ -22,6 +22,7 @@ public class BasicController {
     @PostMapping("/basic")
     public String getBasic(){
 
+
         return basicService.getBasic();
     }
 }

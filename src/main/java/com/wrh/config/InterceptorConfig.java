@@ -4,6 +4,7 @@ import com.wrh.interceptor.MyInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
@@ -13,15 +14,15 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * @Modified By:
  */
 @Slf4j
-public class InterceptorConfig extends WebMvcConfigurerAdapter{
+public class InterceptorConfig implements WebMvcConfigurer {
 
     @Autowired
     private MyInterceptor myInterceptor;
 
+    //注册拦截器
     @Override
-    public  void addInterceptors(InterceptorRegistry registry)  {
-        log.info("===> myInterceptor :{}",myInterceptor);
-        registry.addInterceptor(myInterceptor).addPathPatterns("/**");
-        super.addInterceptors(registry);
+    public void addInterceptors(InterceptorRegistry registry) {
+
+        registry.addInterceptor(myInterceptor);
     }
 }
