@@ -339,6 +339,33 @@
 			<version>2.9.0</version>
 		</dependency>
 
+
+		<!--<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>1.6</version>
+		</dependency>-->
+
 	</dependencies>
 
 	<build>
@@ -352,19 +379,9 @@
 
 	<repositories>
 		<repository>
-			<id>nexus</id>
-			<name>Team Nexus Repository</name>
-			<url>http://172.18.80.22:8081/nexus/content/groups/public</url>
-		</repository>
-		<repository>
-			<id>releases</id>
-			<name>Team Nexus Repository</name>
-			<url>http://172.18.80.22:8081/nexus/content/repositories/releases/</url>
-		</repository>
-		<repository>
-			<id>thirdparty</id>
-			<name>3rd party</name>
-			<url>http://172.18.80.22:8081/nexus/content/repositories/thirdparty</url>
+			<id>alimaven</id>
+			<name>aliyun maven</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
 		</repository>
 	</repositories>
 

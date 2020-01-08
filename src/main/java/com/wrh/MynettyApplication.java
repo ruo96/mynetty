@@ -11,6 +11,8 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
+import java.util.concurrent.TimeUnit;
+
 @Slf4j
 //@ServletComponentScan(value = {"com.wrh.filter", "com.wrh.listener"}) //用于支持过滤器、监听器注解
 @ServletComponentScan( "com.wrh.listener") //用于支持过滤器、监听器注解
@@ -27,9 +29,11 @@ public class MynettyApplication {
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner(){
+	public CommandLineRunner commandLineRunner() throws InterruptedException {
 
         log.info("开始启动服务端的服务!");
+
+        TimeUnit.SECONDS.sleep(1);
 
         return e->{
             new Thread(() -> {

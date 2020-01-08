@@ -250,4 +250,10 @@ public class TestMap {
         log.info("===> map: {}",JSON.toJSONString(map));
         log.info("===> set: {}",JSON.toJSONString(set));
     }
+
+    @Test
+    public void Test7() {
+        Map<String,String> map = new HashMap<>(16);
+        log.info(">>> {}",map.size());
+    }
 }

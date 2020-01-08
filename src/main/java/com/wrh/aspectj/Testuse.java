@@ -1,5 +1,6 @@
 package com.wrh.aspectj;
 
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**

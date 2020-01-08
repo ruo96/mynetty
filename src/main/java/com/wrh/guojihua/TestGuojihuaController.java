@@ -23,8 +23,9 @@ public class TestGuojihuaController {
     }
 
     @RequestMapping(value = "/locale")
-    public void testController(@RequestBody String req){
+    public String testController(@RequestBody String req){
         Locale locale = LocaleContextHolder.getLocale();
         log.info("locale is : {}",locale);
+        return "are you ok";
     }
 }
