@@ -1,0 +1,91 @@
+GET http://localhost:9999/mynetty/locale
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"age":17,"name":"wrh"}
+
+<> 2020-01-08T100328.200.json
+
+###
+
+GET http://localhost:9999/mynetty/locale
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"age":17,"name":"wrh"}
+
+<> 2020-01-08T100327.200.json
+
+###
+
+GET http://localhost:9999/mynetty/locale
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"age":17,"name":"wrh"}
+
+<> 2020-01-08T100326.200.json
+
+###
+
+GET http://localhost:9999/mynetty/locale
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"age":17,"name":"wrh"}
+
+<> 2020-01-08T100325.200.json
+
+###
+
+GET http://localhost:9999/mynetty/locale
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"age":17,"name":"wrh"}
+
+<> 2020-01-07T090309.200.json
+
+###
+
+GET http://localhost:9999/mynetty/locale
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"age":17,"name":"wrh"}
+
+###
+
+GET http://localhost:9999/mynetty/locale
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"age":17,"name":"wrh"}
+
+###
+
+GET http://localhost:9999/mynetty/student
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"age":17,"name":"wrh"}
+
+###
+
+GET http://localhost:9999/mynetty/locale
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"age":17,"name":"wrh"}
+
+###
+
