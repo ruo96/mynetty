@@ -2,7 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="220b4fde-124d-4a90-8239-1cc8f7f19353" name="Default Changelist" comment="xiugai">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basic/TestBoolean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basic/stringtest/TestString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/Enum/CheckTypeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/Enum/TourMarkEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/TestString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/myannotation/CheckParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/vo/OnLineCleanParamDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/big/topology/MyTopology.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/datetime/utils/DateUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/enums/role/TourMarkEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/redis/pipeline/TestPipeline.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/utils/DateUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/utils/Md5Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/utils/ObjectCheckHandleUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/mynetty.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mynetty.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mynetty.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mynetty.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/TimeCalculate/TestTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/TimeCalculate/TestTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/calculate/TestCalculate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/calculate/TestCalculate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/collection/map/TestMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/collection/map/TestMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/datetime/TestDateTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/datetime/TestDateTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/enums/TestEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/enums/TestEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/functionInterfaceTest/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/functionInterfaceTest/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/redis/RedisTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/redis/RedisTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/TimeCalculate/TestTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/TimeCalculate/TestTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/calculate/TestCalculate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/calculate/TestCalculate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/collection/map/TestMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/collection/map/TestMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/datetime/TestDateTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/datetime/TestDateTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/enums/TestEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/enums/TestEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/functionInterfaceTest/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/functionInterfaceTest/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/redis/RedisTools$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/redis/RedisTools$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/redis/RedisTools.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/redis/RedisTools.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +50,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Enum" />
         <option value="Class" />
       </list>
@@ -26,9 +64,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="dummy://restClient/response37.json" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -64,11 +99,15 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.wrh.bi.utils" />
+      <recent name="com.wrh.utils" />
+      <recent name="com.wrh.enums.role" />
+      <recent name="com.wrh.basicUse.Enum" />
+      <recent name="com.wrh.basicUse.vo" />
+      <recent name="com.wrh.datetime.utils" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\pro\mynetty" />
@@ -298,82 +337,82 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestHadoopPath.Test">
-    <configuration name="TestHadoopPath.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestTime.Test2">
+    <configuration name="TestPipeline.Test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mynetty" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.wrh.big.hadoop.*" />
+          <option name="PATTERN" value="com.wrh.redis.pipeline.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.big.hadoop" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.big.hadoop.TestHadoopPath" />
+      <option name="PACKAGE_NAME" value="com.wrh.redis.pipeline" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.redis.pipeline.TestPipeline" />
+      <option name="METHOD_NAME" value="Test3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestPipeline.Test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mynetty" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wrh.redis.pipeline.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wrh.redis.pipeline" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.redis.pipeline.TestPipeline" />
+      <option name="METHOD_NAME" value="Test4" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestString.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mynetty" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wrh.basic.stringtest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wrh.basic.stringtest" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.basic.stringtest.TestString" />
       <option name="METHOD_NAME" value="Test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestHadoopPath.Test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestTime.Test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mynetty" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.wrh.big.hadoop.*" />
+          <option name="PATTERN" value="com.wrh.TimeCalculate.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.big.hadoop" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.big.hadoop.TestHadoopPath" />
+      <option name="PACKAGE_NAME" value="com.wrh.TimeCalculate" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.TimeCalculate.TestTime" />
       <option name="METHOD_NAME" value="Test1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestMap.Test7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestTime.Test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mynetty" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.wrh.collection.map.*" />
+          <option name="PATTERN" value="com.wrh.TimeCalculate.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.collection.map" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.collection.map.TestMap" />
-      <option name="METHOD_NAME" value="Test7" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestNet.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mynetty" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wrh.net.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.net" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.net.TestNet" />
-      <option name="METHOD_NAME" value="Test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestUtils.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mynetty" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wrh.big.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.big.utils" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.big.utils.TestUtils" />
-      <option name="METHOD_NAME" value="Test" />
+      <option name="PACKAGE_NAME" value="com.wrh.TimeCalculate" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.TimeCalculate.TestTime" />
+      <option name="METHOD_NAME" value="Test2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -388,19 +427,19 @@
     </configuration>
     <list>
       <item itemvalue="Spring Boot.MynettyApplication" />
-      <item itemvalue="JUnit.TestNet.Test" />
-      <item itemvalue="JUnit.TestUtils.Test" />
-      <item itemvalue="JUnit.TestMap.Test7" />
-      <item itemvalue="JUnit.TestHadoopPath.Test" />
-      <item itemvalue="JUnit.TestHadoopPath.Test1" />
+      <item itemvalue="JUnit.TestPipeline.Test3" />
+      <item itemvalue="JUnit.TestPipeline.Test4" />
+      <item itemvalue="JUnit.TestTime.Test1" />
+      <item itemvalue="JUnit.TestTime.Test2" />
+      <item itemvalue="JUnit.TestString.Test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestHadoopPath.Test" />
-        <item itemvalue="JUnit.TestHadoopPath.Test1" />
-        <item itemvalue="JUnit.TestUtils.Test" />
-        <item itemvalue="JUnit.TestMap.Test7" />
-        <item itemvalue="JUnit.TestNet.Test" />
+        <item itemvalue="JUnit.TestTime.Test2" />
+        <item itemvalue="JUnit.TestString.Test" />
+        <item itemvalue="JUnit.TestTime.Test1" />
+        <item itemvalue="JUnit.TestPipeline.Test4" />
+        <item itemvalue="JUnit.TestPipeline.Test3" />
       </list>
     </recent_temporary>
   </component>
@@ -443,7 +482,10 @@
       <workItem from="1578281783081" duration="474000" />
       <workItem from="1578283090541" duration="54000" />
       <workItem from="1578283578823" duration="433000" />
-      <workItem from="1578289931098" duration="13059000" />
+      <workItem from="1578289931098" duration="20080000" />
+      <workItem from="1578566363218" duration="11000" />
+      <workItem from="1578566817547" duration="6502000" />
+      <workItem from="1578575177301" duration="13024000" />
     </task>
     <task id="LOCAL-00001" summary="xiugai">
       <created>1576736666275</created>
@@ -471,14 +513,15 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="689" y="343" key="#com.intellij.fileTypes.FileTypeChooser/62.0.1858.1080@62.0.1858.1080" timestamp="1578305606495" />
-    <state x="488" y="71" key="#com.intellij.ide.util.MemberChooser" timestamp="1577111833841">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="488" y="71" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1577111833841" />
-    <state x="721" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577965604568">
+    <state x="726" y="105" key="#com.intellij.ide.util.MemberChooser" timestamp="1578888451435">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="721" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1577965604568" />
+    <state x="488" y="71" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1577111833841" />
+    <state x="726" y="105" key="#com.intellij.ide.util.MemberChooser/62.0.1858.1080@62.0.1858.1080" timestamp="1578888451435" />
+    <state x="721" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578577291135">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="721" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1578577291135" />
     <state x="281" y="0" key="CommitChangelistDialog2" timestamp="1578479601884">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
@@ -488,46 +531,46 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="594" y="113" key="FileChooserDialogImpl/62.0.1858.1080@62.0.1858.1080" timestamp="1578282004490" />
-    <state width="1340" height="379" key="GridCell.Tab.0.bottom" timestamp="1578479347078">
+    <state width="1815" height="385" key="GridCell.Tab.0.bottom" timestamp="1578904051220">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="227" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577805780434" />
-    <state width="1340" height="379" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1578479347078" />
-    <state width="1340" height="379" key="GridCell.Tab.0.center" timestamp="1578479347078">
+    <state width="1815" height="385" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1578904051220" />
+    <state width="1815" height="385" key="GridCell.Tab.0.center" timestamp="1578904051219">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="227" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577805780434" />
-    <state width="1340" height="379" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1578479347078" />
-    <state width="1340" height="379" key="GridCell.Tab.0.left" timestamp="1578479347078">
+    <state width="1815" height="385" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1578904051219" />
+    <state width="1815" height="385" key="GridCell.Tab.0.left" timestamp="1578904051219">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="227" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577805780434" />
-    <state width="1340" height="379" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1578479347078" />
-    <state width="1340" height="379" key="GridCell.Tab.0.right" timestamp="1578479347078">
+    <state width="1815" height="385" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1578904051219" />
+    <state width="1815" height="385" key="GridCell.Tab.0.right" timestamp="1578904051219">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="227" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577805780434" />
-    <state width="1340" height="379" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1578479347078" />
-    <state width="1340" height="328" key="GridCell.Tab.1.bottom" timestamp="1578474246878">
+    <state width="1815" height="385" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1578904051219" />
+    <state width="1815" height="363" key="GridCell.Tab.1.bottom" timestamp="1578576412915">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="431" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577114111225" />
-    <state width="1340" height="328" key="GridCell.Tab.1.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1578474246878" />
-    <state width="1340" height="328" key="GridCell.Tab.1.center" timestamp="1578474246878">
+    <state width="1815" height="363" key="GridCell.Tab.1.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1578576412915" />
+    <state width="1815" height="363" key="GridCell.Tab.1.center" timestamp="1578576412915">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="431" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1577114111225" />
-    <state width="1340" height="328" key="GridCell.Tab.1.center/62.0.1858.1080@62.0.1858.1080" timestamp="1578474246878" />
-    <state width="1340" height="328" key="GridCell.Tab.1.left" timestamp="1578474246878">
+    <state width="1815" height="363" key="GridCell.Tab.1.center/62.0.1858.1080@62.0.1858.1080" timestamp="1578576412915" />
+    <state width="1815" height="363" key="GridCell.Tab.1.left" timestamp="1578576412915">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="431" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1577114111225" />
-    <state width="1340" height="328" key="GridCell.Tab.1.left/62.0.1858.1080@62.0.1858.1080" timestamp="1578474246878" />
-    <state width="1340" height="328" key="GridCell.Tab.1.right" timestamp="1578474246878">
+    <state width="1815" height="363" key="GridCell.Tab.1.left/62.0.1858.1080@62.0.1858.1080" timestamp="1578576412915" />
+    <state width="1815" height="363" key="GridCell.Tab.1.right" timestamp="1578576412915">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="431" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1577114111225" />
-    <state width="1340" height="328" key="GridCell.Tab.1.right/62.0.1858.1080@62.0.1858.1080" timestamp="1578474246878" />
+    <state width="1815" height="363" key="GridCell.Tab.1.right/62.0.1858.1080@62.0.1858.1080" timestamp="1578576412915" />
     <state x="631" y="238" key="NewModule_or_Project.wizard" timestamp="1578282008719">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
@@ -536,11 +579,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="171" key="RestClientTextRequest/0.0.1366.728@0.0.1366.728" timestamp="1577113057714" />
-    <state x="922" y="357" width="998" height="708" key="SettingsEditor" timestamp="1578468016722">
+    <state x="692" y="257" width="998" height="708" key="SettingsEditor" timestamp="1578566352476">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="186" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1577099424832" />
-    <state x="922" y="357" width="998" height="708" key="SettingsEditor/62.0.1858.1080@62.0.1858.1080" timestamp="1578468016722" />
+    <state x="692" y="257" width="998" height="708" key="SettingsEditor/62.0.1858.1080@62.0.1858.1080" timestamp="1578566352476" />
     <state x="275" y="87" key="Vcs.Push.Dialog.v2" timestamp="1576736669614">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -549,20 +592,20 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="695" height="726" key="com.intellij.byteCodeViewer.ShowByteCodeAction/0.0.1366.728@0.0.1366.728" timestamp="1577114265570" />
-    <state x="572" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1578283581016">
+    <state x="572" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1578575191071">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="375" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1577246811600" />
-    <state x="572" y="282" key="com.intellij.ide.util.TipDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1578283581016" />
+    <state x="572" y="282" key="com.intellij.ide.util.TipDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1578575191071" />
     <state x="783" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577963778390">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="783" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/62.0.1858.1080@62.0.1858.1080" timestamp="1577963778390" />
-    <state x="474" y="134" width="1033" height="813" key="find.popup" timestamp="1578469311267">
+    <state x="474" y="134" width="1033" height="813" key="find.popup" timestamp="1578887569930">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="303" y="90" width="759" height="548" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1577112650642" />
-    <state x="474" y="134" width="1033" height="813" key="find.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1578469311267" />
+    <state x="474" y="134" width="1033" height="813" key="find.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1578887569930" />
     <state x="365" y="150" key="new project wizard" timestamp="1577970104253">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
@@ -580,6 +623,31 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/wrh/big/hadoop/TestHadoopPath.java</url>
           <line>26</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/wrh/utils/ObjectCheckHandleUtils.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/wrh/utils/ObjectCheckHandleUtils.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/wrh/basicUse/TestString.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/wrh/utils/ObjectCheckHandleUtils.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/wrh/basicUse/TestString.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

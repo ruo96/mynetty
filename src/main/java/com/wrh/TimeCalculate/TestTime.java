@@ -1,12 +1,16 @@
 package com.wrh.TimeCalculate;
 
 import com.alibaba.fastjson.JSON;
+import com.wrh.utils.DateUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.joda.time.DateTime;
+import org.joda.time.Duration;
 import org.junit.Test;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Created by wrh
@@ -69,5 +73,34 @@ public class TestTime {
         cqTraceUpload.setPARAM("");
 
         log.info("===>{}", JSON.toJSONString(cqTraceUpload));
+    }
+
+    /**
+     *
+     * @throws InterruptedException
+     */
+    @Test
+    public void Test1() throws InterruptedException {
+        while(true) {
+        DateTime currentDateTime = new DateTime();
+        Duration duration = new Duration(currentDateTime, currentDateTime.withMillisOfDay(0).plusDays(1));
+        Long iRemainSecs = duration.getStandardSeconds();
+
+            System.out.println(iRemainSecs);
+            TimeUnit.SECONDS.sleep(2);
+        }
+    }
+
+    @Test
+    public void Test2() {
+        long timestamp = System.currentTimeMillis();
+        String serverDate = DateUtils.getFutureDate(Long.valueOf(timestamp), 0);
+        String serverDate1 = DateUtils.getFutureDate(Long.valueOf(timestamp), 1);
+        String serverDate3 = DateUtils.getFutureDate(Long.valueOf(timestamp), 3);
+        String serverDate4 = DateUtils.getFutureDate(Long.valueOf(timestamp), -1);
+        System.out.println(serverDate);
+        System.out.println(serverDate1);
+        System.out.println(serverDate3);
+        System.out.println(serverDate4);
     }
 }

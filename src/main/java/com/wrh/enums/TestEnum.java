@@ -1,5 +1,6 @@
 package com.wrh.enums;
 
+import com.wrh.enums.role.TourMarkEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
@@ -37,6 +38,27 @@ public class TestEnum {
 
         FieldEnum fieldEnum2 = FieldEnum.getByVal("投入品编码");
         log.info("===> key: {}  val: {}",fieldEnum2.key(),fieldEnum2.val());
+
+    }
+
+    @Test
+    public void Test() {
+        TourMarkEnum tourMarkEnum = TourMarkEnum.TOUR_MARK;
+        String enumStr = "1";
+        TourMarkEnum tourMarkEnum1 = TourMarkEnum.getByCode(enumStr);
+        System.out.println(tourMarkEnum1);
+        System.out.println(tourMarkEnum1.getCode());
+        System.out.println(tourMarkEnum1.getDesc());
+        switch (tourMarkEnum1) {
+            case TOUR_MARK:
+                System.out.println("is tour now");
+                break;
+            case USER_MARK:
+                System.out.println("is user now");
+                break;
+            default:
+                System.out.println("is default now");
+        }
 
     }
 }

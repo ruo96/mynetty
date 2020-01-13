@@ -1,7 +1,8 @@
 package com.wrh.datetime;
 
+import com.wrh.datetime.utils.DateUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.time.DateUtils;
+import org.junit.Test;
 
 import java.sql.Timestamp;
 import java.time.*;
@@ -47,6 +48,26 @@ public class TestDateTime {
 
 
 
+
+    }
+
+    /**
+     * 根据timestamp获取日期格式yyyyMMdd
+     */
+    @Test
+    public void Test() {
+        Long time = System.currentTimeMillis();
+        String ds = DateUtils.getYmdByLongDate(time);
+        log.info("当前日期： {}", ds);
+    }
+
+    @Test
+    public void Test1() {
+        Long time = System.currentTimeMillis();
+        String minute = DateUtils.getQualifierByMinute(time);
+        System.out.println(minute);
+        int a = Integer.parseInt(minute.substring(6)) / 60;
+        System.out.println(a);
 
     }
 }

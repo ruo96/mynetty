@@ -255,5 +255,8 @@ public class TestMap {
     public void Test7() {
         Map<String,String> map = new HashMap<>(16);
         log.info(">>> {}",map.size());
+
+        String nullStr = map.get("abc");
+        log.info(">>>{}",nullStr);
     }
 }

@@ -4,12 +4,19 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Primary;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
+import org.springframework.data.redis.connection.RedisStringCommands;
 import org.springframework.data.redis.core.RedisCallback;
+import org.springframework.data.redis.core.RedisOperations;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.SessionCallback;
 import org.springframework.stereotype.Component;
+import redis.clients.jedis.Pipeline;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -184,5 +191,56 @@ public class RedisTools {
      */
     public void setValueByKey(String key, int value){
          redisTemplate.opsForValue().set(key , value);
+    }
+
+    public void pipelineBatchInsert(List<Map<String, String>> saveList, TimeUnit unit, int timeout) {
+        /* 插入多条数据 */
+        redisTemplate.executePipelined(new SessionCallback<Object>() {
+            @Override
+            public <K, V> Object execute(RedisOperations<K, V> redisOperations) throws DataAccessException {
+                for (Map<String, String> needSave : saveList) {
+                    redisTemplate.opsForValue().set(needSave.get("key"), needSave.get("value"), timeout,unit);
+                }
+                return null;
+            }
+        });
+    }
+
+    public void pipelineMultiOpr(Map<String, List<Map<String, String>>> oprMap, TimeUnit unit, int timeout) {
+        /* 插入多条数据 */
+        redisTemplate.executePipelined(new SessionCallback<Object>() {
+            @Override
+            public <K, V> Object execute(RedisOperations<K, V> redisOperations) throws DataAccessException {
+                Iterator<Map.Entry<String, List<Map<String, String>>>> iterator = oprMap.entrySet().iterator();
+                while (iterator.hasNext()) {
+                    Map.Entry<String, List<Map<String, String>>> entry = iterator.next();
+                    String oprType = entry.getKey();
+                    switch (oprType) {
+                        case "INSERT":
+                            batchInsert(entry.getValue(), TimeUnit.SECONDS, timeout);
+                            break;
+                        case "INCR":
+                            batchIncr(entry.getValue(),TimeUnit.SECONDS,timeout);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                return null;
+            }
+        });
+    }
+
+    private void batchInsert(List<Map<String, String>> saveList, TimeUnit unit, int timeout) {
+        for (Map<String, String> needSave : saveList) {
+            redisTemplate.opsForValue().set(needSave.get("key"), needSave.get("value"), timeout,unit);
+        }
+    }
+
+    private void batchIncr(List<Map<String, String>> oprList, TimeUnit unit, int timeout) {
+        for (Map<String, String> needOpr : oprList) {
+            redisTemplate.opsForValue().increment(needOpr.get("key"), 1L);
+            redisTemplate.expire(needOpr.get("key"), timeout,unit);
+        }
     }
 }
