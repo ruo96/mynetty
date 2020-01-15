@@ -2,44 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="220b4fde-124d-4a90-8239-1cc8f7f19353" name="Default Changelist" comment="xiugai">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basic/TestBoolean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basic/stringtest/TestString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/Enum/CheckTypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/Enum/TourMarkEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/TestString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/myannotation/CheckParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/vo/OnLineCleanParamDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/big/topology/MyTopology.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/datetime/utils/DateUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/enums/role/TourMarkEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/redis/pipeline/TestPipeline.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/utils/DateUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/utils/Md5Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/utils/ObjectCheckHandleUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/redis/RedisTools2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/sign/TestSign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/utils/ApiSignHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mynetty.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mynetty.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mynetty.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mynetty.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/TimeCalculate/TestTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/TimeCalculate/TestTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/calculate/TestCalculate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/calculate/TestCalculate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/collection/map/TestMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/collection/map/TestMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/datetime/TestDateTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/datetime/TestDateTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/enums/TestEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/enums/TestEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/functionInterfaceTest/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/functionInterfaceTest/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/redis/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/redis/RedisConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/redis/RedisTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/redis/RedisTools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/TimeCalculate/TestTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/TimeCalculate/TestTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/calculate/TestCalculate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/calculate/TestCalculate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/collection/map/TestMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/collection/map/TestMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/datetime/TestDateTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/datetime/TestDateTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/enums/TestEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/enums/TestEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/functionInterfaceTest/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/functionInterfaceTest/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/redis/pipeline/TestPipeline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/redis/pipeline/TestPipeline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/utils/ObjectCheckHandleUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/utils/ObjectCheckHandleUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/redis/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/redis/RedisConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/redis/RedisTools$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/redis/RedisTools$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/redis/RedisTools.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/redis/RedisTools.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,10 +81,10 @@
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.wrh.utils" />
+      <recent name="com.wrh.redis" />
       <recent name="com.wrh.enums.role" />
       <recent name="com.wrh.basicUse.Enum" />
       <recent name="com.wrh.basicUse.vo" />
-      <recent name="com.wrh.datetime.utils" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\pro\mynetty" />
@@ -337,8 +314,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestTime.Test2">
-    <configuration name="TestPipeline.Test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestSign.Test">
+    <configuration name="TestPipeline.Test5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mynetty" />
       <extension name="coverage">
         <pattern>
@@ -348,13 +325,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.wrh.redis.pipeline" />
       <option name="MAIN_CLASS_NAME" value="com.wrh.redis.pipeline.TestPipeline" />
-      <option name="METHOD_NAME" value="Test3" />
+      <option name="METHOD_NAME" value="Test5" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestPipeline.Test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestPipeline.Test6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mynetty" />
       <extension name="coverage">
         <pattern>
@@ -364,39 +341,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.wrh.redis.pipeline" />
       <option name="MAIN_CLASS_NAME" value="com.wrh.redis.pipeline.TestPipeline" />
-      <option name="METHOD_NAME" value="Test4" />
+      <option name="METHOD_NAME" value="Test6" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestString.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestPipeline.Test7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mynetty" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.wrh.basic.stringtest.*" />
+          <option name="PATTERN" value="com.wrh.redis.pipeline.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.basic.stringtest" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.basic.stringtest.TestString" />
+      <option name="PACKAGE_NAME" value="com.wrh.redis.pipeline" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.redis.pipeline.TestPipeline" />
+      <option name="METHOD_NAME" value="Test7" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSign.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mynetty" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wrh.sign.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wrh.sign" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.sign.TestSign" />
       <option name="METHOD_NAME" value="Test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestTime.Test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mynetty" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wrh.TimeCalculate.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.TimeCalculate" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.TimeCalculate.TestTime" />
-      <option name="METHOD_NAME" value="Test1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -426,20 +403,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.MynettyApplication" />
-      <item itemvalue="JUnit.TestPipeline.Test3" />
-      <item itemvalue="JUnit.TestPipeline.Test4" />
-      <item itemvalue="JUnit.TestTime.Test1" />
       <item itemvalue="JUnit.TestTime.Test2" />
-      <item itemvalue="JUnit.TestString.Test" />
+      <item itemvalue="JUnit.TestPipeline.Test5" />
+      <item itemvalue="JUnit.TestPipeline.Test6" />
+      <item itemvalue="JUnit.TestPipeline.Test7" />
+      <item itemvalue="Spring Boot.MynettyApplication" />
+      <item itemvalue="JUnit.TestSign.Test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestSign.Test" />
+        <item itemvalue="JUnit.TestPipeline.Test7" />
+        <item itemvalue="JUnit.TestPipeline.Test6" />
+        <item itemvalue="JUnit.TestPipeline.Test5" />
         <item itemvalue="JUnit.TestTime.Test2" />
-        <item itemvalue="JUnit.TestString.Test" />
-        <item itemvalue="JUnit.TestTime.Test1" />
-        <item itemvalue="JUnit.TestPipeline.Test4" />
-        <item itemvalue="JUnit.TestPipeline.Test3" />
       </list>
     </recent_temporary>
   </component>
@@ -485,7 +462,8 @@
       <workItem from="1578289931098" duration="20080000" />
       <workItem from="1578566363218" duration="11000" />
       <workItem from="1578566817547" duration="6502000" />
-      <workItem from="1578575177301" duration="13024000" />
+      <workItem from="1578575177301" duration="19544000" />
+      <workItem from="1578992185484" duration="6271000" />
     </task>
     <task id="LOCAL-00001" summary="xiugai">
       <created>1576736666275</created>
@@ -531,46 +509,46 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="594" y="113" key="FileChooserDialogImpl/62.0.1858.1080@62.0.1858.1080" timestamp="1578282004490" />
-    <state width="1815" height="385" key="GridCell.Tab.0.bottom" timestamp="1578904051220">
+    <state width="1815" height="619" key="GridCell.Tab.0.bottom" timestamp="1579072158457">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="227" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577805780434" />
-    <state width="1815" height="385" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1578904051220" />
-    <state width="1815" height="385" key="GridCell.Tab.0.center" timestamp="1578904051219">
+    <state width="1815" height="619" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1579072158457" />
+    <state width="1815" height="619" key="GridCell.Tab.0.center" timestamp="1579072158457">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="227" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577805780434" />
-    <state width="1815" height="385" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1578904051219" />
-    <state width="1815" height="385" key="GridCell.Tab.0.left" timestamp="1578904051219">
+    <state width="1815" height="619" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1579072158457" />
+    <state width="1815" height="619" key="GridCell.Tab.0.left" timestamp="1579072158457">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="227" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577805780434" />
-    <state width="1815" height="385" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1578904051219" />
-    <state width="1815" height="385" key="GridCell.Tab.0.right" timestamp="1578904051219">
+    <state width="1815" height="619" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1579072158457" />
+    <state width="1815" height="619" key="GridCell.Tab.0.right" timestamp="1579072158457">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="227" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577805780434" />
-    <state width="1815" height="385" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1578904051219" />
-    <state width="1815" height="363" key="GridCell.Tab.1.bottom" timestamp="1578576412915">
+    <state width="1815" height="619" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1579072158457" />
+    <state width="1815" height="619" key="GridCell.Tab.1.bottom" timestamp="1579072158458">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="431" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577114111225" />
-    <state width="1815" height="363" key="GridCell.Tab.1.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1578576412915" />
-    <state width="1815" height="363" key="GridCell.Tab.1.center" timestamp="1578576412915">
+    <state width="1815" height="619" key="GridCell.Tab.1.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1579072158458" />
+    <state width="1815" height="619" key="GridCell.Tab.1.center" timestamp="1579072158457">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="431" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1577114111225" />
-    <state width="1815" height="363" key="GridCell.Tab.1.center/62.0.1858.1080@62.0.1858.1080" timestamp="1578576412915" />
-    <state width="1815" height="363" key="GridCell.Tab.1.left" timestamp="1578576412915">
+    <state width="1815" height="619" key="GridCell.Tab.1.center/62.0.1858.1080@62.0.1858.1080" timestamp="1579072158457" />
+    <state width="1815" height="619" key="GridCell.Tab.1.left" timestamp="1579072158457">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="431" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1577114111225" />
-    <state width="1815" height="363" key="GridCell.Tab.1.left/62.0.1858.1080@62.0.1858.1080" timestamp="1578576412915" />
-    <state width="1815" height="363" key="GridCell.Tab.1.right" timestamp="1578576412915">
+    <state width="1815" height="619" key="GridCell.Tab.1.left/62.0.1858.1080@62.0.1858.1080" timestamp="1579072158457" />
+    <state width="1815" height="619" key="GridCell.Tab.1.right" timestamp="1579072158458">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="431" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1577114111225" />
-    <state width="1815" height="363" key="GridCell.Tab.1.right/62.0.1858.1080@62.0.1858.1080" timestamp="1578576412915" />
+    <state width="1815" height="619" key="GridCell.Tab.1.right/62.0.1858.1080@62.0.1858.1080" timestamp="1579072158458" />
     <state x="631" y="238" key="NewModule_or_Project.wizard" timestamp="1578282008719">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
@@ -592,11 +570,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="695" height="726" key="com.intellij.byteCodeViewer.ShowByteCodeAction/0.0.1366.728@0.0.1366.728" timestamp="1577114265570" />
-    <state x="572" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1578575191071">
+    <state x="572" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1578992184492">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="375" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1577246811600" />
-    <state x="572" y="282" key="com.intellij.ide.util.TipDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1578575191071" />
+    <state x="572" y="282" key="com.intellij.ide.util.TipDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1578992184492" />
     <state x="783" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577963778390">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
@@ -626,12 +604,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/wrh/utils/ObjectCheckHandleUtils.java</url>
-          <line>96</line>
+          <line>98</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/wrh/utils/ObjectCheckHandleUtils.java</url>
-          <line>98</line>
+          <line>100</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

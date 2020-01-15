@@ -64,7 +64,7 @@ public class ObjectCheckHandleUtils {
                                 strMustNum = StringUtils.trim(strMustNum);
                                 Long longData = Long.valueOf(strMustNum);
 
-                                if (null == longData || longData.compareTo(0L) <= 0) {
+                                if (longData.compareTo(0L) <= 0) {
                                     return false;
                                 }
                                 field.set(object,strMustNum);
@@ -75,6 +75,8 @@ public class ObjectCheckHandleUtils {
                             return false;
                         }
                         break;
+                    default:
+                        return true;
                 }
             } else {
                 return false;

@@ -4,13 +4,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Primary;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
-import org.springframework.data.redis.connection.RedisStringCommands;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.SessionCallback;
 import org.springframework.stereotype.Component;
-import redis.clients.jedis.Pipeline;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -28,11 +26,11 @@ import java.util.concurrent.TimeUnit;
  */
 @Primary
 @Component
-public class RedisTools {
+public class RedisTools2 {
     @Value("${redis.prefix}")
     private  String keyPrefix;
-    @Resource(name = "redisTemplate")
-    private RedisTemplate<Object,Object> redisTemplate;
+    @Resource(name = "strRedisTemplate")
+    private RedisTemplate<String,String> strRedisTemplate;
 
 
     /**
@@ -43,7 +41,7 @@ public class RedisTools {
      * @return 是否设置成功
      */
     public Boolean expire(String key, Integer interval, TimeUnit unit){
-        return redisTemplate.expire(keyPrefix + key, interval, unit);
+        return strRedisTemplate.expire(keyPrefix + key, interval, unit);
     }
 
     /**
@@ -53,7 +51,7 @@ public class RedisTools {
      * @return 是否设置成功
      */
     public Boolean expireAt(String key, Date time){
-        return redisTemplate.expireAt(keyPrefix + key, time);
+        return strRedisTemplate.expireAt(keyPrefix + key, time);
     }
 
     /**
@@ -63,7 +61,7 @@ public class RedisTools {
      * @return 缓存剩余时间
      */
     public long getExpire(String key, TimeUnit unit){
-        return redisTemplate.getExpire(keyPrefix + key, unit);
+        return strRedisTemplate.getExpire(keyPrefix + key, unit);
     }
 
     /**
@@ -72,7 +70,7 @@ public class RedisTools {
      * @return 缓存剩余时间（单位毫秒）
      */
     public long getExpire(String key){
-        return redisTemplate.getExpire(keyPrefix + key, TimeUnit.MILLISECONDS);
+        return strRedisTemplate.getExpire(keyPrefix + key, TimeUnit.MILLISECONDS);
     }
     
     
@@ -83,7 +81,7 @@ public class RedisTools {
      * @return hashmap数据的value，如果不存在返回null
      */
     public Object hget(String key, String hKey){
-        return redisTemplate.boundHashOps(keyPrefix + key).get(hKey);
+        return strRedisTemplate.boundHashOps(keyPrefix + key).get(hKey);
     }
 
     /**
@@ -93,8 +91,8 @@ public class RedisTools {
      * @param interval 失效时间
      * @param unit 时间单位
      */
-    public void set(String key, Object value, Integer interval, TimeUnit unit){
-        redisTemplate.opsForValue().set(keyPrefix + key, value, interval, unit);
+    public void set(String key, String value, Integer interval, TimeUnit unit){
+        strRedisTemplate.opsForValue().set(keyPrefix + key, value, interval, unit);
     }
     
     /**
@@ -103,8 +101,8 @@ public class RedisTools {
      * @param value
      * @param offset
      */
-    public void set(String key, Object value, long offset){
-        redisTemplate.opsForValue().set(key, value, offset);
+    public void set(String key, String value, long offset){
+        strRedisTemplate.opsForValue().set(key, value, offset);
     }
 
     /**
@@ -112,8 +110,8 @@ public class RedisTools {
      * @param key 缓存的key
      * @param value 缓存值
      */
-    public void set(String key, Object value){
-        redisTemplate.opsForValue().set(keyPrefix + key, value);
+    public void set(String key, String value){
+        strRedisTemplate.opsForValue().set(keyPrefix + key, value);
     }
 
     /**
@@ -122,7 +120,7 @@ public class RedisTools {
      * @return 缓存值
      */
     public Object get(String key){
-        return redisTemplate.boundValueOps(keyPrefix + key).get();
+        return strRedisTemplate.boundValueOps(keyPrefix + key).get();
     }
 
     /**
@@ -130,7 +128,7 @@ public class RedisTools {
      * @param key 缓存的key
      */
     public void delete(String key){
-        redisTemplate.delete(keyPrefix + key);
+        strRedisTemplate.delete(keyPrefix + key);
     }
 
     /**
@@ -140,20 +138,12 @@ public class RedisTools {
      */
     public boolean hasKey(String key) {
         key = keyPrefix + key;
-        return redisTemplate.hasKey(key);
+        return strRedisTemplate.hasKey(key);
     }
 
-    /**
-     * 自增
-     * @param key
-     * @return
-     */
-    public long increment(String key){
-        return increment(key, 1L, 0L);
-    }
 
     public void decrement(String key) {
-        redisTemplate.execute(new RedisCallback() {
+        strRedisTemplate.execute(new RedisCallback() {
             @Override
             public Long doInRedis(RedisConnection connection) throws DataAccessException {
                 Long incr = connection.decr((keyPrefix + key).getBytes());
@@ -162,19 +152,7 @@ public class RedisTools {
         });
     }
 
-    /**
-     * 自增
-     * @param key
-     * @param delta
-     * @return
-     */
-    public long increment(String key, long delta, long initialValue){
-        String prefix= keyPrefix + key;
-        if(!redisTemplate.hasKey(prefix)){
-            redisTemplate.opsForValue().setIfAbsent(prefix, initialValue);
-        }
-        return redisTemplate.opsForValue().increment(prefix, delta);
-    }
+
 
     /**
      * 不加前缀获取value值
@@ -182,7 +160,7 @@ public class RedisTools {
      * @return
      */
     public Object getValueByKey(String key){
-        return redisTemplate.opsForValue().get(key);
+        return strRedisTemplate.opsForValue().get(key);
     }
 
     /**
@@ -190,17 +168,17 @@ public class RedisTools {
      * @param key
      * @return
      */
-    public void setValueByKey(String key, int value){
-         redisTemplate.opsForValue().set(key , value);
+    public void setValueByKey(String key, String value){
+        strRedisTemplate.opsForValue().set(key , value);
     }
 
     public void pipelineBatchInsert(List<Map<String, String>> saveList, TimeUnit unit, int timeout) {
         /* 插入多条数据 */
-        redisTemplate.executePipelined(new SessionCallback<Object>() {
+        strRedisTemplate.executePipelined(new SessionCallback<Object>() {
             @Override
             public <K, V> Object execute(RedisOperations<K, V> redisOperations) throws DataAccessException {
                 for (Map<String, String> needSave : saveList) {
-                    redisTemplate.opsForValue().set(needSave.get("key"), needSave.get("value"), timeout,unit);
+                    strRedisTemplate.opsForValue().set(needSave.get("key"), needSave.get("value"), timeout,unit);
                 }
                 return null;
             }
@@ -209,7 +187,7 @@ public class RedisTools {
 
     public void pipelineMultiOpr(Map<String, List<Map<String, String>>> oprMap, TimeUnit unit, int timeout) {
         /* 插入多条数据 */
-        redisTemplate.executePipelined(new SessionCallback<Object>() {
+        strRedisTemplate.executePipelined(new SessionCallback<Object>() {
             @Override
             public <K, V> Object execute(RedisOperations<K, V> redisOperations) throws DataAccessException {
                 Iterator<Map.Entry<String, List<Map<String, String>>>> iterator = oprMap.entrySet().iterator();
@@ -234,14 +212,14 @@ public class RedisTools {
 
     private void batchInsert(List<Map<String, String>> saveList, TimeUnit unit, int timeout) {
         for (Map<String, String> needSave : saveList) {
-            redisTemplate.opsForValue().set(needSave.get("key"), needSave.get("value"), timeout,unit);
+            strRedisTemplate.opsForValue().set(needSave.get("key"), needSave.get("value"), timeout,unit);
         }
     }
 
     private void batchIncr(List<Map<String, String>> oprList, TimeUnit unit, int timeout) {
         for (Map<String, String> needOpr : oprList) {
-            redisTemplate.opsForValue().increment(needOpr.get("key"), 1L);
-            redisTemplate.expire(needOpr.get("key"), timeout,unit);
+            strRedisTemplate.opsForValue().increment(needOpr.get("key"), 1L);
+            strRedisTemplate.expire(needOpr.get("key"), timeout,unit);
         }
     }
 }

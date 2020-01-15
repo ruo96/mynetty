@@ -1,6 +1,7 @@
 package com.wrh.redis.pipeline;
 
 import com.wrh.redis.RedisTools;
+import com.wrh.redis.RedisTools2;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,6 +31,9 @@ public class TestPipeline {
 
     @Autowired
     private RedisTools redisTools;
+
+    @Autowired
+    private RedisTools2 redisTools2;
 
     @Test
     public void Test1() {
@@ -92,5 +96,25 @@ public class TestPipeline {
 
         redisTools.pipelineMultiOpr(reqMap, TimeUnit.SECONDS, 20);
 
+    }
+
+    @Test
+    public void Test5() {
+        long i = redisTools.increment("c1");
+        System.out.println(i);
+        redisTools.set("w1","r1");
+        System.out.println(redisTools.get("w1"));
+    }
+
+    @Test
+    public void Test6() {
+        redisTools.set("w1","r2");
+        redisTools2.set("w2","r2");
+    }
+
+    @Test
+    public void Test7() {
+        long i = redisTools.increment("n1");
+        System.out.println(i);
     }
 }
