@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="220b4fde-124d-4a90-8239-1cc8f7f19353" name="Default Changelist" comment="xiugai">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/redis/RedisTools2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/sign/TestSign.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/utils/ApiSignHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/utils/Builder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mynetty.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mynetty.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mynetty.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mynetty.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/redis/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/redis/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/redis/RedisTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/redis/RedisTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/TimeCalculate/TestTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/TimeCalculate/TestTime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/redis/pipeline/TestPipeline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/redis/pipeline/TestPipeline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/utils/ObjectCheckHandleUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/utils/ObjectCheckHandleUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/redis/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/redis/RedisConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/redis/RedisTools$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/redis/RedisTools$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/redis/RedisTools.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/redis/RedisTools.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/TimeCalculate/TestTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/TimeCalculate/TestTime.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,23 +305,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestSign.Test">
-    <configuration name="TestPipeline.Test5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mynetty" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wrh.redis.pipeline.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.redis.pipeline" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.redis.pipeline.TestPipeline" />
-      <option name="METHOD_NAME" value="Test5" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestPipeline.Test8">
     <configuration name="TestPipeline.Test6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mynetty" />
       <extension name="coverage">
@@ -347,7 +322,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestPipeline.Test7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestPipeline.Test8" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mynetty" />
       <extension name="coverage">
         <pattern>
@@ -357,29 +332,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.wrh.redis.pipeline" />
       <option name="MAIN_CLASS_NAME" value="com.wrh.redis.pipeline.TestPipeline" />
-      <option name="METHOD_NAME" value="Test7" />
+      <option name="METHOD_NAME" value="Test8" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSign.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mynetty" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wrh.sign.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.sign" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.sign.TestSign" />
-      <option name="METHOD_NAME" value="Test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestTime.Test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestTime.Test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mynetty" />
       <extension name="coverage">
         <pattern>
@@ -389,7 +348,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.wrh.TimeCalculate" />
       <option name="MAIN_CLASS_NAME" value="com.wrh.TimeCalculate.TestTime" />
-      <option name="METHOD_NAME" value="Test2" />
+      <option name="METHOD_NAME" value="Test3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestTime.Test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mynetty" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wrh.TimeCalculate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wrh.TimeCalculate" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.TimeCalculate.TestTime" />
+      <option name="METHOD_NAME" value="Test4" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestTime.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mynetty" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wrh.TimeCalculate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wrh.TimeCalculate" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.TimeCalculate.TestTime" />
+      <option name="METHOD_NAME" value="test2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -403,20 +394,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.TestTime.Test2" />
-      <item itemvalue="JUnit.TestPipeline.Test5" />
-      <item itemvalue="JUnit.TestPipeline.Test6" />
-      <item itemvalue="JUnit.TestPipeline.Test7" />
       <item itemvalue="Spring Boot.MynettyApplication" />
-      <item itemvalue="JUnit.TestSign.Test" />
+      <item itemvalue="JUnit.TestTime.test2" />
+      <item itemvalue="JUnit.TestTime.Test3" />
+      <item itemvalue="JUnit.TestTime.Test4" />
+      <item itemvalue="JUnit.TestPipeline.Test8" />
+      <item itemvalue="JUnit.TestPipeline.Test6" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestSign.Test" />
-        <item itemvalue="JUnit.TestPipeline.Test7" />
+        <item itemvalue="JUnit.TestPipeline.Test8" />
         <item itemvalue="JUnit.TestPipeline.Test6" />
-        <item itemvalue="JUnit.TestPipeline.Test5" />
-        <item itemvalue="JUnit.TestTime.Test2" />
+        <item itemvalue="JUnit.TestTime.Test4" />
+        <item itemvalue="JUnit.TestTime.Test3" />
+        <item itemvalue="JUnit.TestTime.test2" />
       </list>
     </recent_temporary>
   </component>
@@ -463,7 +454,7 @@
       <workItem from="1578566363218" duration="11000" />
       <workItem from="1578566817547" duration="6502000" />
       <workItem from="1578575177301" duration="19544000" />
-      <workItem from="1578992185484" duration="6271000" />
+      <workItem from="1578992185484" duration="14944000" />
     </task>
     <task id="LOCAL-00001" summary="xiugai">
       <created>1576736666275</created>
@@ -509,46 +500,46 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="594" y="113" key="FileChooserDialogImpl/62.0.1858.1080@62.0.1858.1080" timestamp="1578282004490" />
-    <state width="1815" height="619" key="GridCell.Tab.0.bottom" timestamp="1579072158457">
+    <state width="1815" height="431" key="GridCell.Tab.0.bottom" timestamp="1579161131727">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="227" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577805780434" />
-    <state width="1815" height="619" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1579072158457" />
-    <state width="1815" height="619" key="GridCell.Tab.0.center" timestamp="1579072158457">
+    <state width="1815" height="431" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1579161131727" />
+    <state width="1815" height="431" key="GridCell.Tab.0.center" timestamp="1579161131726">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="227" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577805780434" />
-    <state width="1815" height="619" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1579072158457" />
-    <state width="1815" height="619" key="GridCell.Tab.0.left" timestamp="1579072158457">
+    <state width="1815" height="431" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1579161131726" />
+    <state width="1815" height="431" key="GridCell.Tab.0.left" timestamp="1579161131726">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="227" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577805780434" />
-    <state width="1815" height="619" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1579072158457" />
-    <state width="1815" height="619" key="GridCell.Tab.0.right" timestamp="1579072158457">
+    <state width="1815" height="431" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1579161131726" />
+    <state width="1815" height="431" key="GridCell.Tab.0.right" timestamp="1579161131726">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="227" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577805780434" />
-    <state width="1815" height="619" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1579072158457" />
-    <state width="1815" height="619" key="GridCell.Tab.1.bottom" timestamp="1579072158458">
+    <state width="1815" height="431" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1579161131726" />
+    <state width="1815" height="619" key="GridCell.Tab.1.bottom" timestamp="1579072226719">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="431" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577114111225" />
-    <state width="1815" height="619" key="GridCell.Tab.1.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1579072158458" />
-    <state width="1815" height="619" key="GridCell.Tab.1.center" timestamp="1579072158457">
+    <state width="1815" height="619" key="GridCell.Tab.1.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1579072226719" />
+    <state width="1815" height="619" key="GridCell.Tab.1.center" timestamp="1579072226719">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="431" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1577114111225" />
-    <state width="1815" height="619" key="GridCell.Tab.1.center/62.0.1858.1080@62.0.1858.1080" timestamp="1579072158457" />
-    <state width="1815" height="619" key="GridCell.Tab.1.left" timestamp="1579072158457">
+    <state width="1815" height="619" key="GridCell.Tab.1.center/62.0.1858.1080@62.0.1858.1080" timestamp="1579072226719" />
+    <state width="1815" height="619" key="GridCell.Tab.1.left" timestamp="1579072226719">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="431" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1577114111225" />
-    <state width="1815" height="619" key="GridCell.Tab.1.left/62.0.1858.1080@62.0.1858.1080" timestamp="1579072158457" />
-    <state width="1815" height="619" key="GridCell.Tab.1.right" timestamp="1579072158458">
+    <state width="1815" height="619" key="GridCell.Tab.1.left/62.0.1858.1080@62.0.1858.1080" timestamp="1579072226719" />
+    <state width="1815" height="619" key="GridCell.Tab.1.right" timestamp="1579072226719">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1322" height="431" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1577114111225" />
-    <state width="1815" height="619" key="GridCell.Tab.1.right/62.0.1858.1080@62.0.1858.1080" timestamp="1579072158458" />
+    <state width="1815" height="619" key="GridCell.Tab.1.right/62.0.1858.1080@62.0.1858.1080" timestamp="1579072226719" />
     <state x="631" y="238" key="NewModule_or_Project.wizard" timestamp="1578282008719">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
@@ -579,20 +570,20 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="783" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/62.0.1858.1080@62.0.1858.1080" timestamp="1577963778390" />
-    <state x="474" y="134" width="1033" height="813" key="find.popup" timestamp="1578887569930">
+    <state x="474" y="134" width="1033" height="813" key="find.popup" timestamp="1579146717611">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="303" y="90" width="759" height="548" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1577112650642" />
-    <state x="474" y="134" width="1033" height="813" key="find.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1578887569930" />
+    <state x="474" y="134" width="1033" height="813" key="find.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1579146717611" />
     <state x="365" y="150" key="new project wizard" timestamp="1577970104253">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="365" y="150" key="new project wizard/62.0.1858.1080@62.0.1858.1080" timestamp="1577970104253" />
-    <state x="533" y="73" width="670" height="676" key="search.everywhere.popup" timestamp="1578467857232">
+    <state x="533" y="73" width="672" height="676" key="search.everywhere.popup" timestamp="1579072522946">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1577018058877" />
-    <state x="533" y="73" width="670" height="676" key="search.everywhere.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1578467857232" />
+    <state x="533" y="73" width="672" height="676" key="search.everywhere.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1579072522946" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

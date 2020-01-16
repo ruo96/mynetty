@@ -18,8 +18,8 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Classname TestPipeline
- * @Description TODO
+ * @Classname 测试redis 包括pipeline使用
+ * @Description 测试redis 包括pipeline使用
  * @Date 2020/1/13 11:50
  * @Created by wuruohong
  */
@@ -108,13 +108,24 @@ public class TestPipeline {
 
     @Test
     public void Test6() {
-        redisTools.set("w1","r2");
-        redisTools2.set("w2","r2");
+        redisTools.set("w1","996");
+//        redisTools2.set("w2","r2");
     }
 
     @Test
     public void Test7() {
         long i = redisTools.increment("n1");
         System.out.println(i);
+    }
+
+    @Test
+    public void Test8() {
+        String key = "w1";
+        String value = (String) redisTools.get(key);
+        System.out.println("before  key:" + key + "value: " + value);
+        key = null;
+        value = (String) redisTools.get(key);
+        System.out.println("after  key:" + key + "value: " + value);
+
     }
 }

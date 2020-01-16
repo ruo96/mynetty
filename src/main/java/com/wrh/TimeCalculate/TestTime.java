@@ -7,6 +7,7 @@ import org.joda.time.DateTime;
 import org.joda.time.Duration;
 import org.junit.Test;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
@@ -51,6 +52,7 @@ public class TestTime {
 
         log.info("===>{}", LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
         log.info("===>{}", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+        log.info("===>{}", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")));
 
     }
 
@@ -102,5 +104,31 @@ public class TestTime {
         System.out.println(serverDate1);
         System.out.println(serverDate3);
         System.out.println(serverDate4);
+    }
+
+    @Test
+    public void Test3() {
+        String dateStr = "20200114";
+        LocalDate date = LocalDate.parse(dateStr,DateTimeFormatter.ofPattern("yyyyMMdd"));
+        LocalDate now = LocalDate.now();
+        if(date.isAfter(now)) {
+            System.out.println(date + " is after: " + now);
+        } else if(date.isEqual(now)) {
+            System.out.println(date + " is equal: " + now);
+        } else {
+            System.out.println(date + " is before: " + now);
+        }
+
+        if(date.plusDays(1).isBefore(LocalDate.now())) {
+            System.out.println(date + " is before 1 : " + now);
+
+        }
+    }
+
+    @Test
+    public void Test4() {
+        String nowDate = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+        System.out.println(nowDate);
+        System.out.println(LocalDate.now().toString());
     }
 }
