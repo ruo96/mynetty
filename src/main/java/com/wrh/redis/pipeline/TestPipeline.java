@@ -11,10 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -125,6 +122,17 @@ public class TestPipeline {
         System.out.println("before  key:" + key + "value: " + value);
         key = null;
         value = (String) redisTools.get(key);
+        if(Objects.isNull(value)) {
+            System.out.println(" value is null!");
+        }
+        if( value == null) {
+            value = "123";
+            System.out.println("null");
+            value = Optional.ofNullable(value).orElse("");
+        }
+        if(Objects.isNull(value)) {
+            System.out.println(" after value is null!");
+        }
         System.out.println("after  key:" + key + "value: " + value);
 
     }

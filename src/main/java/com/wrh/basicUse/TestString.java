@@ -61,4 +61,12 @@ public class TestString {
         System.out.println(flag);
         System.out.println(JSON.toJSONString(student));
     }
+
+    @Test
+    public void Test3() {
+        String[] a = new String[2];
+        Object[] b = a;
+        a[0] = "hi";
+        b[1] = Integer.valueOf(42);
+    }
 }

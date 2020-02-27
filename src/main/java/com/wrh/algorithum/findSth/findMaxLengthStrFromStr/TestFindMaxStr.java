@@ -49,4 +49,17 @@ public class TestFindMaxStr {
         System.out.println("b is : " + b);
 
     }
+
+    /**
+     * 用异或的方法找到数组中唯一不重复的数字
+     */
+    @Test
+    public void Test() {
+        int[] arr = new int[]{1,2,3,4,3,2,1};
+        int tmp = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            tmp = tmp ^ arr[i];
+        }
+        System.out.println(tmp);
+    }
 }

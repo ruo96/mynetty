@@ -1,10 +1,16 @@
 package com.wrh.list;
 
+import com.wrh.utils.GsonUtils;
+import com.wrh.utils.test.Dog;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.springframework.beans.BeanUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
+
+import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 /**
  * @Created by wrh
@@ -12,6 +18,7 @@ import java.util.Vector;
  * @Date: Created in 上午 9:05 2019/1/9 0009
  * @Modified By:
  */
+@Slf4j
 public class TestList {
     public static void main(String[] args) {
         ArrayList<String> listOne = new ArrayList<String>();
@@ -43,5 +50,28 @@ public class TestList {
         vector.add("3");
 
         System.out.println(list.equals(vector));
+    }
+
+    @Test
+    public void Test() {
+        Dog d1 = new Dog();
+        d1.setColor("1");
+        d1.setName("2");
+        d1.setAge(3);
+        d1.setOwner("4");
+
+        List<Dog> list = new ArrayList<>();
+        list.add(d1);
+
+        Dog d2 = new Dog();
+        BeanUtils.copyProperties(d1,d2);
+        d2.setColor("5");
+
+        list.add(d2);
+        log.info(">>> Gson: {}", GsonUtils.GSON.toJson(list));
+        log.info(">>> Long: {}", Long.valueOf("0"));
+
+
+
     }
 }
