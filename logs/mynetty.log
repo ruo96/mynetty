@@ -1,24 +1,450 @@
-2020-01-16 15:46:34.134  INFO 46316 --- [main] com.wrh.redis.pipeline.TestPipeline      : Starting TestPipeline on CN210102099 with PID 46316 (started by wuruohong in D:\pro\mynetty)
-2020-01-16 15:46:34.144 DEBUG 46316 --- [main] com.wrh.redis.pipeline.TestPipeline      : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.7.RELEASE
-2020-01-16 15:46:34.145  INFO 46316 --- [main] com.wrh.redis.pipeline.TestPipeline      : No active profile set, falling back to default profiles: default
-2020-01-16 15:46:40.835  INFO 46316 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-01-16 15:46:42.832  WARN 46316 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-01-16 15:46:42.942  INFO 46316 --- [main] com.wrh.redis.pipeline.TestPipeline      : Started TestPipeline in 9.412 seconds (JVM running for 10.804)
-2020-01-16 15:46:43.235  INFO 46316 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-01-16 15:46:43.244  INFO 46316 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-01-16 15:51:11.338  INFO 23880 --- [main] com.wrh.redis.pipeline.TestPipeline      : Starting TestPipeline on CN210102099 with PID 23880 (started by wuruohong in D:\pro\mynetty)
-2020-01-16 15:51:11.339 DEBUG 23880 --- [main] com.wrh.redis.pipeline.TestPipeline      : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.7.RELEASE
-2020-01-16 15:51:11.340  INFO 23880 --- [main] com.wrh.redis.pipeline.TestPipeline      : No active profile set, falling back to default profiles: default
-2020-01-16 15:51:15.691  INFO 23880 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-01-16 15:51:17.543  WARN 23880 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-01-16 15:51:17.625  INFO 23880 --- [main] com.wrh.redis.pipeline.TestPipeline      : Started TestPipeline in 6.667 seconds (JVM running for 7.78)
-2020-01-16 15:51:17.791  INFO 23880 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-01-16 15:51:17.793  INFO 23880 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-01-16 15:52:13.077  INFO 40732 --- [main] com.wrh.redis.pipeline.TestPipeline      : Starting TestPipeline on CN210102099 with PID 40732 (started by wuruohong in D:\pro\mynetty)
-2020-01-16 15:52:13.078 DEBUG 40732 --- [main] com.wrh.redis.pipeline.TestPipeline      : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.7.RELEASE
-2020-01-16 15:52:13.079  INFO 40732 --- [main] com.wrh.redis.pipeline.TestPipeline      : No active profile set, falling back to default profiles: default
-2020-01-16 15:52:14.723  INFO 40732 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-01-16 15:52:16.535  WARN 40732 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-01-16 15:52:16.618  INFO 40732 --- [main] com.wrh.redis.pipeline.TestPipeline      : Started TestPipeline in 3.94 seconds (JVM running for 4.847)
-2020-01-16 15:52:16.769  INFO 40732 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-01-16 15:52:16.771  INFO 40732 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-02-27 10:39:48.542  INFO 35004 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 35004 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 10:39:48.545  INFO 35004 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 10:39:50.848  INFO 35004 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 10:39:50.848  INFO 35004 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 10:39:50.853  INFO 35004 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 10:39:50.853  INFO 35004 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 10:39:50.853  INFO 35004 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 10:39:50.857  INFO 35004 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 10:39:50.960  INFO 35004 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 10:39:51.046  INFO 35004 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 10:39:51.595  INFO 35004 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 10:39:53.201  WARN 35004 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 10:39:53.334  INFO 35004 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 5.379 seconds (JVM running for 6.081)
+2020-02-27 10:41:50.934  INFO 35004 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 10:42:47.452  WARN 35004 --- [http-nio-9999-exec-5] o.s.web.servlet.PageNotFound             : Request method 'GET' not supported
+2020-02-27 10:43:00.127  WARN 35004 --- [http-nio-9999-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Failed to read HTTP message: org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public java.lang.String com.wrh.annotate.annotation.AnnotationController.addStudent(com.wrh.annotate.annotation.Student)
+2020-02-27 10:43:56.325  WARN 35004 --- [http-nio-9999-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Failed to read HTTP message: org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public java.lang.String com.wrh.guojihua.TestGuojihuaController.testController(java.lang.String)
+2020-02-27 10:44:11.717  INFO 35004 --- [http-nio-9999-exec-1] com.wrh.guojihua.TestGuojihuaController  : locale is : zh_CN
+2020-02-27 10:44:22.072  INFO 35004 --- [http-nio-9999-exec-3] com.wrh.guojihua.TestGuojihuaController  : locale is : zh_CN
+2020-02-27 10:45:55.492  INFO 33052 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 33052 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 10:45:55.494  INFO 33052 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 10:45:56.488  INFO 33052 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 10:45:56.489  INFO 33052 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 10:45:56.497  INFO 33052 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 10:45:56.497  INFO 33052 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 10:45:56.497  INFO 33052 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 10:45:56.500  INFO 33052 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 10:45:56.586  INFO 33052 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 10:45:56.646  INFO 33052 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 10:45:56.943  INFO 33052 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 10:45:58.383  WARN 33052 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 10:45:58.460  INFO 33052 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.28 seconds (JVM running for 3.804)
+2020-02-27 10:46:19.721  INFO 33052 --- [http-nio-9999-exec-10] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 10:47:43.193  INFO 36848 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 36848 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 10:47:43.194  INFO 36848 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 10:47:44.222  INFO 36848 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 10:47:44.222  INFO 36848 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 10:47:44.225  INFO 36848 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 10:47:44.225  INFO 36848 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 10:47:44.225  INFO 36848 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 10:47:44.227  INFO 36848 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 10:47:44.318  INFO 36848 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 10:47:44.381  INFO 36848 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 10:47:44.686  INFO 36848 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 10:47:46.142  WARN 36848 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 10:47:46.223  INFO 36848 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.351 seconds (JVM running for 3.889)
+2020-02-27 10:47:58.997  INFO 36848 --- [http-nio-9999-exec-6] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 11:00:01.796  INFO 16828 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 16828 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 11:00:01.797  INFO 16828 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 11:00:02.823  INFO 16828 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 11:00:02.823  INFO 16828 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 11:00:02.826  INFO 16828 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 11:00:02.826  INFO 16828 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 11:00:02.826  INFO 16828 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 11:00:02.828  INFO 16828 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 11:00:02.920  INFO 16828 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 11:00:02.987  INFO 16828 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 11:00:03.302  INFO 16828 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 11:00:04.775  WARN 16828 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 11:00:04.854  INFO 16828 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.376 seconds (JVM running for 3.923)
+2020-02-27 11:04:40.619  INFO 33388 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 33388 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 11:04:40.621  INFO 33388 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 11:04:41.632  INFO 33388 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 11:04:41.633  INFO 33388 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 11:04:41.635  INFO 33388 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 11:04:41.635  INFO 33388 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 11:04:41.635  INFO 33388 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 11:04:41.638  INFO 33388 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 11:04:41.729  INFO 33388 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 11:04:41.793  INFO 33388 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 11:04:42.104  INFO 33388 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 11:04:43.552  WARN 33388 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 11:04:43.631  INFO 33388 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.33 seconds (JVM running for 3.873)
+2020-02-27 11:07:24.808  INFO 26396 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 26396 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 11:07:24.810  INFO 26396 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 11:07:25.809  INFO 26396 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 11:07:25.810  INFO 26396 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 11:07:25.819  INFO 26396 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 11:07:25.819  INFO 26396 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 11:07:25.819  INFO 26396 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 11:07:25.821  INFO 26396 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 11:07:25.915  INFO 26396 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 11:07:25.976  INFO 26396 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 11:07:26.280  INFO 26396 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 11:07:27.742  WARN 26396 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 11:07:27.822  INFO 26396 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.331 seconds (JVM running for 3.862)
+2020-02-27 11:34:10.652  INFO 33824 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 33824 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 11:34:10.653  INFO 33824 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 11:34:11.667  INFO 33824 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 11:34:11.668  INFO 33824 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 11:34:11.671  INFO 33824 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 11:34:11.671  INFO 33824 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 11:34:11.671  INFO 33824 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 11:34:11.673  INFO 33824 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 11:34:11.764  INFO 33824 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 11:34:11.826  INFO 33824 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 11:34:12.133  INFO 33824 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 11:34:13.619  WARN 33824 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 11:34:13.699  INFO 33824 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.366 seconds (JVM running for 3.911)
+2020-02-27 11:35:45.864  INFO 37056 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 37056 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 11:35:45.866  INFO 37056 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 11:35:46.875  INFO 37056 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 11:35:46.875  INFO 37056 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 11:35:46.878  INFO 37056 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 11:35:46.878  INFO 37056 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 11:35:46.878  INFO 37056 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 11:35:46.880  INFO 37056 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 11:35:46.968  INFO 37056 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 11:35:47.031  INFO 37056 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 11:35:47.334  INFO 37056 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 11:35:48.788  WARN 37056 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 11:35:48.868  INFO 37056 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.326 seconds (JVM running for 3.856)
+2020-02-27 11:37:23.688  INFO 32460 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 32460 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 11:37:23.715  INFO 32460 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 11:37:24.731  INFO 32460 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 11:37:24.731  INFO 32460 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 11:37:24.734  INFO 32460 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 11:37:24.734  INFO 32460 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 11:37:24.734  INFO 32460 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 11:37:24.736  INFO 32460 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 11:37:24.828  INFO 32460 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 11:37:24.888  INFO 32460 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 11:37:25.194  INFO 32460 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 11:37:26.654  WARN 32460 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 11:37:26.733  INFO 32460 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.393 seconds (JVM running for 3.945)
+2020-02-27 11:38:45.061  INFO 32460 --- [http-nio-9999-exec-4] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 11:39:22.917  INFO 37360 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 37360 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 11:39:22.919  INFO 37360 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 11:39:23.929  INFO 37360 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 11:39:23.929  INFO 37360 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 11:39:23.932  INFO 37360 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 11:39:23.932  INFO 37360 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 11:39:23.932  INFO 37360 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 11:39:23.934  INFO 37360 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 11:39:24.024  INFO 37360 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 11:39:24.085  INFO 37360 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 11:39:24.431  INFO 37360 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 11:39:25.914  WARN 37360 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 11:39:25.995  INFO 37360 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.422 seconds (JVM running for 3.954)
+2020-02-27 11:39:32.833  INFO 37360 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 11:40:06.425  INFO 34428 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 34428 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 11:40:06.427  INFO 34428 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 11:40:07.436  INFO 34428 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 11:40:07.436  INFO 34428 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 11:40:07.439  INFO 34428 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 11:40:07.439  INFO 34428 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 11:40:07.439  INFO 34428 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 11:40:07.441  INFO 34428 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 11:40:07.530  INFO 34428 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 11:40:07.591  INFO 34428 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 11:40:07.894  INFO 34428 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 11:40:09.344  WARN 34428 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 11:40:09.422  INFO 34428 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.312 seconds (JVM running for 3.839)
+2020-02-27 11:40:14.764  INFO 34428 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 11:40:24.894  INFO 37108 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 37108 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 11:40:24.896  INFO 37108 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 11:40:25.872  INFO 37108 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 11:40:25.872  INFO 37108 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 11:40:25.875  INFO 37108 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 11:40:25.875  INFO 37108 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 11:40:25.875  INFO 37108 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 11:40:25.877  INFO 37108 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 11:40:25.964  INFO 37108 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 11:40:26.024  INFO 37108 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 11:40:26.319  INFO 37108 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 11:40:27.767  WARN 37108 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 11:40:27.845  INFO 37108 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.271 seconds (JVM running for 3.801)
+2020-02-27 11:40:51.876  INFO 36208 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 36208 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 11:40:51.877  INFO 36208 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 11:40:52.841  INFO 36208 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 11:40:52.841  INFO 36208 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 11:40:52.843  INFO 36208 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 11:40:52.844  INFO 36208 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 11:40:52.844  INFO 36208 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 11:40:52.846  INFO 36208 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 11:40:52.932  INFO 36208 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 11:40:52.993  INFO 36208 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 11:40:53.290  INFO 36208 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 11:40:54.752  WARN 36208 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 11:40:54.830  INFO 36208 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.309 seconds (JVM running for 3.837)
+2020-02-27 11:40:58.627  INFO 36208 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 11:41:19.745  INFO 35044 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 35044 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 11:41:19.747  INFO 35044 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 11:41:20.754  INFO 35044 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 11:41:20.754  INFO 35044 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 11:41:20.757  INFO 35044 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 11:41:20.757  INFO 35044 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 11:41:20.757  INFO 35044 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 11:41:20.759  INFO 35044 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 11:41:20.846  INFO 35044 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 11:41:20.907  INFO 35044 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 11:41:21.243  INFO 35044 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 11:41:22.715  WARN 35044 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 11:41:22.794  INFO 35044 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.361 seconds (JVM running for 3.883)
+2020-02-27 11:41:26.793  INFO 35044 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 11:50:05.582  INFO 31628 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 31628 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 11:50:05.584  INFO 31628 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 11:50:06.552  INFO 31628 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 11:50:06.553  INFO 31628 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 11:50:06.555  INFO 31628 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 11:50:06.555  INFO 31628 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 11:50:06.556  INFO 31628 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 11:50:06.564  INFO 31628 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 11:50:06.652  INFO 31628 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 11:50:06.691  INFO 31628 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 11:50:07.099  INFO 31628 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 11:50:08.391  WARN 31628 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 11:50:08.469  INFO 31628 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.212 seconds (JVM running for 3.748)
+2020-02-27 11:50:17.244  INFO 31628 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 11:50:21.081  WARN 31628 --- [http-nio-9999-exec-2] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/mynetty/hello.html] in DispatcherServlet with name 'dispatcherServlet'
+2020-02-27 11:51:05.973  WARN 31628 --- [http-nio-9999-exec-4] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/mynetty/hello.html] in DispatcherServlet with name 'dispatcherServlet'
+2020-02-27 11:51:10.834  WARN 31628 --- [http-nio-9999-exec-3] o.s.web.servlet.PageNotFound             : No mapping found for HTTP request with URI [/mynetty/hello.html] in DispatcherServlet with name 'dispatcherServlet'
+2020-02-27 11:54:25.370  INFO 12636 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 12636 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 11:54:25.371  INFO 12636 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 11:54:26.376  INFO 12636 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 11:54:26.376  INFO 12636 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 11:54:26.378  INFO 12636 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 11:54:26.379  INFO 12636 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 11:54:26.379  INFO 12636 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 11:54:26.381  INFO 12636 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 11:54:26.473  INFO 12636 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 11:54:26.533  INFO 12636 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 11:54:26.831  INFO 12636 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 11:54:28.289  WARN 12636 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 11:54:28.370  INFO 12636 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.311 seconds (JVM running for 3.842)
+2020-02-27 11:54:32.016  INFO 12636 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 11:59:00.367  INFO 29944 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 29944 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 11:59:00.369  INFO 29944 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 11:59:01.373  INFO 29944 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 11:59:01.373  INFO 29944 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 11:59:01.376  INFO 29944 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 11:59:01.376  INFO 29944 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 11:59:01.376  INFO 29944 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 11:59:01.378  INFO 29944 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 11:59:01.480  INFO 29944 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 11:59:01.548  INFO 29944 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 11:59:01.862  INFO 29944 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 11:59:03.312  WARN 29944 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 11:59:03.396  INFO 29944 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.35 seconds (JVM running for 3.875)
+2020-02-27 11:59:11.159  INFO 29944 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 12:01:18.353  INFO 36832 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 36832 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 12:01:18.354  INFO 36832 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 12:01:19.354  INFO 36832 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 12:01:19.355  INFO 36832 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 12:01:19.357  INFO 36832 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 12:01:19.357  INFO 36832 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 12:01:19.357  INFO 36832 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 12:01:19.360  INFO 36832 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 12:01:19.448  INFO 36832 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 12:01:19.511  INFO 36832 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 12:01:19.812  INFO 36832 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 12:01:21.264  WARN 36832 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 12:01:21.342  INFO 36832 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.301 seconds (JVM running for 3.835)
+2020-02-27 12:01:30.597  INFO 36832 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 12:02:06.101  INFO 37868 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 37868 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 12:02:06.102  INFO 37868 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 12:02:07.151  INFO 37868 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 12:02:07.151  INFO 37868 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 12:02:07.155  INFO 37868 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 12:02:07.155  INFO 37868 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 12:02:07.155  INFO 37868 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 12:02:07.158  INFO 37868 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 12:02:07.259  INFO 37868 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 12:02:07.322  INFO 37868 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 12:02:07.624  INFO 37868 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 12:02:09.070  WARN 37868 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 12:02:09.149  INFO 37868 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.369 seconds (JVM running for 3.896)
+2020-02-27 12:02:32.387  INFO 37868 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 12:03:15.791  INFO 12396 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 12396 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 12:03:15.793  INFO 12396 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 12:03:16.792  INFO 12396 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 12:03:16.793  INFO 12396 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 12:03:16.795  INFO 12396 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 12:03:16.795  INFO 12396 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 12:03:16.795  INFO 12396 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 12:03:16.797  INFO 12396 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 12:03:16.885  INFO 12396 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 12:03:16.945  INFO 12396 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 12:03:17.253  INFO 12396 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 12:03:18.706  WARN 12396 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 12:03:18.786  INFO 12396 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.314 seconds (JVM running for 3.858)
+2020-02-27 12:03:22.443  INFO 12396 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 12:14:02.104  INFO 26332 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 26332 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 12:14:02.105  INFO 26332 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 12:14:03.110  INFO 26332 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 12:14:03.110  INFO 26332 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 12:14:03.113  INFO 26332 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 12:14:03.113  INFO 26332 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 12:14:03.113  INFO 26332 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 12:14:03.115  INFO 26332 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 12:14:03.203  INFO 26332 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 12:14:03.264  INFO 26332 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 12:14:03.605  INFO 26332 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 12:14:05.083  WARN 26332 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 12:14:05.162  INFO 26332 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.374 seconds (JVM running for 3.907)
+2020-02-27 12:14:13.618  INFO 26332 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 12:25:21.793  INFO 37244 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 37244 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 12:25:21.795  INFO 37244 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 12:25:22.783  INFO 37244 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 12:25:22.783  INFO 37244 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 12:25:22.786  INFO 37244 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 12:25:22.786  INFO 37244 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 12:25:22.786  INFO 37244 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 12:25:22.788  INFO 37244 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 12:25:22.877  INFO 37244 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 12:25:22.936  INFO 37244 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 12:25:23.237  INFO 37244 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 12:25:24.685  WARN 37244 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 12:25:24.763  INFO 37244 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.298 seconds (JVM running for 3.861)
+2020-02-27 12:25:50.300  INFO 37244 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 12:26:53.632  INFO 36976 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 36976 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 12:26:53.659  INFO 36976 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 12:26:54.715  INFO 36976 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 12:26:54.715  INFO 36976 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 12:26:54.718  INFO 36976 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 12:26:54.719  INFO 36976 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 12:26:54.719  INFO 36976 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 12:26:54.721  INFO 36976 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 12:26:54.812  INFO 36976 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 12:26:54.879  INFO 36976 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 12:26:55.191  INFO 36976 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 12:26:56.665  WARN 36976 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 12:26:56.745  INFO 36976 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.446 seconds (JVM running for 3.977)
+2020-02-27 12:27:13.321  INFO 36976 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 12:29:34.554  INFO 36948 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 36948 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 12:29:34.555  INFO 36948 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 12:29:35.558  INFO 36948 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 12:29:35.559  INFO 36948 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 12:29:35.561  INFO 36948 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 12:29:35.561  INFO 36948 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 12:29:35.561  INFO 36948 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 12:29:35.564  INFO 36948 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 12:29:35.655  INFO 36948 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 12:29:35.717  INFO 36948 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 12:29:36.023  INFO 36948 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 12:29:37.484  WARN 36948 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 12:29:37.566  INFO 36948 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.34 seconds (JVM running for 3.881)
+2020-02-27 12:29:40.924  INFO 36948 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 12:33:03.340  INFO 34984 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 34984 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 12:33:03.342  INFO 34984 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 12:33:04.338  INFO 34984 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 12:33:04.339  INFO 34984 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 12:33:04.341  INFO 34984 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 12:33:04.342  INFO 34984 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 12:33:04.342  INFO 34984 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 12:33:04.344  INFO 34984 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 12:33:04.432  INFO 34984 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 12:33:04.494  INFO 34984 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 12:33:04.794  INFO 34984 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 12:33:06.252  WARN 34984 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 12:33:06.328  INFO 34984 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.312 seconds (JVM running for 3.87)
+2020-02-27 12:33:13.214  INFO 34984 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 12:37:06.414  INFO 37760 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 37760 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 12:37:06.416  INFO 37760 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 12:37:07.396  INFO 37760 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 12:37:07.397  INFO 37760 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 12:37:07.399  INFO 37760 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 12:37:07.399  INFO 37760 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 12:37:07.400  INFO 37760 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 12:37:07.402  INFO 37760 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 12:37:07.496  INFO 37760 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 12:37:07.558  INFO 37760 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 12:37:07.856  INFO 37760 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 12:37:09.298  WARN 37760 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 12:37:09.376  INFO 37760 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.278 seconds (JVM running for 3.817)
+2020-02-27 12:37:18.301  INFO 37760 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 12:39:05.394  INFO 12464 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 12464 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 12:39:05.396  INFO 12464 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 12:39:06.402  INFO 12464 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 12:39:06.402  INFO 12464 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 12:39:06.405  INFO 12464 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 12:39:06.405  INFO 12464 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 12:39:06.405  INFO 12464 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 12:39:06.407  INFO 12464 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 12:39:06.497  INFO 12464 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 12:39:06.557  INFO 12464 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 12:39:06.852  INFO 12464 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 12:39:08.295  WARN 12464 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 12:39:08.373  INFO 12464 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.292 seconds (JVM running for 3.821)
+2020-02-27 12:39:16.948  INFO 12464 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 14:02:54.369  INFO 1976 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 1976 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 14:02:54.371  INFO 1976 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 14:02:55.387  INFO 1976 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 14:02:55.387  INFO 1976 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 14:02:55.390  INFO 1976 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 14:02:55.390  INFO 1976 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 14:02:55.390  INFO 1976 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 14:02:55.392  INFO 1976 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 14:02:55.479  INFO 1976 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 14:02:55.540  INFO 1976 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 14:02:55.840  INFO 1976 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 14:02:57.291  WARN 1976 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 14:02:57.370  INFO 1976 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.313 seconds (JVM running for 3.851)
+2020-02-27 14:03:06.053  INFO 1976 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 14:03:47.628  INFO 38460 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 38460 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 14:03:47.630  INFO 38460 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 14:03:48.608  INFO 38460 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 14:03:48.608  INFO 38460 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 14:03:48.616  INFO 38460 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 14:03:48.617  INFO 38460 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 14:03:48.617  INFO 38460 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 14:03:48.619  INFO 38460 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 14:03:48.708  INFO 38460 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 14:03:48.769  INFO 38460 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 14:03:49.071  INFO 38460 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 14:03:50.510  WARN 38460 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 14:03:50.590  INFO 38460 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.268 seconds (JVM running for 3.802)
+2020-02-27 14:03:54.234  INFO 38460 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 14:04:09.837  INFO 34668 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 34668 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 14:04:09.839  INFO 34668 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 14:04:10.851  INFO 34668 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 14:04:10.851  INFO 34668 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 14:04:10.853  INFO 34668 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 14:04:10.854  INFO 34668 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 14:04:10.854  INFO 34668 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 14:04:10.856  INFO 34668 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 14:04:10.942  INFO 34668 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 14:04:11.003  INFO 34668 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 14:04:11.301  INFO 34668 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 14:04:12.765  WARN 34668 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 14:04:12.844  INFO 34668 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.336 seconds (JVM running for 3.855)
+2020-02-27 14:04:51.174  INFO 34668 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 14:05:01.314  INFO 33816 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 33816 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 14:05:01.315  INFO 33816 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 14:05:02.311  INFO 33816 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 14:05:02.311  INFO 33816 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 14:05:02.314  INFO 33816 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 14:05:02.314  INFO 33816 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 14:05:02.314  INFO 33816 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 14:05:02.316  INFO 33816 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 14:05:02.406  INFO 33816 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 14:05:02.466  INFO 33816 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 14:05:02.762  INFO 33816 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 14:05:04.212  WARN 33816 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 14:05:04.290  INFO 33816 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.289 seconds (JVM running for 3.828)
+2020-02-27 14:05:08.161  INFO 33816 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-02-27 14:10:45.948  INFO 36672 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 36672 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-02-27 14:10:45.950  INFO 36672 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-02-27 14:10:46.897  INFO 36672 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 14:10:46.898  INFO 36672 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-02-27 14:10:46.900  INFO 36672 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-02-27 14:10:46.900  INFO 36672 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-02-27 14:10:46.901  INFO 36672 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-02-27 14:10:46.903  INFO 36672 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-02-27 14:10:46.995  INFO 36672 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 14:10:47.055  INFO 36672 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-02-27 14:10:47.359  INFO 36672 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-02-27 14:10:48.818  WARN 36672 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-02-27 14:10:48.896  INFO 36672 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 3.408 seconds (JVM running for 4.496)
+2020-02-27 14:11:31.232  INFO 36672 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
