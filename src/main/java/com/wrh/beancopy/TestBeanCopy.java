@@ -50,4 +50,36 @@ public class TestBeanCopy {
         log.info("变动后的对象：{}", JSON.toJSONString(user1));
 
     }
+
+    @Test
+    public  void test1(){
+
+
+        GroupInfo groupInfo = new GroupInfo();
+        groupInfo.setGroupId(0);
+        groupInfo.setName("组1");
+        groupInfo.setIntegerValue(1);
+        groupInfo.setStrValue("wrh");
+        groupInfo.setBoolValue(true);
+        groupInfo.setLongValue(10L);
+
+
+
+
+        log.info("新造的对象：{}", JSON.toJSONString(groupInfo));
+
+        GroupInfo groupInfo1 = new GroupInfo();
+        BeanUtils.copyProperties(groupInfo, groupInfo1);
+
+        log.info("复制的对象：{}", JSON.toJSONString(groupInfo1));
+
+        groupInfo.setBoolValue(false);
+        groupInfo.setLongValue(200L);
+        groupInfo.setStrValue("rjj");
+
+
+        log.info("变动后的对象：{}", JSON.toJSONString(groupInfo));
+        log.info("变动后的对象：{}", JSON.toJSONString(groupInfo1));
+
+    }
 }

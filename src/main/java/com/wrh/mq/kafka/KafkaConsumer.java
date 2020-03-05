@@ -1,6 +1,8 @@
 package com.wrh.mq.kafka;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,8 +15,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class KafkaConsumer {
 
-    /*@KafkaListener(id = "webGroup",topics = "topic_input")
-    public void listen(String input) {
-      log.info("===> kafka 接收信息： {}",input);
-    }*/
+    @KafkaListener(id = "group123",topics = "mynetty123")
+    public void processMessage(ConsumerRecord<Integer, String> record) {
+      log.info("===> kafka 接收信息： {}",record.value());
+    }
 }

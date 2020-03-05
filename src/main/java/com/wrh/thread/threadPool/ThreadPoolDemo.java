@@ -124,7 +124,7 @@ public class ThreadPoolDemo {
 
     }
 
-    @Value("${cq.key}")
+    @Value("${cq.key:99998888}")
     private String key1;
 
     @Test

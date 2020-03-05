@@ -15,4 +15,12 @@ public class GroupInfo {
     private int groupId;
 
     private String name;
+
+    private Integer integerValue;
+
+    private String strValue;
+
+    private Boolean boolValue;
+
+    private Long longValue;
 }

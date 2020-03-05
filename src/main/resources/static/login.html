@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java</title>
+</head>
+<body>
+除了登陆什么都没有
+<input type="text" name="userName" id="user1" value="姓名">
+<input type="button" onclick="loginIn()">
+
+<button type="button" class="btn btn-default btn-sm" onclick="loginIn()">查询</button>
+
+
+</body>
+<script src="https://www.51object.com/static/heninet/js/jquery-1.11.3.min.js"></script>
+
+<script>
+    function loginIn(){
+        console.log("enter loginIn");
+        // var userName = $("#user1").val();
+        var userName = "wuruohong";
+        $.ajax({
+            type : "POST",
+            url : "loginIn?userName=" + userName,
+            dataType : "json",
+            success : function(data) {
+                if (data.result == "1") {
+                    window.location.href ="/manager";
+                } else {
+                    alert("登录失败！");
+                }
+            }
+        });
+
+    }
+
+</script>
+</html>

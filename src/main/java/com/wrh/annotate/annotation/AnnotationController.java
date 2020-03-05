@@ -35,4 +35,19 @@ public class AnnotationController {
         log.info("===>  controller over");
         return  "student created";
     }
+
+    @Passport
+    @PostMapping("/withanonation")
+    public String testAnoatation(@Valid @RequestBody String req){
+
+        log.info("===>  enter withanonation :{}",req);
+        return  "good";
+    }
+
+    @PostMapping("/noanonation")
+    public String noAnoatation(@Valid @RequestBody Student req){
+
+        log.info("===>  enter noanonation :{}",req);
+        return  "good";
+    }
 }
