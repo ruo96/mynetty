@@ -1,15 +1,23 @@
 package com.wrh.utils;
 
 
+import com.google.common.collect.Lists;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.RandomUtils;
 import org.joda.time.DateTime;
+import org.junit.Test;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * 类DateUtils.java的实现描述：时间帮助类
  *
+ * @author lishi 2019年12月23日 下午8:44:05
  */
+@Slf4j
 public class DateUtils {
 
     /** yyyy-MM-dd HH:mm:ss **/
@@ -83,9 +91,51 @@ public class DateUtils {
         }
 
         //将时差换算为分钟，从0开始,1440结尾
-        long minute = diff / 1000 / 60;
+//        long minute = diff / 1000 / 60;
+        Long minute = Math.round( diff * 1.0  / 60000);
 
         return minute;
+    }
+
+    @Test
+    public void Test() {
+        /*for (int i1 = 0; i1 < 10; i1++) {
+            Integer i = RandomUtils.nextInt(0,1000000);
+            Integer j = i %10;
+            System.out.println(i +"===" + j);
+        }*/
+
+        Map<String,String> map = new HashMap<>();
+        map.put("key1","1");
+        map.put("key2","2");
+        map.put("key3","");
+        map.put("key4","abb");
+
+        List<String> list = Lists.newArrayList();
+        map.entrySet().stream().filter(e -> !StringUtils.isNotEmpty(e.getValue()) || !StringUtils.isNumeric(e.getValue())).map(e->list.add(e.getKey())).count();
+
+        System.out.println(map);
+        System.out.println(list);
+
+
+
+        Map<String,String> newMap = new HashMap<>();
+        newMap.entrySet().forEach(e-> {
+            map.put(e.getKey(),String.valueOf(e.getValue()));});
+        System.out.println(map);
+
+        List<Integer> list1 = new ArrayList<>();
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+        list1.add(4);
+        list1.add(5);
+        list1.add(6);
+
+        List<Integer> list3 = list1.stream().filter(e-> e>3).collect(Collectors.toList());
+        log.info(">>> list1:{}",list1);
+        log.info(">>> list3:{}",list3);
+
     }
 
     /**
@@ -95,6 +145,15 @@ public class DateUtils {
     public static String getQualifierByMinute(Long timeLong) {
         Long minute = getMinuteByDatetime(timeLong);
         return "minute"+ minute;
+    }
+
+    /**
+     * @param timeLong   获取时间戳转换成分钟对应hbase的列qualifier,范围minute0 到 minute1440
+     * @return
+     */
+    public static String getMinute(Long timeLong) {
+        Long minute = getMinuteByDatetime(timeLong);
+        return minute.toString();
     }
 
 

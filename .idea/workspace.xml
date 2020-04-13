@@ -2,12 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="220b4fde-124d-4a90-8239-1cc8f7f19353" name="Default Changelist" comment="xiugai">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/TimeCalculate/ArrayUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/TimeCalculate/DateTimeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/TimeCalculate/StringUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/aspect/RequestAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/collection/list/TestLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/flink/SocketTextStreamWordCount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/utils/PropertiesLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/utils/RowKeyHashUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/utils/test/TestPropertiesLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mynetty.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mynetty.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mynetty.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mynetty.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/TimeCalculate/TestTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/TimeCalculate/TestTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/TestBasicUse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/TestBasicUse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/TestString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/TestString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/collection/map/TestMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/collection/map/TestMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/mq/kafka/KafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/mq/kafka/KafkaConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/mq/kafka/KafkaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/mq/kafka/KafkaProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/utils/DateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/utils/DateUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app1.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app1.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app1.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app1.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/TimeCalculate/TestTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/TimeCalculate/TestTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/basicUse/TestBasicUse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/basicUse/TestBasicUse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/collection/map/TestMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/collection/map/TestMap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/mq/kafka/KafkaConsumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/mq/kafka/KafkaConsumer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/mq/kafka/KafkaProducer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/mq/kafka/KafkaProducer.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +84,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="dynamic.classpath" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -80,11 +100,11 @@
       <recent name="D:\mypro\mynetty\src\main\java\com\wrh\tuling\netty\netty\chatroom" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.wrh.TimeCalculate" />
+      <recent name="com.wrh.utils" />
       <recent name="com.wrh.annotate.annotation" />
       <recent name="com.wrh.config" />
-      <recent name="com.wrh.utils" />
       <recent name="com.wrh.web" />
-      <recent name="com.wrh.redis" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\pro\mynetty\src\main\resources\static\pic" />
@@ -312,82 +332,82 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MynettyApplication">
-    <configuration name="TestBeanCopy.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestTime.Test8">
+    <configuration name="TestBasicUse.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mynetty" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.wrh.beancopy.*" />
+          <option name="PATTERN" value="com.wrh.basicUse.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.beancopy" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.beancopy.TestBeanCopy" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestBeanCopy.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mynetty" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wrh.beancopy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.beancopy" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.beancopy.TestBeanCopy" />
-      <option name="METHOD_NAME" value="test1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestFileUtils.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mynetty" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wrh.utils.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.utils.test" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.utils.test.TestFileUtils" />
+      <option name="PACKAGE_NAME" value="com.wrh.basicUse" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.basicUse.TestBasicUse" />
       <option name="METHOD_NAME" value="Test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestLoadMethod.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestBasicUse.Test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mynetty" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.wrh.property.*" />
+          <option name="PATTERN" value="com.wrh.basicUse.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.property" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.property.TestLoadMethod" />
-      <option name="METHOD_NAME" value="test1" />
+      <option name="PACKAGE_NAME" value="com.wrh.basicUse" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.basicUse.TestBasicUse" />
+      <option name="METHOD_NAME" value="Test1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ThreadPoolDemo.test6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestTime.Test6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mynetty" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.wrh.thread.threadPool.*" />
+          <option name="PATTERN" value="com.wrh.TimeCalculate.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.thread.threadPool" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.thread.threadPool.ThreadPoolDemo" />
-      <option name="METHOD_NAME" value="test6" />
+      <option name="PACKAGE_NAME" value="com.wrh.TimeCalculate" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.TimeCalculate.TestTime" />
+      <option name="METHOD_NAME" value="Test6" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestTime.Test7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mynetty" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wrh.TimeCalculate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wrh.TimeCalculate" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.TimeCalculate.TestTime" />
+      <option name="METHOD_NAME" value="Test7" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestTime.Test8" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mynetty" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wrh.TimeCalculate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wrh.TimeCalculate" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.TimeCalculate.TestTime" />
+      <option name="METHOD_NAME" value="Test8" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -401,20 +421,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.TestBeanCopy.test" />
-      <item itemvalue="JUnit.TestBeanCopy.test1" />
+      <item itemvalue="JUnit.TestTime.Test6" />
       <item itemvalue="Spring Boot.MynettyApplication" />
-      <item itemvalue="JUnit.ThreadPoolDemo.test6" />
-      <item itemvalue="JUnit.TestLoadMethod.test1" />
-      <item itemvalue="JUnit.TestFileUtils.Test" />
+      <item itemvalue="JUnit.TestTime.Test7" />
+      <item itemvalue="JUnit.TestBasicUse.Test" />
+      <item itemvalue="JUnit.TestBasicUse.Test1" />
+      <item itemvalue="JUnit.TestTime.Test8" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestFileUtils.Test" />
-        <item itemvalue="JUnit.TestLoadMethod.test1" />
-        <item itemvalue="JUnit.ThreadPoolDemo.test6" />
-        <item itemvalue="JUnit.TestBeanCopy.test1" />
-        <item itemvalue="JUnit.TestBeanCopy.test" />
+        <item itemvalue="JUnit.TestTime.Test8" />
+        <item itemvalue="JUnit.TestTime.Test7" />
+        <item itemvalue="JUnit.TestBasicUse.Test1" />
+        <item itemvalue="JUnit.TestBasicUse.Test" />
+        <item itemvalue="JUnit.TestTime.Test6" />
       </list>
     </recent_temporary>
   </component>
@@ -466,7 +486,12 @@
       <workItem from="1579418929924" duration="1955000" />
       <workItem from="1582512482455" duration="8779000" />
       <workItem from="1582711082930" duration="22013000" />
-      <workItem from="1583143688508" duration="16605000" />
+      <workItem from="1583143688508" duration="17898000" />
+      <workItem from="1583468039419" duration="5272000" />
+      <workItem from="1583742886974" duration="294000" />
+      <workItem from="1583832101825" duration="17693000" />
+      <workItem from="1584583767830" duration="28574000" />
+      <workItem from="1586398700068" duration="4513000" />
     </task>
     <task id="LOCAL-00001" summary="xiugai">
       <created>1576736666275</created>
@@ -507,11 +532,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="增加了页面访问的功能和mvc配置" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="248" y="31" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579168400319">
+    <state x="479" y="188" key="#TestTime.test3_1" timestamp="1584342342803">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="137" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1576936342520" />
-    <state x="248" y="31" key="#com.intellij.execution.impl.EditConfigurationsDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1579168400319" />
+    <state x="479" y="188" key="#TestTime.test3_1/62.0.1858.1080@62.0.1858.1080" timestamp="1584342342803" />
+    <state x="248" y="31" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584342353626">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="248" y="31" key="#com.intellij.execution.impl.EditConfigurationsDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1584342353626" />
     <state x="689" y="343" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578305606495">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
@@ -519,7 +547,6 @@
     <state x="726" y="105" key="#com.intellij.ide.util.MemberChooser" timestamp="1583388937768">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="488" y="71" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1577111833841" />
     <state x="726" y="105" key="#com.intellij.ide.util.MemberChooser/62.0.1858.1080@62.0.1858.1080" timestamp="1583388937768" />
     <state x="770" y="399" width="441" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583225950892">
       <screen x="62" y="0" width="1858" height="1080" />
@@ -532,52 +559,55 @@
     <state x="281" y="0" key="CommitChangelistDialog2" timestamp="1582784031139">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="161" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576737282557" />
     <state x="281" y="0" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1582784031139" />
     <state x="594" y="113" key="FileChooserDialogImpl" timestamp="1583230024423">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="594" y="113" key="FileChooserDialogImpl/62.0.1858.1080@62.0.1858.1080" timestamp="1583230024423" />
-    <state width="1815" height="361" key="GridCell.Tab.0.bottom" timestamp="1583397582468">
-      <screen x="62" y="0" width="1858" height="1080" />
+    <state width="1877" height="248" key="GridCell.Tab.0.bottom" timestamp="1586748491349">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1322" height="227" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577805780434" />
-    <state width="1815" height="361" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1583397582468" />
-    <state width="1815" height="361" key="GridCell.Tab.0.center" timestamp="1583397582468">
-      <screen x="62" y="0" width="1858" height="1080" />
+    <state width="1877" height="248" key="GridCell.Tab.0.bottom/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586748491349" />
+    <state width="1815" height="435" key="GridCell.Tab.0.bottom/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1585565100579" />
+    <state width="1815" height="435" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1585127184178" />
+    <state width="1877" height="248" key="GridCell.Tab.0.center" timestamp="1586748491348">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1322" height="227" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577805780434" />
-    <state width="1815" height="361" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1583397582468" />
-    <state width="1815" height="361" key="GridCell.Tab.0.left" timestamp="1583397582468">
-      <screen x="62" y="0" width="1858" height="1080" />
+    <state width="1877" height="248" key="GridCell.Tab.0.center/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586748491348" />
+    <state width="1815" height="435" key="GridCell.Tab.0.center/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1585565100579" />
+    <state width="1815" height="435" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1585127184177" />
+    <state width="1877" height="248" key="GridCell.Tab.0.left" timestamp="1586748491348">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1322" height="227" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577805780434" />
-    <state width="1815" height="361" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1583397582468" />
-    <state width="1815" height="361" key="GridCell.Tab.0.right" timestamp="1583397582468">
-      <screen x="62" y="0" width="1858" height="1080" />
+    <state width="1877" height="248" key="GridCell.Tab.0.left/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586748491348" />
+    <state width="1815" height="435" key="GridCell.Tab.0.left/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1585565100579" />
+    <state width="1815" height="435" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1585127184177" />
+    <state width="1877" height="248" key="GridCell.Tab.0.right" timestamp="1586748491348">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1322" height="227" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577805780434" />
-    <state width="1815" height="361" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1583397582468" />
-    <state width="1815" height="361" key="GridCell.Tab.1.bottom" timestamp="1583397582468">
+    <state width="1877" height="248" key="GridCell.Tab.0.right/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586748491348" />
+    <state width="1815" height="435" key="GridCell.Tab.0.right/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1585565100579" />
+    <state width="1815" height="435" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1585127184177" />
+    <state width="1340" height="470" key="GridCell.Tab.1.bottom" timestamp="1584342486014">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1322" height="431" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577114111225" />
-    <state width="1815" height="361" key="GridCell.Tab.1.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1583397582468" />
-    <state width="1815" height="361" key="GridCell.Tab.1.center" timestamp="1583397582468">
+    <state width="1340" height="470" key="GridCell.Tab.1.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1584342486014" />
+    <state width="1340" height="470" key="GridCell.Tab.1.center" timestamp="1584342486013">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1322" height="431" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1577114111225" />
-    <state width="1815" height="361" key="GridCell.Tab.1.center/62.0.1858.1080@62.0.1858.1080" timestamp="1583397582468" />
-    <state width="1815" height="361" key="GridCell.Tab.1.left" timestamp="1583397582468">
+    <state width="1340" height="470" key="GridCell.Tab.1.center/62.0.1858.1080@62.0.1858.1080" timestamp="1584342486013" />
+    <state width="1340" height="470" key="GridCell.Tab.1.left" timestamp="1584342486013">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1322" height="431" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1577114111225" />
-    <state width="1815" height="361" key="GridCell.Tab.1.left/62.0.1858.1080@62.0.1858.1080" timestamp="1583397582468" />
-    <state width="1815" height="361" key="GridCell.Tab.1.right" timestamp="1583397582468">
+    <state width="1340" height="470" key="GridCell.Tab.1.left/62.0.1858.1080@62.0.1858.1080" timestamp="1584342486013" />
+    <state width="1340" height="470" key="GridCell.Tab.1.right" timestamp="1584342486014">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1322" height="431" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1577114111225" />
-    <state width="1815" height="361" key="GridCell.Tab.1.right/62.0.1858.1080@62.0.1858.1080" timestamp="1583397582468" />
+    <state width="1340" height="470" key="GridCell.Tab.1.right/62.0.1858.1080@62.0.1858.1080" timestamp="1584342486014" />
     <state x="631" y="238" key="NewModule_or_Project.wizard" timestamp="1578282008719">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
@@ -586,46 +616,35 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="130" y="277" key="Registry/62.0.1858.1080@62.0.1858.1080" timestamp="1582804177386" />
-    <state x="463" y="171" key="RestClientTextRequest" timestamp="1577113057714">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="463" y="171" key="RestClientTextRequest/0.0.1366.728@0.0.1366.728" timestamp="1577113057714" />
-    <state x="220" y="224" width="998" height="708" key="SettingsEditor" timestamp="1582859793720">
+    <state x="220" y="224" width="998" height="708" key="SettingsEditor" timestamp="1583738136426">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="186" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1577099424832" />
-    <state x="220" y="224" width="998" height="708" key="SettingsEditor/62.0.1858.1080@62.0.1858.1080" timestamp="1582859793720" />
+    <state x="220" y="224" width="998" height="708" key="SettingsEditor/62.0.1858.1080@62.0.1858.1080" timestamp="1583738136426" />
     <state x="436" y="129" key="Vcs.Push.Dialog.v2" timestamp="1582784035033">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="275" y="87" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1576736669614" />
     <state x="436" y="129" key="Vcs.Push.Dialog.v2/62.0.1858.1080@62.0.1858.1080" timestamp="1582784035033" />
-    <state width="695" height="726" key="com.intellij.byteCodeViewer.ShowByteCodeAction" timestamp="1577114265570">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="695" height="726" key="com.intellij.byteCodeViewer.ShowByteCodeAction/0.0.1366.728@0.0.1366.728" timestamp="1577114265570" />
-    <state x="572" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1578992184492">
+    <state x="572" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1584583778566">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="375" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1577246811600" />
-    <state x="572" y="282" key="com.intellij.ide.util.TipDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1578992184492" />
+    <state x="572" y="282" key="com.intellij.ide.util.TipDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1584583778566" />
     <state x="783" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582772281505">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="783" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/62.0.1858.1080@62.0.1858.1080" timestamp="1582772281505" />
-    <state x="474" y="134" width="1033" height="813" key="find.popup" timestamp="1583320509678">
+    <state x="2346" y="129" width="1068" height="783" key="find.popup" timestamp="1585710879085">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2346" y="129" width="1068" height="783" key="find.popup/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585710879085" />
+    <state x="474" y="134" width="1033" height="813" key="find.popup/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1585564989777" />
+    <state x="474" y="134" width="1033" height="813" key="find.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1585127158460" />
+    <state x="467" y="325" key="new project wizard" timestamp="1584022768665">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="303" y="90" width="759" height="548" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1577112650642" />
-    <state x="474" y="134" width="1033" height="813" key="find.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1583320509678" />
-    <state x="365" y="150" key="new project wizard" timestamp="1577970104253">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state x="365" y="150" key="new project wizard/62.0.1858.1080@62.0.1858.1080" timestamp="1577970104253" />
+    <state x="467" y="325" key="new project wizard/62.0.1858.1080@62.0.1858.1080" timestamp="1584022768665" />
     <state x="533" y="73" width="672" height="676" key="search.everywhere.popup" timestamp="1579072522946">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1577018058877" />
     <state x="533" y="73" width="672" height="676" key="search.everywhere.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1579072522946" />
   </component>
   <component name="XDebuggerManager">
@@ -648,7 +667,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/wrh/basicUse/TestString.java</url>
-          <line>55</line>
+          <line>100</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -658,7 +677,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/wrh/basicUse/TestString.java</url>
-          <line>57</line>
+          <line>102</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>

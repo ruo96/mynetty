@@ -440,6 +440,22 @@
 			<version>1.6</version>
 		</dependency>-->
 
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-java</artifactId>
+			<version>1.10.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-streaming-java_2.11</artifactId>
+			<version>1.10.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-connector-kafka-0.10_2.11</artifactId>
+			<version>1.10.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -447,6 +463,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+                <!--为了打包flink的jar包，临时使用-->
+				<configuration>
+					<skip>true</skip>
+					<mainClass>com.wrh.flink.SocketTextStreamWordCount</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

@@ -7,6 +7,7 @@ import com.wrh.functionInterfaceTest.Student;
 import com.wrh.utils.Md5Utils;
 import com.wrh.utils.ObjectCheckHandleUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.springframework.util.StopWatch;
 
@@ -26,6 +27,50 @@ public class TestString {
 
         String uidRowKey = Joiner.on("_").skipNulls().join(uid, inter,ds);
         log.info(" result: {}",uidRowKey);
+    }
+
+    @Test
+    public void Test231() {
+        String i = "user_online_gameid_";
+        String data = "user_online_gameid_20200316_1234_5678";
+        log.info("{}",i.length());
+        log.info("data: {}, substring:{}",data, StringUtils.substring(data,0,i.length()));
+        log.info("data: {}, substring:{}",data, StringUtils.substring(data,0,2));
+//        System.out.println(StringUtils.substring(data,0,i.length()));
+    }
+
+    @Test
+    public void Test22() {
+
+        String a = "";
+//        Long b = Long.valueOf(a);
+        Long c = Long.valueOf(null);
+//        System.out.println(b);
+        System.out.println(c);
+    }
+
+    @Test
+    public void Test23() {
+        String a = "12345654634534512312312312312";
+        Long start = System.currentTimeMillis();
+        int length;
+        for (int i = 0; i < 100000000; i++) {
+            if(a.length() >20 ){
+
+            }
+        }
+        Long end = System.currentTimeMillis();
+        System.out.println(end - start);
+
+        Long start1 = System.currentTimeMillis();
+        for (int i = 0; i < 100000000; i++) {
+            if(StringUtils.length(a) >20 ){
+
+            }
+        }
+        Long end1 = System.currentTimeMillis();
+        System.out.println(end1 - start1);
+
     }
 
     /**

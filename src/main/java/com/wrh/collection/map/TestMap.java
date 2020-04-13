@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @Created by wrh
@@ -25,6 +26,57 @@ public class TestMap {
         return prefix + String.format("%015d", hashCodeV);
     }
 
+    @Test
+    public void Test() {
+        Map<String , String> map = new HashMap<>();
+        map.put("1","1");
+        map.put("2","2");
+        map.put("3","3");
+        map.put("4","4");
+        map.put("5","5");
+        System.out.println(map);
+        chechAbnormalValue(map);
+        System.out.println(map);
+        System.out.println(JSON.toJSONString(map));
+
+    }
+
+    /**
+     * map的key排序
+     */
+    @Test
+    public void TestSORT() {
+        Map<String , String[]> map = new HashMap<>();
+        /*map.put("1",{"1"});
+        map.put("3",{"2"});
+        map.put("21","3");
+        map.put("22","4");
+        map.put("221","5");
+        System.out.println(map);
+        List<String> list = sortMapByKey(map);
+        for (String key:list  ) {
+            System.out.println(map.get(key));
+        }*/
+
+    }
+
+    private List<String> sortMapByKey(Map<String, String[]> map) {
+        int size = map.size();
+
+        List<Map.Entry<String, String[]>> list = new ArrayList<Map.Entry<String, String[]>>(size);
+        list.addAll(map.entrySet());
+        List<String> keys = list.stream()
+                .sorted(Comparator.comparing(Map.Entry<String,String[]> :: getKey))
+                .map(Map.Entry<String,String[]> :: getKey)
+                .collect(Collectors.toList());
+        return keys;
+
+    }
+
+
+    private void chechAbnormalValue(Map<String, String> map) {
+        map.put("7","7");
+    }
 
 
     public static void main(String[] args) {
