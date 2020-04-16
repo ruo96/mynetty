@@ -21,6 +21,7 @@ public class KafkaConsumer {
      * .\kafka-server-start.bat D:\tools\mq\kafka\kafka_2.12-2.4.0\config\server.properties
      * .\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 3 --topic mynetty3-3p     创建topic
      * .\kafka-console-producer.bat --broker-list localhost:9092 --topic mynetty3-3p
+     * .\kafka-consumer-groups.sh --bootstrap-server XXX:9092 --group your-group-id --describe  查看组消费问题
      * 如果有3个partition，那么就会ABA-ABA-ABA 这样收发数据，如果2个partition，那么AB就会轮流获取，如果只有一个partition，那么就只有A或者只有B能够接收数据
      * @param record
      */

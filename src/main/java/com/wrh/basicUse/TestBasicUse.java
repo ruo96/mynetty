@@ -348,13 +348,13 @@ public class TestBasicUse {
     @Test
     public void Test() {
         for (int i = 0; i < 10; i++) {
-            System.out.println(i);
             try {
                 int j = (i+5)/(i-5);
             } catch (Exception e) {
                 System.out.println(e);
                 continue;
             }
+            System.out.println(i);
         }
     }
 

@@ -13,6 +13,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -244,6 +245,11 @@ public class TestTime {
     @Test
     public void Test8() {
         log.info(">>> value: {}",DateTimeUtil.getFormatTime("yyyy-MM-dd"));
+
+        Date startDate = DateTimeUtil.StringToDate("2020-04-13",DateTimeUtil.yyyyMMdd);
+        Date endDate = DateTimeUtil.StringToDate("2020-04-13",DateTimeUtil.yyyyMMdd);
+        int days = DateTimeUtil.getDaysBetween(endDate, startDate);
+        log.info(">>> days: {}",days);
 
     }
 
