@@ -366,4 +366,86 @@ public class TestBasicUse {
 
         }
     }
+
+    @Test
+    public void Test2() {
+        float a = 0.125f;
+        double b = 0.125d;
+        System.out.println((a - b) == 0);  // true
+
+        double c = 0.8;
+        double d = 0.7;
+        double e = 0.6;
+        System.out.println((c - d) == (d - e));  //false
+
+        System.out.println(1.0/0);  // Infinity
+//        System.out.println(1/0);  // java.lang.ArithmeticException: / by zero
+        System.out.println(1.0/0.0); // Infinity
+    }
+
+    @Test
+    public void Test3() {
+        System.out.println(16>>1);
+        System.out.println(16>>>1);
+
+        System.out.println(-16>>1);   //-8
+        System.out.println(-16>>>1);  //2147483640
+
+//        System.out.println(1.2>>1);  // 浮点不能用
+//        System.out.println(1.2>>>1); // 浮点不能用
+    }
+
+    @Test
+    public void Test4() {
+        f((Integer) null);  // 入参必须要指定
+    }
+
+    private void f(String o) {
+        System.out.println("enter String method");
+    }
+
+    private void f(Integer o) {
+        System.out.println("enter Integer method");
+    }
+
+    @Test
+    public void Test5() {
+        for (int i = 0; i < 10; i++) {
+            g(1);
+        }
+    }
+
+    private void g(double i) {  //为什么会直接用这个？
+        System.out.println("enter double method");
+    }
+
+    private void g(Integer i) {
+        System.out.println("enter Integer method");
+    }
+
+    @Test
+    public void Test6() {
+        String a = null;
+        switch (a) {    // java.lang.NullPointerException
+            case "null":
+                System.out.println("enter string null");
+                break;
+            case "1":
+                System.out.println("enter string 1");
+                break;
+            default:
+                System.out.println("enter default");
+                break;
+        }
+
+    }
+
+    @Test
+    public void Test7() {
+        System.out.println(get("123",new HashMap(4)));
+    }
+
+    <String, T> String get(String s, T t) {   // 可以通过
+        return s;
+    }
 }
