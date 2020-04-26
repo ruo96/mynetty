@@ -448,4 +448,35 @@ public class TestBasicUse {
     <String, T> String get(String s, T t) {   // 可以通过
         return s;
     }
+
+    @Test
+    public void Test8() {
+        log.info("first use no conflict");
+    }
+
+    @Test
+    public void Test9() {
+        Integer i = 200;
+        Integer j = 200;
+        if (i.equals(j)) {
+            System.out.println("equal");
+        } else {
+            System.out.println(" not equal");
+        }
+    }
+
+    @Test
+    public void Test10() {
+        BigDecimal a = new BigDecimal("1.0");
+        BigDecimal b = new BigDecimal("0.9");
+        BigDecimal c = new BigDecimal("0.8");
+
+        BigDecimal x = a.subtract(b);
+        BigDecimal y = b.subtract(c);
+
+        if(x.equals(y)){
+            System.out.println("true");
+        }
+
+    }
 }

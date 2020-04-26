@@ -8,3 +8,5 @@ Spring Boot 的启动是通过new SpringApplication()实例来启动的，
 一个 Tomcat 实例就是一个 Server，一个 Server 包含多个 Service，也就是多个应用程序，
 每个 Service 包含多个连接器（Connetor）和一个容器（Container)，而容器下又有多个子容器，
 按照父子关系分别为：Engine,Host,Context,Wrapper，其中除了 Engine 外，其余的容器都是可以有多个。
+
+本目录将自建tomcat

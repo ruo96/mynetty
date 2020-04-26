@@ -253,5 +253,20 @@ public class TestTime {
 
     }
 
+    @Test
+    public void Test9() {
+        int daysOfThisYear = LocalDate.now().lengthOfYear();
+        log.info(">>> daysOfThisYear: {}", daysOfThisYear);
+
+        int day = LocalDate.of(2020,4,23).lengthOfYear();
+        log.info(">>> day: {}", day);
+    }
+
+    @Test
+    public void Test10() {
+        int i = Calendar.JANUARY;
+        System.out.println(i);
+    }
+
 
 }

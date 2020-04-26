@@ -1,10 +1,10 @@
 package com.wrh.lambda.basicuse;
 
+import com.wrh.elasticsearch.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * @Created by wrh
@@ -25,5 +25,50 @@ public class MathTest {
         int a = numList.stream().filter(e->e>2).mapToInt(Integer::intValue).sum();
 
         log.info("sum is : {}",a);
+    }
+
+    @Test
+    public void Test() {
+        Student student1 = new Student(){
+            {
+               setId(1);
+               setName("w1");
+               setGrade(80);
+            }
+        };
+
+        Student student2 = new Student(){
+            {
+                setId(2);
+                setName("w1");
+                setGrade(100);
+            }
+        };
+
+        Student student3 = new Student(){
+            {
+                setId(3);
+                setName("w2");
+                setGrade(20);
+            }
+        };
+
+        Student student4 = new Student(){
+            {
+                setId(4);
+                setName("w2");
+                setGrade(30);
+            }
+        };
+
+        List<Student> list = new ArrayList<>();
+        list.add(student1);
+        list.add(student2);
+        list.add(student3);
+        list.add(student4);
+
+        Map<String, Integer> map = new HashMap<>();
+        list.forEach(e->map.merge(e.getName(),e.getGrade(),Integer::sum));
+        System.out.println(map);
     }
 }
