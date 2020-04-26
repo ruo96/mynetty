@@ -72,6 +72,7 @@ public class MyTomcat {
     }
 
     private void dispatch(MyRequest myRequest, MyResponse myResponse) {
+        log.info(">>> dispatch url: {}",myRequest.getUrl());
         String clazz = urlServletMap.get(myRequest.getUrl());
 
         try {
