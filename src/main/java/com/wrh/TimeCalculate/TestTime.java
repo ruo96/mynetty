@@ -107,6 +107,46 @@ public class TestTime {
     }
 
     @Test
+    public void TestGetMinute1() {
+
+        long minute1 = Math.round(1000*1.0/60000);
+        long minute2 = (long) Math.floor(1000*1.0/60000);
+        long minute3 = (long) Math.ceil(86399000*1.0/60000);
+        long minute4 = (long) Math.ceil(86340000*1.0/60000);
+        long minute5 = (long) Math.ceil(86341000*1.0/60000);
+        long minute6 = (long) Math.ceil(86339000*1.0/60000);
+        log.info(">>> minute1: {}",minute1);
+        log.info(">>> minute2: {}",minute2);
+        log.info(">>> minute3: {}",minute3);
+        log.info(">>> minute4: {}",minute4);
+        log.info(">>> minute5: {}",minute5);
+        log.info(">>> minute6: {}",minute6);
+    }
+
+    @Test
+    public void TestGetMinute2() {
+
+        long minute1 = (long) Math.ceil(86399000*1.0/60000);
+        long minute2 = (long) Math.ceil(86340000*1.0/60000);
+        long minute3 = (long) Math.ceil(86341000*1.0/60000);
+        long minute4 = (long) Math.ceil(86339000*1.0/60000);
+        log.info(">>> minute1: {}",minute1);
+        log.info(">>> minute2: {}",minute2);
+        log.info(">>> minute3: {}",minute3);
+        log.info(">>> minute4: {}",minute4);
+
+        long minute5 = (long) Math.ceil(86399000/60000);
+        long minute6 = (long) Math.ceil(86340000/60000);
+        long minute7 = (long) Math.ceil(86341000/60000);
+        long minute8 = (long) Math.ceil(86339000/60000);
+
+        log.info(">>> minute5: {}",minute5);
+        log.info(">>> minute6: {}",minute6);
+        log.info(">>> minute7: {}",minute7);
+        log.info(">>> minute8: {}",minute8);
+    }
+
+    @Test
     public void TestTime() throws InterruptedException {
         while(true){
 

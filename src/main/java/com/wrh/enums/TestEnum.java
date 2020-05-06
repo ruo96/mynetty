@@ -46,6 +46,8 @@ public class TestEnum {
         TourMarkEnum tourMarkEnum = TourMarkEnum.TOUR_MARK;
         String enumStr = "1";
         TourMarkEnum tourMarkEnum1 = TourMarkEnum.getByCode(enumStr);
+        System.out.println(tourMarkEnum);
+        System.out.println(tourMarkEnum.getClass() );
         System.out.println(tourMarkEnum1);
         System.out.println(tourMarkEnum1.getCode());
         System.out.println(tourMarkEnum1.getDesc());
@@ -61,4 +63,5 @@ public class TestEnum {
         }
 
     }
+
 }

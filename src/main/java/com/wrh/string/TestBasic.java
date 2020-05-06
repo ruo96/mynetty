@@ -120,4 +120,35 @@ public class TestBasic {
         log.info("===> [{}]",date.substring(0,10));
 
     }
+
+    @Test
+    public void Test() {
+        String SMS_CONTENT = "uri:%s, message:%s";
+        String uri = "/hello world";
+        String message = "wrong message";
+        String content = String.format(SMS_CONTENT, uri, message);
+        System.out.println(content);
+
+    }
+
+    @Test
+    public void Test1() {
+        String message = "123123123123123123123123";
+        System.out.println(message.substring(0,20));
+        String message1 = "helloworld";
+        String message2 = message1.replace("hello","one");
+        System.out.println(message1);
+        System.out.println(message1.replace("hello","one"));
+        System.out.println(message2);
+    }
+    
+    @Test
+    public void Test2() {
+        Long i = getLong();
+        System.out.println(i);
+    }
+
+    private Long getLong() {
+        return null;
+    }
 }

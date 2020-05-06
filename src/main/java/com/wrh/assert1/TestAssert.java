@@ -38,4 +38,10 @@ public class TestAssert {
         int i2 = 100;
         assert i1 != i2;
     }
+    
+    @Test
+    public void Test1() {
+        String i = null;
+        Assert.notNull(i,"i 为空");
+    }
 }

@@ -25,6 +25,11 @@
       "sourceType": "com.wrh.redis.RedisConfig",
       "name": "spring.redis",
       "type": "com.wrh.redis.RedisConfig"
+    },
+    {
+      "sourceType": "com.wrh.security.SecurityProperties",
+      "name": "spring.security",
+      "type": "com.wrh.security.SecurityProperties"
     }
   ],
   "properties": [

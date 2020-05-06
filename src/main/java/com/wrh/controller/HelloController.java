@@ -1,6 +1,7 @@
 package com.wrh.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    /*@RequestMapping(value = "/")
+    @GetMapping(value = "/hello")
     public String hello(){
         return "hello";
-    }*/
+    }
 
     @RequestMapping(value = "/index")
     public String index(){
