@@ -70,7 +70,7 @@ public class TestUtils {
         Header[] headerArray = new Header[3];
         headerArray[0] = new BasicHeader("User-Agent", USER_AGENT);
         headerArray[1] = new BasicHeader("Content-type", CONTENT_TYPE);
-        headerArray[2] = new BasicHeader("X-BACKEND-BILI-REAL-IP", clientIP);
+        headerArray[2] = new BasicHeader("X-BACKEND-BI123LI-REAL-IP", clientIP);
         return headerArray;
     }
 }
