@@ -3,14 +3,12 @@ package com.wrh.IOuse.fileOperate;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -232,6 +230,131 @@ public class TestFileOperate {
         log.info(" txt content: {}",sb.toString());
 
         Files.write(Paths.get("e:\\file\\gzip_copy.txt"), sb.toString().getBytes("GBK"), StandardOpenOption.CREATE);
+
+    }
+
+    /**
+     * 使用缓冲组件对文件I/O进行包装，可以有效提升文件I/O的性能。
+     * 直接使用InputStream和OutputStream进行文件读写的代码：
+     */
+    @Test
+    public void testOutAndInputStream(){
+        try {
+            DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream("e:\\file\\data.txt"));
+            long start = System.currentTimeMillis();
+            for(int i=0;i<10000;i++){
+                dataOutputStream.writeBytes(Objects.toString(i)+"\r\n");
+            }
+            dataOutputStream.close();
+            long useTime = System.currentTimeMillis()-start;
+            System.out.println("写入数据--useTime:"+useTime);
+            //开始读取数据
+            long startInput = System.currentTimeMillis();
+            DataInputStream dataInputStream = new DataInputStream(new FileInputStream("e:\\file\\data.txt"));
+
+            while (dataInputStream.readLine() != null){
+            }
+            dataInputStream.close();
+            long useTimeInput = System.currentTimeMillis()-startInput;
+            System.out.println("读取数据--useTimeInput:"+useTimeInput);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * 使用缓冲的代码如下
+     * 通过运行结果，我们能很明显的看出来使用缓冲的代码，无论在读取还是写入文件上，性能都有了数量级的提升。
+     */
+    @Test
+    public void testBufferedStream(){
+
+        try {
+            DataOutputStream dataOutputStream = new DataOutputStream(
+                    new BufferedOutputStream(new FileOutputStream("e:\\file\\data.txt")));
+            long start = System.currentTimeMillis();
+            for(int i=0;i<10000;i++){
+                dataOutputStream.writeBytes(Objects.toString(i)+"\r\n");
+            }
+            dataOutputStream.close();
+            long useTime = System.currentTimeMillis()-start;
+            System.out.println("写入数据--useTime:"+useTime);
+            //开始读取数据
+            long startInput = System.currentTimeMillis();
+            DataInputStream dataInputStream = new DataInputStream(
+                    new BufferedInputStream(new FileInputStream("e:\\file\\data.txt")));
+
+            while (dataInputStream.readLine() != null){
+            }
+            dataInputStream.close();
+            long useTimeInput = System.currentTimeMillis()-startInput;
+            System.out.println("读取数据--useTimeInput:"+useTimeInput);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * 使用Wirter和Reader也有类似的效果
+     */
+    @Test
+    public void testWriterAndReader(){
+
+        try {
+            long start = System.currentTimeMillis();
+            FileWriter fileWriter = new FileWriter("e:\\file\\data.txt");
+            for (int i=0;i<100000;i++){
+                fileWriter.write(Objects.toString(i)+"\r\n");
+            }
+            fileWriter.close();
+            long useTime = System.currentTimeMillis()-start;
+            System.out.println("写入数据--useTime:"+useTime);
+            //开始读取数据
+            long startReader = System.currentTimeMillis();
+            FileReader fileReader = new FileReader("e:\\file\\data.txt");
+            while (fileReader.read() != -1){
+            }
+            fileReader.close();
+            long useTimeInput = System.currentTimeMillis()-startReader;
+            System.out.println("读取数据--useTimeInput:"+useTimeInput);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * 通过运行结果可以看出，使用了缓冲后，无论是FileReader还是FileWriter的性能都有较为明显的提升。
+     *
+     * 在上面的例子中，由于FileReader和FilerWriter的性能要优于直接使用FileInputStream和FileOutputStream所以循环次数增加了10倍。
+     */
+    @Test
+    public void testBufferedWriterAndReader(){
+
+        try {
+            long start = System.currentTimeMillis();
+            BufferedWriter fileWriter = new BufferedWriter(
+                    new FileWriter("e:\\file\\data.txt"));
+            for (int i=0;i<100000;i++){
+                fileWriter.write(Objects.toString(i)+"\r\n");
+            }
+            fileWriter.close();
+            long useTime = System.currentTimeMillis()-start;
+            System.out.println("写入数据--useTime:"+useTime);
+            //开始读取数据
+            long startReader = System.currentTimeMillis();
+            BufferedReader fileReader = new BufferedReader(
+                    new FileReader("e:\\file\\data.txt"));
+            while (fileReader.read() != -1){
+            }
+            fileReader.close();
+            long useTimeInput = System.currentTimeMillis()-startReader;
+            System.out.println("读取数据--useTimeInput:"+useTimeInput);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 }

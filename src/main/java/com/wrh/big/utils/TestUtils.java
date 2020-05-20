@@ -22,10 +22,10 @@ import java.util.List;
 @Slf4j
 public class TestUtils {
 
-    private static final String baseUrl = "http://game-sdk-info-service.bilibili.co";
-    private static final String paraPath = "/v1/sdk/get_all_tour_limit_config";
-    private static final String appSecret = "60a6aaa964ce4deea7d9e0acac10fe75";
-    private static final String appKey="3ab9fe452684a3b051";
+    private static final String baseUrl = "http://game-sdk-info-service.bb.co";
+    private static final String paraPath = "";
+    private static final String appSecret = "";
+    private static final String appKey="";
     private static final String USER_AGENT         = "Mozilla/5.0 BSGameSDK";
     private static final String CONTENT_TYPE       = "Content-type";
 
