@@ -1,5 +1,7 @@
 package com.wrh.serialize;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -8,6 +10,7 @@ import java.io.Serializable;
  * @Date: Created in 上午 9:38 2019/5/17 0017
  * @Modified By:
  */
+@Data
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 

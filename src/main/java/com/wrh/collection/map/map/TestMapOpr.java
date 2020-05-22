@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -41,5 +42,17 @@ public class TestMapOpr {
 
         log.info("===> map is : {}", JSON.toJSONString(map));
 
+    }
+
+    @Test
+    public void Test1() {
+        Map<String, String> map = new HashMap<>();
+        map.put(null,null);
+        map.put("1","w1");
+        map.put("2","w2");
+        map.put("3","w3");
+        map.put(null,null);
+
+        System.out.println(map);
     }
 }

@@ -479,4 +479,14 @@ public class TestBasicUse {
         }
 
     }
+
+    @Test
+    public void Test11() {
+        ArrayList<Integer> li = new ArrayList<Integer>();
+        ArrayList<Float> lf = new ArrayList<Float>();
+        if(li.getClass() == lf.getClass()) {
+            System.out.println("666");
+        }
+
+    }
 }
