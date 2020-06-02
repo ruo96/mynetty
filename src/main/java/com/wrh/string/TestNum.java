@@ -1,5 +1,8 @@
 package com.wrh.string;
 
+import com.wrh.elasticsearch.Student;
+import org.junit.Test;
+
 import java.util.regex.Pattern;
 
 /**
@@ -19,5 +22,13 @@ public class TestNum {
     public static boolean isInteger(String str) {
         Pattern pattern = Pattern.compile("^[-\\+]?[\\d]*$");
         return pattern.matcher(str).matches();
+    }
+
+    @Test
+    public void Test1() {
+        Student s = new Student();
+
+        long b = s.getGrade();
+//        System.out.println(b);
     }
 }

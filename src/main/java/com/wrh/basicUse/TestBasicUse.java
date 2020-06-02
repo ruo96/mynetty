@@ -1,9 +1,13 @@
 package com.wrh.basicUse;
 
 import com.alibaba.fastjson.JSON;
+import com.google.gson.Gson;
 import com.wrh.basicUse.vo.ChangVo;
 import com.wrh.basicUse.vo.StudentVo;
+import com.wrh.elasticsearch.Student;
+import com.wrh.utils.GsonUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -488,5 +492,67 @@ public class TestBasicUse {
             System.out.println("666");
         }
 
+    }
+
+    @Test
+    public void Test12() {
+        double[] d = new double[10];
+        System.out.println(d[0]);
+        System.out.println(d[1]);
+        System.out.println(d[2]);
+        System.out.println(d.length);
+        System.out.println(d[0] * d[1] == 0);
+    }
+
+    @Test
+    public void Test13() {
+        double[] d = new double[4];
+        d[0] = 1;
+        d[1] = 2;
+        d[2] = 3;
+        System.out.println(d[0]);
+        System.out.println(d.length);
+    }
+
+    @Test
+    public void Test14() {
+        String year = "2020-0202";
+        System.out.println(year.substring(0,4));
+    }
+
+    @Test
+    public void Test15() {
+        String a = "  ";
+        System.out.println(StringUtils.isEmpty(a));
+        System.out.println(StringUtils.isBlank(a));
+    }
+
+    @Test
+    public void Test16() {
+        Student student = new Student();
+        student.setName("w1");
+        student.setId(1);
+        student.setGrade(100);
+        System.out.println(JSON.toJSONString(student));
+
+        String str = "{\"grade1\":100,\"id1\":1,\"name1\":\"w1\"}";
+        Student student1 = JSON.parseObject(str, Student.class);
+        if(Objects.isNull(student1)) {
+            System.out.println("null");
+        }else {
+            System.out.println(JSON.toJSONString(student1));
+        }
+    }
+
+    @Test
+    public void Test17() {
+        String str = "{\"grade1\":100,\"id1\":1,\"name1\":\"w1\"}";
+        GameDayData gameDayData = JSON.parseObject(str, GameDayData.class);
+        GameDayData gameDayData1 = new Gson().fromJson(str, GameDayData.class);
+        if(Objects.isNull(gameDayData1)) {
+            System.out.println("null");
+        }else {
+            System.out.println(JSON.toJSONString(gameDayData1));
+        }
     }
 }

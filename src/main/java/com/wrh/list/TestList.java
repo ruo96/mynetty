@@ -8,6 +8,7 @@ import org.springframework.beans.BeanUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Vector;
 
 import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
@@ -70,8 +71,27 @@ public class TestList {
         list.add(d2);
         log.info(">>> Gson: {}", GsonUtils.GSON.toJson(list));
         log.info(">>> Long: {}", Long.valueOf("0"));
+    }
 
+    @Test
+    public void Test1() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        log.info("{}",list);
+    }
 
+    @Test
+    public void Test2() {
+        Integer list;
 
+        list = returnNull();
+
+        log.info("{}", Objects.isNull(list));
+    }
+
+    private Integer returnNull() {
+        return null;
     }
 }

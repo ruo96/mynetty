@@ -55,4 +55,14 @@ public class TestMapOpr {
 
         System.out.println(map);
     }
+
+    @Test
+    public void Test2() {
+        Map<String, String> map = new HashMap<>();
+        map.put(null,null);
+        map.put("1","w1");
+        map.put("2","w2");
+        map.put("3","w3");
+        System.out.println(map.get("4"));
+    }
 }

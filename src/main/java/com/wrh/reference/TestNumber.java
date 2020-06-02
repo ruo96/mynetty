@@ -1,5 +1,7 @@
 package com.wrh.reference;
 
+import org.junit.Test;
+
 import java.math.BigDecimal;
 
 /**
@@ -32,5 +34,11 @@ public class TestNumber {
         System.out.println("ssss----" + ss);
         System.out.println("tttttt-----" + tt);
 
+    }
+
+    @Test
+    public void Test1() {
+        BigDecimal bigDecimal = new BigDecimal("1.23");
+        System.out.println(bigDecimal.doubleValue());
     }
 }

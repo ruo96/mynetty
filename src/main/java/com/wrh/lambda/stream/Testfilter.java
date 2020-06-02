@@ -64,4 +64,17 @@ public class Testfilter {
 
         log.info("code is : {}",code);
     }
+
+    @Test
+    public void Test1() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+
+        list = list.stream().filter(e-> e > 2).collect(Collectors.toList());
+        System.out.println(list);
+    }
 }

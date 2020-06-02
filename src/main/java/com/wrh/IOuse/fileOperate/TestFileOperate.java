@@ -10,6 +10,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Stream;
 
 /**
  * @Created by wrh
@@ -356,5 +357,17 @@ public class TestFileOperate {
             e.printStackTrace();
         }
 
+    }
+
+    /**
+     * 流式处理file
+     */
+    @Test
+    public void Test() {
+        try(Stream<String> stream = Files.lines(Paths.get("e:\\file\\test.txt"))) {
+            stream.forEach(System.out::println);
+        }catch (IOException e) {
+
+        }
     }
 }

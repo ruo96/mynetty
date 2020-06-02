@@ -1,6 +1,7 @@
 package com.wrh.TimeCalculate;
 
 import com.alibaba.fastjson.JSON;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import com.wrh.utils.DateUtils;
 import com.wrh.utils.RowKeyHashUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -9,8 +10,7 @@ import org.joda.time.DateTime;
 import org.joda.time.Duration;
 import org.junit.Test;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
@@ -306,6 +306,60 @@ public class TestTime {
     public void Test10() {
         int i = Calendar.JANUARY;
         System.out.println(i);
+    }
+
+    @Test
+    public void Test11() {
+        cycleDate();
+    }
+    //处理周期性的日期
+    public void cycleDate(){
+        LocalDate today = LocalDate.now();
+        LocalDate dateOfBirth = LocalDate.of(2020, 06, 02);
+
+        MonthDay birthday = MonthDay.of(dateOfBirth.getMonth(), dateOfBirth.getDayOfMonth());
+        MonthDay currentMonthDay = MonthDay.from(today);
+
+        if(currentMonthDay.equals(birthday)){
+            System.out.println("Many Many happy returns of the day !!");
+        }else{
+            System.out.println("Sorry, today is not your birthday");
+        }
+    }
+
+    @Test
+    public void Test12() {
+        Clock clock = Clock.systemUTC();
+        System.out.println("clock: " + clock);
+
+        Clock defaultClock = Clock.systemDefaultZone();
+        System.out.println("default clock: " + defaultClock);
+    }
+
+    /**
+     * java8处理时区
+     */
+    @Test
+    public void Test13() {
+        //设置时区
+        ZoneId america = ZoneId.of("America/New_York");
+
+        LocalDateTime localtDateAndTime = LocalDateTime.now();
+
+        ZonedDateTime dateAndTimeInNewYork  = ZonedDateTime.of(localtDateAndTime, america );
+        System.out.println("现在的日期和时间在特定的时区 : " + dateAndTimeInNewYork);
+    }
+
+    @Test
+    public void Test14() {
+        Instant timestamp = Instant.now();
+        System.out.println(timestamp);
+
+        String date = "2020-06-01";
+        LocalDate localDate = LocalDate.parse(date, DateTimeFormatter.ISO_DATE);
+//        LocalDate localDate1 = LocalDate.parse(date, DateTimeFormatter.);
+        System.out.println(localDate);
+//        System.out.println(localDate1);
     }
 
 

@@ -1,6 +1,7 @@
 package com.wrh.math;
 
 import com.google.common.util.concurrent.RateLimiter;
+import com.wrh.elasticsearch.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -8,6 +9,11 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @Created by wrh
@@ -216,6 +222,115 @@ public class TestInteger {
          log.info("getAddress: {}",getAddress);
 
          RateLimiter limiter = RateLimiter.create(2);
+     }
+
+     @Test
+     public void Test10() {
+         Student student = new Student();
+         student.setName("w1");
+         student.setId(0);
+         student.setGrade(10);
+
+         Student student1 = new Student();
+         student1.setName("w1");
+         student1.setId(0);
+         student1.setGrade(20);
+
+         List<Student> students = new ArrayList<>();
+         students.add(student);
+         students.add(student1);
+
+         long sum = students.stream().filter(e->e.getGrade()>100).mapToInt(Student::getGrade).sum();
+         System.out.println(sum);
+
+         List<Student> students1 = new ArrayList<>();
+         long sum1 = students1.stream().filter(e->e.getGrade()>100).mapToInt(Student::getGrade).sum();
+         System.out.println(sum1);
+
+     }
+
+     @Test
+     public void Test11() {
+         double a = 1.5;
+         System.out.println((long)a);
+
+         System.out.println( (long)(2/1.5+0.5));
+         System.out.println( 2/1.5);
+     }
+
+     @Test
+     public void Test12() {
+         double a =  223.0;
+         System.out.println(a);
+         DecimalFormat df = new DecimalFormat("#");
+         System.out.println(df.format(a));
+         System.out.println(Double.parseDouble(df.format(a)));
+     }
+
+     @Test
+     public void Test13() {
+         long before = Runtime.getRuntime().freeMemory();
+         Map<String, Integer> map = new HashMap<>(1000000);
+         /*for (int i = 0; i < 1000000 ; i++) {
+             map.put("abcdefghijklmnopqrstuvwxyz" + i, i );
+         }*/
+//         map = null;
+//         map.clear();
+         System.out.println(map);
+//         System.gc();
+         long after = Runtime.getRuntime().freeMemory();
+         System.out.println(before/1024/1024);
+         System.out.println(after/1024/1024);
+         System.out.println((before-after)/1024/1024);
+
+     }
+
+     @Test
+     public void Test14() {
+         double pi = 3.1415927;//圆周率
+//取一位整数
+         System.out.println(new DecimalFormat("0").format(pi));//3
+//取一位整数和两位小数
+         System.out.println(new DecimalFormat("0.00").format(pi));//3.14
+//取两位整数和三位小数，整数不足部分以0填补。
+         System.out.println(new DecimalFormat("00.000").format(pi));// 03.142
+//取所有整数部分
+         System.out.println(new DecimalFormat("#").format(pi));//3
+//以百分比方式计数，并取两位小数
+         System.out.println(new DecimalFormat("#.##%").format(pi));//314.16%
+
+         /**
+          * 上面的代码就是网上很经典的案例，下面我们来分析另外的一个值
+          */
+         pi=12.34567;
+//取一位整数
+         System.out.println(new DecimalFormat("0").format(pi));//12
+//取一位整数和两位小数
+         System.out.println(new DecimalFormat("0.00").format(pi));//12.35
+//取两位整数和三位小数，整数不足部分以0填补。
+         System.out.println(new DecimalFormat("00.000").format(pi));// 12.346
+//取所有整数部分
+         System.out.println(new DecimalFormat("#").format(pi));//12
+//以百分比方式计数，并取两位小数
+         System.out.println(new DecimalFormat("#.##%").format(pi));//1234.57%
+
+/**
+ * 扩展，如果是其他的数字会是下面的效果
+ */
+         pi=12.34;
+//整数
+         System.out.println(new DecimalFormat("6").format(pi));//612
+         System.out.println(new DecimalFormat("60").format(pi));//612
+         System.out.println(new DecimalFormat("06").format(pi));//126
+         System.out.println(new DecimalFormat("00600").format(pi));//00126
+         System.out.println(new DecimalFormat("#####60000").format(pi));//00126
+//小数
+         System.out.println(new DecimalFormat(".6").format(pi));//12.6
+         System.out.println(new DecimalFormat(".06").format(pi));//12.36
+         System.out.println(new DecimalFormat(".60").format(pi));//12.36
+         System.out.println(new DecimalFormat(".0600").format(pi));//12.3406
+         System.out.println(new DecimalFormat(".6000").format(pi));//12.3406
+         System.out.println(new DecimalFormat(".600000##").format(pi));//12.340006
      }
 
 
