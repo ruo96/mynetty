@@ -9,9 +9,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
 import org.junit.Test;
+import org.springframework.util.StopWatch;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAdjusters;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
@@ -360,6 +362,200 @@ public class TestTime {
 //        LocalDate localDate1 = LocalDate.parse(date, DateTimeFormatter.);
         System.out.println(localDate);
 //        System.out.println(localDate1);
+    }
+
+    @Test
+    public void Test15() {
+        System.out.println(isFirstDayOfYear("2020-01-01"));
+        System.out.println(isFirstDayOfYear("2020-01-03"));
+    }
+
+    public static boolean isFirstDayOfYear(String dsEnd) {
+        LocalDate date = LocalDate.parse(dsEnd, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        return date.getDayOfYear() == 1;
+    }
+
+    @Test
+    public void Test16() {
+        String date = "2020-05-01";
+        int month = Integer.valueOf(date.replace("-","").substring(0,6));
+        System.out.println(month);
+        LocalDate date1 = LocalDate.parse(date,DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        System.out.println(date.substring(0,4));
+        System.out.println(date.substring(5,7));
+        System.out.println(date1.getMonth().getValue());
+        System.out.println(date1.getMonth().name());
+        System.out.println(date1.getMonth().toString());
+        System.out.println(String.valueOf(date1.getYear()));
+    }
+    
+    @Test
+    public void Test17() {
+        String a = null;
+        String b = "wrh";
+        String c = "";
+        StringBuilder sb = new StringBuilder();
+        sb.append(a).append(":").append(b).append(":").append(c).append(":");
+        System.out.println(sb.toString());
+
+        String str = sb.toString();
+        String[] s = str.split(":");
+        System.out.println(s.length);
+        for (String s1: s) {
+            System.out.println( "---"+s1 + "---");
+
+        }
+        System.out.println("---end---");
+
+    }
+
+    @Test
+    public void Test18() {
+        String date = "2020-05-07";
+        LocalDate d = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        System.out.println(d.getDayOfMonth());
+        System.out.println(d.getMonthValue());
+        System.out.println(d.lengthOfYear());
+        System.out.println(d.lengthOfMonth());
+    }
+
+    @Test
+    public void Test19() {
+        String ds = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        System.out.println(ds);
+
+    }
+
+    @Test
+    public void Test20() {
+        LocalDate now = LocalDate.now();
+        System.out.println(now);
+        System.out.println(now.plusMonths(1));
+
+        LocalDate day =  LocalDate.parse("2020-05-01", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        System.out.println(day);
+        System.out.println(day.plusMonths(1));
+        System.out.println(day.minusMonths(1));
+    }
+
+    @Test
+    public void Test21() {
+        LocalDate ds = LocalDate.now();
+        System.out.println(ds.toString());
+    }
+
+    public static boolean isFirstDayOfDimension(String dsEnd, String dimension) {
+        LocalDate date = LocalDate.parse(dsEnd, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        if (dimension.equals("year")) {
+            return date.getDayOfYear() == 1;
+        }else if (dimension.equals("month")) {
+            return date.getDayOfMonth() == 1;
+        }else {
+            return true;
+        }
+    }
+
+    @Test
+    public void Test22() {
+        String ds = "2020-02-01";
+        System.out.println(isFirstDayOfDimension(ds, "year"));
+        System.out.println(isFirstDayOfDimension(ds, "month"));
+    }
+
+    public static boolean isEqualDimension(LocalDate before, LocalDate dsEnd, String dimension) {
+        if(dimension.equals("year")){
+            return before.getYear() == dsEnd.getYear();
+        }else if (dimension.equals("month")) {
+            return before.getMonthValue() == dsEnd.getMonthValue();
+        }else {
+            return false;
+        }
+    }
+
+    @Test
+    public void Test23() {
+        String d1 = "2020-05-01";
+        String d2 = "2020-05-02";
+        String d3 = "2020-01-01";
+        String d4 = "2019-12-31";
+
+        LocalDate date1 = LocalDate.parse(d1, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        LocalDate date2 = LocalDate.parse(d2, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        LocalDate date3 = LocalDate.parse(d3, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        LocalDate date4 = LocalDate.parse(d4, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        System.out.println(isEqualDimension(date1,date2,"year"));
+        System.out.println(isEqualDimension(date1,date2,"month"));
+        System.out.println(isEqualDimension(date3,date4,"year"));
+        System.out.println(isEqualDimension(date1,date3,"year"));
+    }
+
+    public static LocalDate getFirstDayOfDimension(String dsEnd, String dimension) {
+        LocalDate date = LocalDate.parse(dsEnd, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        if(dimension.equals("year")){
+            return LocalDate.of(date.getYear(), 1, 1);
+        }else if (dimension.equals("month")) {
+            return LocalDate.of(date.getYear(), date.getMonth(), 1);
+        }else {
+            return null;
+        }
+    }
+
+    @Test
+    public void Test24() {
+        System.out.println(getFirstDayOfDimension("2020-05-01","year").toString());
+        System.out.println(getFirstDayOfDimension("2020-05-03","month").toString());
+
+        String endDate = "2020-06-05";
+        Integer monthValue = Integer.valueOf(endDate.replace("-","").substring(0,6));
+        System.out.println(monthValue);
+    }
+
+    @Test
+    public void Test25() {
+        System.out.println(DateUtils.getDayOfMonth("2020-06-03"));
+        System.out.println(DateUtils.getTotalDayOfMonth("2020-05-03"));
+
+        LocalDate today = LocalDate.now().minusMonths(1);
+        //本月的第一天
+        LocalDate firstday = LocalDate.of(today.getYear(),today.getMonth(),1);
+        //本月的最后一天
+        LocalDate lastDay =today.with(TemporalAdjusters.lastDayOfMonth());
+
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        for (int i = 0; i < 1000000 ; i++) {
+            Calendar c = Calendar.getInstance();
+            int days = c.getActualMaximum(Calendar.DAY_OF_YEAR);// 得到当年的实际天数
+//            System.out.println("今年天数： " + days);
+        }
+        stopWatch.stop();
+        System.out.println("last: " + stopWatch.getTotalTimeMillis());
+
+        stopWatch = new StopWatch();
+        stopWatch.start();
+        for (int i = 0; i < 1000000; i++) {
+            LocalDate d = LocalDate.now();
+            int days2 = d.with(TemporalAdjusters.lastDayOfYear()).getDayOfYear();   //更快一些
+//            System.out.println("今年天数： " + days2);
+        }
+        stopWatch.stop();
+        System.out.println("last 1: " + stopWatch.getTotalTimeMillis());
+
+    }
+
+    @Test
+    public void Test26() {
+        LocalDate now = LocalDate.now();
+        int i = now.getDayOfYear();
+        System.out.println(i);
+    }
+
+    @Test
+    public void Test27() {
+        LocalDate now = LocalDate.now();
+        System.out.println(now.getDayOfYear());
+        LocalDate ds = LocalDate.of(2020,1,1);
+        System.out.println(ds.minusMonths(1));
     }
 
 

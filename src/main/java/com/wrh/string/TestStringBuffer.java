@@ -1,5 +1,7 @@
 package com.wrh.string;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -39,5 +41,17 @@ public class TestStringBuffer {
         System.out.println(1+2+"-"+3);
 
 
+    }
+
+    @Test
+    public void Test1() {
+        /**
+         * 有synchronized修饰
+         */
+        StringBuffer sb = new StringBuffer();
+        sb.append("123");
+
+        StringBuilder sb1 = new StringBuilder();
+        sb1.append("123");
     }
 }

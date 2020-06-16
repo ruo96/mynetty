@@ -28,4 +28,23 @@ public class TestDouble {
         numberFormat.setMaximumFractionDigits(fractionDigit);
         return numberFormat.format(num);
     }
+
+    @Test
+    public void Test1() {
+        Double a = 1.234;
+        Long b = a.longValue();
+        System.out.println(a);
+        System.out.println(b);
+    }
+
+    @Test
+    public void Test2() {
+        Integer a = 33;
+        changeInteger(a);
+        System.out.println(a);
+    }
+
+    private void changeInteger(Integer a ) {
+        a = 9999;
+    }
 }

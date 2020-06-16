@@ -9,6 +9,8 @@ import org.joda.time.DateTime;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -24,6 +26,8 @@ public class DateUtils {
     public static final String DATE_PATTERN_LONG = "yyyy-MM-dd HH:mm:ss";
     /** yyyyMMdd **/
     public static final String DATE_COMPRESS_PATTERN = "yyyyMMdd";
+    /** yyyy-MM-dd **/
+    public static final String DATE_PATTERN = "yyyy-MM-dd";
 
     /**
      * 获取未来 第past天的日期
@@ -154,6 +158,16 @@ public class DateUtils {
     public static String getMinute(Long timeLong) {
         Long minute = getMinuteByDatetime(timeLong);
         return minute.toString();
+    }
+
+    public static Integer getDayOfMonth(String ds){
+        LocalDate end = LocalDate.parse(ds, DateTimeFormatter.ofPattern(DATE_PATTERN));
+        return end.getDayOfMonth();
+    }
+
+    public static Integer getTotalDayOfMonth(String ds){
+        LocalDate end = LocalDate.parse(ds, DateTimeFormatter.ofPattern(DATE_PATTERN));
+        return end.getMonth().length(end.isLeapYear());
     }
 
 

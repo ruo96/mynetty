@@ -333,6 +333,41 @@ public class TestInteger {
          System.out.println(new DecimalFormat(".600000##").format(pi));//12.340006
      }
 
+     @Test
+     public void Test15() {
+         Integer a = 222;
+         Integer b = 222;
+         if(a == b){
+             System.out.println("equal");
+         }
+     }
+
+     @Test
+     public void Test16() {
+         Long a = 1000L;
+         double b = 0.2556;
+         Long c = (long)(a *b);
+         System.out.println(c);
+     }
+
+     @Test
+     public void Test17() {
+         System.out.println(lowZeros(6));
+         System.out.println(lowZeros(10));
+         System.out.println(lowZeros(22));
+         System.out.println(lowZeros(45));
+     }
+     private int lowZeros(long value) {
+         int i =0;
+         for (; i < 32; i++) {
+             if(value >> i << i != value ){
+                 break;
+             }
+         }
+         return i - 1;
+
+     }
+
 
 
 }

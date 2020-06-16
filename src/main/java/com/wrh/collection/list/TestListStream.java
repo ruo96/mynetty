@@ -1,8 +1,10 @@
 package com.wrh.collection.list;
 
 import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -45,4 +47,60 @@ public class TestListStream {
             System.out.println(gs[i]);
         }
     }
+
+    public static final String SEPARATOR_COLON = ":";
+    public static final String SEPARATOR_MINUS = "-";
+
+    @Test
+    public void Test1() {
+        List<GameTopOffline> offlines = new ArrayList<>();
+        GameTopOffline g1 = new GameTopOffline();
+        g1.setGameBaseId(0);
+        g1.setIncome(0L);
+
+        GameTopOffline g2 = new GameTopOffline();
+        g2.setGameBaseId(1);
+        g2.setIncome(1L);
+
+        GameTopOffline g3 = new GameTopOffline();
+        g3.setGameBaseId(2);
+        g3.setIncome(2L);
+
+        offlines.add(g1);
+        offlines.add(g2);
+        offlines.add(g3);
+
+        System.out.println(getRedisFormatData(offlines));
+
+        String str = getRedisFormatData(offlines);
+
+        List<GameTopOffline> newList = handleOfflineRedisData(str);
+        System.out.println(newList);
+
+
+
+    }
+
+    private List<GameTopOffline> handleOfflineRedisData(String redisData) {
+        List<GameTopOffline> result = new ArrayList<>();
+        String[] offline = redisData.split(SEPARATOR_MINUS);
+        Arrays.asList(offline).stream().forEach(e->{
+            String[] single = e.split(SEPARATOR_COLON);
+            GameTopOffline g = new GameTopOffline();
+            g.setGameBaseId(Integer.valueOf(single[0]));
+            g.setIncome(Long.valueOf(single[1]));
+            result.add(g);
+        });
+        return result;
+    }
+
+    private String getRedisFormatData(List<GameTopOffline> list){
+        StringBuilder sb = new StringBuilder();
+        list.stream().forEach(e->{
+            sb.append(e.getGameBaseId()).append(SEPARATOR_COLON).append(e.getIncome()).append(SEPARATOR_MINUS);
+        });
+        String str = sb.toString();
+        return str.substring(0, str.length() - 1);
+    }
+
 }

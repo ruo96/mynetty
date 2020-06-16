@@ -114,4 +114,13 @@ public class TestString {
         a[0] = "hi";
         b[1] = Integer.valueOf(42);
     }
+
+    @Test
+    public void Test4() {
+        String a = null;
+        String b = "1";
+        a = "12";
+        System.out.println(Integer.valueOf(a));
+        System.out.println(Integer.valueOf(b));
+    }
 }

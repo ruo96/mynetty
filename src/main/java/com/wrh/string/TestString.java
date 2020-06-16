@@ -2,6 +2,7 @@ package com.wrh.string;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
@@ -76,5 +77,14 @@ public class TestString {
         log.info("getBytes 后的数据为:{}", Arrays.asList(valBytes1));
 
 
+    }
+    @Test
+    public void Test1() {
+        String a = "a^b^c";
+        String[] arr = a.split("^");
+        for(String s: arr){
+
+            System.out.println(s);
+        }
     }
 }

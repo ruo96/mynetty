@@ -555,4 +555,39 @@ public class TestBasicUse {
             System.out.println(JSON.toJSONString(gameDayData1));
         }
     }
+
+    @Test
+    public void Test18() {
+        long timestamp = 0;
+        String date = "";
+        for (int i = 0; i < 10 ; i++) {
+            timestamp += i;
+            date = date + i;
+            System.out.println( timestamp );
+            System.out.println(date );
+        }
+    }
+
+    @Test
+    public void Test19() {
+        List<String> list = new ArrayList<>();
+        list.add("123");
+        list.add("456");
+        list.add("789");
+        System.out.println(JSON.toJSONString(list));
+        String listStr = JSON.toJSONString(list);
+
+        List<String> list2 = JSON.parseArray(listStr, String.class);
+        list2.stream().forEach(e-> System.out.println(e));
+    }
+
+    @Test
+    public void Test585() {
+        Student s = new Student();
+        String name = s.getName();
+        if(Objects.isNull(name)){
+            System.out.println("null name");
+        }
+    }
+
 }
