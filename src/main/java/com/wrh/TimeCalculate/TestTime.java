@@ -554,8 +554,54 @@ public class TestTime {
     public void Test27() {
         LocalDate now = LocalDate.now();
         System.out.println(now.getDayOfYear());
+        System.out.println(now.getDayOfMonth());
+        System.out.println(DateTimeUtil.getNowMinute());
         LocalDate ds = LocalDate.of(2020,1,1);
         System.out.println(ds.minusMonths(1));
+    }
+
+    @Test
+    public void Test562() {
+        int minute = LocalDateTime.now().getMinute();
+        System.out.println(minute +  "----" +LocalDateTime.now());
+
+        int nowMinute = DateUtils.getNowMinute();
+        System.out.println(nowMinute +  "----" +LocalDateTime.now());
+    }
+
+    @Test
+    public void Test573() {
+        ZonedDateTime ds = ZonedDateTime.now();
+        System.out.println(ds);
+
+        getZoneTime();
+    }
+
+    //获取特定时区下面的时间
+    public void getZoneTime(){
+        //设置时区
+        ZoneId america = ZoneId.of("America/New_York");
+
+        LocalDateTime localtDateAndTime = LocalDateTime.now();
+
+        ZonedDateTime dateAndTimeInNewYork  = ZonedDateTime.of(localtDateAndTime, america );
+        System.out.println("现在的日期和时间在特定的时区 : " + dateAndTimeInNewYork);
+        System.out.println(dateAndTimeInNewYork.getHour());
+    }
+
+    //使用 YearMonth类处理特定的日期
+    public void checkCardExpiry(){
+        YearMonth currentYearMonth = YearMonth.now();
+        System.out.printf("Days in month year %s: %d%n", currentYearMonth, currentYearMonth.lengthOfMonth());
+
+        YearMonth creditCardExpiry = YearMonth.of(2028, Month.FEBRUARY);
+        System.out.printf("Your credit card expires on %s %n", creditCardExpiry);
+    }
+
+    @Test
+    public void Test602() {
+        checkCardExpiry();
+
     }
 
 

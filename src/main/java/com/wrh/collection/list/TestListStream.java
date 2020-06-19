@@ -103,4 +103,21 @@ public class TestListStream {
         return str.substring(0, str.length() - 1);
     }
 
+    private List<String> getList(){
+        List<String> list = new ArrayList<>();
+        list.add("w1");
+        list.add("w2");
+        list.add("w3");
+        list.add("w4");
+        return list;
+    }
+
+
+    @Test
+    public void Test107() {
+
+
+
+    }
+
 }

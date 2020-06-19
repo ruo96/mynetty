@@ -1,6 +1,9 @@
 package com.wrh.queue;
 
+import org.junit.Test;
+
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.SynchronousQueue;
 
 /**
@@ -17,5 +20,33 @@ public class TestQueue {
         System.out.println(queue.offer(3)+" ");
         System.out.println(queue.take()+" ");
         System.out.println(queue.size());
+    }
+
+    @Test
+    public void Test23() throws InterruptedException {
+        LinkedBlockingQueue<String> queue = new LinkedBlockingQueue<>();
+        queue.add("w1");
+        queue.add("w2");
+        queue.add("w3");
+        queue.add("w4");
+
+        /*queue.stream().forEach(e->{
+            System.out.println(e);
+        });*/
+
+        /*System.out.println(queue.take());
+        System.out.println(queue.take());
+        System.out.println(queue.take());
+        System.out.println(queue.take());
+        System.out.println("=="+queue.take());*/
+
+        System.out.println(queue.poll());
+        System.out.println(queue.poll());
+        System.out.println(queue.poll());
+        System.out.println(queue.poll());
+        System.out.println(queue.poll());
+        System.out.println(queue.poll());
+        System.out.println(queue.poll());
+
     }
 }

@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -168,6 +169,12 @@ public class DateUtils {
     public static Integer getTotalDayOfMonth(String ds){
         LocalDate end = LocalDate.parse(ds, DateTimeFormatter.ofPattern(DATE_PATTERN));
         return end.getMonth().length(end.isLeapYear());
+    }
+
+    public static Integer getNowMinute(){
+        LocalDateTime now = LocalDateTime.now();
+
+        return now.getHour() * 60 + now.getMinute();
     }
 
 

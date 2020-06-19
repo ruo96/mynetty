@@ -291,4 +291,21 @@ public class TestList {
 
         }
     }
+
+    public List<String> getStringList(){
+        List<String> list = new ArrayList<>();
+        list.add("w1");
+        list.add("w2");
+        list.add("w3");
+        return list;
+    }
+
+    @Test
+    public void Test296() {
+        List<String> list = getStringList();
+        List<String> list1 = new ArrayList<>();
+        System.out.println(CollectionUtils.isEmpty(list1));
+
+
+    }
 }

@@ -3,6 +3,7 @@ package com.wrh.TimeCalculate;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -713,5 +714,10 @@ public final class DateTimeUtil {
 	        e.printStackTrace();
 	    }
 	    return dsString;
+    }
+
+    public static int getNowMinute() {
+        LocalDateTime now = LocalDateTime.now();
+        return now.getHour() * 60 + now.getMinute();
     }
 }

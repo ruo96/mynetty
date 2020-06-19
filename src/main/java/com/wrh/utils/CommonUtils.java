@@ -1,5 +1,6 @@
 package com.wrh.utils;
 
+import cn.hutool.core.collection.ArrayIter;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -12,12 +13,10 @@ import org.apache.commons.lang3.reflect.FieldUtils;
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
 import org.junit.Test;
+import org.springframework.util.StopWatch;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -171,5 +170,111 @@ public class CommonUtils {
         });
 
         System.out.println(paySumMoneyArr[0]);
+    }
+
+    public static List<Student> getDuplicateList(){
+        List<Student> list = getList();
+        Student s1 = new Student();
+        s1.setName("w1");
+        s1.setId(1);
+        s1.setGrade(1);
+
+        Student s2 = new Student();
+        s2.setName("w2");
+        s2.setId(2);
+        s2.setGrade(2);
+
+        Student s4 = new Student();
+        s4.setName("w4");
+        s4.setId(2);
+        s4.setGrade(4);
+
+        Student s3 = new Student();
+        s3.setName("w3");
+        s3.setId(3);
+        s3.setGrade(3);
+
+        list.add(s1);
+        list.add(s2);
+        list.add(s3);
+        list.add(s4);
+
+        return list;
+    }
+
+    /**
+     * list根据对象字段去重
+     */
+    @Test
+    public void Test177() {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        for (int i = 0; i < 100000; i++) {
+            List<Student> list = getDuplicateList();
+//            System.out.println(">>>before " + list);
+            list = list.stream().collect(Collectors.collectingAndThen(Collectors.toCollection(()
+                    -> new TreeSet<>(Comparator.comparing(Student::getName))), ArrayList::new));
+//            System.out.println(">>>after " + list);
+        }
+        stopWatch.stop();
+        System.out.println(stopWatch.getTotalTimeMillis());
+
+        /** 下面的速度更快一些*/
+        StopWatch stopWatch1 = new StopWatch();
+        stopWatch1.start();
+        for (int i = 0; i < 100000; i++) {
+            List<Student> list1 = getDuplicateList();
+//            System.out.println(">>>before " + list1);
+            list1 = removeDuplicateOrder(list1);
+//            System.out.println(">>>after " + list1);
+        }
+        stopWatch1.stop();
+        System.out.println(stopWatch1.getTotalTimeMillis());
+
+        /** 第三种写法 用来做处理展示或者后续操作*/
+        List<Student> list2 = getDuplicateList();
+        list2.stream()
+                .collect(Collectors.toCollection(()-> new TreeSet<>(Comparator.comparing(Student::getName))))
+                .stream()
+                .forEach(System.out::println);
+    }
+
+    @Test
+    public void Test236() {
+        List<Student> list1 = getDuplicateList();
+            System.out.println(">>>before " + list1);
+        list1 = removeDuplicateOrder(list1);
+            System.out.println(">>>after " + list1);
+
+    }
+
+    /**
+     * 这种是list转map的去重
+     */
+    @Test
+    public void Test245() {
+        List<Student> list1 = getDuplicateList();
+        System.out.println(">>>before " + list1);
+        Map<String, Student> map = list1.stream().collect(Collectors.toMap(Student::getName, info->info,(info,info2)->info2));
+        System.out.println(">>>after " + map);
+
+    }
+
+    /**
+     * 另一种去重方法
+     * @param orderList
+     * @return
+     */
+    private static List<Student> removeDuplicateOrder(List<Student> orderList) {
+        Set<Student> set = new TreeSet<Student>(new Comparator<Student>() {
+            @Override
+            public int compare(Student a, Student b) {
+                // 字符串则按照asicc码升序排列
+                return a.getName().compareTo(b.getName());
+            }
+        });
+
+        set.addAll(orderList);
+        return new ArrayList<Student>(set);
     }
 }

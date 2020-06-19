@@ -1,10 +1,12 @@
 package com.wrh.collection.map;
 
 import com.alibaba.fastjson.JSON;
+import com.wrh.elasticsearch.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 /**
@@ -310,5 +312,100 @@ public class TestMap {
 
         String nullStr = map.get("abc");
         log.info(">>>{}",nullStr);
+    }
+
+    public Map<Integer, String> getMap(){
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1,"w1");
+        map.put(2,"w2");
+        map.put(3,"w3");
+        map.put(4,"w4");
+        return map;
+    }
+
+    public Map<Integer, Integer> getIntegerMap(){
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(1,1);
+        map.put(2,2);
+        map.put(3,3);
+        map.put(4,4);
+        return map;
+    }
+
+    public Map<Integer, Student> getStudentMap(){
+        Map<Integer, Student> map = new HashMap<>();
+        Student s1 = new Student();
+        s1.setName("w1");
+        s1.setId(1);
+        s1.setGrade(1);
+        map.put(1,s1);
+
+        Student s2 = new Student();
+        s2.setName("w2");
+        s2.setId(2);
+        s2.setGrade(2);
+        map.put(2,s2);
+
+        Student s3 = new Student();
+        s3.setName("w3");
+        s3.setId(3);
+        s3.setGrade(3);
+        map.put(3,s3);
+
+        return map;
+    }
+
+    @Test
+    public void Test316() {
+        Map<Integer, String> map = getMap();
+        String a = map.getOrDefault(5,"default");
+        System.out.println(a);
+
+    }
+
+    @Test
+    public void Test333() {
+        Map<Integer, Student> map = getStudentMap();
+        System.out.println("before: " + map);
+        map.forEach((k,v)->{
+            v.setName("w5");
+        });
+
+        System.out.println("after: " +map);
+    }
+
+    @Test
+    public void Test368() {
+        Map<Integer, Integer> map = getIntegerMap();
+        String redisStr = JSON.toJSONString(map);
+
+//        Map<Integer, Integer> map1 = JSON.parseObject(redisStr, Map<Integer, Integer>);
+
+    }
+
+    @Test
+    public void Test386() {
+        Map<String, String> map = new HashMap<>();
+        System.out.println(map.size());
+
+        map.putIfAbsent("key", "w1");
+        System.out.println(map);
+
+    }
+
+    @Test
+    public void Test393() {
+        Map<String, Integer> map = new ConcurrentHashMap();
+        map.put("key",1);
+        while(true){
+            int ori = map.get("key");
+            int tar = ori + 1;
+            boolean isSuccess = map.replace("key", ori, tar);
+            if(isSuccess){
+                break;
+            }
+        }
+        System.out.println("end");
+
     }
 }
