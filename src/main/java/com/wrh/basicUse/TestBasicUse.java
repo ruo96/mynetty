@@ -589,5 +589,11 @@ public class TestBasicUse {
             System.out.println("null name");
         }
     }
+    @Test
+    public void Test593() {
+        String newLine = System.getProperty("line.separator");
+        System.out.println("["+newLine+"]");
+
+    }
 
 }

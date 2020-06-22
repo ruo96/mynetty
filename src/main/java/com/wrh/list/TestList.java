@@ -300,12 +300,26 @@ public class TestList {
         return list;
     }
 
+    public List<Integer> getIntegerList() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        return list;
+    }
+
     @Test
     public void Test296() {
-        List<String> list = getStringList();
-        List<String> list1 = new ArrayList<>();
-        System.out.println(CollectionUtils.isEmpty(list1));
+        List<Integer> list  = new ArrayList<>();
+        final Long[] paySumMoneyArr = {0L};
+        list.stream().forEach(e->{
+            paySumMoneyArr[0] += e;
+        });
+        System.out.println(paySumMoneyArr[0]);
+
 
 
     }
+
+
 }
