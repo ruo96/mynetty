@@ -1,227 +1,390 @@
-2020-05-06 17:59:27.824  INFO 223856 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 223856 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-05-06 17:59:27.827  INFO 223856 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-05-06 17:59:30.533  INFO 223856 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-06 17:59:30.533  INFO 223856 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-05-06 17:59:30.536  INFO 223856 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-05-06 17:59:30.536  INFO 223856 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-05-06 17:59:30.537  INFO 223856 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-05-06 17:59:30.539  INFO 223856 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-05-06 17:59:30.602  INFO 223856 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-05-06 17:59:30.727  INFO 223856 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-05-06 17:59:31.350  INFO 223856 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-05-06 17:59:31.352  INFO 223856 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-05-06 17:59:31.638  INFO 223856 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-05-06 17:59:34.484  INFO 223856 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-05-06 17:59:34.937  WARN 223856 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-05-06 17:59:35.511  INFO 223856 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 8.205 seconds (JVM running for 9.253)
-2020-05-06 18:06:42.932  INFO 152104 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 152104 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-05-06 18:06:42.933  INFO 152104 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-05-06 18:06:44.410  INFO 152104 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-06 18:06:44.410  INFO 152104 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-05-06 18:06:44.412  INFO 152104 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-05-06 18:06:44.412  INFO 152104 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-05-06 18:06:44.413  INFO 152104 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-05-06 18:06:44.415  INFO 152104 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-05-06 18:06:44.451  INFO 152104 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-05-06 18:06:44.535  INFO 152104 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-05-06 18:06:44.942  INFO 152104 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-05-06 18:06:44.944  INFO 152104 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-05-06 18:06:45.166  INFO 152104 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-05-06 18:06:46.453  INFO 152104 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-05-06 18:06:46.776  WARN 152104 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-05-06 18:06:47.211  INFO 152104 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 4.615 seconds (JVM running for 5.17)
-2020-05-06 18:07:50.391  INFO 152104 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2020-05-06 18:19:08.086  INFO 225124 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 225124 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-05-06 18:19:08.087  INFO 225124 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-05-06 18:19:09.585  INFO 225124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-06 18:19:09.585  INFO 225124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-05-06 18:19:09.588  INFO 225124 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-05-06 18:19:09.588  INFO 225124 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-05-06 18:19:09.588  INFO 225124 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-05-06 18:19:09.590  INFO 225124 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-05-06 18:19:09.625  INFO 225124 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-05-06 18:19:09.710  INFO 225124 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-05-06 18:19:10.114  INFO 225124 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-05-06 18:19:10.116  INFO 225124 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-05-06 18:19:10.337  INFO 225124 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-05-06 18:19:11.627  INFO 225124 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-05-06 18:19:11.957  WARN 225124 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-05-06 18:19:12.373  INFO 225124 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 4.642 seconds (JVM running for 5.225)
-2020-05-06 18:20:08.404  INFO 221860 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 221860 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-05-06 18:20:08.406  INFO 221860 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-05-06 18:20:10.949  INFO 221860 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-06 18:20:10.949  INFO 221860 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-05-06 18:20:10.952  INFO 221860 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-05-06 18:20:10.952  INFO 221860 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-05-06 18:20:10.952  INFO 221860 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-05-06 18:20:10.954  INFO 221860 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-05-06 18:20:11.014  INFO 221860 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-05-06 18:20:11.102  INFO 221860 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-05-06 18:20:11.522  INFO 221860 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-05-06 18:20:11.524  INFO 221860 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-05-06 18:20:11.749  INFO 221860 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-05-06 18:20:13.043  INFO 221860 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-05-06 18:20:13.366  WARN 221860 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-05-06 18:20:13.798  INFO 221860 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.866 seconds (JVM running for 6.797)
-2020-05-06 18:21:52.575  INFO 224232 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 224232 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-05-06 18:21:52.577  INFO 224232 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-05-06 18:21:54.097  INFO 224232 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-06 18:21:54.098  INFO 224232 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-05-06 18:21:54.100  INFO 224232 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-05-06 18:21:54.100  INFO 224232 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-05-06 18:21:54.100  INFO 224232 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-05-06 18:21:54.102  INFO 224232 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-05-06 18:21:54.139  INFO 224232 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-05-06 18:21:54.225  INFO 224232 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-05-06 18:21:54.641  INFO 224232 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-05-06 18:21:54.642  INFO 224232 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-05-06 18:21:54.879  INFO 224232 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-05-06 18:21:56.165  INFO 224232 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-05-06 18:21:56.489  WARN 224232 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-05-06 18:21:56.921  INFO 224232 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 4.698 seconds (JVM running for 5.258)
-2020-05-06 18:28:28.511  INFO 225120 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 225120 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-05-06 18:28:28.512  INFO 225120 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-05-06 18:28:30.008  INFO 225120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-06 18:28:30.009  INFO 225120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-05-06 18:28:30.011  INFO 225120 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-05-06 18:28:30.011  INFO 225120 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-05-06 18:28:30.011  INFO 225120 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-05-06 18:28:30.013  INFO 225120 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-05-06 18:28:30.051  INFO 225120 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-05-06 18:28:30.137  INFO 225120 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-05-06 18:28:30.574  INFO 225120 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-05-06 18:28:30.576  INFO 225120 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-05-06 18:28:30.797  INFO 225120 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-05-06 18:28:32.084  INFO 225120 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-05-06 18:28:32.409  WARN 225120 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-05-06 18:28:32.841  INFO 225120 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 4.687 seconds (JVM running for 5.249)
-2020-05-06 18:29:46.000  INFO 152652 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 152652 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-05-06 18:29:46.001  INFO 152652 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-05-06 18:29:47.471  INFO 152652 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-06 18:29:47.472  INFO 152652 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-05-06 18:29:47.474  INFO 152652 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-05-06 18:29:47.474  INFO 152652 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-05-06 18:29:47.474  INFO 152652 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-05-06 18:29:47.476  INFO 152652 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-05-06 18:29:47.514  INFO 152652 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-05-06 18:29:47.603  INFO 152652 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-05-06 18:29:48.015  INFO 152652 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-05-06 18:29:48.016  INFO 152652 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-05-06 18:29:48.244  INFO 152652 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-05-06 18:29:49.548  INFO 152652 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-05-06 18:29:49.884  WARN 152652 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-05-06 18:29:50.319  INFO 152652 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 4.671 seconds (JVM running for 5.249)
-2020-05-06 18:29:57.305  INFO 152652 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2020-05-06 18:30:02.699  INFO 152652 --- [http-nio-9999-exec-3] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-05-06 18:30:02.711  INFO 152652 --- [http-nio-9999-exec-3] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=11
-2020-05-06 18:30:02.720  INFO 152652 --- [http-nio-9999-exec-4] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-05-06 18:30:02.756  INFO 152652 --- [http-nio-9999-exec-4] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=36
-2020-05-06 18:30:09.868  INFO 152652 --- [http-nio-9999-exec-5] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-05-06 18:30:09.868  INFO 152652 --- [http-nio-9999-exec-5] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
-2020-05-06 18:30:09.868  INFO 152652 --- [http-nio-9999-exec-5] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
-2020-05-06 18:30:09.888  INFO 152652 --- [http-nio-9999-exec-5] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9999/mynetty/hello】,请求参数:【】
-2020-05-06 18:30:09.939  INFO 152652 --- [http-nio-9999-exec-5] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9999/mynetty/hello】,返回参数:【"hello"】
-2020-05-06 18:30:09.963  INFO 152652 --- [http-nio-9999-exec-5] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=95
-2020-05-06 18:31:41.712  INFO 224420 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 224420 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-05-06 18:31:41.713  INFO 224420 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-05-06 18:31:43.225  INFO 224420 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-06 18:31:43.225  INFO 224420 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-05-06 18:31:43.227  INFO 224420 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-05-06 18:31:43.228  INFO 224420 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-05-06 18:31:43.228  INFO 224420 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-05-06 18:31:43.230  INFO 224420 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-05-06 18:31:43.266  INFO 224420 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-05-06 18:31:43.354  INFO 224420 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-05-06 18:31:43.760  INFO 224420 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-05-06 18:31:43.761  INFO 224420 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-05-06 18:31:43.985  INFO 224420 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-05-06 18:31:45.272  INFO 224420 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-05-06 18:31:45.604  WARN 224420 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-05-06 18:31:46.022  INFO 224420 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 4.658 seconds (JVM running for 5.237)
-2020-05-06 19:48:20.469  INFO 224420 --- [localhost-startStop-2] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
-2020-05-06 19:48:20.890  INFO 224420 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 224420 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-05-06 19:48:20.890  INFO 224420 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-05-06 19:48:21.309  INFO 224420 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-06 19:48:21.309  INFO 224420 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-05-06 19:48:21.310  INFO 224420 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-05-06 19:48:21.310  INFO 224420 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-05-06 19:48:21.310  INFO 224420 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-05-06 19:48:21.316  INFO 224420 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-05-06 19:48:21.326  INFO 224420 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-05-06 19:48:21.344  WARN 224420 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mynettyApplication': Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.wrh.MynettyApplication] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
-2020-05-06 19:48:21.344  INFO 224420 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-05-06 19:48:21.359 ERROR 224420 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+2020-06-28 17:05:27.434  INFO 59732 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 59732 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-06-28 17:05:27.436  INFO 59732 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-06-28 17:05:31.035  INFO 59732 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-28 17:05:31.036  INFO 59732 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-06-28 17:05:31.040  INFO 59732 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-06-28 17:05:31.040  INFO 59732 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-06-28 17:05:31.040  INFO 59732 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-06-28 17:05:31.044  INFO 59732 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-06-28 17:05:31.092  INFO 59732 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-06-28 17:05:31.270 ERROR 59732 --- [localhost-startStop-1] o.s.b.web.embedded.tomcat.TomcatStarter  : Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'webMvcMetricsFilter' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/web/servlet/WebMvcMetricsAutoConfiguration.class]: Unsatisfied dependency expressed through method 'webMvcMetricsFilter' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Initialization of bean failed; nested exception is java.lang.NoSuchMethodError: io.micrometer.core.instrument.Meter$Id.getTagsAsIterable()Ljava/lang/Iterable;
+2020-06-28 17:05:31.286  INFO 59732 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-06-28 17:05:31.329  WARN 59732 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2020-06-28 17:05:31.343 ERROR 59732 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mynettyApplication': Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.wrh.MynettyApplication] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:550)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:155)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:544)
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246)
-	at com.wrh.MynettyApplication.main(MynettyApplication.java:30)
+	at com.wrh.MynettyApplication.main(MynettyApplication.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.wrh.MynettyApplication] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
-	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:758)
-	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:690)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.buildResourceMetadata(CommonAnnotationBeanPostProcessor.java:355)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.findResourceMetadata(CommonAnnotationBeanPostProcessor.java:339)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:298)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1013)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547)
-	... 20 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: Lcom/wrh/server/EchoServer;
-	at java.lang.Class.getDeclaredFields0(Native Method)
-	at java.lang.Class.privateGetDeclaredFields(Class.java:2583)
-	at java.lang.Class.getDeclaredFields(Class.java:1916)
-	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:753)
-	... 26 common frames omitted
-Caused by: java.lang.ClassNotFoundException: com.wrh.server.EchoServer
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
-	... 30 common frames omitted
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:126)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:86)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:413)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:174)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:179)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:152)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcMetricsFilter' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/web/servlet/WebMvcMetricsAutoConfiguration.class]: Unsatisfied dependency expressed through method 'webMvcMetricsFilter' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Initialization of bean failed; nested exception is java.lang.NoSuchMethodError: io.micrometer.core.instrument.Meter$Id.getTagsAsIterable()Ljava/lang/Iterable;
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:732)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:474)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1247)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1096)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:535)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:226)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:214)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:91)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:80)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:250)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:237)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:54)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5245)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1421)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1411)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'prometheusMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/prometheus/PrometheusMetricsExportAutoConfiguration.class]: Initialization of bean failed; nested exception is java.lang.NoSuchMethodError: io.micrometer.core.instrument.Meter$Id.getTagsAsIterable()Ljava/lang/Iterable;
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:581)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1135)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1062)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:818)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:724)
+	... 24 common frames omitted
+Caused by: java.lang.NoSuchMethodError: io.micrometer.core.instrument.Meter$Id.getTagsAsIterable()Ljava/lang/Iterable;
+	at io.micrometer.prometheus.PrometheusMeterRegistry.tagValues(PrometheusMeterRegistry.java:69)
+	at io.micrometer.prometheus.PrometheusMeterRegistry.newCounter(PrometheusMeterRegistry.java:91)
+	at io.micrometer.core.instrument.MeterRegistry.lambda$registerMeterIfNecessary$5(MeterRegistry.java:514)
+	at io.micrometer.core.instrument.MeterRegistry.getOrCreateMeter(MeterRegistry.java:566)
+	at io.micrometer.core.instrument.MeterRegistry.registerMeterIfNecessary(MeterRegistry.java:528)
+	at io.micrometer.core.instrument.MeterRegistry.registerMeterIfNecessary(MeterRegistry.java:514)
+	at io.micrometer.core.instrument.MeterRegistry.counter(MeterRegistry.java:231)
+	at io.micrometer.core.instrument.Counter$Builder.register(Counter.java:130)
+	at io.micrometer.core.instrument.binder.logging.MetricsTurboFilter.<init>(LogbackMetrics.java:102)
+	at io.micrometer.core.instrument.binder.logging.LogbackMetrics.bindTo(LogbackMetrics.java:64)
+	at org.springframework.boot.actuate.autoconfigure.metrics.MeterRegistryConfigurer.lambda$addBinders$1(MeterRegistryConfigurer.java:83)
+	at java.util.LinkedHashMap$LinkedValues.forEach(LinkedHashMap.java:608)
+	at org.springframework.boot.actuate.autoconfigure.metrics.MeterRegistryConfigurer.addBinders(MeterRegistryConfigurer.java:83)
+	at org.springframework.boot.actuate.autoconfigure.metrics.MeterRegistryConfigurer.configure(MeterRegistryConfigurer.java:65)
+	at org.springframework.boot.actuate.autoconfigure.metrics.MeterRegistryPostProcessor.postProcessAfterInitialization(MeterRegistryPostProcessor.java:51)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1703)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:573)
+	... 34 common frames omitted
 
-2020-05-06 19:48:33.592  INFO 224420 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 224420 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-05-06 19:48:33.592  INFO 224420 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-05-06 19:48:38.973  INFO 224420 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-06 19:48:38.973  INFO 224420 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-05-06 19:48:38.974  INFO 224420 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-05-06 19:48:38.975  INFO 224420 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-05-06 19:48:38.975  INFO 224420 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-05-06 19:48:38.975  INFO 224420 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-05-06 19:48:38.983  INFO 224420 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-05-06 19:48:39.030  INFO 224420 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-05-06 19:48:39.217  INFO 224420 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-05-06 19:48:40.311  INFO 224420 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-05-06 19:48:40.405  WARN 224420 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-05-06 19:48:40.554  INFO 224420 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 6.993 seconds (JVM running for 4619.796)
-2020-05-06 19:48:54.973  INFO 224420 --- [localhost-startStop-2] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
-2020-05-06 19:48:55.229  INFO 224420 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 224420 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-05-06 19:48:55.229  INFO 224420 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-05-06 19:48:55.758  INFO 224420 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-06 19:48:55.758  INFO 224420 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-05-06 19:48:55.759  INFO 224420 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-05-06 19:48:55.760  INFO 224420 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-05-06 19:48:55.760  INFO 224420 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-05-06 19:48:55.760  INFO 224420 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-05-06 19:48:55.766  INFO 224420 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-05-06 19:48:55.789  INFO 224420 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-05-06 19:48:55.901  INFO 224420 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-05-06 19:48:56.988  INFO 224420 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-05-06 19:48:57.077  WARN 224420 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-05-06 19:48:57.213  INFO 224420 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 2.012 seconds (JVM running for 4636.455)
+2020-06-28 17:07:54.135  INFO 21372 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 21372 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-06-28 17:07:54.137  INFO 21372 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-06-28 17:07:57.576  INFO 21372 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-28 17:07:57.577  INFO 21372 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-06-28 17:07:57.579  INFO 21372 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-06-28 17:07:57.579  INFO 21372 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-06-28 17:07:57.579  INFO 21372 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-06-28 17:07:57.581  INFO 21372 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-06-28 17:07:57.618  INFO 21372 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-06-28 17:07:57.746  INFO 21372 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-06-28 17:07:57.776  WARN 21372 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mynettyApplication': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-28 17:07:57.778  INFO 21372 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-06-28 17:07:57.779  INFO 21372 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
+2020-06-28 17:07:57.913 ERROR 21372 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dataSource in com.wrh.MynettyApplication required a bean of type 'javax.sql.DataSource' that could not be found.
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required class 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType'
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required classes 'javax.transaction.TransactionManager', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType'
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'javax.sql.DataSource' in your configuration.
+
+2020-06-28 17:09:10.443  INFO 28416 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 28416 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-06-28 17:09:10.445  INFO 28416 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-06-28 17:09:11.933  INFO 28416 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-28 17:09:11.933  INFO 28416 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-06-28 17:09:11.935  INFO 28416 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-06-28 17:09:11.936  INFO 28416 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-06-28 17:09:11.936  INFO 28416 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-06-28 17:09:11.938  INFO 28416 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-06-28 17:09:11.974  INFO 28416 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-06-28 17:09:12.063  INFO 28416 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-06-28 17:09:12.764  INFO 28416 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-06-28 17:09:12.767  INFO 28416 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-06-28 17:09:13.012  INFO 28416 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-06-28 17:09:14.012  INFO 28416 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
+2020-06-28 17:09:14.390  INFO 28416 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-06-28 17:09:14.810  WARN 28416 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-06-28 17:09:15.562  INFO 28416 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.435 seconds (JVM running for 6.011)
+2020-06-28 17:11:33.674  INFO 61148 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 61148 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-06-28 17:11:33.675  INFO 61148 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-06-28 17:11:35.307  INFO 61148 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-28 17:11:35.308  INFO 61148 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-06-28 17:11:35.310  INFO 61148 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-06-28 17:11:35.310  INFO 61148 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-06-28 17:11:35.310  INFO 61148 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-06-28 17:11:35.313  INFO 61148 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-06-28 17:11:35.350  INFO 61148 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-06-28 17:11:35.437  INFO 61148 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-06-28 17:11:35.454  WARN 61148 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mynettyApplication': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.zaxxer.hikari.HikariDataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-28 17:11:35.456  INFO 61148 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-06-28 17:11:35.458  INFO 61148 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
+2020-06-28 17:11:35.544 ERROR 61148 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dataSource in com.wrh.MynettyApplication required a bean of type 'com.zaxxer.hikari.HikariDataSource' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.zaxxer.hikari.HikariDataSource' in your configuration.
+
+2020-06-28 17:12:12.445  INFO 46596 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 46596 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-06-28 17:12:12.446  INFO 46596 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-06-28 17:12:13.971  INFO 46596 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-28 17:12:13.972  INFO 46596 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-06-28 17:12:13.974  INFO 46596 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-06-28 17:12:13.974  INFO 46596 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-06-28 17:12:13.974  INFO 46596 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-06-28 17:12:13.976  INFO 46596 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-06-28 17:12:14.013  INFO 46596 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-06-28 17:12:14.100  INFO 46596 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-06-28 17:12:14.514  INFO 46596 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-06-28 17:12:14.515  INFO 46596 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-06-28 17:12:14.741  INFO 46596 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-06-28 17:12:16.034  INFO 46596 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-06-28 17:12:16.357  WARN 46596 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-06-28 17:12:16.811  INFO 46596 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 4.693 seconds (JVM running for 5.292)
+2020-06-28 17:22:29.178  INFO 30048 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 30048 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-06-28 17:22:29.179  INFO 30048 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-06-28 17:22:30.662  INFO 30048 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-28 17:22:30.663  INFO 30048 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-06-28 17:22:30.665  INFO 30048 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-06-28 17:22:30.665  INFO 30048 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-06-28 17:22:30.665  INFO 30048 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-06-28 17:22:30.667  INFO 30048 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-06-28 17:22:30.706  INFO 30048 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-06-28 17:22:30.796  INFO 30048 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-06-28 17:22:30.812  WARN 30048 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mynettyApplication': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-28 17:22:30.814  INFO 30048 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-06-28 17:22:30.815  INFO 30048 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
+2020-06-28 17:22:30.906 ERROR 30048 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dataSource in com.wrh.MynettyApplication required a bean of type 'javax.sql.DataSource' that could not be found.
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required class 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType'
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required classes 'javax.transaction.TransactionManager', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType'
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'javax.sql.DataSource' in your configuration.
+
+2020-06-28 17:23:17.086  INFO 29460 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 29460 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-06-28 17:23:17.087  INFO 29460 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-06-28 17:23:21.106  INFO 29460 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-28 17:23:21.106  INFO 29460 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-06-28 17:23:21.109  INFO 29460 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-06-28 17:23:21.109  INFO 29460 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-06-28 17:23:21.109  INFO 29460 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-06-28 17:23:21.111  INFO 29460 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-06-28 17:23:21.152  INFO 29460 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-06-28 17:23:21.249  INFO 29460 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-06-28 17:23:21.268  WARN 29460 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mynettyApplication': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-28 17:23:21.270  INFO 29460 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-06-28 17:23:21.271  INFO 29460 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
+2020-06-28 17:23:21.305  WARN 29460 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [mynetty] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:43)
+2020-06-28 17:23:21.382 ERROR 29460 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dataSource in com.wrh.MynettyApplication required a bean of type 'javax.sql.DataSource' that could not be found.
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required class 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType'
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required classes 'javax.transaction.TransactionManager', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType'
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'javax.sql.DataSource' in your configuration.
+
+2020-06-28 17:24:02.164  INFO 61892 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 61892 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-06-28 17:24:02.166  INFO 61892 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-06-28 17:24:12.510  INFO 61832 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 61832 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-06-28 17:24:12.511  INFO 61832 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-06-28 17:24:14.147  INFO 61832 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-28 17:24:14.147  INFO 61832 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-06-28 17:24:14.149  INFO 61832 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-06-28 17:24:14.149  INFO 61832 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-06-28 17:24:14.149  INFO 61832 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-06-28 17:24:14.152  INFO 61832 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-06-28 17:24:14.190  INFO 61832 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-06-28 17:24:14.282  INFO 61832 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-06-28 17:24:14.298  WARN 61832 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mynettyApplication': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-28 17:24:14.300  INFO 61832 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-06-28 17:24:14.301  INFO 61832 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
+2020-06-28 17:24:14.319  WARN 61832 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [mynetty] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:43)
+2020-06-28 17:24:14.391 ERROR 61832 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dataSource in com.wrh.MynettyApplication required a bean of type 'javax.sql.DataSource' that could not be found.
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required class 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType'
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required classes 'javax.transaction.TransactionManager', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType'
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'javax.sql.DataSource' in your configuration.
+
+2020-06-28 17:27:31.100  INFO 58700 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 58700 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-06-28 17:27:31.100  INFO 58700 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-06-28 17:27:32.630  INFO 58700 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-28 17:27:32.630  INFO 58700 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-06-28 17:27:32.633  INFO 58700 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-06-28 17:27:32.633  INFO 58700 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-06-28 17:27:32.633  INFO 58700 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-06-28 17:27:32.635  INFO 58700 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-06-28 17:27:32.674  INFO 58700 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-06-28 17:27:32.764  INFO 58700 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-06-28 17:27:32.781  WARN 58700 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mynettyApplication': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-28 17:27:32.783  INFO 58700 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-06-28 17:27:32.784  INFO 58700 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
+2020-06-28 17:27:32.803  WARN 58700 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [mynetty] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:43)
+2020-06-28 17:27:32.880 ERROR 58700 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dataSource in com.wrh.MynettyApplication required a bean of type 'javax.sql.DataSource' that could not be found.
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required class 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType'
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required classes 'javax.transaction.TransactionManager', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType'
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'javax.sql.DataSource' in your configuration.
+
+2020-06-28 17:29:57.573  INFO 61940 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 61940 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-06-28 17:29:57.575  INFO 61940 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-06-28 17:29:59.137  INFO 61940 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-28 17:29:59.138  INFO 61940 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-06-28 17:29:59.140  INFO 61940 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-06-28 17:29:59.140  INFO 61940 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-06-28 17:29:59.140  INFO 61940 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-06-28 17:29:59.142  INFO 61940 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-06-28 17:29:59.180  INFO 61940 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-06-28 17:29:59.273  INFO 61940 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-06-28 17:29:59.290  WARN 61940 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mynettyApplication': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-28 17:29:59.291  INFO 61940 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-06-28 17:29:59.293  INFO 61940 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
+2020-06-28 17:29:59.313  WARN 61940 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [mynetty] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:43)
+2020-06-28 17:29:59.385 ERROR 61940 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dataSource in com.wrh.MynettyApplication required a bean of type 'javax.sql.DataSource' that could not be found.
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required class 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType'
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required classes 'javax.transaction.TransactionManager', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType'
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'javax.sql.DataSource' in your configuration.
+
+2020-06-28 17:31:08.509  INFO 18612 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 18612 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-06-28 17:31:08.510  INFO 18612 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-06-28 17:31:10.018  INFO 18612 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-28 17:31:10.018  INFO 18612 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-06-28 17:31:10.020  INFO 18612 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-06-28 17:31:10.021  INFO 18612 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-06-28 17:31:10.021  INFO 18612 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-06-28 17:31:10.023  INFO 18612 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-06-28 17:31:10.060  INFO 18612 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-06-28 17:31:10.148  INFO 18612 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-06-28 17:31:10.164  WARN 18612 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'mynettyApplication': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-28 17:31:10.165  INFO 18612 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-06-28 17:31:10.166  INFO 18612 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
+2020-06-28 17:31:10.184  WARN 18612 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : The web application [mynetty] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:43)
+2020-06-28 17:31:10.249 ERROR 18612 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field dataSource in com.wrh.MynettyApplication required a bean of type 'javax.sql.DataSource' that could not be found.
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required class 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType'
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required classes 'javax.transaction.TransactionManager', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType'
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'javax.sql.DataSource' in your configuration.
+

@@ -1,11 +1,12 @@
 package com.wrh.collection.list;
 
+import com.wrh.collection.map.TestMap;
+import com.wrh.elasticsearch.Student;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @Created by wrh
@@ -112,12 +113,48 @@ public class TestListStream {
         return list;
     }
 
+    private List<Student> getStudentList(){
+        List<Student> list = new ArrayList<>();
+        Student s1 = new Student();
+        s1.setName("w1");
+        s1.setId(1);
+        s1.setGrade(1);
+
+        Student s2 = new Student();
+        s2.setName("w2");
+        s2.setId(2);
+        s2.setGrade(2);
+
+        Student s3 = new Student();
+        s3.setName("w3");
+        s3.setId(3);
+        s3.setGrade(3);
+
+        list.add(s1);
+        list.add(s2);
+        list.add(s3);
+
+        return list;
+    }
+
 
     @Test
     public void Test107() {
+//        List<Student> list = getStudentList();
+        List<Student> list = new ArrayList<>();
+        Map<Integer, List<Student>> offlineKpiMap = new HashMap<>();
+        offlineKpiMap = list.stream().collect(Collectors.groupingBy(Student::getId));
+        System.out.println(offlineKpiMap);
+        System.out.println(offlineKpiMap.size());
+        System.out.println(offlineKpiMap == null);
 
+    }
 
-
+    @Test
+    public void Test156() {
+        List<Student> list = getStudentList();
+        Long a = list.stream().filter(e->e.getName().equals("w4")).mapToLong(Student::getGrade).sum();
+        System.out.println(a);
     }
 
 }

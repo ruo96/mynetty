@@ -34,6 +34,12 @@ spring:
     user:
       name: wrh
       password: 123456
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://172.16.38.108:3306/data_center?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 1QWed$%&098pln@@_80
+    driver-class-name: com.mysql.jdbc.Driver
 
 
 server:

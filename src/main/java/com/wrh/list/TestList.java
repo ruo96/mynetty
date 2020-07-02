@@ -321,5 +321,222 @@ public class TestList {
 
     }
 
+    @Test
+    public void Test325() {
+        List<Student> list = getStudentList();
+        log.info(">>> {}", JSON.toJSONString(list));
+
+        Map<String, List<Student>> map1 = list.stream().collect(Collectors.groupingBy(v-> v.getName()+"_"+v.getId()));
+        log.info(">>> {}", JSON.toJSONString(map1));
+
+
+    }
+
+    @Test
+    public void Test336() {
+        List<Student> list = getStudentList();
+        Optional<Student> max = list.stream().max(Comparator.comparing(e->e.getId()));
+        if(max.isPresent()){
+            System.out.println(max.get());
+            System.out.println(max.get());
+        }else {
+            System.out.println("null");
+        }
+
+    }
+
+    /**
+     * 分组
+     */
+    @Test
+    public void Test349() {
+        List<Student> list = getStudentList();
+        Map<Boolean, List<Student>> map = list.stream().collect(Collectors.partitioningBy(e->e.getId()>1));
+        System.out.println(map);
+    }
+
+    /**
+     * 拼接 有前后缀得， 有只有中间得， 有什么都没有直接拼接得
+     */
+    @Test
+    public void Test359() {
+        List<Student> list = getStudentList();
+        String str = list.stream().map(Student::getName).collect(Collectors.joining("-","--","---"));
+        String str1 = list.stream().map(Student::getName).collect(Collectors.joining("-"));
+        String str2 = list.stream().map(Student::getName).collect(Collectors.joining());
+        System.out.println(str);
+        System.out.println(str1);
+        System.out.println(str2);
+
+    }
+
+    private List<Student> getStudentList() {
+        List<Student> list = new ArrayList<>();
+        Student s1 = new Student();
+        s1.setName("w1");
+        s1.setId(1);
+        s1.setGrade(1);
+
+        Student s2 = new Student();
+        s2.setName("w1");
+        s2.setId(1);
+        s2.setGrade(2);
+
+        Student s3 = new Student();
+        s3.setName("w2");
+        s3.setId(2);
+        s3.setGrade(2);
+
+        Student s4 = new Student();
+        s4.setName("w2");
+        s4.setId(2);
+        s4.setGrade(4);
+
+        list.add(s1);
+        list.add(s2);
+        list.add(s3);
+        list.add(s4);
+
+        return list;
+    }
+
+    private List<Student> getNoRepeadStudentList() {
+        List<Student> list = new ArrayList<>();
+        Student s1 = new Student();
+        s1.setName("w1");
+        s1.setId(1);
+        s1.setGrade(1);
+
+        Student s2 = new Student();
+        s2.setName("w2");
+        s2.setId(2);
+        s2.setGrade(2);
+
+        Student s3 = new Student();
+        s3.setName("w3");
+        s3.setId(3);
+        s3.setGrade(3);
+
+        Student s4 = new Student();
+        s4.setName("w4");
+        s4.setId(4);
+        s4.setGrade(4);
+
+        list.add(s1);
+        list.add(s2);
+        list.add(s3);
+        list.add(s4);
+
+        return list;
+    }
+
+    @Test
+    public void test404() {
+        /*List<Student> list = getStudentList();
+        long sum = list.stream().map(e -> {
+            if (e.getId() == 2) {
+                e.setGrade(e.getGrade() * 2);
+            }
+        }).mapToInt(Student::getGrade).sum();*/
+
+    }
+
+    @Test
+    public void Test415() {
+        List<Student> list = getNoRepeadStudentList();
+        System.out.println(list);
+
+        List<Student> list2 = getNoRepeadStudentList();
+        System.out.println(list2);
+
+        Map<Integer, Integer> map = list2.stream().collect(Collectors.toMap(Student::getId, Student::getGrade, (key1, key2)->key2));
+        System.out.println(map);
+        list.stream().forEach(e->{
+            e.setGrade(e.getGrade() + map.get(e.getId()));
+        });
+        System.out.println(list);
+
+    }
+
+    @Test
+    public void Test462() {
+        List<Student> list = getNoRepeadStudentList();
+        System.out.println(list);
+        System.out.println("---------");
+        list.clear();
+        System.out.println(list);
+        System.out.println("---------");
+        initStudentList(list);
+        System.out.println(list);
+
+        List<Student> list2 = new ArrayList<>();
+        initStudentList(list2);
+        System.out.println(list2);
+
+    }
+
+    void initStudentList(List<Student> list){
+//        list = new ArrayList<>();
+        Student s = new Student();
+        s.setName("w999");
+        s.setId(999);
+        s.setGrade(999);
+        list.add(s);
+
+
+    }
+
+    List<Integer> getIntegerList2(){
+        List<Integer> l1 = new ArrayList<>();
+        l1.add(1);
+        l1.add(2);
+        l1.add(3);
+        l1.add(4);
+        return l1;
+    }
+
+    List<Integer> getIntegerList3(){
+        List<Integer> l1 = new ArrayList<>();
+        l1.add(1);
+        l1.add(2);
+        l1.add(3);
+        l1.add(5);
+        return l1;
+    }
+
+    @Test
+    public void Test490() {
+        List<Integer> l1 = getIntegerList2();
+        System.out.println("l1 is : " + l1);
+        List<Integer> l2 = getIntegerList3();
+        System.out.println("l2 is : " + l2);
+        l1.removeAll(l2);
+        System.out.println("===after===");
+        System.out.println("l1 is : " + l1);
+        System.out.println("l2 is : " + l2);
+    }
+
+    @Test
+    public void Test520() {
+        List<Integer> l1 = getIntegerList2();
+        System.out.println("l1 is : " + l1);
+        List<Integer> l2 = Arrays.asList(1);
+        System.out.println("l2 is : " + l2);
+        l1.removeAll(l2);
+        System.out.println("===after===");
+        System.out.println("l1 is : " + l1);
+        System.out.println("l2 is : " + l2);
+
+    }
+
+    @Test
+    public void Test533() {
+        List<Integer> l1 = Arrays.asList(1,2,3,4,5,6,7);
+        List<Integer> l2 = null;
+        l1.removeAll(l2);
+    }
+
+
+
 
 }

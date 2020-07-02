@@ -600,7 +600,109 @@ public class TestTime {
 
     @Test
     public void Test602() {
-        checkCardExpiry();
+        LocalDate date = LocalDate.parse("2020-06-22", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        LocalDate date1 = LocalDate.parse("2020-06-11", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        System.out.println(date);
+        System.out.println(date.getDayOfMonth());
+        System.out.println(date.getDayOfYear());
+
+        System.out.println(Period.between(date, date1).getDays());
+        System.out.println(Period.between(date1, date).getDays());
+        System.out.println(Math.abs(Period.between(date1, date).getDays()));
+
+
+    }
+
+    private static final String yyyyMMdd = "yyyy-MM-dd";
+
+    @Test
+    public void Test617() {
+        String ds = "2020-06-28";
+        long a = 7650000000L;
+//        int days = LocalDate.parse(ds,DateTimeFormatter.ofPattern(yyyyMMdd)).getDayOfYear();
+        LocalDate date = LocalDate.parse(ds,DateTimeFormatter.ofPattern(yyyyMMdd));
+        int days = date.getDayOfYear();
+                int totalDays = date.with(TemporalAdjusters.lastDayOfYear()).getDayOfYear();
+        System.out.println(days);  //180天
+        System.out.println(date.with(TemporalAdjusters.lastDayOfYear()).getDayOfYear());
+        System.out.println(a * days / totalDays );
+
+
+    }
+    @Test
+    public void Test633() {
+        String date = "2020-06-29";
+        if(date.equals(LocalDate.now().toString())){
+            System.out.println("is today");
+        }else {
+            System.out.println("not today");
+        }
+
+    }
+
+    @Test
+    public void Test644() {
+        String date = "2020-06-28";
+        if(LocalDate.now().minusDays(1).toString().equals(date)){
+            System.out.println(" is yesterday");
+        }else {
+            System.out.println("not yesterday");
+        }
+        System.out.println(LocalDateTime.now().toString());
+
+    }
+    
+    @Test
+    public void Test656() {
+        Date now = new Date();
+        System.out.println(now.getDay());
+        System.out.println(now.getMonth());
+        Instant instant = now.toInstant();
+        ZoneId zoneId = ZoneId.systemDefault();
+        LocalDateTime localDateTime = instant.atZone(zoneId).toLocalDateTime();
+        System.out.println(localDateTime);
+        System.out.println(localDateTime.getDayOfMonth());
+        System.out.println(localDateTime.getDayOfYear());
+
+        System.out.println("==========================");
+        LocalDateTime localDateTime1 = LocalDateTime.ofInstant(now.toInstant(), zoneId);
+        System.out.println(localDateTime1);
+        System.out.println(localDateTime1.getDayOfMonth());
+        System.out.println(localDateTime1.getDayOfYear());
+
+    }
+
+    @Test
+    public void Test676() {
+        System.out.println(isDateToday(new Date()));
+
+    }
+
+    public static boolean isDateToday(Date date){
+        return LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault()).toLocalDate().equals(LocalDate.now());
+    }
+
+    public static boolean isThisYearMonth(String ds) {
+        LocalDate date = LocalDate.parse(ds,DateTimeFormatter.ofPattern(yyyyMMdd));
+        LocalDate now = LocalDate.now();
+        return date.getYear() == now.getYear() && date.getMonthValue() == now.getMonthValue();
+    }
+    @Test
+    public void Test691() {
+        String ds = "2021-06-30";
+        System.out.println(isThisYearMonth(ds));
+
+    }
+
+    public static boolean isYesterday(String ds) {
+        return LocalDate.parse(ds,DateTimeFormatter.ofPattern(yyyyMMdd)).equals(LocalDate.now().minusDays(1));
+    }
+
+    @Test
+    public void Test702() {
+        System.out.println(isYesterday("2020-06-29"));
+        System.out.println(isYesterday("2020-06-30"));
+        System.out.println(isYesterday("2020-06-28"));
 
     }
 

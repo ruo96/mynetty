@@ -3,8 +3,10 @@ package com.wrh.math;
 import com.google.common.util.concurrent.RateLimiter;
 import com.wrh.elasticsearch.Student;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.hadoop.yarn.webapp.hamlet.Hamlet;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
@@ -366,6 +368,63 @@ public class TestInteger {
          }
          return i - 1;
 
+     }
+
+     @Test
+     public void Test372() {
+         int i = 1;
+         int b = (++i) + (++i);
+         System.out.println(b);
+
+     }
+
+     @Test
+     public void Test380() {
+         double a = 0.1427;
+         double b = 0.2084;
+         double c = a + b;
+         System.out.println(c);
+         double d = 1 - c;
+         System.out.println(d);
+         System.out.println(c + d);
+
+         BigDecimal a1 = new BigDecimal("0.1427");
+         BigDecimal b1 = new BigDecimal("0.2084");
+         BigDecimal c1 = a1.add(b1);
+         System.out.println(c1.doubleValue());
+
+         BigDecimal d1 = new BigDecimal("1").subtract(c1);
+         System.out.println(d1.doubleValue());
+
+     }
+
+     @Test
+     public void Test401() {
+         int i = 1;
+         i = i++;
+         int j = i++;
+         int k = i + ++i * i++;
+         System.out.println(i);
+         System.out.println(j);
+         System.out.println(k);
+     }
+
+     @Test
+     public void Test412() {
+        Long a = 0L;
+        if(a.equals(0)){
+            System.out.println("equal");
+        }else {
+            System.out.println("not equal");
+        }
+
+        Integer a1 = 222;
+        Integer b1 = 222;
+        if(a1.equals(b1)){
+            System.out.println("equal integer");
+        }else {
+            System.out.println("not equal integer");
+        }
      }
 
 

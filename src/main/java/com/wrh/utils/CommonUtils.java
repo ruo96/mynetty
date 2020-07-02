@@ -146,8 +146,6 @@ public class CommonUtils {
 
         Map<Integer, Student> map1 = list.stream().collect(Collectors.toMap(Student::getId, info->info,(info,info2)->info2));
         System.out.println(map1);
-
-
     }
 
     @Test

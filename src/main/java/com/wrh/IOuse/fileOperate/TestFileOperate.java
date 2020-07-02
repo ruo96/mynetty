@@ -385,7 +385,7 @@ public class TestFileOperate {
     }
 
     /**
-     * 删除字符串最后一个字符的多种方法
+     * 删除字符串最后一个字符的多种方法， 最后一位
      */
     @Test
     public void Test386() {

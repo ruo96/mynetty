@@ -2,13 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="220b4fde-124d-4a90-8239-1cc8f7f19353" name="Default Changelist" comment="xiugai">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/algorithum/lianbiao/fanzhuan/ListNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/algorithum/lianbiao/fanzhuan/ReverseList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/zhixingshunxu/Base.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/zhixingshunxu/Child.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/zhixingshunxu/Instance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/enums/EnumSingleton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/enums/SeasonEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/lambda/basicuse/TestBasicUse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/mynetty.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mynetty.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mynetty.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mynetty.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/IOuse/fileOperate/TestFileOperate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/IOuse/fileOperate/TestFileOperate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/TestBasicUse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/TestBasicUse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/MynettyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/MynettyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/TimeCalculate/TestTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/TimeCalculate/TestTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/collection/list/TestListStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/collection/list/TestListStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/collection/map/TestMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/collection/map/TestMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/elasticsearch/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/elasticsearch/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/enums/TestEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/enums/TestEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/list/TestList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/list/TestList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/math/TestDouble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/math/TestDouble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/math/TestInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/math/TestInteger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/utils/CommonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/utils/CommonUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/IOuse/fileOperate/TestFileOperate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/IOuse/fileOperate/TestFileOperate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/MynettyApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/MynettyApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/TimeCalculate/TestTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/TimeCalculate/TestTime.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/basicUse/TestBasicUse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/basicUse/TestBasicUse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/collection/list/TestListStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/collection/list/TestListStream.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/collection/list/thread/TestListToSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/collection/list/thread/TestListToSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/collection/map/TestMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/collection/map/TestMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/elasticsearch/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/elasticsearch/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/enums/TestEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/enums/TestEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/lambda/stream/Testfilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/lambda/stream/Testfilter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/list/TestList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/list/TestList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/math/TestInteger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/math/TestInteger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/wrh/ElasticSearchTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/wrh/ElasticSearchTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +65,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/wrh/collection/map/TestMap.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/wrh/lambda/basicuse/TestBasicUse.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -77,12 +112,11 @@
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\pro\mynetty\src\main\resources\static" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\pro\mynetty\src\main\resources\static\pic" />
-      <recent name="D:\pro\mynetty" />
-      <recent name="D:\mypro\mynetty\src\main\java\com\wrh\tuling\netty" />
-      <recent name="D:\mypro\mynetty\src\main\java\com\wrh\tuling\netty\netty\chatroom" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.wrh.basicUse.zhixingshunxu" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.wrh.utils" />
@@ -91,8 +125,12 @@
       <recent name="com.wrh.lambda.basicuse.sum" />
       <recent name="com.wrh.basicUse" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\pro\mynetty\src\main\resources\static" />
       <recent name="D:\pro\mynetty\src\main\resources\static\pic" />
+      <recent name="D:\pro\mynetty" />
+      <recent name="D:\mypro\mynetty\src\main\java\com\wrh\tuling\netty" />
+      <recent name="D:\mypro\mynetty\src\main\java\com\wrh\tuling\netty\netty\chatroom" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -317,72 +355,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestFileOperate.Test406">
-    <configuration name="TestBasicUse.Test593" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Child">
+    <configuration name="Child" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wrh.basicUse.zhixingshunxu.Child" />
       <module name="mynetty" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.wrh.basicUse.*" />
+          <option name="PATTERN" value="com.wrh.basicUse.zhixingshunxu.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.basicUse" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.basicUse.TestBasicUse" />
-      <option name="METHOD_NAME" value="Test593" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestFileOperate.Test375" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mynetty" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wrh.IOuse.fileOperate.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.IOuse.fileOperate" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.IOuse.fileOperate.TestFileOperate" />
-      <option name="METHOD_NAME" value="Test375" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestFileOperate.Test386" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mynetty" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wrh.IOuse.fileOperate.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.IOuse.fileOperate" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.IOuse.fileOperate.TestFileOperate" />
-      <option name="METHOD_NAME" value="Test386" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestFileOperate.Test406" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mynetty" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wrh.IOuse.fileOperate.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.IOuse.fileOperate" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.IOuse.fileOperate.TestFileOperate" />
-      <option name="METHOD_NAME" value="Test406" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestList.Test296" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestList.Test462" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mynetty" />
       <extension name="coverage">
         <pattern>
@@ -392,7 +379,55 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.wrh.list" />
       <option name="MAIN_CLASS_NAME" value="com.wrh.list.TestList" />
-      <option name="METHOD_NAME" value="Test296" />
+      <option name="METHOD_NAME" value="Test462" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestList.Test490" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mynetty" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wrh.list.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wrh.list" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.list.TestList" />
+      <option name="METHOD_NAME" value="Test490" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestList.Test520" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mynetty" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wrh.list.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wrh.list" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.list.TestList" />
+      <option name="METHOD_NAME" value="Test520" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestList.Test533" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mynetty" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wrh.list.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wrh.list" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.list.TestList" />
+      <option name="METHOD_NAME" value="Test533" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -407,19 +442,19 @@
     </configuration>
     <list>
       <item itemvalue="Spring Boot.MynettyApplication" />
-      <item itemvalue="JUnit.TestList.Test296" />
-      <item itemvalue="JUnit.TestBasicUse.Test593" />
-      <item itemvalue="JUnit.TestFileOperate.Test375" />
-      <item itemvalue="JUnit.TestFileOperate.Test386" />
-      <item itemvalue="JUnit.TestFileOperate.Test406" />
+      <item itemvalue="JUnit.TestList.Test462" />
+      <item itemvalue="JUnit.TestList.Test490" />
+      <item itemvalue="JUnit.TestList.Test520" />
+      <item itemvalue="JUnit.TestList.Test533" />
+      <item itemvalue="Application.Child" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestFileOperate.Test406" />
-        <item itemvalue="JUnit.TestFileOperate.Test386" />
-        <item itemvalue="JUnit.TestFileOperate.Test375" />
-        <item itemvalue="JUnit.TestBasicUse.Test593" />
-        <item itemvalue="JUnit.TestList.Test296" />
+        <item itemvalue="Application.Child" />
+        <item itemvalue="JUnit.TestList.Test533" />
+        <item itemvalue="JUnit.TestList.Test520" />
+        <item itemvalue="JUnit.TestList.Test490" />
+        <item itemvalue="JUnit.TestList.Test462" />
       </list>
     </recent_temporary>
   </component>
@@ -487,7 +522,8 @@
       <workItem from="1589798779159" duration="14087000" />
       <workItem from="1590374716769" duration="893000" />
       <workItem from="1590391836360" duration="19847000" />
-      <workItem from="1590977502922" duration="102848000" />
+      <workItem from="1590977502922" duration="105898000" />
+      <workItem from="1592818229865" duration="39939000" />
     </task>
     <task id="LOCAL-00001" summary="xiugai">
       <created>1576736666275</created>
@@ -549,79 +585,67 @@
     </state>
     <state x="2606" y="101" key="#com.intellij.ide.util.MemberChooser/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1591756256670" />
     <state x="726" y="105" key="#com.intellij.ide.util.MemberChooser/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1592481862545" />
-    <state x="726" y="105" key="#com.intellij.ide.util.MemberChooser/62.0.1858.1080@62.0.1858.1080" timestamp="1583388937768" />
-    <state x="770" y="399" width="441" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583225950892">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state x="770" y="399" width="441" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/62.0.1858.1080@62.0.1858.1080" timestamp="1583225950892" />
     <state x="281" y="0" key="CommitChangelistDialog2" timestamp="1592548816928">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="281" y="0" key="CommitChangelistDialog2/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1592548816927" />
-    <state x="281" y="0" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1582784031139" />
-    <state x="594" y="113" key="FileChooserDialogImpl" timestamp="1583230024423">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state x="594" y="113" key="FileChooserDialogImpl/62.0.1858.1080@62.0.1858.1080" timestamp="1583230024423" />
-    <state width="1815" height="357" key="GridCell.Tab.0.bottom" timestamp="1592793170365">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1877" height="357" key="GridCell.Tab.0.bottom/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592447424457" />
-    <state width="1815" height="357" key="GridCell.Tab.0.bottom/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1592793170365" />
-    <state width="1815" height="435" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1585127184178" />
-    <state width="1815" height="357" key="GridCell.Tab.0.center" timestamp="1592793170365">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1877" height="357" key="GridCell.Tab.0.center/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592447424457" />
-    <state width="1815" height="357" key="GridCell.Tab.0.center/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1592793170365" />
-    <state width="1815" height="435" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1585127184177" />
-    <state width="1815" height="357" key="GridCell.Tab.0.left" timestamp="1592793170365">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1877" height="357" key="GridCell.Tab.0.left/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592447424457" />
-    <state width="1815" height="357" key="GridCell.Tab.0.left/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1592793170365" />
-    <state width="1815" height="435" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1585127184177" />
-    <state width="1815" height="357" key="GridCell.Tab.0.right" timestamp="1592793170365">
-      <screen x="62" y="0" width="1858" height="1080" />
-    </state>
-    <state width="1877" height="357" key="GridCell.Tab.0.right/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592447424457" />
-    <state width="1815" height="357" key="GridCell.Tab.0.right/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1592793170365" />
-    <state width="1815" height="435" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1585127184177" />
-    <state width="1877" height="293" key="GridCell.Tab.1.bottom" timestamp="1588761117092">
+    <state width="1877" height="389" key="GridCell.Tab.0.bottom" timestamp="1593661559194">
       <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="389" key="GridCell.Tab.0.bottom/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593661559194" />
+    <state width="1815" height="389" key="GridCell.Tab.0.bottom/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1593511426152" />
+    <state width="1815" height="435" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1585127184178" />
+    <state width="1877" height="389" key="GridCell.Tab.0.center" timestamp="1593661559194">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="389" key="GridCell.Tab.0.center/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593661559194" />
+    <state width="1815" height="389" key="GridCell.Tab.0.center/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1593511426151" />
+    <state width="1815" height="435" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1585127184177" />
+    <state width="1877" height="389" key="GridCell.Tab.0.left" timestamp="1593661559194">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="389" key="GridCell.Tab.0.left/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593661559194" />
+    <state width="1815" height="389" key="GridCell.Tab.0.left/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1593511426151" />
+    <state width="1815" height="435" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1585127184177" />
+    <state width="1877" height="389" key="GridCell.Tab.0.right" timestamp="1593661559194">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="389" key="GridCell.Tab.0.right/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593661559194" />
+    <state width="1815" height="389" key="GridCell.Tab.0.right/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1593511426152" />
+    <state width="1815" height="435" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1585127184177" />
+    <state width="1815" height="318" key="GridCell.Tab.1.bottom" timestamp="1593340801342">
+      <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1877" height="293" key="GridCell.Tab.1.bottom/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588761117092" />
+    <state width="1815" height="318" key="GridCell.Tab.1.bottom/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1593340801342" />
     <state width="1340" height="470" key="GridCell.Tab.1.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1584342486014" />
-    <state width="1877" height="293" key="GridCell.Tab.1.center" timestamp="1588761117092">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="293" key="GridCell.Tab.1.center/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588761117092" />
-    <state width="1340" height="470" key="GridCell.Tab.1.center/62.0.1858.1080@62.0.1858.1080" timestamp="1584342486013" />
-    <state width="1877" height="293" key="GridCell.Tab.1.left" timestamp="1588761117092">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="293" key="GridCell.Tab.1.left/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588761117092" />
-    <state width="1340" height="470" key="GridCell.Tab.1.left/62.0.1858.1080@62.0.1858.1080" timestamp="1584342486013" />
-    <state width="1877" height="293" key="GridCell.Tab.1.right" timestamp="1588761117092">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="293" key="GridCell.Tab.1.right/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588761117092" />
-    <state width="1340" height="470" key="GridCell.Tab.1.right/62.0.1858.1080@62.0.1858.1080" timestamp="1584342486014" />
-    <state x="130" y="277" key="Registry" timestamp="1582804177386">
+    <state width="1815" height="318" key="GridCell.Tab.1.center" timestamp="1593340801342">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="130" y="277" key="Registry/62.0.1858.1080@62.0.1858.1080" timestamp="1582804177386" />
+    <state width="1877" height="293" key="GridCell.Tab.1.center/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588761117092" />
+    <state width="1815" height="318" key="GridCell.Tab.1.center/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1593340801342" />
+    <state width="1340" height="470" key="GridCell.Tab.1.center/62.0.1858.1080@62.0.1858.1080" timestamp="1584342486013" />
+    <state width="1815" height="318" key="GridCell.Tab.1.left" timestamp="1593340801342">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1877" height="293" key="GridCell.Tab.1.left/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588761117092" />
+    <state width="1815" height="318" key="GridCell.Tab.1.left/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1593340801342" />
+    <state width="1340" height="470" key="GridCell.Tab.1.left/62.0.1858.1080@62.0.1858.1080" timestamp="1584342486013" />
+    <state width="1815" height="318" key="GridCell.Tab.1.right" timestamp="1593340801342">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1877" height="293" key="GridCell.Tab.1.right/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588761117092" />
+    <state width="1815" height="318" key="GridCell.Tab.1.right/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1593340801342" />
+    <state width="1340" height="470" key="GridCell.Tab.1.right/62.0.1858.1080@62.0.1858.1080" timestamp="1584342486014" />
     <state x="220" y="224" width="1032" height="708" key="SettingsEditor" timestamp="1592303502066">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="2083" y="216" width="1032" height="708" key="SettingsEditor/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588042877385" />
     <state x="220" y="224" key="SettingsEditor/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1592303502066" />
-    <state x="220" y="224" width="998" height="708" key="SettingsEditor/62.0.1858.1080@62.0.1858.1080" timestamp="1583738136426" />
     <state x="436" y="129" key="Vcs.Push.Dialog.v2" timestamp="1592548822932">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="436" y="129" key="Vcs.Push.Dialog.v2/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1592548822932" />
-    <state x="436" y="129" key="Vcs.Push.Dialog.v2/62.0.1858.1080@62.0.1858.1080" timestamp="1582784035033" />
     <state x="572" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1589360545685">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
@@ -632,22 +656,17 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2665" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587029464034" />
-    <state x="783" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/62.0.1858.1080@62.0.1858.1080" timestamp="1582772281505" />
-    <state x="2346" y="129" width="1068" height="783" key="find.popup" timestamp="1592447280874">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2346" y="129" width="1068" height="783" key="find.popup/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592447280874" />
-    <state x="474" y="134" width="1033" height="813" key="find.popup/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1592446723791" />
-    <state x="474" y="134" width="1033" height="813" key="find.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1585127158460" />
-    <state x="467" y="325" key="new project wizard" timestamp="1584022768665">
+    <state x="474" y="134" width="1033" height="813" key="find.popup" timestamp="1593504040209">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="467" y="325" key="new project wizard/62.0.1858.1080@62.0.1858.1080" timestamp="1584022768665" />
-    <state x="665" y="234" width="672" height="705" key="search.everywhere.popup" timestamp="1592554096389">
+    <state x="2346" y="129" width="1068" height="783" key="find.popup/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592447280874" />
+    <state x="474" y="134" width="1033" height="813" key="find.popup/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1593504040209" />
+    <state x="474" y="134" width="1033" height="813" key="find.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1585127158460" />
+    <state x="665" y="234" width="672" height="705" key="search.everywhere.popup" timestamp="1593431544323">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588759759798" />
-    <state x="665" y="234" width="672" height="705" key="search.everywhere.popup/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1592554096389" />
+    <state x="665" y="234" width="672" height="705" key="search.everywhere.popup/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1593431544323" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

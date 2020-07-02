@@ -47,4 +47,10 @@ public class TestDouble {
     private void changeInteger(Integer a ) {
         a = 9999;
     }
+    @Test
+    public void Test51() {
+        double rate = 1.0;
+        System.out.println(0.145 * rate);
+
+    }
 }

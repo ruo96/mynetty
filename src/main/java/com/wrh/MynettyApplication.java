@@ -2,6 +2,7 @@ package com.wrh;
 
 
 import com.wrh.server.EchoServer;
+import com.zaxxer.hikari.HikariDataSource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -12,6 +13,9 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
@@ -25,17 +29,26 @@ public class MynettyApplication {
 	@Autowired
 	private EchoServer echoServer;
 
+	@Autowired
+    private DataSource dataSource;
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(MynettyApplication.class, args);
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner() throws InterruptedException {
+	public CommandLineRunner commandLineRunner() throws InterruptedException, SQLException {
 
         log.info("开始启动服务端的服务!");
 
         TimeUnit.SECONDS.sleep(1);
+
+        log.info("开始检查数据库的服务!");
+        Connection conn = dataSource.getConnection();
+        log.info("数据操作对象： {}", conn);
+        conn.close();
+
 
         return e->{
             new Thread(() -> {
@@ -47,6 +60,8 @@ public class MynettyApplication {
             }).start();
 
         };
+
+
     }
 
 
