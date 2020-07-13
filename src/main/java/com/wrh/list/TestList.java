@@ -15,6 +15,7 @@ import org.springframework.beans.BeanUtils;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
@@ -534,6 +535,13 @@ public class TestList {
         List<Integer> l1 = Arrays.asList(1,2,3,4,5,6,7);
         List<Integer> l2 = null;
         l1.removeAll(l2);
+    }
+
+    @Test
+    public void Test540() {
+        List<String> list = Stream.of("1","2","3").collect(Collectors.toList());
+        System.out.println(list);
+
     }
 
 

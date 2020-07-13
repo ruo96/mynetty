@@ -596,4 +596,27 @@ public class TestBasicUse {
 
     }
 
+    @Test
+    public void Test600() {
+        List<Long> list1 = new ArrayList<>();
+        long a = 123;
+        list1.add(a);
+        System.out.println(list1);
+        a = 456;
+        System.out.println(list1);
+
+    }
+
+    @Test
+    public void Test611() {
+        long a = getNull();
+        System.out.println(a); // 会空指针
+    }
+
+    private Long getNull() {
+        return null;
+    }
+
+
+
 }

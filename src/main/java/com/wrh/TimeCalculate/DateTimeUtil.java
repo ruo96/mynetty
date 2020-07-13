@@ -718,6 +718,6 @@ public final class DateTimeUtil {
 
     public static int getNowMinute() {
         LocalDateTime now = LocalDateTime.now();
-        return now.getHour() * 60 + now.getMinute();
+        return now.getHour() * 60 + now.getMinute() + 1;
     }
 }

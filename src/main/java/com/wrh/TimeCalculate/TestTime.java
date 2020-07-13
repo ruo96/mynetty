@@ -14,6 +14,7 @@ import org.springframework.util.StopWatch;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
+import java.time.temporal.WeekFields;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
@@ -544,6 +545,37 @@ public class TestTime {
     }
 
     @Test
+    public void Test548() {
+        LocalDate today = LocalDate.now().minusMonths(1);
+        //本月的第一天
+        LocalDate firstday = today.with(TemporalAdjusters.lastDayOfYear());
+        //本月的最后一天
+        LocalDate lastDay =today.with(TemporalAdjusters.lastDayOfMonth());
+        System.out.println(firstday);
+        System.out.println(lastDay);
+
+    }
+
+    /**
+     * 算相对进度
+     */
+    @Test
+    public void Test560() {
+        Long dayTarget = 5479452L;
+        Long monthTarget = 166666666L;
+        Long yearTarget = 2000000000L;
+
+        int nowMinute = DateTimeUtil.getNowMinute();
+        System.out.println(dayTarget * nowMinute / 1440);
+        Long monthAvgDay = monthTarget / 31;
+        System.out.println(monthAvgDay * 6 + monthAvgDay * nowMinute / 1440);
+
+        int dayOfYear = LocalDate.now().getDayOfYear();
+        System.out.println(dayTarget * (dayOfYear-1) + dayTarget * nowMinute / 1440);
+
+    }
+
+    @Test
     public void Test26() {
         LocalDate now = LocalDate.now();
         int i = now.getDayOfYear();
@@ -704,6 +736,65 @@ public class TestTime {
         System.out.println(isYesterday("2020-06-30"));
         System.out.println(isYesterday("2020-06-28"));
 
+    }
+
+    /**
+     * 获取第几周
+     */
+    @Test
+    public void Test710() {
+        LocalDate date = LocalDate.now();
+        WeekFields weekFields = WeekFields.ISO;
+        int weekNumber = date.get(weekFields.weekOfWeekBasedYear());
+        System.out.println(weekNumber);
+
+        LocalDate d1 = LocalDate.parse("2020-06-29",DateTimeFormatter.ofPattern(yyyyMMdd));
+        int weekNumber1 = date.get(weekFields.weekOfWeekBasedYear());
+        System.out.println(weekNumber1);
+
+        LocalDate d2 = LocalDate.parse("2020-07-05",DateTimeFormatter.ofPattern(yyyyMMdd));
+        int weekNumber2 = date.get(weekFields.weekOfWeekBasedYear());
+        System.out.println(weekNumber2);
+
+
+    }
+
+    public static Integer getNowMinute(){
+        LocalDateTime now = LocalDateTime.now();
+        return now.getHour() * 60 + now.getMinute();
+    }
+
+    @Test
+    public void Test737() {
+        System.out.println(LocalDateTime.now());
+
+        System.out.println(getNowMinute());
+
+        LocalDateTime setTime = LocalDateTime.of(2020,7,6,23,59,10);
+        System.out.println(setTime.getHour());
+        System.out.println(setTime.getMinute());
+        System.out.println(setTime.getHour() * 60 + setTime.getMinute());
+    }
+
+    @Test
+    public void Test749() {
+        LocalDate ds = LocalDate.now();
+        LocalDate dsEnd = LocalDate.parse("2020-06-05", DateTimeFormatter.ofPattern(yyyyMMdd));
+        if(ds.minusMonths(1).isAfter(dsEnd)){
+            System.out.println("isAfter");
+        }
+    }
+
+    @Test
+    public void Test758() {
+
+        LocalDate dsEnd = LocalDate.parse("2020-03-01", DateTimeFormatter.ofPattern(yyyyMMdd));
+        System.out.println(dsEnd.minusDays(1).toString());
+    }
+
+    @Test
+    public void Test765() {
+        System.out.println(LocalDate.now().toString().substring(0,7));
     }
 
 

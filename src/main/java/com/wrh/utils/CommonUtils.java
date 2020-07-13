@@ -113,7 +113,7 @@ public class CommonUtils {
          s1.setGrade(1);
 
          Student s2 = new Student();
-         s2.setName("w2");
+         s2.setName("w1");
          s2.setId(2);
          s2.setGrade(2);
 
@@ -146,6 +146,24 @@ public class CommonUtils {
 
         Map<Integer, Student> map1 = list.stream().collect(Collectors.toMap(Student::getId, info->info,(info,info2)->info2));
         System.out.println(map1);
+    }
+
+    /**
+     * list转map，汇总指定key的参数信息
+     */
+    @Test
+    public void Test152() {
+        List<Student> list = getList();
+        log.info(">>>{}",list);
+
+        Map<String, Integer> map = new HashMap<>();
+        list.forEach(e-> map.merge(e.getName(), e.getGrade(), Integer::sum));
+        log.info(">>>{}",map);
+
+       /* Map<String, List<Integer>> map1 = new HashMap<>();
+        list.forEach(e-> map1.merge(e.getName(), e.getGrade(), List::add));
+        log.info(">>>{}",map1);*/
+
     }
 
     @Test

@@ -123,4 +123,25 @@ public class TestString {
         System.out.println(Integer.valueOf(a));
         System.out.println(Integer.valueOf(b));
     }
+
+    @Test
+    public void Test128() {
+        String str = String.format("format_%s", 1);
+        System.out.println(str);
+
+    }
+
+    @Test
+    public void Test135() {
+        double a = 0.0;
+        System.out.println(a);
+    }
+
+    @Test
+    public void Test141() {
+        int i = 1;
+        i = i++;
+        System.out.println(i);
+
+    }
 }
