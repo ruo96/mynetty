@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 public class KafkaConsumer {
 
     /**
+     * kafka操作命令
      * .\kafka-consumer-groups.bat --new-consumer --bootstrap-server 127.0.0.1:9092 --list       .\kafka-consumer-groups.bat --zookeeper 127.0.0.1:2181 --list  这个地方测试是有问题的
      * .\kafka-topics.bat --zookeeper 127.0.0.1:2181 --topic hellonetty4 --describe    查看topic的详情
      * .\kafka-server-start.bat D:\tools\mq\kafka\kafka_2.12-2.4.0\config\server.properties

@@ -544,6 +544,25 @@ public class TestList {
 
     }
 
+    @Test
+    public void Test548() {
+        List<Student> list = getStudentList();
+        System.out.println(list);
+
+        /*for(Student s : list){
+            if(s.getId().equals(1)){
+                s.setName("少枪2韩版");
+            }
+        }*/
+
+        list.stream().forEach(e->{if(e.getId().equals(1)){
+            e.setName("少枪");
+        }});
+
+        System.out.println(list);
+
+    }
+
 
 
 

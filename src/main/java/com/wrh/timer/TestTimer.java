@@ -1,5 +1,6 @@
 package com.wrh.timer;
 
+import com.wrh.utils.DateUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -26,5 +27,11 @@ public class TestTimer {
     public static String getYesterdayByDs(String ds) {
         LocalDate date = LocalDate.parse(ds, DateTimeFormatter.ofPattern(DATE_FORMAT));
         return date.minusDays(1).toString();
+    }
+
+    @Test
+    public void Test32() {
+        System.out.println(DateUtils.getSharpTime(2, "2020-07-01"));
+
     }
 }

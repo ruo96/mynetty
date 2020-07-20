@@ -796,6 +796,48 @@ public class TestTime {
     public void Test765() {
         System.out.println(LocalDate.now().toString().substring(0,7));
     }
+    
+    @Test
+    public void Test801() {
+        LocalDateTime now =  LocalDateTime.now();
+        System.out.println(System.currentTimeMillis());
+        System.out.println(now.toInstant(ZoneOffset.of("+8")).toEpochMilli());
+
+    }
+    public static final String DATE_FORMAT = "yyyy-MM-dd";
+    public static final String TIME_FORMAT = "HH:mm:ss";
+    public static final String HOUR_MINUTES_FORMAT = "HH:mm";
+    public static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
+    /** 起始时间*/
+    public static final String TIME_BEGIN = "00:00:00";
+    public static final String DEFAULT_SHOW = "--";
+    public static final long LONG_NULL = -1;
+    public static final Integer ZERO = 0;
+
+    public static String getSharpTime(int i, String ds) {
+        LocalDateTime time = LocalDateTime.parse(ds+" "+TIME_BEGIN, DateTimeFormatter.ofPattern(DATE_TIME_FORMAT)).plusHours(i);
+        if(time.getDayOfYear() != LocalDate.parse(ds,DateTimeFormatter.ofPattern(DATE_FORMAT)).getDayOfYear()){
+            return ds + " 24:00:00";
+        }
+        return time.format(DateTimeFormatter.ofPattern(DATE_TIME_FORMAT));
+    }
+
+    @Test
+    public void Test826() {
+        System.out.println(getSharpTime(1, "2020-07-16"));
+
+    }
+
+    @Test
+    public void Test832() {
+        System.out.println(DateUtils.getNowMinute());
+        int shouldSharpData = (DateUtils.getNowMinute() - 1) / 60;
+        System.out.println(shouldSharpData);
+        int shouldSharpData1 = LocalDateTime.now().getHour();
+        System.out.println(shouldSharpData1);
+
+
+    }
 
 
 }
