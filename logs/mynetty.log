@@ -324,3 +324,39 @@
 2020-07-22 16:17:00.236  INFO 226460 --- [http-nio-9999-exec-3] com.wrh.controller.HelloController       : >>> redirect4  time: 2020-07-22T16:17:00.236
 2020-07-22 16:17:00.236  INFO 226460 --- [http-nio-9999-exec-3] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://localhost:9999/mynetty/example】,返回参数:【"welcome examplewrh"】
 2020-07-22 16:17:00.246  INFO 226460 --- [http-nio-9999-exec-3] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=14
+2020-07-22 16:17:28.310  INFO 223148 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 223148 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-07-22 16:17:28.311  INFO 223148 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-07-22 16:17:29.885  INFO 223148 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-22 16:17:29.886  INFO 223148 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-07-22 16:17:29.888  INFO 223148 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-07-22 16:17:29.888  INFO 223148 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-07-22 16:17:29.888  INFO 223148 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-07-22 16:17:29.890  INFO 223148 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-07-22 16:17:29.927  INFO 223148 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-07-22 16:17:29.999  INFO 223148 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-07-22 16:17:30.465  INFO 223148 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-07-22 16:17:30.467  INFO 223148 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-07-22 16:17:30.690  INFO 223148 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-07-22 16:17:31.692  INFO 223148 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
+2020-07-22 16:17:31.693  INFO 223148 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
+2020-07-22 16:17:31.694  INFO 223148 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-22 16:17:31.801  INFO 223148 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-22 16:17:31.803  INFO 223148 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@1223739188 wrapping com.mysql.jdbc.JDBC4Connection@4c6cf640
+2020-07-22 16:17:32.112  INFO 223148 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-07-22 16:17:32.480  WARN 223148 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-07-22 16:17:32.801  INFO 223148 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 4.827 seconds (JVM running for 5.372)
+2020-07-22 16:17:40.432  INFO 223148 --- [http-nio-9999-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-07-22 16:17:40.460  INFO 223148 --- [http-nio-9999-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-07-22 16:17:40.460  INFO 223148 --- [http-nio-9999-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-07-22 16:17:40.461  INFO 223148 --- [http-nio-9999-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 带有passportTotal注解 YES！
+2020-07-22 16:17:40.494  INFO 223148 --- [http-nio-9999-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://localhost:9999/mynetty/redirect3】,请求参数:【{}】
+2020-07-22 16:17:40.500  INFO 223148 --- [http-nio-9999-exec-1] com.wrh.controller.HelloController       : >>> redirect3  time: 2020-07-22T16:17:40.500
+2020-07-22 16:17:40.508  INFO 223148 --- [http-nio-9999-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://localhost:9999/mynetty/redirect3】,返回参数:【{"empty":false,"model":{"username":"wrh"},"modelMap":{"$ref":"$.model"},"reference":true,"viewName":"redirect:/example"}】
+2020-07-22 16:17:40.510  INFO 223148 --- [http-nio-9999-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=50
+2020-07-22 16:17:40.522  INFO 223148 --- [http-nio-9999-exec-2] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-07-22 16:17:40.522  INFO 223148 --- [http-nio-9999-exec-2] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-07-22 16:17:40.522  INFO 223148 --- [http-nio-9999-exec-2] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 带有passportTotal注解 YES！
+2020-07-22 16:17:40.526  INFO 223148 --- [http-nio-9999-exec-2] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://localhost:9999/mynetty/example】,请求参数:【{"username":["wrh"]}】
+2020-07-22 16:17:40.526  INFO 223148 --- [http-nio-9999-exec-2] com.wrh.controller.HelloController       : >>> redirect4  time: 2020-07-22T16:17:40.526
+2020-07-22 16:17:40.526  INFO 223148 --- [http-nio-9999-exec-2] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://localhost:9999/mynetty/example】,返回参数:【"welcome to example  wrh!"】
+2020-07-22 16:17:40.536  INFO 223148 --- [http-nio-9999-exec-2] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=14
