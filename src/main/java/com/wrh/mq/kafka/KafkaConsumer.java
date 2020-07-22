@@ -25,6 +25,8 @@ public class KafkaConsumer {
      * .\kafka-console-consumer.bat --zookeeper localhost:2181 --topic test   开启消费者
      * .\kafka-consumer-groups.sh --bootstrap-server XXX:9092 --group your-group-id --describe  查看组消费问题
      * 如果有3个partition，那么就会ABA-ABA-ABA 这样收发数据，如果2个partition，那么AB就会轮流获取，如果只有一个partition，那么就只有A或者只有B能够接收数据
+     * -- 查看group消费情况
+     * bin/kafka-consumer-groups.sh --bootstrap-server XXX:9092 --group your-group-id --describe
      * @param record
      */
 //    @KafkaListener(groupId = "group1",topics = "mynetty3-3p")

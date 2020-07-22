@@ -448,9 +448,11 @@ public class TestMap {
 
     @Test
     public void Test450() {
+        /** 还是要用concurrentHashMap*/
         Map<Integer, String> map = getMap();
         System.out.println(map);
         map.putIfAbsent(4,"w5");
+        System.out.println( map.putIfAbsent(5,"w6"));
         System.out.println( map.putIfAbsent(5,"w5"));
         System.out.println( map);
 
