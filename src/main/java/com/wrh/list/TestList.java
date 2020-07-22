@@ -563,6 +563,133 @@ public class TestList {
 
     }
 
+    @Test
+    public void Test567() {
+        Set<Integer> set = new HashSet<>();
+        set.add(1);
+        set.add(2);
+        set.add(3);
+
+        List<Integer> list = new ArrayList<>(set);
+        System.out.println(list);
+
+
+    }
+
+    private List<Integer> findNearSlotNum(Integer slotNum) {
+        List<Integer> list = new ArrayList<>();
+        if(Objects.isNull(slotNum)){
+            return list;
+        }
+        list.add(slotNum);
+        for (int i = 1; i < 5; i++) {
+            if(slotNum - i >=0){
+                list.add(slotNum - i);
+            }
+        }
+        return list;
+    }
+
+    @Test
+    public void Test594() {
+        System.out.println(findNearSlotNum(1));
+        System.out.println(findNearSlotNum(2));
+        System.out.println(findNearSlotNum(3));
+        System.out.println(findNearSlotNum(4));
+        System.out.println(findNearSlotNum(5));
+        System.out.println(findNearSlotNum(6));
+
+    }
+
+    @Test
+    public void Test605() {
+        List<Long> list = new ArrayList<>();
+        list.add(1L);
+        list.add(2L);
+        list.add(3L);
+        list.add(4L);
+//        System.out.println(CollectionUtils.ma);
+
+        Long a = list.stream().max(Long::compareTo).get();
+        Long b = list.stream().max((list1,list2)->list1>list2?1:-1).get();
+        System.out.println(a);
+        System.out.println(b);
+    }
+
+    /**
+     * list倒叙
+     */
+    @Test
+    public void Test620() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        System.out.println(list);
+
+        list.sort(Comparator.reverseOrder());
+        System.out.println(list);
+
+    }
+
+    @Test
+    public void Test637() {
+        List<SharpData> list = new ArrayList<>();
+        SharpData s1 = new SharpData();
+        s1.setTime("2020-07-20 01:00:00");
+        s1.setNum(100L);
+        list.add(s1);
+
+        SharpData s2 = new SharpData();
+        s2.setTime("2020-07-20 02:00:00");
+        s2.setNum(200L);
+        list.add(s2);
+
+        SharpData s3 = new SharpData();
+        s3.setTime("2020-07-20 03:00:00");
+        s3.setNum(300L);
+        list.add(s3);
+
+        SharpData s9 = new SharpData();
+        s9.setTime("2020-07-20 09:00:00");
+        s9.setNum(900L);
+        list.add(s9);
+
+        SharpData s10 = new SharpData();
+        s10.setTime("2020-07-20 10:00:00");
+        s10.setNum(1000L);
+        list.add(s10);
+
+        SharpData s20 = new SharpData();
+        s20.setTime("2020-07-20 20:00:00");
+        s20.setNum(2000L);
+        list.add(s20);
+
+        SharpData s24 = new SharpData();
+        s24.setTime("2020-07-20 24:00:00");
+        s24.setNum(2400L);
+        list.add(s24);
+
+        System.out.println(list);
+
+        List<SharpData> list1 = list.stream().sorted(Comparator.comparing(SharpData::getTime).reversed()).collect(Collectors.toList());
+        System.out.println(list1);
+
+
+    }
+
+    @Test
+    public void Test683() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.subList(5,0);
+
+    }
+
 
 
 

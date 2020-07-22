@@ -445,4 +445,14 @@ public class TestMap {
 
 
     }
+
+    @Test
+    public void Test450() {
+        Map<Integer, String> map = getMap();
+        System.out.println(map);
+        map.putIfAbsent(4,"w5");
+        System.out.println( map.putIfAbsent(5,"w5"));
+        System.out.println( map);
+
+    }
 }

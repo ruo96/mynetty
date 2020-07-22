@@ -839,5 +839,101 @@ public class TestTime {
 
     }
 
+    /**
+     * LocalDate转Date
+     */
+    @Test
+    public void Test843() {
+        LocalDate nowLocalDate = LocalDate.now();
+        Date date = Date.from(nowLocalDate.atStartOfDay(ZoneOffset.ofHours(8)).toInstant());
+        System.out.println(nowLocalDate);
+        System.out.println(date);
+    }
+
+    /**
+     * LocalDateTime转Date
+     */
+    @Test
+    public void Test857() {
+        LocalDateTime nowLocalDate = LocalDateTime.now();
+        Date date = Date.from(nowLocalDate.atZone(ZoneOffset.ofHours(8)).toInstant());
+        System.out.println(nowLocalDate);
+        System.out.println(date);
+
+        /** 第二种方法*/
+        LocalDateTime time = LocalDateTime.now();
+        Date d1 = Date.from(time.toInstant(ZoneOffset.UTC));
+        System.out.println(d1);
+    }
+
+    /**
+     * Date转LocalDateTime(LocalDate)
+     */
+    @Test
+    public void Test865() {
+        Date date = new Date();
+        LocalDateTime localDateTime = date.toInstant().atZone(ZoneOffset.ofHours(8)).toLocalDateTime();
+        LocalDate localDate = date.toInstant().atZone(ZoneOffset.ofHours(8)).toLocalDate();
+        System.out.println(localDateTime);
+        System.out.println(localDate);
+
+        /** 第二种方法*/
+        LocalDateTime localDateTime1 = date.toInstant().atZone(ZoneOffset.UTC).toLocalDateTime();
+        LocalDate localDate1 = date.toInstant().atZone(ZoneOffset.UTC).toLocalDate();
+        System.out.println(localDateTime1);
+        System.out.println(localDate1);
+    }
+
+    /**
+     * LocalDate转时间戳
+     */
+    @Test
+    public void Test877() {
+        LocalDate localDate = LocalDate.now();
+        long timestamp = localDate.atStartOfDay(ZoneOffset.ofHours(8)).toInstant().toEpochMilli();
+        System.out.println(timestamp);
+        System.out.println(System.currentTimeMillis());
+    }
+
+    /**
+     * LocalDateTime转时间戳
+     */
+    @Test
+    public void Test888() {
+        LocalDateTime localDateTime = LocalDateTime.now();
+        long timestamp = localDateTime.toInstant(ZoneOffset.ofHours(8)).toEpochMilli();
+        System.out.println(timestamp);
+        System.out.println(System.currentTimeMillis());
+    }
+
+    /**
+     * 时间戳转LocalDateTime(LocalDate)
+     */
+    @Test
+    public void Test899() {
+        long timestamp = System.currentTimeMillis();
+        LocalDate localDate = Instant.ofEpochMilli(timestamp).atZone(ZoneOffset.ofHours(8)).toLocalDate();
+        LocalDateTime localDateTime = Instant.ofEpochMilli(timestamp).atZone(ZoneOffset.ofHours(8)).toLocalDateTime();
+        System.out.println(localDate);
+        System.out.println(localDateTime);
+
+    }
+
+    /**
+     * 间隔日期不能用这个， 根本不能够满足实际需求
+     */
+    @Test
+    public void Test854() {
+        LocalDate d1 = LocalDate.parse("2020-01-01", DateTimeFormatter.ofPattern(yyyyMMdd));
+        LocalDate d2 = LocalDate.parse("2019-11-01", DateTimeFormatter.ofPattern(yyyyMMdd));
+        int days = Period.between(d1,d2).getDays();
+        int months = Period.between(d1,d2).getMonths();
+        int years = Period.between(d1,d2).getYears();
+        System.out.println(days);
+        System.out.println(months);
+        System.out.println(years);
+
+    }
+
 
 }
