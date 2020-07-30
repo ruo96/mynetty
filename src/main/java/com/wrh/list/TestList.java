@@ -1,6 +1,7 @@
 package com.wrh.list;
 
 import com.alibaba.fastjson.JSON;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import com.wrh.elasticsearch.Student;
 import com.wrh.list.vo.GameConfig;
 import com.wrh.list.vo.TotalYearKpi;
@@ -687,6 +688,18 @@ public class TestList {
         list.add(3);
         list.add(4);
         list.subList(5,0);
+
+    }
+
+    @Test
+    public void Test694() {
+        Student s1 = new Student();
+        Student s2 = new Student();
+        System.out.println(s1.getMoney());
+        s2.setMoney(s1.getMoney());
+        System.out.println(s2);
+
+
 
     }
 

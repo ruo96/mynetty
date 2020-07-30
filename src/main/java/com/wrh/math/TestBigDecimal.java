@@ -80,4 +80,83 @@ public class TestBigDecimal {
 
 
     }
+
+    @Test
+    public void Test85() {
+        BigDecimal b  =new BigDecimal("0.000044456");
+        String show;
+        BigDecimal percentValue =b.multiply(new BigDecimal("100")).setScale(2,BigDecimal.ROUND_HALF_UP);
+//        BigDecimal percentValue =b.multiply(new BigDecimal("100")).setScale(2);
+        double a = percentValue.doubleValue();
+        System.out.println("a is : " + a);
+        /*if(b.compareTo(BigDecimal.ZERO) == 1){
+            show =  "+" + String.valueOf(percentValue) + "%";
+        }else {
+            show =  String.valueOf(percentValue) + "%";
+        }*/
+
+        if(a > 0){
+            show =  "+" + String.valueOf(percentValue) + "%";
+        }else {
+            show =  String.valueOf(percentValue) + "%";
+        }
+        System.out.println(show);
+
+    }
+
+    public static String getPercentString(long numerator ,long denominator , int fractionDigit){
+        BigDecimal percentValue =new BigDecimal(numerator).divide(new BigDecimal(denominator),fractionDigit,BigDecimal.ROUND_HALF_UP)
+                .multiply(new BigDecimal("100")).setScale(2,BigDecimal.ROUND_HALF_UP);
+        return String.valueOf(percentValue) + "%";
+    }
+
+    public static String getPercentString0(long numerator ,long denominator , int fractionDigit){
+        BigDecimal percentValue =new BigDecimal(numerator).divide(new BigDecimal(denominator),fractionDigit,BigDecimal.ROUND_HALF_UP)
+                .multiply(new BigDecimal("100")).setScale(0,BigDecimal.ROUND_HALF_UP);
+        return String.valueOf(percentValue) + "%";
+    }
+
+    @Test
+    public void Test114() {
+        System.out.println(getPercentString(100000,1,4));
+        System.out.println(getPercentString0(100000,3,4));
+
+    }
+
+    public static final Integer BIGDECIMAL_LIMIT = 100;
+
+    public static String getPercentString1(long numerator ,long denominator , int fractionDigit){
+        int scale = 2;
+        if(numerator / denominator >= BIGDECIMAL_LIMIT){
+            scale = 0;
+        }
+        BigDecimal percentValue =new BigDecimal(numerator).divide(new BigDecimal(denominator),fractionDigit,BigDecimal.ROUND_HALF_UP)
+                .multiply(new BigDecimal("100")).setScale(scale,BigDecimal.ROUND_HALF_UP);
+        double a = percentValue.doubleValue();
+        String show;
+        if(a > 0){
+            show =  "+" + String.valueOf(percentValue) + "%";
+        }else {
+            show =  String.valueOf(percentValue) + "%";
+        }
+        return show;
+    }
+
+    public static String getPercentStringWithoutSign(long numerator ,long denominator , int fractionDigit){
+        int scale = 2;
+        if(numerator / denominator >= BIGDECIMAL_LIMIT){
+            scale = 0;
+        }
+        BigDecimal percentValue =new BigDecimal(numerator).divide(new BigDecimal(denominator),fractionDigit,BigDecimal.ROUND_HALF_UP)
+                .multiply(new BigDecimal("100")).setScale(scale,BigDecimal.ROUND_HALF_UP);
+        return String.valueOf(percentValue) + "%";
+    }
+    @Test
+    public void Test155() {
+        System.out.println(getPercentString1(99, 1 , 4));
+        System.out.println(getPercentStringWithoutSign(99, 1 , 4));
+
+    }
+
+
 }

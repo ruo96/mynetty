@@ -144,4 +144,15 @@ public class TestString {
         System.out.println(i);
 
     }
+
+    @Test
+    public void Test149() {
+        String s = "abc";
+        changeString(s);
+        System.out.println(s);
+    }
+
+    private void changeString(String s) {
+        s = "123";
+    }
 }

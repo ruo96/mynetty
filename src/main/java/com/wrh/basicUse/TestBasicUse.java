@@ -617,6 +617,17 @@ public class TestBasicUse {
         return null;
     }
 
+    @Test
+    public void Test621() {
+        Integer a = null;
+        if(a == null){
+            System.out.println("a is null");
+        }else {
+            System.out.println("no");
+        }
+
+    }
+
 
 
 }

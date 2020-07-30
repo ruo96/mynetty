@@ -15,5 +15,7 @@ public class Student {
     private Integer id;
     private Integer grade;
 
+    private Long money;
+
 
 }

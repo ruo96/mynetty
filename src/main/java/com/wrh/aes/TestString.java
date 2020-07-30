@@ -2,6 +2,7 @@ package com.wrh.aes;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
+import org.junit.Test;
 
 /**
  * @Created by wrh
@@ -30,5 +31,20 @@ public class TestString {
                         ADD_QRCODE_RECODE}));
 
         log.info("hello");
+    }
+
+    @Test
+    public void Test36() {
+        String a = String.format("abc_%s",1);
+        System.out.println(a);
+
+    }
+
+    @Test
+    public void Test44() {
+        String a = "abc/def/xyz/123";
+        String b = StringUtils.substringAfterLast(a,"/");
+        System.out.println(b);
+
     }
 }
