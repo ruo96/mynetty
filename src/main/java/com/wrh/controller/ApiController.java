@@ -41,5 +41,15 @@ public class ApiController {
         return "ok";
     }
 
+    @RequestMapping("/app")
+    public String app(HttpServletRequest request, HttpServletResponse response){
+        String userName = request.getParameter("username");
+        String userName1 = (String) request.getAttribute("username");
+        log.info("===> 请求登录的用户： {}",userName);
+        log.info("===> 请求登录的用户 1： {}",userName1);
+
+        return "ok";
+    }
+
 
 }

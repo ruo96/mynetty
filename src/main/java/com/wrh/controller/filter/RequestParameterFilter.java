@@ -25,7 +25,8 @@ public class RequestParameterFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        log.info(">>> RequestParameterFilter enter");
+        log.info(">>> RequestParameterFilter enter, request uri: {}", request.getRequestURI());
+        log.info(">>> RequestParameterFilter enter, request url: {}", request.getRequestURL());
         /*如果请求路径是为api,进行过滤对参数parameter内容解密，放入request.parameter中*/
         if (request.getRequestURI().indexOf(AUTH_PATH) != -1) {
             /*1.获取加密串,进行解密*/
@@ -37,7 +38,13 @@ public class RequestParameterFilter extends OncePerRequestFilter {
             ParameterRequestWrapper wrapper = new ParameterRequestWrapper(request, paramter);
             filterChain.doFilter(wrapper, response);
             return;
+        }else {
+            Map paramter = new HashMap(16);
+            paramter.put("username", "otherName");
+            paramter.put("password", "password");
+            ParameterRequestWrapper wrapper = new ParameterRequestWrapper(request, paramter);
+            filterChain.doFilter(wrapper, response);
+            return;
         }
-        filterChain.doFilter(request, response);
     }
 }
