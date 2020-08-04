@@ -28,16 +28,17 @@ public class UserInterceptor implements HandlerInterceptor {
         } else {
             wrapper = new InterceptRequestWrapper(request);
         }
-        String body = new String(wrapper.getRequestBodyByte(), UTF_8);
+        /*String body = new String(wrapper.getRequestBodyByte(), UTF_8);
         log.debug(">>> UserInterceptor body {}:", body);
 
         RequestInfo r = JSON.parseObject(body, RequestInfo.class);
-        log.debug(">>> UserInterceptor解析后的报文体 r {}:", r);
+        log.debug(">>> UserInterceptor解析后的报文体 r {}:", r);*/
 
         /**
          * 向请求中塞参数
          */
         request.setAttribute("username","interceptor");
+
         return true;
     }
 }

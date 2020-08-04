@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @SpringBootConfiguration
 public class InterceptorRegister extends WebMvcConfigurerAdapter {
     private static final String SDK_API = "/api/**";
-    private static final String SDK_API_EXCLUDE = "/api/exclude";
+    private static final String SDK_API_EXCLUDE = "/api2/exclude";
 
     @Autowired
     UserInterceptor userInterceptor;

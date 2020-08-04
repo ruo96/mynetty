@@ -22,7 +22,17 @@ import java.util.Map;
 public class ApiController {
 
     @RequestMapping("/api")
-    public String loginIn(HttpServletRequest request, HttpServletResponse response){
+    public String api(HttpServletRequest request, HttpServletResponse response){
+        String userName = request.getParameter("username");
+        String userName1 = (String) request.getAttribute("username");
+        log.info("===> 请求登录的用户： {}",userName);
+        log.info("===> 请求登录的用户 1： {}",userName1);
+
+        return "ok";
+    }
+
+    @RequestMapping("/api/exclude")
+    public String apiExclude(HttpServletRequest request, HttpServletResponse response){
         String userName = request.getParameter("username");
         String userName1 = (String) request.getAttribute("username");
         log.info("===> 请求登录的用户： {}",userName);
