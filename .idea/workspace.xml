@@ -2,21 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="220b4fde-124d-4a90-8239-1cc8f7f19353" name="Default Changelist" comment="xiugai">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/info.2020072216.log.gz" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/controller/ApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/controller/filter/RequestParameterFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/controller/intercept/Digest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/controller/intercept/InterceptRequestWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/controller/intercept/InterceptorRegister.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/controller/intercept/RequestInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/controller/intercept/UserInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/controller/wrapper/ParameterRequestWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/encode/Base64.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/encode/EncodePassword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/encode/Md5Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wrh/encode/RSA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mynetty.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mynetty.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/aes/TestString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/aes/TestString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/TestBasicUse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/TestBasicUse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/TestString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/basicUse/TestString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/elasticsearch/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/elasticsearch/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/list/TestList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/list/TestList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/math/TestBigDecimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/math/TestBigDecimal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/config/FilterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/config/FilterConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/mq/kafka/KafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/mq/kafka/KafkaConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/aes/TestString.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/aes/TestString.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/basicUse/TestBasicUse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/basicUse/TestBasicUse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/math/TestBigDecimal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/math/TestBigDecimal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wrh/thread/threadPool/testThreadPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wrh/thread/threadPool/testThreadPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/config/FilterConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/config/FilterConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wrh/thread/threadPool/testThreadPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/wrh/thread/threadPool/testThreadPool.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +32,8 @@
         <option value="Enum" />
         <option value="AnnotationType" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -91,8 +94,9 @@
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\pro\mynetty\src\main\resources\static\pic" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.wrh.controller.service" />
+      <recent name="com.wrh.basicUse.zhixingshunxu" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\pro\mynetty\src\main\resources\static" />
@@ -102,15 +106,14 @@
       <recent name="D:\mypro\mynetty\src\main\java\com\wrh\tuling\netty\netty\chatroom" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.wrh.controller.intercept" />
+      <recent name="com.wrh.controller" />
+      <recent name="com.wrh.encode" />
       <recent name="com.wrh.list" />
       <recent name="com.wrh.utils" />
-      <recent name="com.wrh.annotate.annotation" />
-      <recent name="com.wrh.collection.list" />
-      <recent name="com.wrh.list.vo" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.wrh.controller.service" />
-      <recent name="com.wrh.basicUse.zhixingshunxu" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\pro\mynetty\src\main\resources\static\pic" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -335,18 +338,31 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestList.Test694">
-    <configuration name="TestBigDecimal.Test155" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.MynettyApplication">
+    <configuration name="testThreadPool" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wrh.thread.threadPool.testThreadPool" />
       <module name="mynetty" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.wrh.math.*" />
+          <option name="PATTERN" value="com.wrh.thread.threadPool.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.math" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.math.TestBigDecimal" />
-      <option name="METHOD_NAME" value="Test155" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EncodePassword.Test15" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mynetty" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wrh.encode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wrh.encode" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.encode.EncodePassword" />
+      <option name="METHOD_NAME" value="Test15" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -368,6 +384,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestMap.Test450" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mynetty" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wrh.collection.map.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wrh.collection.map" />
+      <option name="MAIN_CLASS_NAME" value="com.wrh.collection.map.TestMap" />
+      <option name="METHOD_NAME" value="Test450" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestString.Test149" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mynetty" />
       <extension name="coverage">
@@ -384,38 +416,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestString.Test36" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mynetty" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wrh.aes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.aes" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.aes.TestString" />
-      <option name="METHOD_NAME" value="Test36" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestString.Test44" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mynetty" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wrh.aes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.wrh.aes" />
-      <option name="MAIN_CLASS_NAME" value="com.wrh.aes.TestString" />
-      <option name="METHOD_NAME" value="Test44" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MynettyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="mynetty" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.wrh.MynettyApplication" />
@@ -424,20 +424,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.TestBigDecimal.Test155" />
-      <item itemvalue="JUnit.TestString.Test36" />
-      <item itemvalue="JUnit.TestString.Test44" />
       <item itemvalue="JUnit.TestString.Test149" />
       <item itemvalue="Spring Boot.MynettyApplication" />
       <item itemvalue="JUnit.TestList.Test694" />
+      <item itemvalue="Application.testThreadPool" />
+      <item itemvalue="JUnit.TestMap.Test450" />
+      <item itemvalue="JUnit.EncodePassword.Test15" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EncodePassword.Test15" />
+        <item itemvalue="Application.testThreadPool" />
+        <item itemvalue="JUnit.TestMap.Test450" />
         <item itemvalue="JUnit.TestList.Test694" />
         <item itemvalue="JUnit.TestString.Test149" />
-        <item itemvalue="JUnit.TestString.Test44" />
-        <item itemvalue="JUnit.TestString.Test36" />
-        <item itemvalue="JUnit.TestBigDecimal.Test155" />
       </list>
     </recent_temporary>
   </component>
@@ -510,7 +510,7 @@
       <workItem from="1594365072684" duration="18649000" />
       <workItem from="1595212925295" duration="27121000" />
       <workItem from="1595836595995" duration="1796000" />
-      <workItem from="1595901662908" duration="2198000" />
+      <workItem from="1595901662908" duration="17686000" />
     </task>
     <task id="LOCAL-00001" summary="xiugai">
       <created>1576736666275</created>
@@ -555,55 +555,55 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="435" y="435" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1592303466498" />
-    <state x="2606" y="101" key="#com.intellij.ide.util.MemberChooser" timestamp="1594363602794">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="726" y="105" key="#com.intellij.ide.util.MemberChooser" timestamp="1596531331071">
+      <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="2606" y="101" key="#com.intellij.ide.util.MemberChooser/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594363602794" />
-    <state x="726" y="105" key="#com.intellij.ide.util.MemberChooser/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1592481862545" />
+    <state x="2606" y="101" key="#com.intellij.ide.util.MemberChooser/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1596196375584" />
+    <state x="726" y="105" key="#com.intellij.ide.util.MemberChooser/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1596531331071" />
     <state x="281" y="0" key="CommitChangelistDialog2" timestamp="1592548816928">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="281" y="0" key="CommitChangelistDialog2/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1592548816927" />
-    <state width="1815" height="397" key="GridCell.Tab.0.bottom" timestamp="1596022108331">
+    <state width="1815" height="234" key="GridCell.Tab.0.bottom" timestamp="1596532670302">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1877" height="397" key="GridCell.Tab.0.bottom/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594979619564" />
-    <state width="1815" height="397" key="GridCell.Tab.0.bottom/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1596022108331" />
-    <state width="1815" height="397" key="GridCell.Tab.0.center" timestamp="1596022108330">
+    <state width="1877" height="234" key="GridCell.Tab.0.bottom/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1596197571539" />
+    <state width="1815" height="234" key="GridCell.Tab.0.bottom/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1596532670302" />
+    <state width="1815" height="234" key="GridCell.Tab.0.center" timestamp="1596532670302">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1877" height="397" key="GridCell.Tab.0.center/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594979619564" />
-    <state width="1815" height="397" key="GridCell.Tab.0.center/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1596022108330" />
-    <state width="1815" height="397" key="GridCell.Tab.0.left" timestamp="1596022108330">
+    <state width="1877" height="234" key="GridCell.Tab.0.center/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1596197571538" />
+    <state width="1815" height="234" key="GridCell.Tab.0.center/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1596532670302" />
+    <state width="1815" height="234" key="GridCell.Tab.0.left" timestamp="1596532670302">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1877" height="397" key="GridCell.Tab.0.left/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594979619564" />
-    <state width="1815" height="397" key="GridCell.Tab.0.left/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1596022108330" />
-    <state width="1815" height="397" key="GridCell.Tab.0.right" timestamp="1596022108330">
+    <state width="1877" height="234" key="GridCell.Tab.0.left/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1596197571538" />
+    <state width="1815" height="234" key="GridCell.Tab.0.left/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1596532670302" />
+    <state width="1815" height="234" key="GridCell.Tab.0.right" timestamp="1596532670302">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1877" height="397" key="GridCell.Tab.0.right/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594979619564" />
-    <state width="1815" height="397" key="GridCell.Tab.0.right/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1596022108330" />
-    <state width="1815" height="397" key="GridCell.Tab.1.bottom" timestamp="1595409694125">
+    <state width="1877" height="234" key="GridCell.Tab.0.right/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1596197571539" />
+    <state width="1815" height="234" key="GridCell.Tab.0.right/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1596532670302" />
+    <state width="1815" height="234" key="GridCell.Tab.1.bottom" timestamp="1596532670302">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1877" height="380" key="GridCell.Tab.1.bottom/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594606002463" />
-    <state width="1815" height="397" key="GridCell.Tab.1.bottom/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1595409694125" />
-    <state width="1815" height="397" key="GridCell.Tab.1.center" timestamp="1595409694125">
+    <state width="1815" height="234" key="GridCell.Tab.1.bottom/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1596532670302" />
+    <state width="1815" height="234" key="GridCell.Tab.1.center" timestamp="1596532670302">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1877" height="380" key="GridCell.Tab.1.center/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594606002463" />
-    <state width="1815" height="397" key="GridCell.Tab.1.center/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1595409694125" />
-    <state width="1815" height="397" key="GridCell.Tab.1.left" timestamp="1595409694125">
+    <state width="1815" height="234" key="GridCell.Tab.1.center/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1596532670302" />
+    <state width="1815" height="234" key="GridCell.Tab.1.left" timestamp="1596532670302">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1877" height="380" key="GridCell.Tab.1.left/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594606002463" />
-    <state width="1815" height="397" key="GridCell.Tab.1.left/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1595409694125" />
-    <state width="1815" height="397" key="GridCell.Tab.1.right" timestamp="1595409694125">
+    <state width="1815" height="234" key="GridCell.Tab.1.left/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1596532670302" />
+    <state width="1815" height="234" key="GridCell.Tab.1.right" timestamp="1596532670302">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1877" height="380" key="GridCell.Tab.1.right/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594606002463" />
-    <state width="1815" height="397" key="GridCell.Tab.1.right/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1595409694125" />
+    <state width="1815" height="234" key="GridCell.Tab.1.right/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1596532670302" />
     <state x="220" y="224" width="1032" height="708" key="SettingsEditor" timestamp="1592303502066">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
@@ -626,16 +626,16 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2665" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594605989858" />
-    <state x="474" y="134" width="1033" height="813" key="find.popup" timestamp="1595838212253">
+    <state x="474" y="134" width="1033" height="813" key="find.popup" timestamp="1596531755667">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="2335" y="143" width="1068" height="783" key="find.popup/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1595212941567" />
-    <state x="474" y="134" width="1033" height="813" key="find.popup/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1595838212253" />
-    <state x="665" y="234" width="672" height="705" key="search.everywhere.popup" timestamp="1596021909429">
+    <state x="2335" y="143" width="1068" height="783" key="find.popup/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1596164809963" />
+    <state x="474" y="134" width="1033" height="813" key="find.popup/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1596531755667" />
+    <state x="665" y="234" width="672" height="705" key="search.everywhere.popup" timestamp="1596173902572">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/62.0.1858.1080/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594031363935" />
-    <state x="665" y="234" width="672" height="705" key="search.everywhere.popup/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1596021909429" />
+    <state x="665" y="234" width="672" height="705" key="search.everywhere.popup/62.0.1858.1080/1920.0.1920.1040@62.0.1858.1080" timestamp="1596173902572" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
