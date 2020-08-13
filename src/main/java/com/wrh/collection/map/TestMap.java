@@ -476,17 +476,17 @@ public class TestMap {
         dsDataListMap.put("2020-08-08", new ArrayList<>(1440));
         Long m2 = Runtime.getRuntime().freeMemory();
         System.out.println((m1-m2)/1024/1024);
-        final int[][] yArray = new int[1][1];
+        Long s1 = System.currentTimeMillis();
         dsDataListMap.forEach((ds, list) -> {
             //创建应该有的槽点数
-            yArray[0] = StringUtils.equals(DateUtil.format(DateUtil.SIMPLE_DATE_FORMAT), ds)
-                    ? new int[list.isEmpty()?0:(list.get(list.size()-1).getSlotNum()+1)] : new int[10];
+            int[] yArray = StringUtils.equals(DateUtil.format(DateUtil.SIMPLE_DATE_FORMAT), ds)
+                    ? new int[list.isEmpty()?0:(list.get(list.size()-1).getSlotNum()+1)] : new int[1440];
             Map<String, Object> temp = new HashMap<>(1);
             for (GameRealTimeData data : list) {
                 Integer slotNum = data.getSlotNum();
                 //将查询的数据插入对应的槽点
-                if (slotNum <= (yArray[0].length - 1)) {
-                    yArray[0][slotNum] = data.getY();
+                if (slotNum <= (yArray.length - 1)) {
+                    yArray[slotNum] = data.getY();
                 }
             }
             temp.put("name", ds);
@@ -494,13 +494,135 @@ public class TestMap {
             resultList.add(temp);
 //            yArray[0] = new int[0];
         });
+        System.out.println("cost: " + (System.currentTimeMillis() - s1));
         Long m3  = Runtime.getRuntime().freeMemory();
-        System.out.println((m1-m3)/1024/1024);
+        System.out.println((m1-m3)/1024);
 
         Long start = System.currentTimeMillis();
-        System.gc();
+//        System.gc();
         System.out.println(System.currentTimeMillis() - start);
         Long m4  = Runtime.getRuntime().freeMemory();
         System.out.println((m1-m4)/1024/1024);
+    }
+
+    @Test
+    public void test$2() {
+
+        Long m1 = Runtime.getRuntime().freeMemory();
+        List<Map<String, Object>> resultList = new ArrayList<>();
+
+        Map<String, List<GameRealTimeData>> dsDataListMap = new HashMap<>();
+        dsDataListMap.put("2020-08-01", new ArrayList<>(1440));
+        dsDataListMap.put("2020-08-02", new ArrayList<>(1440));
+        dsDataListMap.put("2020-08-03", new ArrayList<>(1440));
+        dsDataListMap.put("2020-08-04", new ArrayList<>(1440));
+        dsDataListMap.put("2020-08-05", new ArrayList<>(1440));
+        dsDataListMap.put("2020-08-06", new ArrayList<>(1440));
+        dsDataListMap.put("2020-08-07", new ArrayList<>(1440));
+        dsDataListMap.put("2020-08-08", new ArrayList<>(1440));
+        Long m2 = Runtime.getRuntime().freeMemory();
+        System.out.println((m1-m2)/1024/1024);
+
+        Set<Map.Entry<String, List<GameRealTimeData>>> entrySet = dsDataListMap.entrySet();
+        Iterator<Map.Entry<String, List<GameRealTimeData>>> iterator = entrySet.iterator();
+        Long s1 = System.currentTimeMillis();
+        while (iterator.hasNext()){
+            Map.Entry<String, List<GameRealTimeData>> entry = iterator.next();
+//            log.info("===> set key: {}  value: {}",entry.getKey(),entry.getValue());
+            String ds = entry.getKey();
+            List<GameRealTimeData> list = entry.getValue();
+
+
+                //创建应该有的槽点数
+                int[] yArray = StringUtils.equals(DateUtil.format(DateUtil.SIMPLE_DATE_FORMAT), ds)
+                        ? new int[list.isEmpty()?0:(list.get(list.size()-1).getSlotNum()+1)] : new int[10];
+                Map<String, Object> temp = new HashMap<>(1);
+                for (GameRealTimeData data : list) {
+                    Integer slotNum = data.getSlotNum();
+                    //将查询的数据插入对应的槽点
+                    if (slotNum <= (yArray.length - 1)) {
+                        yArray[slotNum] = data.getY();
+                    }
+                }
+                temp.put("name", ds);
+                temp.put("data", yArray);
+                resultList.add(temp);
+//            yArray[0] = new int[0];
+
+        }
+        System.out.println("cost: " + (System.currentTimeMillis() - s1));
+
+
+        Long m3  = Runtime.getRuntime().freeMemory();
+        System.out.println((m1-m3)/1024);
+
+        Long start = System.currentTimeMillis();
+//        System.gc();
+        System.out.println(System.currentTimeMillis() - start);
+        Long m4  = Runtime.getRuntime().freeMemory();
+        System.out.println((m1-m4)/1024/1024);
+    }
+
+    @Test
+    public void test$3() {
+        for (int i = 0; i < 3; i++) {
+            test$1();
+        }
+
+        System.out.println("=======================");
+
+        for (int i = 0; i < 3; i++) {
+            test$2();
+        }
+    }
+
+    @Test
+    public void test$4() {
+        Map<String, String> map = new HashMap<>();
+        map.put("1","1");
+        map.put("2","1");
+        map.put("3","1");
+        map.put("4","1");
+        long m1 = Runtime.getRuntime().freeMemory()/1024;
+        System.out.println("start memory: " + m1 + "kb");
+        map.forEach((k,v)->{
+            int[] i = new int[1024*1024];
+            for (int j = 0; j < 1024*1024; j++) {
+                i[j] = j;
+            }
+            long m2 = Runtime.getRuntime().freeMemory()/1024;
+            System.out.println("this time memory: " + m2 + "kb");
+            System.out.println(m1 - m2);
+        });
+        long m2 = Runtime.getRuntime().freeMemory()/1024;
+        System.out.println("finally");
+        System.out.println(m1 - m2);
+    }
+
+    @Test
+    public void test$5() {
+        Map<String, String> map = new HashMap<>();
+        map.put("1","1");
+        map.put("2","1");
+        map.put("3","1");
+        map.put("4","1");
+        long m1 = Runtime.getRuntime().freeMemory()/1024;
+        System.out.println("start memory: " + m1 + "kb");
+        Set<Map.Entry<String, String>> entrySet = map.entrySet();
+        Iterator<Map.Entry<String, String>> iterator = entrySet.iterator();
+        System.out.println(map.size());
+        while (iterator.hasNext()){
+                int[] i = new int[1024*1024];
+                /*for (int j = 0; j < 1024*1024; j++) {
+                    i[j] = j;
+                }*/
+                long m2 = Runtime.getRuntime().freeMemory()/1024;
+            System.out.println("this time memory: " + m2 + "kb");
+                System.out.println(">>> "+(m1 - m2) + "kb");
+        }
+        long m2 = Runtime.getRuntime().freeMemory()/1024;
+
+        System.out.println("finally");
+        System.out.println(m1 - m2);
     }
 }

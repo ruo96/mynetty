@@ -703,6 +703,63 @@ public class TestList {
 
     }
 
+    @Test
+    public void test707() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        long m1 = Runtime.getRuntime().freeMemory()/1024;
+        System.out.println("start memory: " + m1 + "kb");
+        list.forEach((k)->{
+            int[] i = new int[1024*1024];
+            for (int j = 0; j < 1024*1024; j++) {
+                i[j] = j;
+            }
+            long m2 = Runtime.getRuntime().freeMemory()/1024;
+            System.out.println("this time memory: " + m2 + "kb");
+            System.out.println(m1 - m2);
+        });
+        long m2 = Runtime.getRuntime().freeMemory()/1024;
+        System.out.println("finally");
+        System.out.println(m1 - m2);
+    }
+
+    @Test
+    public void test730() throws InterruptedException {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        long m1 = Runtime.getRuntime().freeMemory()/1024;
+        System.out.println("start memory: " + m1 + "kb");
+        for(Integer i1 : list){
+            int[] i = new int[1024*1024];
+            for (int j = 0; j < 1024*1024; j++) {
+                i[j] = j;
+            }
+            long m2 = Runtime.getRuntime().freeMemory()/1024;
+            System.out.println("this time memory: " + m2 + "kb");
+            System.out.println(m1 - m2);
+        }
+        long m2 = Runtime.getRuntime().freeMemory()/1024;
+        System.out.println("finally");
+        System.out.println(m1 - m2);
+
+        TimeUnit.SECONDS.sleep(5);
+
+        m2 = Runtime.getRuntime().freeMemory()/1024;
+        System.out.println(" real finally");
+        System.out.println(m1 - m2);
+
+        System.gc();
+        m2 = Runtime.getRuntime().freeMemory()/1024;
+        System.out.println(" gc finally");
+        System.out.println(m1 - m2);
+    }
+
 
 
 
