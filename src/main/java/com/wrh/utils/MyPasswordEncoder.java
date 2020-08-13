@@ -1,7 +1,7 @@
 package com.wrh.utils;
 
 import org.apache.commons.codec.digest.DigestUtils;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @Description TODO
  * @Date 2020/5/21 19:44
  */
-@Component
+/*@Component
 public class MyPasswordEncoder implements PasswordEncoder {
     @Override
     public String encode(CharSequence rawPassword) {
@@ -21,4 +21,4 @@ public class MyPasswordEncoder implements PasswordEncoder {
     public boolean matches(CharSequence rawPassword, String encodedPassword) {
         return encodedPassword.equals(DigestUtils.md5Hex(rawPassword.toString().getBytes()));
     }
-}
+}*/

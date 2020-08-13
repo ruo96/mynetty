@@ -411,6 +411,55 @@ public class TestMap {
     }
 
     @Test
+    public void Test413() {
+        Map<Integer, Student> map = new HashMap<>();
+        final long[] i = {0};
+        map.forEach((k,v) ->{
+            i[0] += v.getGrade();
+        });
+        System.out.println(i[0]);
+
+    }
+
+    @Test
+    public void Test424() {
+        Map<String, Map<String, List<Student>>> map = new HashMap<>();
+
+        Map<String, List<Student>> mapInner = new HashMap<>();
+        List<Student> l1 = new ArrayList<>();
+        Student s1 = new Student();
+        s1.setName("w1");
+        s1.setId(1);
+        s1.setGrade(1);
+
+        Student s2 = new Student();
+        s2.setName("w2");
+        s2.setId(2);
+        s2.setGrade(2);
+
+        l1.add(s1);
+        l1.add(s2);
+
+        mapInner.put("01",l1);
+        map.put("test", mapInner);
+        log.info(">>> map:{}", JSON.toJSONString(map));
+
+
+    }
+
+    @Test
+    public void Test450() {
+        /** 还是要用concurrentHashMap*/
+        Map<Integer, String> map = getMap();
+        System.out.println(map);
+        map.putIfAbsent(4,"w5");
+        System.out.println( map.putIfAbsent(5,"w6"));
+        System.out.println( map.putIfAbsent(5,"w5"));
+        System.out.println( map);
+
+    }
+
+    @Test
     public void test$1() {
 
         Long m1 = Runtime.getRuntime().freeMemory();

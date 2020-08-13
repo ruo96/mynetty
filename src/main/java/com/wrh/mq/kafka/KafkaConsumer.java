@@ -16,13 +16,17 @@ import org.springframework.stereotype.Service;
 public class KafkaConsumer {
 
     /**
+     * kafka操作命令
      * .\kafka-consumer-groups.bat --new-consumer --bootstrap-server 127.0.0.1:9092 --list       .\kafka-consumer-groups.bat --zookeeper 127.0.0.1:2181 --list  这个地方测试是有问题的
      * .\kafka-topics.bat --zookeeper 127.0.0.1:2181 --topic hellonetty4 --describe    查看topic的详情
      * .\kafka-server-start.bat D:\tools\mq\kafka\kafka_2.12-2.4.0\config\server.properties
-     * .\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 3 --topic mynetty3-3p     创建topic
-     * .\kafka-console-producer.bat --broker-list localhost:9092 --topic mynetty3-3p
+     * .\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic pay-sdk-log-notify1     创建topic
+     * .\kafka-console-producer.bat --broker-list localhost:9092 --topic mynetty3-3p  开启生产者
+     * .\kafka-console-consumer.bat --zookeeper localhost:2181 --topic test   开启消费者
      * .\kafka-consumer-groups.sh --bootstrap-server XXX:9092 --group your-group-id --describe  查看组消费问题
      * 如果有3个partition，那么就会ABA-ABA-ABA 这样收发数据，如果2个partition，那么AB就会轮流获取，如果只有一个partition，那么就只有A或者只有B能够接收数据
+     * -- 查看group消费情况
+     * bin/kafka-consumer-groups.sh --bootstrap-server XXX:9092 --group your-group-id --describe
      * @param record
      */
 //    @KafkaListener(groupId = "group1",topics = "mynetty3-3p")

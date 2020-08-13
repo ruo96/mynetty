@@ -2,6 +2,7 @@ package com.wrh;
 
 
 import com.wrh.server.EchoServer;
+import com.zaxxer.hikari.HikariDataSource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -11,7 +12,12 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.core.env.Environment;
 
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
@@ -25,17 +31,31 @@ public class MynettyApplication {
 	@Autowired
 	private EchoServer echoServer;
 
+	@Autowired
+    Environment environment;
+
+	@Autowired
+    private DataSource dataSource;
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(MynettyApplication.class, args);
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner() throws InterruptedException {
+	public CommandLineRunner commandLineRunner() throws InterruptedException, SQLException {
 
         log.info("开始启动服务端的服务!");
 
         TimeUnit.SECONDS.sleep(1);
+
+        log.info(">>> profile: {}" , Arrays.toString(environment.getActiveProfiles()));
+
+        log.info("开始检查数据库的服务!");
+        Connection conn = dataSource.getConnection();
+        log.info("数据操作对象： {}", conn);
+        conn.close();
+
 
         return e->{
             new Thread(() -> {
@@ -47,6 +67,8 @@ public class MynettyApplication {
             }).start();
 
         };
+
+
     }
 
 

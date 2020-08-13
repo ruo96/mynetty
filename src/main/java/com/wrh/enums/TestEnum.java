@@ -64,4 +64,19 @@ public class TestEnum {
 
     }
 
+    @Test
+    public void Test68() {
+        String str = "spring";
+        SeasonEnum s1 = SeasonEnum.valueOf(str.toUpperCase());
+        System.out.println(s1);
+        System.out.println(SeasonEnum.values());
+        for(SeasonEnum s : SeasonEnum.values()){
+            log.info("{}   [{}]", s, s.ordinal() );
+            log.info("name    [{}]", s.name() );
+        }
+        log.info("compare    [{}]", SeasonEnum.SPRING.compareTo(SeasonEnum.SUMMER));
+
+
+    }
+
 }

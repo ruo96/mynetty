@@ -590,6 +590,46 @@ public class TestBasicUse {
             System.out.println("null name");
         }
     }
+    @Test
+    public void Test593() {
+        String newLine = System.getProperty("line.separator");
+        System.out.println("["+newLine+"]");
+
+    }
+
+    @Test
+    public void Test600() {
+        List<Long> list1 = new ArrayList<>();
+        long a = 123;
+        list1.add(a);
+        System.out.println(list1);
+        a = 456;
+        System.out.println(list1);
+
+    }
+
+    @Test
+    public void Test611() {
+        long a = getNull();
+        System.out.println(a); // 会空指针
+    }
+
+    private Long getNull() {
+        return null;
+    }
+
+    @Test
+    public void Test621() {
+        Integer a = null;
+        if(a == null){
+            System.out.println("a is null");
+        }else {
+            System.out.println("no");
+        }
+
+    }
+
+
 
     @Test
     public void Test595() {

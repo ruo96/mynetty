@@ -1,5 +1,6 @@
 package com.wrh.config;
 
+import com.wrh.controller.filter.RequestParameterFilter;
 import com.wrh.filter.LogCosFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -21,6 +22,16 @@ public class FilterConfig {
         registration.addUrlPatterns("/gogogo");
         registration.setName("LogCostFilter");
         registration.setOrder(1);
+        return registration;
+    }
+
+    @Bean
+    public FilterRegistrationBean registFilter1()  {
+        FilterRegistrationBean registration =  new  FilterRegistrationBean();
+        registration.setFilter(new RequestParameterFilter());
+        registration.addUrlPatterns("/*");
+        registration.setName("requestFilter");
+        registration.setOrder(2);
         return registration;
     }
 }

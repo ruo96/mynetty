@@ -1,6 +1,7 @@
 package com.wrh.IOuse.fileOperate;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.io.*;
@@ -9,6 +10,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.HashSet;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -369,5 +371,48 @@ public class TestFileOperate {
         }catch (IOException e) {
 
         }
+    }
+
+    /**
+     * 带着格式读取
+     * @throws IOException
+     */
+    @Test
+    public void Test375() throws IOException {
+        String multiLines = new String(Files.readAllBytes(Paths.get("e:\\file\\data.txt")));
+        System.out.println(multiLines);
+
+    }
+
+    /**
+     * 删除字符串最后一个字符的多种方法， 最后一位
+     */
+    @Test
+    public void Test386() {
+        String str = "abcd";
+        System.out.println(str.substring(0, str.length() - 1));
+        System.out.println(StringUtils.chop(str));
+
+        /** 正则 没有判空*/
+        System.out.println(str.replaceAll(".$", ""));
+
+        /** 正则， java8写法， 判空 优雅*/
+        String str2 = Optional.ofNullable(str).map(s-> s.replaceAll(".$", "")).orElse(str);
+        System.out.println(str2);
+
+    }
+
+    /**
+     * 判断字符在字符串中出现的次数
+     */
+    @Test
+    public void Test406() {
+        String str = "cadoemajsdlkfjaadfvcses";
+        long count = str.chars().filter(e->e=='a').count();
+        System.out.println(count);
+
+        int count2 = StringUtils.countMatches(str,'a');
+        System.out.println(count2);
+
     }
 }

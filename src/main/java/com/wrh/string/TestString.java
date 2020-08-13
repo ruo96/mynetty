@@ -87,4 +87,13 @@ public class TestString {
             System.out.println(s);
         }
     }
+
+    @Test
+    public void Test92() {
+        String a = "wrh";
+        String b = a.concat("123");
+        System.out.println(a);
+        System.out.println(b);
+
+    }
 }

@@ -15,6 +15,7 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
+import java.time.temporal.WeekFields;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
@@ -545,6 +546,37 @@ public class TestTime {
     }
 
     @Test
+    public void Test548() {
+        LocalDate today = LocalDate.now().minusMonths(1);
+        //本月的第一天
+        LocalDate firstday = today.with(TemporalAdjusters.lastDayOfYear());
+        //本月的最后一天
+        LocalDate lastDay =today.with(TemporalAdjusters.lastDayOfMonth());
+        System.out.println(firstday);
+        System.out.println(lastDay);
+
+    }
+
+    /**
+     * 算相对进度
+     */
+    @Test
+    public void Test560() {
+        Long dayTarget = 5479452L;
+        Long monthTarget = 166666666L;
+        Long yearTarget = 2000000000L;
+
+        int nowMinute = DateTimeUtil.getNowMinute();
+        System.out.println(dayTarget * nowMinute / 1440);
+        Long monthAvgDay = monthTarget / 31;
+        System.out.println(monthAvgDay * 6 + monthAvgDay * nowMinute / 1440);
+
+        int dayOfYear = LocalDate.now().getDayOfYear();
+        System.out.println(dayTarget * (dayOfYear-1) + dayTarget * nowMinute / 1440);
+
+    }
+
+    @Test
     public void Test26() {
         LocalDate now = LocalDate.now();
         int i = now.getDayOfYear();
@@ -601,7 +633,306 @@ public class TestTime {
 
     @Test
     public void Test602() {
-        checkCardExpiry();
+        LocalDate date = LocalDate.parse("2020-06-22", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        LocalDate date1 = LocalDate.parse("2020-06-11", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        System.out.println(date);
+        System.out.println(date.getDayOfMonth());
+        System.out.println(date.getDayOfYear());
+
+        System.out.println(Period.between(date, date1).getDays());
+        System.out.println(Period.between(date1, date).getDays());
+        System.out.println(Math.abs(Period.between(date1, date).getDays()));
+
+
+    }
+
+    private static final String yyyyMMdd = "yyyy-MM-dd";
+
+    @Test
+    public void Test617() {
+        String ds = "2020-06-28";
+        long a = 7650000000L;
+//        int days = LocalDate.parse(ds,DateTimeFormatter.ofPattern(yyyyMMdd)).getDayOfYear();
+        LocalDate date = LocalDate.parse(ds,DateTimeFormatter.ofPattern(yyyyMMdd));
+        int days = date.getDayOfYear();
+                int totalDays = date.with(TemporalAdjusters.lastDayOfYear()).getDayOfYear();
+        System.out.println(days);  //180天
+        System.out.println(date.with(TemporalAdjusters.lastDayOfYear()).getDayOfYear());
+        System.out.println(a * days / totalDays );
+
+
+    }
+    @Test
+    public void Test633() {
+        String date = "2020-06-29";
+        if(date.equals(LocalDate.now().toString())){
+            System.out.println("is today");
+        }else {
+            System.out.println("not today");
+        }
+
+    }
+
+    @Test
+    public void Test644() {
+        String date = "2020-06-28";
+        if(LocalDate.now().minusDays(1).toString().equals(date)){
+            System.out.println(" is yesterday");
+        }else {
+            System.out.println("not yesterday");
+        }
+        System.out.println(LocalDateTime.now().toString());
+
+    }
+    
+    @Test
+    public void Test656() {
+        Date now = new Date();
+        System.out.println(now.getDay());
+        System.out.println(now.getMonth());
+        Instant instant = now.toInstant();
+        ZoneId zoneId = ZoneId.systemDefault();
+        LocalDateTime localDateTime = instant.atZone(zoneId).toLocalDateTime();
+        System.out.println(localDateTime);
+        System.out.println(localDateTime.getDayOfMonth());
+        System.out.println(localDateTime.getDayOfYear());
+
+        System.out.println("==========================");
+        LocalDateTime localDateTime1 = LocalDateTime.ofInstant(now.toInstant(), zoneId);
+        System.out.println(localDateTime1);
+        System.out.println(localDateTime1.getDayOfMonth());
+        System.out.println(localDateTime1.getDayOfYear());
+
+    }
+
+    @Test
+    public void Test676() {
+        System.out.println(isDateToday(new Date()));
+
+    }
+
+    public static boolean isDateToday(Date date){
+        return LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault()).toLocalDate().equals(LocalDate.now());
+    }
+
+    public static boolean isThisYearMonth(String ds) {
+        LocalDate date = LocalDate.parse(ds,DateTimeFormatter.ofPattern(yyyyMMdd));
+        LocalDate now = LocalDate.now();
+        return date.getYear() == now.getYear() && date.getMonthValue() == now.getMonthValue();
+    }
+    @Test
+    public void Test691() {
+        String ds = "2021-06-30";
+        System.out.println(isThisYearMonth(ds));
+
+    }
+
+    public static boolean isYesterday(String ds) {
+        return LocalDate.parse(ds,DateTimeFormatter.ofPattern(yyyyMMdd)).equals(LocalDate.now().minusDays(1));
+    }
+
+    @Test
+    public void Test702() {
+        System.out.println(isYesterday("2020-06-29"));
+        System.out.println(isYesterday("2020-06-30"));
+        System.out.println(isYesterday("2020-06-28"));
+
+    }
+
+    /**
+     * 获取第几周
+     */
+    @Test
+    public void Test710() {
+        LocalDate date = LocalDate.now();
+        WeekFields weekFields = WeekFields.ISO;
+        int weekNumber = date.get(weekFields.weekOfWeekBasedYear());
+        System.out.println(weekNumber);
+
+        LocalDate d1 = LocalDate.parse("2020-06-29",DateTimeFormatter.ofPattern(yyyyMMdd));
+        int weekNumber1 = date.get(weekFields.weekOfWeekBasedYear());
+        System.out.println(weekNumber1);
+
+        LocalDate d2 = LocalDate.parse("2020-07-05",DateTimeFormatter.ofPattern(yyyyMMdd));
+        int weekNumber2 = date.get(weekFields.weekOfWeekBasedYear());
+        System.out.println(weekNumber2);
+
+
+    }
+
+    public static Integer getNowMinute(){
+        LocalDateTime now = LocalDateTime.now();
+        return now.getHour() * 60 + now.getMinute();
+    }
+
+    @Test
+    public void Test737() {
+        System.out.println(LocalDateTime.now());
+
+        System.out.println(getNowMinute());
+
+        LocalDateTime setTime = LocalDateTime.of(2020,7,6,23,59,10);
+        System.out.println(setTime.getHour());
+        System.out.println(setTime.getMinute());
+        System.out.println(setTime.getHour() * 60 + setTime.getMinute());
+    }
+
+    @Test
+    public void Test749() {
+        LocalDate ds = LocalDate.now();
+        LocalDate dsEnd = LocalDate.parse("2020-06-05", DateTimeFormatter.ofPattern(yyyyMMdd));
+        if(ds.minusMonths(1).isAfter(dsEnd)){
+            System.out.println("isAfter");
+        }
+    }
+
+    @Test
+    public void Test758() {
+
+        LocalDate dsEnd = LocalDate.parse("2020-03-01", DateTimeFormatter.ofPattern(yyyyMMdd));
+        System.out.println(dsEnd.minusDays(1).toString());
+    }
+
+    @Test
+    public void Test765() {
+        System.out.println(LocalDate.now().toString().substring(0,7));
+    }
+    
+    @Test
+    public void Test801() {
+        LocalDateTime now =  LocalDateTime.now();
+        System.out.println(System.currentTimeMillis());
+        System.out.println(now.toInstant(ZoneOffset.of("+8")).toEpochMilli());
+
+    }
+    public static final String DATE_FORMAT = "yyyy-MM-dd";
+    public static final String TIME_FORMAT = "HH:mm:ss";
+    public static final String HOUR_MINUTES_FORMAT = "HH:mm";
+    public static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
+    /** 起始时间*/
+    public static final String TIME_BEGIN = "00:00:00";
+    public static final String DEFAULT_SHOW = "--";
+    public static final long LONG_NULL = -1;
+    public static final Integer ZERO = 0;
+
+    public static String getSharpTime(int i, String ds) {
+        LocalDateTime time = LocalDateTime.parse(ds+" "+TIME_BEGIN, DateTimeFormatter.ofPattern(DATE_TIME_FORMAT)).plusHours(i);
+        if(time.getDayOfYear() != LocalDate.parse(ds,DateTimeFormatter.ofPattern(DATE_FORMAT)).getDayOfYear()){
+            return ds + " 24:00:00";
+        }
+        return time.format(DateTimeFormatter.ofPattern(DATE_TIME_FORMAT));
+    }
+
+    @Test
+    public void Test826() {
+        System.out.println(getSharpTime(1, "2020-07-16"));
+
+    }
+
+    @Test
+    public void Test832() {
+        System.out.println(DateUtils.getNowMinute());
+        int shouldSharpData = (DateUtils.getNowMinute() - 1) / 60;
+        System.out.println(shouldSharpData);
+        int shouldSharpData1 = LocalDateTime.now().getHour();
+        System.out.println(shouldSharpData1);
+
+
+    }
+
+    /**
+     * LocalDate转Date
+     */
+    @Test
+    public void Test843() {
+        LocalDate nowLocalDate = LocalDate.now();
+        Date date = Date.from(nowLocalDate.atStartOfDay(ZoneOffset.ofHours(8)).toInstant());
+        System.out.println(nowLocalDate);
+        System.out.println(date);
+    }
+
+    /**
+     * LocalDateTime转Date
+     */
+    @Test
+    public void Test857() {
+        LocalDateTime nowLocalDate = LocalDateTime.now();
+        Date date = Date.from(nowLocalDate.atZone(ZoneOffset.ofHours(8)).toInstant());
+        System.out.println(nowLocalDate);
+        System.out.println(date);
+
+        /** 第二种方法*/
+        LocalDateTime time = LocalDateTime.now();
+        Date d1 = Date.from(time.toInstant(ZoneOffset.UTC));
+        System.out.println(d1);
+    }
+
+    /**
+     * Date转LocalDateTime(LocalDate)
+     */
+    @Test
+    public void Test865() {
+        Date date = new Date();
+        LocalDateTime localDateTime = date.toInstant().atZone(ZoneOffset.ofHours(8)).toLocalDateTime();
+        LocalDate localDate = date.toInstant().atZone(ZoneOffset.ofHours(8)).toLocalDate();
+        System.out.println(localDateTime);
+        System.out.println(localDate);
+
+        /** 第二种方法*/
+        LocalDateTime localDateTime1 = date.toInstant().atZone(ZoneOffset.UTC).toLocalDateTime();
+        LocalDate localDate1 = date.toInstant().atZone(ZoneOffset.UTC).toLocalDate();
+        System.out.println(localDateTime1);
+        System.out.println(localDate1);
+    }
+
+    /**
+     * LocalDate转时间戳
+     */
+    @Test
+    public void Test877() {
+        LocalDate localDate = LocalDate.now();
+        long timestamp = localDate.atStartOfDay(ZoneOffset.ofHours(8)).toInstant().toEpochMilli();
+        System.out.println(timestamp);
+        System.out.println(System.currentTimeMillis());
+    }
+
+    /**
+     * LocalDateTime转时间戳
+     */
+    @Test
+    public void Test888() {
+        LocalDateTime localDateTime = LocalDateTime.now();
+        long timestamp = localDateTime.toInstant(ZoneOffset.ofHours(8)).toEpochMilli();
+        System.out.println(timestamp);
+        System.out.println(System.currentTimeMillis());
+    }
+
+    /**
+     * 时间戳转LocalDateTime(LocalDate)
+     */
+    @Test
+    public void Test899() {
+        long timestamp = System.currentTimeMillis();
+        LocalDate localDate = Instant.ofEpochMilli(timestamp).atZone(ZoneOffset.ofHours(8)).toLocalDate();
+        LocalDateTime localDateTime = Instant.ofEpochMilli(timestamp).atZone(ZoneOffset.ofHours(8)).toLocalDateTime();
+        System.out.println(localDate);
+        System.out.println(localDateTime);
+
+    }
+
+    /**
+     * 间隔日期不能用这个， 根本不能够满足实际需求
+     */
+    @Test
+    public void Test854() {
+        LocalDate d1 = LocalDate.parse("2020-01-01", DateTimeFormatter.ofPattern(yyyyMMdd));
+        LocalDate d2 = LocalDate.parse("2019-11-01", DateTimeFormatter.ofPattern(yyyyMMdd));
+        int days = Period.between(d1,d2).getDays();
+        int months = Period.between(d1,d2).getMonths();
+        int years = Period.between(d1,d2).getYears();
+        System.out.println(days);
+        System.out.println(months);
+        System.out.println(years);
 
     }
 

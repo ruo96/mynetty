@@ -10,6 +10,9 @@ import java.util.concurrent.*;
  */
 public class ExchangeTest {
 
+    /**
+     * 就是交换两个线程之间的数据
+     */
     private static final Exchanger<String> exgr = new Exchanger<>();
 
     private static ExecutorService threadPool = Executors.newFixedThreadPool(2);

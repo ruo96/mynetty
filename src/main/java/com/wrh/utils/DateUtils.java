@@ -174,8 +174,12 @@ public class DateUtils {
     public static Integer getNowMinute(){
         LocalDateTime now = LocalDateTime.now();
 
-        return now.getHour() * 60 + now.getMinute();
+        return now.getHour() * 60 + now.getMinute() + 1;
     }
 
+    public static String getSharpTime(int i, String ds) {
+        LocalDateTime time = LocalDateTime.parse(ds+" "+"00:00:00", DateTimeFormatter.ofPattern(DATE_PATTERN_LONG)).plusHours(i);
+        return time.format(DateTimeFormatter.ofPattern(DATE_PATTERN_LONG));
+    }
 
 }
