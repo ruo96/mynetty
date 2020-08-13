@@ -40,7 +40,7 @@ public class MynettyApplication {
         return e->{
             new Thread(() -> {
                 try {
-                    echoServer.active(8088);
+//                    echoServer.active(8088);
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }

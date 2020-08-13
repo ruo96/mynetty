@@ -239,6 +239,7 @@ public class TestBasicUse {
         }else {
             log.info("===>{}",str[0]);
         }
+        int i = 2 * 3;
     }
 
     /**
@@ -587,6 +588,16 @@ public class TestBasicUse {
         String name = s.getName();
         if(Objects.isNull(name)){
             System.out.println("null name");
+        }
+    }
+
+    @Test
+    public void Test595() {
+        String a = "-1";
+        if(StringUtils.isNumeric(a)){
+            System.out.println("yes");
+        }else {
+            System.out.println("no");
         }
     }
 

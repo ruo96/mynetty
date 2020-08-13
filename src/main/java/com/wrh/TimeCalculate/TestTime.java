@@ -13,6 +13,7 @@ import org.springframework.util.StopWatch;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Calendar;
 import java.util.Date;
@@ -603,6 +604,26 @@ public class TestTime {
         checkCardExpiry();
 
     }
+
+    @Test
+    public void Test607() {
+        /*LocalDate d = LocalDate.of(2020,2,29);
+        LocalDate e = d.minusYears(1);
+        LocalDate f = d.minus(1, ChronoUnit.YEARS);
+        System.out.println(d);
+        System.out.println(e);
+        System.out.println(f);*/
+
+        LocalDateTime time = LocalDateTime.of(2020,7,11,23,59,58);
+        System.out.println(time.getHour()*60 + time.getMinute() +1);
+
+//        Integer minute = DateTimeUtil.getNowMinute() + 1;
+
+    }
+
+
+
+
 
 
 }

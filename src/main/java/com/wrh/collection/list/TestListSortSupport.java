@@ -1,6 +1,7 @@
 package com.wrh.collection.list;
 
 import com.alibaba.fastjson.JSONObject;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -47,9 +48,9 @@ public class TestListSortSupport {
 
     private static List<Info> getListSys() {
         List<Info> list = new ArrayList<>(10);
-        Info list1 = new Info(1,100,0); list.add(list1);
         Info list2 = new Info(2,90,0); list.add(list2);
         Info list3 = new Info(3,80,0); list.add(list3);
+        Info list1 = new Info(1,100,0); list.add(list1);
         Info list4 = new Info(4,70,0); list.add(list4);
         Info list5 = new Info(5,60,0); list.add(list5);
         Info list6 = new Info(6,50,0); list.add(list6);
@@ -141,6 +142,14 @@ public class TestListSortSupport {
         System.out.println(">> " + JSONObject.toJSONString(result));
         System.out.println(result.stream().mapToInt(Info::getScore).sum());
 
+    }
+
+    @Test
+    public void test$1() {
+        List<Info> sysListOri = getListSys();
+        System.out.println(sysListOri);
+        sysListOri.stream().sorted(Comparator.comparingInt(Info::getScore).reversed()).collect(Collectors.toList());
+        System.out.println(sysListOri);
     }
 
 }

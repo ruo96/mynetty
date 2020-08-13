@@ -1,5 +1,7 @@
 package com.wrh.thread;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -103,5 +105,17 @@ public class TestArrayList {
 
 
 
+    }
+
+    @Test
+    public void test$1() {
+        List<String> list = new ArrayList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+
+        System.out.println(list);
+        list.add(null);
+        System.out.println(list);
     }
 }

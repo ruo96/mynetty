@@ -3,6 +3,7 @@ package com.wrh.collection.map;
 import com.alibaba.fastjson.JSON;
 import com.wrh.elasticsearch.Student;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.util.*;
@@ -407,5 +408,50 @@ public class TestMap {
         }
         System.out.println("end");
 
+    }
+
+    @Test
+    public void test$1() {
+
+        Long m1 = Runtime.getRuntime().freeMemory();
+        List<Map<String, Object>> resultList = new ArrayList<>();
+
+        Map<String, List<GameRealTimeData>> dsDataListMap = new HashMap<>();
+        dsDataListMap.put("2020-08-01", new ArrayList<>(1440));
+        dsDataListMap.put("2020-08-02", new ArrayList<>(1440));
+        dsDataListMap.put("2020-08-03", new ArrayList<>(1440));
+        dsDataListMap.put("2020-08-04", new ArrayList<>(1440));
+        dsDataListMap.put("2020-08-05", new ArrayList<>(1440));
+        dsDataListMap.put("2020-08-06", new ArrayList<>(1440));
+        dsDataListMap.put("2020-08-07", new ArrayList<>(1440));
+        dsDataListMap.put("2020-08-08", new ArrayList<>(1440));
+        Long m2 = Runtime.getRuntime().freeMemory();
+        System.out.println((m1-m2)/1024/1024);
+        final int[][] yArray = new int[1][1];
+        dsDataListMap.forEach((ds, list) -> {
+            //创建应该有的槽点数
+            yArray[0] = StringUtils.equals(DateUtil.format(DateUtil.SIMPLE_DATE_FORMAT), ds)
+                    ? new int[list.isEmpty()?0:(list.get(list.size()-1).getSlotNum()+1)] : new int[10];
+            Map<String, Object> temp = new HashMap<>(1);
+            for (GameRealTimeData data : list) {
+                Integer slotNum = data.getSlotNum();
+                //将查询的数据插入对应的槽点
+                if (slotNum <= (yArray[0].length - 1)) {
+                    yArray[0][slotNum] = data.getY();
+                }
+            }
+            temp.put("name", ds);
+            temp.put("data", yArray[0]);
+            resultList.add(temp);
+//            yArray[0] = new int[0];
+        });
+        Long m3  = Runtime.getRuntime().freeMemory();
+        System.out.println((m1-m3)/1024/1024);
+
+        Long start = System.currentTimeMillis();
+        System.gc();
+        System.out.println(System.currentTimeMillis() - start);
+        Long m4  = Runtime.getRuntime().freeMemory();
+        System.out.println((m1-m4)/1024/1024);
     }
 }
