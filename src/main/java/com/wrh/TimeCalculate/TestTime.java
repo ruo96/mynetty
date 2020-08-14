@@ -16,9 +16,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 import java.time.temporal.WeekFields;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -955,6 +953,50 @@ public class TestTime {
 
 
 
+    public void Test939() {
+        List<String> list = new ArrayList<>();
+        list.add("2020-07-01");
+        list.add("2020-07-02");
+        list.add("2020-07-03");
+        list.add("2020-08-11");
+        System.out.println(list);
+        list.remove(LocalDate.now().toString());
+        System.out.println(list);
+
+    }
+
+    @Test
+    public void Test950() {
+        List<String> list = new ArrayList<>();
+        list.add("2020-07-01");
+        list.add("2020-07-02");
+        list.add("2020-07-03");
+        list.add("2020-08-11");
+        System.out.println(list);
+
+        List<String> list1= new ArrayList<>();
+        list1.add("2020-07-01");
+        list1.add("2020-07-02");
+
+        list.removeAll(list1);
+        System.out.println(list);
+
+    }
+
+    public static boolean isIn3Days(String ds) {
+        return LocalDate.parse(ds,DateTimeFormatter.ofPattern(DATE_FORMAT)).isAfter(LocalDate.now().minusDays(4));
+    }
+
+    public static boolean isIn7Days(String ds) {
+        return LocalDate.parse(ds,DateTimeFormatter.ofPattern(DATE_FORMAT)).isAfter(LocalDate.now().minusDays(8));
+    }
+
+    @Test
+    public void Test976() {
+        System.out.println(isIn3Days("2020-08-10"));
+        System.out.println(isIn7Days("2020-08-05"));
+
+    }
 
 
 }

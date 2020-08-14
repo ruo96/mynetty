@@ -51,9 +51,11 @@ public class TestCaffeine {
         cache.put("username", "wuruohong");
         cache.put("password", "123456");
 
+
         //从本地缓存中获取数据
         System.out.println(cache.getIfPresent("username"));
         System.out.println(cache.getIfPresent("password"));
+        System.out.println(cache.getIfPresent("password123"));
         System.out.println(cache.get("blog",key->{
             // 本地缓存如果没有的话， 从数据库或者redis中获取
             return getValue(key);

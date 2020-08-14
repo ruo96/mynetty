@@ -1,8 +1,11 @@
 package com.wrh.aes;
 
+import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
+
+import java.util.Map;
 
 /**
  * @Created by wrh
@@ -45,6 +48,23 @@ public class TestString {
         String a = "abc/def/xyz/123";
         String b = StringUtils.substringAfterLast(a,"/");
         System.out.println(b);
+
+    }
+
+    @Test
+    public void Test52() {
+        String str = "  abc  efg  ";
+        System.out.println(str);
+        System.out.println(str.length());
+        str = str.trim();
+        System.out.println(str);
+        System.out.println(str.length());
+    }
+
+    @Test
+    public void Test62() {
+        String message = "   ";
+        Map<String, Object> messageMap = JSONObject.parseObject(message, Map.class);
 
     }
 }

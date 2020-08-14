@@ -82,58 +82,28 @@ public class testThreadPool {
         /*ThreadPoolExecutor pool = new ThreadPoolExecutor(2,5,10,TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(30),
                 Executors.defaultThreadFactory());*/
 
-        ThreadPoolExecutor pool = new ThreadPoolExecutor(2,5,10,TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(30));
-        pool.setThreadFactory(new MyThreadFactory());
+//        ThreadPoolExecutor pool = new ThreadPoolExecutor(2,5,10,TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(30));
+        MyThreadPoolExecutor pool = new MyThreadPoolExecutor(2,5,10,TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(30));
+//        pool.setThreadFactory(new MyThreadFactory());
+
+/*        ExecutorService pool = new ThreadPoolExecutor(8, 16, 0L, TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<Runnable>(512), Executors.defaultThreadFactory());*/
 
 
-        Thread t = new Thread(()->{
-//                System.out.println(10/(finalI-5));
-//                String message = restTemplate.getForEntity("http://www.baidu.com" , String.class).toString();
-            System.out.println("begin");
+        Runnable task = () -> {
+            log.info(">>> begin :  thread: {}", Thread.currentThread().getName());
             int i1 = 10/0;
-            System.out.println(1/0);
-        });
-
-        Runnable a = new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("begin");
-                int i1 = 10/0;
-                System.out.println(1/0);
-                /*try {
-
-                }catch (Exception e){
-                    System.out.println(">>>> 线程池异常");
-                }*/
-            }
+            log.info(">>> end :  i1: {}", i1);
         };
 
 
-        Future<?> asdfasdf = pool.submit(() -> {
-            System.err.println("asdfasdf");
-        });
-        if(asdfasdf.isDone()){
-            System.err.println("成功");
-        }
+        pool.submit(task);
+        /*if(future.get()==null){
+            log.info("任务无异常");
+        }*/
 
         TimeUnit.SECONDS.sleep(Integer.MAX_VALUE);
-
-        for (int i = 0; i < 10; i++) {
-            int finalI = i;
-
-            /*Future future = pool.submit(t);
-            try {
-                if(future.get() == null){
-                    System.out.println("任务完成！");
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-                throw e;
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-                throw e;
-            }*/
-        }
+        log.info(">>> FINAL END");
     }
 
     @Test

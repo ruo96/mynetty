@@ -17,5 +17,7 @@ public class Student {
 
     private Long money;
 
+    private String title;
+
 
 }
