@@ -782,6 +782,28 @@ public class TestList {
 
     }
 
+    @Test
+    public void Test786() {
+        List<Integer> list = new ArrayList<>();
+        if(list.contains(1)){
+            System.out.println("yes");
+        }else {
+            System.out.println("no");
+        }
+
+    }
+
+    @Test
+    public void Test797() {
+        List<Integer> list = getIntegerList();
+        System.out.println(list);
+        String str = JSON.toJSONString(list);
+        System.out.println(str);
+        List<Integer> list1 = JSON.parseArray(str, Integer.class);
+        System.out.println(list1);
+
+    }
+
 
 
 

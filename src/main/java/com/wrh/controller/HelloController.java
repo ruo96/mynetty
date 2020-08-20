@@ -3,6 +3,8 @@ package com.wrh.controller;
 import com.wrh.annotate.annotation.PassportTotal;
 import com.wrh.controller.service.HelloService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +17,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author wuruohong
@@ -97,4 +102,51 @@ public class HelloController {
         return "welcome to example  " + name + "!";
     }
 
+    @RequestMapping(value = "/example123")
+    public String redirect5(HttpServletRequest request) throws IOException {
+        log.info(">>> redirect4  time: {}", LocalDateTime.now());
+        String uri = request.getRequestURI();
+        String url = request.getRequestURL().toString();
+        System.out.println("uri");
+        log.info(">>> uri: {}", uri);
+        System.out.println("url");
+        log.info(">>> url: {}", url);
+        return "ok";
+    }
+
+    @Test
+    public void Test113() {
+        String ip2 = "172.18.9.1,172.18.90.90";
+        if(StringUtils.isNotBlank(ip2)){
+            if(ip2.contains(",")){
+                String[] s = ip2.split(",");
+                ip2 = ip2.split(",")[s.length-1];
+            }
+        }
+        System.out.println(ip2);
+
+    }
+
+    public final static List<String> ipList = new ArrayList<String>(Arrays.asList("180.168.177.4","27.115.6.196","120.253.194.41","218.189.16.248"
+            ,"103.108.180.9","202.153.91.79","103.108.180.36"));
+
+    public final static List<String> ipListOffice = new ArrayList<String>(Arrays.asList("172.16.","172.17.","172.18.","172.19."
+            ,"172.20.","172.21.","172.22.","172.23.","172.24.","172.25.","172.26.","172.27.","172.28.","172.29.","172.30.","172.31."));
+
+    public final static List<String> mobileRealIp = new ArrayList<>(Arrays.asList("180.168.177.4","27.115.6.196","120.253.194.41"));
+
+    @Test
+    public void Test128() {
+        String ip = "172.18.11.1";
+
+        log.info("[checkVpn]>>> out checkVpn  ip:{}",  ip);
+        if(ipList.contains(ip) || ip.startsWith("10.")
+                || mobileRealIp.stream().filter(e->ip.startsWith(e)).findFirst().isPresent()
+                || ipListOffice.stream().filter(e->ip.startsWith(e)).findFirst().isPresent()){
+            log.info("[checkVpn]>>> in checkVpn  ip:{}",  ip);
+
+        }
+
+
+    }
 }
