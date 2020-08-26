@@ -804,6 +804,28 @@ public class TestList {
 
     }
 
+    /**
+     * list迭代器
+     */
+    @Test
+    public void Test808() {
+        List<Integer> list = getIntegerList();
+        System.out.println(list);
+        ListIterator<Integer> integerListIterator = list.listIterator(1);
+        while (integerListIterator.hasNext()){
+            System.out.println(integerListIterator.next());
+        }
+
+        System.out.println("============================");
+
+        ListIterator<Integer> integerListIterator1 = list.listIterator(1);
+        while (integerListIterator1.hasPrevious()){
+            System.out.println(integerListIterator1.previous());
+        }
+
+    }
+
+
 
 
 

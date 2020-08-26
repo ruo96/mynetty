@@ -1,10 +1,12 @@
 package com.wrh.collection.set;
 
 import io.netty.util.internal.ConcurrentSet;
+import org.junit.Test;
 
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListSet;
 
@@ -48,6 +50,29 @@ public class TestSet {
         set2.clear();
         System.out.println("after clear: size IS : " + set2.size());
 
+
+    }
+
+    @Test
+    public void Test55() {
+        Students s1 = new Students();
+        s1.setName("w1");
+        s1.setId(2);
+
+        Students s2 = new Students();
+        s2.setName("w2");
+        s2.setId(1);
+
+        Students s3 = new Students();
+        s3.setName("w3");
+        s3.setId(3);
+
+        TreeSet<Students> t = new TreeSet<>();
+        t.add(s1);
+        t.add(s2);
+        t.add(s3);
+
+        System.out.println(t);
 
     }
 }

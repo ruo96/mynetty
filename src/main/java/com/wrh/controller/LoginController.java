@@ -31,6 +31,9 @@ public class LoginController {
 
     @PostMapping("/loginIn")
     public Map<String,Object> loginIn(HttpServletRequest request, HttpServletResponse response){
+        String url = request.getRequestURL().toString();
+        String uri = request.getRequestURI();
+        log.info("===> loginIn： url: {}   uri: {}",url , uri);
         Map<String,Object> map = new HashMap<String,Object>();
         String userName = request.getParameter("userName");
         log.info("===> 请求登录的用户： {}",userName);

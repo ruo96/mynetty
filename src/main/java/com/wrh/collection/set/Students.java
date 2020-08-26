@@ -9,7 +9,12 @@ import lombok.Data;
  * @Modified By:
  */
 @Data
-public class Students {
+public class Students implements Comparable<Students>{
     private String name;
     private int id;
+
+    @Override
+    public int compareTo(Students o) {
+        return Integer.compare(o.id,this.id);
+    }
 }

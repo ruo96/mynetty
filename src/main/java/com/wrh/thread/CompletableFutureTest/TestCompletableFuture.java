@@ -546,5 +546,180 @@ public class TestCompletableFuture {
         System.out.println("thenCompose result : "+f.get());
     }
 
+    @Test
+    public void Test550() {
+        CompletableFuture cf = CompletableFuture.completedFuture("message");
+        System.out.println(cf.getNow(null));
+
+    }
+
+    @Test
+    public void Test557() {
+        CompletableFuture cf = CompletableFuture.completedFuture("message").thenApply(s->{
+            return s.toUpperCase();
+        });
+
+        System.out.println(cf.getNow(null));
+
+    }
+
+    @Test
+    public void Test567() {
+        CompletableFuture cf = CompletableFuture.completedFuture("message").thenApplyAsync(s->{
+            assert (Thread.currentThread().isDaemon());
+            try {
+                TimeUnit.SECONDS.sleep(3);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return s.toUpperCase();
+        });
+        assert (cf.getNow(null) ==null);
+        assert ("MESSAGE".equals(cf.join()));
+
+    }
+
+    /**
+     * 如果下一阶段接收了当前阶段的结果，但是在计算的时候不需要返回值(它的返回类型是void)，
+     * 那么它可以不应用一个函数，而是一个消费者， 调用方法也变成了thenAccept
+     */
+    @Test
+    public void Test583() {
+        StringBuilder result = new StringBuilder();
+        CompletableFuture.completedFuture("then accpet message").thenAccept(s->result.append(s));
+        System.out.println(result);
+
+        CompletableFuture cf = CompletableFuture.completedFuture("then2").thenApplyAsync(s->result.append(s));
+        cf.join();
+        System.out.println(result);
+
+    }
+
+    /**
+     * 在两个阶段都执行完后运行一个 Runnable
+     *
+     * 这个例子演示了依赖的CompletableFuture如果等待两个阶段完成后执行了一个Runnable。
+     * 注意下面所有的阶段都是同步执行的，第一个阶段执行大写转换，第二个阶段执行小写转换。
+     */
+    @Test
+    public void Test599() {
+        String original = "Message";
+        StringBuilder result = new StringBuilder();
+        result.append(original);
+        CompletableFuture.completedFuture(original).thenApply(String::toUpperCase).runAfterBoth(
+                CompletableFuture.completedFuture(original).thenApply(String::toLowerCase),
+                () -> result.append("done")
+        );
+
+        System.out.println(result);
+
+    }
+
+    /**
+     * 1、变换结果
+     * 这些方法的输入是上一个阶段计算后的结果，返回值是经过转化后结果
+     */
+    @Test
+    public void Test619() {
+        String result = CompletableFuture.supplyAsync(()->{return "Hello:";}).thenApplyAsync(v->addWorld(v)).join();
+        System.out.println(result);
+
+    }
+
+    private String addWorld(String v) {
+        return v + "World";
+    }
+
+    /**
+     * 2、消费结果
+     * 这些方法只是针对结果进行消费，入参是Consumer，没有返回值
+     */
+    @Test
+    public void Test633() {
+        CompletableFuture.supplyAsync(()->{return "Hello ";}).thenAccept(v->{
+            System.out.println("Consumer: " + v);
+        });
+        CompletableFuture.supplyAsync(()->{return "Hello ";}).thenAcceptAsync(v->{
+            System.out.println("Consumer: " + v);
+        });
+    }
+
+    /**
+     * 3、结合两个CompletionStage的结果，进行转化后返回
+     * 需要上一阶段的返回值，并且other代表的CompletionStage也要返回值之后，把这两个返回值，进行转换后返回指定类型的值。
+     *
+     * 说明：同样，也存在对两个CompletionStage结果进行消耗的一组方法，例如thenAcceptBoth，这里不再进行示例。
+     * 这个可以用来汇聚大的接口
+     */
+    @Test
+    public void Test648() {
+        String result = CompletableFuture.supplyAsync(()->{
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return "Hello";
+        }).thenCombine(CompletableFuture.supplyAsync(()->{
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return "World";
+        }),(s1,s2)->{return s1+":"+s2;}).join();
+        System.out.println(result);
+    }
+
+    /**
+     * 4、两个CompletionStage，谁计算的快，就用那个CompletionStage的结果进行下一步的处理
+     * 两种渠道完成同一个事情，就可以调用这个方法，找一个最快的结果进行处理，最终有返回值。
+     */
+    @Test
+    public void Test675() {
+        long start = System.currentTimeMillis();
+        String result = CompletableFuture.supplyAsync(()->{
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return "Hi Boy!";
+        }).applyToEither(CompletableFuture.supplyAsync(()->{
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return "Hi Girl!";
+        }), (s)->{return s;}).join();
+        long end = System.currentTimeMillis();
+
+        System.out.println(result + " cost:" + (end-start)+"ms");
+    }
+
+    /**
+     * 5、运行时出现了异常，可以通过exceptionally进行补偿
+     *
+     */
+    @Test
+    public void Test702() {
+        String result = CompletableFuture.supplyAsync(()->{
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if(true){
+                throw new RuntimeException("exception test!");
+            }
+            return "Hi Boy";
+        }).exceptionally(e->{
+            System.out.println(e.getMessage());
+            return "Hello world!";
+        }).join();
+        System.out.println(result);
+    }
+
 
 }

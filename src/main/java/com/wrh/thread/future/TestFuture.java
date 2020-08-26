@@ -1,6 +1,10 @@
 package com.wrh.thread.future;
 
-import java.util.concurrent.Future;
+import org.junit.Test;
+
+import java.time.LocalDateTime;
+import java.util.Random;
+import java.util.concurrent.*;
 
 /**
  * @Created by wrh
@@ -12,5 +16,36 @@ public class TestFuture {
 
     public static void main(String[] args) {
         /*Future*/
+    }
+
+
+    /**
+     * 了解了Future的使用，这里就要谈谈Future的局限性。Future很难直接表述多个Future 结果之间的依赖性，开发中，我们经常需要达成以下目的：
+     *
+     *     将两个异步计算合并为一个（这两个异步计算之间相互独立，同时第二个又依赖于第一个的结果）
+     *
+     *     等待 Future 集合中的所有任务都完成。
+     *     仅等待 Future 集合中最快结束的任务完成，并返回它的结果。
+     *
+     *     这种情况就需要completablefuture
+     */
+    @Test
+    public void Test17() {
+        ExecutorService executor = Executors.newCachedThreadPool();
+        Future<Integer> result = executor.submit(new Callable<Integer>() {
+            @Override
+            public Integer call() throws Exception {
+                return LocalDateTime.now().getDayOfYear();
+            }
+        });
+        executor.shutdown();
+
+        try {
+            System.out.println("result:" + result.get());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
     }
 }

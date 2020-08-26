@@ -625,4 +625,19 @@ public class TestMap {
         System.out.println("finally");
         System.out.println(m1 - m2);
     }
+
+    /**
+     * treemap排序 TreeMap 底层使用了数组+红黑树实现，所以里面的存储结构可以理解成下面这幅图
+     */
+    @Test
+    public void Test630() {
+        TreeMap<Integer, Object> naturalSort = new TreeMap<>();
+
+        TreeMap<Integer, Object> customSort = new TreeMap<>((o1,o2)-> Integer.compare(o2,o1));
+        customSort.put(2,1);
+        customSort.put(1,1);
+        customSort.put(9,1);
+        System.out.println(customSort);
+
+    }
 }
