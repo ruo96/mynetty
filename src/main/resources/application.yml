@@ -98,6 +98,14 @@ kafka:
     group-id: default
     topic-name: default
 
+param:
+  juzhen1: 1,2,3
+  juzhen2: 1.9,2.3,0.1
+  list: aaa,bbb,ccc
+  set: 111,222,333,111
+  map1: '{"name":"zhangsan","sex":"male"}'
+  map2: '{"math":"90","english":"85"}'
+
 
 
 
