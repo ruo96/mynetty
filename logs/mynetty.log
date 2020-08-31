@@ -1,617 +1,79 @@
-2020-08-28 14:59:09.880  INFO 247696 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 247696 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-08-28 14:59:09.884  INFO 247696 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-08-28 14:59:21.128  INFO 247696 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-08-28 14:59:21.128  INFO 247696 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-08-28 14:59:21.131  INFO 247696 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-08-28 14:59:21.136  INFO 247696 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-08-28 14:59:21.136  INFO 247696 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-08-28 14:59:21.295  INFO 247696 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-08-28 14:59:21.518  INFO 247696 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-08-28 14:59:21.615  INFO 247696 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-08-28 14:59:21.971  WARN 247696 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiController': Unsatisfied dependency expressed through field 'apiService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiServiceImpl': Unsatisfied dependency expressed through field 'testArray2'; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'double[]'; nested exception is java.lang.NumberFormatException: For input string: "1.9,2.3,0.1"
-2020-08-28 14:59:21.973  INFO 247696 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-08-28 14:59:21.975  INFO 247696 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
-2020-08-28 14:59:21.989 ERROR 247696 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiController': Unsatisfied dependency expressed through field 'apiService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiServiceImpl': Unsatisfied dependency expressed through field 'testArray2'; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'double[]'; nested exception is java.lang.NumberFormatException: For input string: "1.9,2.3,0.1"
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:572)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246)
-	at com.wrh.MynettyApplication.main(MynettyApplication.java:42)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiServiceImpl': Unsatisfied dependency expressed through field 'testArray2'; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'double[]'; nested exception is java.lang.NumberFormatException: For input string: "1.9,2.3,0.1"
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:572)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1135)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1062)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
-	... 24 common frames omitted
-Caused by: org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'double[]'; nested exception is java.lang.NumberFormatException: For input string: "1.9,2.3,0.1"
-	at org.springframework.beans.TypeConverterSupport.doConvert(TypeConverterSupport.java:80)
-	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:60)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1089)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1062)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
-	... 37 common frames omitted
-Caused by: java.lang.NumberFormatException: For input string: "1.9,2.3,0.1"
-	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)
-	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
-	at java.lang.Double.parseDouble(Double.java:538)
-	at java.lang.Double.valueOf(Double.java:502)
-	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:222)
-	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
-	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:466)
-	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:439)
-	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:192)
-	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:135)
-	at org.springframework.beans.TypeConverterDelegate.convertToTypedArray(TypeConverterDelegate.java:501)
-	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:209)
-	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:117)
-	at org.springframework.beans.TypeConverterSupport.doConvert(TypeConverterSupport.java:70)
-	... 41 common frames omitted
-
-2020-08-28 15:02:41.992  INFO 236588 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 236588 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-08-28 15:02:41.999  INFO 236588 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-08-28 15:02:43.838  INFO 236588 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-08-28 15:02:43.838  INFO 236588 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-08-28 15:02:43.841  INFO 236588 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-08-28 15:02:43.841  INFO 236588 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-08-28 15:02:43.841  INFO 236588 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-08-28 15:02:43.843  INFO 236588 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-08-28 15:02:44.009  INFO 236588 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-08-28 15:02:44.102  INFO 236588 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-08-28 15:02:44.751  INFO 236588 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-08-28 15:02:44.755  INFO 236588 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-08-28 15:02:45.114  INFO 236588 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-08-28 15:02:46.115  INFO 236588 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
-2020-08-28 15:02:46.118  INFO 236588 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
-2020-08-28 15:02:46.118  INFO 236588 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
-2020-08-28 15:02:46.250  INFO 236588 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
-2020-08-28 15:02:46.252  INFO 236588 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@2107128929 wrapping com.mysql.jdbc.JDBC4Connection@3c766952
-2020-08-28 15:02:46.607  INFO 236588 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-08-28 15:02:47.040  WARN 236588 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-08-28 15:02:47.439  INFO 236588 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.754 seconds (JVM running for 6.84)
-2020-08-28 15:02:49.697  INFO 236588 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2020-08-28 15:02:49.723  INFO 236588 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/peizhi
-2020-08-28 15:02:49.723  INFO 236588 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/peizhi
-2020-08-28 15:02:49.729  INFO 236588 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-08-28 15:02:49.729  INFO 236588 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
-2020-08-28 15:02:49.729  INFO 236588 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
-2020-08-28 15:02:49.783  INFO 236588 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/peizhi】,请求参数:【{}】
-2020-08-28 15:02:49.855  INFO 236588 --- [http-nio-9988-exec-1] com.wrh.controller.ApiController         : ===> 获取配置信息 1： 2020-08-28T15:02:49.855
-2020-08-28 15:02:49.856  INFO 236588 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> testArray1: [1, 2, 3]
-2020-08-28 15:02:49.856  INFO 236588 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/peizhi】,返回参数:【】
-2020-08-28 15:02:49.858  INFO 236588 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=129
-2020-08-28 15:03:41.187  INFO 246324 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 246324 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-08-28 15:03:41.188  INFO 246324 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-08-28 15:03:42.905  INFO 246324 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-08-28 15:03:42.905  INFO 246324 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-08-28 15:03:42.907  INFO 246324 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-08-28 15:03:42.907  INFO 246324 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-08-28 15:03:42.908  INFO 246324 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-08-28 15:03:42.910  INFO 246324 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-08-28 15:03:43.082  INFO 246324 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-08-28 15:03:43.179  INFO 246324 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-08-28 15:03:43.486  WARN 246324 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiController': Unsatisfied dependency expressed through field 'apiService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiServiceImpl': Unsatisfied dependency expressed through field 'testArray2'; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'double[]'; nested exception is java.lang.NumberFormatException: For input string: "4,5,6"
-2020-08-28 15:03:43.488  INFO 246324 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-08-28 15:03:43.490  INFO 246324 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
-2020-08-28 15:03:43.501 ERROR 246324 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiController': Unsatisfied dependency expressed through field 'apiService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiServiceImpl': Unsatisfied dependency expressed through field 'testArray2'; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'double[]'; nested exception is java.lang.NumberFormatException: For input string: "4,5,6"
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:572)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246)
-	at com.wrh.MynettyApplication.main(MynettyApplication.java:42)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiServiceImpl': Unsatisfied dependency expressed through field 'testArray2'; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'double[]'; nested exception is java.lang.NumberFormatException: For input string: "4,5,6"
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:572)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1135)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1062)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
-	... 24 common frames omitted
-Caused by: org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'double[]'; nested exception is java.lang.NumberFormatException: For input string: "4,5,6"
-	at org.springframework.beans.TypeConverterSupport.doConvert(TypeConverterSupport.java:80)
-	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:60)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1089)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1062)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
-	... 37 common frames omitted
-Caused by: java.lang.NumberFormatException: For input string: "4,5,6"
-	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)
-	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
-	at java.lang.Double.parseDouble(Double.java:538)
-	at java.lang.Double.valueOf(Double.java:502)
-	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:222)
-	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
-	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:466)
-	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:439)
-	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:192)
-	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:135)
-	at org.springframework.beans.TypeConverterDelegate.convertToTypedArray(TypeConverterDelegate.java:501)
-	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:209)
-	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:117)
-	at org.springframework.beans.TypeConverterSupport.doConvert(TypeConverterSupport.java:70)
-	... 41 common frames omitted
-
-2020-08-28 15:04:13.972  INFO 246624 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 246624 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-08-28 15:04:13.973  INFO 246624 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-08-28 15:04:15.692  INFO 246624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-08-28 15:04:15.692  INFO 246624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-08-28 15:04:15.694  INFO 246624 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-08-28 15:04:15.695  INFO 246624 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-08-28 15:04:15.695  INFO 246624 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-08-28 15:04:15.697  INFO 246624 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-08-28 15:04:15.868  INFO 246624 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-08-28 15:04:15.964  INFO 246624 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-08-28 15:04:16.266  WARN 246624 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiController': Unsatisfied dependency expressed through field 'apiService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiServiceImpl': Unsatisfied dependency expressed through field 'testArray2'; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'double[]'; nested exception is java.lang.NumberFormatException: For input string: "'4,5,6'"
-2020-08-28 15:04:16.268  INFO 246624 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-08-28 15:04:16.269  INFO 246624 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
-2020-08-28 15:04:16.281 ERROR 246624 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiController': Unsatisfied dependency expressed through field 'apiService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiServiceImpl': Unsatisfied dependency expressed through field 'testArray2'; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'double[]'; nested exception is java.lang.NumberFormatException: For input string: "'4,5,6'"
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:572)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246)
-	at com.wrh.MynettyApplication.main(MynettyApplication.java:42)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiServiceImpl': Unsatisfied dependency expressed through field 'testArray2'; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'double[]'; nested exception is java.lang.NumberFormatException: For input string: "'4,5,6'"
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:572)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1135)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1062)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
-	... 24 common frames omitted
-Caused by: org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'double[]'; nested exception is java.lang.NumberFormatException: For input string: "'4,5,6'"
-	at org.springframework.beans.TypeConverterSupport.doConvert(TypeConverterSupport.java:80)
-	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:60)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1089)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1062)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
-	... 37 common frames omitted
-Caused by: java.lang.NumberFormatException: For input string: "'4,5,6'"
-	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)
-	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
-	at java.lang.Double.parseDouble(Double.java:538)
-	at java.lang.Double.valueOf(Double.java:502)
-	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:222)
-	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
-	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:466)
-	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:439)
-	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:192)
-	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:135)
-	at org.springframework.beans.TypeConverterDelegate.convertToTypedArray(TypeConverterDelegate.java:501)
-	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:209)
-	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:117)
-	at org.springframework.beans.TypeConverterSupport.doConvert(TypeConverterSupport.java:70)
-	... 41 common frames omitted
-
-2020-08-28 15:04:33.622  INFO 238140 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 238140 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-08-28 15:04:33.623  INFO 238140 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-08-28 15:04:35.348  INFO 238140 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-08-28 15:04:35.348  INFO 238140 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-08-28 15:04:35.350  INFO 238140 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-08-28 15:04:35.350  INFO 238140 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-08-28 15:04:35.350  INFO 238140 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-08-28 15:04:35.353  INFO 238140 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-08-28 15:04:35.538  INFO 238140 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-08-28 15:04:35.631  INFO 238140 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-08-28 15:04:35.937  WARN 238140 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiController': Unsatisfied dependency expressed through field 'apiService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiServiceImpl': Unsatisfied dependency expressed through field 'testArray2'; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'double[]'; nested exception is java.lang.NumberFormatException: For input string: "04,05,06"
-2020-08-28 15:04:35.939  INFO 238140 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-08-28 15:04:35.940  INFO 238140 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
-2020-08-28 15:04:35.952 ERROR 238140 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiController': Unsatisfied dependency expressed through field 'apiService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiServiceImpl': Unsatisfied dependency expressed through field 'testArray2'; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'double[]'; nested exception is java.lang.NumberFormatException: For input string: "04,05,06"
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:572)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246)
-	at com.wrh.MynettyApplication.main(MynettyApplication.java:42)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiServiceImpl': Unsatisfied dependency expressed through field 'testArray2'; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'double[]'; nested exception is java.lang.NumberFormatException: For input string: "04,05,06"
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:572)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1135)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1062)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
-	... 24 common frames omitted
-Caused by: org.springframework.beans.TypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'double[]'; nested exception is java.lang.NumberFormatException: For input string: "04,05,06"
-	at org.springframework.beans.TypeConverterSupport.doConvert(TypeConverterSupport.java:80)
-	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:60)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1089)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1062)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
-	... 37 common frames omitted
-Caused by: java.lang.NumberFormatException: For input string: "04,05,06"
-	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)
-	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
-	at java.lang.Double.parseDouble(Double.java:538)
-	at java.lang.Double.valueOf(Double.java:502)
-	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:222)
-	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
-	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:466)
-	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:439)
-	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:192)
-	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:135)
-	at org.springframework.beans.TypeConverterDelegate.convertToTypedArray(TypeConverterDelegate.java:501)
-	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:209)
-	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:117)
-	at org.springframework.beans.TypeConverterSupport.doConvert(TypeConverterSupport.java:70)
-	... 41 common frames omitted
-
-2020-08-28 15:07:44.098  INFO 94164 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 94164 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-08-28 15:07:44.099  INFO 94164 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-08-28 15:07:45.972  INFO 94164 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-08-28 15:07:45.972  INFO 94164 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-08-28 15:07:45.975  INFO 94164 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-08-28 15:07:45.975  INFO 94164 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-08-28 15:07:45.975  INFO 94164 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-08-28 15:07:45.977  INFO 94164 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-08-28 15:07:46.149  INFO 94164 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-08-28 15:07:46.244  INFO 94164 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-08-28 15:07:46.845  INFO 94164 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-08-28 15:07:46.847  INFO 94164 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-08-28 15:07:47.157  INFO 94164 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-08-28 15:07:48.158  INFO 94164 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
-2020-08-28 15:07:48.159  INFO 94164 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
-2020-08-28 15:07:48.159  INFO 94164 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
-2020-08-28 15:07:48.270  INFO 94164 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
-2020-08-28 15:07:48.272  INFO 94164 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@986635524 wrapping com.mysql.jdbc.JDBC4Connection@4082e3aa
-2020-08-28 15:07:48.574  INFO 94164 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-08-28 15:07:48.980  WARN 94164 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-08-28 15:07:49.342  INFO 94164 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.578 seconds (JVM running for 6.676)
-2020-08-28 15:08:00.120  INFO 94164 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2020-08-28 15:08:00.148  INFO 94164 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/peizhi
-2020-08-28 15:08:00.148  INFO 94164 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/peizhi
-2020-08-28 15:08:00.153  INFO 94164 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-08-28 15:08:00.153  INFO 94164 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
-2020-08-28 15:08:00.153  INFO 94164 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
-2020-08-28 15:08:00.193  INFO 94164 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/peizhi】,请求参数:【{}】
-2020-08-28 15:08:00.198  INFO 94164 --- [http-nio-9988-exec-1] com.wrh.controller.ApiController         : ===> 获取配置信息 1： 2020-08-28T15:08:00.198
-2020-08-28 15:08:00.198  INFO 94164 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> testArray1: [1, 2, 3]
-2020-08-28 15:08:00.198  INFO 94164 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> list: [aaa, bbb, ccc]
-2020-08-28 15:08:00.198  INFO 94164 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/peizhi】,返回参数:【】
-2020-08-28 15:08:00.198  INFO 94164 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=45
-2020-08-28 15:08:41.243  INFO 246912 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 246912 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-08-28 15:08:41.243  INFO 246912 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-08-28 15:08:42.933  INFO 246912 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-08-28 15:08:42.933  INFO 246912 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-08-28 15:08:42.935  INFO 246912 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-08-28 15:08:42.935  INFO 246912 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-08-28 15:08:42.935  INFO 246912 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-08-28 15:08:42.937  INFO 246912 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-08-28 15:08:43.106  INFO 246912 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-08-28 15:08:43.195  INFO 246912 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-08-28 15:08:43.771  INFO 246912 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-08-28 15:08:43.772  INFO 246912 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-08-28 15:08:44.080  INFO 246912 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-08-28 15:08:45.081  INFO 246912 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
-2020-08-28 15:08:45.084  INFO 246912 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
-2020-08-28 15:08:45.086  INFO 246912 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
-2020-08-28 15:08:45.219  INFO 246912 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
-2020-08-28 15:08:45.221  INFO 246912 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@1368032297 wrapping com.mysql.jdbc.JDBC4Connection@472501dd
-2020-08-28 15:08:45.526  INFO 246912 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-08-28 15:08:45.901  WARN 246912 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-08-28 15:08:46.255  INFO 246912 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.317 seconds (JVM running for 6.411)
-2020-08-28 15:08:57.813  INFO 246912 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2020-08-28 15:08:57.840  INFO 246912 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/peizhi
-2020-08-28 15:08:57.840  INFO 246912 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/peizhi
-2020-08-28 15:08:57.845  INFO 246912 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-08-28 15:08:57.845  INFO 246912 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
-2020-08-28 15:08:57.845  INFO 246912 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
-2020-08-28 15:08:57.884  INFO 246912 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/peizhi】,请求参数:【{}】
-2020-08-28 15:08:57.890  INFO 246912 --- [http-nio-9988-exec-1] com.wrh.controller.ApiController         : ===> 获取配置信息 1： 2020-08-28T15:08:57.889
-2020-08-28 15:08:57.890  INFO 246912 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> testArray1: [1, 2, 3]
-2020-08-28 15:08:57.890  INFO 246912 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> list: [aaa, bbb, ccc] size: 3  get0:aaa
-2020-08-28 15:08:57.890  INFO 246912 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/peizhi】,返回参数:【】
-2020-08-28 15:08:57.891  INFO 246912 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=46
-2020-08-28 15:10:53.792  INFO 243604 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 243604 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-08-28 15:10:53.793  INFO 243604 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-08-28 15:10:55.506  INFO 243604 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-08-28 15:10:55.506  INFO 243604 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-08-28 15:10:55.508  INFO 243604 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-08-28 15:10:55.509  INFO 243604 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-08-28 15:10:55.509  INFO 243604 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-08-28 15:10:55.511  INFO 243604 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-08-28 15:10:55.681  INFO 243604 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-08-28 15:10:55.775  INFO 243604 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-08-28 15:10:56.375  INFO 243604 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-08-28 15:10:56.375  INFO 243604 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-08-28 15:10:56.694  INFO 243604 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-08-28 15:10:57.694  INFO 243604 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
-2020-08-28 15:10:57.695  INFO 243604 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
-2020-08-28 15:10:57.695  INFO 243604 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
-2020-08-28 15:10:57.814  INFO 243604 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
-2020-08-28 15:10:57.816  INFO 243604 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@2000256870 wrapping com.mysql.jdbc.JDBC4Connection@187db3b5
-2020-08-28 15:10:58.147  INFO 243604 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-08-28 15:10:58.541  WARN 243604 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-08-28 15:10:58.911  INFO 243604 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.419 seconds (JVM running for 6.527)
-2020-08-28 15:11:04.582  INFO 243604 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2020-08-28 15:11:04.609  INFO 243604 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/peizhi
-2020-08-28 15:11:04.609  INFO 243604 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/peizhi
-2020-08-28 15:11:04.615  INFO 243604 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-08-28 15:11:04.615  INFO 243604 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
-2020-08-28 15:11:04.615  INFO 243604 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
-2020-08-28 15:11:04.654  INFO 243604 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/peizhi】,请求参数:【{}】
-2020-08-28 15:11:04.660  INFO 243604 --- [http-nio-9988-exec-1] com.wrh.controller.ApiController         : ===> 获取配置信息 1： 2020-08-28T15:11:04.660
-2020-08-28 15:11:04.660  INFO 243604 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> testArray1: [1, 2, 3]
-2020-08-28 15:11:04.660  INFO 243604 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> list: [aaa, bbb, ccc] size: 3  get0:aaa
-2020-08-28 15:11:04.660  INFO 243604 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> emptylist: [] size: 1  get0:{}
-2020-08-28 15:11:04.660  INFO 243604 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/peizhi】,返回参数:【】
-2020-08-28 15:11:04.661  INFO 243604 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=46
-2020-08-28 15:13:02.353  INFO 36056 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 36056 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-08-28 15:13:02.354  INFO 36056 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-08-28 15:13:04.154  INFO 36056 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-08-28 15:13:04.155  INFO 36056 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-08-28 15:13:04.157  INFO 36056 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-08-28 15:13:04.157  INFO 36056 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-08-28 15:13:04.157  INFO 36056 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-08-28 15:13:04.159  INFO 36056 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-08-28 15:13:04.331  INFO 36056 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-08-28 15:13:04.424  INFO 36056 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-08-28 15:13:05.007  INFO 36056 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-08-28 15:13:05.009  INFO 36056 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-08-28 15:13:05.320  INFO 36056 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-08-28 15:13:06.321  INFO 36056 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
-2020-08-28 15:13:06.322  INFO 36056 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
-2020-08-28 15:13:06.322  INFO 36056 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
-2020-08-28 15:13:06.434  INFO 36056 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
-2020-08-28 15:13:06.436  INFO 36056 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@1591888981 wrapping com.mysql.jdbc.JDBC4Connection@9189b70
-2020-08-28 15:13:06.736  INFO 36056 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-08-28 15:13:07.113  WARN 36056 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-08-28 15:13:07.478  INFO 36056 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.429 seconds (JVM running for 6.517)
-2020-08-28 15:13:35.205  INFO 239544 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 239544 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-08-28 15:13:35.206  INFO 239544 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-08-28 15:13:36.903  INFO 239544 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-08-28 15:13:36.904  INFO 239544 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-08-28 15:13:36.906  INFO 239544 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-08-28 15:13:36.906  INFO 239544 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-08-28 15:13:36.906  INFO 239544 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-08-28 15:13:36.908  INFO 239544 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-08-28 15:13:37.078  INFO 239544 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-08-28 15:13:37.168  INFO 239544 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-08-28 15:13:37.750  INFO 239544 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-08-28 15:13:37.752  INFO 239544 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-08-28 15:13:38.056  INFO 239544 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-08-28 15:13:39.056  INFO 239544 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
-2020-08-28 15:13:39.057  INFO 239544 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
-2020-08-28 15:13:39.057  INFO 239544 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
-2020-08-28 15:13:39.173  INFO 239544 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
-2020-08-28 15:13:39.175  INFO 239544 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@286417842 wrapping com.mysql.jdbc.JDBC4Connection@45ee0f60
-2020-08-28 15:13:39.480  INFO 239544 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-08-28 15:13:39.857  WARN 239544 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-08-28 15:13:40.228  INFO 239544 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.306 seconds (JVM running for 6.473)
-2020-08-28 15:13:46.096  INFO 239544 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2020-08-28 15:13:46.122  INFO 239544 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/peizhi
-2020-08-28 15:13:46.122  INFO 239544 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/peizhi
-2020-08-28 15:13:46.128  INFO 239544 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-08-28 15:13:46.128  INFO 239544 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
-2020-08-28 15:13:46.128  INFO 239544 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
-2020-08-28 15:13:46.168  INFO 239544 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/peizhi】,请求参数:【{}】
-2020-08-28 15:13:46.174  INFO 239544 --- [http-nio-9988-exec-1] com.wrh.controller.ApiController         : ===> 获取配置信息 1： 2020-08-28T15:13:46.174
-2020-08-28 15:13:46.174  INFO 239544 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> testArray1: [1, 2, 3]
-2020-08-28 15:13:46.174  INFO 239544 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> list1: [aaa, bbb, ccc] size: 3  get0:aaa
-2020-08-28 15:13:46.174  INFO 239544 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> emptylist: [] size: 1  get0:{}
-2020-08-28 15:13:46.174  INFO 239544 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> list2: [aaa, bbb, ccc] size: 3  get0:aaa
-2020-08-28 15:13:46.174  INFO 239544 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/peizhi】,返回参数:【】
-2020-08-28 15:13:46.175  INFO 239544 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=47
-2020-08-28 15:20:05.300  INFO 33048 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 33048 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-08-28 15:20:05.301  INFO 33048 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-08-28 15:20:06.998  INFO 33048 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-08-28 15:20:06.999  INFO 33048 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-08-28 15:20:07.001  INFO 33048 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-08-28 15:20:07.001  INFO 33048 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-08-28 15:20:07.001  INFO 33048 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-08-28 15:20:07.003  INFO 33048 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-08-28 15:20:07.175  INFO 33048 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-08-28 15:20:07.266  INFO 33048 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-08-28 15:20:07.844  INFO 33048 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-08-28 15:20:07.845  INFO 33048 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-08-28 15:20:08.173  INFO 33048 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-08-28 15:20:09.174  INFO 33048 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
-2020-08-28 15:20:09.175  INFO 33048 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
-2020-08-28 15:20:09.175  INFO 33048 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
-2020-08-28 15:20:09.285  INFO 33048 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
-2020-08-28 15:20:09.287  INFO 33048 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@1397002069 wrapping com.mysql.jdbc.JDBC4Connection@eb0e7ef
-2020-08-28 15:20:09.582  INFO 33048 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-08-28 15:20:09.957  WARN 33048 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-08-28 15:20:10.310  INFO 33048 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.309 seconds (JVM running for 6.421)
-2020-08-28 15:20:15.196  INFO 33048 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2020-08-28 15:20:15.223  INFO 33048 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/peizhi
-2020-08-28 15:20:15.223  INFO 33048 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/peizhi
-2020-08-28 15:20:15.230  INFO 33048 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-08-28 15:20:15.230  INFO 33048 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
-2020-08-28 15:20:15.230  INFO 33048 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
-2020-08-28 15:20:15.271  INFO 33048 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/peizhi】,请求参数:【{}】
-2020-08-28 15:20:15.276  INFO 33048 --- [http-nio-9988-exec-1] com.wrh.controller.ApiController         : ===> 获取配置信息 1： 2020-08-28T15:20:15.276
-2020-08-28 15:20:15.277  INFO 33048 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> testArray1: [1, 2, 3]
-2020-08-28 15:20:15.277  INFO 33048 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> list1: [aaa, bbb, ccc] size: 3  get0:aaa
-2020-08-28 15:20:15.277  INFO 33048 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> emptylist: [] size: 1  get0:{}
-2020-08-28 15:20:15.277  INFO 33048 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> list2: [aaa, bbb, ccc] size: 3  get0:aaa
-2020-08-28 15:20:15.277  INFO 33048 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> set: [111, 222, 333] size: 3  get:[111, 222, 333]
-2020-08-28 15:20:15.277  INFO 33048 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/peizhi】,返回参数:【】
-2020-08-28 15:20:15.277  INFO 33048 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=47
-2020-08-28 15:25:40.659  INFO 242828 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 242828 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-08-28 15:25:40.660  INFO 242828 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-08-28 15:25:42.357  INFO 242828 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-08-28 15:25:42.357  INFO 242828 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-08-28 15:25:42.360  INFO 242828 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-08-28 15:25:42.360  INFO 242828 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-08-28 15:25:42.360  INFO 242828 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-08-28 15:25:42.362  INFO 242828 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-08-28 15:25:42.532  INFO 242828 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-08-28 15:25:42.624  INFO 242828 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-08-28 15:25:42.940  WARN 242828 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiController': Unsatisfied dependency expressed through field 'apiService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'apiServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'test.map1' in value "#{${test.map1}}"
-2020-08-28 15:25:42.942  INFO 242828 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-08-28 15:25:42.943  INFO 242828 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
-2020-08-28 15:25:42.955 ERROR 242828 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apiController': Unsatisfied dependency expressed through field 'apiService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'apiServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'test.map1' in value "#{${test.map1}}"
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:572)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246)
-	at com.wrh.MynettyApplication.main(MynettyApplication.java:42)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'apiServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'test.map1' in value "#{${test.map1}}"
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:378)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:572)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1135)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1062)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
-	... 24 common frames omitted
-Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'test.map1' in value "#{${test.map1}}"
-	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:172)
-	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
-	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:237)
-	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:211)
-	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:839)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1083)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1062)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372)
-	... 35 common frames omitted
-
+2020-08-31 14:52:56.852  INFO 196560 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 196560 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-08-31 14:52:58.745  INFO 196560 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-08-31 14:53:11.894  INFO 196560 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-31 14:53:11.895  INFO 196560 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-08-31 14:53:11.898  INFO 196560 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-08-31 14:53:11.898  INFO 196560 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-08-31 14:53:11.899  INFO 196560 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-08-31 14:53:11.932  INFO 196560 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-08-31 14:53:12.112  INFO 196560 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-08-31 14:53:12.218  INFO 196560 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-08-31 14:53:12.922  INFO 196560 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-08-31 14:53:12.924  INFO 196560 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-08-31 14:53:13.251  INFO 196560 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-08-31 14:53:14.252  INFO 196560 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
+2020-08-31 14:53:14.253  INFO 196560 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
+2020-08-31 14:53:14.253  INFO 196560 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
+2020-08-31 14:53:14.378  INFO 196560 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
+2020-08-31 14:53:14.380  INFO 196560 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@1633665193 wrapping com.mysql.jdbc.JDBC4Connection@6b116e83
+2020-08-31 14:53:14.716  INFO 196560 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-08-31 14:53:15.132  WARN 196560 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-08-31 14:53:15.575  INFO 196560 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 19.132 seconds (JVM running for 20.337)
+2020-08-31 14:54:05.859  INFO 196560 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-08-31 14:54:05.886  INFO 196560 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/checkdatav
+2020-08-31 14:54:05.886  INFO 196560 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/checkdatav
+2020-08-31 14:54:05.892  INFO 196560 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-08-31 14:54:05.893  INFO 196560 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-08-31 14:54:05.893  INFO 196560 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-08-31 14:54:05.904  INFO 196560 --- [http-nio-9988-exec-1] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> api aspect begin
+2020-08-31 14:54:05.937  INFO 196560 --- [http-nio-9988-exec-1] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> Request Params : {"token":["12345"]} uri: http://127.0.0.1:9988/mynetty/checkdatav
+2020-08-31 14:54:05.938  INFO 196560 --- [http-nio-9988-exec-1] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> api has datav
+2020-08-31 14:54:05.938  INFO 196560 --- [http-nio-9988-exec-1] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> token:12345
+2020-08-31 14:54:05.939  INFO 196560 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/checkdatav】,请求参数:【{"token":["12345"]}】
+2020-08-31 14:54:05.944  INFO 196560 --- [http-nio-9988-exec-1] com.wrh.controller.ApiController         : ===> 检查配置信息： 2020-08-31T14:54:05.944
+2020-08-31 14:54:05.944  INFO 196560 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> testArray1: [1, 2, 3]
+2020-08-31 14:54:05.945  INFO 196560 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> list1: [aaa, bbb, ccc] size: 3  get0:aaa
+2020-08-31 14:54:05.945  INFO 196560 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> emptylist: [] size: 1  get0:{}
+2020-08-31 14:54:05.945  INFO 196560 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> list2: [aaa, bbb, ccc] size: 3  get0:aaa
+2020-08-31 14:54:05.945  INFO 196560 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> set: [111, 222, 333] size: 3  get:[111, 222, 333]
+2020-08-31 14:54:05.945  INFO 196560 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> map1: {name=zhangsan, sex=male} size: 2 
+2020-08-31 14:54:05.945  INFO 196560 --- [http-nio-9988-exec-1] c.wrh.controller.service.ApiServiceImpl  : >>> map2: {math=90, english=85} size: 2 
+2020-08-31 14:54:05.945  INFO 196560 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/checkdatav】,返回参数:【】
+2020-08-31 14:54:05.945  INFO 196560 --- [http-nio-9988-exec-1] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> Cost : 41 ms
+2020-08-31 14:54:05.945  INFO 196560 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=52
+2020-08-31 14:54:56.802  INFO 121124 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 121124 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-08-31 14:54:56.803  INFO 121124 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-08-31 14:54:58.500  INFO 121124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-31 14:54:58.500  INFO 121124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-08-31 14:54:58.503  INFO 121124 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-08-31 14:54:58.503  INFO 121124 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-08-31 14:54:58.503  INFO 121124 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-08-31 14:54:58.505  INFO 121124 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-08-31 14:54:58.675  INFO 121124 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-08-31 14:54:58.768  INFO 121124 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-08-31 14:54:59.373  INFO 121124 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-08-31 14:54:59.375  INFO 121124 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-08-31 14:54:59.755  INFO 121124 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-08-31 14:55:00.755  INFO 121124 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
+2020-08-31 14:55:00.756  INFO 121124 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
+2020-08-31 14:55:00.756  INFO 121124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
+2020-08-31 14:55:00.876  INFO 121124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
+2020-08-31 14:55:00.878  INFO 121124 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@147247493 wrapping com.mysql.jdbc.JDBC4Connection@19ba4a44
+2020-08-31 14:55:01.183  INFO 121124 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-08-31 14:55:01.568  WARN 121124 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-08-31 14:55:01.947  INFO 121124 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.478 seconds (JVM running for 6.625)
+2020-08-31 14:55:15.335  INFO 121124 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-08-31 14:55:15.361  INFO 121124 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/checkdatav
+2020-08-31 14:55:15.361  INFO 121124 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/checkdatav
+2020-08-31 14:55:15.367  INFO 121124 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-08-31 14:55:15.367  INFO 121124 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-08-31 14:55:15.367  INFO 121124 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-08-31 14:55:15.377  INFO 121124 --- [http-nio-9988-exec-1] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> api aspect begin
+2020-08-31 14:55:15.410  INFO 121124 --- [http-nio-9988-exec-1] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> Request Params : {"token":["12345"]} uri: http://127.0.0.1:9988/mynetty/checkdatav
+2020-08-31 14:55:15.411  INFO 121124 --- [http-nio-9988-exec-1] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> api has datav
+2020-08-31 14:55:15.411  INFO 121124 --- [http-nio-9988-exec-1] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> token:12345
+2020-08-31 14:55:15.412  INFO 121124 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/checkdatav】,请求参数:【{"token":["12345"]}】
+2020-08-31 14:55:15.420  INFO 121124 --- [http-nio-9988-exec-1] com.wrh.controller.ApiController         : ===> checkdatav： 2020-08-31T14:55:15.419
+2020-08-31 14:55:15.420  INFO 121124 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/checkdatav】,返回参数:【"ok"】
+2020-08-31 14:55:15.420  INFO 121124 --- [http-nio-9988-exec-1] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> Cost : 43 ms
+2020-08-31 14:55:15.434  INFO 121124 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=67

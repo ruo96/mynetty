@@ -4,8 +4,7 @@ import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @Created by wrh
@@ -75,5 +74,57 @@ public class TestArrays {
         return m-n;
 
 
+    }
+
+    @Test
+    public void Test81() {
+        Integer[] data = {1,2,3,4};
+        System.out.println(Arrays.toString(data));
+
+        /**
+         * 填充全部
+         */
+        Arrays.fill(data,9);
+        System.out.println(Arrays.toString(data));
+
+        /**
+         * 填充指定位置
+         */
+        Arrays.fill(data, 0,2,10);
+        System.out.println(Arrays.toString(data));
+    }
+
+    /**
+     * 数组降序排列
+     */
+    @Test
+    public void Test100() {
+        Integer[] data = {1,2,3,4,0,7,3};
+        Arrays.sort(data);
+
+        System.out.println(Arrays.toString(data));
+        Arrays.sort(data, Collections.reverseOrder());
+        System.out.println(Arrays.toString(data));
+
+    }
+
+    /**
+     * 数组降序排列
+     */
+    @Test
+    public void Test109() {
+        Integer[] data = {1,2,3,4,0,7,3};
+        Comparator cmp = new CMP();
+        Arrays.sort(data, cmp);
+        System.out.println(Arrays.toString(data));
+
+    }
+
+    class CMP implements Comparator<Integer>{
+
+        @Override
+        public int compare(Integer a, Integer b) {
+            return b - a;
+        }
     }
 }

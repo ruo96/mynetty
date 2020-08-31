@@ -825,6 +825,25 @@ public class TestList {
 
     }
 
+    @Test
+    public void Test829() {
+        List<Student> list = new ArrayList<>();
+        Student s = new Student();
+        s.setName("w1");
+        s.setId(1);
+        s.setGrade(2);
+        s.setMoney(3L);
+        s.setTitle("w1");
+
+        for (int i = 0; i < 9; i++) {
+            list.add(s);
+        }
+
+        System.out.println(list);
+
+
+    }
+
 
 
 

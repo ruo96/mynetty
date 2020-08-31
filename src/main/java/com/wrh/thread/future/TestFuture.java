@@ -48,4 +48,30 @@ public class TestFuture {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void Test53() throws InterruptedException, ExecutionException {
+        FutureTask<String> futureTask = new FutureTask<>(new Callable<String>() {
+            @Override
+            public String call() throws Exception {
+                System.out.println(Thread.currentThread().getName() +"："+ "开始烧开水");
+                TimeUnit.SECONDS.sleep(4);
+                System.out.println(Thread.currentThread().getName() +"："+ "开水烧好了");
+                return "开水";
+            }
+        });
+
+        Thread thread = new Thread(futureTask);
+        thread.start();
+
+        System.out.println(Thread.currentThread().getName() +":"+"此时开启了一个线程执行future逻辑（烧开水）");
+        // 模拟准备火锅食材耗时
+        TimeUnit.SECONDS.sleep(3);
+        System.out.println(Thread.currentThread().getName() +":"+"火锅食材准备好了");
+        String shicai = "火锅食材";
+        String kaishui = futureTask.get();
+
+        System.out.println(Thread.currentThread().getName() +":"+kaishui+"和"+shicai+"此时开启了一个线程执行future逻辑（烧开水）");
+
+    }
 }

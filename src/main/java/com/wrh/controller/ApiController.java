@@ -1,5 +1,6 @@
 package com.wrh.controller;
 
+import com.wrh.annotate.annotation.NeedDatav;
 import com.wrh.controller.service.ApiService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +62,13 @@ public class ApiController {
     public String peizhi(HttpServletRequest request, HttpServletResponse response){
         log.info("===> 获取配置信息 1： {}", LocalDateTime.now().toString());
         return apiService.getParam();
+    }
+
+    @NeedDatav
+    @RequestMapping("/checkdatav")
+    public String checkdatav(HttpServletRequest request, HttpServletResponse response){
+        log.info("===> checkdatav： {}", LocalDateTime.now().toString());
+        return "ok";
     }
 
 
