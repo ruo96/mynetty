@@ -66,4 +66,12 @@ public class TestOptional {
         log.info("===>  vo {}", JSON.toJSONString(vo));
         log.info("===> vo1 {}", JSON.toJSONString(vo1));
     }
+
+    @Test
+    public void Test71() {
+        CompanyVo companyVo = new CompanyVo();
+        String name = Optional.ofNullable(companyVo).map(e->e.getName()).orElse("default name");
+        System.out.println(name);
+
+    }
 }

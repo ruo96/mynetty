@@ -1,6 +1,8 @@
 package com.wrh.elasticsearch;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @Created by wrh
@@ -9,6 +11,8 @@ import lombok.Data;
  * @Modified By:
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Student {
 
     private String name;

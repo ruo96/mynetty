@@ -844,6 +844,14 @@ public class TestList {
 
     }
 
+    @Test
+    public void Test848() {
+        List<Integer> values = Stream.of(1, 3, 99, 234).collect(Collectors.toList());
+        Integer maxValue = values.stream().max(Integer::compareTo).get();
+        System.out.println(maxValue);
+
+    }
+
 
 
 

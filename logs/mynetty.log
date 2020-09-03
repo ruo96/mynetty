@@ -77,3 +77,99 @@
 2020-08-31 14:55:15.420  INFO 121124 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/checkdatav】,返回参数:【"ok"】
 2020-08-31 14:55:15.420  INFO 121124 --- [http-nio-9988-exec-1] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> Cost : 43 ms
 2020-08-31 14:55:15.434  INFO 121124 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=67
+2020-08-31 15:42:11.406  INFO 267496 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 267496 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-08-31 15:42:11.409  INFO 267496 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-08-31 15:42:13.267  INFO 267496 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-31 15:42:13.267  INFO 267496 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-08-31 15:42:13.269  INFO 267496 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-08-31 15:42:13.269  INFO 267496 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-08-31 15:42:13.269  INFO 267496 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-08-31 15:42:13.272  INFO 267496 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-08-31 15:42:13.442  INFO 267496 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-08-31 15:42:13.535  INFO 267496 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-08-31 15:42:14.131  INFO 267496 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-08-31 15:42:14.133  INFO 267496 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-08-31 15:42:14.439  INFO 267496 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-08-31 15:42:15.440  INFO 267496 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
+2020-08-31 15:42:15.441  INFO 267496 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
+2020-08-31 15:42:15.441  INFO 267496 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
+2020-08-31 15:42:15.555  INFO 267496 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
+2020-08-31 15:42:15.557  INFO 267496 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@122737337 wrapping com.mysql.jdbc.JDBC4Connection@5144ebcb
+2020-08-31 15:42:15.867  INFO 267496 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-08-31 15:42:16.263  WARN 267496 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-08-31 15:42:16.674  INFO 267496 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.584 seconds (JVM running for 6.706)
+2020-08-31 15:42:23.216  INFO 267496 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-08-31 15:42:23.241  INFO 267496 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/checkdatav
+2020-08-31 15:42:23.242  INFO 267496 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/checkdatav
+2020-08-31 15:42:23.246  INFO 267496 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-08-31 15:42:23.247  INFO 267496 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-08-31 15:42:23.247  INFO 267496 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-08-31 15:42:23.256  INFO 267496 --- [http-nio-9988-exec-1] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> api aspect begin
+2020-08-31 15:42:23.288  INFO 267496 --- [http-nio-9988-exec-1] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> Request Params : {"token":["12345"]} uri: http://127.0.0.1:9988/mynetty/checkdatav
+2020-08-31 15:42:23.289  INFO 267496 --- [http-nio-9988-exec-1] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> api has datav
+2020-08-31 15:42:23.304  INFO 267496 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=58
+2020-08-31 15:42:27.142  INFO 267496 --- [http-nio-9988-exec-2] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/checkdatav
+2020-08-31 15:42:27.143  INFO 267496 --- [http-nio-9988-exec-2] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/checkdatav
+2020-08-31 15:42:27.143  INFO 267496 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-08-31 15:42:27.143  INFO 267496 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-08-31 15:42:27.143  INFO 267496 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-08-31 15:42:27.143  INFO 267496 --- [http-nio-9988-exec-2] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> api aspect begin
+2020-08-31 15:42:27.144  INFO 267496 --- [http-nio-9988-exec-2] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> Request Params : {"token":["123456"]} uri: http://127.0.0.1:9988/mynetty/checkdatav
+2020-08-31 15:42:27.144  INFO 267496 --- [http-nio-9988-exec-2] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> api has datav
+2020-08-31 15:42:27.144  INFO 267496 --- [http-nio-9988-exec-2] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> token:123456
+2020-08-31 15:42:27.144  INFO 267496 --- [http-nio-9988-exec-2] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/checkdatav】,请求参数:【{"token":["123456"]}】
+2020-08-31 15:42:27.151  INFO 267496 --- [http-nio-9988-exec-2] com.wrh.controller.ApiController         : ===> checkdatav： 2020-08-31T15:42:27.151
+2020-08-31 15:42:27.151  INFO 267496 --- [http-nio-9988-exec-2] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/checkdatav】,返回参数:【"ok"】
+2020-08-31 15:42:27.151  INFO 267496 --- [http-nio-9988-exec-2] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> Cost : 7 ms
+2020-08-31 15:42:27.153  INFO 267496 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=10
+2020-08-31 15:42:30.564  INFO 267496 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/checkdatav
+2020-08-31 15:42:30.564  INFO 267496 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/checkdatav
+2020-08-31 15:42:30.565  INFO 267496 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-08-31 15:42:30.565  INFO 267496 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-08-31 15:42:30.565  INFO 267496 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-08-31 15:42:30.565  INFO 267496 --- [http-nio-9988-exec-3] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> api aspect begin
+2020-08-31 15:42:30.565  INFO 267496 --- [http-nio-9988-exec-3] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> Request Params : {} uri: http://127.0.0.1:9988/mynetty/checkdatav
+2020-08-31 15:42:30.565  INFO 267496 --- [http-nio-9988-exec-3] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> api has datav
+2020-08-31 15:42:30.566  INFO 267496 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=1
+2020-08-31 15:43:30.036  INFO 267496 --- [http-nio-9988-exec-4] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/peizhi
+2020-08-31 15:43:30.036  INFO 267496 --- [http-nio-9988-exec-4] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/peizhi
+2020-08-31 15:43:30.037  INFO 267496 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-08-31 15:43:30.037  INFO 267496 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-08-31 15:43:30.037  INFO 267496 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-08-31 15:43:30.037  INFO 267496 --- [http-nio-9988-exec-4] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> api aspect begin
+2020-08-31 15:43:30.037  INFO 267496 --- [http-nio-9988-exec-4] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> Request Params : {} uri: http://127.0.0.1:9988/mynetty/peizhi
+2020-08-31 15:43:30.037  INFO 267496 --- [http-nio-9988-exec-4] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> token:null
+2020-08-31 15:43:30.037  INFO 267496 --- [http-nio-9988-exec-4] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/peizhi】,请求参数:【{}】
+2020-08-31 15:43:30.038  INFO 267496 --- [http-nio-9988-exec-4] com.wrh.controller.ApiController         : ===> 获取配置信息 1： 2020-08-31T15:43:30.038
+2020-08-31 15:43:30.038  INFO 267496 --- [http-nio-9988-exec-4] c.wrh.controller.service.ApiServiceImpl  : >>> testArray1: [1, 2, 3]
+2020-08-31 15:43:30.038  INFO 267496 --- [http-nio-9988-exec-4] c.wrh.controller.service.ApiServiceImpl  : >>> list1: [aaa, bbb, ccc] size: 3  get0:aaa
+2020-08-31 15:43:30.038  INFO 267496 --- [http-nio-9988-exec-4] c.wrh.controller.service.ApiServiceImpl  : >>> emptylist: [] size: 1  get0:{}
+2020-08-31 15:43:30.038  INFO 267496 --- [http-nio-9988-exec-4] c.wrh.controller.service.ApiServiceImpl  : >>> list2: [aaa, bbb, ccc] size: 3  get0:aaa
+2020-08-31 15:43:30.038  INFO 267496 --- [http-nio-9988-exec-4] c.wrh.controller.service.ApiServiceImpl  : >>> set: [111, 222, 333] size: 3  get:[111, 222, 333]
+2020-08-31 15:43:30.038  INFO 267496 --- [http-nio-9988-exec-4] c.wrh.controller.service.ApiServiceImpl  : >>> map1: {name=zhangsan, sex=male} size: 2 
+2020-08-31 15:43:30.038  INFO 267496 --- [http-nio-9988-exec-4] c.wrh.controller.service.ApiServiceImpl  : >>> map2: {math=90, english=85} size: 2 
+2020-08-31 15:43:30.038  INFO 267496 --- [http-nio-9988-exec-4] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/peizhi】,返回参数:【】
+2020-08-31 15:43:30.038  INFO 267496 --- [http-nio-9988-exec-4] com.wrh.aspect.DatavCheckAspect          : [aspect]>>> Cost : 1 ms
+2020-08-31 15:43:30.038  INFO 267496 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=1
+2020-08-31 18:25:31.878  INFO 267496 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Shutdown initiated...
+2020-08-31 18:25:31.904  INFO 267496 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Shutdown completed.
+2020-08-31 18:25:32.029  INFO 267496 --- [localhost-startStop-2] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
+2020-08-31 18:25:32.483  INFO 267496 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 267496 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-08-31 18:25:32.484  INFO 267496 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-08-31 18:25:33.664  INFO 267496 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-31 18:25:33.664  INFO 267496 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-08-31 18:25:33.665  INFO 267496 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-08-31 18:25:33.666  INFO 267496 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-08-31 18:25:33.666  INFO 267496 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-08-31 18:25:33.666  INFO 267496 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-08-31 18:25:33.726  INFO 267496 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-08-31 18:25:33.758  INFO 267496 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-08-31 18:25:33.968  INFO 267496 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-08-31 18:25:35.104  INFO 267496 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
+2020-08-31 18:25:35.105  INFO 267496 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
+2020-08-31 18:25:35.105  INFO 267496 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
+2020-08-31 18:25:35.115  INFO 267496 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
+2020-08-31 18:25:35.115  INFO 267496 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@1748038405 wrapping com.mysql.jdbc.JDBC4Connection@3909356f
+2020-08-31 18:25:35.907  INFO 267496 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-08-31 18:25:36.097  WARN 267496 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-08-31 18:25:37.457  INFO 267496 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.041 seconds (JVM running for 9807.561)

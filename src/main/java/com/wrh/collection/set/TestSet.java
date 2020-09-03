@@ -75,4 +75,23 @@ public class TestSet {
         System.out.println(t);
 
     }
+
+    @Test
+    public void Test80() {
+        Set<String> s1 = new HashSet<>();
+        s1.add("w2");
+        s1.add("w1");
+
+        Set<String> s2 = new HashSet<>();
+        s2.add("w1");
+        s2.add("w2");
+
+        System.out.println(s1);
+        System.out.println(s2);
+
+        if(s1.equals(s2)){
+            System.out.println("equal");
+        }
+
+    }
 }

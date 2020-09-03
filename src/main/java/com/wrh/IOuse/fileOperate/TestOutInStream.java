@@ -11,6 +11,10 @@ import java.io.*;
 public class TestOutInStream {
 
 
+    /**
+     * 写入文件
+     * @param args
+     */
         public static void main(String[] args) {
             // 初始化
             Wanger wanger = new Wanger();
