@@ -22,7 +22,7 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor, Ord
      */
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {
-        configurableListableBeanFactory.getBean("student");
+//        configurableListableBeanFactory.getBean("student");
     }
 
     @Override
