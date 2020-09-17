@@ -1,6 +1,9 @@
 package com.wrh.server;
 
+import com.alibaba.fastjson.JSON;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -15,6 +18,8 @@ import java.util.Map;
  * @Modified By:
  */
 public class TestString {
+    private static final Logger LOGGER = LoggerFactory
+            .getLogger(TestString.class);
 
     @Test
     public void testString() throws IOException {
@@ -34,6 +39,19 @@ public class TestString {
         Map<String,String> map =  new HashMap<>();
         map.put("companyId", a);
         int b;
+
+    }
+
+    @Test
+    public void Test41() {
+
+        String message = null;
+
+        try{
+            int i = 10 / 0;
+        }catch (Exception e){
+            LOGGER.info("message={}", new Object[] { JSON.toJSONString(message), e });
+        }
 
     }
 }

@@ -23,5 +23,7 @@ public class Student {
 
     private String title;
 
+    private boolean flag = true;
+
 
 }

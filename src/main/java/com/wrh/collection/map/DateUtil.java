@@ -682,4 +682,28 @@ public class DateUtil {
     public static boolean isIn7Days(String ds) {
         return LocalDate.parse(ds,DateTimeFormatter.ofPattern(DATE_FORMAT)).isAfter(LocalDate.now().minusDays(8));
     }
+
+    /**
+     * 获取上个月
+     * @param dsEnd  yyyy-MM
+     *               YearMonth yearMonth = YearMonth.parse("202008", DateTimeFormatter.ofPattern("yyyyMM"));
+     *         LocalDate localDate = LocalDate.of(yearMonth.getYear(), yearMonth.getMonthValue(), 1);
+     * @return
+     */
+    public static String getLastMonthByMs(String dsEnd) {
+        LocalDate date = LocalDate.parse(dsEnd + "-01", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        LOGGER.info(">>> dsEnd: {} date: {}", dsEnd, date);
+        return date.minusMonths(1).toString().substring(0,7);
+    }
+
+    /**
+     * 获取去年同月
+     * @param dsEnd  yyyy-MM
+     * @return
+     */
+    public static String getSameMonthOfLastYearByDs(String dsEnd) {
+        LocalDate date = LocalDate.parse(dsEnd + "-01", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        LOGGER.info(">>> dsEnd: {} date: {}", dsEnd, date);
+        return date.minusYears(1).toString().substring(0,7);
+    }
 }

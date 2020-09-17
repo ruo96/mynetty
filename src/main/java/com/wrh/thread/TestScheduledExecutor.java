@@ -1,9 +1,11 @@
 package com.wrh.thread;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.*;
 
 /**
  * @Created by wrh
@@ -43,5 +45,19 @@ public class TestScheduledExecutor {
         service.execute(t10);
 
         service.shutdown();
+    }
+
+    @Test
+    public void Test49() throws InterruptedException {
+        ScheduledExecutorService timer = Executors.newScheduledThreadPool(3);
+        timer.scheduleAtFixedRate(new Runnable() {
+            @Override
+            public void run() {
+                log.info(">>> once");
+            }
+        }, 10, 30,TimeUnit.MILLISECONDS);
+
+        TimeUnit.SECONDS.sleep(10);
+
     }
 }

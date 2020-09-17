@@ -2,6 +2,7 @@ package com.wrh.TimeCalculate;
 
 import com.alibaba.fastjson.JSON;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+import com.wrh.collection.map.DateUtil;
 import com.wrh.utils.DateUtils;
 import com.wrh.utils.RowKeyHashUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -995,6 +996,14 @@ public class TestTime {
     public void Test976() {
         System.out.println(isIn3Days("2020-08-10"));
         System.out.println(isIn7Days("2020-08-05"));
+
+    }
+
+    @Test
+    public void Test1002() {
+        String str = "2020-01";
+        System.out.println(DateUtil.getLastMonthByMs(str));
+        System.out.println(DateUtil.getSameMonthOfLastYearByDs(str));
 
     }
 

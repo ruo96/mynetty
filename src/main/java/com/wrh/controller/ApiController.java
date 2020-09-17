@@ -30,6 +30,8 @@ public class ApiController {
 
     @RequestMapping("/api")
     public String api(HttpServletRequest request, HttpServletResponse response){
+        String id = request.getRequestedSessionId();
+        log.info(">>> requestid: {}", id);
         String userName = request.getParameter("username");
         String userName1 = (String) request.getAttribute("username");
         log.info("===> 请求登录的用户： {}",userName);

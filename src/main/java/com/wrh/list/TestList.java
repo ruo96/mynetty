@@ -18,6 +18,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static com.wrh.collection.map.DateUtil.getDsList;
 import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 /**
@@ -852,6 +853,70 @@ public class TestList {
 
     }
 
+    private List<String> getInitialDsList() {
+        List<String> list1 = new ArrayList<>();
+        list1.add("2020-09-01");
+        list1.add("2020-09-02");
+        list1.add("2020-09-03");
+        list1.add("2020-09-04");
+        return list1;
+    }
+
+    private List<String> getOtherDsList() {
+        List<String> list1 = new ArrayList<>();
+        list1.add("2020-09-03");
+        list1.add("2020-09-08");
+        list1.add("2020-09-05");
+        list1.add("2020-09-06");
+        return list1;
+    }
+
+    @Test
+    public void Test856() {
+        List<String> list1 = getInitialDsList();
+        List<String> list2 = getOtherDsList();
+
+        List<String> list = (List<String>) CollectionUtils.retainAll(list1,list2);
+        String result = list.stream().sorted(Comparator.reverseOrder()).findFirst().orElse("no result");
+        String updateTime = (String) CollectionUtils.retainAll(list1,list2).stream().sorted(Comparator.reverseOrder()).findFirst().orElse("wrong");
+        System.out.println(list);
+        System.out.println(result);
+        System.out.println(updateTime);
+
+
+    }
+
+    @Test
+    public void Test890() {
+        List<String> list = new ArrayList<>();
+        list.add("w1");
+        list.add("w2");
+        list.add("w3");
+        System.out.println(list);
+        list.remove("w2");
+        System.out.println(list);
+
+    }
+
+    @Test
+    public void Test902() {
+        Student student = new Student();
+        Student student1 = new Student();
+        student1.setFlag(false);
+        if(student.isFlag()){
+            System.out.println("1 flag true");
+        }else {
+            System.out.println("1 flag false");
+        }
+
+        if(student1.isFlag()){
+            System.out.println("2 flag true");
+        }else {
+            System.out.println("2 flag false");
+        }
+
+
+    }
 
 
 

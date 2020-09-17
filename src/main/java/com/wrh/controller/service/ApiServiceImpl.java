@@ -52,6 +52,7 @@ public class ApiServiceImpl implements ApiService {
 
     /**
      * 特别注意的是 @Value 注解不能和 @AllArgsConstructor 注解同时使用，否则会报错
+     * 读取配置文件 @Value
      * @return
      */
     @Override
