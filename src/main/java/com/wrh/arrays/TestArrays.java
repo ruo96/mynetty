@@ -46,4 +46,14 @@ public class TestArrays {
         System.out.println(Arrays.toString(array));
 
     }
+
+    /**
+     * 数组获取最大值  stream
+     */
+    @Test
+    public void Test51() {
+        int[] arrayInt = {15,2,23,3};
+        System.out.println(Arrays.stream(arrayInt).max().getAsInt());
+
+    }
 }

@@ -21,4 +21,5 @@ public class User implements Serializable {
         this.userId = userId;
         this.userName = userName;
     }
+
 }
