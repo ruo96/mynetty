@@ -305,6 +305,7 @@ public class TestCompletableFuture {
     /**
      * handle 是执行任务完成时对结果的处理。
      * handle 方法和 thenApply 方法处理方式基本一样。不同的是 handle 是在任务完成后再执行，还可以处理异常的任务。
+     *          而且能够捕捉到异常并且自定义返回值， 和exceptionally（）方法不同的一点是， 无论发没发生异常，都会调用
      * thenApply 只可以执行正常的任务，任务出现异常则不执行 thenApply 方法。
      */
     @Test
@@ -662,7 +663,7 @@ public class TestCompletableFuture {
             return "Hello";
         }).thenCombine(CompletableFuture.supplyAsync(()->{
             try {
-                TimeUnit.SECONDS.sleep(2);
+                TimeUnit.SECONDS.sleep(5);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
