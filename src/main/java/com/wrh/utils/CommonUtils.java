@@ -6,6 +6,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import com.wrh.collection.map.GameRealTimeData;
 import com.wrh.elasticsearch.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ClassUtils;
@@ -113,7 +114,7 @@ public class CommonUtils {
          s1.setGrade(1);
 
          Student s2 = new Student();
-         s2.setName("w1");
+         s2.setName("w2");
          s2.setId(2);
          s2.setGrade(2);
 
@@ -292,5 +293,34 @@ public class CommonUtils {
 
         set.addAll(orderList);
         return new ArrayList<Student>(set);
+    }
+
+    @Test
+    public void Test298() {
+        List<GameRealTimeData> resultList=new ArrayList<>();
+        GameRealTimeData g1 = new GameRealTimeData();
+        g1.setFmtDs("2020-09-23");
+        g1.setTotalNewAccCnt(100);
+
+        GameRealTimeData g2 = new GameRealTimeData();
+        g2.setFmtDs("2020-09-22");
+        g2.setTotalNewAccCnt(200);
+
+        resultList.add(g1);
+        resultList.add(g2);
+
+        System.out.println(resultList);
+
+        Map<String, Integer> map = new HashMap<>();
+        map.put("2020-09-22", 500);
+
+        resultList.stream().forEach(e->{
+            if(map.containsKey(e.getFmtDs())){
+                e.setTotalNewAccCnt(map.get(e.getFmtDs()));
+            }
+        });
+        System.out.println(resultList);
+
+
     }
 }

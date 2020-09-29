@@ -640,4 +640,13 @@ public class TestMap {
         System.out.println(customSort);
 
     }
+
+    /**
+     * map序列化与反序列化
+     */
+    @Test
+    public void Test645() {
+
+
+    }
 }

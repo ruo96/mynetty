@@ -16,6 +16,7 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
+import java.time.temporal.TemporalField;
 import java.time.temporal.WeekFields;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -1004,6 +1005,34 @@ public class TestTime {
         String str = "2020-01";
         System.out.println(DateUtil.getLastMonthByMs(str));
         System.out.println(DateUtil.getSameMonthOfLastYearByDs(str));
+
+    }
+
+    @Test
+    public void Test1011() {
+        System.out.println(LocalDateTime.now().getHour());
+
+    }
+
+    /**
+     * 获取本周第一天
+     */
+    @Test
+    public void Test1018() {
+        System.out.println(getFirstDayOfDimensionV2("2020-09-25","week"));
+
+    }
+    public static LocalDate getFirstDayOfDimensionV3(String dsEnd, String dimension) {
+        LocalDate date = LocalDate.parse(dsEnd, DateTimeFormatter.ofPattern(yyyyMMdd));
+        return date.with(DayOfWeek.MONDAY);
+
+    }
+
+    public static LocalDate getFirstDayOfDimensionV2(String dsEnd, String dimension) {
+        LocalDate date = LocalDate.parse(dsEnd, DateTimeFormatter.ofPattern(yyyyMMdd));
+
+        TemporalField fieldISO = WeekFields.of(Locale.FRANCE).dayOfWeek();
+        return date.with(fieldISO, 1);
 
     }
 

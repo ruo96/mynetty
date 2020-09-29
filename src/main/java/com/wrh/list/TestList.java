@@ -2,8 +2,10 @@ package com.wrh.list;
 
 import com.alibaba.fastjson.JSON;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+import com.wrh.collection.map.GameRealTimeData;
 import com.wrh.elasticsearch.Student;
 import com.wrh.list.vo.GameConfig;
+import com.wrh.list.vo.TotalInfo;
 import com.wrh.list.vo.TotalYearKpi;
 import com.wrh.utils.GsonUtils;
 import com.wrh.utils.test.Dog;
@@ -13,6 +15,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
 
+import java.time.LocalDate;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
@@ -918,7 +921,263 @@ public class TestList {
 
     }
 
+    @Test
+    public void Test922() {
+        List<String> list = new ArrayList<>();
+        list.add("2020-09-23");
+        list.add("2020-09-22");
+        list.add("2020-09-21");
+        list.add("2020-09-20");
 
+        System.out.println(list);
+
+        List<String> list1 = new ArrayList<>(list);
+        System.out.println(list1);
+        list1.remove(LocalDate.now().toString());
+        System.out.println(list1);
+    }
+
+    @Test
+    public void Test939() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        System.out.println(list);
+
+        list.add(0, -1);
+        System.out.println(list);
+        list.add(0, -2);
+        System.out.println(list);
+
+
+    }
+
+    /**
+     * list排序
+     */
+    @Test
+    public void Test955() {
+        List<TotalInfo> totalInfos = getTotalInfoList();
+        System.out.println(totalInfos);
+
+//        String column = "paySumMoney";
+        String column = "arppu";
+
+        totalInfos = totalInfos
+                .stream()
+                .sorted((o1, o2) -> {
+                    return compareByColumn(o1,o2,column);
+                }).collect(Collectors.toList());
+
+        System.out.println(totalInfos);
+
+    }
+
+    private List<TotalInfo> getTotalInfoList() {
+        List<TotalInfo> totalInfos = new ArrayList<>();
+        TotalInfo quchong = new TotalInfo();
+        quchong.setGameBaseId(-2);
+        quchong.setPaySumMoney(2000L);
+        quchong.setArppu("1.12");
+
+        TotalInfo zongshu = new TotalInfo();
+        zongshu.setGameBaseId(-1);
+        zongshu.setPaySumMoney(1000L);
+        zongshu.setArppu("4.52");
+
+        TotalInfo princess = new TotalInfo();
+        princess.setGameBaseId(102216);
+        princess.setPaySumMoney(200L);
+        princess.setArppu("10.99");
+
+        TotalInfo yuanshen = new TotalInfo();
+        yuanshen.setGameBaseId(1963);
+        yuanshen.setPaySumMoney(500L);
+        yuanshen.setArppu("25");
+
+        totalInfos.add(quchong);
+        totalInfos.add(zongshu);
+        totalInfos.add(princess);
+        totalInfos.add(yuanshen);
+
+        return totalInfos;
+
+
+
+    }
+
+    private static final String  PAY_SUM_MONEY="paySumMoney";
+    private static final String  ACTIVE_ACC_CNT="activeAccCnt";
+    private static final String  EFFACTIVE_ACC_CNT="effActiveAccCnt";
+    private static final String  ACTIVE_DEVICE_CNT="activeDeviceCnt";
+    private static final String  EFF_NEW_ACC_CNT="effNewAccCnt";
+    private static final String  EFF_NEW_DECICE_CNT="effNewDeviceCnt";
+    private static final String  PAY_ACC_CNT="payAccCnt";
+    private static final String  ARPPU="arppu";
+    private static final String  TORUIST_CNT="touristCnt";
+    private static final String  TOURIST_TRANSFROM_1ST_DAY_CNT="touristTransform1stDayCnt";
+    private static final String  MAX_ONLINE_ACC_CNT="maxOnlineAccCnt";
+    private static final String  AVG_ONLIE_ACC_CNT="avgOnlineAccCnt";
+    private static final String  PAY_BILL_CNT="payBillCnt";
+
+    private int compareByColumn (TotalInfo o1 ,TotalInfo o2, String column){
+        int copareValue = 0;
+        if(o1.getGameBaseId() == -1 || o1.getGameBaseId() == -2 || o2.getGameBaseId() == -1 || o2.getGameBaseId() == -2){
+            return copareValue;
+        }
+        switch (column) {
+            case PAY_SUM_MONEY:
+                Long paySumMoney1 = o1.getPaySumMoney() == null ? 0L : o1.getPaySumMoney();
+                Long paySumMoney2 = o2.getPaySumMoney() == null ? 0L : o2.getPaySumMoney();
+                copareValue =   paySumMoney2.compareTo(paySumMoney1);
+                break;
+            case EFFACTIVE_ACC_CNT:
+                Integer effecttiveAccCnt1 =  o1.getEffActiveAccCnt() ==null ? 0:o1.getEffActiveAccCnt();
+                Integer effecttiveAccCnt2 =  o2.getEffActiveAccCnt() ==null ? 0:o2.getEffActiveAccCnt();
+                copareValue =   effecttiveAccCnt2.compareTo(effecttiveAccCnt1);
+                break;
+            case ACTIVE_ACC_CNT:
+                Integer getActiveAccCnt1 =  o1.getActiveAccCnt() ==null ? 0:o1.getActiveAccCnt();
+                Integer getActiveAccCnt2 =  o2.getActiveAccCnt() ==null ? 0:o2.getActiveAccCnt();
+                copareValue =   getActiveAccCnt2.compareTo(getActiveAccCnt1);
+                break;
+            case ACTIVE_DEVICE_CNT:
+                Integer getActiveDeviceCnt1 =  o1.getActiveDeviceCnt() ==null ? 0:o1.getActiveDeviceCnt();
+                Integer getActiveDeviceCnt2 =  o2.getActiveDeviceCnt() ==null ? 0:o2.getActiveDeviceCnt();
+                copareValue =   getActiveDeviceCnt2.compareTo(getActiveDeviceCnt1);
+                break;
+            case EFF_NEW_ACC_CNT:
+                Integer getEffNewAccCnt1 =  o1.getEffNewAccCnt() ==null ? 0:o1.getEffNewAccCnt();
+                Integer getEffNewAccCnt2 =  o2.getEffNewAccCnt() ==null ? 0:o2.getEffNewAccCnt();
+                copareValue =   getEffNewAccCnt2.compareTo(getEffNewAccCnt1);
+                break;
+            case EFF_NEW_DECICE_CNT:
+                Integer getEffNewDeviceCnt1 =  o1.getEffNewDeviceCnt() ==null ? 0:o1.getEffNewDeviceCnt();
+                Integer getEffNewDeviceCnt2 =  o2.getEffNewDeviceCnt() ==null ? 0:o2.getEffNewDeviceCnt();
+                copareValue =   getEffNewDeviceCnt2.compareTo(getEffNewDeviceCnt1);
+                break;
+            case ARPPU:
+                Double getArppu1 =  o1.getArppu() ==null ? 0:Double.valueOf(o1.getArppu());
+                Double getArppu2 =  o2.getArppu() ==null ? 0:Double.valueOf(o2.getArppu());
+                copareValue =   getArppu2.compareTo(getArppu1);
+                break;
+            case PAY_ACC_CNT:
+                Integer getPayAccCnt1 =  o1.getPayAccCnt() ==null ? 0:o1.getPayAccCnt();
+                Integer getPayAccCnt2 =  o2.getPayAccCnt() ==null ? 0:o2.getPayAccCnt();
+                copareValue =   getPayAccCnt2.compareTo(getPayAccCnt1);
+                break;
+            case TORUIST_CNT:
+                Integer getTouristCnt1 =  o1.getTouristCnt() ==null ? 0:o1.getTouristCnt();
+                Integer getTouristCnt2 =  o2.getTouristCnt() ==null ? 0:o2.getTouristCnt();
+                copareValue =   getTouristCnt2.compareTo(getTouristCnt1);
+                break;
+            case TOURIST_TRANSFROM_1ST_DAY_CNT:
+                Integer getTouristTransform1stDayCnt1 =  o1.getTouristTransform1stDayCnt() ==null ? 0:o1.getTouristTransform1stDayCnt();
+                Integer getTouristTransform1stDayCnt2 =  o2.getTouristTransform1stDayCnt() ==null ? 0:o2.getTouristTransform1stDayCnt();
+                copareValue =   getTouristTransform1stDayCnt2.compareTo(getTouristTransform1stDayCnt1);
+                break;
+            case MAX_ONLINE_ACC_CNT:
+                Integer getMaxOnlineAccCnt1 =  o1.getMaxOnlineAccCnt() ==null ? 0:o1.getMaxOnlineAccCnt();
+                Integer getMaxOnlineAccCnt2 =  o2.getMaxOnlineAccCnt() ==null ? 0:o2.getMaxOnlineAccCnt();
+                copareValue =   getMaxOnlineAccCnt2.compareTo(getMaxOnlineAccCnt1);
+                break;
+            case AVG_ONLIE_ACC_CNT:
+                Integer getAvgOnlineAccCnt1 =  o1.getAvgOnlineAccCnt() ==null ? 0:o1.getAvgOnlineAccCnt();
+                Integer getAvgOnlineAccCnt2 =  o2.getAvgOnlineAccCnt() ==null ? 0:o2.getAvgOnlineAccCnt();
+                copareValue =getAvgOnlineAccCnt2.compareTo(getAvgOnlineAccCnt1);
+                break;
+            case PAY_BILL_CNT:
+                Integer getPayBillCnt1 =  o1.getPayBillCnt() ==null ? 0:o1.getPayBillCnt();
+                Integer getPayBillCnt2 =  o2.getPayBillCnt() ==null ? 0:o2.getPayBillCnt();
+                copareValue =getPayBillCnt2.compareTo(getPayBillCnt1);
+                break;
+            default:
+                Long paySumMoney3 = o1.getPaySumMoney() == null ? 0L : o1.getPaySumMoney();
+                Long paySumMoney4 = o2.getPaySumMoney() == null ? 0L : o2.getPaySumMoney();
+                return paySumMoney4.compareTo(paySumMoney3);
+        }
+        return copareValue;
+    }
+
+    @Test
+    public void Test1103() {
+        List<String> dsList = new ArrayList<>();
+        dsList.add("2020-09-25");
+        dsList.add("2020-09-24");
+        dsList.add("2020-09-23");
+        dsList.add("2020-09-22");
+        dsList.add("2020-09-21");
+        dsList.add("2020-09-20");
+
+        List<GameRealTimeData> list = new ArrayList<>();
+        GameRealTimeData g1 = new GameRealTimeData();
+        g1.setFmtDs("2020-09-25");
+        g1.setMaxActiveAccCnt("100");
+
+        GameRealTimeData g2 = new GameRealTimeData();
+        g2.setFmtDs("2020-09-21");
+        g2.setMaxActiveAccCnt("30");
+
+        list.add(g1);
+        list.add(g2);
+
+        System.out.println(list);
+        if(dsList.size() > list.size()){
+            List<String> dataDsList = list.stream().map(GameRealTimeData::getFmtDs).collect(Collectors.toList());
+            dsList.removeAll(dataDsList);
+            List<GameRealTimeData> finalList = list;
+            dsList.forEach(ds->{
+                finalList.add(new GameRealTimeData(ds));
+            });
+        }
+        System.out.println(list);
+
+        list = list.stream().sorted(Comparator.comparing(GameRealTimeData::getFmtDs).reversed()).collect(Collectors.toList());
+        System.out.println(list);
+
+    }
+
+    @Test
+    public void Test1142() {
+        List<Student> list = new ArrayList<>();
+        Student s1 = new Student();
+        s1.setTitle("class1");
+        s1.setName("w1");
+        s1.setGrade(10);
+
+        Student s2 = new Student();
+        s2.setTitle("class1");
+        s2.setName("w2");
+        s2.setGrade(20);
+
+        Student s3 = new Student();
+        s3.setTitle("class1");
+        s3.setName("w3");
+        s3.setGrade(30);
+
+        Student s4 = new Student();
+        s4.setTitle("class1");
+        s4.setName("w4");
+        s4.setGrade(40);
+
+        Student s5 = new Student();
+        s5.setTitle("class1");
+        s5.setName("w5");
+        s5.setGrade(50);
+
+        list.add(s1);
+        list.add(s2);
+        list.add(s3);
+        list.add(s4);
+        list.add(s5);
+
+        System.out.println(list);
+
+        Map<String, List<Student>> map = list.stream().collect(Collectors.groupingBy(Student::getTitle));
+        System.out.println(map);
+
+    }
 
 
 }

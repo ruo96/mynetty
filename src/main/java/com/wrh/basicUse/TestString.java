@@ -155,4 +155,12 @@ public class TestString {
     private void changeString(String s) {
         s = "123";
     }
+
+    public static final String OFFLINE_TOTAL_KPI = "offline_total_kpi_%s";
+    @Test
+    public void Test160() {
+        Integer i = 100;
+        System.out.println(String.format(OFFLINE_TOTAL_KPI, i));
+
+    }
 }

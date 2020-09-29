@@ -1,7 +1,10 @@
 package com.wrh.property;
 
+import com.wrh.utils.PropertiesLoader;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
 
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -24,6 +27,17 @@ public class TestProperty {
         newProperties.setProperty("name4","李三");
         //查询key中 name1 的值
         System.out.println("查询结果：" + newProperties.getProperty("name1"));
+    }
+
+    private static final String configFile = "e:\\config\\app1.properties";
+
+    public static final String SUPPORT_LIST                              = "support.list";
+
+    @Test
+    public void Test30() {
+        PropertiesLoader loader = new PropertiesLoader(configFile);
+        String supportList = loader.getProperty(SUPPORT_LIST);
+        System.out.println(supportList);
     }
 
 }
