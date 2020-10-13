@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 
 @Slf4j
 //@ServletComponentScan(value = {"com.wrh.filter", "com.wrh.listener"}) //用于支持过滤器、监听器注解
-@ServletComponentScan( "com.wrh.listener") //用于支持过滤器、监听器注解
+@ServletComponentScan(value = {"com.wrh.listener","com.wrh.servlet"}) //用于支持过滤器、监听器注解
 @SpringBootApplication
 @EnableConfigurationProperties
 //@ServletComponentScan("com.wrh.filter")  // 这个是配合注解实现拦截器的

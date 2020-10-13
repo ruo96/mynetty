@@ -1,5 +1,6 @@
 package com.wrh.string;
 
+import cn.hutool.core.util.NumberUtil;
 import com.wrh.elasticsearch.Student;
 import org.junit.Test;
 
@@ -30,5 +31,21 @@ public class TestNum {
 
         long b = s.getGrade();
 //        System.out.println(b);
+    }
+
+    @Test
+    public void Test36() {
+
+        int i = NumberUtil.parseInt("1.0");
+        System.out.println(i);
+
+    }
+
+    @Test
+    public void Test45() {
+        Student s = null;
+        s.setTitle("w1");
+        System.out.println(s);
+
     }
 }

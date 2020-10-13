@@ -8,6 +8,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.wrh.collection.map.GameRealTimeData;
 import com.wrh.elasticsearch.Student;
+import com.wrh.utils.domain.GameDayData;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ClassUtils;
 import org.apache.commons.lang3.reflect.FieldUtils;
@@ -320,6 +321,44 @@ public class CommonUtils {
             }
         });
         System.out.println(resultList);
+
+
+    }
+    
+    @Test
+    public void Test328() {
+        List<GameDayData> newAddData = new ArrayList<>();
+        GameDayData d1 = new GameDayData();
+        d1.setDsStr("2020-10-02");
+        d1.setNewAccCnt(1000);
+
+        GameDayData d2 = new GameDayData();
+        d2.setDsStr("2020-10-01");
+        d2.setNewAccCnt(500);
+
+        GameDayData d3 = new GameDayData();
+        d3.setDsStr("2020-09-30");
+        d3.setNewAccCnt(40000);
+        newAddData.add(d1);
+        newAddData.add(d2);
+        newAddData.add(d3);
+
+        Map<String, Integer> newAddDataMap = newAddData.stream().collect(Collectors.toMap(GameDayData::getDsStr, GameDayData::getNewAccCnt));
+        System.out.println(newAddDataMap);
+
+    }
+
+    @Test
+    public void Test352() {
+        Map<String, int[]> map = new HashMap<>();
+        int[] i1 = new int[]{1,2};
+        map.put("w1",i1);
+
+        int[] i2 = new int[]{4,5,6,7};
+        map.put("w2",i2);
+
+        System.out.println(Arrays.toString(map.get("w1")));
+        System.out.println(Arrays.toString(map.get("w2")));
 
 
     }

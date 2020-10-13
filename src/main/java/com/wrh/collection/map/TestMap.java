@@ -183,7 +183,7 @@ public class TestMap {
     }
 
     /**
-     * 遍历map的方式
+     * 遍历map的方式   map遍历
      */
     @Test
     public void test3(){
@@ -648,5 +648,209 @@ public class TestMap {
     public void Test645() {
 
 
+    }
+
+    /**
+     * map排序
+     */
+    @Test
+    public void Test654() {
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(6,1);
+        map.put(2,1);
+        map.put(9,1);
+        map.put(0,1);
+        map.put(-1,1);
+
+        Map<Integer, Integer> map1 = new TreeMap<>();
+        map1.putAll(map);
+
+        System.out.println(map);
+        System.out.println(map1);
+
+    }
+
+    /**
+     * 获取key的最小值
+     */
+    @Test
+    public void Test674() {
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(6,1);
+        map.put(2,1);
+        map.put(9,1);
+        map.put(0,1);
+        map.put(-1,1);
+
+        Object[] arrays = map.keySet().toArray();
+        Arrays.sort(arrays);
+        int firstRetention = (int) arrays[0];
+        System.out.println(firstRetention);
+
+    }
+
+    @Test
+    public void Test693() {
+        float[] i = new float[4];
+        System.out.println(i[0]);
+        System.out.println(i[1]);
+        System.out.println(i[2]);
+        System.out.println(i[3]);
+
+        if(0 == i[0]){
+            System.out.println("equal");
+        }else {
+            System.out.println("not equal");
+        }
+
+    }
+
+    /**
+     * map根据key排序  根据value排序  map排序
+     */
+    @Test
+    public void Test709() {
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(6,9);
+        map.put(2,5);
+        map.put(9,2);
+        map.put(0,1);
+        map.put(-1,3);
+
+        Map<Integer, Integer> map2 = new LinkedHashMap<>();
+        map2.put(6,9);
+        map2.put(2,5);
+        map2.put(9,2);
+        map2.put(0,1);
+        map2.put(-1,3);
+
+        Map<Integer, Integer> map1 = new TreeMap<>();
+        map1.putAll(map);
+
+        System.out.println(map);
+        System.out.println(map1);
+        System.out.println(map2);
+
+        Comparator<Map.Entry<Integer,Integer>> valueComparator = new Comparator<Map.Entry<Integer, Integer>>() {
+            @Override
+            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
+                return o2.getValue() - o1.getValue();
+            }
+        };
+
+        List<Map.Entry<Integer,Integer>> list = new ArrayList<Map.Entry<Integer, Integer>>(map.entrySet());
+
+        Collections.sort(list, valueComparator);
+
+        list = list.stream().limit(3).collect(Collectors.toList());
+        for(Map.Entry<Integer,Integer> entry:list){
+            System.out.println(entry.getKey() + ":" + entry.getValue());
+        }
+
+    }
+
+    /**
+     * 叠加map中相同的key
+     */
+    @Test
+    public void Test753() {
+        Map<String, Integer> map1 = new HashMap<>();
+        map1.put("w1", 1);
+        map1.put("w2", 2);
+        map1.put("w3", 3);
+
+        Map<String, Integer> map2 = new HashMap<>();
+        map2.put("w2", 2);
+        map2.put("w3", 3);
+        map2.put("w4", 4);
+
+        System.out.println(map1);
+        System.out.println(map2);
+
+        Map<String, Integer> map3 = new HashMap<>();
+        map3.putAll(map1);
+        System.out.println(map3);
+
+        System.out.println("======================");
+
+        map2.forEach((key,value)->map3.merge(key,value,(v1,v2)->v1+v2));
+        System.out.println(map3);
+    }
+
+    /**
+     * 如果map中存在key就操作合并进去 map合并
+     */
+    @Test
+    public void Test781() {
+        Map<String, Integer> map1 = new HashMap<>();
+        map1.put("w1", 1);
+        map1.put("w2", 2);
+        map1.put("w3", 3);
+        System.out.println(map1);
+
+        Map<String, Integer> map2 = new HashMap<>();
+        map2.put("w2", 3);
+        map2.put("w3", 4);
+        map2.put("w4", 4);
+
+        List<MapClass> list = new ArrayList<>();
+        MapClass m1 = new MapClass("w3",4);
+        MapClass m2 = new MapClass("w4",9);
+        MapClass m3 = new MapClass("w3",10);
+        list.add(m1);
+        list.add(m2);
+        list.add(m3);
+
+        /*list.stream().forEach(e->{
+            System.out.println(e.getName() +"："+e.getScore());
+            map1.compute(e.getName(), (k, v) -> {
+                if(v==null){
+                    v = e.getScore();
+                }else {
+                    v += e.getScore();
+                }
+                return v;
+            });
+        });*/
+
+        map2.forEach((k1,v1)->{
+            map1.compute(k1, (k, v) -> {
+                if(v==null){
+                    v = v1;
+                }else {
+                    v += v1;
+                }
+                return v;
+            });
+        });
+
+        System.out.println(map1);
+
+    }
+
+    public class MapClass{
+        private String name;
+        private Integer score;
+
+        public MapClass(String name, Integer score) {
+            this.name = name;
+            this.score = score;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Integer getScore() {
+            return score;
+        }
+
+        public void setScore(Integer score) {
+            this.score = score;
+        }
     }
 }

@@ -22,7 +22,7 @@ spring:
   redis:
     database: 11
     host: 172.16.38.197
-    password:
+    password: bili@2233
     pool:
       max-active: 60
       max-idle: 10
