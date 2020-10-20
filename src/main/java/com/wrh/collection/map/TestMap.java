@@ -710,40 +710,40 @@ public class TestMap {
      */
     @Test
     public void Test709() {
-        Map<Integer, Integer> map = new HashMap<>();
-        map.put(6,9);
-        map.put(2,5);
-        map.put(9,2);
-        map.put(0,1);
-        map.put(-1,3);
+        Map<Integer, Long> map = new HashMap<>();
+        map.put(6,90000000000L);
+        map.put(2,588888888L);
+        map.put(9,299999999L);
+        map.put(0,123333333L);
+        map.put(-1,355555555L);
 
-        Map<Integer, Integer> map2 = new LinkedHashMap<>();
-        map2.put(6,9);
-        map2.put(2,5);
-        map2.put(9,2);
-        map2.put(0,1);
-        map2.put(-1,3);
+        Map<Integer, Long> map2 = new LinkedHashMap<>();
+        map2.put(6,9L);
+        map2.put(2,5L);
+        map2.put(9,2L);
+        map2.put(0,1L);
+        map2.put(-1,3L);
 
-        Map<Integer, Integer> map1 = new TreeMap<>();
+        Map<Integer, Long> map1 = new TreeMap<>();
         map1.putAll(map);
 
         System.out.println(map);
         System.out.println(map1);
         System.out.println(map2);
 
-        Comparator<Map.Entry<Integer,Integer>> valueComparator = new Comparator<Map.Entry<Integer, Integer>>() {
+        Comparator<Map.Entry<Integer,Long>> valueComparator = new Comparator<Map.Entry<Integer, Long>>() {
             @Override
-            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
-                return o2.getValue() - o1.getValue();
+            public int compare(Map.Entry<Integer, Long> o1, Map.Entry<Integer, Long> o2) {
+                return (o2.getValue() - o1.getValue()) > 0 ? 1:-1;
             }
         };
 
-        List<Map.Entry<Integer,Integer>> list = new ArrayList<Map.Entry<Integer, Integer>>(map.entrySet());
+        List<Map.Entry<Integer,Long>> list = new ArrayList<Map.Entry<Integer, Long>>(map.entrySet());
 
         Collections.sort(list, valueComparator);
 
         list = list.stream().limit(3).collect(Collectors.toList());
-        for(Map.Entry<Integer,Integer> entry:list){
+        for(Map.Entry<Integer,Long> entry:list){
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
 

@@ -384,17 +384,17 @@ public class TestList {
         s1.setGrade(1);
 
         Student s2 = new Student();
-        s2.setName("w1");
+        s2.setName("w2");
         s2.setId(1);
-        s2.setGrade(2);
+        s2.setGrade(1);
 
         Student s3 = new Student();
-        s3.setName("w2");
-        s3.setId(2);
-        s3.setGrade(2);
+        s3.setName("w3");
+        s3.setId(3);
+        s3.setGrade(4);
 
         Student s4 = new Student();
-        s4.setName("w2");
+        s4.setName("w4");
         s4.setId(2);
         s4.setGrade(4);
 
@@ -1176,6 +1176,59 @@ public class TestList {
 
         Map<String, List<Student>> map = list.stream().collect(Collectors.groupingBy(Student::getTitle));
         System.out.println(map);
+
+    }
+
+    @Test
+    public void Test1183() {
+        List<Student> list = new ArrayList<>();
+        Student s1 = new Student();
+        s1.setTitle("class1");
+        s1.setName("w1");
+        s1.setGrade(10);
+
+        Student s2 = new Student();
+        s2.setTitle("class1");
+        s2.setName("w2");
+        s2.setGrade(20);
+
+        list.add(s1);
+        list.add(s2);
+        System.out.println(list);
+        list.stream().forEach(e->{
+            if(e.getGrade()>15){
+                e.setGrade(100);
+            }
+        });
+        System.out.println(list);
+
+    }
+
+    @Test
+    public void Test1208() {
+        List<Student> list1 = getStudentList();
+        System.out.println(list1);
+
+        /**
+         * 多个的只会拿第一个
+         */
+        Optional<Student> max = list1.stream().max(Comparator.comparing(Student::getGrade));
+        Optional<Student> min = list1.stream().min(Comparator.comparing(Student::getGrade));
+        if(max.isPresent()){
+            System.out.println("max: " + max.get());
+        }
+
+        if(min.isPresent()){
+            System.out.println("min: " + min.get());
+        }
+
+        Integer value = list1.stream().mapToInt(Student::getGrade).reduce(0, (acc, x) -> acc + x);
+        System.out.println(value);
+
+//        Integer value1 = list1.stream()
+        String names = list1.stream().map(Student::getName).collect(Collectors.joining(",","[","]"));
+        System.out.println(names);
+
 
     }
 

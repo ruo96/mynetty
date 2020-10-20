@@ -2,22 +2,27 @@ spring:
   application:
     name: mynetty
   mail:
-    host: smtp.163.com
-    port: 465
-    username: wrh_1096
-    password: wrh163
-    protocol: smtp
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-            required: true
-    default-encoding: utf-8
-    ssl: true
-    auth: true
-    timeout: 5000
+    host: smtp.exmail.qq.com
+#    port: 465
+    username: ww-1096
+    password: 123456
+#    protocol: smtp
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          starttls:
+#            enable: true
+#            required: true
+#    default-encoding: utf-8
+#    ssl: true
+#    auth: true
+#    timeout: 5000
+    smtp:
+      socketFactory:
+        class: javax.net.ssl.SSLSocketFactory
+        fallback: false
+        port: 465
     ##REDIS配置
   redis:
     database: 11

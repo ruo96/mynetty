@@ -297,7 +297,7 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.4</version>
+			<version>3.8.1</version>
 		</dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -666,6 +666,12 @@
 			<artifactId>spring-context-support</artifactId>
 		</dependency>
 
+		<!--websocket支持-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+
 		<!--<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-io</artifactId>
@@ -705,6 +711,10 @@
 					<groupId>log4j</groupId>
 					<artifactId>log4j</artifactId>
 				</exclusion>
+				<exclusion>
+					<artifactId>commons-lang3</artifactId>
+					<groupId>org.apache.commons</groupId>
+				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
@@ -719,6 +729,10 @@
 				<exclusion>
 					<groupId>log4j</groupId>
 					<artifactId>log4j</artifactId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-lang3</artifactId>
+					<groupId>org.apache.commons</groupId>
 				</exclusion>
 			</exclusions>
 		</dependency>
@@ -758,6 +772,10 @@
 				<exclusion>
 					<artifactId>guava</artifactId>
 					<groupId>com.google.guava</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-lang3</artifactId>
+					<groupId>org.apache.commons</groupId>
 				</exclusion>
 			</exclusions>
 		</dependency>

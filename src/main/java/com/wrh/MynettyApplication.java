@@ -13,6 +13,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
+import org.springframework.web.socket.config.annotation.EnableWebSocket;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -21,6 +22,7 @@ import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
+@EnableWebSocket
 //@ServletComponentScan(value = {"com.wrh.filter", "com.wrh.listener"}) //用于支持过滤器、监听器注解
 @ServletComponentScan(value = {"com.wrh.listener","com.wrh.servlet"}) //用于支持过滤器、监听器注解
 @SpringBootApplication

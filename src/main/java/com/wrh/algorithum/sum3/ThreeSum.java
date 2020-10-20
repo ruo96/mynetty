@@ -69,4 +69,39 @@ public class ThreeSum {
         }
         return nlist;
     }
+
+    /**
+     * 判断是否存在3个数字 a+b+c = target  双指针   夹逼
+     */
+    @Test
+    public void Test77() {
+        int[] nums = new int[]{1,2,3,4,5,6,7,8,9,-4};
+        System.out.println(threesumV2(nums, 0));
+
+    }
+
+    public static List<List<Integer>> threesumV2(int[] nums, int target){
+        Arrays.sort(nums);
+        List<List<Integer>> resultList = new ArrayList<>();
+        // 大循环
+        for (int i = 0; i < nums.length ; i++) {
+            int d = target - nums[i];
+            // j和k双指针循环定位， j在左端， k在右端
+            for (int j = i + 1, k = nums.length - 1; j < nums.length; j++) {
+                // k指针向左移动
+                while (j < k && (nums[j] + nums[k]) > d) {
+                    k --;
+                }
+                // 双指针重合， 跳出本循环
+                if(j==k){
+                    break;
+                }
+                if(nums[j] + nums[k]==d){
+                    List<Integer> list = Arrays.asList(nums[i], nums[j],nums[k]);
+                    resultList.add(list);
+                }
+            }
+        }
+        return resultList;
+    }
 }

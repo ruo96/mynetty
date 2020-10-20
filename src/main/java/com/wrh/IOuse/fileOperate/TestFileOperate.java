@@ -415,4 +415,16 @@ public class TestFileOperate {
         System.out.println(count2);
 
     }
+
+    @Test
+    public void Test420() throws IOException {
+        File f = new File("e:\\file\\test.txt");
+        FileInputStream fileInputStream = new FileInputStream(f);
+
+        int b ;
+        while((b = fileInputStream.read()) != -1){
+            System.out.println((char)b);
+        }
+
+    }
 }
