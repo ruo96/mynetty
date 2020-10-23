@@ -59,9 +59,4 @@ public class MailController {
         User user = new User("id1","wrh", LocalDateTime.now());
         return user;
     }
-
-
-
-
-
 }

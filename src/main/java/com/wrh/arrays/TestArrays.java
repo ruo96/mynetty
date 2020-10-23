@@ -56,4 +56,10 @@ public class TestArrays {
         System.out.println(Arrays.stream(arrayInt).max().getAsInt());
 
     }
+
+    @Test
+    public void Test61() {
+        int[] arrayInt = {15,2,23,3};
+
+    }
 }

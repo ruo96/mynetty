@@ -6,6 +6,8 @@ import org.junit.Test;
 
 import java.sql.Timestamp;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAdjusters;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -69,5 +71,66 @@ public class TestDateTime {
         int a = Integer.parseInt(minute.substring(6)) / 60;
         System.out.println(a);
 
+    }
+
+    /**设置格式化模板**/
+    private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSS");
+
+    /**设置日期时区常量**/
+    public static final ZoneId CHINA_ZONE_ID = ZoneId.systemDefault();
+    /**
+     * date转DateTime
+     */
+    @Test
+    public void Test75() {
+        Date date = new Date();
+        LocalDateTime dateTime = date.toInstant().atZone(CHINA_ZONE_ID).toLocalDateTime();
+        System.out.println(dateTime);
+
+    }
+
+    /**
+     * LocalDate/LocalDateTime转Date
+     */
+    @Test
+    public void Test92() {
+        // LocalDate
+        LocalDate localDate = LocalDate.now();
+        Date d1 = Date.from(localDate.atStartOfDay(CHINA_ZONE_ID).toInstant());
+        System.out.println(d1);
+
+        // LocalDateTime
+        LocalDateTime localDateTime = LocalDateTime.now();
+        Date d2 = Date.from(localDateTime.atZone(CHINA_ZONE_ID).toInstant());
+        System.out.println(d2);
+
+    }
+
+    /**
+     * 日期格式化
+     */
+    @Test
+    public void Test109() {
+        System.out.println(LocalDateTime.now().format(DATE_TIME_FORMATTER));
+    }
+    
+    @Test
+    public void Test117() {
+        // 当月第一天
+        LocalDateTime dateTime = LocalDateTime.of(2019,07,03,12,12,22);
+        dateTime = dateTime.with(TemporalAdjusters.firstDayOfMonth());
+        System.out.println(dateTime);
+        // 当月最后一天
+        dateTime = dateTime.with(TemporalAdjusters.lastDayOfMonth());
+        System.out.println(dateTime);
+
+        //当月的第几天
+        dateTime = LocalDateTime.now();
+        int dayOfMonth = dateTime.getDayOfMonth();
+        System.out.println(dayOfMonth);
+        // 当前周的第几天
+        int dayOfWeek = dateTime.getDayOfWeek().getValue();
+        System.out.println(dayOfWeek);
+        
     }
 }
