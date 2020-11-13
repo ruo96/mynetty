@@ -1,8 +1,10 @@
 package com.wrh.list;
 
 import com.alibaba.fastjson.JSON;
+import com.google.common.collect.Lists;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import com.wrh.collection.map.GameRealTimeData;
+import com.wrh.collection.map.vo.GameDayDataV2;
 import com.wrh.elasticsearch.Student;
 import com.wrh.list.vo.GameConfig;
 import com.wrh.list.vo.TotalInfo;
@@ -22,6 +24,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static com.wrh.collection.map.DateUtil.getDsList;
+import static com.wrh.utils.ObjectCheckHandleUtils.handle;
 import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 /**
@@ -1229,6 +1232,113 @@ public class TestList {
         String names = list1.stream().map(Student::getName).collect(Collectors.joining(",","[","]"));
         System.out.println(names);
 
+
+    }
+
+    @Test
+    public void Test1236() {
+        List<Student> list = getStudentList();
+        System.out.println(list);
+
+        String a = "abc123";
+        String b = "123";
+        if(a.contains(b)){
+            System.out.println("yes");
+        }
+
+        List<Student> list1 = list.stream().filter(e->e.getGrade() > 100).collect(Collectors.toList());
+        System.out.println(list1);
+        System.out.println(list1.size());
+
+    }
+
+    @Test
+    public void Test1253() {
+        List<Student> list = getStudentList();
+        System.out.println(list);
+
+        List<Integer> numList = new ArrayList<>();
+        numList.add(1);
+
+        List<Student> newList = list.stream().filter(e->!numList.contains(e.getId())).collect(Collectors.toList());
+        System.out.println(newList);
+
+        List<Student> newList1 = list.stream().filter(e->e.getGrade() > 100).collect(Collectors.toList());
+        List<Student> newList2 = list.stream().filter(e->e.getGrade() > 100).collect(Collectors.toList());
+        System.out.println(newList1);
+        newList1.addAll(newList2);
+        System.out.println(newList1);
+
+    }
+
+    @Test
+    public void Test1273() {
+        List<Student> list = new ArrayList<>();
+        Student s;
+        for (int i = 0; i < 3; i++) {
+            s = new Student();
+            s.setGrade(i);
+            s.setName("wrh"+i);
+            list.add(s);
+        }
+        System.out.println(list);
+
+    }
+
+    @Test
+    public void Test1287() {
+        Integer[] list = new Integer[3];
+        list[0] = 1;
+        list[2] = 2;
+        System.out.println(Arrays.toString(list));
+
+        int[] list1 = new int[3];
+        list1[0] = 1;
+        list1[2] = 2;
+        System.out.println(Arrays.toString(list1));
+
+    }
+
+    @Test
+    public void Test1301() {
+        Integer[] list = new Integer[3];
+        System.out.println(Arrays.toString(list));
+        handleIntegerList(list);
+        System.out.println(Arrays.toString(list));
+
+    }
+
+    private void handleIntegerList(Integer[] list) {
+        list[0] = 100;
+    }
+
+    @Test
+    public void Test1315() {
+        List<String> list = new ArrayList<>();
+        String[] arr = new String[2];
+        arr[0] = "1";
+        arr[1] = "2";
+
+        CollectionUtils.addAll(list,arr);
+        System.out.println(list);
+
+    }
+
+    @Test
+    public void Test1327() {
+        List<GameDayDataV2> list = new ArrayList<>();
+        GameDayDataV2 v = new GameDayDataV2();
+        if(Objects.nonNull(v.getPaySumMoney())){
+            System.out.println("pay not null");
+        }else {
+            System.out.println("pay null");
+        }
+
+        list.stream().forEach(e->{
+            if(Objects.nonNull(e.getPaySumMoney())){
+                System.out.println("lambda pay null");
+            }
+        });
 
     }
 

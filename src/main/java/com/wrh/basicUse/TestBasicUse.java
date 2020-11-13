@@ -2,6 +2,7 @@ package com.wrh.basicUse;
 
 import com.alibaba.fastjson.JSON;
 import com.google.gson.Gson;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import com.wrh.basicUse.vo.ChangVo;
 import com.wrh.basicUse.vo.StudentVo;
 import com.wrh.elasticsearch.Student;
@@ -639,6 +640,19 @@ public class TestBasicUse {
         }else {
             System.out.println("no");
         }
+    }
+
+    @Test
+    public void Test645() {
+        Student s = new Student();
+        s.setName("w1");
+        s.setGrade(123);
+
+        System.out.println(s);
+
+        s.setGrade(null);
+        System.out.println(s);
+
     }
 
 }

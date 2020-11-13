@@ -37,12 +37,12 @@ public class HelloController {
 
     @GetMapping(value = "/hello")
     public String hello(){
-        return "hello";
+        return "healthy";
     }
 
     @RequestMapping(value = "/index")
     public String index(){
-        return "hello";
+        return "healthy";
     }
 
     @GetMapping(value = "/rate")

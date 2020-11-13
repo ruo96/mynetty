@@ -53,4 +53,12 @@ public class TestDouble {
         System.out.println(0.145 * rate);
 
     }
+
+    @Test
+    public void Test58() {
+        Double a = 0.2354;
+        Double b = (1-a)*100;
+        System.out.println(b);
+
+    }
 }

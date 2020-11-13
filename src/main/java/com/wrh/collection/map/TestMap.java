@@ -1,10 +1,13 @@
 package com.wrh.collection.map;
 
 import com.alibaba.fastjson.JSON;
+import com.wrh.collection.map.vo.GameDayDataV2;
 import com.wrh.elasticsearch.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -18,6 +21,7 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 public class TestMap {
+    private static final Logger LOGGER= LoggerFactory.getLogger(TestMap.class);
 
     public static String getAccountIdByUUId() {
         int machineId = 1;//最大支持1-9个集群机器部署
@@ -852,5 +856,59 @@ public class TestMap {
         public void setScore(Integer score) {
             this.score = score;
         }
+    }
+
+    @Test
+    public void Test858() {
+        Map<Integer, List<String>> map = new HashMap<>();
+        System.out.println(map.size());
+
+    }
+
+    @Test
+    public void Test865() {
+        Map<Integer, List<GameDayDataV2>> map = new HashMap<>();
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap.put("totalData", map.getOrDefault("gameBaseId1", new ArrayList<>()).stream().mapToInt(GameDayDataV2::getNewAccCnt).sum());
+        System.out.println(resultMap);
+
+
+        List<GameDayDataV2> list = new ArrayList<>();
+        System.out.println(list.stream().mapToInt(GameDayDataV2::getNewAccCnt).sum());
+
+
+    }
+
+    @Test
+    public void Test880() {
+        Map<String, Long> map;
+        List<GameDayDataV2> list = new ArrayList<>();
+
+        map = list.stream().filter(e->Objects.nonNull(e.getPaySumMoney())).collect(Collectors.toMap(GameDayDataV2::getDsStr, GameDayDataV2::getPaySumMoney));
+        if(map.containsKey("w1")){
+            System.out.println("map contain key w1");
+        }else {
+            System.out.println("map not contain key w1");
+        }
+
+    }
+
+    @Test
+    public void Test894() {
+        String a = "w1";
+        int hashcode = a.hashCode();
+        LOGGER.info("hashcode: {}", hashcode);
+        int hashValue = hashcode >>> 16;
+        LOGGER.info("hashcode >>> 16: {}", hashValue);
+        int result = hashcode ^ hashValue;
+        LOGGER.info("hashcode ^ hashValue: {}", result);
+        /**
+         * hashmap的长度为什么都是2的次防，就是因为可以用其长度-1做低位掩码， 可以很快速的确定数据的位置
+         */
+
+        Map<String, Integer> map = new HashMap<>();
+        map.put("w1",1);
+
+
     }
 }

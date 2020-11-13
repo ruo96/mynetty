@@ -29,4 +29,14 @@ public class TestBasic {
 
 
     }
+    @Test
+    public void Test33() {
+        new Thread(()-> System.out.println("runnable")){
+            @Override
+            public void run(){
+                System.out.println("thread run");
+            }
+        }.start();
+
+    }
 }

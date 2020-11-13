@@ -1,5 +1,12 @@
 package com.wrh.sort;
 
+import org.junit.Test;
+
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.SortedSet;
+
 /**
  * @Created by wrh
  * @Description:
@@ -27,5 +34,11 @@ public class TestSort {
                 System.out.println(i);
             }
         }
+    }
+
+    @Test
+    public void Test33() {
+//        SortedSet<Integer> set = new So
+
     }
 }

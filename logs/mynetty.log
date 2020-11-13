@@ -1,29 +1,29 @@
-2020-10-20 11:27:30.287  INFO 91232 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 91232 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-10-20 11:27:30.290  INFO 91232 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-10-20 11:27:34.767  INFO 91232 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-10-20 11:27:34.767  INFO 91232 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-10-20 11:27:34.779  INFO 91232 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-10-20 11:27:34.779  INFO 91232 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-10-20 11:27:34.779  INFO 91232 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-10-20 11:27:34.809  INFO 91232 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-10-20 11:27:34.990  INFO 91232 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-10-20 11:27:35.153  INFO 91232 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-10-20 11:27:35.973  INFO 91232 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-10-20 11:27:35.979  INFO 91232 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-10-20 11:27:36.417  WARN 91232 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
-2020-10-20 11:27:36.424  INFO 91232 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-10-20 11:27:37.426  INFO 91232 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
-2020-10-20 11:27:37.427  INFO 91232 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
-2020-10-20 11:27:37.428  INFO 91232 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
-2020-10-20 11:27:37.554  INFO 91232 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
-2020-10-20 11:27:37.555  INFO 91232 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@561994759 wrapping com.mysql.jdbc.JDBC4Connection@74b681b8
-2020-10-20 11:27:37.890  INFO 91232 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-10-20 11:27:38.325  WARN 91232 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-10-20 11:27:38.473  INFO 91232 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2020-10-20 11:27:38.484  INFO 91232 --- [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-10-20 11:27:38.486  INFO 91232 --- [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
-2020-10-20 11:27:38.486  INFO 91232 --- [restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2020-10-20 11:27:38.487  INFO 91232 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2020-10-29 20:29:35.384  INFO 151520 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 151520 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-10-29 20:29:35.387  INFO 151520 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-10-29 20:29:45.663  INFO 151520 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-29 20:29:45.663  INFO 151520 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-10-29 20:29:45.666  INFO 151520 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-10-29 20:29:45.667  INFO 151520 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-10-29 20:29:45.667  INFO 151520 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-10-29 20:29:45.693  INFO 151520 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-10-29 20:29:45.905  INFO 151520 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-10-29 20:29:46.038  INFO 151520 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-10-29 20:29:46.809  INFO 151520 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-10-29 20:29:46.814  INFO 151520 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-10-29 20:29:47.169  WARN 151520 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2020-10-29 20:29:47.177  INFO 151520 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-10-29 20:29:48.178  INFO 151520 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
+2020-10-29 20:29:48.181  INFO 151520 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
+2020-10-29 20:29:48.181  INFO 151520 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
+2020-10-29 20:29:48.300  INFO 151520 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
+2020-10-29 20:29:48.302  INFO 151520 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@780751439 wrapping com.mysql.jdbc.JDBC4Connection@40149c92
+2020-10-29 20:29:48.636  INFO 151520 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-10-29 20:29:49.071  WARN 151520 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-10-29 20:29:49.228  INFO 151520 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-10-29 20:29:49.241  INFO 151520 --- [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-10-29 20:29:49.251  INFO 151520 --- [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2020-10-29 20:29:49.252  INFO 151520 --- [restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2020-10-29 20:29:49.253  INFO 151520 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -31,46 +31,51 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2020-10-20 11:27:38.487  INFO 91232 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-10-20 11:27:38.487  INFO 91232 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
-2020-10-20 11:27:38.487  INFO 91232 --- [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@13ccc569
-2020-10-20 11:27:38.742  INFO 91232 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-10-20 11:27:38.768  INFO 91232 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 9.412 seconds (JVM running for 12.535)
-2020-10-20 11:28:34.012  INFO 91232 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2020-10-20 11:28:34.040  INFO 91232 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/timeformate
-2020-10-20 11:28:34.040  INFO 91232 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/timeformate
-2020-10-20 11:28:34.045  INFO 91232 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-10-20 11:28:34.046  INFO 91232 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
-2020-10-20 11:28:34.046  INFO 91232 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
-2020-10-20 11:28:34.092  INFO 91232 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,请求参数:【{}】
-2020-10-20 11:28:34.114  INFO 91232 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,返回参数:【{"createTime":1603164514095,"userId":"id1","userName":"wrh"}】
-2020-10-20 11:28:34.186  INFO 91232 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=140
-2020-10-20 11:32:57.774  INFO 99652 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 99652 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-10-20 11:32:57.775  INFO 99652 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-10-20 11:32:59.587  INFO 99652 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-10-20 11:32:59.587  INFO 99652 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-10-20 11:32:59.590  INFO 99652 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-10-20 11:32:59.591  INFO 99652 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-10-20 11:32:59.591  INFO 99652 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-10-20 11:32:59.593  INFO 99652 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-10-20 11:32:59.766  INFO 99652 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-10-20 11:32:59.879  INFO 99652 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-10-20 11:33:00.513  INFO 99652 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-10-20 11:33:00.515  INFO 99652 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-10-20 11:33:00.855  WARN 99652 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
-2020-10-20 11:33:00.863  INFO 99652 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-10-20 11:33:01.864  INFO 99652 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
-2020-10-20 11:33:01.865  INFO 99652 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
-2020-10-20 11:33:01.866  INFO 99652 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
-2020-10-20 11:33:01.978  INFO 99652 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
-2020-10-20 11:33:01.980  INFO 99652 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@1056783262 wrapping com.mysql.jdbc.JDBC4Connection@4c5e6a23
-2020-10-20 11:33:02.320  INFO 99652 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-10-20 11:33:02.713  WARN 99652 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-10-20 11:33:02.852  INFO 99652 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2020-10-20 11:33:02.861  INFO 99652 --- [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-10-20 11:33:02.862  INFO 99652 --- [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
-2020-10-20 11:33:02.863  INFO 99652 --- [restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2020-10-20 11:33:02.863  INFO 99652 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2020-10-29 20:29:49.253  INFO 151520 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-10-29 20:29:49.253  INFO 151520 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2020-10-29 20:29:49.253  INFO 151520 --- [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@1f635baa
+2020-10-29 20:29:54.516  INFO 151520 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-10-29 20:29:54.547  INFO 151520 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 19.599 seconds (JVM running for 20.846)
+2020-10-29 20:29:59.544 ERROR 151520 --- [container-1] o.s.d.r.l.RedisMessageListenerContainer  : Connection failure occurred. Restarting subscription task after 5000 ms
+2020-10-29 20:30:29.304  INFO 151520 --- [http-nio-9988-exec-2] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-10-29 20:30:29.345  INFO 151520 --- [http-nio-9988-exec-2] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/
+2020-10-29 20:30:29.345  INFO 151520 --- [http-nio-9988-exec-2] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/
+2020-10-29 20:30:29.352  INFO 151520 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-10-29 20:30:29.353  INFO 151520 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=1
+2020-10-29 20:30:29.363  INFO 151520 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/hello.html
+2020-10-29 20:30:29.363  INFO 151520 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/hello.html
+2020-10-29 20:30:29.366  INFO 151520 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-10-29 20:30:29.388  INFO 151520 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=22
+2020-10-29 20:34:38.140  INFO 151520 --- [http-nio-9988-exec-8] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/hello.html
+2020-10-29 20:34:38.140  INFO 151520 --- [http-nio-9988-exec-8] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/hello.html
+2020-10-29 20:34:38.141  INFO 151520 --- [http-nio-9988-exec-8] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-10-29 20:34:38.161  INFO 151520 --- [http-nio-9988-exec-8] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=20
+2020-10-29 20:34:44.096  INFO 172756 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 172756 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-10-29 20:34:44.101  INFO 172756 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-10-29 20:34:45.939  INFO 172756 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-29 20:34:45.940  INFO 172756 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-10-29 20:34:45.942  INFO 172756 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-10-29 20:34:45.942  INFO 172756 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-10-29 20:34:45.942  INFO 172756 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-10-29 20:34:45.944  INFO 172756 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-10-29 20:34:46.119  INFO 172756 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-10-29 20:34:46.228  INFO 172756 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-10-29 20:34:46.828  INFO 172756 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-10-29 20:34:46.830  INFO 172756 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-10-29 20:34:47.175  WARN 172756 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2020-10-29 20:34:47.183  INFO 172756 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-10-29 20:34:48.184  INFO 172756 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
+2020-10-29 20:34:48.185  INFO 172756 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
+2020-10-29 20:34:48.186  INFO 172756 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
+2020-10-29 20:34:48.301  INFO 172756 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
+2020-10-29 20:34:48.303  INFO 172756 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@250107445 wrapping com.mysql.jdbc.JDBC4Connection@1c553ec
+2020-10-29 20:34:48.674  INFO 172756 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-10-29 20:34:49.032  WARN 172756 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-10-29 20:34:49.176  INFO 172756 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-10-29 20:34:49.184  INFO 172756 --- [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-10-29 20:34:49.185  INFO 172756 --- [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2020-10-29 20:34:49.186  INFO 172756 --- [restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2020-10-29 20:34:49.187  INFO 172756 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -78,54 +83,42 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2020-10-20 11:33:02.863  INFO 99652 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-10-20 11:33:02.863  INFO 99652 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
-2020-10-20 11:33:02.864  INFO 99652 --- [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@66142e42
-2020-10-20 11:33:03.131  INFO 99652 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-10-20 11:33:03.151  INFO 99652 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.691 seconds (JVM running for 6.871)
-2020-10-20 11:34:09.319  INFO 99652 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2020-10-20 11:34:09.350  INFO 99652 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/timeformate
-2020-10-20 11:34:09.350  INFO 99652 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/timeformate
-2020-10-20 11:34:09.355  INFO 99652 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-10-20 11:34:09.355  INFO 99652 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
-2020-10-20 11:34:09.355  INFO 99652 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
-2020-10-20 11:34:09.394  INFO 99652 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,请求参数:【{}】
-2020-10-20 11:34:09.409  INFO 99652 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,返回参数:【{"createTime":1603164849398,"userId":"id1","userName":"wrh"}】
-2020-10-20 11:34:09.448  INFO 99652 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=93
-2020-10-20 11:34:12.573  INFO 99652 --- [http-nio-9988-exec-4] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/timeformate
-2020-10-20 11:34:12.573  INFO 99652 --- [http-nio-9988-exec-4] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/timeformate
-2020-10-20 11:34:12.574  INFO 99652 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-10-20 11:34:12.574  INFO 99652 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
-2020-10-20 11:34:12.574  INFO 99652 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
-2020-10-20 11:34:12.574  INFO 99652 --- [http-nio-9988-exec-4] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,请求参数:【{}】
-2020-10-20 11:34:12.574  INFO 99652 --- [http-nio-9988-exec-4] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,返回参数:【{"createTime":1603164852574,"userId":"id1","userName":"wrh"}】
-2020-10-20 11:34:12.576  INFO 99652 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=2
-2020-10-20 11:34:49.958  INFO 102348 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 102348 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-10-20 11:34:49.959  INFO 102348 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-10-20 11:34:51.937  INFO 102348 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-10-20 11:34:51.937  INFO 102348 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-10-20 11:34:51.940  INFO 102348 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-10-20 11:34:51.940  INFO 102348 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-10-20 11:34:51.940  INFO 102348 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-10-20 11:34:51.943  INFO 102348 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-10-20 11:34:52.132  INFO 102348 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-10-20 11:34:52.246  INFO 102348 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-10-20 11:34:52.894  INFO 102348 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-10-20 11:34:52.896  INFO 102348 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-10-20 11:34:53.228  WARN 102348 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
-2020-10-20 11:34:53.235  INFO 102348 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-10-20 11:34:54.236  INFO 102348 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
-2020-10-20 11:34:54.237  INFO 102348 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
-2020-10-20 11:34:54.238  INFO 102348 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
-2020-10-20 11:34:54.356  INFO 102348 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
-2020-10-20 11:34:54.358  INFO 102348 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@938929137 wrapping com.mysql.jdbc.JDBC4Connection@9ffcd0b
-2020-10-20 11:34:54.692  INFO 102348 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-10-20 11:34:55.089  WARN 102348 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-10-20 11:34:55.229  INFO 102348 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2020-10-20 11:34:55.238  INFO 102348 --- [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-10-20 11:34:55.239  INFO 102348 --- [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
-2020-10-20 11:34:55.240  INFO 102348 --- [restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2020-10-20 11:34:55.240  INFO 102348 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2020-10-29 20:34:49.187  INFO 172756 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-10-29 20:34:49.187  INFO 172756 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2020-10-29 20:34:49.187  INFO 172756 --- [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@4eb6ddf6
+2020-10-29 20:34:49.463  INFO 172756 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-10-29 20:34:49.482  INFO 172756 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.686 seconds (JVM running for 6.869)
+2020-10-29 20:34:55.713  INFO 172756 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-10-29 20:34:55.739  INFO 172756 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/hello.html
+2020-10-29 20:34:55.739  INFO 172756 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/hello.html
+2020-10-29 20:34:55.761  INFO 172756 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-10-29 20:34:55.772  INFO 172756 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=11
+2020-10-29 20:35:20.298  INFO 171588 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 171588 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-10-29 20:35:20.299  INFO 171588 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-10-29 20:35:22.123  INFO 171588 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-29 20:35:22.124  INFO 171588 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-10-29 20:35:22.126  INFO 171588 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-10-29 20:35:22.126  INFO 171588 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-10-29 20:35:22.126  INFO 171588 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-10-29 20:35:22.128  INFO 171588 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-10-29 20:35:22.302  INFO 171588 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-10-29 20:35:22.411  INFO 171588 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-10-29 20:35:23.030  INFO 171588 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-10-29 20:35:23.032  INFO 171588 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-10-29 20:35:23.354  WARN 171588 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2020-10-29 20:35:23.361  INFO 171588 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-10-29 20:35:24.361  INFO 171588 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
+2020-10-29 20:35:24.362  INFO 171588 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
+2020-10-29 20:35:24.363  INFO 171588 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
+2020-10-29 20:35:24.480  INFO 171588 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
+2020-10-29 20:35:24.482  INFO 171588 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@1716511558 wrapping com.mysql.jdbc.JDBC4Connection@169e8761
+2020-10-29 20:35:24.806  INFO 171588 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-10-29 20:35:25.205  WARN 171588 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-10-29 20:35:25.342  INFO 171588 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-10-29 20:35:25.350  INFO 171588 --- [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-10-29 20:35:25.351  INFO 171588 --- [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2020-10-29 20:35:25.352  INFO 171588 --- [restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2020-10-29 20:35:25.352  INFO 171588 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -133,46 +126,50 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2020-10-20 11:34:55.240  INFO 102348 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-10-20 11:34:55.240  INFO 102348 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
-2020-10-20 11:34:55.240  INFO 102348 --- [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@331a1c62
-2020-10-20 11:34:55.505  INFO 102348 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-10-20 11:34:55.524  INFO 102348 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.881 seconds (JVM running for 7.071)
-2020-10-20 11:34:58.540  INFO 102348 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2020-10-20 11:34:58.569  INFO 102348 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/timeformate
-2020-10-20 11:34:58.569  INFO 102348 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/timeformate
-2020-10-20 11:34:58.574  INFO 102348 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-10-20 11:34:58.574  INFO 102348 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
-2020-10-20 11:34:58.574  INFO 102348 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
-2020-10-20 11:34:58.616  INFO 102348 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,请求参数:【{}】
-2020-10-20 11:34:58.654  INFO 102348 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,返回参数:【{"createTime":"2020-10-20T11:34:58.636","userId":"id1","userName":"wrh"}】
-2020-10-20 11:34:58.696  INFO 102348 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=122
-2020-10-20 11:35:14.770  INFO 100052 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 100052 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-10-20 11:35:14.771  INFO 100052 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-10-20 11:35:16.586  INFO 100052 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-10-20 11:35:16.586  INFO 100052 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-10-20 11:35:16.589  INFO 100052 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-10-20 11:35:16.589  INFO 100052 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-10-20 11:35:16.589  INFO 100052 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-10-20 11:35:16.591  INFO 100052 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-10-20 11:35:16.767  INFO 100052 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-10-20 11:35:16.886  INFO 100052 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-10-20 11:35:17.520  INFO 100052 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-10-20 11:35:17.521  INFO 100052 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-10-20 11:35:17.849  WARN 100052 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
-2020-10-20 11:35:17.857  INFO 100052 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-10-20 11:35:18.857  INFO 100052 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
-2020-10-20 11:35:18.858  INFO 100052 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
-2020-10-20 11:35:18.859  INFO 100052 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
-2020-10-20 11:35:18.972  INFO 100052 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
-2020-10-20 11:35:18.974  INFO 100052 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@29825666 wrapping com.mysql.jdbc.JDBC4Connection@2dce0ca7
-2020-10-20 11:35:19.301  INFO 100052 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-10-20 11:35:19.699  WARN 100052 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-10-20 11:35:19.839  INFO 100052 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2020-10-20 11:35:19.847  INFO 100052 --- [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-10-20 11:35:19.849  INFO 100052 --- [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
-2020-10-20 11:35:19.849  INFO 100052 --- [restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2020-10-20 11:35:19.850  INFO 100052 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2020-10-29 20:35:25.352  INFO 171588 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-10-29 20:35:25.352  INFO 171588 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2020-10-29 20:35:25.352  INFO 171588 --- [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@212d0795
+2020-10-29 20:35:25.609  INFO 171588 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-10-29 20:35:25.629  INFO 171588 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.633 seconds (JVM running for 6.898)
+2020-10-29 20:35:30.257  INFO 171588 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-10-29 20:35:30.285  INFO 171588 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/hello.html
+2020-10-29 20:35:30.285  INFO 171588 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/hello.html
+2020-10-29 20:35:30.293  INFO 171588 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-10-29 20:35:30.295  INFO 171588 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=2
+2020-10-29 20:35:36.199  INFO 171588 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/
+2020-10-29 20:35:36.199  INFO 171588 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/
+2020-10-29 20:35:36.201  INFO 171588 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-10-29 20:35:36.202  INFO 171588 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=1
+2020-10-29 20:35:36.211  INFO 171588 --- [http-nio-9988-exec-5] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/hello.html
+2020-10-29 20:35:36.212  INFO 171588 --- [http-nio-9988-exec-5] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/hello.html
+2020-10-29 20:35:36.213  INFO 171588 --- [http-nio-9988-exec-5] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-10-29 20:35:36.214  INFO 171588 --- [http-nio-9988-exec-5] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=1
+2020-10-29 20:36:44.119  INFO 171392 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 171392 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-10-29 20:36:44.120  INFO 171392 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-10-29 20:36:45.910  INFO 171392 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-29 20:36:45.910  INFO 171392 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-10-29 20:36:45.913  INFO 171392 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-10-29 20:36:45.913  INFO 171392 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-10-29 20:36:45.913  INFO 171392 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-10-29 20:36:45.915  INFO 171392 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-10-29 20:36:46.096  INFO 171392 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-10-29 20:36:46.208  INFO 171392 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-10-29 20:36:46.844  INFO 171392 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-10-29 20:36:46.845  INFO 171392 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-10-29 20:36:47.174  WARN 171392 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2020-10-29 20:36:47.181  INFO 171392 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-10-29 20:36:48.182  INFO 171392 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
+2020-10-29 20:36:48.187  INFO 171392 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
+2020-10-29 20:36:48.189  INFO 171392 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
+2020-10-29 20:36:48.318  INFO 171392 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
+2020-10-29 20:36:48.320  INFO 171392 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@1211818849 wrapping com.mysql.jdbc.JDBC4Connection@4afc7d0a
+2020-10-29 20:36:48.642  INFO 171392 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-10-29 20:36:49.019  WARN 171392 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-10-29 20:36:49.156  INFO 171392 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-10-29 20:36:49.165  INFO 171392 --- [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-10-29 20:36:49.166  INFO 171392 --- [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2020-10-29 20:36:49.166  INFO 171392 --- [restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2020-10-29 20:36:49.167  INFO 171392 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -180,62 +177,46 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2020-10-20 11:35:19.850  INFO 100052 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-10-20 11:35:19.850  INFO 100052 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
-2020-10-20 11:35:19.850  INFO 100052 --- [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@445b10d3
-2020-10-20 11:35:20.105  INFO 100052 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-10-20 11:35:20.124  INFO 100052 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.655 seconds (JVM running for 6.867)
-2020-10-20 11:35:23.103  INFO 100052 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2020-10-20 11:35:23.148  INFO 100052 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/timeformate
-2020-10-20 11:35:23.149  INFO 100052 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/timeformate
-2020-10-20 11:35:23.157  INFO 100052 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-10-20 11:35:23.157  INFO 100052 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
-2020-10-20 11:35:23.157  INFO 100052 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
-2020-10-20 11:35:23.208  INFO 100052 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,请求参数:【{}】
-2020-10-20 11:35:23.227  INFO 100052 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,返回参数:【{"createTime":"2020-10-20T11:35:23.213","userId":"id1","userName":"wrh"}】
-2020-10-20 11:35:23.268  INFO 100052 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=111
-2020-10-20 11:35:24.698  INFO 100052 --- [http-nio-9988-exec-4] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/timeformate
-2020-10-20 11:35:24.698  INFO 100052 --- [http-nio-9988-exec-4] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/timeformate
-2020-10-20 11:35:24.698  INFO 100052 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-10-20 11:35:24.698  INFO 100052 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
-2020-10-20 11:35:24.699  INFO 100052 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
-2020-10-20 11:35:24.699  INFO 100052 --- [http-nio-9988-exec-4] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,请求参数:【{}】
-2020-10-20 11:35:24.699  INFO 100052 --- [http-nio-9988-exec-4] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,返回参数:【{"createTime":"2020-10-20T11:35:24.699","userId":"id1","userName":"wrh"}】
-2020-10-20 11:35:24.701  INFO 100052 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=3
-2020-10-20 11:35:25.364  INFO 100052 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/timeformate
-2020-10-20 11:35:25.364  INFO 100052 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/timeformate
-2020-10-20 11:35:25.365  INFO 100052 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-10-20 11:35:25.365  INFO 100052 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
-2020-10-20 11:35:25.365  INFO 100052 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
-2020-10-20 11:35:25.365  INFO 100052 --- [http-nio-9988-exec-3] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,请求参数:【{}】
-2020-10-20 11:35:25.365  INFO 100052 --- [http-nio-9988-exec-3] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,返回参数:【{"createTime":"2020-10-20T11:35:25.365","userId":"id1","userName":"wrh"}】
-2020-10-20 11:35:25.366  INFO 100052 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=1
-2020-10-20 11:36:01.558  INFO 97732 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 97732 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-10-20 11:36:01.565  INFO 97732 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-10-20 11:36:03.409  INFO 97732 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-10-20 11:36:03.409  INFO 97732 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-10-20 11:36:03.412  INFO 97732 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-10-20 11:36:03.412  INFO 97732 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-10-20 11:36:03.412  INFO 97732 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-10-20 11:36:03.414  INFO 97732 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-10-20 11:36:03.595  INFO 97732 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-10-20 11:36:03.704  INFO 97732 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-10-20 11:36:04.341  INFO 97732 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-10-20 11:36:04.342  INFO 97732 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-10-20 11:36:04.671  WARN 97732 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
-2020-10-20 11:36:04.678  INFO 97732 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-10-20 11:36:05.679  INFO 97732 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
-2020-10-20 11:36:05.680  INFO 97732 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
-2020-10-20 11:36:05.680  INFO 97732 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
-2020-10-20 11:36:05.799  INFO 97732 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
-2020-10-20 11:36:05.801  INFO 97732 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@1903034988 wrapping com.mysql.jdbc.JDBC4Connection@389e9bbe
-2020-10-20 11:36:06.125  INFO 97732 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-10-20 11:36:06.521  WARN 97732 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-10-20 11:36:06.673  INFO 97732 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2020-10-20 11:36:06.683  INFO 97732 --- [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-10-20 11:36:06.684  INFO 97732 --- [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
-2020-10-20 11:36:06.684  INFO 97732 --- [restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2020-10-20 11:36:06.685  INFO 97732 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2020-10-29 20:36:49.167  INFO 171392 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-10-29 20:36:49.167  INFO 171392 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2020-10-29 20:36:49.167  INFO 171392 --- [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@29672cac
+2020-10-29 20:36:49.446  INFO 171392 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-10-29 20:36:49.465  INFO 171392 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.64 seconds (JVM running for 6.846)
+2020-10-29 20:36:57.123  INFO 171392 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-10-29 20:36:57.152  INFO 171392 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/
+2020-10-29 20:36:57.152  INFO 171392 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/
+2020-10-29 20:36:57.159  INFO 171392 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-10-29 20:36:57.160  INFO 171392 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=1
+2020-10-29 20:36:57.171  INFO 171392 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/hello.html
+2020-10-29 20:36:57.171  INFO 171392 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/hello.html
+2020-10-29 20:36:57.174  INFO 171392 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-10-29 20:36:57.177  INFO 171392 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=3
+2020-10-29 20:37:15.955  INFO 172228 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 172228 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-10-29 20:37:15.957  INFO 172228 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-10-29 20:37:17.840  INFO 172228 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-29 20:37:17.840  INFO 172228 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-10-29 20:37:17.842  INFO 172228 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-10-29 20:37:17.843  INFO 172228 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-10-29 20:37:17.843  INFO 172228 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-10-29 20:37:17.845  INFO 172228 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-10-29 20:37:18.053  INFO 172228 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-10-29 20:37:18.172  INFO 172228 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-10-29 20:37:18.811  INFO 172228 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-10-29 20:37:18.811  INFO 172228 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-10-29 20:37:19.147  WARN 172228 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2020-10-29 20:37:19.155  INFO 172228 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-10-29 20:37:20.155  INFO 172228 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
+2020-10-29 20:37:20.156  INFO 172228 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
+2020-10-29 20:37:20.157  INFO 172228 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
+2020-10-29 20:37:20.276  INFO 172228 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
+2020-10-29 20:37:20.277  INFO 172228 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@2139936885 wrapping com.mysql.jdbc.JDBC4Connection@713bbf57
+2020-10-29 20:37:20.594  INFO 172228 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-10-29 20:37:21.014  WARN 172228 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-10-29 20:37:21.186  INFO 172228 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-10-29 20:37:21.195  INFO 172228 --- [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-10-29 20:37:21.196  INFO 172228 --- [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2020-10-29 20:37:21.197  INFO 172228 --- [restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2020-10-29 20:37:21.197  INFO 172228 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -243,46 +224,46 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2020-10-20 11:36:06.685  INFO 97732 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-10-20 11:36:06.685  INFO 97732 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
-2020-10-20 11:36:06.685  INFO 97732 --- [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@19b6d216
-2020-10-20 11:36:06.950  INFO 97732 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-10-20 11:36:06.970  INFO 97732 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.712 seconds (JVM running for 6.962)
-2020-10-20 11:36:10.354  INFO 97732 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2020-10-20 11:36:10.389  INFO 97732 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/timeformate
-2020-10-20 11:36:10.389  INFO 97732 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/timeformate
-2020-10-20 11:36:10.394  INFO 97732 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-10-20 11:36:10.395  INFO 97732 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
-2020-10-20 11:36:10.395  INFO 97732 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
-2020-10-20 11:36:10.436  INFO 97732 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,请求参数:【{}】
-2020-10-20 11:36:10.455  INFO 97732 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,返回参数:【{"createTime":"2020-10-20T11:36:10.441","userId":"id1","userName":"wrh"}】
-2020-10-20 11:36:10.494  INFO 97732 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=100
-2020-10-20 11:36:22.456  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 100160 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-10-20 11:36:22.457  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-10-20 11:36:24.280  INFO 100160 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-10-20 11:36:24.280  INFO 100160 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-10-20 11:36:24.283  INFO 100160 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-10-20 11:36:24.283  INFO 100160 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-10-20 11:36:24.283  INFO 100160 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-10-20 11:36:24.285  INFO 100160 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-10-20 11:36:24.466  INFO 100160 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-10-20 11:36:24.581  INFO 100160 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-10-20 11:36:25.251  INFO 100160 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2020-10-20 11:36:25.253  INFO 100160 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2020-10-20 11:36:25.648  WARN 100160 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
-2020-10-20 11:36:25.656  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-10-20 11:36:26.657  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
-2020-10-20 11:36:26.658  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
-2020-10-20 11:36:26.658  INFO 100160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
-2020-10-20 11:36:26.776  INFO 100160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
-2020-10-20 11:36:26.778  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@1339560731 wrapping com.mysql.jdbc.JDBC4Connection@340067e
-2020-10-20 11:36:27.112  INFO 100160 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-10-20 11:36:27.546  WARN 100160 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-10-20 11:36:27.696  INFO 100160 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2020-10-20 11:36:27.705  INFO 100160 --- [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-10-20 11:36:27.706  INFO 100160 --- [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
-2020-10-20 11:36:27.707  INFO 100160 --- [restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2020-10-20 11:36:27.707  INFO 100160 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2020-10-29 20:37:21.197  INFO 172228 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-10-29 20:37:21.197  INFO 172228 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2020-10-29 20:37:21.198  INFO 172228 --- [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@7aa03a47
+2020-10-29 20:37:21.503  INFO 172228 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-10-29 20:37:21.524  INFO 172228 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.896 seconds (JVM running for 7.238)
+2020-10-29 20:37:27.761  INFO 172228 --- [http-nio-9988-exec-2] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-10-29 20:37:27.791  INFO 172228 --- [http-nio-9988-exec-2] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/
+2020-10-29 20:37:27.792  INFO 172228 --- [http-nio-9988-exec-2] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/
+2020-10-29 20:37:27.798  INFO 172228 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-10-29 20:37:27.799  INFO 172228 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=0
+2020-10-29 20:37:27.809  INFO 172228 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/hello.html
+2020-10-29 20:37:27.809  INFO 172228 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/hello.html
+2020-10-29 20:37:27.811  INFO 172228 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-10-29 20:37:27.814  INFO 172228 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=3
+2020-10-29 20:38:11.346  INFO 170916 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 170916 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-10-29 20:38:11.346  INFO 170916 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-10-29 20:38:13.341  INFO 170916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-29 20:38:13.342  INFO 170916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-10-29 20:38:13.344  INFO 170916 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-10-29 20:38:13.344  INFO 170916 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-10-29 20:38:13.344  INFO 170916 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-10-29 20:38:13.346  INFO 170916 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-10-29 20:38:13.519  INFO 170916 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
+2020-10-29 20:38:13.628  INFO 170916 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-10-29 20:38:14.271  INFO 170916 --- [restartedMain] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-10-29 20:38:14.273  INFO 170916 --- [restartedMain] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-10-29 20:38:14.599  WARN 170916 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2020-10-29 20:38:14.606  INFO 170916 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-10-29 20:38:15.606  INFO 170916 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
+2020-10-29 20:38:15.607  INFO 170916 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
+2020-10-29 20:38:15.608  INFO 170916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
+2020-10-29 20:38:15.727  INFO 170916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
+2020-10-29 20:38:15.728  INFO 170916 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@1797429174 wrapping com.mysql.jdbc.JDBC4Connection@24260405
+2020-10-29 20:38:16.052  INFO 170916 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-10-29 20:38:16.487  WARN 170916 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-10-29 20:38:16.634  INFO 170916 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-10-29 20:38:16.643  INFO 170916 --- [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-10-29 20:38:16.644  INFO 170916 --- [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2020-10-29 20:38:16.644  INFO 170916 --- [restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2020-10-29 20:38:16.645  INFO 170916 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -290,103 +271,8 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2020-10-20 11:36:27.707  INFO 100160 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-10-20 11:36:27.707  INFO 100160 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
-2020-10-20 11:36:27.707  INFO 100160 --- [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@3dfa15d5
-2020-10-20 11:36:27.974  INFO 100160 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-10-20 11:36:27.993  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.844 seconds (JVM running for 7.026)
-2020-10-20 11:38:00.965  INFO 100160 --- [http-nio-9988-exec-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2020-10-20 11:38:00.996  INFO 100160 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /mynetty/timeformate
-2020-10-20 11:38:00.996  INFO 100160 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/mynetty/timeformate
-2020-10-20 11:38:01.003  INFO 100160 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
-2020-10-20 11:38:01.003  INFO 100160 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
-2020-10-20 11:38:01.003  INFO 100160 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
-2020-10-20 11:38:01.047  INFO 100160 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,请求参数:【{}】
-2020-10-20 11:38:01.065  INFO 100160 --- [http-nio-9988-exec-1] com.wrh.aspect.RequestAspect             : 请求源IP:【127.0.0.1】,请求URL:【http://127.0.0.1:9988/mynetty/timeformate】,返回参数:【{"createTime":"2020-10-20T11:38:01.052","userId":"id1","userName":"wrh"}】
-2020-10-20 11:38:01.104  INFO 100160 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=101
-2020-10-20 14:38:31.244  INFO 100160 --- [Thread-19] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-10-20 14:38:31.253  INFO 100160 --- [Thread-19] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2020-10-20 14:38:31.253  INFO 100160 --- [Thread-19] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-10-20 14:38:31.254  INFO 100160 --- [Thread-19] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2020-10-20 14:38:32.383  INFO 100160 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Shutdown initiated...
-2020-10-20 14:38:32.389  INFO 100160 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Shutdown completed.
-2020-10-20 14:38:32.552  INFO 100160 --- [localhost-startStop-2] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
-2020-10-20 14:38:33.197  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 100160 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-10-20 14:38:33.197  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-10-20 14:38:35.394  INFO 100160 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-10-20 14:38:35.395  INFO 100160 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-10-20 14:38:35.425  INFO 100160 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-10-20 14:38:35.426  INFO 100160 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-10-20 14:38:35.426  INFO 100160 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-10-20 14:38:35.427  INFO 100160 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-10-20 14:38:35.651  INFO 100160 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-10-20 14:38:35.804  INFO 100160 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-10-20 14:38:36.522  WARN 100160 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
-2020-10-20 14:38:36.534  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-10-20 14:38:37.534  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
-2020-10-20 14:38:37.534  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
-2020-10-20 14:38:37.534  INFO 100160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
-2020-10-20 14:38:37.540  INFO 100160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
-2020-10-20 14:38:37.540  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@1796249982 wrapping com.mysql.jdbc.JDBC4Connection@6cf9bdda
-2020-10-20 14:38:37.660  INFO 100160 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-10-20 14:38:37.769  WARN 100160 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-10-20 14:38:37.817  INFO 100160 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2020-10-20 14:38:37.818  INFO 100160 --- [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-10-20 14:38:37.818  INFO 100160 --- [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
-2020-10-20 14:38:37.819  INFO 100160 --- [restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2020-10-20 14:38:37.819  INFO 100160 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-10-20 14:38:37.819  INFO 100160 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-10-20 14:38:37.819  INFO 100160 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
-2020-10-20 14:38:37.819  INFO 100160 --- [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@5677ecc8
-2020-10-20 14:38:37.972  INFO 100160 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-10-20 14:38:37.978  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.125 seconds (JVM running for 10937.103)
-2020-10-20 14:39:14.810  INFO 100160 --- [Thread-28] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-10-20 14:39:14.811  INFO 100160 --- [Thread-28] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2020-10-20 14:39:14.811  INFO 100160 --- [Thread-28] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-10-20 14:39:14.811  INFO 100160 --- [Thread-28] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2020-10-20 14:39:15.918  INFO 100160 --- [Thread-28] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Shutdown initiated...
-2020-10-20 14:39:15.922  INFO 100160 --- [Thread-28] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Shutdown completed.
-2020-10-20 14:39:16.168  INFO 100160 --- [localhost-startStop-2] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
-2020-10-20 14:39:16.464  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 100160 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2020-10-20 14:39:16.464  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2020-10-20 14:39:17.646  INFO 100160 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-10-20 14:39:17.646  INFO 100160 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2020-10-20 14:39:17.647  INFO 100160 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2020-10-20 14:39:17.648  INFO 100160 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-10-20 14:39:17.648  INFO 100160 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-10-20 14:39:17.648  INFO 100160 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2020-10-20 14:39:17.708  INFO 100160 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/mynetty]       : Initializing Spring embedded WebApplicationContext
-2020-10-20 14:39:17.747  INFO 100160 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2020-10-20 14:39:17.931  WARN 100160 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
-2020-10-20 14:39:17.936  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : 开始启动服务端的服务!
-2020-10-20 14:39:18.937  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : >>> profile: []
-2020-10-20 14:39:18.937  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : 开始检查数据库的服务!
-2020-10-20 14:39:18.937  INFO 100160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
-2020-10-20 14:39:18.943  INFO 100160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
-2020-10-20 14:39:18.944  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@1695043279 wrapping com.mysql.jdbc.JDBC4Connection@6b396bc8
-2020-10-20 14:39:19.057  INFO 100160 --- [restartedMain] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2020-10-20 14:39:19.174  WARN 100160 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2020-10-20 14:39:19.220  INFO 100160 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2020-10-20 14:39:19.221  INFO 100160 --- [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-10-20 14:39:19.221  INFO 100160 --- [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
-2020-10-20 14:39:19.221  INFO 100160 --- [restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2020-10-20 14:39:19.221  INFO 100160 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-10-20 14:39:19.221  INFO 100160 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-10-20 14:39:19.221  INFO 100160 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
-2020-10-20 14:39:19.221  INFO 100160 --- [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@41a83eae
-2020-10-20 14:39:19.374  INFO 100160 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-10-20 14:39:19.382  INFO 100160 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 2.959 seconds (JVM running for 10978.508)
+2020-10-29 20:38:16.645  INFO 170916 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-10-29 20:38:16.645  INFO 170916 --- [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2020-10-29 20:38:16.645  INFO 170916 --- [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@29bbdd5c
+2020-10-29 20:38:16.914  INFO 170916 --- [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-10-29 20:38:16.937  INFO 170916 --- [restartedMain] com.wrh.MynettyApplication               : Started MynettyApplication in 5.881 seconds (JVM running for 7.103)

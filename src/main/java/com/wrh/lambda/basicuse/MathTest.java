@@ -66,6 +66,7 @@ public class MathTest {
         list.add(student2);
         list.add(student3);
         list.add(student4);
+        /** map的骚操作  合并计算  分组计算*/
 
         Map<String, Integer> map = new HashMap<>();
         list.forEach(e->map.merge(e.getName(),e.getGrade(),Integer::sum));

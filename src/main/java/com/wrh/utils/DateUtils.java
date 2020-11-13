@@ -4,6 +4,7 @@ package com.wrh.utils;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.joda.time.DateTime;
 import org.junit.Test;
@@ -12,8 +13,10 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * 类DateUtils.java的实现描述：时间帮助类
@@ -180,6 +183,44 @@ public class DateUtils {
     public static String getSharpTime(int i, String ds) {
         LocalDateTime time = LocalDateTime.parse(ds+" "+"00:00:00", DateTimeFormatter.ofPattern(DATE_PATTERN_LONG)).plusHours(i);
         return time.format(DateTimeFormatter.ofPattern(DATE_PATTERN_LONG));
+    }
+
+    public static List<String> getDsListFromPeriod(String start, String end){
+        List<String> list = new ArrayList<>();
+        LocalDate startDate = null;
+        LocalDate endDate = null;
+        try {
+            startDate = LocalDate.parse(start);
+            endDate = LocalDate.parse(end);
+        } catch (Exception e) {
+            return list;
+        }
+
+        if (ObjectUtils.equals(start, end)) {
+            list.add(start);
+            return list;
+        }
+
+        long distance = ChronoUnit.DAYS.between(startDate, endDate);
+        if (distance < 1) {
+            return list;
+        }
+        Stream.iterate(startDate, d -> {
+            return d.plusDays(1);
+        }).limit(distance + 1).forEach(f -> {
+            list.add(f.toString());
+        });
+        return list;
+    }
+
+    public static long daysBetweenPeriod(String start, String end){
+        LocalDate d1 = LocalDate.parse(start,DateTimeFormatter.ofPattern(DATE_PATTERN));
+        LocalDate d2 = LocalDate.parse(end,DateTimeFormatter.ofPattern(DATE_PATTERN));
+        return Math.abs(ChronoUnit.DAYS.between(d1,d2));
+    }
+
+    public static void main(String[] args) {
+        System.out.println(daysBetweenPeriod("2020-11-01", "2020-11-03"));
     }
 
 }

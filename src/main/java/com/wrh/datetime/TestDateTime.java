@@ -10,6 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Created by wrh
@@ -132,5 +133,21 @@ public class TestDateTime {
         int dayOfWeek = dateTime.getDayOfWeek().getValue();
         System.out.println(dayOfWeek);
         
+    }
+
+    @Test
+    public void Test138() {
+        LocalDate now = LocalDate.now();
+
+        LocalDate tomorrow = now.plusDays(1);
+
+        List<String> ds = DateUtils.getDsListFromPeriod(now.toString(), tomorrow.toString());
+
+        System.out.println(ds);
+
+        String dsStr = "2020-11-03";
+        LocalDate date = LocalDate.parse(dsStr);
+        System.out.println(date);
+
     }
 }

@@ -1,5 +1,7 @@
 package com.wrh.bitmap;
 
+import org.junit.Test;
+
 import java.util.BitSet;
 import java.util.HashSet;
 import java.util.Set;
@@ -37,5 +39,23 @@ public class TestBitMap {
         int[] t = {1,2,3,4,5,6,7,8,3,4};
         Set<Integer> t2 = test(t);
         System.out.println(t2);
+    }
+
+    @Test
+    public void Test43() {
+        int a = 11;
+        int b = a >> 3;
+        System.out.println(b);
+
+        int c = 1234123;
+        int d = c % 8;
+        int e = c & 0x07;
+        System.out.println(d);
+        System.out.println(e);
+
+        int f = 7;
+        int g = 1 << f;
+        System.out.println(g);
+
     }
 }

@@ -1,10 +1,16 @@
 package com.wrh.datetime.utils;
 
 
+import org.apache.commons.lang3.ObjectUtils;
 import org.joda.time.DateTime;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * 类DateUtils.java的实现描述：时间帮助类
@@ -95,6 +101,35 @@ public class DateUtils {
     public static String getQualifierByMinute(Long timeLong) {
         Long minute = getMinuteByDatetime(timeLong);
         return "minute"+ minute;
+    }
+
+    public static List<String> getDsListFromPeriod(String start, String end){
+        List<String> list = new ArrayList<>();
+        LocalDate startDate = null;
+        LocalDate endDate = null;
+        try {
+            startDate = LocalDate.parse(start);
+            endDate = LocalDate.parse(end);
+        } catch (Exception e) {
+
+            return list;
+        }
+
+        if (ObjectUtils.equals(start, end)) {
+            list.add(start);
+            return list;
+        }
+
+        long distance = ChronoUnit.DAYS.between(startDate, endDate);
+        if (distance < 1) {
+            return list;
+        }
+        Stream.iterate(startDate, d -> {
+            return d.plusDays(1);
+        }).limit(distance + 1).forEach(f -> {
+            list.add(f.toString());
+        });
+        return list;
     }
 
 

@@ -2,8 +2,13 @@ package com.wrh.utils;
 
 import com.alibaba.fastjson.JSON;
 import com.wrh.utils.test.Dog;
+import net.sourceforge.pinyin4j.PinyinHelper;
+import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
+import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
+import org.apache.commons.collections.CollectionUtils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -24,9 +29,9 @@ public class ChineseCharacterUtil {
      * @param isFull  是否全拼 true:表示全拼 false表示：首字母
      * @return 全拼或者首字母大写字符窜
      */
-    /*public static String getUpperCase(String chinese, boolean isFull) {
+    public static String getUpperCase(String chinese, boolean isFull) {
         return convertHanzi2Pinyin(chinese, isFull).toUpperCase();
-    }*/
+    }
     
     /**
      * 获取汉字首字母或全拼小写字母
@@ -35,9 +40,22 @@ public class ChineseCharacterUtil {
      * @param isFull  是否全拼 true:表示全拼 false表示：首字母
      * @return 全拼或者首字母小写字符窜
      */
-    /*public static String getLowerCase(String chinese, boolean isFull) {
+    public static String getLowerCase(String chinese, boolean isFull) {
         return convertHanzi2Pinyin(chinese, isFull).toLowerCase();
-    }*/
+    }
+
+    public static List<String> getLowerCaseWithMultiTone(String chinese, boolean isFull) {
+        List<String> result =  convertHanzi2PinyinWithMultiTone(chinese, isFull);
+        System.out.println(" quanbu: "+result);
+        if(CollectionUtils.isNotEmpty(result)){
+            result.stream().forEach(e->{
+                e = e.toLowerCase();
+            });
+            return result;
+        }else {
+            return new ArrayList<>();
+        }
+    }
     
     /**
      * 将汉字转成拼音
@@ -48,12 +66,12 @@ public class ChineseCharacterUtil {
      * @param isFull 是否全拼 true:表示全拼 false表示：首字母
      * @return 拼音
      */
-    /*private static String convertHanzi2Pinyin(String hanzi, boolean isFull) {
-        *//***
+    private static String convertHanzi2Pinyin(String hanzi, boolean isFull) {
+        /***
          * ^[\u2E80-\u9FFF]+$ 匹配所有东亚区的语言
          * ^[\u4E00-\u9FFF]+$ 匹配简体和繁体
-         * ^[\u4E00-\u9FA5]+$ 匹配简体
-         *//*
+         * ^[\u4E00-\u9FA5]+$ 匹配简体*/
+
         String regExp = "^[\u4E00-\u9FFF]+$";
         StringBuffer sb = new StringBuffer();
         if (hanzi == null || "".equals(hanzi.trim())) {
@@ -75,7 +93,73 @@ public class ChineseCharacterUtil {
             }
         }
         return sb.toString();
-    }*/
+    }
+
+    private static List<String> convertHanzi2PinyinWithMultiTone(String hanzi, boolean isFull) {
+        /***
+         * ^[\u2E80-\u9FFF]+$ 匹配所有东亚区的语言
+         * ^[\u4E00-\u9FFF]+$ 匹配简体和繁体
+         * ^[\u4E00-\u9FA5]+$ 匹配简体*/
+
+        String regExp = "^[\u4E00-\u9FFF]+$";
+//        StringBuffer sb = new StringBuffer();
+        if (hanzi == null || "".equals(hanzi.trim())) {
+            return new ArrayList<>();
+        }
+        String pinyin = "";
+        List<String> pingyinList = new ArrayList<>();
+        for (int i = 0; i < hanzi.length(); i++) {
+            List<String> treeList = new ArrayList<>();
+
+            char unit = hanzi.charAt(i);
+            //是汉字，则转拼音
+            if (match(String.valueOf(unit), regExp)) {
+//                pinyin = convertSingleHanzi2Pinyin(unit);
+                List<String> pinyins = convertSingleHanzi2PinyinWithMultiTone(unit);
+                System.out.println("pinyins: "+pinyins);
+                if(CollectionUtils.isNotEmpty(pingyinList)){
+                    List<String> total = new ArrayList<>();
+                    for (String py : pingyinList) {
+                        for(String suffix: pinyins){
+                            if (isFull){
+                                total.add(py + suffix);
+                            }else {
+                                total.add(py + suffix.charAt(0));
+                            }
+
+                        }
+                    }
+                    pingyinList.clear();
+                    pingyinList.addAll(total);
+                    System.out.println("1- pingyinList: " + pingyinList);
+                }else {
+                    for(String suffix: pinyins){
+                        if (isFull){
+                            pingyinList.add(suffix);
+                        }else {
+                            pingyinList.add(String.valueOf(suffix.charAt(0)));
+                        }
+                    }
+                    System.out.println("2- pingyinList: " + pingyinList);
+                }
+                System.out.println("3- pingyinList: " + pingyinList);
+            } else {
+//                sb.append(unit);
+                if(CollectionUtils.isNotEmpty(pingyinList)){
+                    List<String> total = new ArrayList<>();
+                    for (String py : pingyinList) {
+                        total.add(py.concat(String.valueOf(unit)));
+                    }
+                    pingyinList.clear();
+                    pingyinList.addAll(total);
+                }else {
+                    pingyinList.add(String.valueOf(unit));
+                }
+                System.out.println("4- pingyinList: " + pingyinList);
+            }
+        }
+        return pingyinList;
+    }
     
     /**
      * 将单个汉字转成拼音
@@ -83,7 +167,7 @@ public class ChineseCharacterUtil {
      * @param hanzi 汉字字符
      * @return 拼音
      */
-   /* private static String convertSingleHanzi2Pinyin(char hanzi) {
+    private static String convertSingleHanzi2Pinyin(char hanzi) {
         HanyuPinyinOutputFormat outputFormat = new HanyuPinyinOutputFormat();
         outputFormat.setToneType(HanyuPinyinToneType.WITHOUT_TONE);
         String[] res;
@@ -96,7 +180,23 @@ public class ChineseCharacterUtil {
             return "";
         }
         return sb.toString();
-    }*/
+    }
+
+    public static List<String> convertSingleHanzi2PinyinWithMultiTone(char hanzi) {
+        HanyuPinyinOutputFormat outputFormat = new HanyuPinyinOutputFormat();
+        outputFormat.setToneType(HanyuPinyinToneType.WITHOUT_TONE);
+        String[] res;
+        StringBuffer sb = new StringBuffer();
+        try {
+            res = PinyinHelper.toHanyuPinyinStringArray(hanzi, outputFormat);
+            sb.append(res[0]);//对于多音字，只用第一个拼音
+            List<String> result = Arrays.asList(res);
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+    }
     
     /***
      * 匹配
