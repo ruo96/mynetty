@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @Created by wrh
@@ -909,6 +910,60 @@ public class TestMap {
         Map<String, Integer> map = new HashMap<>();
         map.put("w1",1);
 
+
+    }
+    
+    @Test
+    public void Test916() {
+        Long a = 100L;
+        Long b = 33L;
+        Double c = (double) a / (double) b;
+        System.out.println(c);
+        
+    }
+
+    /**
+     * map合并  多种方法
+     */
+    @Test
+    public void Test925() {
+        Map<String, String> map1 = new HashMap<>();
+        Map<String, String> map2 = new HashMap<>();
+
+        map1.put("w1","r1");
+        map1.put("w2","r2");
+        map1.put("w3","r3");
+
+        map2.put("w3","r3");
+        map2.put("w4","r4");
+        map2.put("w5","r5");
+
+        /** 0 */
+        Map<String,String> map0 = new HashMap<>(map1);
+        map2.forEach((k,v)->map0.merge(k,v,(v1,v2)->v2));
+        System.out.println("map0: " + map0);
+
+        /** 1 */
+        Map<String,String> map3 = Stream.concat(map1.entrySet().stream(), map2.entrySet().stream())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (v1,v2) -> v2));
+        System.out.println(map3);
+
+        /** 2 */
+        Map<String, String> map4 = Stream.of(map1,map2)
+                .flatMap(map-> map.entrySet().stream())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (v1,v2)->v2));
+        System.out.println(map4);
+
+        /** 合并并且反转*/
+        Map<String, String> map5 = Stream.of(map1,map2)
+                .flatMap(map-> map.entrySet().stream())
+                .collect(Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey, (v1,v2)->v2));
+        System.out.println("fanzhuan: "+map5);
+
+        /** 增强库  需要找下再哪个jar包里面*/
+//        Map<String, String> map6 = EntryStream.of(map1)
+//                .append(EntryStream.of(map2))
+//                .toMap((e1, e2) -> e1);
 
     }
 }

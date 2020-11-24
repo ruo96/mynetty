@@ -1,7 +1,7 @@
 package com.wrh.TimeCalculate;
 
 import com.alibaba.fastjson.JSON;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+import com.netflix.servo.annotations.DataSourceType;
 import com.wrh.collection.map.DateUtil;
 import com.wrh.utils.DateUtils;
 import com.wrh.utils.RowKeyHashUtils;
@@ -10,11 +10,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
 import org.junit.Test;
+import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 import org.springframework.util.StopWatch;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 import java.time.temporal.TemporalField;
 import java.time.temporal.WeekFields;
@@ -1034,6 +1034,15 @@ public class TestTime {
         TemporalField fieldISO = WeekFields.of(Locale.FRANCE).dayOfWeek();
         return date.with(fieldISO, 1);
 
+    }
+
+    @Test
+    public void Test1040() {
+        System.out.println(LocalDateTime.now());
+//        OperationType.
+        AbstractRoutingDataSource dataSource ;
+        DataSourceType dataSourceType;
+//        dataSourceType
     }
 
 

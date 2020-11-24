@@ -31,12 +31,14 @@ public class HystrixServiceImpl implements HystrixService {
             }*/)
     public String hello() {
         log.info(">>> begin enter sleep, now: {}", LocalDateTime.now().toString());
-        try {
+        throw new NullPointerException();
+        /*try {
+
             TimeUnit.SECONDS.sleep(10);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
-        return "hello";
+        }*/
+//        return "hello";
     }
 
     public String hystrixFallback() {

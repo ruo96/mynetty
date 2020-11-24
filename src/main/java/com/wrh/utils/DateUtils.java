@@ -219,6 +219,12 @@ public class DateUtils {
         return Math.abs(ChronoUnit.DAYS.between(d1,d2));
     }
 
+    public static LocalDate getAfterNDaysByDs(String ds, Integer NDays){
+        LocalDate date = LocalDate.parse(ds,DateTimeFormatter.ofPattern(DATE_PATTERN));
+        LocalDate nDs = date.plusDays(NDays);
+        return nDs;
+    }
+
     public static void main(String[] args) {
         System.out.println(daysBetweenPeriod("2020-11-01", "2020-11-03"));
     }

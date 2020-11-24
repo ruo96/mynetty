@@ -12,6 +12,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import static com.wrh.collection.map.DateUtil.DATE_FORMAT;
+
 /**
  * @Created by wrh
  * @Description:
@@ -150,4 +152,38 @@ public class TestDateTime {
         System.out.println(date);
 
     }
+
+    @Test
+    public void Test155() {
+        String ds = "2020-11-12";
+        LocalDate futureEnd = com.wrh.utils.DateUtils.getAfterNDaysByDs(ds, 60);
+        String futureDs = futureEnd.isBefore(LocalDate.now()) ? futureEnd.toString() : LocalDate.now().minusDays(1).toString();
+        System.out.println(futureDs);
+
+
+
+    }
+
+    @Test
+    public void Test166() {
+        String ds1 = "2020-01-01";
+        String ds2 = "2020-05-01";
+        LocalDate date1 = LocalDate.parse(ds1,DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDate date2 = LocalDate.parse(ds2,DateTimeFormatter.ofPattern(DATE_FORMAT));
+        System.out.println(date1.toString() + "----" + date2.toString());
+        handleDate(date1, date2);
+
+
+        System.out.println(date1.toString() + "----" + date2.toString());
+
+
+    }
+
+    private void handleDate(LocalDate date1, LocalDate date2) {
+        if(date2.isAfter(date1)){
+            System.out.println("after");
+            date1 = date2;
+        }
+    }
+
 }

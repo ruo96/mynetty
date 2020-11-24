@@ -1,5 +1,6 @@
 package com.wrh.list;
 
+import cn.hutool.core.util.ArrayUtil;
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
@@ -13,6 +14,7 @@ import com.wrh.utils.GsonUtils;
 import com.wrh.utils.test.Dog;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
@@ -1339,6 +1341,159 @@ public class TestList {
                 System.out.println("lambda pay null");
             }
         });
+
+    }
+
+    @Test
+    public void Test1346() {
+        Student s = new Student();
+        System.out.println(s);
+
+    }
+
+    /**
+     * 数组去空
+     */
+    @Test
+    public void Test1353() {
+        Long[] a = new Long[5];
+        a[0] = 1L;
+        a[1] = 2L;
+
+        Long[] b = new Long[5];
+        b[0] = 1L;
+        b[1] = 2L;
+        System.out.println(Arrays.toString(a));
+        handleNullValue(a);
+
+        System.out.println(Arrays.toString(a));
+//        removeNullValueByArray(b);
+//        System.out.println(Arrays.toString(b));
+    }
+
+    private void handleNullValue(Long[] a) {
+        a = removeNullValue(a);
+    }
+
+    Long[] removeNullValue(Long[] a){
+
+        List<Long> list= new ArrayList<>(a.length);
+        for (Long str : a) {
+            list.add(str);
+        }
+
+        // 删除空的值
+        while (list.remove(null)){};
+
+        /*Long[] list2 = list.toArray(new Long[list.size()]);
+        return list2;*/
+
+        return list.toArray(new Long[list.size()]);
+    }
+
+    @Test
+    public void Test1393() {
+        Long[] a = new Long[1];
+//        a[0] = 1L;
+//        a[1] = 2L;
+//        a[3] = 3L;
+//        a[6] = 6L;
+//        a[8] = 8L;
+        System.out.println(Arrays.toString(a));
+
+        Long[] b = removeNullValueSmart(a);
+        System.out.println(Arrays.toString(b));
+    }
+
+    /** 中间的null值补零，最后的去除, 数组去空*/
+    Long[] removeNullValueSmart(Long[] a){
+
+        int length = a.length;
+        for (int i = 0; i < length ; i++) {
+            if(Objects.isNull(a[i]) && i < (length-1)){
+                a[i] = 0L;
+            }
+        }
+        if(Objects.isNull(a[length-1])){
+            Long[] b = new Long[length-1];
+            /*for (int i = 0; i < length-1; i++) {
+                b[i] = a[i];
+            }*/
+            System.arraycopy(a,0,b,0,length-1);
+            return b;
+        }
+        return a;
+    }
+
+    @Test
+    public void Test1429() {
+        Long[] a = new Long[10];
+        a[0] = 1L;
+        a[1] = 2L;
+        a[3] = 3L;
+        a[6] = 6L;
+        a[8] = 8L;
+        System.out.println(Arrays.toString(a));
+        ArrayUtils.removeElement(a,null);
+        System.out.println(Arrays.toString(ArrayUtils.removeElement(a,null)));
+
+
+    }
+
+    void removeNullValueByArray(Long[] a){
+
+        List<Long> list= new ArrayList<>(a.length);
+        for (Long str : a) {
+            list.add(str);
+        }
+
+        // 删除空的值
+        while (list.remove(null)){};
+
+        Long[] list2 = list.toArray(new Long[list.size()]);
+        a = new Long[list.size()];
+        a = list2;
+    }
+
+    @Test
+    public void Test1398() {
+        LinkedList<String> list = new LinkedList<>();
+        list.add("w1");
+        list.add("w2");
+        list.add("w3");
+        System.out.println(list);
+        list.peek();
+        System.out.println(list.peek());
+        System.out.println(list.peek());
+        list.peek();
+        System.out.println(list);
+    }
+
+    /**
+     * LinkedList的遍历方法
+     */
+    @Test
+    public void Test1415() {
+        LinkedList<String> list = new LinkedList<>();
+        list.add("w1");
+        list.add("w2");
+        list.add("w3");
+
+        System.out.println("第1种遍历方法");
+        for (int size = list.size(), i = 0; i < size; i++) {
+            System.out.println(list.get(i));
+        }
+
+        System.out.println("第2种遍历方法");
+        for (String str: list) {
+            System.out.println(str);
+        }
+
+        System.out.println("第3种遍历方法");
+        Iterator iter = list.iterator();
+        while (iter.hasNext()) {
+            System.out.println(iter.next());
+        }
 
     }
 

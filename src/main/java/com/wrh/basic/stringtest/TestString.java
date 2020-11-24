@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 /**
  * @Classname TestString
@@ -33,5 +34,26 @@ public class TestString {
         a = "456";
         b.add(a);
         System.out.println(b);
+    }
+
+    /**
+     * 字符拼接  StringJoiner的用法
+     */
+    @Test
+    public void Test39() {
+        StringJoiner stringJoiner = new StringJoiner(",");
+        stringJoiner.add("hello");
+        stringJoiner.add("my");
+        stringJoiner.add("world");
+        System.out.println(stringJoiner.toString());
+    }
+
+    @Test
+    public void Test52() {
+        StringJoiner stringJoiner = new StringJoiner(",","[","]");
+        stringJoiner.add("hello");
+        stringJoiner.add("my");
+        stringJoiner.add("world");
+        System.out.println(stringJoiner.toString());
     }
 }
