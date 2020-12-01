@@ -54,12 +54,24 @@ spring:
       max-lifetime: 1800000
       connection-timeout: 30000
       connection-test-query: SELECT 1
+  rabbitmq:
+    host: 127.0.0.1
+    username: admin
+    password: admin
 
 
 server:
   port: 9988
   servlet:
     context-path: /mynetty
+
+zipkin:
+  serviceName: myzipkin
+  url: http://127.0.0.1:9411
+  connectTimeout: 6000
+  readTimeout: 6000
+  flushInterval: 1
+  compressionEnabled: true
 
 
 # logging

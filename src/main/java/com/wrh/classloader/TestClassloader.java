@@ -5,6 +5,9 @@ import com.wrh.classloader.vo.ClassB;
 import lombok.extern.slf4j.Slf4j;
 
 import org.junit.Test;
+import sun.misc.Launcher;
+
+import java.net.URL;
 
 /**
  * @Created by wrh
@@ -50,5 +53,34 @@ public class TestClassloader {
         log.info("===> classloader: {}", TestClassloader.class.getClassLoader());
         log.info("===> classloader : {}", TestClassloader.class.getClassLoader().getParent());
         log.info("===> classloader: {}", TestClassloader.class.getClassLoader().getParent().getParent());
+    }
+
+    @Test
+    public void Test56() {
+
+
+    }
+
+    public static void main(String[] args) {
+        ClassLoader appClassLoader = ClassLoader.getSystemClassLoader();
+        System.out.println(appClassLoader);
+        ClassLoader extClassloader = appClassLoader.getParent();
+        System.out.println(extClassloader);
+        ClassLoader bootstrapLoader = appClassLoader.getParent();
+        System.out.println(bootstrapLoader);
+
+        URL[] urls = Launcher.getBootstrapClassPath().getURLs();
+        for (int i = 0; i < urls.length; i++) {
+            System.out.println(urls[i]);
+        }
+
+        System.out.println("extClassloader加载以下文件：");
+        System.out.println(System.getProperty("java.ext.dirs"));
+
+        System.out.println();
+        System.out.println("appClassLoader加载以下文件：");
+        System.out.println(System.getProperty("java.class.path"));
+
+
     }
 }

@@ -232,6 +232,11 @@
 		</dependency>
 		<!-- Test -->
 		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>4.3.7.RELEASE</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -685,6 +690,49 @@
 			<artifactId>pinyin4j</artifactId>
 			<version>2.5.1</version>
 		</dependency>
+
+		<!--查看字节长度-->
+		<dependency>
+			<groupId>org.openjdk.jol</groupId>
+			<artifactId>jol-core</artifactId>
+			<version>0.14</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!--  rabbitmq-->
+		<dependency>
+			<groupId>com.rabbitmq</groupId>
+			<artifactId>amqp-client</artifactId>
+			<version>4.0.2</version>
+		</dependency>
+		<!-- springboot rabbitmq-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+
+		<!-- zipkin-->
+		<dependency>
+			<groupId>io.zipkin.brave</groupId>
+			<artifactId>brave-core</artifactId>
+			<version>3.10.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.zipkin.brave</groupId>
+			<artifactId>brave-spancollector-http</artifactId>
+			<version>3.10.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.zipkin.brave</groupId>
+			<artifactId>brave-web-servlet-filter</artifactId>
+			<version>3.10.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.zipkin.brave</groupId>
+			<artifactId>brave-okhttp</artifactId>
+			<version>3.10.0</version>
+		</dependency>
+		<!-- zipkin-->
 
 
 		<!--<dependency>

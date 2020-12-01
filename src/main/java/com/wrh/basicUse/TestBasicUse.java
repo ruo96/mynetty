@@ -655,4 +655,16 @@ public class TestBasicUse {
 
     }
 
+    @Test
+    public void Test659() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i);
+        }
+        System.out.println("===============");
+        for (int i = 0; i < 5; ++i) {
+            System.out.println(i);
+        }
+
+    }
+
 }

@@ -3,6 +3,7 @@ package com.wrh.bean;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -66,6 +67,13 @@ public class TestBean implements BeanNameAware {
         ClassPathXmlApplicationContext pathXmlApplicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         TestBean testBean = (TestBean) pathXmlApplicationContext.getBean("testBean");
         pathXmlApplicationContext.close();
+    }
+
+    @Test
+    public void Test72() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("");
+        context.getBean("id");
+
     }
 
 }
