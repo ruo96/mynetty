@@ -427,6 +427,15 @@ public class TestInteger {
         }
      }
 
+     @Test
+     public void Test431() {
+         int a = 0x12;
+         System.out.println(a);
+         int b = 012;
+         System.out.println(b);
+
+     }
+
 
 
 }

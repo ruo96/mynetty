@@ -1497,5 +1497,30 @@ public class TestList {
 
     }
 
+    @Test
+    public void Test1501() {
+        List<Student> list = new ArrayList<>();
+        Student s1 = new Student();
+        s1.setName("w1");
+        s1.setId(1);
+        list.add(s1);
+        s1 = new Student();
+        s1.setName("w2");
+        s1.setId(2);
+        list.add(s1);
+        System.out.println(list);
+    }
+
+    @Test
+    public void Test1515() {
+        List<Object> list = new ArrayList<>();
+        list.add(1);
+        list.add("123");
+        list.add(1.1f);
+        list.add(new Object());
+        System.out.println(list);
+
+    }
+
 
 }

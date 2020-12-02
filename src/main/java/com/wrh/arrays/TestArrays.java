@@ -60,6 +60,14 @@ public class TestArrays {
     @Test
     public void Test61() {
         int[] arrayInt = {15,2,23,3};
+        System.out.println(Arrays.toString(arrayInt));
+        selectSort(arrayInt);
+        System.out.println(Arrays.toString(arrayInt));
 
     }
+
+    private void selectSort(int[] arrayInt) {
+        arrayInt[0] = 999;
+    }
+
 }
