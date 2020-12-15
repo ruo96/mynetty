@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.LongStream;
 
 /**
  * @author wuruohong
@@ -41,6 +42,14 @@ public class TestLong {
 
         System.out.println(o2.get(1) - o1.get(1));
         System.out.println(o2.get(1).compareTo(o1.get(1)));
+
+    }
+
+    @Test
+    public void Test48() {
+        LongStream.rangeClosed(0,5).forEach(e->System.out.println(e));
+        System.out.println("====================");
+        LongStream.range(0,5).forEach(e->System.out.println(e));
 
     }
 }

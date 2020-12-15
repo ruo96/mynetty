@@ -13,6 +13,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 
 import javax.sql.DataSource;
@@ -39,6 +40,9 @@ public class MynettyApplication {
 	@Autowired
     private DataSource dataSource;
 
+	@Autowired
+    private RedisTemplate redisTemplate;
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(MynettyApplication.class, args);
@@ -56,6 +60,7 @@ public class MynettyApplication {
         log.info("开始检查数据库的服务!");
         Connection conn = dataSource.getConnection();
         log.info("数据操作对象： {}", conn);
+        log.info("redis： {}", redisTemplate);
         conn.close();
 
 

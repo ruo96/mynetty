@@ -1,6 +1,7 @@
 package com.wrh.collection.set;
 
 import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -41,6 +42,14 @@ public class TestSet2 {
         list.add("789");
         System.out.println(StringUtils.join(list,"|"));
 
+
+    }
+
+    @Test
+    public void Test48() {
+        Set<Integer> set = new HashSet<>();
+        System.out.println(set.add(1));
+        System.out.println(set.add(1));
 
     }
 }

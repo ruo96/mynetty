@@ -12,10 +12,7 @@ import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @Created by wrh
@@ -433,6 +430,26 @@ public class TestInteger {
          System.out.println(a);
          int b = 012;
          System.out.println(b);
+
+     }
+
+     @Test
+     public void Test440() {
+         int i = 60;
+         int j = i >>> 4;
+         System.out.println(j);
+         System.out.println(Integer.toBinaryString(i));
+
+         int[][] arr = {{1,2},{3,4}};
+         System.out.println(Arrays.toString(arr));
+
+     }
+
+     @Test
+     public void Test449() {
+         Map<Integer,List<Student>> map = new HashMap<>();
+         Long total = map.getOrDefault(1,new ArrayList<>()).stream().mapToLong(Student::getGrade).sum();
+         System.out.println(total);
 
      }
 

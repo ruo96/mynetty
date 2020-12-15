@@ -2,10 +2,12 @@ package com.wrh.controller;
 
 import com.wrh.annotate.annotation.PassportTotal;
 import com.wrh.controller.service.HelloService;
+import com.wrh.elasticsearch.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,12 +30,54 @@ import java.util.List;
  * @Date 2020/2/27 11:32
  */
 @Slf4j
-@RestController
+//@RestController
 @PassportTotal
+@Controller
 public class HelloController {
 
     @Autowired
     private HelloService helloService;
+
+    @RequestMapping(value = "/hi")
+    public String hi(HttpServletResponse response) throws IOException {
+        log.info(">>> hi  time: {}", LocalDateTime.now());
+        return "internationalize";
+    }
+
+    @RequestMapping(value = "/himodel")
+    public String hiModel(Model model) throws IOException {
+        log.info(">>> hi model  time: {}", LocalDateTime.now());
+        Student s = new Student();
+        s.setName("w1");
+        s.setId(1);
+        s.setGrade(100);
+        s.setMoney(200L);
+        s.setTitle("title");
+        s.setFlag(true);
+
+        model.addAttribute("student", s);
+        return "modelshow";
+
+    }
+
+    /** 目前不生效*/
+    @RequestMapping(value = "/hiview")
+    public ModelAndView hiModelView() throws IOException {
+        log.info(">>> hi modelview  time: {}", LocalDateTime.now());
+        Student s = new Student();
+        s.setName("w1");
+        s.setId(1);
+        s.setGrade(100);
+        s.setMoney(200L);
+        s.setTitle("title");
+        s.setFlag(true);
+
+        log.info(">>> redirect3  time: {}", LocalDateTime.now());
+        ModelAndView model = new ModelAndView("redirect:/modelshow.html");
+        /** 这个会自动加入请求后面的参数中*/
+        model.addObject("student",s);
+        return model;
+    }
 
     @GetMapping(value = "/hello")
     public String hello(){

@@ -70,4 +70,13 @@ public class TestArrays {
         arrayInt[0] = 999;
     }
 
+    @Test
+    public void Test74() {
+        int[] arrayInt = {15,2,23,3};
+        int index = Arrays.binarySearch(arrayInt,0);
+        /** 如果为正，代表是真实存在的索引， 如果为负值，代表-1后的真实插入位置*/
+        System.out.println(index);
+
+    }
+
 }

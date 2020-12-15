@@ -79,4 +79,20 @@ public class TestEnum {
 
     }
 
+    @Test
+    public void Test83() {
+        for(SexEnum s : SexEnum.values()){
+            System.out.println(s.getKey() + "====" + s.getText());
+        }
+
+    }
+
+    @Test
+    public void Test91() {
+        for(ProfileFrequencyEnum s : ProfileFrequencyEnum.values()){
+            System.out.println(s.name() + "====" + s.getText());
+        }
+
+    }
+
 }

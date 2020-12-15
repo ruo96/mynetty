@@ -13,6 +13,20 @@ public class ListReverse {
         ListNode next;
     }
 
+    /**
+     * 递归
+     * @param head
+     * @return
+     */
+    public static ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) return head;
+        // 从下一个节点开始递归
+        ListNode reverse = reverseList(head.next);
+        head.next.next = head; // 设置下一个节点的 next 为当前节点
+        head.next = null; // 把当前节点的 next 赋值为 null，避免循环引用
+        return reverse;
+    }
+
     public ListNode reverseList1(ListNode head) {
         if (head == null){
             return null;
@@ -34,6 +48,7 @@ public class ListReverse {
 
     /**
      * 时间空间最佳   反转链表
+     * 可以通过循环的方式来实现链表反转，只是这种方法无需重复调用自身方法，只需要一个循环就搞定
      * @param head
      * @return
      */

@@ -41,7 +41,7 @@ public class TestABCbyCondition {
                 lock.lock();
                 for (int i = 0; i < 10; i++) {
                     while (count % 3 != 0)//注意这里是不等于0，也就是说在count % 3为0之前，当前线程一直阻塞状态
-                        A.await(); // A释放lock锁
+                     {A.await();} // A释放lock锁
                     System.out.print("A");
                     count++;
                     B.signal(); // A执行完唤醒B线程

@@ -24,7 +24,7 @@ public class MVCConfiguration implements WebMvcConfigurer {
      */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("redirect:/hello.html");
+//        registry.addViewController("/").setViewName("redirect:/internationalize.html");
 //        registry.addViewController("/").setViewName("redirect:/op.jpg");
     }
 

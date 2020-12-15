@@ -29,12 +29,21 @@ spring:
     host: 172.16.38.197
     password: bili@2233
     pool:
-      max-active: 60
+      max-wait: 5000
       max-idle: 10
-      max-wait: -1
-      min-idle: 0
+      min-idle: 10
+      max-active: 50
     port: 6379
     timeout: 3000
+
+  # Spring message
+  messages:
+    encoding: utf-8
+    basename: i18n/messages
+    cache-duration: 3600
+
+
+
   security:
     user:
       name: wrh
@@ -58,6 +67,10 @@ spring:
     host: 127.0.0.1
     username: admin
     password: admin
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
 
 
 server:
@@ -122,6 +135,7 @@ param:
   set: 111,222,333,111
   map1: '{"name":"zhangsan","sex":"male"}'
   map2: '{"math":"90","english":"85"}'
+
 
 
 

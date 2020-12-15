@@ -966,4 +966,12 @@ public class TestMap {
 //                .toMap((e1, e2) -> e1);
 
     }
+
+    @Test
+    public void Test971() {
+        Map<String, String> map = new HashMap<>();
+        map.put("null", "1");
+        System.out.println(map);
+
+    }
 }
