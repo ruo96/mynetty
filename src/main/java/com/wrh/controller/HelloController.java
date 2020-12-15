@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +23,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * @author wuruohong
@@ -42,6 +44,40 @@ public class HelloController {
     public String hi(HttpServletResponse response) throws IOException {
         log.info(">>> hi  time: {}", LocalDateTime.now());
         return "internationalize";
+    }
+
+    @RequestMapping(value = "/internationalize")
+    public String internationalize(HttpServletResponse response) throws IOException {
+        log.info(">>> internationalize  time: {}", LocalDateTime.now());
+        return "internationalize";
+    }
+
+    /**
+     * 动态改变返回国际化信息
+     * @param request
+     * @param lang
+     * @return
+     * @throws IOException
+     */
+    @RequestMapping(value = "/changeSessionLanauage")
+    public String changeSessionLanauage(HttpServletRequest request,String lang) throws IOException {
+        System.out.println(lang);
+
+        if("zh".equals(lang)){
+
+            //代码中即可通过以下方法进行语言设置
+
+            request.getSession().setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME,new Locale("zh","CN"));
+
+        }else if("en".equals(lang)){
+
+            //代码中即可通过以下方法进行语言设置
+
+            request.getSession().setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME,new Locale("en","US"));
+
+        }
+
+        return "redirect:/internationalize";
     }
 
     @RequestMapping(value = "/himodel")
