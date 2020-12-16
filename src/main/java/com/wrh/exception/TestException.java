@@ -2,7 +2,6 @@ package com.wrh.exception;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-import org.tukaani.xz.MemoryLimitException;
 
 /**
  * @Created by wrh

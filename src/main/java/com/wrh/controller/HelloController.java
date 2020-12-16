@@ -42,7 +42,8 @@ public class HelloController {
 
     @RequestMapping(value = "/hi")
     public String hi(HttpServletResponse response) throws IOException {
-        log.info(">>> hi  time: {}", LocalDateTime.now());
+        log.info(">>> hi time: {}", LocalDateTime.now());
+        log.info(">>> hi modify 3  time: {}", LocalDateTime.now());
         return "internationalize";
     }
 

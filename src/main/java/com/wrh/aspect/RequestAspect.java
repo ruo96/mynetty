@@ -35,7 +35,7 @@ public class RequestAspect {
     }
 
 
-    @Around("pointcut()")
+//    @Around("pointcut()")
     public Object handle(ProceedingJoinPoint joinPoint) throws Throwable {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         //IP地址

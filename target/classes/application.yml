@@ -71,12 +71,17 @@ spring:
     multipart:
       max-file-size: 100MB
       max-request-size: 100MB
+      location: e:\\pic
+
+  devtools:
+    livereload:
+      enabled: false
 
 
 server:
   port: 9988
-  servlet:
-    context-path: /mynetty
+#  servlet:
+#    context-path: /mynetty
 
 zipkin:
   serviceName: myzipkin
@@ -136,8 +141,15 @@ param:
   map1: '{"name":"zhangsan","sex":"male"}'
   map2: '{"math":"90","english":"85"}'
 
-
-
-
-
-
+shiro:
+#  开启shiro配置，默认true
+  enabled: true
+  #  开启shiro web 配置，默认true
+  web:
+    enabled: true
+  loginUrl: /login
+  successUrl: /index
+  unauthorizedUrl: /unauthorized
+  sessionManager:
+    sessionIdCookieEnabled: true
+    sessionIdUrlRewritingEnabled: true

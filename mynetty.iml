@@ -267,8 +267,6 @@
     <orderEntry type="library" name="Maven: com.thoughtworks.paranamer:paranamer:2.3" level="project" />
     <orderEntry type="library" name="Maven: com.jcraft:jsch:0.1.54" level="project" />
     <orderEntry type="library" name="Maven: org.apache.htrace:htrace-core4:4.0.1-incubating" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.commons:commons-compress:1.4.1" level="project" />
-    <orderEntry type="library" name="Maven: org.tukaani:xz:1.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-mapreduce-client-core:2.8.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-yarn-common:2.8.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-yarn-api:2.8.5" level="project" />
@@ -283,6 +281,11 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-context-support:5.0.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-websocket:2.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-websocket:5.0.8.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:webjars-locator-core:0.35" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-compress:1.9" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:sockjs-client:1.1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:stomp-websocket:2.3.3" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:jquery:3.3.1" level="project" />
     <orderEntry type="library" name="Maven: com.github.houbb:opencc4j:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: com.github.houbb:paradise-common:1.1.3" level="project" />
     <orderEntry type="library" name="Maven: com.huaban:jieba-analysis:1.0.2" level="project" />

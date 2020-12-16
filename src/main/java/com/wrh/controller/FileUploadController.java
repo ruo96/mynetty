@@ -31,7 +31,7 @@ public class FileUploadController {
     public Map<String, Object> upload(MultipartFile file, HttpServletRequest req){
         Map<String, Object> result = new HashMap<>();
         String originName = file.getOriginalFilename();
-        if (!originName.endsWith(".pdf")) {
+        if (!originName.endsWith(".jpg")) {
             result.put("status","error");
             result.put("msg","文件类型不对");
             return result;
@@ -42,8 +42,9 @@ public class FileUploadController {
         File folder = new File(realPath);
         if (!folder.exists()) {
             folder.mkdirs();
+            System.out.println("123");
         }
-        String newName = UUID.randomUUID().toString() + ".pdf";
+        String newName = UUID.randomUUID().toString() + ".jpg";
         log.info("存放服务器地址： {}", realPath + newName);
         log.info("folder： {}", folder.toString());
         log.info("getContextPath： {}", req.getServletContext().getContextPath());

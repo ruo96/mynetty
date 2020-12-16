@@ -11,10 +11,10 @@
     <el-upload
             action="/mynetty/file/upload"
             :on-preview="handlePreview"
-            accept=".pdf"
+            accept=".jpg"
             :limit="10">
         <el-button size="small" type="primary">点击上传</el-button>
-        <div slot="tip" class="el-upload__tip">只能上传pdf文件，且不超过100MB</div>
+        <div slot="tip" class="el-upload__tip">只能上传jpg文件，且不超过100MB</div>
     </el-upload>
 </div>
 <hr />
