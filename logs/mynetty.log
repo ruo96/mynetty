@@ -1314,3 +1314,555 @@ java.lang.ClassCastException: org.springframework.web.multipart.support.Standard
 2020-12-17 16:08:00.007  INFO 17832 --- [pool-4-thread-1] com.wrh.schedule.MySchedule              : >>> cron: 2020-12-17T16:08:00.007
 2020-12-17 16:09:00.002  INFO 17832 --- [pool-4-thread-1] com.wrh.schedule.MySchedule              : >>> cron: 2020-12-17T16:09:00.002
 2020-12-17 16:10:00.008  INFO 17832 --- [pool-4-thread-1] com.wrh.schedule.MySchedule              : >>> cron: 2020-12-17T16:10:00.008
+2020-12-17 16:10:24.199  INFO 16048 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 16048 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-12-17 16:10:24.201  INFO 16048 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-12-17 16:10:27.240  INFO 16048 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-17 16:10:27.241  INFO 16048 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-12-17 16:10:27.244  INFO 16048 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-12-17 16:10:27.244  INFO 16048 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-12-17 16:10:27.244  INFO 16048 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-12-17 16:10:27.246  INFO 16048 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-12-17 16:10:27.299  INFO 16048 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-17 16:10:27.707  INFO 16048 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-12-17 16:10:28.496  INFO 16048 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-12-17 16:10:28.498  INFO 16048 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-12-17 16:10:29.317  INFO 16048 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-12-17 16:10:29.484  INFO 16048 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-12-17 16:10:29.723  WARN 16048 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2020-12-17 16:10:29.726  INFO 16048 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-12-17 16:10:30.733  INFO 16048 --- [main] com.wrh.MynettyApplication               : >>> profile: []
+2020-12-17 16:10:30.734  INFO 16048 --- [main] com.wrh.MynettyApplication               : 开始检查数据库的服务!
+2020-12-17 16:10:30.735  INFO 16048 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
+2020-12-17 16:10:30.853  INFO 16048 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
+2020-12-17 16:10:30.855  INFO 16048 --- [main] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@801634926 wrapping com.mysql.jdbc.JDBC4Connection@7f8c48f3
+2020-12-17 16:10:30.855  INFO 16048 --- [main] com.wrh.MynettyApplication               : redis： org.springframework.data.redis.core.RedisTemplate@18a096b5
+2020-12-17 16:10:31.598  INFO 16048 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-12-17 16:10:31.607  INFO 16048 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-12-17 16:10:31.608  INFO 16048 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2020-12-17 16:10:31.609  INFO 16048 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2020-12-17 16:10:31.610  INFO 16048 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-12-17 16:10:31.610  INFO 16048 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-12-17 16:10:31.610  INFO 16048 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2020-12-17 16:10:31.610  INFO 16048 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@79e2606f
+2020-12-17 16:10:31.729  INFO 16048 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-12-17 16:10:31.742  INFO 16048 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-12-17 16:10:31.768  INFO 16048 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-12-17 16:10:32.109  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingGET_1
+2020-12-17 16:10:32.110  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingHEAD_1
+2020-12-17 16:10:32.110  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPOST_1
+2020-12-17 16:10:32.110  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPUT_1
+2020-12-17 16:10:32.111  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPATCH_1
+2020-12-17 16:10:32.111  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingDELETE_1
+2020-12-17 16:10:32.111  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingOPTIONS_1
+2020-12-17 16:10:32.112  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingTRACE_1
+2020-12-17 16:10:32.121  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_1
+2020-12-17 16:10:32.122  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_1
+2020-12-17 16:10:32.122  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_1
+2020-12-17 16:10:32.122  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_1
+2020-12-17 16:10:32.123  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_1
+2020-12-17 16:10:32.123  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_1
+2020-12-17 16:10:32.123  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_1
+2020-12-17 16:10:32.124  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_1
+2020-12-17 16:10:32.127  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_2
+2020-12-17 16:10:32.128  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_2
+2020-12-17 16:10:32.128  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_2
+2020-12-17 16:10:32.128  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_2
+2020-12-17 16:10:32.129  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_2
+2020-12-17 16:10:32.129  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_2
+2020-12-17 16:10:32.129  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_2
+2020-12-17 16:10:32.130  INFO 16048 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_2
+2020-12-17 16:10:32.187  INFO 16048 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-12-17 16:10:32.210  INFO 16048 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 8.45 seconds (JVM running for 9.29)
+2020-12-17 16:11:45.650  INFO 16048 --- [http-nio-9988-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-12-17 16:11:45.684  INFO 16048 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /swagger-ui.html
+2020-12-17 16:11:45.684  INFO 16048 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/swagger-ui.html
+2020-12-17 16:11:45.698  INFO 16048 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:11:45.709  INFO 16048 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=11
+2020-12-17 16:11:45.744  INFO 16048 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/springfox.css
+2020-12-17 16:11:45.744  INFO 16048 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/springfox.css
+2020-12-17 16:11:45.748  INFO 16048 --- [http-nio-9988-exec-6] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/swagger-ui.css
+2020-12-17 16:11:45.748  INFO 16048 --- [http-nio-9988-exec-6] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/swagger-ui.css
+2020-12-17 16:11:45.748  INFO 16048 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:11:45.748  INFO 16048 --- [http-nio-9988-exec-8] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/swagger-ui-bundle.js
+2020-12-17 16:11:45.748  INFO 16048 --- [http-nio-9988-exec-8] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/swagger-ui-bundle.js
+2020-12-17 16:11:45.749  INFO 16048 --- [http-nio-9988-exec-10] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/swagger-ui-standalone-preset.js
+2020-12-17 16:11:45.749  INFO 16048 --- [http-nio-9988-exec-2] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/springfox.js
+2020-12-17 16:11:45.749  INFO 16048 --- [http-nio-9988-exec-2] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/springfox.js
+2020-12-17 16:11:45.749  INFO 16048 --- [http-nio-9988-exec-10] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/swagger-ui-standalone-preset.js
+2020-12-17 16:11:45.749  INFO 16048 --- [http-nio-9988-exec-6] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:11:45.750  INFO 16048 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=0
+2020-12-17 16:11:45.750  INFO 16048 --- [http-nio-9988-exec-8] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:11:45.751  INFO 16048 --- [http-nio-9988-exec-10] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:11:45.751  INFO 16048 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:11:45.754  INFO 16048 --- [http-nio-9988-exec-6] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=2
+2020-12-17 16:11:45.755  INFO 16048 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=3
+2020-12-17 16:11:45.759  INFO 16048 --- [http-nio-9988-exec-10] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=7
+2020-12-17 16:11:45.772  INFO 16048 --- [http-nio-9988-exec-8] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=20
+2020-12-17 16:11:45.945  INFO 16048 --- [http-nio-9988-exec-7] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /swagger-resources/configuration/ui
+2020-12-17 16:11:45.945  INFO 16048 --- [http-nio-9988-exec-7] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/swagger-resources/configuration/ui
+2020-12-17 16:11:45.947  INFO 16048 --- [http-nio-9988-exec-7] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:11:45.947  INFO 16048 --- [http-nio-9988-exec-7] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-12-17 16:11:45.948  INFO 16048 --- [http-nio-9988-exec-7] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-12-17 16:11:45.948  INFO 16048 --- [http-nio-9988-exec-4] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/favicon-32x32.png
+2020-12-17 16:11:45.949  INFO 16048 --- [http-nio-9988-exec-4] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/favicon-32x32.png
+2020-12-17 16:11:45.949  INFO 16048 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:11:45.952  INFO 16048 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=2
+2020-12-17 16:11:45.995  INFO 16048 --- [http-nio-9988-exec-7] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=45
+2020-12-17 16:11:45.999  INFO 16048 --- [http-nio-9988-exec-9] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /swagger-resources/configuration/security
+2020-12-17 16:11:45.999  INFO 16048 --- [http-nio-9988-exec-9] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/swagger-resources/configuration/security
+2020-12-17 16:11:45.999  INFO 16048 --- [http-nio-9988-exec-9] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:11:45.999  INFO 16048 --- [http-nio-9988-exec-9] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-12-17 16:11:46.000  INFO 16048 --- [http-nio-9988-exec-9] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-12-17 16:11:46.004  INFO 16048 --- [http-nio-9988-exec-9] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=5
+2020-12-17 16:11:46.009  INFO 16048 --- [http-nio-9988-exec-5] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /swagger-resources
+2020-12-17 16:11:46.009  INFO 16048 --- [http-nio-9988-exec-5] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/swagger-resources
+2020-12-17 16:11:46.009  INFO 16048 --- [http-nio-9988-exec-5] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:11:46.009  INFO 16048 --- [http-nio-9988-exec-5] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-12-17 16:11:46.009  INFO 16048 --- [http-nio-9988-exec-5] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-12-17 16:11:46.015  INFO 16048 --- [http-nio-9988-exec-5] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=6
+2020-12-17 16:11:46.038  INFO 16048 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /
+2020-12-17 16:11:46.038  INFO 16048 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/
+2020-12-17 16:11:46.038  INFO 16048 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /v2/api-docs
+2020-12-17 16:11:46.039  INFO 16048 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/v2/api-docs
+2020-12-17 16:11:46.046  INFO 16048 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:11:46.056  INFO 16048 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=9
+2020-12-17 16:11:46.085  INFO 16048 --- [http-nio-9988-exec-6] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-700.woff2
+2020-12-17 16:11:46.085  INFO 16048 --- [http-nio-9988-exec-6] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-700.woff2
+2020-12-17 16:11:46.085  INFO 16048 --- [http-nio-9988-exec-2] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /csrf
+2020-12-17 16:11:46.085  INFO 16048 --- [http-nio-9988-exec-2] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/csrf
+2020-12-17 16:11:46.086  INFO 16048 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:11:46.086  INFO 16048 --- [http-nio-9988-exec-6] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:11:46.087  INFO 16048 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=1
+2020-12-17 16:11:46.088  INFO 16048 --- [http-nio-9988-exec-6] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=2
+2020-12-17 16:11:46.090  INFO 16048 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:11:46.090  INFO 16048 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-12-17 16:11:46.090  INFO 16048 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-12-17 16:11:46.095  INFO 16048 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=5
+2020-12-17 16:11:46.297  INFO 16048 --- [http-nio-9988-exec-8] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-300.woff2
+2020-12-17 16:11:46.297  INFO 16048 --- [http-nio-9988-exec-10] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-700.woff2
+2020-12-17 16:11:46.297  INFO 16048 --- [http-nio-9988-exec-4] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-regular.woff2
+2020-12-17 16:11:46.297  INFO 16048 --- [http-nio-9988-exec-8] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-300.woff2
+2020-12-17 16:11:46.297  INFO 16048 --- [http-nio-9988-exec-10] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-700.woff2
+2020-12-17 16:11:46.297  INFO 16048 --- [http-nio-9988-exec-4] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-regular.woff2
+2020-12-17 16:11:46.298  INFO 16048 --- [http-nio-9988-exec-8] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:11:46.298  INFO 16048 --- [http-nio-9988-exec-10] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:11:46.298  INFO 16048 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:11:46.300  INFO 16048 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=2
+2020-12-17 16:11:46.300  INFO 16048 --- [http-nio-9988-exec-10] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=2
+2020-12-17 16:11:46.300  INFO 16048 --- [http-nio-9988-exec-8] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=2
+2020-12-17 16:12:11.701  INFO 16048 --- [http-nio-9988-exec-7] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-600.woff2
+2020-12-17 16:12:11.701  INFO 16048 --- [http-nio-9988-exec-7] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-600.woff2
+2020-12-17 16:12:11.702  INFO 16048 --- [http-nio-9988-exec-7] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:12:11.704  INFO 16048 --- [http-nio-9988-exec-7] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=2
+2020-12-17 16:12:15.607  INFO 16048 --- [http-nio-9988-exec-9] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-regular.woff2
+2020-12-17 16:12:15.607  INFO 16048 --- [http-nio-9988-exec-9] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-regular.woff2
+2020-12-17 16:12:15.608  INFO 16048 --- [http-nio-9988-exec-9] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:12:15.610  INFO 16048 --- [http-nio-9988-exec-9] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=2
+2020-12-17 16:12:34.423  INFO 16048 --- [http-nio-9988-exec-5] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /changeSessionLanauage
+2020-12-17 16:12:34.423  INFO 16048 --- [http-nio-9988-exec-5] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/changeSessionLanauage
+2020-12-17 16:12:34.423  INFO 16048 --- [http-nio-9988-exec-5] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:12:34.424  INFO 16048 --- [http-nio-9988-exec-5] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-12-17 16:12:34.424  INFO 16048 --- [http-nio-9988-exec-5] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 带有passportTotal注解 YES！
+2020-12-17 16:12:34.425  INFO 16048 --- [http-nio-9988-exec-5] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=1
+2020-12-17 16:12:34.433  INFO 16048 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /internationalize
+2020-12-17 16:12:34.433  INFO 16048 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/internationalize
+2020-12-17 16:12:34.434  INFO 16048 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:12:34.434  INFO 16048 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-12-17 16:12:34.434  INFO 16048 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 带有passportTotal注解 YES！
+2020-12-17 16:12:34.436  INFO 16048 --- [http-nio-9988-exec-3] com.wrh.controller.HelloController       : >>> internationalize  time: 2020-12-17T16:12:34.436
+2020-12-17 16:12:34.436  INFO 16048 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=2
+2020-12-17 16:12:34.807  INFO 16048 --- [http-nio-9988-exec-6] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-600.woff2
+2020-12-17 16:12:34.807  INFO 16048 --- [http-nio-9988-exec-6] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-600.woff2
+2020-12-17 16:12:34.808  INFO 16048 --- [http-nio-9988-exec-6] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:12:34.811  INFO 16048 --- [http-nio-9988-exec-6] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=3
+2020-12-17 16:30:31.461  INFO 10876 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 10876 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-12-17 16:30:31.462  INFO 10876 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-12-17 16:30:34.325  INFO 10876 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-17 16:30:34.325  INFO 10876 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-12-17 16:30:34.328  INFO 10876 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-12-17 16:30:34.328  INFO 10876 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-12-17 16:30:34.328  INFO 10876 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-12-17 16:30:34.331  INFO 10876 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-12-17 16:30:34.383  INFO 10876 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-17 16:30:34.777  INFO 10876 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-12-17 16:30:35.543  INFO 10876 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-12-17 16:30:35.545  INFO 10876 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-12-17 16:30:36.309  INFO 10876 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-12-17 16:30:36.471  INFO 10876 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-12-17 16:30:36.745  WARN 10876 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2020-12-17 16:30:36.748  INFO 10876 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-12-17 16:30:37.751  INFO 10876 --- [main] com.wrh.MynettyApplication               : >>> profile: []
+2020-12-17 16:30:37.752  INFO 10876 --- [main] com.wrh.MynettyApplication               : 开始检查数据库的服务!
+2020-12-17 16:30:37.753  INFO 10876 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
+2020-12-17 16:30:37.872  INFO 10876 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
+2020-12-17 16:30:37.874  INFO 10876 --- [main] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@2093625852 wrapping com.mysql.jdbc.JDBC4Connection@619c3546
+2020-12-17 16:30:37.874  INFO 10876 --- [main] com.wrh.MynettyApplication               : redis： org.springframework.data.redis.core.RedisTemplate@8e25d3f
+2020-12-17 16:30:38.612  INFO 10876 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-12-17 16:30:38.620  INFO 10876 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-12-17 16:30:38.621  INFO 10876 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2020-12-17 16:30:38.622  INFO 10876 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2020-12-17 16:30:38.623  INFO 10876 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-12-17 16:30:38.623  INFO 10876 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-12-17 16:30:38.623  INFO 10876 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2020-12-17 16:30:38.623  INFO 10876 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@3ca278bc
+2020-12-17 16:30:38.727  INFO 10876 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-12-17 16:30:38.736  INFO 10876 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-12-17 16:30:38.756  INFO 10876 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-12-17 16:30:39.043  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingGET_1
+2020-12-17 16:30:39.043  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingHEAD_1
+2020-12-17 16:30:39.043  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPOST_1
+2020-12-17 16:30:39.044  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPUT_1
+2020-12-17 16:30:39.044  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPATCH_1
+2020-12-17 16:30:39.044  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingDELETE_1
+2020-12-17 16:30:39.045  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingOPTIONS_1
+2020-12-17 16:30:39.045  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingTRACE_1
+2020-12-17 16:30:39.054  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_1
+2020-12-17 16:30:39.055  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_1
+2020-12-17 16:30:39.055  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_1
+2020-12-17 16:30:39.055  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_1
+2020-12-17 16:30:39.055  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_1
+2020-12-17 16:30:39.056  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_1
+2020-12-17 16:30:39.056  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_1
+2020-12-17 16:30:39.056  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_1
+2020-12-17 16:30:39.060  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_2
+2020-12-17 16:30:39.060  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_2
+2020-12-17 16:30:39.060  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_2
+2020-12-17 16:30:39.060  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_2
+2020-12-17 16:30:39.061  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_2
+2020-12-17 16:30:39.061  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_2
+2020-12-17 16:30:39.061  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_2
+2020-12-17 16:30:39.062  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_2
+2020-12-17 16:30:39.079  INFO 10876 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: swagger2UsingPOST_1
+2020-12-17 16:30:39.120  INFO 10876 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-12-17 16:30:39.143  INFO 10876 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 8.098 seconds (JVM running for 9.001)
+2020-12-17 16:31:01.033  INFO 2384 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 2384 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-12-17 16:31:01.035  INFO 2384 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-12-17 16:31:03.020  INFO 2384 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-17 16:31:03.020  INFO 2384 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-12-17 16:31:03.023  INFO 2384 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-12-17 16:31:03.023  INFO 2384 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-12-17 16:31:03.023  INFO 2384 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-12-17 16:31:03.026  INFO 2384 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-12-17 16:31:03.088  INFO 2384 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-17 16:31:03.500  INFO 2384 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-12-17 16:31:04.324  INFO 2384 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-12-17 16:31:04.326  INFO 2384 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-12-17 16:31:05.109  INFO 2384 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-12-17 16:31:05.277  INFO 2384 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-12-17 16:31:05.573  WARN 2384 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2020-12-17 16:31:05.576  INFO 2384 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-12-17 16:31:06.583  INFO 2384 --- [main] com.wrh.MynettyApplication               : >>> profile: []
+2020-12-17 16:31:06.584  INFO 2384 --- [main] com.wrh.MynettyApplication               : 开始检查数据库的服务!
+2020-12-17 16:31:06.585  INFO 2384 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
+2020-12-17 16:31:06.697  INFO 2384 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
+2020-12-17 16:31:06.699  INFO 2384 --- [main] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@460922314 wrapping com.mysql.jdbc.JDBC4Connection@15ac02d5
+2020-12-17 16:31:06.699  INFO 2384 --- [main] com.wrh.MynettyApplication               : redis： org.springframework.data.redis.core.RedisTemplate@902fdbe
+2020-12-17 16:31:07.445  INFO 2384 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-12-17 16:31:07.454  INFO 2384 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-12-17 16:31:07.455  INFO 2384 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2020-12-17 16:31:07.456  INFO 2384 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2020-12-17 16:31:07.457  INFO 2384 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-12-17 16:31:07.457  INFO 2384 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-12-17 16:31:07.457  INFO 2384 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2020-12-17 16:31:07.457  INFO 2384 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@5604b85
+2020-12-17 16:31:07.581  INFO 2384 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-12-17 16:31:07.589  INFO 2384 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-12-17 16:31:07.611  INFO 2384 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-12-17 16:31:07.891  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingGET_1
+2020-12-17 16:31:07.892  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingHEAD_1
+2020-12-17 16:31:07.892  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPOST_1
+2020-12-17 16:31:07.893  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPUT_1
+2020-12-17 16:31:07.893  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPATCH_1
+2020-12-17 16:31:07.893  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingDELETE_1
+2020-12-17 16:31:07.894  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingOPTIONS_1
+2020-12-17 16:31:07.894  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingTRACE_1
+2020-12-17 16:31:07.904  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_1
+2020-12-17 16:31:07.904  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_1
+2020-12-17 16:31:07.905  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_1
+2020-12-17 16:31:07.905  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_1
+2020-12-17 16:31:07.905  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_1
+2020-12-17 16:31:07.905  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_1
+2020-12-17 16:31:07.906  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_1
+2020-12-17 16:31:07.906  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_1
+2020-12-17 16:31:07.910  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_2
+2020-12-17 16:31:07.910  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_2
+2020-12-17 16:31:07.910  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_2
+2020-12-17 16:31:07.910  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_2
+2020-12-17 16:31:07.911  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_2
+2020-12-17 16:31:07.911  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_2
+2020-12-17 16:31:07.911  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_2
+2020-12-17 16:31:07.912  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_2
+2020-12-17 16:31:07.930  INFO 2384 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: swagger2UsingPOST_1
+2020-12-17 16:31:07.970  INFO 2384 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-12-17 16:31:07.993  INFO 2384 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 7.34 seconds (JVM running for 8.189)
+2020-12-17 16:31:58.000  INFO 2384 --- [http-nio-9988-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-12-17 16:31:58.025  INFO 2384 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /swagger-ui.html
+2020-12-17 16:31:58.025  INFO 2384 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/swagger-ui.html
+2020-12-17 16:31:58.039  INFO 2384 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:31:58.059  INFO 2384 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=20
+2020-12-17 16:31:58.103  INFO 2384 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/springfox.css
+2020-12-17 16:31:58.103  INFO 2384 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/springfox.css
+2020-12-17 16:31:58.105  INFO 2384 --- [http-nio-9988-exec-6] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/swagger-ui.css
+2020-12-17 16:31:58.105  INFO 2384 --- [http-nio-9988-exec-6] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/swagger-ui.css
+2020-12-17 16:31:58.107  INFO 2384 --- [http-nio-9988-exec-5] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/swagger-ui-bundle.js
+2020-12-17 16:31:58.107  INFO 2384 --- [http-nio-9988-exec-9] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/swagger-ui-standalone-preset.js
+2020-12-17 16:31:58.107  INFO 2384 --- [http-nio-9988-exec-4] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/springfox.js
+2020-12-17 16:31:58.108  INFO 2384 --- [http-nio-9988-exec-4] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/springfox.js
+2020-12-17 16:31:58.108  INFO 2384 --- [http-nio-9988-exec-5] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/swagger-ui-bundle.js
+2020-12-17 16:31:58.108  INFO 2384 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:31:58.108  INFO 2384 --- [http-nio-9988-exec-9] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/swagger-ui-standalone-preset.js
+2020-12-17 16:31:58.108  INFO 2384 --- [http-nio-9988-exec-6] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:31:58.108  INFO 2384 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=0
+2020-12-17 16:31:58.109  INFO 2384 --- [http-nio-9988-exec-6] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=1
+2020-12-17 16:31:58.111  INFO 2384 --- [http-nio-9988-exec-5] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:31:58.111  INFO 2384 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:31:58.111  INFO 2384 --- [http-nio-9988-exec-9] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:31:58.112  INFO 2384 --- [http-nio-9988-exec-9] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=0
+2020-12-17 16:31:58.112  INFO 2384 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=0
+2020-12-17 16:31:58.112  INFO 2384 --- [http-nio-9988-exec-5] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=0
+2020-12-17 16:31:58.285  INFO 2384 --- [http-nio-9988-exec-7] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /swagger-resources/configuration/ui
+2020-12-17 16:31:58.285  INFO 2384 --- [http-nio-9988-exec-7] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/swagger-resources/configuration/ui
+2020-12-17 16:31:58.286  INFO 2384 --- [http-nio-9988-exec-7] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:31:58.286  INFO 2384 --- [http-nio-9988-exec-7] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-12-17 16:31:58.286  INFO 2384 --- [http-nio-9988-exec-7] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-12-17 16:31:58.333  INFO 2384 --- [http-nio-9988-exec-7] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=47
+2020-12-17 16:31:58.337  INFO 2384 --- [http-nio-9988-exec-8] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /swagger-resources/configuration/security
+2020-12-17 16:31:58.337  INFO 2384 --- [http-nio-9988-exec-8] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/swagger-resources/configuration/security
+2020-12-17 16:31:58.338  INFO 2384 --- [http-nio-9988-exec-8] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:31:58.338  INFO 2384 --- [http-nio-9988-exec-8] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-12-17 16:31:58.338  INFO 2384 --- [http-nio-9988-exec-8] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-12-17 16:31:58.343  INFO 2384 --- [http-nio-9988-exec-8] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=5
+2020-12-17 16:31:58.347  INFO 2384 --- [http-nio-9988-exec-2] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /swagger-resources
+2020-12-17 16:31:58.347  INFO 2384 --- [http-nio-9988-exec-2] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/swagger-resources
+2020-12-17 16:31:58.349  INFO 2384 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:31:58.349  INFO 2384 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-12-17 16:31:58.349  INFO 2384 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-12-17 16:31:58.352  INFO 2384 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=3
+2020-12-17 16:31:58.377  INFO 2384 --- [http-nio-9988-exec-10] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /v2/api-docs
+2020-12-17 16:31:58.377  INFO 2384 --- [http-nio-9988-exec-10] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/v2/api-docs
+2020-12-17 16:31:58.409  INFO 2384 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-700.woff2
+2020-12-17 16:31:58.409  INFO 2384 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-700.woff2
+2020-12-17 16:31:58.410  INFO 2384 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /csrf
+2020-12-17 16:31:58.410  INFO 2384 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/csrf
+2020-12-17 16:31:58.410  INFO 2384 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:31:58.411  INFO 2384 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:31:58.412  INFO 2384 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=1
+2020-12-17 16:31:58.412  INFO 2384 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=1
+2020-12-17 16:31:58.417  INFO 2384 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:31:58.417  INFO 2384 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-12-17 16:31:58.417  INFO 2384 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-12-17 16:31:58.424  INFO 2384 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=7
+2020-12-17 16:31:58.625  INFO 2384 --- [http-nio-9988-exec-6] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-700.woff2
+2020-12-17 16:31:58.625  INFO 2384 --- [http-nio-9988-exec-4] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-300.woff2
+2020-12-17 16:31:58.625  INFO 2384 --- [http-nio-9988-exec-9] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-regular.woff2
+2020-12-17 16:31:58.625  INFO 2384 --- [http-nio-9988-exec-6] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-700.woff2
+2020-12-17 16:31:58.625  INFO 2384 --- [http-nio-9988-exec-4] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-300.woff2
+2020-12-17 16:31:58.625  INFO 2384 --- [http-nio-9988-exec-9] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-regular.woff2
+2020-12-17 16:31:58.626  INFO 2384 --- [http-nio-9988-exec-6] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:31:58.626  INFO 2384 --- [http-nio-9988-exec-9] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:31:58.626  INFO 2384 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:31:58.626  INFO 2384 --- [http-nio-9988-exec-6] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=0
+2020-12-17 16:31:58.626  INFO 2384 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=0
+2020-12-17 16:31:58.626  INFO 2384 --- [http-nio-9988-exec-9] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=0
+2020-12-17 16:32:10.326  INFO 2384 --- [http-nio-9988-exec-5] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-600.woff2
+2020-12-17 16:32:10.326  INFO 2384 --- [http-nio-9988-exec-5] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-600.woff2
+2020-12-17 16:32:10.327  INFO 2384 --- [http-nio-9988-exec-5] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:32:10.328  INFO 2384 --- [http-nio-9988-exec-5] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=1
+2020-12-17 16:32:18.809  INFO 2384 --- [http-nio-9988-exec-7] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-regular.woff2
+2020-12-17 16:32:18.809  INFO 2384 --- [http-nio-9988-exec-7] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-regular.woff2
+2020-12-17 16:32:18.810  INFO 2384 --- [http-nio-9988-exec-7] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:32:18.811  INFO 2384 --- [http-nio-9988-exec-7] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=1
+2020-12-17 16:32:40.844  INFO 2384 --- [http-nio-9988-exec-8] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /validate
+2020-12-17 16:32:40.844  INFO 2384 --- [http-nio-9988-exec-8] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/validate
+2020-12-17 16:32:40.845  INFO 2384 --- [http-nio-9988-exec-8] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:32:40.845  INFO 2384 --- [http-nio-9988-exec-8] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-12-17 16:32:40.845  INFO 2384 --- [http-nio-9988-exec-8] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-12-17 16:32:40.979  INFO 2384 --- [http-nio-9988-exec-8] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=134
+2020-12-17 16:32:41.050  INFO 2384 --- [http-nio-9988-exec-2] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-600.woff2
+2020-12-17 16:32:41.051  INFO 2384 --- [http-nio-9988-exec-2] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-600.woff2
+2020-12-17 16:32:41.051  INFO 2384 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:32:41.052  INFO 2384 --- [http-nio-9988-exec-2] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=1
+2020-12-17 16:34:23.004  INFO 2384 --- [http-nio-9988-exec-4] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /validate
+2020-12-17 16:34:23.004  INFO 2384 --- [http-nio-9988-exec-4] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/validate
+2020-12-17 16:34:23.004  INFO 2384 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:34:23.004  INFO 2384 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-12-17 16:34:23.004  INFO 2384 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-12-17 16:34:23.006  INFO 2384 --- [http-nio-9988-exec-4] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=2
+2020-12-17 16:35:26.155  INFO 18472 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 18472 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-12-17 16:35:26.156  INFO 18472 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-12-17 16:35:28.100  INFO 18472 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-17 16:35:28.100  INFO 18472 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-12-17 16:35:28.103  INFO 18472 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-12-17 16:35:28.103  INFO 18472 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-12-17 16:35:28.103  INFO 18472 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-12-17 16:35:28.106  INFO 18472 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-12-17 16:35:28.159  INFO 18472 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-17 16:35:28.572  INFO 18472 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-12-17 16:35:29.352  INFO 18472 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-12-17 16:35:29.354  INFO 18472 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-12-17 16:35:30.168  INFO 18472 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-12-17 16:35:30.332  INFO 18472 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-12-17 16:35:30.567  WARN 18472 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2020-12-17 16:35:30.569  INFO 18472 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-12-17 16:35:31.585  INFO 18472 --- [main] com.wrh.MynettyApplication               : >>> profile: []
+2020-12-17 16:35:31.586  INFO 18472 --- [main] com.wrh.MynettyApplication               : 开始检查数据库的服务!
+2020-12-17 16:35:31.586  INFO 18472 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
+2020-12-17 16:35:31.700  INFO 18472 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
+2020-12-17 16:35:31.702  INFO 18472 --- [main] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@721004015 wrapping com.mysql.jdbc.JDBC4Connection@34f23816
+2020-12-17 16:35:31.702  INFO 18472 --- [main] com.wrh.MynettyApplication               : redis： org.springframework.data.redis.core.RedisTemplate@5c059a68
+2020-12-17 16:35:32.432  INFO 18472 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-12-17 16:35:32.440  INFO 18472 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-12-17 16:35:32.441  INFO 18472 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2020-12-17 16:35:32.442  INFO 18472 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2020-12-17 16:35:32.442  INFO 18472 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-12-17 16:35:32.442  INFO 18472 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-12-17 16:35:32.442  INFO 18472 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2020-12-17 16:35:32.443  INFO 18472 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@3f45dfec
+2020-12-17 16:35:32.546  INFO 18472 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-12-17 16:35:32.555  INFO 18472 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-12-17 16:35:32.575  INFO 18472 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-12-17 16:35:32.857  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingGET_1
+2020-12-17 16:35:32.857  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingHEAD_1
+2020-12-17 16:35:32.857  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPOST_1
+2020-12-17 16:35:32.858  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPUT_1
+2020-12-17 16:35:32.858  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPATCH_1
+2020-12-17 16:35:32.858  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingDELETE_1
+2020-12-17 16:35:32.859  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingOPTIONS_1
+2020-12-17 16:35:32.859  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingTRACE_1
+2020-12-17 16:35:32.868  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_1
+2020-12-17 16:35:32.868  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_1
+2020-12-17 16:35:32.868  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_1
+2020-12-17 16:35:32.869  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_1
+2020-12-17 16:35:32.869  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_1
+2020-12-17 16:35:32.869  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_1
+2020-12-17 16:35:32.870  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_1
+2020-12-17 16:35:32.870  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_1
+2020-12-17 16:35:32.873  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_2
+2020-12-17 16:35:32.874  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_2
+2020-12-17 16:35:32.874  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_2
+2020-12-17 16:35:32.874  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_2
+2020-12-17 16:35:32.874  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_2
+2020-12-17 16:35:32.875  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_2
+2020-12-17 16:35:32.875  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_2
+2020-12-17 16:35:32.875  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_2
+2020-12-17 16:35:32.893  INFO 18472 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: swagger2UsingPOST_1
+2020-12-17 16:35:32.934  INFO 18472 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-12-17 16:35:32.956  INFO 18472 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 7.167 seconds (JVM running for 7.993)
+2020-12-17 16:36:45.499  INFO 18472 --- [http-nio-9988-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-12-17 16:36:45.524  INFO 18472 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /validate
+2020-12-17 16:36:45.525  INFO 18472 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/validate
+2020-12-17 16:36:45.536  INFO 18472 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:36:45.536  INFO 18472 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-12-17 16:36:45.536  INFO 18472 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-12-17 16:36:45.661  INFO 18472 --- [http-nio-9988-exec-1] com.wrh.controller.ValidationController  : >>> validate: [å¹´é¾è¾å¥ä¸æ­£ç¡®, ç¨æ·åé¿åº¦ä»äº5å°10ä¸ªå­ç¬¦ä¹é´]
+2020-12-17 16:36:45.677  INFO 18472 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=141
+2020-12-17 16:38:48.042  INFO 11728 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 11728 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2020-12-17 16:38:48.044  INFO 11728 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2020-12-17 16:38:50.072  INFO 11728 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-17 16:38:50.073  INFO 11728 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2020-12-17 16:38:50.076  INFO 11728 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-12-17 16:38:50.076  INFO 11728 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-12-17 16:38:50.076  INFO 11728 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-12-17 16:38:50.079  INFO 11728 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-12-17 16:38:50.134  INFO 11728 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-17 16:38:50.545  INFO 11728 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2020-12-17 16:38:51.439  INFO 11728 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-12-17 16:38:51.441  INFO 11728 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-12-17 16:38:52.253  INFO 11728 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2020-12-17 16:38:52.429  INFO 11728 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-12-17 16:38:52.712  WARN 11728 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2020-12-17 16:38:52.715  INFO 11728 --- [main] com.wrh.MynettyApplication               : 开始启动服务端的服务!
+2020-12-17 16:38:53.718  INFO 11728 --- [main] com.wrh.MynettyApplication               : >>> profile: []
+2020-12-17 16:38:53.721  INFO 11728 --- [main] com.wrh.MynettyApplication               : 开始检查数据库的服务!
+2020-12-17 16:38:53.722  INFO 11728 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Starting...
+2020-12-17 16:38:53.841  INFO 11728 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariCPpool - Start completed.
+2020-12-17 16:38:53.843  INFO 11728 --- [main] com.wrh.MynettyApplication               : 数据操作对象： HikariProxyConnection@460922314 wrapping com.mysql.jdbc.JDBC4Connection@15ac02d5
+2020-12-17 16:38:53.843  INFO 11728 --- [main] com.wrh.MynettyApplication               : redis： org.springframework.data.redis.core.RedisTemplate@902fdbe
+2020-12-17 16:38:54.589  INFO 11728 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-12-17 16:38:54.598  INFO 11728 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-12-17 16:38:54.599  INFO 11728 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2020-12-17 16:38:54.600  INFO 11728 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2020-12-17 16:38:54.601  INFO 11728 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-12-17 16:38:54.601  INFO 11728 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-12-17 16:38:54.601  INFO 11728 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2020-12-17 16:38:54.601  INFO 11728 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@5604b85
+2020-12-17 16:38:54.713  INFO 11728 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-12-17 16:38:54.722  INFO 11728 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-12-17 16:38:54.758  INFO 11728 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-12-17 16:38:55.025  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingGET_1
+2020-12-17 16:38:55.025  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingHEAD_1
+2020-12-17 16:38:55.026  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPOST_1
+2020-12-17 16:38:55.026  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPUT_1
+2020-12-17 16:38:55.026  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPATCH_1
+2020-12-17 16:38:55.027  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingDELETE_1
+2020-12-17 16:38:55.027  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingOPTIONS_1
+2020-12-17 16:38:55.027  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingTRACE_1
+2020-12-17 16:38:55.037  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_1
+2020-12-17 16:38:55.037  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_1
+2020-12-17 16:38:55.037  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_1
+2020-12-17 16:38:55.038  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_1
+2020-12-17 16:38:55.038  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_1
+2020-12-17 16:38:55.038  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_1
+2020-12-17 16:38:55.038  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_1
+2020-12-17 16:38:55.039  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_1
+2020-12-17 16:38:55.042  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_2
+2020-12-17 16:38:55.043  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_2
+2020-12-17 16:38:55.043  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_2
+2020-12-17 16:38:55.043  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_2
+2020-12-17 16:38:55.044  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_2
+2020-12-17 16:38:55.044  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_2
+2020-12-17 16:38:55.044  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_2
+2020-12-17 16:38:55.044  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_2
+2020-12-17 16:38:55.063  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: swagger2UsingPOST_1
+2020-12-17 16:38:55.104  INFO 11728 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-12-17 16:38:55.127  INFO 11728 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 7.497 seconds (JVM running for 8.339)
+2020-12-17 16:39:07.564  INFO 11728 --- [http-nio-9988-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-12-17 16:39:07.587  INFO 11728 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /validate
+2020-12-17 16:39:07.588  INFO 11728 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/validate
+2020-12-17 16:39:07.599  INFO 11728 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:39:07.599  INFO 11728 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-12-17 16:39:07.599  INFO 11728 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-12-17 16:39:07.721  INFO 11728 --- [http-nio-9988-exec-1] com.wrh.controller.ValidationController  : >>> validate: [ç¨æ·åé¿åº¦ä»äº5å°10ä¸ªå­ç¬¦ä¹é´, å¹´é¾è¾å¥ä¸æ­£ç¡®]
+2020-12-17 16:39:07.737  INFO 11728 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=138
+2020-12-17 16:39:09.867  INFO 11728 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /validate
+2020-12-17 16:39:09.867  INFO 11728 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/validate
+2020-12-17 16:39:09.868  INFO 11728 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2020-12-17 16:39:09.868  INFO 11728 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2020-12-17 16:39:09.868  INFO 11728 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2020-12-17 16:39:09.869  INFO 11728 --- [http-nio-9988-exec-3] com.wrh.controller.ValidationController  : >>> validate: [å¹´é¾è¾å¥ä¸æ­£ç¡®, ç¨æ·åé¿åº¦ä»äº5å°10ä¸ªå­ç¬¦ä¹é´]
+2020-12-17 16:39:09.870  INFO 11728 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=2
