@@ -1,6 +1,7 @@
 package com.wrh.controller;
 
 import com.wrh.controller.domain.User;
+import com.wrh.mail.MailService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.common.utils.Java;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,20 +29,17 @@ import java.util.List;
 public class MailController {
 
     @Autowired
-    private JavaMailSender javaMailSender;
+    MailService mailService;
 
 
     @RequestMapping("/mail")
     public String property(HttpServletRequest request, HttpServletResponse response){
 
-        SimpleMailMessage msg = new SimpleMailMessage();
-        msg.setFrom("wrh_1096@163.com");
-        msg.setBcc();
-        msg.setTo("ww-1096@163.com");
-        msg.setSubject("test");
-        msg.setText("fenxiang");
-
-        javaMailSender.send(msg);
+        mailService.sendSimpleMail("1303423055@qq.com",
+                "314825560@qq.com",
+                "ww-1096@163.com",
+                "测试邮件主题名称",
+                "这是一封测试用邮件");
 
 
         return "ok";
