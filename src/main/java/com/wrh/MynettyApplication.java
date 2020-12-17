@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
@@ -31,6 +32,7 @@ import java.util.concurrent.TimeUnit;
 @ServletComponentScan(value = {"com.wrh.listener","com.wrh.servlet"}) //用于支持过滤器、监听器注解
 @SpringBootApplication
 @EnableConfigurationProperties
+@EnableScheduling
 //@ServletComponentScan("com.wrh.filter")  // 这个是配合注解实现拦截器的
 public class MynettyApplication {
 
