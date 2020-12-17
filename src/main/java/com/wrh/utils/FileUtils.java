@@ -1,5 +1,9 @@
 package com.wrh.utils;
 
+import org.apache.commons.io.IOUtils;
+import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.io.*;
 
 /**
@@ -37,5 +41,17 @@ public class FileUtils {
         printer.close();
         writer.close();
         output.close();
+    }
+
+    public static MultipartFile File2MultipartFile(File file) throws IOException {
+        FileInputStream input = new FileInputStream(file);
+        MultipartFile multipartFile = new MockMultipartFile("file",file.getName(),"text/plain", IOUtils.toByteArray(input));
+        return multipartFile;
+    }
+
+    public static File MultipartFile2File(MultipartFile multipartFile) throws IOException {
+        File file = new File(multipartFile.getOriginalFilename());
+        org.apache.commons.io.FileUtils.copyInputStreamToFile(multipartFile.getInputStream(),file);
+        return file;
     }
 }

@@ -1,11 +1,17 @@
 package com.wrh.mail;
-import java.util.Date;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
+
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import java.io.File;
+
+
 
 /**
  * @author wuruohong
@@ -29,5 +35,17 @@ public class MailService {
         javaMailSender.send(simpleMailMessage);
         log.info(">>> send over");
 
+    }
+
+    public void sendAttachFileMail(String from, String to, String cc, String subject, String content, File file) throws MessagingException {
+        MimeMessage message = javaMailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message,true);
+        helper.setFrom(from);
+        helper.setTo(to);
+        helper.setSubject(subject);
+        helper.setText(content);
+        helper.addAttachment(file.getName(), file);
+        javaMailSender.send(message);
+        log.info(">>> send file over");
     }
 }
