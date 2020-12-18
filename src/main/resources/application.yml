@@ -159,3 +159,9 @@ shiro:
   sessionManager:
     sessionIdCookieEnabled: true
     sessionIdUrlRewritingEnabled: true
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: metrics

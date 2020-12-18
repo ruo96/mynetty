@@ -2,6 +2,7 @@ package com.wrh.controller;
 
 import com.wrh.annotate.annotation.Student;
 import com.wrh.domain.User;
+import com.wrh.domain.ValidationGroup1;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -32,7 +33,7 @@ public class ValidationController {
 
     @ApiOperation(value = "插入用户信息", notes = "插入")
     @PostMapping("/validate")
-    public List<String> swagger2(@Validated @RequestBody User user, BindingResult result){
+    public List<String> swagger2(@Validated(ValidationGroup1.class) @RequestBody User user, BindingResult result){
 
         List<String> errors = new ArrayList<>();
         if(result.hasErrors()){

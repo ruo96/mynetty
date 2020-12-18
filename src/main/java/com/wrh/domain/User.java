@@ -17,7 +17,7 @@ import javax.validation.constraints.Size;
 public class User {
     private Integer id;
 
-    @Size(min = 5,max = 10,message = "{user.name.size}")
+    @Size(min = 5,max = 10,message = "{user.name.size}",groups = ValidationGroup1.class)
     private String name;
 
     @NotNull(message = "{user.address.notnull}")

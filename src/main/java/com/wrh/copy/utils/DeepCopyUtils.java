@@ -114,14 +114,17 @@ public class DeepCopyUtils {
     @SuppressWarnings("unchecked")
     public static <T extends Serializable> T clone(T obj)
             throws Exception {
+        //在内存中创建一个字节数组缓冲区，所有发送到输出流的数据保存在该字节数组中
+        //默认创建一个大小为32的缓冲区
         ByteArrayOutputStream bout = new ByteArrayOutputStream();
-        ObjectOutputStream oos = new ObjectOutputStream(bout);
-        oos.writeObject(obj);
+        //对象的序列化输出
+        ObjectOutputStream oos = new ObjectOutputStream(bout); //通过字节数组的方式进行传输
+        oos.writeObject(obj); //将当前student对象写入字节数组中
 
-        ByteArrayInputStream bin =
-                new ByteArrayInputStream(bout.toByteArray());
+        //在内存中创建一个字节数组缓冲区，从输入流读取的数据保存在该字节数组缓冲区
+        ByteArrayInputStream bin = new ByteArrayInputStream(bout.toByteArray()); //接收字节数组作为参数进行创建
         ObjectInputStream ois = new ObjectInputStream(bin);
-        return (T) ois.readObject();
+        return (T) ois.readObject(); //从字节数组中读取
 
         // 说明：调用ByteArrayInputStream
         //或ByteArrayOutputStream对象的close方法没有任何意义
