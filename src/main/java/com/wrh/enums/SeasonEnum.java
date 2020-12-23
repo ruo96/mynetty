@@ -6,7 +6,7 @@ package com.wrh.enums;
  * @Description TODO
  * @Date 2020/6/22 16:07
  */
-public enum  SeasonEnum {
+public enum  SeasonEnum implements Seasons {
     SPRING(0),
     SUMMER(1),
     AUTUMN(2),

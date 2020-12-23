@@ -20,6 +20,10 @@ public class MyRunnable implements Runnable {
         this.command = s;
     }
 
+    public MyRunnable() {
+
+    }
+
     @Override
     public void run() {
       log.info("threadName: {}  start time: {}",Thread.currentThread().getName(), LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));

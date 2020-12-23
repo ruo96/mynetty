@@ -5,6 +5,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.io.*;
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -425,6 +429,128 @@ public class TestFileOperate {
         while((b = fileInputStream.read()) != -1){
             System.out.println((char)b);
         }
+
+    }
+
+    /**
+     * 写文件的6种写法  FileWriter  BufferedWriter  PrintWriter FileOutputStream BufferedOutputStream
+     * 字符流的操作速度最快，这是因为我们本次测试的代码操作的是字符串，所以在使用字节流时，需要先将字符串转换为字节流，因此在执行效率上不占优势。
+     * 性能最好的是带有缓冲区的字符串写入流 BufferedWriter，性能最慢的是 Files。
+     */
+    @Test
+    public void Test432() throws IOException {
+        fileWriterMethod("e:\\file\\test.txt","测试用");
+    }
+
+    /**
+     * 方法 1：使用 FileWriter 写文件
+     * @param filepath 文件目录
+     * @param content  待写入内容
+     * @throws IOException
+     */
+    public static void fileWriterMethod(String filepath, String content) throws IOException {
+        try (FileWriter fileWriter = new FileWriter(filepath)) {
+            fileWriter.append(content);
+        }
+
+        /** 追加格式*/
+        try (FileWriter fileWriter = new FileWriter(filepath, true)) {
+            fileWriter.append(content);
+        }
+    }
+
+    /**
+     * 方法 2：使用 BufferedWriter 写文件
+     * @param filepath 文件目录
+     * @param content  待写入内容
+     * @throws IOException
+     */
+    public static void bufferedWriterMethod(String filepath, String content) throws IOException {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filepath))) {
+            bufferedWriter.write(content);
+        }
+
+        /** 追加格式*/
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filepath,true))) {
+            bufferedWriter.write(content);
+        }
+    }
+
+    /**
+     * 方法 3：使用 PrintWriter 写文件
+     * @param filepath 文件目录
+     * @param content  待写入内容
+     * @throws IOException
+     */
+    public static void printWriterMethod(String filepath, String content) throws IOException {
+        try (PrintWriter printWriter = new PrintWriter(new FileWriter(filepath))) {
+            printWriter.print(content);
+        }
+
+        /** 追加格式*/
+        try (PrintWriter printWriter = new PrintWriter(new FileWriter(filepath,true))) {
+            printWriter.print(content);
+        }
+    }
+
+    /**
+     * 方法 4：使用 FileOutputStream 写文件
+     * @param filepath 文件目录
+     * @param content  待写入内容
+     * @throws IOException
+     */
+    public static void fileOutputStreamMethod(String filepath, String content) throws IOException {
+        try (FileOutputStream fileOutputStream = new FileOutputStream(filepath)) {
+            byte[] bytes = content.getBytes();
+            fileOutputStream.write(bytes);
+        }
+
+        /** 追加*/
+        try (FileOutputStream fileOutputStream = new FileOutputStream(filepath,true)) {
+            byte[] bytes = content.getBytes();
+            fileOutputStream.write(bytes);
+        }
+    }
+
+    /**
+     * 方法 5：使用 BufferedOutputStream 写文件
+     * @param filepath 文件目录
+     * @param content  待写入内容
+     * @throws IOException
+     */
+    public static void bufferedOutputStreamMethod(String filepath, String content) throws IOException {
+        try (BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(
+                new FileOutputStream(filepath))) {
+            bufferedOutputStream.write(content.getBytes());
+        }
+
+        /** 追加*/
+        try (BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(
+                new FileOutputStream(filepath, true))) {
+            bufferedOutputStream.write(content.getBytes());
+        }
+    }
+
+    /**
+     * 方法 6：使用 Files 写文件
+     * @param filepath 文件目录
+     * @param content  待写入内容
+     * @throws IOException
+     */
+    public static void filesTest(String filepath, String content) throws IOException {
+        Files.write(Paths.get(filepath), content.getBytes());
+
+        /** 追加*/
+        Files.write(Paths.get(filepath), content.getBytes(), StandardOpenOption.APPEND);
+    }
+
+    @Test
+    public void Test544() throws IOException {
+        SocketChannel socketChannel = SocketChannel.open();
+        socketChannel.connect(new InetSocketAddress("127.0.0.1",8080));
+        String fileName = "";
+        FileChannel channel = new FileInputStream(fileName).getChannel();
+        channel.transferTo(0, channel.size(), socketChannel);
 
     }
 }

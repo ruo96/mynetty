@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import java.util.EnumSet;
+
 /**
  * @Created by wrh
  * @Description:
@@ -13,6 +15,7 @@ import org.junit.Test;
  */
 @Slf4j
 public class TestEnum {
+
     public static void main(String[] args) {
         System.out.println(FootEnum.APPLE.name());
 
@@ -82,7 +85,7 @@ public class TestEnum {
     @Test
     public void Test83() {
         for(SexEnum s : SexEnum.values()){
-            System.out.println(s.getKey() + "====" + s.getText());
+            System.out.println(s.getKey() + "====" + s.getText() + "----" + s.ordinal());
         }
 
     }
@@ -92,6 +95,33 @@ public class TestEnum {
         for(ProfileFrequencyEnum s : ProfileFrequencyEnum.values()){
             System.out.println(s.name() + "====" + s.getText());
         }
+
+    }
+
+    @Test
+    public void Test99() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(Enums.random(SeasonEnum.class));
+        }
+
+    }
+
+    @Test
+    public void Test107() {
+        printSeasons(SeasonEnum.class);
+        printSeasons(SexEnum.class);
+
+    }
+
+    private void printSeasons(Class<? extends Seasons> kind) {
+        Seasons[] s = kind.getEnumConstants();
+        System.out.println(Enums.random(s));
+    }
+
+    @Test
+    public void Test120() {
+        EnumSet<SeasonEnum> set = EnumSet.allOf(SeasonEnum.class);
+        System.out.println(set);
 
     }
 

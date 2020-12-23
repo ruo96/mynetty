@@ -36,4 +36,11 @@ public class TestRandom {
             System.out.println(random);
         }
     }
+
+    @Test
+    public void Test41() {
+        Random random = new Random(4);
+        System.out.println(random.nextInt(10));
+
+    }
 }

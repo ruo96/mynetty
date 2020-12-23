@@ -8,7 +8,7 @@ import lombok.Data;
  * @Description TODO
  * @Date 2020/12/11 15:08
  */
-public enum SexEnum {
+public enum SexEnum implements Seasons{
     MALE(1,"男"),
     FEMALE(2,"女"),
     UNKONWN(-1,"未知");
@@ -29,6 +29,7 @@ public enum SexEnum {
     public String getText() {
         return text;
     }
+
 
 
 }

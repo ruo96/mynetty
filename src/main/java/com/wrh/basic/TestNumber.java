@@ -63,4 +63,16 @@ public class TestNumber {
             log.info("===> {}",strings[i]);
         }
     }
+
+    @Test
+    public void Test68() {
+        int i = 1;
+        i = ++i;
+        System.out.println(i);
+        int j = i++;
+        System.out.println(j);
+        int k = i + ++i * i++;
+        System.out.println(k);
+
+    }
 }
