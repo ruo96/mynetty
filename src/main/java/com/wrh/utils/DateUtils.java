@@ -10,8 +10,10 @@ import org.joda.time.DateTime;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
@@ -227,6 +229,25 @@ public class DateUtils {
 
     public static void main(String[] args) {
         System.out.println(daysBetweenPeriod("2020-11-01", "2020-11-03"));
+    }
+
+    public static Date localDate2Date(LocalDate localDate) {
+        ZoneId zone = ZoneId.systemDefault();
+        Instant instant = localDate.atStartOfDay().atZone(zone).toInstant();
+        return Date.from(instant);
+    }
+
+    public static LocalDate date2LocalDate(Date date) {
+        Instant instant = date.toInstant();
+        ZoneId zone = ZoneId.systemDefault();
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(instant,zone);
+        return localDateTime.toLocalDate();
+    }
+    @Test
+    public void Test247() {
+        System.out.println(localDate2Date(LocalDate.now()));
+        System.out.println(date2LocalDate(new Date()));
+
     }
 
 }
