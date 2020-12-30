@@ -1,10 +1,18 @@
 package com.wrh.collection.map;
 
+import akka.stream.impl.SourceModuleIslandTag;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import sun.security.action.GetLongAction;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.LongAdder;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * @Created by wrh
@@ -38,4 +46,51 @@ public class TestConcurrentHashMap {
         System.out.println(tableSizeFor(25));
 
     }
+
+    @Test
+    public void Test43() throws InterruptedException {
+        System.out.println(getLongAdd());
+
+    }
+
+    private Map<String, Long> getLongAdd() throws InterruptedException {
+        int ITEM_COUNT = 4;
+        int THREAD_COUNT = 10;
+        int LOOP_COUNT = 100;
+        ConcurrentHashMap<String, LongAdder> freqs = new ConcurrentHashMap<>(ITEM_COUNT);
+        ForkJoinPool forkJoinPool =  new ForkJoinPool(THREAD_COUNT);
+        forkJoinPool.execute(()->{
+            IntStream.rangeClosed(1,LOOP_COUNT).parallel().forEach(i->{
+                String key = "---item"+ ThreadLocalRandom.current().nextInt(ITEM_COUNT);
+                freqs.computeIfAbsent(key, k->new LongAdder()).increment();
+            });
+        });
+        forkJoinPool.shutdown();
+        forkJoinPool.awaitTermination(1, TimeUnit.HOURS);
+        return freqs.entrySet().stream()
+                .collect(Collectors.toMap(Map.Entry::getKey,
+                        e->e.getValue().longValue()));
+    }
+
+    @Test
+    public void Test76() {
+        ConcurrentHashMap<String, Integer> map = new ConcurrentHashMap<>();
+        System.out.println(map);
+        map.putIfAbsent("w1",1);
+        System.out.println(map);
+        map.putIfAbsent("w1",2);
+        System.out.println(map);
+    }
+    @Test
+    public void Test85() {
+        ConcurrentHashMap<String, Integer> map = new ConcurrentHashMap<>();
+        System.out.println(map);
+        map.computeIfAbsent("w1", k->1);
+        System.out.println(map);
+        map.computeIfAbsent("w1",k->2);
+        System.out.println(map);
+
+    }
+
+
 }

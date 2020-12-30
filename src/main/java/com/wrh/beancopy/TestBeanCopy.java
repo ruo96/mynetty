@@ -2,9 +2,16 @@ package com.wrh.beancopy;
 
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
+import ma.glasnost.orika.MapperFacade;
+import ma.glasnost.orika.MapperFactory;
+import ma.glasnost.orika.converter.ConverterFactory;
+import ma.glasnost.orika.converter.TypeConverter;
+import ma.glasnost.orika.impl.DefaultMapperFactory;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
+import org.springframework.cglib.beans.BeanCopier;
 
+import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,6 +87,43 @@ public class TestBeanCopy {
 
         log.info("变动后的对象：{}", JSON.toJSONString(groupInfo));
         log.info("变动后的对象：{}", JSON.toJSONString(groupInfo1));
+
+    }
+
+    private GroupInfo getSource() {
+        GroupInfo groupInfo = new GroupInfo();
+        groupInfo.setGroupId(0);
+        groupInfo.setName("组1");
+        groupInfo.setIntegerValue(1);
+        groupInfo.setStrValue("wrh");
+        groupInfo.setBoolValue(true);
+        groupInfo.setLongValue(10L);
+
+        return  groupInfo;
+    }
+
+    @Test
+    public void Test87() {
+        BeanCopier bc = BeanCopier.create(GroupInfo.class, GroupInfo.class,false);
+        GroupInfo source = getSource();
+        GroupInfo target = new GroupInfo();
+        bc.copy(source, target, null);
+        System.out.println(source);
+        System.out.println(target);
+        System.out.println(source == target);
+
+    }
+
+    @Test
+    public void Test112() {
+        MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
+        mapperFactory.classMap(GroupInfo.class, GroupInfo.class);
+        MapperFacade mapper = mapperFactory.getMapperFacade();
+        GroupInfo source = getSource();
+        GroupInfo target = mapper.map(source, GroupInfo.class);
+        System.out.println(source);
+        System.out.println(target);
+        System.out.println(source == target);
 
     }
 }
