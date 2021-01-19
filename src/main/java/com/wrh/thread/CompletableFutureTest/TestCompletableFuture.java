@@ -3,6 +3,7 @@ package com.wrh.thread.CompletableFutureTest;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.springframework.util.StopWatch;
 
 import java.util.*;
 import java.util.concurrent.*;
@@ -10,6 +11,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 /**
  * @Created by wrh
@@ -721,6 +723,71 @@ public class TestCompletableFuture {
         }).join();
         System.out.println(result);
     }
+
+    private static List<String> videos = Arrays.asList("夏洛特","春物","某科学的超电磁炮","秒速五厘米","言叶之庭","星之声","徒然喜欢你","just because","天气之子","你的名字");
+
+    public static List<Video> selectVideos() {
+        List<Video> videoList = videos.stream().map(name->{
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return new Video(name);
+        }).collect(Collectors.toList());
+        return videoList;
+    }
+
+    private static Executor executor =
+            Executors.newFixedThreadPool(
+                    // 当视频数量小于100的时候取视频数量，大于100的时候取100
+                    Math.min(videos.size(), 100),
+                    new ThreadFactory() {
+                        @Override
+                        public Thread newThread(Runnable r) {
+                            Thread t = new Thread(r);
+                            // 将线程设置为守护线程
+                            t.setDaemon(true);
+                            return t;
+                        }
+                    });
+    public static List<Video> selectVideosPerfect() {
+        System.out.println(Runtime.getRuntime().availableProcessors());
+        List<CompletableFuture<Video>> futureList = videos.stream()
+                // 将name映射为CompletableFuture<Video>
+                .map(name -> CompletableFuture.supplyAsync(() -> {
+                    try {
+                        Thread.sleep(1000L);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                    return new Video(name);
+                    //汇总CompletableFuture<Video>
+                    // 使用重载方法传入自定义executor
+                },executor)).collect(Collectors.toList());
+        return futureList.stream()
+                // 将CompletableFuture<Video>中取出Video
+                .map(CompletableFuture::join)
+                // 汇总为Video列表
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * 使用join来聚合异步请求 好东西
+     */
+    @Test
+    public void Test775() {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start("perfect");
+        selectVideosPerfect();
+        stopWatch.stop();
+        stopWatch.start("normal");
+        selectVideos();
+        stopWatch.stop();
+        System.out.println(stopWatch.prettyPrint());
+
+    }
+
 
 
 }

@@ -2,11 +2,14 @@ package com.wrh.classloader;
 
 import com.wrh.classloader.vo.ClassA;
 import com.wrh.classloader.vo.ClassB;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import org.junit.Test;
 import sun.misc.Launcher;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.net.URL;
 
 /**
@@ -16,7 +19,10 @@ import java.net.URL;
  * @Modified By:
  */
 @Slf4j
+@Data
 public class TestClassloader {
+
+    private String name;
 
     /*也可以将自己的类打包成jar包, 放在扩展类加载器所在的路径中, 那么扩展类加载器就会加载你所需要的类*/
 
@@ -80,6 +86,42 @@ public class TestClassloader {
         System.out.println();
         System.out.println("appClassLoader加载以下文件：");
         System.out.println(System.getProperty("java.class.path"));
+
+
+    }
+    
+    @Test
+    public void Test88() throws ClassNotFoundException, NoSuchMethodException, NoSuchFieldException {
+        Class clazz = Class.forName("com.wrh.classloader.TestClassloader");
+
+        // 获取类名字
+        System.out.println(clazz.getName()); // 包名 + 类名
+        System.out.println(clazz.getSimpleName()); // 类名
+
+        // 获取类属性
+        System.out.println("================");
+        // 只能找到public属性
+        Field[] fields = clazz.getFields();
+
+        // 找到全部的属性
+        Field [] fieldAll = clazz.getDeclaredFields();
+
+        for (int i = 0; i < fieldAll.length; i++) {
+            System.out.println(fieldAll[i]);
+        }
+
+        // 获取指定属性的值
+        Field name = clazz.getDeclaredField("name");
+
+        // 获取方法
+        Method[] methods = clazz.getDeclaredMethods(); // 获取本类和父类的所有public方法
+        Method [] methods2 = clazz.getMethods(); // 获取本类所有方法
+
+        // 获得指定方法
+        Method method = clazz.getDeclaredMethod("getName", null);
+
+        // 获取方法的时候，可以把参数也丢进去，这样因为避免方法重载，而造成不知道加载那个方法
+        Method method2 = clazz.getDeclaredMethod("setName", String.class);
 
 
     }

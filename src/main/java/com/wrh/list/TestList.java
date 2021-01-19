@@ -1,9 +1,7 @@
 package com.wrh.list;
 
-import cn.hutool.core.util.ArrayUtil;
+import cn.hutool.core.lang.Assert;
 import com.alibaba.fastjson.JSON;
-import com.google.common.collect.Lists;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import com.wrh.collection.map.GameRealTimeData;
 import com.wrh.collection.map.vo.GameDayDataV2;
 import com.wrh.elasticsearch.Student;
@@ -24,10 +22,6 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import static com.wrh.collection.map.DateUtil.getDsList;
-import static com.wrh.utils.ObjectCheckHandleUtils.handle;
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 /**
  * @Created by wrh
@@ -1519,6 +1513,32 @@ public class TestList {
         list.add(1.1f);
         list.add(new Object());
         System.out.println(list);
+
+    }
+
+    @Test
+    public void Test1526() {
+        List<Student> list = getStudentList();
+
+        System.out.println(list);
+            list.stream().forEach(e->{
+                if (e.getName().equals("w3")) {
+                    e.setName("ww");
+                }
+            });
+
+        System.out.println(list);
+
+
+
+    }
+
+    @Test
+    public void Test1537() {
+        List<Student> list = new ArrayList<>();
+        list.stream().forEach(e->{
+            System.out.println(e);
+        });
 
     }
 

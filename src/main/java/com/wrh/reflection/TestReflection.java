@@ -1,5 +1,10 @@
 package com.wrh.reflection;
 
+import com.wrh.elasticsearch.Student;
+import org.junit.Test;
+
+import java.util.Arrays;
+
 /**
  * @Created by wrh
  * @Description:
@@ -19,5 +24,20 @@ public class TestReflection {
         System.out.println("类名称   " + class1.getName());
         System.out.println("类名称   " + class2.getName());
         System.out.println("类名称   " + class3.getName());
+    }
+
+
+    @Test
+    public void Test25() throws ClassNotFoundException {
+        Class clz = Class.forName("com.wrh.elasticsearch.Student");
+        System.out.println(clz.getClassLoader());
+        System.out.println(clz.getName());
+        System.out.println(Arrays.toString(clz.getDeclaredFields()));
+        System.out.println(clz.getSuperclass());
+        System.out.println(Arrays.toString(clz.getInterfaces()));
+        System.out.println(Arrays.toString(clz.getMethods()));
+//        本内置类型的包装类，都有一个Type属性
+        Class c = Integer.TYPE;
+
     }
 }

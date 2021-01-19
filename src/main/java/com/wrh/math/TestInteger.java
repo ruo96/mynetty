@@ -453,6 +453,25 @@ public class TestInteger {
 
      }
 
+    /**
+     * 判断字符串是否是数字格式   数字格式字符串
+     */
+    @Test
+     public void Test457() {
+         String str = "-123";
+         // String str = input string
+         // string 只包含数字和开始的负号
+         if ( (str != null) && str.matches("-?\\d++") ) {
+             Integer value = Integer.valueOf(str);
+             System.out.println(str + "is number");
+             // 业务逻辑
+         } else {
+             // 处理错误的 string
+             System.out.println(str + "is not number");
+         }
+         
+     }
+
 
 
 }

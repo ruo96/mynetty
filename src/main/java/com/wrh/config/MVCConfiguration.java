@@ -1,7 +1,12 @@
 package com.wrh.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.servlet.config.annotation.*;
 
 /**
@@ -38,5 +43,27 @@ public class MVCConfiguration implements WebMvcConfigurer {
         registry.addResourceHandler("/pic/**").addResourceLocations("classpath:/static/pic/");
         //如访问mysource文件夹下的a.jpg，则输入：localhost:8080/myprofix/a.jpg
         registry.addResourceHandler("/mypic/**").addResourceLocations("file:E:/mypic/");
+    }
+
+    /**
+     * 跨域解决方式 4种   1，@CrossOrigin 加到类上或者方法上  2 实现 addCorsMappings   3. 注册bean
+     */
+    /*@Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedHeaders("*")
+                .allowedMethods("*")
+                .allowedOrigins("http://localhost:8081")
+                .maxAge(1800);
+    }*/
+
+//    @Bean
+    CorsFilter corsFilter(){
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        CorsConfiguration cfg = new CorsConfiguration();
+        cfg.addAllowedOrigin("http://localhost:8081");
+        cfg.addAllowedMethod("*");
+        source.registerCorsConfiguration("/**",cfg);
+        return new CorsFilter(source);
     }
 }

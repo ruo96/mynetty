@@ -1,6 +1,9 @@
 package com.wrh.thread.hook;
 
-import java.util.concurrent.TimeUnit;
+import akka.remote.artery.aeron.TaskRunner;
+import org.junit.Test;
+
+import java.util.concurrent.*;
 
 /**
  * @Created by wrh
@@ -24,5 +27,29 @@ public class TestHook {
             System.out.println(1/0);
         },"test-thread");
         thread.start();
+    }
+
+
+    @Test
+    public void Test33() {
+        //1.实现一个自己的线程池工厂
+        ThreadFactory factory = (Runnable r) -> {
+            //创建一个线程
+            Thread t = new Thread(r);
+            //给创建的线程设置UncaughtExceptionHandler对象 里面实现异常的默认逻辑
+            Thread.setDefaultUncaughtExceptionHandler((Thread thread1, Throwable e) -> {
+                // 在此设置统计监控逻辑
+                System.out.println("线程工厂设置的exceptionHandler" + e.getMessage());
+            });
+            return t;
+        };
+
+// 2.创建一个自己定义的线程池，使用自己定义的线程工厂
+        ExecutorService service = new ThreadPoolExecutor(1, 1, 0, TimeUnit.MILLISECONDS,new LinkedBlockingQueue(10),factory);
+
+//3.提交任务
+        service.execute(()->{
+            int i=1/0;
+        });
     }
 }

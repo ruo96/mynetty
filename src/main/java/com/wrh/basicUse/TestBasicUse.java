@@ -1,5 +1,6 @@
 package com.wrh.basicUse;
 
+import akka.remote.artery.aeron.TaskRunner;
 import com.alibaba.fastjson.JSON;
 import com.google.gson.Gson;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
@@ -663,6 +664,19 @@ public class TestBasicUse {
         System.out.println("===============");
         for (int i = 0; i < 5; ++i) {
             System.out.println(i);
+        }
+
+    }
+
+    @Test
+    public void Test672() {
+        Student s = new Student();
+        s.setId(1);
+        System.out.println(s);
+        if (s.getId().equals(1)) {
+            System.out.println("equal 1 ");
+        } else {
+            System.out.println("not equal 1");
         }
 
     }
