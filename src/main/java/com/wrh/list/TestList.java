@@ -1542,5 +1542,55 @@ public class TestList {
 
     }
 
+    @Test
+    public void Test1546() {
+        List list = new ArrayList();
+        list.add(1);
+        list.add("w1");
+        System.out.println("list = " + list);
+
+    }
+
+    @Test
+    public void Test1555() {
+        List<Integer> list = new ArrayList<>();
+        System.out.println("list.getClass().getName() = " + list.getClass().getName());
+
+    }
+
+    @Test
+    public void Test1562() {
+        List<Student> list = new ArrayList<>();
+        Student s1 = new Student();
+        s1.setName("w1");
+        s1.setId(1);
+        s1.setGrade(1);
+        s1.setMoney(1L);
+
+        Student s2 = new Student();
+        s2.setName("w2");
+        s2.setId(2);
+        s2.setGrade(2);
+        s2.setMoney(2L);
+
+        list.add(s1);
+        list.add(s2);
+        System.out.println(list);
+        handleListV2(list);
+        System.out.println(list);
+    }
+
+    private void handleListV2(List<Student> l) {
+        List<Student> list = l;
+        for (Student s : list) {
+            if (s.getName().equals("w1")) {
+                s.setName("w3");
+                s.setId(999);
+                s.setGrade(9999);
+                s.setFlag(false);
+            }
+        }
+    }
+
 
 }

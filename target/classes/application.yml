@@ -165,3 +165,6 @@ shiro:
 #    web:
 #      exposure:
 #        include: metrics
+
+demo:
+  enable: false

@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="true" scan="true" scanPeriod="30 seconds">
+    <!--
+        org/springframework/boot/logging/logback/
+        defaults.xml：提供了公共的日志配置，日志输出规则等。
+        console-appender.xml：使用 CONSOLE_LOG_PATTERN 添加一个ConsoleAppender。
+        file-appender.xml：添加一个 RollingFileAppender。
+        base.xml：为了兼容旧版 Spring Boot 而提供的。
+    -->
     <include resource="org/springframework/boot/logging/logback/defaults.xml" />
     <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
     <springProperty scope="context" name="logging.path" source="logging.path" defaultValue="logs"/>

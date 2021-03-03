@@ -1,0 +1,3 @@
+org.springframework.boot.diagnostics.FailureAnalyzer=\
+com.wrh.failureAnalyzer.MyPortInUseFailureAnalyzer,\
+com.wrh.failureAnalyzer.MyJavaStackExceptionAnalyzer

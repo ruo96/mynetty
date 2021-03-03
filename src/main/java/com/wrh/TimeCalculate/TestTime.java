@@ -7,6 +7,7 @@ import com.wrh.utils.DateUtils;
 import com.wrh.utils.RowKeyHashUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.flink.util.TimeUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
 import org.junit.Test;
@@ -20,6 +21,8 @@ import java.time.temporal.TemporalField;
 import java.time.temporal.WeekFields;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+
+import static com.wrh.collection.map.DateUtil.*;
 
 /**
  * @Created by wrh
@@ -351,6 +354,7 @@ public class TestTime {
         LocalDateTime localtDateAndTime = LocalDateTime.now();
 
         ZonedDateTime dateAndTimeInNewYork  = ZonedDateTime.of(localtDateAndTime, america );
+        System.out.println("localtDateAndTime = " + localtDateAndTime);
         System.out.println("现在的日期和时间在特定的时区 : " + dateAndTimeInNewYork);
     }
 
@@ -434,7 +438,8 @@ public class TestTime {
         System.out.println(now);
         System.out.println(now.plusMonths(1));
 
-        LocalDate day =  LocalDate.parse("2020-05-01", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+//        LocalDate day =  LocalDate.parse("2020-05-01", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        LocalDate day =  LocalDate.parse("2020-05-01", DateTimeFormatter.ISO_DATE);
         System.out.println(day);
         System.out.println(day.plusMonths(1));
         System.out.println(day.minusMonths(1));
@@ -446,7 +451,7 @@ public class TestTime {
         System.out.println(ds.toString());
     }
 
-    public static boolean isFirstDayOfDimension(String dsEnd, String dimension) {
+    /*public static boolean isFirstDayOfDimension(String dsEnd, String dimension) {
         LocalDate date = LocalDate.parse(dsEnd, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         if (dimension.equals("year")) {
             return date.getDayOfYear() == 1;
@@ -455,7 +460,7 @@ public class TestTime {
         }else {
             return true;
         }
-    }
+    }*/
 
     @Test
     public void Test22() {
@@ -491,7 +496,7 @@ public class TestTime {
         System.out.println(isEqualDimension(date1,date3,"year"));
     }
 
-    public static LocalDate getFirstDayOfDimension(String dsEnd, String dimension) {
+    /*public static LocalDate getFirstDayOfDimension(String dsEnd, String dimension) {
         LocalDate date = LocalDate.parse(dsEnd, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         if(dimension.equals("year")){
             return LocalDate.of(date.getYear(), 1, 1);
@@ -500,7 +505,7 @@ public class TestTime {
         }else {
             return null;
         }
-    }
+    }*/
 
     @Test
     public void Test24() {
@@ -1043,6 +1048,191 @@ public class TestTime {
         AbstractRoutingDataSource dataSource ;
         DataSourceType dataSourceType;
 //        dataSourceType
+    }
+
+    @Test
+    public void Test1051() {
+        System.out.println("LocalDateTime.now().getHour() = " + LocalDateTime.now().getHour());
+
+    }
+
+    @Test
+    public void Test1057() {
+        String ds = "2021-02-28";
+        LocalDate end = LocalDate.parse(ds, DateTimeFormatter.ofPattern(yyyyMMdd));
+        Integer totalDays = end.with(TemporalAdjusters.lastDayOfMonth()).getDayOfMonth();
+        System.out.println("totalDays = " + totalDays);
+        System.out.println("end.getMonthValue() = " + end.getMonthValue());
+    }
+
+    @Test
+    public void Test1065() {
+        String ds = "2021-02-28";
+        LocalDate end = LocalDate.parse(ds, DateTimeFormatter.ofPattern(yyyyMMdd));
+        LocalDate end1 = end.minusMonths(1);
+        System.out.println("end1 = " + end1);
+    }
+
+    boolean isFirstDayOfDimension(String dsEnd, String dimension) {
+        LocalDate date = LocalDate.parse(dsEnd, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        if (dimension.equals(DIMENSION_YEAR)) {
+            return date.getDayOfYear() == 1;
+        }else if (dimension.equals(DIMENSION_MONTH)) {
+            return date.getDayOfMonth() == 1;
+        }else if (dimension.equals(DIMENSION_WEEK)) {
+            return date.getDayOfWeek().getValue() == 1;
+        }else {
+            return date.equals(LocalDate.now());
+        }
+    }
+    @Test
+    public void Test1088() {
+        String ds = "2021-02-22";
+        System.out.println("isFirstDayOfDimension(ds, \"week\") = " + isFirstDayOfDimension(ds, "week"));
+    }
+    
+    @Test
+    public void Test1094() {
+        String ds = "2021-02-13";
+        System.out.println("getFirstDayOfDimension(ds,\"week\") = " + getFirstDayOfDimension(ds, "week"));
+
+    }
+
+    public static LocalDate getFirstDayOfDimension(String dsEnd, String dimension) {
+        LocalDate date = LocalDate.parse(dsEnd, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        if(dimension.equals(DIMENSION_YEAR)){
+            return LocalDate.of(date.getYear(), 1, 1);
+        }else if (dimension.equals(DIMENSION_MONTH)) {
+            return LocalDate.of(date.getYear(), date.getMonth(), 1);
+        }else if (dimension.equals(DIMENSION_WEEK)) {
+            return date.minusDays(date.getDayOfWeek().getValue()-1);
+        }else {
+            return null;
+        }
+    }
+
+    @Test
+    public void Test1114() {
+        String ds = "2021-02-13";
+        LocalDate date = LocalDate.parse(ds, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        System.out.println("date.getDayOfWeek() = " + date.getDayOfWeek());
+        System.out.println("date.getDayOfWeek().getValue() = " + date.getDayOfWeek().getValue());
+
+    }
+
+    public static boolean isSameDimension(String ds1, String ds2, String dimension) {
+        LocalDate date1 = LocalDate.parse(ds1,DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDate date2 = LocalDate.parse(ds2,DateTimeFormatter.ofPattern(DATE_FORMAT));
+        switch (dimension) {
+            case DIMENSION_YEAR:
+                return date1.getYear() == date2.getYear();
+            case DIMENSION_MONTH:
+                return date1.getYear() == date2.getYear() && date1.getMonthValue() == date2.getMonthValue();
+            case DIMENSION_WEEK:
+                return getFirstDayOfDimension(ds1,DIMENSION_WEEK).equals(getFirstDayOfDimension(ds2,DIMENSION_WEEK));
+            default:
+                return false;
+        }
+    }
+
+    public static boolean isSameDimensionNow(String ds1, String dimension) {
+        LocalDate date1 = LocalDate.parse(ds1,DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDate date2 = LocalDate.now();
+        switch (dimension) {
+            case DIMENSION_YEAR:
+                return date1.getYear() == date2.getYear();
+            case DIMENSION_MONTH:
+                return date1.getYear() == date2.getYear() && date1.getMonthValue() == date2.getMonthValue();
+            case DIMENSION_WEEK:
+                return getFirstDayOfDimension(ds1,DIMENSION_WEEK).equals(getFirstDayOfDimension(date2.toString(),DIMENSION_WEEK));
+            default:
+                return false;
+        }
+    }
+
+    @Test
+    public void Test1153() {
+        String ds1 = "2021-02-21";
+        String ds2 = "2021-02-22";
+
+        System.out.println("isSameDimension(ds1, ds2, DIMENSION_WEEK) = " + isSameDimension(ds1, ds2, DIMENSION_WEEK));
+
+    }
+
+    @Test
+    public void Test1162() {
+        String ds1 = "2021-02-21";
+        String ds2 = "2021-02-22";
+        LocalDate date1 = LocalDate.parse(ds1,DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDate date2 = LocalDate.parse(ds2,DateTimeFormatter.ofPattern(DATE_FORMAT));
+        System.out.println("Period.between(date1,date2).getDays() = " + Period.between(date1, date2).getDays());
+        System.out.println("Period.between(date2,date1).getDays() = " + Period.between(date2, date1).getDays());
+
+    }
+
+    @Test
+    public void Test1173() {
+        String ds1 = "2020-03-01";
+        String ds2 = "2020-03-31";
+        System.out.println("ds1.substring(0,7) = " + ds1.substring(0, 7));
+        LocalDate date1 = LocalDate.parse(ds1,DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDate date2 = LocalDate.parse(ds2,DateTimeFormatter.ofPattern(DATE_FORMAT));
+        System.out.println("date1.minusMonths(1).toString() = " + date1.minusMonths(1).toString());
+        System.out.println("date2.minusMonths(1).toString() = " + date2.minusMonths(1).toString());
+    }
+
+    public static LocalDate getLastDayOfDimension(String ds, String dimension) {
+        LocalDate date = LocalDate.parse(ds, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        if(dimension.equals(DIMENSION_YEAR)){
+            return date.with(TemporalAdjusters.lastDayOfYear());
+        }else if (dimension.equals(DIMENSION_MONTH)) {
+            return date.with(TemporalAdjusters.lastDayOfMonth());
+        }else if (dimension.equals(DIMENSION_WEEK)) {
+            return date.with(TemporalAdjusters.nextOrSame(DayOfWeek.SUNDAY));
+        }else {
+            return null;
+        }
+    }
+    
+    @Test
+    public void Test1197() {
+        String ds = "2021-02-17";
+        LocalDate d1 = getLastDayOfDimension(ds, DIMENSION_YEAR);
+        LocalDate d2 = getLastDayOfDimension(ds, DIMENSION_MONTH);
+        LocalDate d3 = getLastDayOfDimension(ds, DIMENSION_WEEK);
+        System.out.println("d1 = " + d1);
+        System.out.println("d2 = " + d2);
+        System.out.println("d3 = " + d3);
+    }
+
+    @Test
+    public void Test1208() {
+        String dsEnd = "2021-03-01";
+        LocalDate end = DateUtil.getLastDayOfDimension(dsEnd, DIMENSION_YEAR);
+        if (end.equals(LocalDate.now())) {
+            System.out.println("1end.minusDays(1).toString() = " + end.minusDays(1).toString());
+        } else {
+            System.out.println("2end.minusDays(1).toString() = " + end.toString());
+        }
+
+    }
+
+    @Test
+    public void Test1220() {
+        /*TraceWatch traceWatch = new TraceWatch();
+
+        traceWatch.start("function1");
+        TimeUnit.SECONDS.sleep(1); // 模拟业务代码
+        traceWatch.stop();
+
+        traceWatch.start("function2");
+        TimeUnit.SECONDS.sleep(1); // 模拟业务代码
+        traceWatch.stop();
+
+        traceWatch.record("function1", 1); // 直接记录耗时
+
+        System.out.println(JSON.toJSONString(traceWatch.getTaskMap()));*/
+
     }
 
 

@@ -1,6 +1,7 @@
 package com.wrh;
 
 
+import com.wrh.exception.ExceptionA;
 import com.wrh.server.EchoServer;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.extern.slf4j.Slf4j;
@@ -53,7 +54,12 @@ public class MynettyApplication {
 		SpringApplication.run(MynettyApplication.class, args);
 	}
 
-	@Bean
+    /*@Bean
+    public CommandLineRunner commandLineRunner(){
+        throw new ExceptionA("Java技术栈异常");
+    }*/
+
+	/*@Bean
 	public CommandLineRunner commandLineRunner() throws InterruptedException, SQLException {
 
         log.info("开始启动服务端的服务!");
@@ -81,7 +87,7 @@ public class MynettyApplication {
         };
 
 
-    }
+    }*/
 
     @Bean
 

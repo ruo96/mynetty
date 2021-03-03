@@ -11,6 +11,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.springframework.util.StopWatch;
 
+import java.util.Arrays;
+
 /**
  * @Classname TestString
  * @Description TODO
@@ -166,6 +168,64 @@ public class TestString {
 
     @Test
     public void Test168() {
+        String str1 = new StringBuilder("计算机").append("软件").toString();
+        System.out.println("str1.intern() == str1 = " + (str1.intern() == str1));// 首次出现的字符串，则intern返回的就是堆中的引用，但是如果非首次出现，那么就不一样对象
 
+        String str2 = new StringBuilder("ja").append("va").toString();
+        System.out.println("str2.intern() == str2 = " + (str2.intern() == str2));
+
+        String str3 = new StringBuilder("boo").append("lean").toString();
+        System.out.println("str3.intern() == str3 = " + (str3.intern() == str3));
+
+
+    }
+
+    @Test
+    public void Test182() {
+        /*int i  = 2;
+        int j = --i;
+        System.out.println(i);
+        System.out.println(j);*/
+
+        Integer[] a = {1,2,3,4,5};
+        int index = 4;
+        Integer i = a[--index];
+        System.out.println("1--i = " + i);
+        System.out.println("1--Arrays.toString(a) = " + Arrays.toString(a));
+        a[index] = null;
+        System.out.println("2--Arrays.toString(a) = " + Arrays.toString(a));
+        System.out.println("2--i = " + i);
+
+    }
+
+    @Test
+    public void Test202() {
+        String str = "UTC+8";
+        System.out.println("str.substring(3) = " + str.substring(4));
+
+    }
+
+    @Test
+    public void Test209() {
+        String ds = "year";
+        System.out.println("getStrSwitch(ds) = " + getStrSwitch(ds));
+
+    }
+
+    String getStrSwitch(String ds) {
+        String ds1 ;
+        switch (ds) {
+            case "day":
+                System.out.println("is day");
+                ds1 = "day";
+                break;
+            case "year":
+                System.out.println("is year");
+                ds1 = "year";
+                break;
+            default:
+                return "default";
+        }
+        return ds1;
     }
 }

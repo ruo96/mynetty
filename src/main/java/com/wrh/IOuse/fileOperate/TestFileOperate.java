@@ -3,6 +3,7 @@ package com.wrh.IOuse.fileOperate;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
+import org.springframework.util.ResourceUtils;
 
 import java.io.*;
 import java.net.InetSocketAddress;
@@ -10,12 +11,10 @@ import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.*;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Stream;
 
 /**
@@ -552,5 +551,63 @@ public class TestFileOperate {
         FileChannel channel = new FileInputStream(fileName).getChannel();
         channel.transferTo(0, channel.size(), socketChannel);
 
+    }
+
+    /**
+     * sku 数据很多数据，无法加载到内存。  流式读取文件
+     *
+     * 也就是说我们不能将数据全部读到内存中，然后遍历打印。
+     *
+     * 这就要求我们只能通过「流的方式」，逐条读取，然后打印输出。
+     *
+     * 流的方式，可以想到使用 BufferedReader 方式，一行一行读取。
+     *
+     * 不过，使用BufferedReader相关代码比较繁琐，由于当前笔试没要求 JDK 版本的，所以我们可以通过使用 JDK8  Files#lines 的流式读取的方式。
+     * @throws IOException
+     */
+    @Test
+    public void Test558() throws IOException {
+        Files.lines(ResourceUtils.getFile("e:\\1.txt").toPath())
+                .skip(1)
+                .forEach(line->{
+                    System.out.println("["+line+"]");
+                });
+
+        File file = new File("e:\\1.txt");
+
+    }
+    
+    @Test
+    public void Test584() throws IOException {
+        // 价格为 key，value 为 sku 出现的次数
+        TreeMap<Integer, Integer> treeMap = new TreeMap<>();
+// 使用题目一的方法遍历读取文件，将数据加载到  treeMap 中
+        Files.lines(ResourceUtils.getFile("e:\\1.txt").toPath())
+                // 跳过标题头
+                /*.skip(1)*/
+                // 遍历元素
+                .forEach(line -> {
+                    // 将一行的字符串转化为一个对象，然后打印输出
+                    // 由于价格都是整数
+                    // 这里使用 merge，如果当前这个价格在 map 中不存在，则值为 1，否则将调用后面的设置的函数
+                    treeMap.merge(Integer.valueOf(line), 1, Integer::sum);
+                });
+        System.out.println(treeMap);
+        System.out.println("treeMap.size() = " + treeMap.size());
+        int mid = treeMap.size() / 2;
+        int midPrice = 0;
+        int count = 0;
+        for (Map.Entry<Integer, Integer> entry : treeMap.entrySet()) {
+            // 第一次 count 大于等于 mid，代表中位数位于这个区间
+            if (count + entry.getValue() >= mid) {
+                // 中间的价格,偶数的情况下随便选一个
+                midPrice = entry.getKey();
+                break;
+            }
+            count += entry.getValue();
+
+        }
+        System.out.println("价格排序后在中间的价格为" + midPrice);
+        
     }
 }

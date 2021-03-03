@@ -38,6 +38,7 @@ public class DateUtil {
     public static final String DIMENSION_YEAR = "year";
     public static final String DIMENSION_MONTH = "month";
     public static final String DIMENSION_DAY = "day";
+    public static final String DIMENSION_WEEK = "week";
 
     private DateUtil() {}
 

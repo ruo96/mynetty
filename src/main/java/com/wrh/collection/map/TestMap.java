@@ -1,16 +1,20 @@
 package com.wrh.collection.map;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.alibaba.fastjson.JSON;
 import com.wrh.collection.map.vo.GameDayDataV2;
 import com.wrh.elasticsearch.Student;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -972,6 +976,84 @@ public class TestMap {
         Map<String, String> map = new HashMap<>();
         map.put("null", "1");
         System.out.println(map);
+
+    }
+
+    /**
+     * 对象转map
+     * @throws IllegalAccessException
+     * @throws NoSuchMethodException
+     * @throws InvocationTargetException
+     */
+    @Test
+    public void Test979() throws IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+        Student s = new Student();
+        s.setName("w1");
+        s.setId(1);
+        s.setGrade(2);
+//        s.setMoney(3L);
+        s.setTitle("t1");
+        s.setFlag(true);
+
+        Map<String, Object> map = BeanUtils.describe(s);
+        map.remove("class");
+        System.out.println("map = " + map);
+
+
+    }
+
+    @Test
+    public void Test1004() {
+        Student s = new Student();
+        s.setName("w1");
+        s.setId(1);
+        s.setGrade(2);
+//        s.setMoney(3L);
+        s.setTitle("t1");
+        s.setFlag(true);
+
+        Map<String, Object> map = BeanUtil.beanToMap(s);
+        System.out.println("map = " + map);
+
+    }
+
+    @Test
+    public void Test1020() {
+        Map<String, String> map = new HashMap<>();
+        map.put("w1","s1");
+        map.put("w2","s2");
+        map.put("w3","s3");
+        map.put("w4","s4");
+
+        /*map.forEach(new BiConsumer<String, String>() {
+            @Override
+            public void accept(String s, String s2) {
+                System.out.println("key: " + s +"   value:" + s2);
+            }
+        });*/
+
+        map.forEach((k,v)->{
+            System.out.println("key: " + k +"   value:" + v);
+        });
+
+        map.replaceAll((k,v)->v.toUpperCase());
+        System.out.println(map);
+
+    }
+
+    @Test
+    public void Test1045() {
+        Map<String, Integer> m1 = new HashMap<>();
+        m1.put("w1",1);
+        m1.put("w2",2);
+        m1.put("w3",3);
+
+        Map<String, Integer> m2 = new HashMap<>();
+        m2.put("w2",2);
+        m2.put("w3",3);
+        m2.put("w4",4);
+
+
 
     }
 }

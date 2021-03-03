@@ -200,8 +200,27 @@ public class TestRegex {
     @Test
     public void Test201() {
         String str = "1234a";
-        boolean match = str.matches("\\d+");
+        boolean match = str.matches("\\d+\\w");
         System.out.println(match);
+
+    }
+
+    @Test
+    public void Test209() {
+        String regex = "\\d+@qq.com$";
+        Pattern pattern = Pattern.compile(regex);
+        String  str = "1@qq.com";
+        if (pattern.matcher(str).find()) {
+            System.out.println("match");
+        } else {
+            System.out.println("not match");
+        }
+
+        if (pattern.matcher(str).matches()) { // 匹配整个字符串
+            System.out.println("match");
+        } else {
+            System.out.println("not match");
+        }
 
     }
 

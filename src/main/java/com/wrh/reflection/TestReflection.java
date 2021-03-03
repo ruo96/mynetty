@@ -40,4 +40,11 @@ public class TestReflection {
         Class c = Integer.TYPE;
 
     }
+    @Test
+    public void Test44() {
+        int a =0;
+        System.out.println("a = " + a);
+        System.out.println("a = " + a);
+
+    }
 }
