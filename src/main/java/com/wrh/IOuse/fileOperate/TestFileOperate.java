@@ -1,6 +1,8 @@
 package com.wrh.IOuse.fileOperate;
 
+import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.springframework.util.ResourceUtils;
@@ -14,6 +16,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -609,5 +612,68 @@ public class TestFileOperate {
         }
         System.out.println("价格排序后在中间的价格为" + midPrice);
         
+    }
+
+    @Test
+    public void Test615() throws IOException {
+        File file = new File("a.jpg");
+        file.createNewFile();
+        System.out.println("file.getAbsolutePath() = " + file.getAbsolutePath());
+        System.out.println("file.getPath() = " + file.getPath());
+
+    }
+
+    @Test
+    public void Test624() throws IOException {
+        FileWriter fileWriter = new FileWriter("d:\\test.txt");
+        fileWriter.write(97);
+        fileWriter.close();
+
+    }
+
+    @Test
+    public void Test632Daletou() throws IOException {
+
+        List<Integer> beforeResult = new ArrayList<>(5);
+        List<Integer> afterResult = new ArrayList<>(2);
+        List<String> buyList = new ArrayList<>(4);
+        for (int i = 0; i < 4; i++) {
+            while (beforeResult.size() != 5) {
+                Integer beforeNum = RandomUtils.nextInt(1,36);
+                if (!beforeResult.contains(beforeNum)) {
+                    beforeResult.add(beforeNum);
+                }
+            }
+            while (afterResult.size() != 2) {
+                Integer afterNum = RandomUtils.nextInt(1,12);
+                if (!afterResult.contains(afterNum)) {
+                    afterResult.add(afterNum);
+                }
+            }
+            beforeResult.sort(Integer::compareTo);
+            afterResult.sort(Integer::compareTo);
+            String result = JSON.toJSONString(beforeResult) + " + " + JSON.toJSONString(afterResult);
+            buyList.add(result);
+            beforeResult.clear();
+            afterResult.clear();
+        }
+        File file = new File("dlt.txt");
+        FileWriter fileWriter = new FileWriter(file, true);
+        fileWriter.write("\r\n");
+        fileWriter.write(LocalDateTime.now().toString());
+        fileWriter.write("\r\n");
+        buyList.stream().forEach(e-> {
+            try {
+                fileWriter.write(e);
+                fileWriter.write("\r\n");
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+        try {
+            fileWriter.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 }
