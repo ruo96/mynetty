@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 /**
  * @author wuruohong
@@ -30,5 +31,21 @@ public class TestNum {
         String result = String.valueOf(value);
 
         System.out.println(result);
+    }
+
+    @Test
+    public void Test36() {
+        DecimalFormat df = new DecimalFormat("0.##"); // ##表示2位小数
+//        DecimalFormat df = new DecimalFormat("0");
+        Double b = 715944894.13;
+        System.out.println("removeScientificNotation(b) = " + removeScientificNotation(b));
+        System.out.println("no removeScientificNotation(b) = " + b);
+
+    }
+
+    public static String removeScientificNotation(Double num) {
+        DecimalFormat df = new DecimalFormat("0.##"); // ##表示2位小数
+//        DecimalFormat df = new DecimalFormat("0");
+        return df.format(num);
     }
 }

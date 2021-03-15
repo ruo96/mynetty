@@ -212,6 +212,11 @@ public class TestMap {
             log.info("===> set key: {}  value: {}",entry.getKey(),entry.getValue());
         }
 
+        /** 这个性能应该也可以*/
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            System.out.println("key = " + entry.getKey() + ", value = " + entry.getValue());
+        }
+
 
         // 1. entrySet遍历，在键和值都需要时使用（最常用）
         for(Map.Entry<Integer, Integer> entry : map.entrySet()){
@@ -1053,7 +1058,18 @@ public class TestMap {
         m2.put("w3",3);
         m2.put("w4",4);
 
+    }
 
+    @Test
+    public void Test1064() {
+        Map<String, String> map = new ConcurrentHashMap<>();
+        map.put("w1","v1");
 
     }
+
+    /**
+     * 在1.8中ConcurrentHashMap的get操作全程不需要加锁，这也是它比其他并发集合比如hashtable、用Collections.synchronizedMap()包装的hashmap;安全效率高的原因之一。
+     * get操作全程不需要加锁是因为Node的成员val是用volatile修饰的和数组用volatile修饰没有关系。
+     * 数组用volatile修饰主要是保证在数组扩容的时候保证可见性。
+     */
 }

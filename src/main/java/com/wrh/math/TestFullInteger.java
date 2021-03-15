@@ -1,5 +1,7 @@
 package com.wrh.math;
 
+import org.junit.Test;
+
 /**
  * @Created by wrh
  * @Description:
@@ -20,5 +22,15 @@ public class TestFullInteger {
         System.out.println("i4=i5   " + (i4 == i5)); //false
         System.out.println("i4=i5+i6   " + (i4 == i5 + i6));//true  拆箱操作
         System.out.println("40=i5+i6   " + (40 == i5 + i6));//true
+    }
+    
+    @Test
+    public void Test26() {
+        short a = 32767;
+        short b = -32768;
+        a += 1;
+        System.out.println("a = " + a);
+        System.out.println("Math.addExact(a,b) = " + Math.addExact(a, b));
+
     }
 }

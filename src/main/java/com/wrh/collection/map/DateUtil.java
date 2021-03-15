@@ -39,6 +39,7 @@ public class DateUtil {
     public static final String DIMENSION_MONTH = "month";
     public static final String DIMENSION_DAY = "day";
     public static final String DIMENSION_WEEK = "week";
+    public static final String DIMENSION_SEASON = "season";
 
     private DateUtil() {}
 

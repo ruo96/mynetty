@@ -660,6 +660,7 @@ public class TestFileOperate {
         File file = new File("dlt.txt");
         FileWriter fileWriter = new FileWriter(file, true);
         fileWriter.write("\r\n");
+        fileWriter.write("\r\n");
         fileWriter.write(LocalDateTime.now().toString());
         fileWriter.write("\r\n");
         buyList.stream().forEach(e-> {

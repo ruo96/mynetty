@@ -1,5 +1,6 @@
 package com.wrh.list;
 
+import akka.event.AddressTerminatedTopic;
 import cn.hutool.core.lang.Assert;
 import com.alibaba.fastjson.JSON;
 import com.wrh.collection.map.GameRealTimeData;
@@ -1592,5 +1593,30 @@ public class TestList {
         }
     }
 
+    @Test
+    public void Test1597() {
+        List<Student> list = new ArrayList<>();
+        Student s ;
+        for (int i = 0; i < 2; i++) {
+            s = new Student();
+            s.setName("w"+i);
+            s.setGrade(i*100);
+            list.add(s);
+        }
+        System.out.println("list = " + list);
+
+    }
+
+    @Test
+    public void Test1611() {
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add("w"+i);
+        }
+        System.out.println("list = " + list);
+        Collections.shuffle(list);
+        System.out.println("list = " + list);
+
+    }
 
 }

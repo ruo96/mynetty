@@ -16,6 +16,7 @@ import org.springframework.util.StopWatch;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoField;
 import java.time.temporal.TemporalAdjusters;
 import java.time.temporal.TemporalField;
 import java.time.temporal.WeekFields;
@@ -640,9 +641,9 @@ public class TestTime {
     public void Test602() {
         LocalDate date = LocalDate.parse("2020-06-22", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         LocalDate date1 = LocalDate.parse("2020-06-11", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        System.out.println(date);
-        System.out.println(date.getDayOfMonth());
-        System.out.println(date.getDayOfYear());
+
+        System.out.println("date.getLong(ChronoField.EPOCH_DAY) = " + date.getLong(ChronoField.EPOCH_DAY));
+        System.out.println("date1.getLong(ChronoField.EPOCH_DAY) = " + date1.getLong(ChronoField.EPOCH_DAY));
 
         System.out.println(Period.between(date, date1).getDays());
         System.out.println(Period.between(date1, date).getDays());
@@ -1126,6 +1127,8 @@ public class TestTime {
         switch (dimension) {
             case DIMENSION_YEAR:
                 return date1.getYear() == date2.getYear();
+            case DIMENSION_SEASON:
+                return date1.getYear() == date2.getYear() && (date1.getMonthValue() - 1) / 3 == (date2.getMonthValue() - 1) / 3;
             case DIMENSION_MONTH:
                 return date1.getYear() == date2.getYear() && date1.getMonthValue() == date2.getMonthValue();
             case DIMENSION_WEEK:
@@ -1185,6 +1188,10 @@ public class TestTime {
         LocalDate date = LocalDate.parse(ds, DateTimeFormatter.ofPattern(DATE_FORMAT));
         if(dimension.equals(DIMENSION_YEAR)){
             return date.with(TemporalAdjusters.lastDayOfYear());
+        }else if (dimension.equals(DIMENSION_SEASON)) {
+            int monthLeft = date.getMonthValue() % 3;
+            int monthDiff = monthLeft > 0 ? 3 - monthLeft : 0;
+            return date.plusMonths(monthDiff).with(TemporalAdjusters.lastDayOfMonth());
         }else if (dimension.equals(DIMENSION_MONTH)) {
             return date.with(TemporalAdjusters.lastDayOfMonth());
         }else if (dimension.equals(DIMENSION_WEEK)) {
@@ -1196,13 +1203,15 @@ public class TestTime {
     
     @Test
     public void Test1197() {
-        String ds = "2021-02-17";
+        String ds = "2021-09-17";
         LocalDate d1 = getLastDayOfDimension(ds, DIMENSION_YEAR);
         LocalDate d2 = getLastDayOfDimension(ds, DIMENSION_MONTH);
         LocalDate d3 = getLastDayOfDimension(ds, DIMENSION_WEEK);
+        LocalDate d4 = getLastDayOfDimension(ds, DIMENSION_SEASON);
         System.out.println("d1 = " + d1);
         System.out.println("d2 = " + d2);
         System.out.println("d3 = " + d3);
+        System.out.println("d4 = " + d4);
     }
 
     @Test
@@ -1232,6 +1241,133 @@ public class TestTime {
         traceWatch.record("function1", 1); // 直接记录耗时
 
         System.out.println(JSON.toJSONString(traceWatch.getTaskMap()));*/
+
+    }
+
+    @Test
+    public void Test1239() {
+        String dsStart = "2021-02-28";
+        String dsEnd = "2021-04-01";
+        LocalDate ds = LocalDate.parse(dsStart, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDate de = LocalDate.parse(dsEnd, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        System.out.println("ds.plusMonths(2).toString() = " + ds.plusMonths(1).toString());
+        System.out.println("de.minusMonths(3).toString() = " + de.minusMonths(3).toString());
+        System.out.println("isSameDimension(dsStart, dsEnd, DIMENSION_SEASON) = " + isSameDimension(dsStart, dsEnd, DIMENSION_SEASON));
+
+    }
+
+    public static boolean isOfflineDataValidByDimensionNow(String ds1, String dimension, int hourTimeLimit) {
+        LocalDate date1 = LocalDate.parse(ds1,DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDateTime date2 = LocalDateTime.now();
+        switch (dimension) {
+            case DIMENSION_YEAR:
+                return date2.getDayOfYear() > 2 || (date2.getDayOfYear() == 2 && date2.getHour() >= hourTimeLimit);
+            case DIMENSION_SEASON:
+                return date2.getMonthValue() % 3 > 1 || (date2.getMonthValue() % 3 == 1 && (date2.getDayOfMonth() > 2 || (date2.getDayOfMonth() == 2 && date2.getHour() >= hourTimeLimit)));
+            case DIMENSION_MONTH:
+                return date2.getDayOfMonth() > 2 || (date2.getDayOfMonth() == 2 && date2.getHour() >= hourTimeLimit);
+            case DIMENSION_WEEK:
+                return date2.getDayOfWeek().getValue() > 2 || (date2.getDayOfWeek().getValue() == 2 && date2.getHour() >= hourTimeLimit);
+            case DIMENSION_DAY:
+                int days = java.time.Period.between(date1, date2.toLocalDate()).getDays();
+                return days > 1 || (days == 1 && date2.getHour() >= hourTimeLimit);
+            default:
+                return false;
+        }
+
+    }
+
+    public static boolean isOfflineDataValidByDimensionNow(String ds1, String now, String dimension, int hourTimeLimit) {
+        LocalDate date1 = LocalDate.parse(ds1,DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDateTime date2 = LocalDateTime.parse(now,DateTimeFormatter.ofPattern(DATE_TIME_FORMAT));
+        switch (dimension) {
+            case DIMENSION_YEAR:
+                return date2.getDayOfYear() > 2 || (date2.getDayOfYear() == 2 && date2.getHour() >= hourTimeLimit);
+            case DIMENSION_SEASON:
+                return date2.getMonthValue() % 3 > 1 || (date2.getMonthValue() % 3 == 1 && (date2.getDayOfMonth() > 2 || (date2.getDayOfMonth() == 2 && date2.getHour() >= hourTimeLimit)));
+            case DIMENSION_MONTH:
+                return date2.getDayOfMonth() > 2 || (date2.getDayOfMonth() == 2 && date2.getHour() >= hourTimeLimit);
+            case DIMENSION_WEEK:
+                return date2.getDayOfWeek().getValue() > 2 || (date2.getDayOfWeek().getValue() == 2 && date2.getHour() >= hourTimeLimit);
+            case DIMENSION_DAY:
+                int days = java.time.Period.between(date1, date2.toLocalDate()).getDays();
+                return days > 1 || (days == 1 && date2.getHour() >= hourTimeLimit);
+            default:
+                return false;
+        }
+
+    }
+    
+    @Test
+    public void Test1274() {
+        String d1 = "2021-03-31";
+        String now = "2021-05-03 10:00:00";
+        System.out.println("isOfflineDataValidByDimensionNow(d1, now, DIMENSION_SEASON, 10) = " + isOfflineDataValidByDimensionNow(d1, now, DIMENSION_SEASON, 10));
+
+    }
+
+    public static LocalDate getNextDayOfDimension(String ds, String dimension, int direction) {
+        LocalDate date = LocalDate.parse(ds, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        if(dimension.equals(DIMENSION_YEAR)){
+            return date.with(TemporalAdjusters.lastDayOfYear());
+        }else if (dimension.equals(DIMENSION_SEASON)) {
+            int monthLeft = date.getMonthValue() % 3;
+            int monthDiff = monthLeft > 0 ? 3 - monthLeft : 0;
+            return date.plusMonths(monthDiff).with(TemporalAdjusters.lastDayOfMonth());
+        }else if (dimension.equals(DIMENSION_MONTH)) {
+            return direction > 0 ? date.minusMonths(1).with(TemporalAdjusters.lastDayOfMonth()) : date.with(TemporalAdjusters.lastDayOfMonth());
+        }else if (dimension.equals(DIMENSION_WEEK)) {
+            return direction > 0 ? date.with(TemporalAdjusters.nextOrSame(DayOfWeek.SUNDAY)) : date.with(TemporalAdjusters.previous(DayOfWeek.SUNDAY));
+        }else {
+            return null;
+        }
+    }
+
+    @Test
+    public void Test1309() {
+        String ds = "2021-03-09";
+        System.out.println("getNextDayOfDimension(ds,DIMENSION_MONTH,1) = " + getNextDayOfDimension(ds, DIMENSION_MONTH, 1));
+        System.out.println("getNextDayOfDimension(ds, DIMENSION_MONTH, -1) = " + getNextDayOfDimension(ds, DIMENSION_MONTH, -1));
+        System.out.println("getNextDayOfDimension(ds, DIMENSION_WEEK, 1) = " + getNextDayOfDimension(ds, DIMENSION_WEEK, 1));
+        System.out.println("getNextDayOfDimension(ds, DIMENSION_WEEK, -1) = " + getNextDayOfDimension(ds, DIMENSION_WEEK, -1));
+    }
+
+    @Test
+    public void Test1335() {
+        String  ds = "2021-03-11";
+        System.out.println("1ds = " + ds);
+        ds = getFirstDayOfDimension(ds, DIMENSION_WEEK).toString();
+        System.out.println("2ds = " + ds);
+
+        System.out.println("ds.substring(0,7) = " + ds.substring(0, 7));
+
+    }
+
+    @Test
+    public void Test1347() {
+        String ds1 = "2021-03-01";
+        String ds2 = "2021-03-14";
+        LocalDate date1 = LocalDate.parse(ds1, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDate date2 = LocalDate.parse(ds2, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        long dayDiff = date2.getLong(ChronoField.EPOCH_DAY) - date1.getLong(ChronoField.EPOCH_DAY);
+        System.out.println("dayDiff = " + dayDiff);
+        System.out.println("(dayDiff + 1) / 7 = " + (dayDiff + 1) / 7);
+
+    }
+
+    @Test
+    public void Test1358() {
+//        int a = 10;
+        String str = "w2";
+        switch (str) {
+            case "w1":
+                int a = 20;
+                return;
+            case "w2":
+                a = 30;
+                System.out.println("a = " + a);
+                return;
+        }
 
     }
 
