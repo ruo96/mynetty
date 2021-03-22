@@ -19,9 +19,9 @@ import javax.annotation.Resource;
  * @author zing
  * @date 2018/7/13 11:29
  */
-@Component
-@Configuration
-@ConfigurationProperties(prefix = "spring.redis")
+//@Component
+//@Configuration
+//@ConfigurationProperties(prefix = "spring.redis")
 public class RedisConfig {
 
     @Value("${spring.redis.host}")

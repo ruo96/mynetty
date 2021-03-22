@@ -1,5 +1,6 @@
 package com.wrh.bean;
 import com.alibaba.fastjson.JSON;
+import com.wrh.functionInterfaceTest.Student;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.google.common.collect.Lists;
@@ -10,6 +11,7 @@ import org.junit.Test;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -89,6 +91,11 @@ public class TestBean implements BeanNameAware {
         ClassPathXmlApplicationContext pathXmlApplicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         TestBean testBean = (TestBean) pathXmlApplicationContext.getBean("testBean");
         pathXmlApplicationContext.close();
+    }
+
+    public static void main1(String[] args) {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Student.class);
+        context.getBean("w1");
     }
 
     @Test

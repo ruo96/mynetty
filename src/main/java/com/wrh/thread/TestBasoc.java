@@ -3,6 +3,8 @@ package com.wrh.thread;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @Created by wrh
  * @Description:
@@ -33,7 +35,15 @@ public class TestBasoc {
     }
 
     @Test
-    public void test(){
+    public void test() throws InterruptedException {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("thread run");
+            }
+        });
+        thread.start();
+        TimeUnit.SECONDS.sleep(1);
 
     }
 }

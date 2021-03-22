@@ -69,4 +69,24 @@ public class TestLockSupport {
         TimeUnit.SECONDS.sleep(4);
 
     }
+    
+    @Test
+    public void Test74() {
+        // 例子1
+        LockSupport.unpark(Thread.currentThread()); // 1
+        LockSupport.park(); // 0
+        System.out.println("可以运行到这");
+// 例子2
+        LockSupport.unpark(Thread.currentThread()); // 1
+        LockSupport.unpark(Thread.currentThread()); // 1
+        LockSupport.park(); // 0
+        System.out.println("可以运行到这");
+// 例子3
+        LockSupport.unpark(Thread.currentThread()); // 1
+        LockSupport.unpark(Thread.currentThread()); // 1
+        LockSupport.park(); // 0
+        LockSupport.park(); // WAITING
+        System.out.println("不可以运行到这");
+        
+    }
 }

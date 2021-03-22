@@ -1,8 +1,10 @@
 package com.wrh.basicUse;
 
 import com.alibaba.fastjson.JSON;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Joiner;
 import com.wrh.basicUse.vo.OnLineCleanParamDto;
+import com.wrh.entity.Person;
 import com.wrh.functionInterfaceTest.Student;
 import com.wrh.utils.Md5Utils;
 import com.wrh.utils.ObjectCheckHandleUtils;
@@ -11,6 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.springframework.util.StopWatch;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 /**
@@ -227,5 +230,16 @@ public class TestString {
                 return "default";
         }
         return ds1;
+    }
+
+    @Test
+    public void Test233() throws IOException {
+        Person s = new Person();
+        s.setName("w1");
+        String jsonStr = JSON.toJSONString(s);
+        System.out.println("jsonStr = " + jsonStr);
+        Person s1 = new ObjectMapper().readValue(jsonStr, Person.class);
+        System.out.println("s1 = " + s1);
+
     }
 }

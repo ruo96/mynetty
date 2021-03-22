@@ -75,6 +75,12 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- quartz依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-quartz</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
@@ -534,6 +540,11 @@
 					<artifactId>log4j</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<!-- 需要引入redis依赖包commons-pool -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-pool2</artifactId>
 		</dependency>
 
 		<dependency>

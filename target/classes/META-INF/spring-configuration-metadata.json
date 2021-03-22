@@ -22,9 +22,9 @@
       "type": "com.wrh.annotate.TestAnaotate"
     },
     {
-      "sourceType": "com.wrh.redis.RedisConfig",
-      "name": "spring.redis",
-      "type": "com.wrh.redis.RedisConfig"
+      "sourceType": "com.wrh.config.decodeencode.EncryptProperties",
+      "name": "spring.encrypt",
+      "type": "com.wrh.config.decodeencode.EncryptProperties"
     },
     {
       "sourceType": "com.wrh.security.SecurityProperties",
@@ -53,6 +53,12 @@
       "sourceType": "com.wrh.mq.kafka.config.KafkaTopicProperties",
       "name": "kafka.topic.topic-name",
       "type": "java.lang.String[]"
+    },
+    {
+      "sourceType": "com.wrh.config.decodeencode.EncryptProperties",
+      "defaultValue": "www.itboyhub.com",
+      "name": "spring.encrypt.key",
+      "type": "java.lang.String"
     },
     {
       "sourceType": "com.wrh.config.ZidingyiConfig",

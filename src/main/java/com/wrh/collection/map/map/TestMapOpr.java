@@ -5,10 +5,7 @@ import com.wrh.collection.map.map.vo.MapObj;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -64,5 +61,29 @@ public class TestMapOpr {
         map.put("2","w2");
         map.put("3","w3");
         System.out.println(map.get("4"));
+    }
+
+    /**
+     * compute：计算并更新值
+     * computeIfAbsent：Value不存在时才计算
+     * computeIfPresent：Value存在时才计算
+     */
+    @Test
+    public void Test70() {
+        /*List<String> animals = Arrays.asList("dog", "cat", "cat", "dog", "fish", "dog");
+        Map<String, Integer> map = new HashMap<>();
+        for(String animal : animals){
+            Integer count = map.get(animal);
+            map.put(animal, count == null ? 1 : ++count);
+        }
+        System.out.println(map);*/
+
+        List<String> animals = Arrays.asList("dog", "cat", "cat", "dog", "fish", "dog");
+        Map<String, Integer> map = new HashMap<>();
+        for(String animal : animals){
+            map.compute(animal, (k, v) -> v == null ? 1 : ++v);
+        }
+        System.out.println(map);
+        
     }
 }

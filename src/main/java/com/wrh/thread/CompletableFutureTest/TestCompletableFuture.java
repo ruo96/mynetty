@@ -13,6 +13,9 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
+import static cn.hutool.core.lang.Validator.isUpperCase;
+import static org.junit.Assert.*;
+
 /**
  * @Created by wrh
  * @Description:
@@ -788,6 +791,206 @@ public class TestCompletableFuture {
 
     }
 
+    public static void main1(String[] args) throws InterruptedException {
+        CompletableFuture cf = CompletableFuture.completedFuture("message").thenApply(s -> {
+            assertFalse(Thread.currentThread().isDaemon());
+            return s.toUpperCase();
+        });
+
+        TimeUnit.SECONDS.sleep(2);
+
+        assertEquals("MESSAGE", cf.getNow(null));
+        System.out.println("cf.getNow(null) = " + cf.getNow(null));
+    }
+
+    public static void main2(String[] args) {
+        CompletableFuture cf = CompletableFuture.completedFuture("message").thenApplyAsync(s -> {
+            System.out.println(Thread.currentThread().getName());
+            assertTrue(Thread.currentThread().getName().startsWith("Thread-0"));
+            System.out.println(Thread.currentThread().isDaemon());
+            assertTrue(Thread.currentThread().isDaemon());
+            try {
+                randomSleep();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return s.toUpperCase();
+        }, executor);
+
+        assertNull(cf.getNow(null));
+        assertEquals("MESSAGE", cf.join());
+    }
+
+    private static void randomSleep() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(2);
+    }
+    
+    @Test
+    public void Test828() {
+        String original = "Message";
+        StringBuilder result = new StringBuilder();
+        CompletableFuture.completedFuture(original).thenApply(String::toUpperCase).runAfterBoth(
+                CompletableFuture.completedFuture(original).thenApply(String::toLowerCase),
+                () -> result.append("done"));
+        assertTrue("Result was empty", result.length() > 0);
+        System.out.println("result = " + result);
+
+    }
+    
+    @Test
+    public void Test840() {
+        String original = "Message";
+        StringBuilder result = new StringBuilder();
+        CompletableFuture.completedFuture(original).thenApply(String::toUpperCase).thenAcceptBoth(
+                CompletableFuture.completedFuture(original).thenApply(String::toLowerCase),
+                (s1, s2) -> result.append(s1 + s2));
+        assertEquals("MESSAGEmessage", result.toString());
+        System.out.println("result = " + result);
+    }
+    
+    @Test
+    public void Test851() {
+        String original = "Message";
+        CompletableFuture cf = CompletableFuture.completedFuture(original).thenApply(String::toUpperCase)
+                .thenCombine(CompletableFuture.completedFuture(original).thenApply(String::toLowerCase),
+                        (s1, s2) -> s1 + s2);
+        assertEquals("MESSAGEmessage", cf.getNow(null));
+        
+    }
+
+    @Test
+    public void Test861() {
+        String original = "Message";
+        CompletableFuture cf = CompletableFuture.completedFuture(original)
+                .thenApplyAsync(String::toUpperCase)
+                .thenCombine(CompletableFuture.completedFuture(original).thenApplyAsync(String::toLowerCase),
+                        (s1, s2) -> s1 + s2);
+        assertEquals("MESSAGEmessage", cf.join());
+
+    }
+
+    @Test
+    public void Test872() {
+        String original = "Message";
+        CompletableFuture cf = CompletableFuture.completedFuture(original).thenApply(String::toUpperCase)
+                .thenCompose(upper -> CompletableFuture.completedFuture(original).thenApply(String::toLowerCase)
+                        .thenApply(s -> upper + s));
+        System.out.println("cf.getNow() = " + cf.getNow(null));
+        assertEquals("MESSAGEmessage", cf.join());
+
+    }
+
+    /**
+     * 下面的例子演示了当任意一个CompletableFuture完成后， 创建一个完成的CompletableFuture.
+     * 待处理的阶段首先创建， 每个阶段都是转换一个字符串为大写。因为本例中这些阶段都是同步地执行(thenApply),
+     * 从anyOf中创建的CompletableFuture会立即完成，这样所有的阶段都已完成，
+     * 我们使用whenComplete(BiConsumer<? super Object, ? super Throwable> action)处理完成的结果。
+     */
+    @Test
+    public void Test883() {
+        StringBuilder result = new StringBuilder();
+        List<String> messages = Arrays.asList("a", "b", "c");
+        List<CompletableFuture> futures = messages.stream()
+                .map(msg -> CompletableFuture.completedFuture(msg).thenApply(String::toUpperCase))
+                .collect(Collectors.toList());
+        CompletableFuture.anyOf(futures.toArray(new CompletableFuture[futures.size()])).whenComplete((res, th) -> {
+            if(th == null) {
+                assertTrue(isUpperCase((String) res));
+                result.append(res);
+            }
+        });
+        assertTrue("Result was empty", result.length() > 0);
+        
+    }
+
+    /**
+     * 上一个例子是当任意一个阶段完成后接着处理，接下来的两个例子演示当所有的阶段完成后才继续处理, 同步地方式和异步地方式两种。
+     */
+    @Test
+    public void Test907() {
+        StringBuilder result = new StringBuilder();
+        List<String> messages = Arrays.asList("a", "b", "c");
+        List<CompletableFuture> futures = messages.stream()
+                .map(msg -> CompletableFuture.completedFuture(msg).thenApply(String::toUpperCase))
+                .collect(Collectors.toList());
+        CompletableFuture.allOf(futures.toArray(new CompletableFuture[futures.size()])).whenComplete((v, th) -> {
+            futures.forEach(cf -> assertTrue(isUpperCase((CharSequence) cf.getNow(null))));
+            result.append("done");
+        });
+        assertTrue("Result was empty", result.length() > 0);
+        
+    }
+
+    /**
+     * 使用thenApplyAsync()替换那些单个的CompletableFutures的方法，allOf()会在通用池中的线程中异步地执行。所以我们需要调用join方法等待它完成。
+     */
+    @Test
+    public void Test925() {
+        StringBuilder result = new StringBuilder();
+        List<String> messages = Arrays.asList("a", "b", "c");
+        List<CompletableFuture> futures = messages.stream()
+                .map(msg -> CompletableFuture.completedFuture(msg).thenApplyAsync(String::toUpperCase))
+                .collect(Collectors.toList());
+        CompletableFuture allOf = CompletableFuture.allOf(futures.toArray(new CompletableFuture[futures.size()]))
+                .whenComplete((v, th) -> {
+                    futures.forEach(cf -> assertTrue(isUpperCase((CharSequence) cf.getNow(null))));
+                    result.append("done");
+                    System.out.println(result);
+                });
+        allOf.join();
+        assertTrue("Result was empty", result.length() > 0);
+        
+    }
+    
+    @Test
+    public void Test946() {
+
+
+        cars().thenCompose(cars -> {
+            List<CompletionStage> updatedCars = cars.stream()
+                    .map(car -> rating(car.getId()).thenApply(r -> {
+                        car.setRate(r);
+                        return car;
+                    })).collect(Collectors.toList());
+            updatedCars.forEach(e->e.toCompletableFuture().getNow(null));
+
+            CompletableFuture done = CompletableFuture
+                    .allOf(updatedCars.toArray(new CompletableFuture[updatedCars.size()]));
+            return done.thenApply(v -> updatedCars.stream().map(CompletionStage::toCompletableFuture)
+                    .map(CompletableFuture::join).collect(Collectors.toList()));
+        }).whenComplete((cars, th) -> {
+            if (th == null) {
+//                cars.forEach(System.out::println);
+                System.out.println(cars);
+            } else {
+                System.out.println(th);
+                throw new RuntimeException();
+            }
+        }).toCompletableFuture().join();
+        
+    }
+
+    private CompletionStage<Integer> rating(Integer id) {
+        CompletableFuture futures = CompletableFuture.completedFuture(id*100);
+        return  futures;
+    }
+
+    private CompletionStage<List<Car>> cars() {
+        List<Car> messages = new ArrayList<>();
+        Car c1 = new Car();
+        c1.setName("w1");
+        c1.setRate(1);
+
+        Car c2 = new Car();
+        c2.setName("w2");
+        c2.setRate(2);
+
+        messages.add(c1);
+        messages.add(c2);
+
+        CompletableFuture futures = CompletableFuture.completedFuture(messages);
+        return  futures;
+    }
 
 
 }

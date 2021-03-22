@@ -3,12 +3,10 @@ package com.wrh.collection.set;
 import io.netty.util.internal.ConcurrentSet;
 import org.junit.Test;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.stream.Collectors;
 
 /**
  * @Created by wrh
@@ -92,6 +90,42 @@ public class TestSet {
         if(s1.equals(s2)){
             System.out.println("equal");
         }
+
+    }
+
+    /**
+     * list去重
+     */
+    @Test
+    public void Test99() {
+        ArrayList<Integer> numbersList = new ArrayList<>(Arrays.asList(1, 1, 2, 3, 3, 3, 4, 5, 6, 6, 6, 7, 8));
+
+        System.out.println(numbersList);
+
+        LinkedHashSet<Integer> hashSet = new LinkedHashSet<>(numbersList);
+        Set<Integer> hashSet1 = new HashSet<>(numbersList);
+
+        ArrayList<Integer> listWithoutDuplicates = new ArrayList<>(hashSet);
+        ArrayList<Integer> listWithoutDuplicates1 = new ArrayList<>(hashSet1);
+
+        System.out.println(listWithoutDuplicates);
+        System.out.println(listWithoutDuplicates1);
+
+        List<Integer> list = numbersList.stream().distinct().collect(Collectors.toList());
+        System.out.println("list = " + list);
+
+
+
+    }
+
+    @Test
+    public void Test122() {
+        Set<Integer> s = new HashSet<>();
+        System.out.println("s.add(1) = " + s.add(1));
+        System.out.println("s.add(1) = " + s.add(1));
+        System.out.println("s.add(2) = " + s.add(2));
+        System.out.println("s.add(2) = " + s.add(2));
+
 
     }
 }

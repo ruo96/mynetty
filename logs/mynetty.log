@@ -1,53 +1,36 @@
-2021-03-15 19:35:21.069  INFO 360984 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 360984 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2021-03-15 19:35:21.096  INFO 360984 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2021-03-15 19:35:26.037  INFO 360984 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-15 19:35:26.038  INFO 360984 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2021-03-15 19:35:26.042  INFO 360984 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2021-03-15 19:35:26.043  INFO 360984 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-03-15 19:35:26.043  INFO 360984 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-03-15 19:35:26.083  INFO 360984 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2021-03-15 19:35:26.151  INFO 360984 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-15 19:35:26.588  INFO 360984 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2021-03-15 19:35:26.615  INFO 360984 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
-2021-03-15 19:35:26.823  INFO 360984 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2021-03-15 19:35:27.985  INFO 360984 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2021-03-15 19:35:27.987  INFO 360984 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2021-03-15 19:35:28.835  INFO 360984 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2021-03-15 19:35:29.122  WARN 360984 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
-2021-03-15 19:35:30.552  INFO 360984 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2021-03-15 19:35:30.566  INFO 360984 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2021-03-15 19:35:30.567  INFO 360984 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
-2021-03-15 19:35:30.568  INFO 360984 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2021-03-15 19:35:30.569  INFO 360984 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+2021-03-22 11:39:47.387  INFO 413148 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 413148 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2021-03-22 11:39:47.391  INFO 413148 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2021-03-22 11:39:51.946  INFO 413148 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-22 11:39:51.947  INFO 413148 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2021-03-22 11:39:51.964  INFO 413148 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-03-22 11:39:51.965  INFO 413148 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-22 11:39:51.966  INFO 413148 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-22 11:39:52.017  INFO 413148 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-03-22 11:39:52.092  INFO 413148 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-22 11:39:52.530  INFO 413148 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2021-03-22 11:39:52.557  INFO 413148 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2021-03-22 11:39:52.678  INFO 413148 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-03-22 11:39:53.884  INFO 413148 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2021-03-22 11:39:53.887  INFO 413148 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2021-03-22 11:39:54.440  WARN 413148 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisConfig': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.redis.pool.max-active' in value "${spring.redis.pool.max-active}"
+2021-03-22 11:39:55.570  INFO 413148 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2021-03-22 11:39:55.571  INFO 413148 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2021-03-22 11:39:55.584  INFO 413148 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-03-22 11:39:55.585  INFO 413148 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
+2021-03-22 11:39:55.624 ERROR 413148 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-2021-03-15 19:35:30.569  INFO 360984 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2021-03-15 19:35:30.569  INFO 360984 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
-2021-03-15 19:35:30.569  INFO 360984 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@4be460e5
-2021-03-15 19:35:30.788  WARN 360984 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NoSuchMethodError: org.springframework.plugin.core.PluginRegistry.getPluginFor(Ljava/lang/Object;)Ljava/util/Optional;
-2021-03-15 19:35:30.788  INFO 360984 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2021-03-15 19:35:30.788  INFO 360984 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2021-03-15 19:35:30.788  INFO 360984 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2021-03-15 19:35:31.926  INFO 360984 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2021-03-15 19:35:31.933  INFO 360984 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2021-03-15 19:35:31.936  INFO 360984 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-03-15 19:35:31.938  INFO 360984 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
-2021-03-15 19:35:31.976 ERROR 360984 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NoSuchMethodError: org.springframework.plugin.core.PluginRegistry.getPluginFor(Ljava/lang/Object;)Ljava/util/Optional;
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:184)
-	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:52)
-	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
-	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:157)
-	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:121)
-	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:885)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553)
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisConfig': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.redis.pool.max-active' in value "${spring.redis.pool.max-active}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:378)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:572)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398)
@@ -55,71 +38,33 @@ org.springframework.context.ApplicationContextException: Failed to start bean 'd
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246)
 	at com.wrh.MynettyApplication.main(MynettyApplication.java:54)
-Caused by: java.lang.NoSuchMethodError: org.springframework.plugin.core.PluginRegistry.getPluginFor(Ljava/lang/Object;)Ljava/util/Optional;
-	at springfox.documentation.schema.plugins.SchemaPluginsManager.viewProvider(SchemaPluginsManager.java:95)
-	at springfox.documentation.spring.web.readers.operation.OperationModelsProvider.viewForReturn(OperationModelsProvider.java:116)
-	at springfox.documentation.spring.web.readers.operation.OperationModelsProvider.collectFromReturnType(OperationModelsProvider.java:85)
-	at springfox.documentation.spring.web.readers.operation.OperationModelsProvider.apply(OperationModelsProvider.java:58)
-	at springfox.documentation.spring.web.plugins.DocumentationPluginsManager.modelContexts(DocumentationPluginsManager.java:160)
-	at springfox.documentation.spring.web.scanners.ApiModelReader.read(ApiModelReader.java:87)
-	at springfox.documentation.spring.web.scanners.ApiListingScanner.scan(ApiListingScanner.java:154)
-	at springfox.documentation.spring.web.scanners.ApiDocumentationScanner.scan(ApiDocumentationScanner.java:67)
-	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.scanDocumentation(AbstractDocumentationPluginsBootstrapper.java:96)
-	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82)
-	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100)
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
-	... 14 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.redis.pool.max-active' in value "${spring.redis.pool.max-active}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:172)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:237)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:211)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:839)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1083)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1062)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372)
+	... 17 common frames omitted
 
-2021-03-15 19:37:38.372  INFO 377524 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 377524 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2021-03-15 19:37:38.374  INFO 377524 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2021-03-15 19:37:40.667  INFO 377524 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-15 19:37:40.667  INFO 377524 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2021-03-15 19:37:40.670  INFO 377524 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2021-03-15 19:37:40.670  INFO 377524 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-03-15 19:37:40.670  INFO 377524 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-03-15 19:37:40.673  INFO 377524 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2021-03-15 19:37:40.728  INFO 377524 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-15 19:37:41.128  INFO 377524 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2021-03-15 19:37:41.153  INFO 377524 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
-2021-03-15 19:37:41.232  INFO 377524 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2021-03-15 19:37:42.123  INFO 377524 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2021-03-15 19:37:42.125  INFO 377524 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2021-03-15 19:37:42.932  INFO 377524 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2021-03-15 19:37:43.202  WARN 377524 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
-2021-03-15 19:37:44.444  INFO 377524 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2021-03-15 19:37:44.453  INFO 377524 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2021-03-15 19:37:44.454  INFO 377524 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
-2021-03-15 19:37:44.455  INFO 377524 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2021-03-15 19:37:44.456  INFO 377524 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+2021-03-22 11:44:44.249  INFO 412092 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 412092 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2021-03-22 11:44:44.278  INFO 412092 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2021-03-22 11:44:44.966  WARN 412092 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.wrh.MynettyApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'redisConfig' for bean class [com.wrh.redis.RedisConfig] conflicts with existing, non-compatible bean definition of same name and class [com.wrh.config.RedisConfig]
+2021-03-22 11:44:44.980 ERROR 412092 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-2021-03-15 19:37:44.456  INFO 377524 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2021-03-15 19:37:44.456  INFO 377524 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
-2021-03-15 19:37:44.456  INFO 377524 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@3a1a0bc
-2021-03-15 19:37:44.661  WARN 377524 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NoSuchMethodError: org.springframework.plugin.core.PluginRegistry.getPluginFor(Ljava/lang/Object;)Ljava/util/Optional;
-2021-03-15 19:37:44.662  INFO 377524 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2021-03-15 19:37:44.662  INFO 377524 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2021-03-15 19:37:44.662  INFO 377524 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2021-03-15 19:37:45.814  INFO 377524 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2021-03-15 19:37:45.816  INFO 377524 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2021-03-15 19:37:45.818  INFO 377524 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-03-15 19:37:45.820  INFO 377524 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
-2021-03-15 19:37:45.832 ERROR 377524 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NoSuchMethodError: org.springframework.plugin.core.PluginRegistry.getPluginFor(Ljava/lang/Object;)Ljava/util/Optional;
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:184)
-	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:52)
-	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
-	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:157)
-	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:121)
-	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:885)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553)
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.wrh.MynettyApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'redisConfig' for bean class [com.wrh.redis.RedisConfig] conflicts with existing, non-compatible bean definition of same name and class [com.wrh.config.RedisConfig]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:184)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:316)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:233)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:273)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:93)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:694)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:532)
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398)
@@ -127,42 +72,72 @@ org.springframework.context.ApplicationContextException: Failed to start bean 'd
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246)
 	at com.wrh.MynettyApplication.main(MynettyApplication.java:54)
-Caused by: java.lang.NoSuchMethodError: org.springframework.plugin.core.PluginRegistry.getPluginFor(Ljava/lang/Object;)Ljava/util/Optional;
-	at springfox.documentation.schema.plugins.SchemaPluginsManager.viewProvider(SchemaPluginsManager.java:95)
-	at springfox.documentation.spring.web.readers.operation.OperationModelsProvider.viewForReturn(OperationModelsProvider.java:116)
-	at springfox.documentation.spring.web.readers.operation.OperationModelsProvider.collectFromReturnType(OperationModelsProvider.java:85)
-	at springfox.documentation.spring.web.readers.operation.OperationModelsProvider.apply(OperationModelsProvider.java:58)
-	at springfox.documentation.spring.web.plugins.DocumentationPluginsManager.modelContexts(DocumentationPluginsManager.java:160)
-	at springfox.documentation.spring.web.scanners.ApiModelReader.read(ApiModelReader.java:87)
-	at springfox.documentation.spring.web.scanners.ApiListingScanner.scan(ApiListingScanner.java:154)
-	at springfox.documentation.spring.web.scanners.ApiDocumentationScanner.scan(ApiDocumentationScanner.java:67)
-	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.scanDocumentation(AbstractDocumentationPluginsBootstrapper.java:96)
-	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82)
-	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100)
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
-	... 14 common frames omitted
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'redisConfig' for bean class [com.wrh.redis.RedisConfig] conflicts with existing, non-compatible bean definition of same name and class [com.wrh.config.RedisConfig]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:348)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:286)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:288)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:245)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:202)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:170)
+	... 13 common frames omitted
 
-2021-03-15 19:38:14.068  INFO 382536 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 382536 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2021-03-15 19:38:14.070  INFO 382536 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2021-03-15 19:38:16.245  INFO 382536 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-15 19:38:16.245  INFO 382536 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2021-03-15 19:38:16.248  INFO 382536 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2021-03-15 19:38:16.248  INFO 382536 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-03-15 19:38:16.248  INFO 382536 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-03-15 19:38:16.251  INFO 382536 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2021-03-15 19:38:16.306  INFO 382536 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-15 19:38:16.712  INFO 382536 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2021-03-15 19:38:16.734  INFO 382536 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
-2021-03-15 19:38:16.812  INFO 382536 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2021-03-15 19:38:17.708  INFO 382536 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2021-03-15 19:38:17.710  INFO 382536 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2021-03-15 19:38:18.550  INFO 382536 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2021-03-15 19:38:18.807  WARN 382536 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
-2021-03-15 19:38:20.033  INFO 382536 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2021-03-15 19:38:20.042  INFO 382536 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2021-03-15 19:38:20.043  INFO 382536 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
-2021-03-15 19:38:20.044  INFO 382536 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2021-03-15 19:38:20.045  INFO 382536 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2021-03-22 11:45:49.676  INFO 413472 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 413472 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2021-03-22 11:45:49.679  INFO 413472 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2021-03-22 11:45:52.101  INFO 413472 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-22 11:45:52.101  INFO 413472 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2021-03-22 11:45:52.105  INFO 413472 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-03-22 11:45:52.105  INFO 413472 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-22 11:45:52.105  INFO 413472 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-22 11:45:52.108  INFO 413472 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-03-22 11:45:52.165  INFO 413472 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-22 11:45:52.578  INFO 413472 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2021-03-22 11:45:52.600  INFO 413472 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2021-03-22 11:45:52.680  INFO 413472 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-03-22 11:45:53.770  INFO 413472 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2021-03-22 11:45:53.775  INFO 413472 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2021-03-22 11:45:54.391  WARN 413472 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redisTools2': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'strRedisTemplate' available
+2021-03-22 11:45:55.528  INFO 413472 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2021-03-22 11:45:55.538  INFO 413472 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2021-03-22 11:45:55.540  INFO 413472 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-03-22 11:45:55.541  INFO 413472 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
+2021-03-22 11:45:55.607 ERROR 413472 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean named 'strRedisTemplate' that could not be found.
+
+
+Action:
+
+Consider defining a bean named 'strRedisTemplate' in your configuration.
+
+2021-03-22 11:46:38.478  INFO 401468 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 401468 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2021-03-22 11:46:38.480  INFO 401468 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2021-03-22 11:46:40.976  INFO 401468 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-22 11:46:40.977  INFO 401468 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2021-03-22 11:46:40.980  INFO 401468 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-03-22 11:46:40.980  INFO 401468 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-22 11:46:40.980  INFO 401468 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-22 11:46:40.983  INFO 401468 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-03-22 11:46:41.038  INFO 401468 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-22 11:46:41.442  INFO 401468 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2021-03-22 11:46:41.464  INFO 401468 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2021-03-22 11:46:41.541  INFO 401468 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-03-22 11:46:42.477  INFO 401468 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2021-03-22 11:46:42.479  INFO 401468 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2021-03-22 11:46:43.338  INFO 401468 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2021-03-22 11:46:43.592  INFO 401468 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2021-03-22 11:46:43.730  WARN 401468 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2021-03-22 11:46:45.753  INFO 401468 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2021-03-22 11:46:45.767  INFO 401468 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2021-03-22 11:46:45.799  INFO 401468 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2021-03-22 11:46:45.800  INFO 401468 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2021-03-22 11:46:45.801  INFO 401468 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -170,71 +145,61 @@ Caused by: java.lang.NoSuchMethodError: org.springframework.plugin.core.PluginRe
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2021-03-15 19:38:20.045  INFO 382536 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2021-03-15 19:38:20.045  INFO 382536 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
-2021-03-15 19:38:20.045  INFO 382536 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@3a1a0bc
-2021-03-15 19:38:20.254  WARN 382536 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NoSuchMethodError: org.springframework.plugin.core.PluginRegistry.getPluginFor(Ljava/lang/Object;)Ljava/util/Optional;
-2021-03-15 19:38:20.254  INFO 382536 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2021-03-15 19:38:20.254  INFO 382536 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2021-03-15 19:38:20.254  INFO 382536 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2021-03-15 19:38:21.412  INFO 382536 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2021-03-15 19:38:21.420  INFO 382536 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2021-03-15 19:38:21.425  INFO 382536 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-03-15 19:38:21.428  INFO 382536 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
-2021-03-15 19:38:21.446 ERROR 382536 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NoSuchMethodError: org.springframework.plugin.core.PluginRegistry.getPluginFor(Ljava/lang/Object;)Ljava/util/Optional;
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:184)
-	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:52)
-	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
-	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:157)
-	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:121)
-	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:885)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246)
-	at com.wrh.MynettyApplication.main(MynettyApplication.java:54)
-Caused by: java.lang.NoSuchMethodError: org.springframework.plugin.core.PluginRegistry.getPluginFor(Ljava/lang/Object;)Ljava/util/Optional;
-	at springfox.documentation.schema.plugins.SchemaPluginsManager.viewProvider(SchemaPluginsManager.java:95)
-	at springfox.documentation.spring.web.readers.operation.OperationModelsProvider.viewForReturn(OperationModelsProvider.java:116)
-	at springfox.documentation.spring.web.readers.operation.OperationModelsProvider.collectFromReturnType(OperationModelsProvider.java:85)
-	at springfox.documentation.spring.web.readers.operation.OperationModelsProvider.apply(OperationModelsProvider.java:58)
-	at springfox.documentation.spring.web.plugins.DocumentationPluginsManager.modelContexts(DocumentationPluginsManager.java:160)
-	at springfox.documentation.spring.web.scanners.ApiModelReader.read(ApiModelReader.java:87)
-	at springfox.documentation.spring.web.scanners.ApiListingScanner.scan(ApiListingScanner.java:154)
-	at springfox.documentation.spring.web.scanners.ApiDocumentationScanner.scan(ApiDocumentationScanner.java:67)
-	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.scanDocumentation(AbstractDocumentationPluginsBootstrapper.java:96)
-	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82)
-	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100)
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
-	... 14 common frames omitted
-
-2021-03-15 19:41:23.029  INFO 291868 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 291868 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2021-03-15 19:41:23.032  INFO 291868 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2021-03-15 19:41:25.436  INFO 291868 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-15 19:41:25.436  INFO 291868 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2021-03-15 19:41:25.440  INFO 291868 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2021-03-15 19:41:25.440  INFO 291868 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-03-15 19:41:25.440  INFO 291868 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-03-15 19:41:25.443  INFO 291868 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2021-03-15 19:41:25.523  INFO 291868 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-15 19:41:26.009  INFO 291868 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2021-03-15 19:41:26.034  INFO 291868 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
-2021-03-15 19:41:26.120  INFO 291868 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2021-03-15 19:41:27.075  INFO 291868 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2021-03-15 19:41:27.077  INFO 291868 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2021-03-15 19:41:27.905  INFO 291868 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2021-03-15 19:41:28.166  WARN 291868 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
-2021-03-15 19:41:29.416  INFO 291868 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2021-03-15 19:41:29.427  INFO 291868 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2021-03-15 19:41:29.429  INFO 291868 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
-2021-03-15 19:41:29.430  INFO 291868 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2021-03-15 19:41:29.430  INFO 291868 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2021-03-22 11:46:45.801  INFO 401468 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2021-03-22 11:46:45.801  INFO 401468 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2021-03-22 11:46:45.801  INFO 401468 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@117fb9ba
+2021-03-22 11:46:46.034  INFO 401468 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-03-22 11:46:46.045  INFO 401468 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-03-22 11:46:46.073  INFO 401468 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-03-22 11:46:46.243  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingGET_1
+2021-03-22 11:46:46.244  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingHEAD_1
+2021-03-22 11:46:46.244  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPOST_1
+2021-03-22 11:46:46.244  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPUT_1
+2021-03-22 11:46:46.245  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPATCH_1
+2021-03-22 11:46:46.245  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingDELETE_1
+2021-03-22 11:46:46.246  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingOPTIONS_1
+2021-03-22 11:46:46.246  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingTRACE_1
+2021-03-22 11:46:46.256  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_1
+2021-03-22 11:46:46.256  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_1
+2021-03-22 11:46:46.257  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_1
+2021-03-22 11:46:46.257  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_1
+2021-03-22 11:46:46.257  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_1
+2021-03-22 11:46:46.258  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_1
+2021-03-22 11:46:46.258  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_1
+2021-03-22 11:46:46.258  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_1
+2021-03-22 11:46:46.262  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_2
+2021-03-22 11:46:46.263  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_2
+2021-03-22 11:46:46.263  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_2
+2021-03-22 11:46:46.263  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_2
+2021-03-22 11:46:46.264  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_2
+2021-03-22 11:46:46.264  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_2
+2021-03-22 11:46:46.264  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_2
+2021-03-22 11:46:46.265  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_2
+2021-03-22 11:46:46.297  INFO 401468 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: swagger2UsingPOST_1
+2021-03-22 11:46:46.343  INFO 401468 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2021-03-22 11:46:46.372  INFO 401468 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 8.347 seconds (JVM running for 9.326)
+2021-03-22 11:50:20.985  INFO 413200 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 413200 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2021-03-22 11:50:20.987  INFO 413200 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2021-03-22 11:50:34.217  INFO 413200 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-22 11:50:34.218  INFO 413200 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2021-03-22 11:50:34.236  INFO 413200 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-03-22 11:50:34.238  INFO 413200 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-22 11:50:34.238  INFO 413200 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-22 11:50:34.250  INFO 413200 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-03-22 11:50:34.311  INFO 413200 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-22 11:50:34.867  INFO 413200 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2021-03-22 11:50:34.915  INFO 413200 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2021-03-22 11:50:35.114  INFO 413200 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-03-22 11:50:37.351  INFO 413200 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2021-03-22 11:50:37.353  INFO 413200 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2021-03-22 11:50:38.239  INFO 413200 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2021-03-22 11:50:38.511  INFO 413200 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2021-03-22 11:50:38.687  WARN 413200 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2021-03-22 11:50:39.999  INFO 413200 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2021-03-22 11:50:40.008  INFO 413200 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2021-03-22 11:50:40.015  INFO 413200 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2021-03-22 11:50:40.016  INFO 413200 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2021-03-22 11:50:40.017  INFO 413200 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -242,72 +207,61 @@ Caused by: java.lang.NoSuchMethodError: org.springframework.plugin.core.PluginRe
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2021-03-15 19:41:29.430  INFO 291868 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2021-03-15 19:41:29.431  INFO 291868 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
-2021-03-15 19:41:29.431  INFO 291868 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@5724c7da
-2021-03-15 19:41:29.660  WARN 291868 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NoSuchMethodError: org.springframework.plugin.core.PluginRegistry.getPluginFor(Ljava/lang/Object;)Ljava/util/Optional;
-2021-03-15 19:41:29.660  INFO 291868 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2021-03-15 19:41:29.660  INFO 291868 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2021-03-15 19:41:29.660  INFO 291868 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2021-03-15 19:41:30.792  INFO 291868 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2021-03-15 19:41:30.794  INFO 291868 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2021-03-15 19:41:30.796  INFO 291868 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-03-15 19:41:30.798  INFO 291868 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器被销毁
-2021-03-15 19:41:30.811 ERROR 291868 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.context.ApplicationContextException: Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NoSuchMethodError: org.springframework.plugin.core.PluginRegistry.getPluginFor(Ljava/lang/Object;)Ljava/util/Optional;
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:184)
-	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:52)
-	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356)
-	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:157)
-	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:121)
-	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:885)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246)
-	at com.wrh.MynettyApplication.main(MynettyApplication.java:54)
-Caused by: java.lang.NoSuchMethodError: org.springframework.plugin.core.PluginRegistry.getPluginFor(Ljava/lang/Object;)Ljava/util/Optional;
-	at springfox.documentation.schema.plugins.SchemaPluginsManager.viewProvider(SchemaPluginsManager.java:95)
-	at springfox.documentation.spring.web.readers.operation.OperationModelsProvider.viewForReturn(OperationModelsProvider.java:116)
-	at springfox.documentation.spring.web.readers.operation.OperationModelsProvider.collectFromReturnType(OperationModelsProvider.java:85)
-	at springfox.documentation.spring.web.readers.operation.OperationModelsProvider.apply(OperationModelsProvider.java:58)
-	at springfox.documentation.spring.web.plugins.DocumentationPluginsManager.modelContexts(DocumentationPluginsManager.java:160)
-	at springfox.documentation.spring.web.scanners.ApiModelReader.read(ApiModelReader.java:87)
-	at springfox.documentation.spring.web.scanners.ApiListingScanner.scan(ApiListingScanner.java:154)
-	at springfox.documentation.spring.web.scanners.ApiDocumentationScanner.scan(ApiDocumentationScanner.java:67)
-	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.scanDocumentation(AbstractDocumentationPluginsBootstrapper.java:96)
-	at springfox.documentation.spring.web.plugins.AbstractDocumentationPluginsBootstrapper.bootstrapDocumentationPlugins(AbstractDocumentationPluginsBootstrapper.java:82)
-	at springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:100)
-	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181)
-	... 14 common frames omitted
-
-2021-03-15 19:44:15.082  INFO 382112 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 382112 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2021-03-15 19:44:15.085  INFO 382112 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2021-03-15 19:44:19.394  INFO 382112 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-15 19:44:19.394  INFO 382112 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2021-03-15 19:44:19.398  INFO 382112 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2021-03-15 19:44:19.398  INFO 382112 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-03-15 19:44:19.398  INFO 382112 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-03-15 19:44:19.401  INFO 382112 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2021-03-15 19:44:19.462  INFO 382112 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-15 19:44:19.885  INFO 382112 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2021-03-15 19:44:19.911  INFO 382112 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
-2021-03-15 19:44:19.994  INFO 382112 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2021-03-15 19:44:20.908  INFO 382112 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2021-03-15 19:44:20.910  INFO 382112 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2021-03-15 19:44:21.702  INFO 382112 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2021-03-15 19:44:21.884  INFO 382112 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2021-03-15 19:44:21.927  WARN 382112 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
-2021-03-15 19:44:23.119  INFO 382112 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2021-03-15 19:44:23.128  INFO 382112 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2021-03-15 19:44:23.129  INFO 382112 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
-2021-03-15 19:44:23.130  INFO 382112 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2021-03-15 19:44:23.130  INFO 382112 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2021-03-22 11:50:40.017  INFO 413200 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2021-03-22 11:50:40.017  INFO 413200 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2021-03-22 11:50:40.017  INFO 413200 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@1d9bd1d6
+2021-03-22 11:50:40.162  INFO 413200 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-03-22 11:50:40.173  INFO 413200 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-03-22 11:50:40.196  INFO 413200 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-03-22 11:50:40.360  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingGET_1
+2021-03-22 11:50:40.360  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingHEAD_1
+2021-03-22 11:50:40.361  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPOST_1
+2021-03-22 11:50:40.361  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPUT_1
+2021-03-22 11:50:40.362  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPATCH_1
+2021-03-22 11:50:40.362  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingDELETE_1
+2021-03-22 11:50:40.362  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingOPTIONS_1
+2021-03-22 11:50:40.363  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingTRACE_1
+2021-03-22 11:50:40.372  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_1
+2021-03-22 11:50:40.372  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_1
+2021-03-22 11:50:40.373  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_1
+2021-03-22 11:50:40.373  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_1
+2021-03-22 11:50:40.373  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_1
+2021-03-22 11:50:40.374  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_1
+2021-03-22 11:50:40.374  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_1
+2021-03-22 11:50:40.374  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_1
+2021-03-22 11:50:40.378  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_2
+2021-03-22 11:50:40.378  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_2
+2021-03-22 11:50:40.379  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_2
+2021-03-22 11:50:40.379  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_2
+2021-03-22 11:50:40.379  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_2
+2021-03-22 11:50:40.380  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_2
+2021-03-22 11:50:40.380  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_2
+2021-03-22 11:50:40.380  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_2
+2021-03-22 11:50:40.459  INFO 413200 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: swagger2UsingPOST_1
+2021-03-22 11:50:40.501  INFO 413200 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2021-03-22 11:50:40.526  INFO 413200 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 23.0 seconds (JVM running for 29.68)
+2021-03-22 11:51:58.647  INFO 412584 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 412584 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2021-03-22 11:51:58.649  INFO 412584 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2021-03-22 11:52:06.562  INFO 412584 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-22 11:52:06.562  INFO 412584 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2021-03-22 11:52:06.614  INFO 412584 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-03-22 11:52:06.615  INFO 412584 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-22 11:52:06.616  INFO 412584 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-22 11:52:06.627  INFO 412584 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-03-22 11:52:06.694  INFO 412584 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-22 11:52:07.228  INFO 412584 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2021-03-22 11:52:07.254  INFO 412584 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2021-03-22 11:52:07.433  INFO 412584 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-03-22 11:52:09.330  INFO 412584 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2021-03-22 11:52:09.332  INFO 412584 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2021-03-22 11:52:10.222  INFO 412584 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2021-03-22 11:52:10.437  INFO 412584 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2021-03-22 11:52:10.520  WARN 412584 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2021-03-22 11:52:11.891  INFO 412584 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2021-03-22 11:52:11.900  INFO 412584 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2021-03-22 11:52:11.911  INFO 412584 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2021-03-22 11:52:11.913  INFO 412584 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2021-03-22 11:52:11.915  INFO 412584 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -315,36 +269,329 @@ Caused by: java.lang.NoSuchMethodError: org.springframework.plugin.core.PluginRe
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2021-03-15 19:44:23.131  INFO 382112 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2021-03-15 19:44:23.131  INFO 382112 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
-2021-03-15 19:44:23.131  INFO 382112 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@13cf5f8a
-2021-03-15 19:44:23.255  INFO 382112 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-03-15 19:44:23.266  INFO 382112 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-03-15 19:44:23.290  INFO 382112 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-03-15 19:44:23.460  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingGET_1
-2021-03-15 19:44:23.461  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingHEAD_1
-2021-03-15 19:44:23.461  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPOST_1
-2021-03-15 19:44:23.462  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPUT_1
-2021-03-15 19:44:23.462  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPATCH_1
-2021-03-15 19:44:23.463  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingDELETE_1
-2021-03-15 19:44:23.463  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingOPTIONS_1
-2021-03-15 19:44:23.463  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingTRACE_1
-2021-03-15 19:44:23.473  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_1
-2021-03-15 19:44:23.473  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_1
-2021-03-15 19:44:23.474  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_1
-2021-03-15 19:44:23.474  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_1
-2021-03-15 19:44:23.474  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_1
-2021-03-15 19:44:23.475  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_1
-2021-03-15 19:44:23.475  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_1
-2021-03-15 19:44:23.476  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_1
-2021-03-15 19:44:23.480  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_2
-2021-03-15 19:44:23.480  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_2
-2021-03-15 19:44:23.480  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_2
-2021-03-15 19:44:23.481  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_2
-2021-03-15 19:44:23.481  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_2
-2021-03-15 19:44:23.481  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_2
-2021-03-15 19:44:23.482  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_2
-2021-03-15 19:44:23.482  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_2
-2021-03-15 19:44:23.506  INFO 382112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: swagger2UsingPOST_1
-2021-03-15 19:44:23.549  INFO 382112 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2021-03-15 19:44:23.574  INFO 382112 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 9.146 seconds (JVM running for 10.571)
+2021-03-22 11:52:11.915  INFO 412584 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2021-03-22 11:52:11.916  INFO 412584 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2021-03-22 11:52:11.916  INFO 412584 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@117fb9ba
+2021-03-22 11:52:12.098  INFO 412584 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-03-22 11:52:12.111  INFO 412584 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-03-22 11:52:12.136  INFO 412584 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-03-22 11:52:12.310  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingGET_1
+2021-03-22 11:52:12.310  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingHEAD_1
+2021-03-22 11:52:12.311  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPOST_1
+2021-03-22 11:52:12.311  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPUT_1
+2021-03-22 11:52:12.312  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPATCH_1
+2021-03-22 11:52:12.312  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingDELETE_1
+2021-03-22 11:52:12.313  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingOPTIONS_1
+2021-03-22 11:52:12.313  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingTRACE_1
+2021-03-22 11:52:12.324  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_1
+2021-03-22 11:52:12.324  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_1
+2021-03-22 11:52:12.325  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_1
+2021-03-22 11:52:12.325  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_1
+2021-03-22 11:52:12.325  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_1
+2021-03-22 11:52:12.326  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_1
+2021-03-22 11:52:12.326  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_1
+2021-03-22 11:52:12.326  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_1
+2021-03-22 11:52:12.331  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_2
+2021-03-22 11:52:12.331  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_2
+2021-03-22 11:52:12.332  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_2
+2021-03-22 11:52:12.332  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_2
+2021-03-22 11:52:12.332  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_2
+2021-03-22 11:52:12.333  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_2
+2021-03-22 11:52:12.333  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_2
+2021-03-22 11:52:12.333  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_2
+2021-03-22 11:52:12.384  INFO 412584 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: swagger2UsingPOST_1
+2021-03-22 11:52:12.430  INFO 412584 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2021-03-22 11:52:12.456  INFO 412584 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 16.476 seconds (JVM running for 19.289)
+2021-03-22 11:53:21.723  INFO 412584 --- [http-nio-9988-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2021-03-22 11:53:21.753  INFO 412584 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /redis/set
+2021-03-22 11:53:21.753  INFO 412584 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/redis/set
+2021-03-22 11:53:21.783  INFO 412584 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2021-03-22 11:53:21.783  INFO 412584 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2021-03-22 11:53:21.783  INFO 412584 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2021-03-22 11:53:21.796  INFO 412584 --- [http-nio-9988-exec-1] c.wrh.controller.redis.RedisController   : >>> set redis begin
+2021-03-22 11:53:21.845  INFO 412584 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=62
+2021-03-22 11:55:59.368  INFO 411804 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 411804 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2021-03-22 11:55:59.370  INFO 411804 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2021-03-22 11:56:14.669  INFO 411804 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-22 11:56:14.670  INFO 411804 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2021-03-22 11:56:14.722  INFO 411804 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-03-22 11:56:14.723  INFO 411804 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-22 11:56:14.724  INFO 411804 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-22 11:56:14.742  INFO 411804 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-03-22 11:56:14.805  INFO 411804 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-22 11:56:15.320  INFO 411804 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2021-03-22 11:56:15.349  INFO 411804 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2021-03-22 11:56:15.732  INFO 411804 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-03-22 11:56:18.510  INFO 411804 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2021-03-22 11:56:18.512  INFO 411804 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2021-03-22 11:56:19.462  INFO 411804 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2021-03-22 11:56:19.740  INFO 411804 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2021-03-22 11:56:19.818  WARN 411804 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2021-03-22 11:56:21.350  INFO 411804 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2021-03-22 11:56:21.361  INFO 411804 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2021-03-22 11:56:21.374  INFO 411804 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2021-03-22 11:56:21.375  INFO 411804 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2021-03-22 11:56:21.376  INFO 411804 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2021-03-22 11:56:21.376  INFO 411804 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2021-03-22 11:56:21.376  INFO 411804 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2021-03-22 11:56:21.376  INFO 411804 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@3b66ac74
+2021-03-22 11:56:21.613  INFO 411804 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-03-22 11:56:21.624  INFO 411804 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-03-22 11:56:21.650  INFO 411804 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-03-22 11:56:21.817  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingGET_1
+2021-03-22 11:56:21.818  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingHEAD_1
+2021-03-22 11:56:21.818  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPOST_1
+2021-03-22 11:56:21.819  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPUT_1
+2021-03-22 11:56:21.819  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPATCH_1
+2021-03-22 11:56:21.819  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingDELETE_1
+2021-03-22 11:56:21.820  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingOPTIONS_1
+2021-03-22 11:56:21.820  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingTRACE_1
+2021-03-22 11:56:21.830  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_1
+2021-03-22 11:56:21.831  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_1
+2021-03-22 11:56:21.831  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_1
+2021-03-22 11:56:21.831  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_1
+2021-03-22 11:56:21.832  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_1
+2021-03-22 11:56:21.832  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_1
+2021-03-22 11:56:21.832  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_1
+2021-03-22 11:56:21.833  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_1
+2021-03-22 11:56:21.837  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_2
+2021-03-22 11:56:21.837  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_2
+2021-03-22 11:56:21.838  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_2
+2021-03-22 11:56:21.838  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_2
+2021-03-22 11:56:21.838  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_2
+2021-03-22 11:56:21.839  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_2
+2021-03-22 11:56:21.839  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_2
+2021-03-22 11:56:21.839  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_2
+2021-03-22 11:56:21.866  INFO 411804 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: swagger2UsingPOST_1
+2021-03-22 11:56:21.908  INFO 411804 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2021-03-22 11:56:21.953  INFO 411804 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 24.855 seconds (JVM running for 27.541)
+2021-03-22 11:56:33.169  INFO 411804 --- [http-nio-9988-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2021-03-22 11:56:33.229  INFO 411804 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /redis/set
+2021-03-22 11:56:33.229  INFO 411804 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/redis/set
+2021-03-22 11:56:33.258  INFO 411804 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2021-03-22 11:56:33.258  INFO 411804 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2021-03-22 11:56:33.258  INFO 411804 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2021-03-22 11:56:33.271  INFO 411804 --- [http-nio-9988-exec-1] c.wrh.controller.redis.RedisController   : >>> set redis begin
+2021-03-22 11:56:33.496  INFO 411804 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=238
+2021-03-22 12:12:50.246  INFO 403796 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 403796 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2021-03-22 12:12:50.265  INFO 403796 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2021-03-22 12:13:01.948  INFO 403796 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-22 12:13:01.949  INFO 403796 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2021-03-22 12:13:01.992  INFO 403796 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-03-22 12:13:01.993  INFO 403796 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-22 12:13:02.017  INFO 403796 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-22 12:13:02.359  INFO 403796 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-03-22 12:13:02.578  INFO 403796 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-22 12:13:03.226  INFO 403796 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2021-03-22 12:13:03.253  INFO 403796 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2021-03-22 12:13:04.245  INFO 403796 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-03-22 12:13:07.246  INFO 403796 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2021-03-22 12:13:07.248  INFO 403796 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2021-03-22 12:13:08.228  INFO 403796 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2021-03-22 12:13:08.505  INFO 403796 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2021-03-22 12:13:08.652  WARN 403796 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2021-03-22 12:13:10.560  INFO 403796 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2021-03-22 12:13:10.572  INFO 403796 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2021-03-22 12:13:10.589  INFO 403796 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2021-03-22 12:13:10.590  INFO 403796 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2021-03-22 12:13:10.591  INFO 403796 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2021-03-22 12:13:10.591  INFO 403796 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2021-03-22 12:13:10.592  INFO 403796 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2021-03-22 12:13:10.592  INFO 403796 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@2aa07d80
+2021-03-22 12:13:11.045  INFO 403796 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-03-22 12:13:11.056  INFO 403796 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-03-22 12:13:11.082  INFO 403796 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-03-22 12:13:11.257  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingGET_1
+2021-03-22 12:13:11.257  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingHEAD_1
+2021-03-22 12:13:11.257  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPOST_1
+2021-03-22 12:13:11.258  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPUT_1
+2021-03-22 12:13:11.258  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPATCH_1
+2021-03-22 12:13:11.258  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingDELETE_1
+2021-03-22 12:13:11.259  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingOPTIONS_1
+2021-03-22 12:13:11.259  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingTRACE_1
+2021-03-22 12:13:11.269  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_1
+2021-03-22 12:13:11.270  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_1
+2021-03-22 12:13:11.270  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_1
+2021-03-22 12:13:11.270  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_1
+2021-03-22 12:13:11.271  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_1
+2021-03-22 12:13:11.271  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_1
+2021-03-22 12:13:11.271  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_1
+2021-03-22 12:13:11.272  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_1
+2021-03-22 12:13:11.275  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_2
+2021-03-22 12:13:11.276  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_2
+2021-03-22 12:13:11.276  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_2
+2021-03-22 12:13:11.277  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_2
+2021-03-22 12:13:11.277  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_2
+2021-03-22 12:13:11.277  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_2
+2021-03-22 12:13:11.278  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_2
+2021-03-22 12:13:11.278  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_2
+2021-03-22 12:13:11.338  INFO 403796 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: swagger2UsingPOST_1
+2021-03-22 12:13:11.380  INFO 403796 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2021-03-22 12:13:11.413  INFO 403796 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 23.142 seconds (JVM running for 27.333)
+2021-03-22 14:22:31.497  INFO 403796 --- [http-nio-9988-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2021-03-22 14:22:36.429  INFO 403796 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /redis/set
+2021-03-22 14:22:36.430  INFO 403796 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/redis/set
+2021-03-22 14:22:37.710  INFO 403796 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2021-03-22 14:22:37.712  INFO 403796 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2021-03-22 14:22:37.713  INFO 403796 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2021-03-22 14:22:38.330  INFO 403796 --- [http-nio-9988-exec-1] c.wrh.controller.redis.RedisController   : >>> set redis begin
+2021-03-22 14:22:41.046  INFO 403796 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=3334
+2021-03-22 14:22:45.087  INFO 403796 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /redis/set
+2021-03-22 14:22:45.149  INFO 403796 --- [http-nio-9988-exec-3] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/redis/set
+2021-03-22 14:22:45.150  INFO 403796 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2021-03-22 14:22:45.150  INFO 403796 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2021-03-22 14:22:45.150  INFO 403796 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2021-03-22 14:22:45.151  INFO 403796 --- [http-nio-9988-exec-3] c.wrh.controller.redis.RedisController   : >>> set redis begin
+2021-03-22 14:22:45.204  INFO 403796 --- [http-nio-9988-exec-3] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=54
+2021-03-22 15:40:38.722  INFO 344980 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 344980 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2021-03-22 15:40:38.743  INFO 344980 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2021-03-22 15:40:44.628  INFO 344980 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-22 15:40:44.628  INFO 344980 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2021-03-22 15:40:44.639  INFO 344980 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-03-22 15:40:44.640  INFO 344980 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-22 15:40:44.640  INFO 344980 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-22 15:40:44.809  INFO 344980 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-03-22 15:40:44.909  INFO 344980 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-22 15:40:45.364  INFO 344980 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2021-03-22 15:40:45.388  INFO 344980 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2021-03-22 15:40:45.529  INFO 344980 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-03-22 15:40:46.859  INFO 344980 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2021-03-22 15:40:46.861  INFO 344980 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2021-03-22 15:40:47.690  INFO 344980 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2021-03-22 15:40:47.921  INFO 344980 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2021-03-22 15:40:48.015  WARN 344980 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2021-03-22 15:40:49.357  INFO 344980 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2021-03-22 15:40:49.369  INFO 344980 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2021-03-22 15:40:49.371  INFO 344980 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2021-03-22 15:40:49.371  INFO 344980 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2021-03-22 15:40:49.372  INFO 344980 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2021-03-22 15:40:49.372  INFO 344980 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2021-03-22 15:40:49.372  INFO 344980 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2021-03-22 15:40:49.373  INFO 344980 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@43294e9b
+2021-03-22 15:40:49.525  INFO 344980 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-03-22 15:40:49.535  INFO 344980 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-03-22 15:40:49.561  INFO 344980 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-03-22 15:40:49.735  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingGET_1
+2021-03-22 15:40:49.736  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingHEAD_1
+2021-03-22 15:40:49.736  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPOST_1
+2021-03-22 15:40:49.737  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPUT_1
+2021-03-22 15:40:49.737  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPATCH_1
+2021-03-22 15:40:49.737  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingDELETE_1
+2021-03-22 15:40:49.738  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingOPTIONS_1
+2021-03-22 15:40:49.738  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingTRACE_1
+2021-03-22 15:40:49.747  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_1
+2021-03-22 15:40:49.748  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_1
+2021-03-22 15:40:49.748  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_1
+2021-03-22 15:40:49.748  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_1
+2021-03-22 15:40:49.749  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_1
+2021-03-22 15:40:49.749  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_1
+2021-03-22 15:40:49.749  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_1
+2021-03-22 15:40:49.750  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_1
+2021-03-22 15:40:49.753  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_2
+2021-03-22 15:40:49.753  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_2
+2021-03-22 15:40:49.754  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_2
+2021-03-22 15:40:49.754  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_2
+2021-03-22 15:40:49.754  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_2
+2021-03-22 15:40:49.755  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_2
+2021-03-22 15:40:49.755  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_2
+2021-03-22 15:40:49.755  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_2
+2021-03-22 15:40:49.801  INFO 344980 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: swagger2UsingPOST_1
+2021-03-22 15:40:49.846  INFO 344980 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2021-03-22 15:40:49.898  INFO 344980 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 11.682 seconds (JVM running for 12.696)
+2021-03-22 15:41:37.662  INFO 344980 --- [http-nio-9988-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2021-03-22 15:41:37.690  INFO 344980 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /encode/encode
+2021-03-22 15:41:37.690  INFO 344980 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/encode/encode
+2021-03-22 15:41:37.757  INFO 344980 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2021-03-22 15:41:37.757  INFO 344980 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2021-03-22 15:41:37.758  INFO 344980 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2021-03-22 15:41:37.937  INFO 344980 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=180
+2021-03-22 15:42:20.608  INFO 409304 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 409304 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2021-03-22 15:42:20.610  INFO 409304 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2021-03-22 15:42:30.648  INFO 409304 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-22 15:42:30.648  INFO 409304 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2021-03-22 15:42:30.690  INFO 409304 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-03-22 15:42:30.690  INFO 409304 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-22 15:42:30.690  INFO 409304 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-22 15:42:30.781  INFO 409304 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-03-22 15:42:30.860  INFO 409304 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-22 15:42:32.710  INFO 409304 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2021-03-22 15:42:32.734  INFO 409304 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2021-03-22 15:42:32.887  INFO 409304 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-03-22 15:42:34.006  INFO 409304 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2021-03-22 15:42:34.008  INFO 409304 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2021-03-22 15:42:34.868  INFO 409304 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2021-03-22 15:42:35.046  INFO 409304 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2021-03-22 15:42:35.090  WARN 409304 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2021-03-22 15:42:36.277  INFO 409304 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2021-03-22 15:42:36.285  INFO 409304 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2021-03-22 15:42:36.287  INFO 409304 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2021-03-22 15:42:36.287  INFO 409304 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2021-03-22 15:42:36.288  INFO 409304 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2021-03-22 15:42:36.288  INFO 409304 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2021-03-22 15:42:36.288  INFO 409304 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2021-03-22 15:42:36.288  INFO 409304 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@33891646
+2021-03-22 15:42:36.424  INFO 409304 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-03-22 15:42:36.432  INFO 409304 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-03-22 15:42:36.454  INFO 409304 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-03-22 15:42:36.613  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingGET_1
+2021-03-22 15:42:36.614  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingHEAD_1
+2021-03-22 15:42:36.614  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPOST_1
+2021-03-22 15:42:36.615  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPUT_1
+2021-03-22 15:42:36.615  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPATCH_1
+2021-03-22 15:42:36.615  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingDELETE_1
+2021-03-22 15:42:36.616  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingOPTIONS_1
+2021-03-22 15:42:36.616  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingTRACE_1
+2021-03-22 15:42:36.625  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_1
+2021-03-22 15:42:36.626  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_1
+2021-03-22 15:42:36.626  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_1
+2021-03-22 15:42:36.626  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_1
+2021-03-22 15:42:36.627  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_1
+2021-03-22 15:42:36.627  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_1
+2021-03-22 15:42:36.627  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_1
+2021-03-22 15:42:36.628  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_1
+2021-03-22 15:42:36.631  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_2
+2021-03-22 15:42:36.631  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_2
+2021-03-22 15:42:36.632  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_2
+2021-03-22 15:42:36.632  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_2
+2021-03-22 15:42:36.632  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_2
+2021-03-22 15:42:36.633  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_2
+2021-03-22 15:42:36.633  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_2
+2021-03-22 15:42:36.633  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_2
+2021-03-22 15:42:36.659  INFO 409304 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: swagger2UsingPOST_1
+2021-03-22 15:42:36.699  INFO 409304 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2021-03-22 15:42:36.723  INFO 409304 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 16.871 seconds (JVM running for 19.145)
+2021-03-22 15:42:39.070  INFO 409304 --- [http-nio-9988-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2021-03-22 15:42:39.100  INFO 409304 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request uri: /encode/encode
+2021-03-22 15:42:39.100  INFO 409304 --- [http-nio-9988-exec-1] c.w.c.filter.RequestParameterFilter      : >>> RequestParameterFilter enter, request url: http://127.0.0.1:9988/encode/encode
+2021-03-22 15:42:39.114  INFO 409304 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> interceptor preHandle 启动
+2021-03-22 15:42:39.114  INFO 409304 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作不带有passport注解 NO！
+2021-03-22 15:42:39.115  INFO 409304 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : ===> 用户想执行的操作 controller 不带有passportTotal注解 NO！
+2021-03-22 15:42:39.202  INFO 409304 --- [http-nio-9988-exec-1] com.wrh.interceptor.MyInterceptor        : Interceptor 调用 cost=88

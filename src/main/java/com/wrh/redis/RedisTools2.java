@@ -24,8 +24,8 @@ import java.util.concurrent.TimeUnit;
  * @version 1.0
  * @copyright ZCSmart Co.,Ltd.copyright 2015
  */
-@Primary
-@Component
+//@Primary
+//@Component
 public class RedisTools2 {
     @Value("${redis.prefix}")
     private  String keyPrefix;
