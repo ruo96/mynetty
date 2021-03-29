@@ -75,6 +75,7 @@ spring:
       connection-test-query: SELECT 1
   rabbitmq:
     host: 127.0.0.1
+    port: 5672
     username: admin
     password: admin
   servlet:

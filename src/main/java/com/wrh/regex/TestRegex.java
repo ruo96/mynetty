@@ -3,6 +3,7 @@ package com.wrh.regex;
 import com.wrh.utils.RegexUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -222,6 +223,24 @@ public class TestRegex {
             System.out.println("not match");
         }
 
+    }
+//    public static final String REGEX = "^([a-z0-9A-Z]+[_|-|\\.]?)+[a-z0-9A-Z]@bilibili.com$";
+    public static final String REGEX = "^[a-zA-Z0-9_-\\|\\.]+@bilibili.com$";
+    @Test
+    public void Test228() {
+        String email = "v_zhangfeng_0_1@bilibili.com";
+        if (email.endsWith("@bilibili.com")) {
+            System.out.println("yes");
+        } else {
+            System.out.println("no");
+        }
+        Pattern regex = Pattern.compile(REGEX);
+        Matcher matcher = regex.matcher(email);
+        if (!matcher.matches()) {
+            System.out.println("false");
+        } else {
+            System.out.println("true");
+        }
     }
 
 

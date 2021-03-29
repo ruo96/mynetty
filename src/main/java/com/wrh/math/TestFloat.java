@@ -1,5 +1,6 @@
 package com.wrh.math;
 
+import cn.hutool.core.util.NumberUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 /**
@@ -15,5 +16,13 @@ public class TestFloat {
     public void test(){
         float f=3.4F;
         log.info("===> {}",f);
+    }
+
+    @Test
+    public void Test21() {
+        String s = "";
+        int a = NumberUtil.parseInt(s);
+        System.out.println(a);
+
     }
 }
