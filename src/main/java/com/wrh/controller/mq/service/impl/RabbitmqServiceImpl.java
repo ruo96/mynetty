@@ -32,7 +32,8 @@ public class RabbitmqServiceImpl implements RabbitmqService {
         rabbitTemplate.convertAndSend("test_exchange", queueName, msg, new MessagePostProcessor() {
             @Override
             public Message postProcessMessage(Message message) throws AmqpException {
-                message.getMessageProperties().setHeader("x-delay",3000);
+//                message.getMessageProperties().setHeader("x-delay",3000);
+                message.getMessageProperties().setDelay(3000);
                 return message;
             }
         });

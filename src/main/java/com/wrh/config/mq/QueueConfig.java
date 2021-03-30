@@ -23,7 +23,10 @@ public class QueueConfig {
     public CustomExchange delayExchange() {
         Map<String, Object> args = new HashMap<>();
         args.put("x-delayed-type", "direct");
-        return new CustomExchange("test_exchange","x-delayed-message",true,false,args);
+        CustomExchange customExchange = new CustomExchange("test_exchange","x-delayed-message",true,false,args);
+        // 这个设置不设置都没多大关系
+//        customExchange.setDelayed(true);
+        return customExchange;
     }
 
     @Bean

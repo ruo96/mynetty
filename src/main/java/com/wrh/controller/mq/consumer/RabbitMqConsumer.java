@@ -19,6 +19,6 @@ public class RabbitMqConsumer {
     @RabbitListener(queues = "test_queue_1")
     public void consumeMsg(String msg) {
         LocalDateTime now = LocalDateTime.now();
-        log.info(">>> 接收消息： {}  接收时间：{}", now.toString());
+        log.info(">>> 接收消息： {}  接收时间：{}", msg,now.toString());
     }
 }
