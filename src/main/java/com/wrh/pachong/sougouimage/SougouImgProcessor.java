@@ -46,7 +46,7 @@ public class SougouImgProcessor {
 
     public static void main(String[] args) {
         String url = "https://pic.sogou.com/napi/pc/searchList?mode=1&start=%s&xml_len=%s&query=%s";
-        SougouImgProcessor processor = new SougouImgProcessor(url,"美女");
+        SougouImgProcessor processor = new SougouImgProcessor(url,"高清壁纸");
 
         int start = 0, size = 50, limit = 1000; // 定义爬取开始索引、每次爬取数量、总共爬取数量
 

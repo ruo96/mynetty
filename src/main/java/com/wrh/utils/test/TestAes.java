@@ -17,7 +17,7 @@ public class TestAes {
         String email = "Imae2Q4g/AV9t+wK7oLmLwA1Ds7E6i551UD28s/ugL4=";
         System.out.println("AESUtils.decrypt(email) = " + AESUtils.decrypt(email));
 
-        String originMail = "jiangshan02@bilibili.com";
+        String originMail = "zhangaijing@bilibili.com";
         System.out.println("AESUtils.encrypt(originMail) = " + AESUtils.encrypt(originMail));
     }
 }

@@ -1325,7 +1325,7 @@ public class TestTime {
 
     @Test
     public void Test1309() {
-        String ds = "2021-03-09";
+        String ds = "2021-04-01";
         System.out.println("getNextDayOfDimension(ds,DIMENSION_MONTH,1) = " + getNextDayOfDimension(ds, DIMENSION_MONTH, 1));
         System.out.println("getNextDayOfDimension(ds, DIMENSION_MONTH, -1) = " + getNextDayOfDimension(ds, DIMENSION_MONTH, -1));
         System.out.println("getNextDayOfDimension(ds, DIMENSION_WEEK, 1) = " + getNextDayOfDimension(ds, DIMENSION_WEEK, 1));
@@ -1370,6 +1370,8 @@ public class TestTime {
         }
 
     }
+
+
 
 
 }

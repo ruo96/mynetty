@@ -1,5 +1,6 @@
 package com.wrh.thread.CompletableFutureTest;
 
+import akka.remote.artery.aeron.TaskRunner;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -552,11 +553,113 @@ public class TestCompletableFuture {
         System.out.println("thenCompose result : "+f.get());
     }
 
+    /** 20种用法*/
+
+    /** 1、 创建一个完成的CompletableFuture*/
     @Test
     public void Test550() {
         CompletableFuture cf = CompletableFuture.completedFuture("message");
+        System.out.println("cf.isDone() = " + cf.isDone());
         System.out.println(cf.getNow(null));
 
+    }
+    
+    @Test
+    public void Test568() {
+        CompletableFuture cf = CompletableFuture.completedFuture("message").thenApplyAsync(String::toUpperCase
+                /*delayed*/);
+        CompletableFuture exceptionHandler = cf.handle((s, th) -> { return (th != null) ? "message upon cancel" : ""; });
+        cf.completeExceptionally(new RuntimeException("completed exceptionally"));
+        assertTrue("Was not completed exceptionally", cf.isCompletedExceptionally());
+        try {
+            cf.join();
+            fail("Should have thrown an exception");
+        } catch(CompletionException ex) { // just for testing
+            assertEquals("completed exceptionally", ex.getCause().getMessage());
+        }
+
+        assertEquals("message upon cancel", exceptionHandler.join());
+        
+    }
+    
+    @Test
+    public void Test586() {
+        String original = "Message";
+        CompletableFuture cf1 = CompletableFuture.completedFuture(original)
+                .thenApplyAsync(s -> delayedUpperCase(s));
+        CompletableFuture cf2 = cf1.applyToEither(
+                CompletableFuture.completedFuture(original).thenApplyAsync(s -> delayedLowerCase(s)),
+                s -> s + " from applyToEither");
+//        assertTrue(cf2.join().endsWith(" from applyToEither"));
+        System.out.println("cf2.join() = " + cf2.join());
+
+    }
+
+    private String delayedLowerCase(String s) {
+        return s.toLowerCase();
+    }
+
+    private String delayedUpperCase(String s) {
+        s = s.toUpperCase();
+        return s;
+    }
+
+    @Test
+    public void Test608() {
+        String original = "Message";
+        StringBuilder result = new StringBuilder();
+        CompletableFuture.completedFuture(original).thenApply(String::toUpperCase).runAfterBoth(
+                CompletableFuture.completedFuture(original).thenApply(String::toLowerCase),
+                () -> result.append("done"));
+        System.out.println("result = " + result);
+
+
+    }
+
+    /** 13.用Biconsumer接收两个stage的结果*/
+    @Test
+    public void Test620() {
+        String original = "Message";
+        StringBuilder result = new StringBuilder();
+        CompletableFuture.completedFuture(original).thenApply(String::toUpperCase).thenAcceptBoth(
+                CompletableFuture.completedFuture(original).thenApply(String::toLowerCase),
+                (s1, s2) -> result.append(s1 + s2));
+        System.out.println(result);
+
+    }
+
+    /** 14.将Bifunction同时作用于两个阶段的结果*/
+    @Test
+    public void Test632() {
+        String original = "Message";
+        CompletableFuture cf = CompletableFuture.completedFuture(original).thenApply(s -> delayedUpperCase(s))
+                .thenCombine(CompletableFuture.completedFuture(original).thenApply(s -> delayedLowerCase(s)),
+                        (s1, s2) -> s1 + s2);
+        System.out.println(cf.getNow(null));
+
+    }
+    
+    @Test
+    public void Test643() {
+        cars().thenCompose(cars -> {
+            List<CompletionStage> updatedCars = cars.stream()
+                    .map(car -> rating(car.getId()).thenApply(r -> {
+                        car.setRate(r);
+                        return car;
+                    })).collect(Collectors.toList());
+            CompletableFuture done = CompletableFuture
+                    .allOf(updatedCars.toArray(new CompletableFuture[updatedCars.size()]));
+            return done.thenApply(v -> updatedCars.stream().map(CompletionStage::toCompletableFuture)
+                    .map(CompletableFuture::join).collect(Collectors.toList()));
+        }).whenComplete((cars, th) -> {
+            if (th == null) {
+                System.out.println("cars = " + cars);
+            } else {
+                throw new RuntimeException((Throwable) th);
+            }
+        }).toCompletableFuture().join();
+
+        
     }
 
     @Test
@@ -979,11 +1082,13 @@ public class TestCompletableFuture {
         List<Car> messages = new ArrayList<>();
         Car c1 = new Car();
         c1.setName("w1");
-        c1.setRate(1);
+//        c1.setRate(1);
+        c1.setId(1);
 
         Car c2 = new Car();
         c2.setName("w2");
-        c2.setRate(2);
+//        c2.setRate(2);
+        c2.setId(2);
 
         messages.add(c1);
         messages.add(c2);
