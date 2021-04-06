@@ -632,12 +632,19 @@ public class TestFileOperate {
     }
 
     @Test
+    public void Test635() throws IOException {
+        List<String> list = Files.readAllLines(Paths.get("e:\\file\\data.txt"));
+        System.out.println("list = " + list);
+
+    }
+
+    @Test
     public void Test632Daletou() throws IOException {
 
         List<Integer> beforeResult = new ArrayList<>(5);
         List<Integer> afterResult = new ArrayList<>(2);
         List<String> buyList = new ArrayList<>(4);
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 1; i++) {
             while (beforeResult.size() != 5) {
                 Integer beforeNum = RandomUtils.nextInt(1,36);
                 if (!beforeResult.contains(beforeNum)) {

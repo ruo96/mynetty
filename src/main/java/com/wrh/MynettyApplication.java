@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
@@ -34,6 +35,7 @@ import java.util.concurrent.TimeUnit;
 @SpringBootApplication
 @EnableConfigurationProperties
 @EnableScheduling
+@EnableAsync
 //@ServletComponentScan("com.wrh.filter")  // 这个是配合注解实现拦截器的
 public class MynettyApplication {
 
