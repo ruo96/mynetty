@@ -5,6 +5,7 @@ import com.wrh.exception.ExceptionA;
 import com.wrh.server.EchoServer;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.extern.slf4j.Slf4j;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -36,6 +37,7 @@ import java.util.concurrent.TimeUnit;
 @EnableConfigurationProperties
 @EnableScheduling
 @EnableAsync
+@MapperScan("com.wrh.controller.mapper")
 //@ServletComponentScan("com.wrh.filter")  // 这个是配合注解实现拦截器的
 public class MynettyApplication {
 

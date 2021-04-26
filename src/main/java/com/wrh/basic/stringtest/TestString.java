@@ -1,8 +1,11 @@
 package com.wrh.basic.stringtest;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
@@ -15,6 +18,8 @@ import java.util.StringJoiner;
  */
 @Slf4j
 public class TestString {
+
+    private static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
     @Test
     public void Test() {
@@ -55,5 +60,22 @@ public class TestString {
         stringJoiner.add("my");
         stringJoiner.add("world");
         System.out.println(stringJoiner.toString());
+    }
+
+    @Test
+    public void Test61() {
+        String s = " a ";
+        System.out.println("["+s+"]");
+        s = s.trim();
+        System.out.println("["+s+"]");
+
+        String a = "   ";
+        System.out.println("StringUtils.isNotBlank(a) = " + StringUtils.isNotBlank(a));
+
+        System.out.println("LocalDateTime.now().toString() = " + LocalDateTime.now());
+
+        System.out.println("LocalDateTime.now().format(DateTimeFormatter.ofPattern(DATE_TIME_FORMAT)) = " + LocalDateTime.now().format(DateTimeFormatter.ofPattern(DATE_TIME_FORMAT)));
+
+
     }
 }

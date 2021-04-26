@@ -6,6 +6,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Created by wrh
@@ -123,6 +125,25 @@ public class TestEnum {
         EnumSet<SeasonEnum> set = EnumSet.allOf(SeasonEnum.class);
         System.out.println(set);
 
+    }
+    @Test
+    public void Test128() {
+        Map<String, Object> result = new HashMap<>();
+        result.put("internal", MarketInternalEnum.getAllKeys());
+        System.out.println("result = " + result);
+
+    }
+    
+    @Test
+    public void Test138() {
+        Integer i = 4;
+        Integer j = 4;
+        if ((i & j) == 4) {
+            System.out.println("equals");
+        } else {
+            System.out.println("not equals");
+        }
+        
     }
 
 }

@@ -1,5 +1,6 @@
 package com.wrh.IOuse.fileOperate;
 
+import clojure.main;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
@@ -9,6 +10,8 @@ import org.springframework.util.ResourceUtils;
 
 import java.io.*;
 import java.net.InetSocketAddress;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.*;
@@ -18,6 +21,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -683,5 +687,30 @@ public class TestFileOperate {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+
+    @Test
+    public void Test689() throws URISyntaxException {
+//        URL location = TestFileOperate.class.getClassLoader().getResource("test.txt");
+//        D:\pro\mynetty\src\main\java\com\wrh\IOuse\fileOperate\test.txt
+        System.out.println("TestFileOperate.class.getResource(\"\") = " + TestFileOperate.class.getResource(""));
+        System.out.println("TestFileOperate.class.getResource(\"\") = " + TestFileOperate.class.getResource("/"));
+        System.out.println("TestFileOperate.class.getClassLoader.getResource(\"\") = " + TestFileOperate.class.getClassLoader().getResource(""));
+        System.out.println("TestFileOperate.class.getClassLoader.getResource(\"\") = " + TestFileOperate.class.getClassLoader().getResource("/"));
+        URL location = TestFileOperate.class.getResource("test.txt");
+        System.out.println(location);
+        Path path = Paths.get(location.toURI());
+        System.out.println(location.toURI());
+
+    }
+
+    public static void main(String[] args) throws URISyntaxException, IOException {
+        URL location = TestFileOperate.class.getClassLoader().getResource("test.txt");
+        System.out.println(location.toString());
+        Path path = Paths.get(location.toURI());
+        System.out.println(location.toURI());
+
+        List<String> content = Files.lines(path).map(String::toUpperCase).collect(Collectors.toList());
+        System.out.println("content = " + content);
     }
 }

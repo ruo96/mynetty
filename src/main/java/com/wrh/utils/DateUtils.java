@@ -35,6 +35,8 @@ public class DateUtils {
     /** yyyy-MM-dd **/
     public static final String DATE_PATTERN = "yyyy-MM-dd";
 
+    public static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
+
     /**
      * 获取未来 第past天的日期
      * @param past
@@ -247,6 +249,19 @@ public class DateUtils {
     public void Test247() {
         System.out.println(localDate2Date(LocalDate.now()));
         System.out.println(date2LocalDate(new Date()));
+
+    }
+
+    public static boolean isBeforeNow(String timeStr) {
+        LocalDateTime time = LocalDateTime.parse(timeStr, DateTimeFormatter.ofPattern(DATE_TIME_FORMAT));
+        return time.isBefore(LocalDateTime.now());
+    }
+
+    @Test
+    public void Test261() {
+        System.out.println("isBeforeNow(\"2021-04-22 10:00:00\") = " + isBeforeNow("2021-04-22 10:00:00"));
+        System.out.println("isBeforeNow(\"2021-04-22 11:00:00\") = " + isBeforeNow("2021-04-22 11:00:00"));
+        System.out.println("isBeforeNow(\"2021-04-22 10:42:00\") = " + isBeforeNow("2021-04-22 10:42:00"));
 
     }
 

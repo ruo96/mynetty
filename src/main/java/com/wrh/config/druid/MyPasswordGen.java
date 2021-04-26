@@ -1,6 +1,6 @@
 package com.wrh.config.druid;
 
-import com.alibaba.druid.filter.config.ConfigTools;
+//import com.alibaba.druid.filter.config.ConfigTools;
 import org.junit.Test;
 
 /**
@@ -12,7 +12,7 @@ import org.junit.Test;
 public class MyPasswordGen {
     public static void main(String[] args) throws Exception {
         String password = "mypassword";
-        ConfigTools.main(new String[]{password});
+//        ConfigTools.main(new String[]{password});
     }
 
 
@@ -52,8 +52,8 @@ public class MyPasswordGen {
     public void Test51() throws Exception {
         String password = "XSsYBuCPY3S6I7TQFIIbawau9SLZTpkcMqFTqw+2L05zlQ674vZDI8OjvDBrZ+2ih1wkGYgC67Wrkid99u3+mQ==";
         String publicKey = "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJrMQ8/3SanaReukID6FioHcgrVBpW/WC4densplT3rQu1+zQD1ouFB1m+B+zmYc1gpJmQalHPlUTtlak8iCNRECAwEAAQ==";
-        String result = ConfigTools.decrypt(publicKey, password);
-        System.out.println("result = " + result);  /*result = mypassword*/
+//        String result = ConfigTools.decrypt(publicKey, password);
+//        System.out.println("result = " + result);  /*result = mypassword*/
 
     }
 }

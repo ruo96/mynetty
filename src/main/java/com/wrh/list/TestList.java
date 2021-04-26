@@ -1614,7 +1614,8 @@ public class TestList {
             list.add("w"+i);
         }
         System.out.println("list = " + list);
-        Collections.shuffle(list);
+//        Collections.shuffle(list);
+        list = list.subList(0,3);
         System.out.println("list = " + list);
 
     }
