@@ -54,7 +54,7 @@ public class Redis2Controller {
             if ("OK".equals(result)) {
                 log.info(">>> 分布式锁上了");
             } else {
-                log.info(">>> 分布式锁 没锁上");
+                log.info(">>> 分布式锁 没锁上123");
             }
             return result;
         }

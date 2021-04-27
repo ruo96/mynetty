@@ -639,7 +639,7 @@ public class TestBasicUse {
         if(StringUtils.isNumeric(a)){
             System.out.println("yes");
         }else {
-            System.out.println("no");
+            System.out.println("now");
         }
     }
 
