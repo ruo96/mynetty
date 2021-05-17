@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.LongStream;
 
 /**
@@ -50,6 +51,25 @@ public class TestLong {
         LongStream.rangeClosed(0,5).forEach(e->System.out.println(e));
         System.out.println("====================");
         LongStream.range(0,5).forEach(e->System.out.println(e));
+
+    }
+
+    @Test
+    public void Test57() {
+        Long a = null;
+        if (Objects.isNull(a)) {
+            System.out.println("a is null");
+        } else {
+            System.out.println("a is not null");
+        }
+
+        a = 1000L;
+
+        if (Objects.isNull(a)) {
+            System.out.println("2  a is null");
+        } else {
+            System.out.println("2   a is not null");
+        }
 
     }
 }

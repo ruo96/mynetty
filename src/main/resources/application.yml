@@ -208,3 +208,9 @@ shiro:
 
 demo:
   enable: false
+
+# prometheus
+#security:
+#  user:
+#    name: user
+#    password: pwd

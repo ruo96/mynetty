@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.Objects;
 
 /**
@@ -155,6 +156,44 @@ public class TestBigDecimal {
     public void Test155() {
         System.out.println(getPercentString1(99, 1 , 4));
         System.out.println(getPercentStringWithoutSign(99, 1 , 4));
+
+    }
+
+    @Test
+    public void Test162() {
+        BigDecimal amount1 = BigDecimal.valueOf(0.02);
+        BigDecimal amount2 = BigDecimal.valueOf(0.03);
+        System.out.println("amount2.subtract(amount1) = " + amount2.subtract(amount1));
+
+    }
+    @Test
+    public void Test169() {
+        int i = 1;
+        int j = 1;
+        System.out.println("i^j = " + (i ^ j));
+
+    }
+
+    public static String removeScientificNotation(Double num) {
+        DecimalFormat df = new DecimalFormat("0.##"); // ##表示2位小数
+//        DecimalFormat df = new DecimalFormat("0");
+        return df.format(num);
+    }
+
+    public static String removeScientificNotation2(Double num) {
+        DecimalFormat df = new DecimalFormat("0"); // ##表示2位小数
+//        DecimalFormat df = new DecimalFormat("0");
+        return df.format(num);
+    }
+
+    @Test
+    public void Test184() {
+        Double a = new Double("563.024");
+        System.out.println("removeScientificNotation(a) = " + removeScientificNotation(a));
+        System.out.println("removeScientificNotation2(a) = " + removeScientificNotation2(a));
+
+        Long b = a.longValue();
+        System.out.println("b = " + b);
 
     }
 

@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @Created by wrh
@@ -155,6 +156,19 @@ public class TestListStream {
         List<Student> list = getStudentList();
         Long a = list.stream().filter(e->e.getName().equals("w4")).mapToLong(Student::getGrade).sum();
         System.out.println(a);
+    }
+
+    @Test
+    public void Test161() {
+//        long monthTarget = Stream.of(1,2,3).limit(2).sum();
+//
+        List<Long> monthTarget = Arrays.asList(1L,2L,3L,4L,5L,6L,7L);
+        long a = monthTarget.stream().limit(4).mapToLong(Long::longValue).sum();
+        System.out.println("a = " + a);
+
+        long monthTarget1 = Stream.of(1L,2L,3L,4L,5L,6L,7L).limit(5).mapToLong(Long::longValue).sum();
+        System.out.println("monthTarget1 = " + monthTarget1);
+
     }
 
 }

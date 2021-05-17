@@ -1,19 +1,15 @@
 package com.wrh;
 
 
-import com.wrh.exception.ExceptionA;
 import com.wrh.server.EchoServer;
-import com.zaxxer.hikari.HikariDataSource;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -23,11 +19,7 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.Locale;
-import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @EnableWebSocket
@@ -38,6 +30,8 @@ import java.util.concurrent.TimeUnit;
 @EnableScheduling
 @EnableAsync
 @MapperScan("com.wrh.controller.mapper")
+//@EnablePrometheusEndpoint
+//@EnableSpringBootMetricsCollector
 //@ServletComponentScan("com.wrh.filter")  // 这个是配合注解实现拦截器的
 public class MynettyApplication {
 

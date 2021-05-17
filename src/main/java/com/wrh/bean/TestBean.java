@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.google.common.collect.Lists;
 import java.time.LocalDate;
+import java.util.concurrent.TimeUnit;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -87,13 +88,13 @@ public class TestBean implements BeanNameAware {
         System.out.println("销毁Bean");
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         ClassPathXmlApplicationContext pathXmlApplicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         TestBean testBean = (TestBean) pathXmlApplicationContext.getBean("testBean");
         pathXmlApplicationContext.close();
     }
 
-    public static void main1(String[] args) {
+    public static void main2(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Student.class);
         context.getBean("w1");
     }
@@ -103,6 +104,17 @@ public class TestBean implements BeanNameAware {
         ApplicationContext context = new ClassPathXmlApplicationContext("");
         context.getBean("id");
 
+    }
+
+    @Test
+    public void Test109() {
+        NormalBean bean = new NormalBean();
+
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        NormalBean bean = new NormalBean();
+        TimeUnit.SECONDS.sleep(5);
     }
 
 }

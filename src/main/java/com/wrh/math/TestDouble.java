@@ -61,4 +61,31 @@ public class TestDouble {
         System.out.println(b);
 
     }
+
+    @Test
+    public void Test66() {
+        String a = "2.23";
+        Double b = Double.valueOf(a);
+        System.out.println(b);
+
+    }
+
+    @Test
+    public void Test74() {
+        double a = 0.01;
+        if (a > 0) {
+            System.out.println(" a is big");
+        } else {
+            System.out.println("a is not big");
+        }
+
+    }
+    @Test
+    public void Test84() {
+        final Boolean a;
+        /*if (!a) {
+            a = true;
+        }
+*/
+    }
 }

@@ -1072,4 +1072,22 @@ public class TestMap {
      * get操作全程不需要加锁是因为Node的成员val是用volatile修饰的和数组用volatile修饰没有关系。
      * 数组用volatile修饰主要是保证在数组扩容的时候保证可见性。
      */
+    @Test
+    public void Test1076() {
+        Map<String, String> map = new HashMap<>();
+        System.out.println("map.get(\"w1\") = " + map.get("w1"));
+        if (Objects.nonNull(map.get("w1"))) {
+            System.out.println("w1 exist");
+        } else {
+            System.out.println("w1 not exist");
+        }
+
+    }
+
+    @Test
+    public void Test1088() {
+        Map<String, String> map = new HashMap<>();
+        map.put(null, null);
+
+    }
 }

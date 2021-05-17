@@ -1620,4 +1620,19 @@ public class TestList {
 
     }
 
+    @Test
+    public void Test1624() {
+        List<String> list = new ArrayList<>();
+        list.add("w1");
+        list.add("w2");
+        list.add("w3");
+
+        if (list.contains(null)) {
+            System.out.println("contain null");
+        } else {
+            System.out.println("not contain null");
+        }
+
+    }
+
 }
