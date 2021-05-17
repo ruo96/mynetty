@@ -23,6 +23,7 @@ public class TestCalculate {
     public void Test() {
         String a = "123";
         Long b = Long.valueOf(a);
-        log.info("b:{}",b);
+//        log.info("b:{}",b);
+        System.out.println(b);
     }
 }
