@@ -1632,6 +1632,42 @@ public class TestList {
         } else {
             System.out.println("not contain null");
         }
+    }
+
+    @Test
+    public void Test1638() {
+        long[] arr = new long[]{1L,2L,3L,4L,5L};
+        List<Long> list = Arrays.stream(arr).boxed().collect(Collectors.toList());
+        long a = Arrays.stream(arr).skip(1).limit(3).sum();
+        System.out.println("list = " + list);
+        System.out.println("a = " + a);
+
+    }
+
+    @Test
+    public void Test1648() {
+        List<Student> list = new ArrayList<>();
+        Student s1 = new Student();
+        s1.setName("w1");
+        s1.setGrade(1);
+        Student s2 = new Student();
+        s2.setName("w2");
+        s2.setGrade(2);
+        Student s3 = new Student();
+        s3.setName("w3");
+        s3.setGrade(3);
+        list.add(s1);
+        list.add(s2);
+        list.add(s3);
+
+        System.out.println("list = " + list);
+        list.forEach(e->{if(e.getGrade()>2){e.setName("xxx");}});
+        System.out.println("list = " + list);
+    }
+
+    @Test
+    public void Test1669() {
+
 
     }
 

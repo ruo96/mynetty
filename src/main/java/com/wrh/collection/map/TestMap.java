@@ -1090,4 +1090,83 @@ public class TestMap {
         map.put(null, null);
 
     }
+
+    @Test
+    public void Test1095() {
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(1, 1);
+        map.put(2, 2);
+        map.put(3, 3);
+        map.put(4, 4);
+        map.put(5, 5);
+        map.put(6, 6);
+        map.put(7, 7);
+        map.put(8, 8);
+        map.put(9, 9);
+        map.put(10, 10);
+        map.put(11, 11);
+        map.put(12, 12);
+
+        List<Integer> list = map.values().stream().skip(2).collect(Collectors.toList());
+        System.out.println("list = " + list);
+
+    }
+
+    @Test
+    public void Test1116() {
+        Map<String, Integer> map = new LinkedHashMap<>();
+        map.put("w1", 1);
+        map.put("w2", 2);
+        map.put("w3", 3);
+        map.put("w4", 4);
+        map.put("w5", 5);
+        map.put("w6", 6);
+        map.put("w7", 7);
+        map.put("w8", 8);
+        map.put("w9", 9);
+        map.put("w10", 10);
+        map.put("w11", 11);
+        map.put("w12", 12);
+
+        List<Integer> list = map.values().stream().skip(2).collect(Collectors.toList());
+        System.out.println("list = " + list);
+
+        Map<String, Integer> map1 = new HashMap<>();
+        map1 = map;
+        System.out.println("map1 = " + map1);
+    }
+
+    @Test
+    public void Test1140() {
+        Map<Integer, Long> map = new HashMap<>();
+        map.put(1, 1L);
+        map.put(2, 2L);
+        map.put(3, 3L);
+
+
+        long value  = map.values().stream().skip(22).mapToLong(Long::longValue).sum();
+        System.out.println("value = " + value);
+
+    }
+
+    @Test
+    public void Test1153() {
+        List<Student> list = new ArrayList<>();
+        Student s1 = new Student();
+        s1.setId(1);
+        s1.setName("w1");
+
+        Student s2 = new Student();
+        s2.setId(1);
+        s2.setName("w2");
+
+        list.add(s1);
+        list.add(s2);
+
+//        Map<Integer,String> map = list.stream().collect(Collectors.toMap(Student::getId, Student::getName));
+        Map<Integer,String> map1 = list.stream().collect(Collectors.toMap(Student::getId, Student::getName, (l1,l2)->l1));
+        System.out.println("map1 = " + map1);
+
+
+    }
 }

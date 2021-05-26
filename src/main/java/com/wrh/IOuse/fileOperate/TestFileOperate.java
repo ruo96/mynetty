@@ -2,7 +2,10 @@ package com.wrh.IOuse.fileOperate;
 
 import clojure.main;
 import com.alibaba.fastjson.JSON;
+import com.google.common.base.Charsets;
+import com.google.common.io.CharStreams;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
@@ -15,6 +18,7 @@ import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -712,5 +716,102 @@ public class TestFileOperate {
 
         List<String> content = Files.lines(path).map(String::toUpperCase).collect(Collectors.toList());
         System.out.println("content = " + content);
+    }
+
+    /** inputStream转string*/
+    @Test
+    public void Test718() {
+        try {
+            InputStream inputStream = new FileInputStream("E:/file/data.txt");    //路径修改为本地文件所在的位置
+            String myString =  getStringBuilder6(inputStream);
+            System.out.println("myString = " + myString);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        
+    }
+
+    /** 1、使用 InputStreamReader 和 StringBuilder (JDK)*/
+    private String getStringBuilder(InputStream inputStream) throws IOException {
+        char[] buffer = new char[1024];    //根据需要的数组大小进行自定义
+        StringBuilder out = new StringBuilder();
+        Reader in = new InputStreamReader(inputStream, "UTF-8");
+        for (int numRead; (numRead = in.read(buffer, 0, buffer.length)) > 0; ) {
+            out.append(buffer, 0, numRead);
+        }
+        return out.toString();
+    }
+
+    /** 2、使用 inputStream.read() and StringBuilder*/
+    private String getStringBuilder2(InputStream inputStream) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        for (int ch; (ch = inputStream.read()) != -1; ) {
+            sb.append((char) ch);
+        }
+        return sb.toString();
+    }
+
+    /** 3、使用 ByteArrayOutputStream and inputStream.read*/
+    private String getStringBuilder3(InputStream inputStream) throws IOException {
+        ByteArrayOutputStream result = new ByteArrayOutputStream();
+        byte[] buffer = new byte[1024];
+        for (int length; (length = inputStream.read(buffer)) != -1; ) {
+            result.write(buffer, 0, length);
+        }
+        return result.toString("UTF-8");
+    }
+
+    /** 4、使用 BufferedInputStream 和 ByteArrayOutputStream*/
+    private String getStringBuilder4(InputStream inputStream) throws IOException {
+        BufferedInputStream bis = new BufferedInputStream(inputStream);
+        ByteArrayOutputStream buf = new ByteArrayOutputStream();
+        for (int result = bis.read(); result != -1; result = bis.read()) {
+            buf.write((byte) result);
+        }
+        return buf.toString("UTF-8");
+    }
+
+    /** 5、使用 BufferedReader*/
+    private String getStringBuilder5(InputStream inputStream) throws IOException {
+        String newLine = System.getProperty("line.separator");
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(inputStream));
+        StringBuilder result = new StringBuilder();
+        for (String line; (line = reader.readLine()) != null; ) {
+            if (result.length() > 0) {
+                result.append(newLine);
+            }
+            result.append(line);
+        }
+        return result.toString();
+    }
+
+    /** 6、使用 Stream API 或 parallel Stream API*/
+    private String getStringBuilder6(InputStream inputStream) throws IOException {
+        /*String myString = new BufferedReader(new InputStreamReader(inputStream))
+                .lines().collect(Collectors.joining("\n"));*/
+
+        String myString1 = new BufferedReader(new InputStreamReader(inputStream))
+                .lines().parallel().collect(Collectors.joining("\n"));
+        return myString1;
+    }
+
+    /** 7、使用 StringWriter 和IOUtils.copy (Apache Commons)*/
+    private String getStringBuilder7(InputStream inputStream) throws IOException {
+        StringWriter writer = new StringWriter();
+        IOUtils.copy(inputStream, writer, "UTF-8");
+        return writer.toString();
+
+
+        /*String result = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+        return result;*/
+    }
+
+    /** 8、使用CharStreams (Google Guava)*/
+    private String getStringBuilder8(InputStream inputStream) throws IOException {
+        String result = CharStreams.toString(new InputStreamReader(
+                inputStream, Charsets.UTF_8));
+        return result;
     }
 }

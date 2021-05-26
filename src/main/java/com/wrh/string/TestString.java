@@ -11,6 +11,8 @@ import java.io.UnsupportedEncodingException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.StringJoiner;
 
 /**
@@ -210,6 +212,69 @@ public class TestString {
         String title = "联运游戏-全部游戏-数据日报-(20210317)";
         String period = title.substring(title.lastIndexOf("(")+1).replace(")","");
         System.out.println(period);
+
+    }
+
+    @Test
+    public void Test217() {
+        String a = "w1";
+        changeString(a);
+        System.out.println("final a = " + a);
+
+    }
+
+    private void changeString(String a) {
+        a = "w2";
+        System.out.println("change a = " + a);
+    }
+
+    @Test
+    public void Test230() {
+        String t1 = "12:00";
+        String t2 = "0:44";
+        String t3 = "06:30";
+        Integer a = Integer.valueOf(t1.replace(":",""));
+        Integer b = Integer.valueOf(t2.replace(":",""));
+        Integer c = Integer.valueOf(t3.replace(":",""));
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+        System.out.println("c = " + c);
+
+
+    }
+
+    @Test
+    public void Test245() {
+        String t1 = "8200(12:01)";
+        String a = t1.substring(t1.indexOf("(")+1,t1.length()-1);
+        System.out.println("a = [" + a+"]");
+
+    }
+
+    @Test
+    public void Test253() {
+        Set<String> set = new HashSet<>();
+        for (int i = 0; i < 100; i++) {
+            Integer a = Integer.valueOf("130");
+            Integer b = Integer.valueOf("129");
+            if (a > b) {
+                set.add("a>b");
+            } else if (a < b) {
+                set.add("a<b");
+            } else {
+                set.add("a==b");
+            }
+        }
+        System.out.println("set = " + set);
+
+
+    }
+
+    @Test
+    public void Test274() {
+        Integer a = Integer.valueOf("1200");
+        System.out.println(a);
+        System.out.println("a.intValue() = " + a.intValue());
 
     }
 }

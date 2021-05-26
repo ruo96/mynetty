@@ -1,5 +1,6 @@
 package com.wrh.datetime;
 
+import com.wrh.TimeCalculate.DateTimeUtil;
 import com.wrh.datetime.utils.DateUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -7,6 +8,7 @@ import org.junit.Test;
 import java.sql.Timestamp;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Calendar;
 import java.util.Date;
@@ -22,6 +24,15 @@ import static com.wrh.collection.map.DateUtil.DATE_FORMAT;
  */
 @Slf4j
 public class TestDateTime {
+
+    public static final String DIMENSION_YEAR = "year";
+    public static final String DIMENSION_MONTH = "month";
+    public static final String DIMENSION_SEASON = "season";
+    public static final String DIMENSION_WEEK = "week";
+    public static final String DIMENSION_DAY = "day";
+
+    public static final String yyyyMMdd = "yyyy-MM-dd";
+
     public static void main(String[] args) {
         Long beforeStamp = System.currentTimeMillis() - 100000000;
 
@@ -184,6 +195,116 @@ public class TestDateTime {
             System.out.println("after");
             date1 = date2;
         }
+    }
+
+    public static LocalDate getFirstDayOfDimensionV2(String dsEnd, String dimension) {
+        LocalDate date = LocalDate.parse(dsEnd, DateTimeFormatter.ofPattern(yyyyMMdd));
+        if(dimension.equals(DIMENSION_YEAR)){
+            return LocalDate.of(date.getYear(), 1, 1);
+        }else if (dimension.equals(DIMENSION_SEASON)) {
+            return LocalDate.of(date.getYear(), (date.getMonthValue() - 1) / 3 * 3 + 1, 1);
+        }else if (dimension.equals(DIMENSION_MONTH)) {
+            return LocalDate.of(date.getYear(), date.getMonth(), 1);
+        }else if (dimension.equals(DIMENSION_WEEK)) {
+            return date.with(DayOfWeek.MONDAY);
+        }else {
+            return null;
+        }
+    }
+
+    public static LocalDate getLastDayOfDimension(String ds, String dimension) {
+        LocalDate date = LocalDate.parse(ds, DateTimeFormatter.ofPattern(yyyyMMdd));
+        if(dimension.equals(DIMENSION_YEAR)){
+            return date.with(TemporalAdjusters.lastDayOfYear());
+        }else if (dimension.equals(DIMENSION_SEASON)) {
+            int monthLeft = date.getMonthValue() % 3;
+            int monthDiff = monthLeft > 0 ? 3 - monthLeft : 0;
+            return date.plusMonths(monthDiff).with(TemporalAdjusters.lastDayOfMonth());
+        }else if (dimension.equals(DIMENSION_MONTH)) {
+            return date.with(TemporalAdjusters.lastDayOfMonth());
+        }else if (dimension.equals(DIMENSION_WEEK)) {
+            return date.with(TemporalAdjusters.nextOrSame(DayOfWeek.SUNDAY));
+        }else {
+            return null;
+        }
+    }
+
+    public static long daysBetweenPeriod(String start, String end){
+        LocalDate d1 = LocalDate.parse(start,DateTimeFormatter.ofPattern(yyyyMMdd));
+        LocalDate d2 = LocalDate.parse(end,DateTimeFormatter.ofPattern(yyyyMMdd));
+        return Math.abs(ChronoUnit.DAYS.between(d1,d2));
+    }
+
+    public static int getDayOfSeason(String dsEnd) {
+        LocalDate date = LocalDate.parse(dsEnd, DateTimeFormatter.ofPattern(yyyyMMdd));
+        return (int) Math.abs(ChronoUnit.DAYS.between(getFirstDayOfDimensionV2(dsEnd, DIMENSION_SEASON), getLastDayOfDimension(dsEnd, DIMENSION_SEASON))) + 1;
+    }
+
+    public static int getElapsedDaysOfSeason(String dsEnd) {
+        LocalDate d1 = LocalDate.parse(dsEnd,DateTimeFormatter.ofPattern(yyyyMMdd));
+        return (int)Math.abs(ChronoUnit.DAYS.between(getFirstDayOfDimensionV2(dsEnd, DIMENSION_SEASON),d1)) + 1;
+    }
+
+    @Test
+    public void Test214() {
+        String d1 = "2021-02-12";
+        String d2 = "2021-12-12";
+        System.out.println("getFirstDayOfDimensionV2(d1,DIMENSION_SEASON) = " + getFirstDayOfDimensionV2(d1, DIMENSION_SEASON));
+        System.out.println("getLastDayOfDimension(d1,DIMENSION_SEASON) = " + getLastDayOfDimension(d1, DIMENSION_SEASON));
+        System.out.println("daysBetweenPeriod(d1,d2) = " + daysBetweenPeriod(d1, d2));
+        System.out.println("getDayOfSeason(d1) = " + getDayOfSeason(d1));
+        System.out.println("getDayOfSeason(d2) = " + getDayOfSeason(d2));
+        System.out.println("getElapsedDaysOfSeason(d1) = " + getElapsedDaysOfSeason(d1));
+        System.out.println("getElapsedDaysOfSeason(d2) = " + getElapsedDaysOfSeason(d2));
+
+    }
+
+    public static boolean isSecondDayOfDimension(String ds, String dimension) {
+        LocalDate date = LocalDate.parse(ds, DateTimeFormatter.ofPattern(yyyyMMdd));
+        if (dimension.equals(DIMENSION_YEAR)) {
+            return date.getDayOfYear() == 2;
+        }else if (dimension.equals(DIMENSION_SEASON)) {
+            return getElapsedDaysOfSeason(ds) == 2;
+        }else if (dimension.equals(DIMENSION_MONTH)) {
+            return date.getDayOfMonth() == 2;
+        }else {
+            return false;
+        }
+    }
+
+    @Test
+    public void Test276() {
+        String d1 = "2021-01-12";
+        System.out.println("isSecondDayOfDimension(d1,DIMENSION_SEASON) = " + isSecondDayOfDimension(d1, DIMENSION_SEASON));
+        String d2 = "2021-10-03";
+        System.out.println("isSecondDayOfDimension(d2,DIMENSION_SEASON) = " + isSecondDayOfDimension(d2, DIMENSION_SEASON));
+
+    }
+
+    @Test
+    public void Test263() {
+        String d1 = "2021-02-12";
+        LocalDate d = LocalDate.parse(d1,DateTimeFormatter.ofPattern(yyyyMMdd));
+
+    }
+
+    public static int getCurrentMonthTotalDaysOfSeason(String dsEnd) {
+        LocalDate d1 = LocalDate.parse(dsEnd,DateTimeFormatter.ofPattern(yyyyMMdd));
+        return (int) Math.abs(ChronoUnit.DAYS.between(getFirstDayOfDimensionV2(dsEnd, DIMENSION_SEASON), getLastDayOfDimension(dsEnd, DIMENSION_MONTH))) + 1;
+    }
+
+    @Test
+    public void Test297() {
+        String ds = "2021-03-12";
+        System.out.println("getCurrentMonthTotalDaysOfSeason(ds) = " + getCurrentMonthTotalDaysOfSeason(ds));
+
+    }
+
+    @Test
+    public void Test304() {
+        System.out.println("LocalDateTime.now().toString() = " + LocalDateTime.now().toString());
+        System.out.println("LocalDateTime.now().format(DateTimeFormatter.ofPattern(\"yyyy-MM-dd HH:mm:ss\")) = " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+
     }
 
 }

@@ -9,6 +9,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * @author wuruohong
@@ -37,5 +38,12 @@ public class TestQueue {
         System.out.println(queue.poll());
         System.out.println(queue.poll());
         System.out.println(queue.poll());
+    }
+
+    @Test
+    public void Test43() {
+        LinkedBlockingQueue<String> queue = new LinkedBlockingQueue<>();
+        queue.offer("w1");
+
     }
 }

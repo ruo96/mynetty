@@ -51,4 +51,11 @@ public class TestThreadLocal {
         System.out.println(threadLocal.get());
     }
 
+    @Test
+    public void Test55() {
+
+
+
+    }
+
 }

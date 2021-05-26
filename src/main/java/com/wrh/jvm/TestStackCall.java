@@ -9,6 +9,7 @@ package com.wrh.jvm;
 public class TestStackCall {
     public static void main(String[] args) {
         method1(10);
+
     }
 
     private static void method1(int x) {
