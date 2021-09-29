@@ -15,13 +15,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Student {
 
+//    private String head = "all";
+
     private String name;
     private Integer id;
     private Integer grade;
 
     private Long money;
 
-    private String title;
+    private String title = "stu";
 
     private boolean flag = true;
 

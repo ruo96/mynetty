@@ -16,10 +16,10 @@ import java.util.Map;
  * @Description TODO
  * @Date 2021/3/29 16:21
  */
-@Configuration
+//@Configuration
 public class QueueConfig {
 
-    @Bean
+//    @Bean
     public CustomExchange delayExchange() {
         Map<String, Object> args = new HashMap<>();
         args.put("x-delayed-type", "direct");
@@ -29,13 +29,13 @@ public class QueueConfig {
         return customExchange;
     }
 
-    @Bean
+//    @Bean
     public Queue queue() {
         Queue queue = new Queue("test_queue_1",true);
         return queue;
     }
 
-    @Bean
+//    @Bean
     public Binding binding() {
         return BindingBuilder.bind(queue()).to(delayExchange()).with("test_queue_1").noargs();
     }

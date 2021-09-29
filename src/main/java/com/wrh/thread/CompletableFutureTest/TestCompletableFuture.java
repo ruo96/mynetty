@@ -2,6 +2,7 @@ package com.wrh.thread.CompletableFutureTest;
 
 import akka.remote.artery.aeron.TaskRunner;
 import com.alibaba.fastjson.JSON;
+import com.wrh.list.TestList;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.util.StopWatch;
@@ -1096,6 +1097,95 @@ public class TestCompletableFuture {
         CompletableFuture futures = CompletableFuture.completedFuture(messages);
         return  futures;
     }
+
+    @Test
+    public void Test1101() throws ExecutionException, InterruptedException {
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(()->{
+            return "test";
+        });
+
+        String result = future.get();
+        System.out.println("result = " + result);
+
+    }
+    
+    @Test
+    public void Test1112() throws ExecutionException, InterruptedException {
+        CompletableFuture<Integer> cf = CompletableFuture.supplyAsync(() -> 10)
+                .thenApplyAsync((e) -> {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+                    return e * 10;
+                }).thenApplyAsync(e -> e - 1)
+                .whenComplete((r, e)->{
+                    System.out.println("done");
+                })
+                ;
+
+        cf.join();
+        System.out.println(cf.get());
+        
+    }
+
+    @Test
+    public void Test1133() {
+        ExecutorService executor = Executors.newFixedThreadPool(5);
+
+        List<String> list = TestList.getStringList();
+        final String[] ef = {};
+
+        /*List<CompletableFuture<String>> futureList = list
+                .stream()
+                .map(request->
+                        CompletableFuture.supplyAsync(e->{
+                            //some opts
+                            ef[0] = e + "-done";
+                            return ef[0];
+                        },executor))
+                .collect(Collectors.toList());
+
+        CompletableFuture<Void> allCF = CompletableFuture.allOf(futureList.toArray(new CompletableFuture[0]));
+
+        allCF.join();*/
+
+    }
+    
+    @Test
+    public void Test1157() throws ExecutionException, InterruptedException {
+        String original = "Message";
+        CompletableFuture cf1 = CompletableFuture.completedFuture(original)
+                .thenApplyAsync(s -> delayedUpperCase(s));
+        CompletableFuture cf2 = cf1.applyToEither(
+                CompletableFuture.completedFuture(original).thenApplyAsync(s -> delayedLowerCase(s)),
+                s -> s + " from applyToEither");
+//        assertTrue(cf2.join().endsWith(" from applyToEither"));
+        cf2.join();
+        System.out.println("cf2.get() = " + cf2.get());
+
+    }
+
+    @Test
+    public void Test1171() throws ExecutionException, InterruptedException {
+        String original = "Message";
+        StringBuilder result = new StringBuilder();
+        /*CompletableFuture.completedFuture(original).thenApply(String::toUpperCase).runAfterBoth(
+                CompletableFuture.completedFuture(original).thenApply(String::toLowerCase),
+                () -> result.append("done"));*/
+
+        CompletableFuture.completedFuture(original).thenApply(s->s.toLowerCase()).runAfterBoth(
+                CompletableFuture.completedFuture(original).thenApply(s->s.toUpperCase()),
+                () -> result.append("done"));
+
+        assertTrue("Result was empty", result.length() > 0);
+        System.out.println("result = " + result);
+        System.out.println("original = " + original);
+
+    }
+
+
 
 
 }

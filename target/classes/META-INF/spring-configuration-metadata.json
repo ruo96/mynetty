@@ -27,11 +27,6 @@
       "type": "com.wrh.config.decodeencode.EncryptProperties"
     },
     {
-      "sourceType": "com.wrh.config.mq.RabbitMqConfig",
-      "name": "spring.rabbitmq",
-      "type": "com.wrh.config.mq.RabbitMqConfig"
-    },
-    {
       "sourceType": "com.wrh.security.SecurityProperties",
       "name": "spring.security",
       "type": "com.wrh.security.SecurityProperties"
@@ -63,27 +58,6 @@
       "sourceType": "com.wrh.config.decodeencode.EncryptProperties",
       "defaultValue": "www.itboyhub.com",
       "name": "spring.encrypt.key",
-      "type": "java.lang.String"
-    },
-    {
-      "sourceType": "com.wrh.config.mq.RabbitMqConfig",
-      "name": "spring.rabbitmq.host",
-      "type": "java.lang.String"
-    },
-    {
-      "sourceType": "com.wrh.config.mq.RabbitMqConfig",
-      "name": "spring.rabbitmq.password",
-      "type": "java.lang.String"
-    },
-    {
-      "sourceType": "com.wrh.config.mq.RabbitMqConfig",
-      "defaultValue": 0,
-      "name": "spring.rabbitmq.port",
-      "type": "java.lang.Integer"
-    },
-    {
-      "sourceType": "com.wrh.config.mq.RabbitMqConfig",
-      "name": "spring.rabbitmq.user-name",
       "type": "java.lang.String"
     },
     {

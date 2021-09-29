@@ -25,6 +25,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -813,5 +814,46 @@ public class TestFileOperate {
         String result = CharStreams.toString(new InputStreamReader(
                 inputStream, Charsets.UTF_8));
         return result;
+    }
+
+    /**
+     * 样板代码  读取文件
+     * @throws Exception
+     */
+    @Test
+    public void Test819() throws Exception {
+        String fileName = "e:/file/data.txt";
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while (Objects.nonNull(line = reader.readLine())) {
+                System.out.println("line = " + line);
+            }
+        } catch (IOException e) {
+            String message = String.format("读取文件(%s)异常", fileName);
+            log.error(message, e);
+            throw new Exception(message, e);
+        }
+        // 可以优化为下面方法
+        
+    }
+    @Test
+    public void Test839() throws Exception {
+        String fileName = "e:/file/data.txt";
+        readLine(fileName, line->{
+            System.out.println("line = " + line);
+        });
+        
+    }
+    public static void readLine(String fileName, Consumer<String> lineConsumer) throws Exception {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while (Objects.nonNull(line = reader.readLine())) {
+                lineConsumer.accept(line);
+            }
+        } catch (IOException e) {
+            String message = String.format("读取文件(%s)异常", fileName);
+            log.error(message, e);
+            throw new Exception(message, e);
+        }
     }
 }

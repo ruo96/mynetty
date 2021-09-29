@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import sun.security.action.GetLongAction;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ForkJoinPool;
@@ -28,17 +29,54 @@ public class TestConcurrentHashMap {
     }
 
     private static final int MAXIMUM_CAPACITY = 1 << 30;
+
     private static final int tableSizeFor(int c) {
         int n = c - 1;
+        System.out.println("1,n="+n);
+        System.out.println("n>>>1 :"+(n>>>1));
         n |= n >>> 1;
+        System.out.println("n |= n >>> 1,n="+n);
         n |= n >>> 2;
+        System.out.println("n |= n >>> 2,n="+n);
         n |= n >>> 4;
+        System.out.println("n |= n >>> 4,n="+n);
         n |= n >>> 8;
+        System.out.println("n |= n >>> 8,n="+n);
         n |= n >>> 16;
+        System.out.println("n |= n >>> 16,n="+n);
         return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
+    }
 
+    static final int hash(Object key) {
+        int h;
+        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+    }
+
+    @Test
+    public void Test55() {
+        System.out.println("hash(1) = " + hash(1));
+        System.out.println("hash(10) = " + hash(10));
+        System.out.println("hash(100) = " + hash(100));
+        System.out.println("hash(1000) = " + hash(1000));
+        System.out.println("hash(10000) = " + hash(10000));
+        System.out.println("hash(100000) = " + hash(100000));
+        System.out.println("hash(1000000) = " + hash(1000000));
+
+        System.out.println("hash(a) = " + hash("a"));
+        System.out.println("hash(b) = " + hash("b"));
+        System.out.println("hash(c) = " + hash("c"));
+
+        System.out.println("hash(A) = " + hash("A"));
+        System.out.println("hash(B) = " + hash("B"));
+        System.out.println("hash(C) = " + hash("C"));
+    }
+
+    @Test
+    public void Test49() {
+        tableSizeFor(8);
 
     }
+
     @Test
     public void Test35() {
         System.out.println(tableSizeFor(5));
@@ -89,6 +127,13 @@ public class TestConcurrentHashMap {
         System.out.println(map);
         map.computeIfAbsent("w1",k->2);
         System.out.println(map);
+
+    }
+
+    @Test
+    public void Test133() {
+        Map<Integer, Integer> map = new HashMap<>();
+
 
     }
 

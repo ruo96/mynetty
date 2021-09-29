@@ -38,4 +38,31 @@ public class TestWeakHashMap {
         System.out.println(JSON.toJSONString(map));
 
     }
+
+    @Test
+    public void Test43() {
+        /** 存在强引用*/
+        String str = new String("test leak!");
+        WeakReference<String> weakReference = new WeakReference<String>(str);
+        System.gc();
+        if (weakReference.get() == null) {
+            System.out.println("already gc");
+        } else {
+            System.out.println(weakReference.get());
+        }
+
+    }
+
+    @Test
+    public void Test57() {
+//        String str = new String("test leak!");
+        WeakReference<String> weakReference = new WeakReference<String>(new String("test leak!"));
+        System.gc();
+        if (weakReference.get() == null) {
+            System.out.println("already gc");
+        } else {
+            System.out.println(weakReference.get());
+        }
+
+    }
 }

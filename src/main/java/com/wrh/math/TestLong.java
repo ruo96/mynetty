@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.atomic.LongAdder;
 import java.util.stream.LongStream;
 
 /**
@@ -70,6 +71,15 @@ public class TestLong {
         } else {
             System.out.println("2   a is not null");
         }
+
+    }
+
+    @Test
+    public void Test77() {
+        LongAdder adder = new LongAdder();
+        System.out.println("adder = " + adder);
+        adder.increment();
+        System.out.println("adder = " + adder);
 
     }
 }

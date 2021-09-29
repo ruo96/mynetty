@@ -1,12 +1,21 @@
 package com.wrh.aes;
 
+import cn.hutool.Hutool;
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.PropertyFilter;
+import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.alibaba.fastjson.serializer.ValueFilter;
+import com.wrh.elasticsearch.Student;
+import com.wrh.reflection.S;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Random;
+import java.util.StringTokenizer;
 
 /**
  * @Created by wrh
@@ -130,5 +139,119 @@ public class TestString {
             System.out.println("not large : " + c);
         }
 
+    }
+
+    @Test
+    public void Test136() {
+        String ds = "2021-06-01";
+        System.out.println("ds.substring(0,5) = " + ds.substring(0, 5));
+        System.out.println("ds.substring(0,7) = " + ds.substring(0, 7));
+        System.out.println("ds.substring(5,7) = " + ds.substring(5, 7));
+        System.out.println("Integer.valueOf(ds.substring(5, 7)) = " + Integer.valueOf(ds.substring(5, 7)));
+        System.out.println("ds.substring(0, 5) + \"Q\" + (Integer.valueOf(ds.substring(5, 7)) / 3 + 1) = " + ds.substring(0, 5) + "Q" + (Integer.valueOf(ds.substring(5, 7)) / 3 + 1));
+        System.out.println("ds.substring(0, 5) + \"Q\" + ((Integer.valueOf(ds.substring(5, 7)) - 1) / 3 + 1) = " + ds.substring(0, 5) + "Q" + ((Integer.valueOf(ds.substring(5, 7)) - 1) / 3 + 1));
+
+    }
+
+    @Test
+    public void Test148() {
+        String a = "+199";
+        Integer b = Integer.valueOf(a);
+        System.out.println("b = " + b);
+
+    }
+
+    @Test
+    public void Test156() {
+        String a = null;
+        String key = String.format("abc_%s", a);
+        System.out.println("key = " + key);
+
+    }
+
+    @Test
+    public void Test164() {
+        Student s = new Student();
+        s.setName("w1");
+        System.out.println(s);
+        System.out.println(JSON.toJSONString(s));
+
+        System.out.println(JSON.toJSONString(s, SerializerFeature.WriteMapNullValue));
+
+        /*System.out.println(JSON.toJSONString(s, (ValueFilter)(object, name, value){
+            if (value == null) {
+                return "";
+            }
+            return value;
+        }));*/
+
+        System.out.println(JSON.toJSONString(s, new PropertyFilter() {
+            @Override
+            public boolean apply(Object o, String name, Object value) {
+                return name.equals("id") || value != null;
+            }
+        }, SerializerFeature.WriteMapNullValue));
+
+    }
+
+    @Test
+    public void Test195() {
+        String a = "大     陆";
+        String b = a.trim();
+        String c = StringUtils.trimToNull(a);
+        String d = StringUtils.trimToEmpty(a);
+        String e = a.replace(" ","");
+        System.out.println("b = " + b);
+        System.out.println("c = " + c);
+        System.out.println("d = " + d);
+        System.out.println("e = " + e);
+
+    }
+
+
+    private static final int MAX_LOOP = 10000;
+
+    @Test
+    public void Test210() {
+        StringBuilder sb = new StringBuilder();
+        System.out.println(sb.toString());
+        for (int i = 0; i < 1000; i++) {
+            sb.append(new Random().nextInt()).append(" ");
+        }
+        split(sb.toString());
+        stringTokenizer(sb.toString());
+        
+    }
+
+    /**
+     * @author: 栈长
+     * @from: 公众号Java技术栈
+     */
+    private static void split(String str) {
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < MAX_LOOP; i++) {
+            String[] arr = str.split(" ");
+            StringBuilder sb = new StringBuilder();
+            for (int j = 0; j < arr.length; j++) {
+                sb.append(arr[j]);
+            }
+        }
+        System.out.printf("split 耗时 %s ms\n", System.currentTimeMillis() - start);
+    }
+
+    /**
+     * @author: 栈长
+     * @from: 公众号Java技术栈
+     */
+    private static void stringTokenizer(String str) {
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < MAX_LOOP; i++) {
+            StringTokenizer stringTokenizer = new StringTokenizer(str, " ");
+            StringBuilder sb = new StringBuilder();
+            while (stringTokenizer.hasMoreTokens()) {
+                sb.append(stringTokenizer.nextToken());
+            }
+        }
+        System.out.printf("StringTokenizer 耗时 %s ms", System.currentTimeMillis() - start);
     }
 }

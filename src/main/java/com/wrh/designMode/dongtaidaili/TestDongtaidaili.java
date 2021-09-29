@@ -1,5 +1,7 @@
 package com.wrh.designMode.dongtaidaili;
 
+import org.junit.Test;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -50,5 +52,12 @@ public class TestDongtaidaili {
          */
         jackProxy.exam();
         jackProxy.study();
+    }
+
+    @Test
+    public void Test56() {
+        String arch =  System.getProperty("sun.arch.data.model");
+        System.out.println(arch);
+
     }
 }

@@ -5,9 +5,16 @@ import com.wrh.elasticsearch.Student;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
 
 /**
  * @Created by wrh
@@ -144,7 +151,7 @@ public class TestListStream {
 //        List<Student> list = getStudentList();
         List<Student> list = new ArrayList<>();
         Map<Integer, List<Student>> offlineKpiMap = new HashMap<>();
-        offlineKpiMap = list.stream().collect(Collectors.groupingBy(Student::getId));
+        offlineKpiMap = list.stream().collect(groupingBy(Student::getId));
         System.out.println(offlineKpiMap);
         System.out.println(offlineKpiMap.size());
         System.out.println(offlineKpiMap == null);
@@ -168,6 +175,79 @@ public class TestListStream {
 
         long monthTarget1 = Stream.of(1L,2L,3L,4L,5L,6L,7L).limit(5).mapToLong(Long::longValue).sum();
         System.out.println("monthTarget1 = " + monthTarget1);
+
+    }
+
+    @Test
+    public void Test175() {
+        List<Integer> list = Arrays.asList(1,2,3,4,5);
+        Stream<Integer> stream = list.stream();
+        List<Student> list1 = getStudentList();
+        List<Long> list2 = list1.stream().mapToLong(Student::getGrade).boxed().collect(Collectors.toList());
+        System.out.println("list2 = " + list2);
+
+    }
+
+    @Test
+    public void Test185() throws IOException {
+        Stream<String> list = Files.lines(Paths.get("e:\\file\\data.txt"), Charset.defaultCharset());
+        list.forEach(e->{
+            System.out.println(e);
+        });
+
+    }
+
+    @Test
+    public void Test198() {
+        Stream<Integer> stream = Stream.iterate(0, n-> n+2).limit(5);
+        stream.forEach(e->{
+            System.out.println(e);
+        });
+
+    }
+
+    @Test
+    public void Test207() {
+        Stream<Double> stream = Stream.generate(Math::random).limit(5);
+        stream.forEach(e->{
+            System.out.println(e);
+        });
+    }
+
+    @Test
+    public void Test215() {
+        List<String> wordList = Arrays.asList("Hello", "World");
+        List<String> strList = wordList.stream()
+                .map(w -> w.split(""))
+                .flatMap(Arrays::stream)
+                .distinct()
+                .collect(Collectors.toList());
+        System.out.println("strList = " + strList);
+
+    }
+
+    @Test
+    public void Test227() {
+        List<Integer> integerList = Arrays.asList(1, 2, 3, 4, 5);
+        Long result = integerList.stream().collect(counting());
+        System.out.println(result);
+
+    }
+
+    @Test
+    public void Test237() {
+        List<Student> list = getStudentList();
+        System.out.println("list = " + list);
+
+        Map<String, Map<String,List<Student>>> result = list.stream().collect(groupingBy(Student::getTitle,
+                groupingBy(s -> {
+                    if (s.getId() <= 2) return "small";
+                    else if (s.getId() <= 3) return "medium";
+                    else return "big";
+                })));
+
+        System.out.println("result = " + result);
+
 
     }
 

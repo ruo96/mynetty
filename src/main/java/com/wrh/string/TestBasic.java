@@ -1,11 +1,13 @@
 package com.wrh.string;
 
+import com.wrh.elasticsearch.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.elasticsearch.common.unit.TimeValue;
 import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -150,5 +152,14 @@ public class TestBasic {
 
     private Long getLong() {
         return null;
+    }
+
+    @Test
+    public void Test156() {
+        Student s = new Student();
+        s.setName(Objects.nonNull(s.getName())? s.getName():null);
+        System.out.println("s = " + s);
+        s.setName(null);
+        System.out.println("s = " + s);
     }
 }

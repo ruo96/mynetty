@@ -26,6 +26,8 @@ public enum EnumSuccessOrError {
      */
     private String statusMsg;
 
+
+
     EnumSuccessOrError(int statusCode, String statusMsg) {
         this.statusCode = statusCode;
         this.statusMsg = statusMsg;

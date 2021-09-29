@@ -55,9 +55,6 @@ spring:
     basename: i18n/messages
     cache-duration: 3600
 
-
-
-
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:mysql://172.16.39.148:3306/data_center?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
@@ -94,6 +91,14 @@ spring:
     port: 5672
     username: admin
     password: admin
+    virtual-host: /
+    #必须配置这个，生产者才会确认回调
+    publisher-confirms: true
+    publisher-returns: true
+    #重要，手动开启消费者ACK，控制消息在MQ中的删除、重发
+    listener:
+      simple:
+        acknowledge-mode: manual
   servlet:
     multipart:
       max-file-size: 100MB
@@ -116,6 +121,11 @@ spring:
     user:
       name: wrh
       password: 123456
+
+# 统一处理时间展示格式，不用代码中格式转换
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 
 
 
@@ -214,3 +224,11 @@ demo:
 #  user:
 #    name: user
 #    password: pwd
+debug: true
+
+jasypt:
+  encryptor:
+    password: 111
+
+data:
+  encrypt: ENC(4YOz0+Cu4hUBo6qBY4YEsg==)

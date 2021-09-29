@@ -51,7 +51,7 @@ public class FileUtils {
 
     public static File MultipartFile2File(MultipartFile multipartFile) throws IOException {
         File file = new File(multipartFile.getOriginalFilename());
-        org.apache.commons.io.FileUtils.copyInputStreamToFile(multipartFile.getInputStream(),file);
+//        org.apache.commons.io.FileUtils.copyInputStreamToFile(multipartFile.getInputStream(),file);
         return file;
     }
 }

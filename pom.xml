@@ -16,9 +16,6 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
-
-
-
 	</parent>
 
 	<properties>
@@ -27,9 +24,41 @@
 		<java.version>1.8</java.version>
         <elsaticsearch.version>6.2.4</elsaticsearch.version>
 		<hystrix-version>1.5.11</hystrix-version>
+<!--		<spring-boot.version>2.3.2.RELEASE</spring-boot.version>-->
+		<!--<spring-cloud.version>Finchley.SR4</spring-cloud.version>
+		<spring-cloud-alibaba.version>0.2.6.RELEASE</spring-cloud-alibaba.version>-->
 	</properties>
 
 	<dependencies>
+		<!--<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-parent</artifactId>
+			<version>${spring-boot.version}</version>
+			<type>pom</type>
+			<scope>import</scope>
+		</dependency>-->
+
+		<!--<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-dependencies</artifactId>
+			<version>${spring-cloud.version}</version>
+			<type>pom</type>
+			<scope>import</scope>
+		</dependency>-->
+		<!--<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-alibaba-dependencies</artifactId>
+			<version>${spring-cloud-alibaba.version}</version>
+			<type>pom</type>
+			<scope>import</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+			<version>${spring-cloud-alibaba.version}</version>
+			<type>pom</type>
+		</dependency>-->
 
 		<!--增加埋点监控-->
 		<!--<dependency>
@@ -62,6 +91,24 @@
 			<optional>true</optional>
 		</dependency>
 
+		<dependency>
+			<groupId>us.codecraft</groupId>
+			<artifactId>webmagic-core</artifactId>
+			<version>0.7.3</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.9</version>
+		</dependency>
+
 		<!-- spring security -->
 		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -70,11 +117,11 @@
 
 		<!-- https://mvnrepository.com/artifact/org.openjdk.jmh/jmh-core
 		 Oracle 官方提供的性能测试工具 JMH（Java Microbenchmark Harness，JAVA 微基准测试套件）-->
-		<dependency>
+		<!--<dependency>
 			<groupId>org.openjdk.jmh</groupId>
 			<artifactId>jmh-core</artifactId>
 			<version>1.23</version>Tes
-		</dependency>
+		</dependency>-->
 		<!-- https://mvnrepository.com/artifact/org.openjdk.jmh/jmh-generator-annprocess
 		 Oracle 官方提供的性能测试工具 JMH（Java Microbenchmark Harness，JAVA 微基准测试套件）-->
 		<dependency>
@@ -621,6 +668,13 @@
 			<version>0.8.2.0</version>
 		</dependency>
 
+		<!--配置文件加密-->
+		<dependency>
+			<groupId>com.github.ulisesbocchio</groupId>
+			<artifactId>jasypt-spring-boot-starter</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+
 		<!--<dependency>
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka</artifactId>
@@ -843,8 +897,26 @@
 			<groupId>io.zipkin.brave</groupId>
 			<artifactId>brave-okhttp</artifactId>
 			<version>3.10.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.squareup.okhttp3</groupId>
+					<artifactId>okhttp</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<!-- zipkin-->
+
+		<dependency>
+			<groupId>com.squareup.okhttp3</groupId>
+			<artifactId>okhttp</artifactId>
+			<version>3.10.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.squareup.okhttp3</groupId>
+			<artifactId>okhttp</artifactId>
+			<version>3.10.0</version>
+		</dependency>
 
 		<!--httpclient工具类-->
 		<dependency>

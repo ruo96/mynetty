@@ -75,4 +75,20 @@ public class TestNumber {
         System.out.println(k);
 
     }
+
+    @Test
+    public void Test80() {
+        int a = 1;
+        int b = 5;
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+        System.out.println("=================================");
+
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+
+    }
 }

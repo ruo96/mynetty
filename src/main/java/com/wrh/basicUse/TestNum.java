@@ -1,6 +1,7 @@
 package com.wrh.basicUse;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.RandomUtils;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -47,5 +48,14 @@ public class TestNum {
         DecimalFormat df = new DecimalFormat("0.##"); // ##表示2位小数
 //        DecimalFormat df = new DecimalFormat("0");
         return df.format(num);
+    }
+
+    @Test
+    public void Test53() {
+        for (int i = 0; i < 10; i++) {
+
+            System.out.println("RandomUtils.nextLong() = " + RandomUtils.nextLong(100, 1000));
+        }
+
     }
 }

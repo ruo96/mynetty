@@ -3,7 +3,12 @@ package com.wrh.TimeCalculate;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalAdjusters;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -25,6 +30,12 @@ public final class DateTimeUtil {
     public static final String HHMMSSSSS = "HHmmssSSS";
     public static final String HHMMSS = "HHmmss";
     public static final String HHMM = "HH:mm";
+
+    public static final String DIMENSION_YEAR = "year";
+    public static final String DIMENSION_MONTH = "month";
+    public static final String DIMENSION_SEASON = "season";
+    public static final String DIMENSION_WEEK = "week";
+    public static final String DIMENSION_DAY = "day";
 
     private DateTimeUtil() {
     }
@@ -719,5 +730,72 @@ public final class DateTimeUtil {
     public static int getNowMinute() {
         LocalDateTime now = LocalDateTime.now();
         return now.getHour() * 60 + now.getMinute() + 1;
+    }
+
+    public static LocalDate getLastDayOfDimension(String ds, String dimension) {
+        LocalDate date = LocalDate.parse(ds, DateTimeFormatter.ofPattern(yyyyMMdd));
+        if(dimension.equals(DIMENSION_YEAR)){
+            return date.with(TemporalAdjusters.lastDayOfYear());
+        }else if (dimension.equals(DIMENSION_SEASON)) {
+            int monthLeft = date.getMonthValue() % 3;
+            int monthDiff = monthLeft > 0 ? 3 - monthLeft : 0;
+            return date.plusMonths(monthDiff).with(TemporalAdjusters.lastDayOfMonth());
+        }else if (dimension.equals(DIMENSION_MONTH)) {
+            return date.with(TemporalAdjusters.lastDayOfMonth());
+        }else if (dimension.equals(DIMENSION_WEEK)) {
+            return date.with(TemporalAdjusters.nextOrSame(DayOfWeek.SUNDAY));
+        }else {
+            return date;
+        }
+    }
+
+    public static boolean isLastDayOfDimension(String ds, String dimension) {
+        LocalDate date = LocalDate.parse(ds, DateTimeFormatter.ofPattern(yyyyMMdd));
+        return date.isEqual(getLastDayOfDimension(ds,dimension));
+    }
+
+    public static LocalDate getFirstDayOfDimensionV2(String dsEnd, String dimension) {
+        LocalDate date = LocalDate.parse(dsEnd, DateTimeFormatter.ofPattern(yyyyMMdd));
+        if(dimension.equals(DIMENSION_YEAR)){
+            return LocalDate.of(date.getYear(), 1, 1);
+        }else if (dimension.equals(DIMENSION_SEASON)) {
+            return LocalDate.of(date.getYear(), (date.getMonthValue() - 1) / 3 * 3 + 1, 1);
+        }else if (dimension.equals(DIMENSION_MONTH)) {
+            return LocalDate.of(date.getYear(), date.getMonth(), 1);
+        }else if (dimension.equals(DIMENSION_WEEK)) {
+            return date.with(DayOfWeek.MONDAY);
+        }else {
+            return date;
+        }
+    }
+
+    public static LocalDate getPreviousDayOfDimension(String ds, String dimension) {
+        LocalDate date = LocalDate.parse(ds, DateTimeFormatter.ofPattern(yyyyMMdd));
+        if(dimension.equals(DIMENSION_YEAR)){
+            return date.minusYears(1);
+        }else if (dimension.equals(DIMENSION_SEASON)) {
+            return date.minusMonths(3);
+        }else if (dimension.equals(DIMENSION_MONTH)) {
+            return date.minusMonths(1);
+        }else if (dimension.equals(DIMENSION_WEEK)) {
+            return date.minusWeeks(1);
+        }else {
+            return date.minusDays(1);
+        }
+    }
+
+    public static long getElapsedDaysOfDimension(String ds, String dimension) {
+        LocalDate date = LocalDate.parse(ds, DateTimeFormatter.ofPattern(yyyyMMdd));
+        if(dimension.equals(DIMENSION_YEAR)){
+            return date.getDayOfYear();
+        }else if (dimension.equals(DIMENSION_SEASON)) {
+            return Math.abs(ChronoUnit.DAYS.between(getFirstDayOfDimensionV2(ds, DIMENSION_SEASON),date)) + 1;
+        }else if (dimension.equals(DIMENSION_MONTH)) {
+            return date.getDayOfMonth();
+        }else if (dimension.equals(DIMENSION_WEEK)) {
+            return date.getDayOfWeek().getValue();
+        }else {
+            return 0;
+        }
     }
 }

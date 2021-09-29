@@ -4,6 +4,8 @@ import cn.hutool.core.util.NumberUtil;
 import com.wrh.elasticsearch.Student;
 import org.junit.Test;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.regex.Pattern;
 
 /**
@@ -46,6 +48,38 @@ public class TestNum {
         Student s = null;
         s.setTitle("w1");
         System.out.println(s);
+
+    }
+
+    @Test
+    public void Test53() {
+        Long a = 10002L;
+        Double b = 6.48088;
+        System.out.println("String.valueOf(a / 100 / b) = " + String.valueOf(a / 100 / b));
+
+        Double c = a / 100 / b;
+        System.out.println("c = " + c);
+        System.out.println("BigDecimal.valueOf(c).setScale(2).toString() = " + BigDecimal.valueOf(c).setScale(2, RoundingMode.DOWN).toString());
+        System.out.println("BigDecimal.valueOf(c).longValue() = " + BigDecimal.valueOf(c).longValue());
+
+    }
+
+    @Test
+    public void Test68() {
+        Integer i = 2;
+        boolean a = (i==1);
+        boolean b = i==1;
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+
+    }
+
+    @Test
+    public void Test78() {
+        int i = 100;
+        Double j = 1.3;
+        int b = (int) (i/j);
+        System.out.println("b = " + b);
 
     }
 }

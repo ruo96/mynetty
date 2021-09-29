@@ -16,10 +16,7 @@ import org.springframework.util.StopWatch;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoField;
-import java.time.temporal.TemporalAdjusters;
-import java.time.temporal.TemporalField;
-import java.time.temporal.WeekFields;
+import java.time.temporal.*;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -1368,6 +1365,170 @@ public class TestTime {
                 System.out.println("a = " + a);
                 return;
         }
+
+    }
+
+    @Test
+    public void Test1375() {
+        Date now = new Date();
+        List<Date> list = new ArrayList<>();
+        list.add(now);
+        System.out.println("list = " + list);
+        System.out.println("JSON.toJSONString(list) = " + JSON.toJSONString(list));
+
+    }
+
+    public class DsVo {
+
+        /** 环比开始日期*/
+        private String momStart;
+        /** 环比结束日期*/
+        private String momEnd;
+        /** 同比开始日期*/
+        private String yoyStart;
+        /** 同比结束日期*/
+        private String yoyEnd;
+        /** 是否完整周期比对*/
+        private boolean totalFlag;
+
+        public String getMomStart() {
+            return momStart;
+        }
+
+        public void setMomStart(String momStart) {
+            this.momStart = momStart;
+        }
+
+        public String getMomEnd() {
+            return momEnd;
+        }
+
+        public void setMomEnd(String momEnd) {
+            this.momEnd = momEnd;
+        }
+
+        public String getYoyStart() {
+            return yoyStart;
+        }
+
+        public void setYoyStart(String yoyStart) {
+            this.yoyStart = yoyStart;
+        }
+
+        public String getYoyEnd() {
+            return yoyEnd;
+        }
+
+        public void setYoyEnd(String yoyEnd) {
+            this.yoyEnd = yoyEnd;
+        }
+
+        public boolean isTotalFlag() {
+            return totalFlag;
+        }
+
+        public void setTotalFlag(boolean totalFlag) {
+            this.totalFlag = totalFlag;
+        }
+
+        public String getDimension() {
+            return dimension;
+        }
+
+        public void setDimension(String dimension) {
+            this.dimension = dimension;
+        }
+
+        /*private String tipFlag="n";
+         *//** 环比开始日期*//*
+    private String lastDsStart;
+    *//** 环比结束日期*//*
+    private String lastDsEnd;
+    *//** 整维度展示 默认是非整维度，环比计算采用日表进行累加计算*//*
+    private String dimensionFlag = "n";*/
+        /** 维度 比如： day, week, month, season, year*/
+        private String dimension;
+    }
+
+    public DsVo queryMomYoyPeriod(String ds, String dimension) {
+        if (DIMENSION_DAY.equals(dimension)) {
+            log.info(">>> queryMomYoyPeriod not support day, ds: {}", ds);
+            return null;
+        }
+        DsVo vo = new DsVo();
+        vo.setTotalFlag(DateTimeUtil.isLastDayOfDimension(ds, dimension) ? true : false);
+        vo.setMomStart(DateTimeUtil.getPreviousDayOfDimension(DateTimeUtil.getFirstDayOfDimensionV2(ds, dimension).toString(), dimension).toString());
+        vo.setYoyStart(DateTimeUtil.getFirstDayOfDimensionV2(DateTimeUtil.getPreviousDayOfDimension(ds,DateTimeUtil.DIMENSION_YEAR).toString(),dimension).toString());
+        if (vo.isTotalFlag()) {
+            vo.setMomEnd(DateTimeUtil.getLastDayOfDimension(vo.getMomStart(), dimension).toString());
+            vo.setYoyEnd(DateTimeUtil.getLastDayOfDimension(vo.getYoyStart(), dimension).toString());
+        } else {
+            vo.setMomEnd(DateTimeUtil.getFirstDayOfDimensionV2(vo.getMomStart(), dimension).plusDays(DateTimeUtil.getElapsedDaysOfDimension(ds, dimension) - 1).toString());
+            vo.setYoyEnd(DateTimeUtil.getFirstDayOfDimensionV2(vo.getYoyStart(), dimension).plusDays(DateTimeUtil.getElapsedDaysOfDimension(ds, dimension) - 1).toString());
+        }
+        return vo;
+    }
+
+    @Test
+    public void Test1471() {
+        String ds = "2021-06-11";
+        String dimension = "season";
+        DsVo dsVo = queryMomYoyPeriod(ds,dimension);
+        System.out.println("dsVo = " + JSON.toJSONString(dsVo));
+
+        System.out.println("DateTimeUtil.getElapsedDaysOfDimension(ds, dimension) = " + DateTimeUtil.getElapsedDaysOfDimension(ds, dimension));
+
+        System.out.println("Math.abs(ChronoUnit.DAYS.between(getFirstDayOfDimensionV2(ds, DIMENSION_SEASON),LocalDate.parse(ds, DateTimeFormatter.ofPattern(yyyyMMdd)))) = "
+                + Math.abs(ChronoUnit.DAYS.between(getFirstDayOfDimensionV2(ds, DIMENSION_SEASON), LocalDate.parse(ds, DateTimeFormatter.ofPattern(yyyyMMdd)))));
+
+        System.out.println("DateTimeUtil.getElapsedDaysOfDimension(ds, DateTimeUtil.DIMENSION_SEASON) = " + DateTimeUtil.getElapsedDaysOfDimension(ds, DateTimeUtil.DIMENSION_SEASON));
+
+    }
+
+    @Test
+    public void Test1489() {
+        LocalDate now = LocalDate.now();
+        LocalDate yesterday = now.minusDays(1);
+        System.out.println("Period.between(now, yesterday).getDays() = " + Period.between(now, yesterday).getDays());
+        System.out.println("Period.between(yesterday, now).getDays() = " + Period.between(yesterday, now).getDays());
+
+    }
+
+    @Test
+    public void Test1498() {
+        Integer a = getNowMinuteByZone("UTC+8");
+        System.out.println(a);
+
+        Integer b = getNowMinuteByZone("UTC-4");
+        System.out.println(b);
+
+    }
+
+    public static Integer getNowMinuteByZone(String timeZone){
+        LocalDateTime now = LocalDateTime.now(ZoneId.of(timeZone));
+        return now.getHour() * 60 + now.getMinute();
+    }
+
+    public static String getTimeFromSlotNum(int slotNum) {
+        return slotNum / 60 + ":" + slotNum % 60;
+    }
+
+    @Test
+    public void Test1517() {
+        int slotNum = 55;
+        System.out.println("getTimeFromSlotNum(slotNum) = " + getTimeFromSlotNum(slotNum));
+    }
+
+    @Test
+    public void Test1523() {
+        String timeZone = "UTC+9";
+        LocalDateTime change = LocalDateTime.now(ZoneId.of(timeZone));
+        Integer minutes =  change.getHour() * 60 + change.getMinute();
+
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println("change = " + change);
+        System.out.println("now = " + now);
+        System.out.println("minutes = " + minutes);
 
     }
 

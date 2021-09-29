@@ -13,6 +13,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.text.DecimalFormat;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @Created by wrh
@@ -470,6 +471,16 @@ public class TestInteger {
              System.out.println(str + "is not number");
          }
          
+     }
+
+     @Test
+     public void Test476() {
+         AtomicInteger a = new AtomicInteger(0);
+         int b = a.getAndIncrement();
+         int c = a.getAndIncrement();
+         System.out.println("a = " + a);
+         System.out.println("b = " + b);
+         System.out.println("c = " + c);
      }
 
 

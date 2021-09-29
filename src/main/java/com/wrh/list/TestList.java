@@ -3,6 +3,8 @@ package com.wrh.list;
 import akka.event.AddressTerminatedTopic;
 import cn.hutool.core.lang.Assert;
 import com.alibaba.fastjson.JSON;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 import com.wrh.collection.map.GameRealTimeData;
 import com.wrh.collection.map.vo.GameDayDataV2;
 import com.wrh.elasticsearch.Student;
@@ -298,7 +300,7 @@ public class TestList {
         }
     }
 
-    public List<String> getStringList(){
+    public static List<String> getStringList(){
         List<String> list = new ArrayList<>();
         list.add("w1");
         list.add("w2");
@@ -1665,9 +1667,139 @@ public class TestList {
         System.out.println("list = " + list);
     }
 
+    List<Student> getStudentList1(int count) {
+        List<Student> list = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
+            Student s1 = new Student();
+            s1.setName("w"+i);
+            s1.setGrade(i);
+            list.add(s1);
+        }
+
+        return list;
+    }
+
     @Test
     public void Test1669() {
+        List<Student> list1 = getStudentList1(100000);
+        List<Student> list2 = getStudentList1(100000);
+        List<Integer> gameId = new ArrayList<>();
+        for (int i = 0; i < 50000; i++) {
+            gameId.add(i);
+        }
+        /*gameId.add(2);
+        gameId.add(3);
+        gameId.add(4);
+        gameId.add(5);*/
+        long s1 = System.currentTimeMillis();
+        list1 = list1.parallelStream().filter(e->!gameId.contains(e.getGrade())).collect(Collectors.toList());
+        long s2 = System.currentTimeMillis();
+        list2 = list2.stream().filter(e->!gameId.contains(e.getGrade())).collect(Collectors.toList());
+        long s3 = System.currentTimeMillis();
+        System.out.println("s2-s1 = " + (s2 - s1));
+        System.out.println("s3-s2 = " + (s3 - s2));
+        System.out.println("list1.size() = " + list1.size());
+        System.out.println("list2.size() = " + list2.size());
 
+    }
+
+    @Test
+    public void Test1705() {
+        List<Integer> list = Stream.of(1,2,3,4,5,6).collect(Collectors.toList());
+        System.out.println("list = " + list);
+
+
+        List<Integer> list1 = Arrays.asList(1,2,3,4,5,6,7);
+//        List<Integer> list1 = Arrays.asList(1,2,3,4,5,6,7);
+        System.out.println("list1 = " + list1);
+
+        List<Integer> list2 = Collections.nCopies(3,4);
+        System.out.println("list2 = " + list2);
+
+        List<Integer> list3 = Lists.newArrayList(1,2,3,4);
+        System.out.println("list3 = " + list3);
+
+        List<Integer> list4 = ImmutableList.of(1,2,3,4,5);
+        System.out.println("list4 = " + list4);
+
+        list.removeAll(list3);
+        System.out.println("remove  1,2,3,4    list = " + list);
+    }
+
+    @Test
+    public void Test1730() {
+        List<String> dataDsList = new ArrayList<>();
+        dataDsList.add("2021-01-01");
+
+        List<String> dsList = new ArrayList<>();
+        dsList.add("2021-01-01");
+        dsList.add("2021-01-02");
+        dsList.add("2021-01-03");
+
+        System.out.println("begin");
+        dsList.removeAll(dataDsList);
+        System.out.println("end");
+
+
+    }
+
+    @Test
+    public void Test1747() {
+        List<String> list = getStringList();
+        System.out.println(list);
+        list.removeIf(e->e.equals("w1"));
+        System.out.println(list);
+
+    }
+
+    /** 根据对象某一个属性进行去重*/
+    @Test
+    public void Test1756() {
+        List<Student> list = new ArrayList<>();
+        Student s1 = new Student();
+        s1.setId(1);
+        s1.setName("w1");
+        Student s2 = new Student();
+        s2.setId(2);
+        s2.setName("w2");
+        Student s3 = new Student();
+        s3.setId(3);
+        s3.setName("w3");
+        Student s4 = new Student();
+        s4.setId(4);
+        s4.setName("w4");
+        Student s5 = new Student();
+        s5.setId(1);
+        s5.setName("w5");
+        Student s6 = new Student();
+        s6.setId(3);
+        s6.setName("w6");
+
+        list.add(s1);
+        list.add(s2);
+        list.add(s3);
+        list.add(s4);
+        list.add(s5);
+        list.add(s6);
+
+        List<Student> newList = list.stream()
+                .collect(
+                        Collectors.collectingAndThen(
+                            Collectors.toCollection(
+                                ()-> new TreeSet<>(Comparator.comparing(Student::getId))
+                            ),ArrayList::new
+                        )
+                );
+
+        System.out.println("newList = " + newList);
+
+        /** 第二种容易理解的方法*/
+        TreeSet<Student> treeSet = new TreeSet<>(Comparator.comparing(Student::getId));
+        for (Student s : list) {
+            treeSet.add(s);
+        }
+        List<Student> newList2 = new ArrayList<>(treeSet);
+        System.out.println("newList2 = " + newList2);
 
     }
 

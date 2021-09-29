@@ -4,11 +4,15 @@ import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.lmax.disruptor.ExceptionHandler;
 import com.wrh.resttemplate.GoogleMapBean;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.storm.command.list;
+import org.apache.storm.shade.org.eclipse.jetty.util.thread.ExecutorThreadPool;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.*;
 
 /**
@@ -320,5 +324,32 @@ public class testThreadPool {
         threadPool.execute(runnable);
         threadPool.execute(runnable);
         threadPool.execute(runnable);
+    }
+
+    @Test
+    public void Test326() throws InterruptedException {
+        int size = 10;
+        ExecutorService executorService = Executors.newFixedThreadPool(size);
+        List<Future<Integer>> futures = new ArrayList<>(size);
+        for (int i = 0; i < size; i++) {
+            int sleepTime = i;
+            Callable<Integer> task = ()->{
+                TimeUnit.SECONDS.sleep(sleepTime);
+                System.out.println("Thread " + Thread.currentThread().getName() +" done");
+                return 1;
+            };
+            futures.add(executorService.submit(task));
+        }
+        System.out.println(" for end ");
+//        executorService.shutdown();
+        TimeUnit.SECONDS.sleep(size-2);
+        System.out.println("shut down");
+        if (!futures.isEmpty() && futures != null) {
+            System.out.println("future done");
+        } else {
+            System.out.println("future empty");
+        }
+
+
     }
 }

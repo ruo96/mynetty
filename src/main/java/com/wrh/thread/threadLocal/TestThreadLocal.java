@@ -48,6 +48,41 @@ public class TestThreadLocal {
         FastThreadLocalThread fastThreadLocalThread;
 
     }
+    
+    @Test
+    public void Test53() {
+        //  为了复现key被回收的场景，我们使用临时变量
+        ThreadLocalMemory memeory = new ThreadLocalMemory();
+
+       /* // 调用
+        incrementSameThreadId(memeory);
+
+        System.out.println("GC前：key:" + memeory.threadId);
+        System.out.println("GC前：value-size:" + refelectThreadLocals(Thread.currentThread()));
+
+        // 设置为null，调用gc并不一定触发垃圾回收，但是可以通过java提供的一些工具进行手工触发gc回收。
+        memeory.threadId = null;
+        System.gc();
+
+        System.out.println("GC后：key:" + memeory.threadId);
+        System.out.println("GC后：value-size:" + refelectThreadLocals(Thread.currentThread()));*/
+
+        // 模拟线程一直运行
+        while (true) {
+        }
+        
+    }
+
+    private static void incrementSameThreadId() {
+        try {
+            for (int i = 0; i < 5; i++) {
+                System.out.println(Thread.currentThread() + "_" + i + ",threadId:" + ThreadLocalId.get());
+            }
+        }
+        finally {
+            ThreadLocalId.remove();
+        }
+    }
 
 
 }

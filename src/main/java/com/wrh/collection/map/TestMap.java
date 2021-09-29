@@ -10,7 +10,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.Resource;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -1167,6 +1169,63 @@ public class TestMap {
         Map<Integer,String> map1 = list.stream().collect(Collectors.toMap(Student::getId, Student::getName, (l1,l2)->l1));
         System.out.println("map1 = " + map1);
 
+
+    }
+
+    @Test
+    public void Test1174() {
+        Map<String, String> map = new TreeMap<>(new MapKeyComparator());
+        map.put("w3","1");
+        map.put("w5","2");
+        map.put("w1","3");
+        System.out.println("map = " + map);
+
+        Map<String, String> map1 = new LinkedHashMap<>();
+        map1.put("w3","1");
+        map1.put("w5","2");
+        map1.put("w1","3");
+        System.out.println("map1 = " + map1);
+
+
+
+    }
+
+    @Test
+    public void Test1192() {
+        Map<String, String> map = new HashMap<>();
+        map.put("w1","v1");
+        map.put("w2","v2");
+        map.put("w3","v3");
+
+        System.out.println("map = " + map);
+
+        map.clear();
+        System.out.println("map = " + map);
+
+    }
+
+    @Autowired
+    @Resource
+
+    @Test
+    public void Test1206() {
+        Map<String, String> map = new HashMap<>();
+        map.put("w1","v1");
+        System.out.println(" 1 map = " + map);
+        handleMap(map);
+        System.out.println(" 2 map = " + map);
+
+    }
+
+    private void handleMap(Map<String, String> map) {
+        map.clear();
+        return;
+    }
+    @Test
+    public void Test1225() {
+        Map<String, String> map = new HashMap<>();
+        map.put("token","1234567");
+        System.out.println("map.remove(\"token\") = " + map.remove("token"));
 
     }
 }

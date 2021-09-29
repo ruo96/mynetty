@@ -15,16 +15,16 @@ import org.springframework.context.annotation.Configuration;
  * @Description TODO
  * @Date 2021/3/29 16:15
  */
-@Data
-@Configuration
-@ConfigurationProperties(prefix = "spring.rabbitmq")
+//@Data
+//@Configuration
+//@ConfigurationProperties(prefix = "spring.rabbitmq")
 public class RabbitMqConfig {
     private String host;
     private int port;
     private String userName;
     private String password;
 
-    @Bean
+//    @Bean
     public ConnectionFactory connectionFactory() {
         CachingConnectionFactory cachingConnectionFactory = new CachingConnectionFactory(host,port);
         cachingConnectionFactory.setUsername(userName);
@@ -34,7 +34,7 @@ public class RabbitMqConfig {
         return cachingConnectionFactory;
     }
 
-    @Bean
+//    @Bean
     public RabbitTemplate rabbitTemplate() {
         RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory());
         return rabbitTemplate;
