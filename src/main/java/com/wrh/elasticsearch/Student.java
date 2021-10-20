@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 /**
  * @Created by wrh
  * @Description:
@@ -13,7 +15,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Student {
+public class Student implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
 //    private String head = "all";
 
@@ -26,6 +30,12 @@ public class Student {
     private String title = "stu";
 
     private boolean flag = true;
+
+    @Override
+    public boolean equals(Object obj) {
+        return (this.hashCode() == obj.hashCode());
+    }
+
 
 
 

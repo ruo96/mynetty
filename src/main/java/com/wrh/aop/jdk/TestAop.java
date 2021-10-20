@@ -32,4 +32,6 @@ public class TestAop {
         BigDecimal b = BigDecimal.valueOf(1.2);
         log.info("a+b: {}",a.add(b));
     }
+
+
 }

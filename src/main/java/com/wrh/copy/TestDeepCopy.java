@@ -8,6 +8,8 @@ import com.wrh.copy.vo.BeamCopySaveVo;
 import com.wrh.copy.vo.BeamCopyVo;
 import com.wrh.copy.vo.NodeProperty;
 import com.wrh.copy.vo.StageNode;
+import com.wrh.elasticsearch.Student;
+import com.wrh.list.TestList;
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -17,6 +19,7 @@ import org.apache.http.client.utils.CloneUtils;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -341,5 +344,36 @@ public class TestDeepCopy {
         log.info("===> codes: {}", JSON.toJSONString(codes));
 
         Pair<String, Integer> pair = Pair.of("1",1);
+    }
+    
+    @Test
+    public void Test347() throws IOException, ClassNotFoundException {
+        List<Student> list = TestList.getStudentList();
+        List<Student> list2 = deepCopy(list);
+        list.remove(0);
+        System.out.println("list = " + list);
+        System.out.println("list2 = " + list2);
+
+
+    }
+
+    /**
+     * 深拷贝  list
+     * @param src
+     * @param <T>
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
+    public static <T> List<T> deepCopy(List<T> src) throws IOException, ClassNotFoundException {
+        ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
+        ObjectOutputStream out = new ObjectOutputStream(byteOut);
+        out.writeObject(src);
+
+        ByteArrayInputStream byteIn = new ByteArrayInputStream(byteOut.toByteArray());
+        ObjectInputStream in = new ObjectInputStream(byteIn);
+        @SuppressWarnings("unchecked")
+        List<T> dest = (List<T>) in.readObject();
+        return dest;
     }
 }

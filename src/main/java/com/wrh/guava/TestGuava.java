@@ -9,6 +9,8 @@ import com.google.common.cache.LoadingCache;
 import com.google.common.collect.*;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.*;
+import com.wrh.elasticsearch.Student;
+import com.wrh.list.TestList;
 import com.wrh.serialize.User;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.flink.util.Preconditions;
@@ -16,6 +18,7 @@ import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -230,5 +233,27 @@ public class TestGuava {
         };
 
         Futures.addCallback(listenableFuture, futureCallback);
+    }
+    
+    @Test
+    public void Test236() {
+        String start = LocalDateTime.now().toString();
+        RateLimiter limiter = RateLimiter.create(1.0); // 这里的1表示每秒允许处理的数量
+        for (int i = 1; i <= 10 ; i++) {
+            limiter.acquire();//请求， 超过会阻塞
+            System.out.println("开始执行, 当前时间" + LocalDateTime.now().toString() + i);
+        }
+        String end = LocalDateTime.now().toString();
+        System.out.println("START: " + start);
+        System.out.println("END: " + end);
+        
+    }
+
+    @Test
+    public void Test251() {
+        List<Student> list = TestList.getStudentList();
+        List<List<Student>> newList = Lists.partition(list,2);
+        System.out.println("newList = " + newList);
+
     }
 }

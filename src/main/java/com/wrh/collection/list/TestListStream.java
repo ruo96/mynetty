@@ -10,6 +10,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -248,6 +249,31 @@ public class TestListStream {
 
         System.out.println("result = " + result);
 
+
+    }
+
+    @Test
+    public void Test255() {
+        Predicate<String> nonNull = s -> s != null;
+        Predicate<String> nonEmpty = s -> !s.isEmpty();
+        Predicate<String> shorterThan5 = s -> s.length() < 5;
+
+        Predicate<String> p = nonNull.and(nonEmpty).and(shorterThan5);
+        System.out.println("p.test(\"abcdef\") = " + p.test("abcdef"));
+        System.out.println("p.test(\"abcd\") = " + p.test("abcd"));
+
+    }
+
+    @Test
+    public void Test268() {
+        List<Student> list = getStudentList();
+        List<String> list2 = getStudentList().stream().map(Student::getName).collect(Collectors.toList());
+
+        list.forEach(o ->{
+            if (list2.contains(o.getName())) {
+                list.remove(o);
+            }
+        });
 
     }
 

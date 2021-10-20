@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.google.common.collect.Lists;
 import java.time.LocalDate;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import lombok.extern.slf4j.Slf4j;
@@ -14,6 +15,7 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.env.MutablePropertySources;
 
 /**
  * @author wuruohong
@@ -115,6 +117,23 @@ public class TestBean implements BeanNameAware {
     public static void main(String[] args) throws InterruptedException {
         NormalBean bean = new NormalBean();
         TimeUnit.SECONDS.sleep(5);
+    }
+
+    @Test
+    public void Test121() {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        Map<String, Object> systemEnviroment = context.getEnvironment().getSystemEnvironment();
+        System.out.println("systemEnviroment = " + systemEnviroment);
+
+        System.out.println("====================================================");
+        Map<String, Object> systemProperties = context.getEnvironment().getSystemProperties();
+        System.out.println("systemProperties = " + systemProperties);
+
+        System.out.println("====================================================");
+        MutablePropertySources propertySources = context.getEnvironment().getPropertySources();
+        System.out.println("propertySources = " + propertySources);
+
+        System.out.println("====================================================");
     }
 
 }

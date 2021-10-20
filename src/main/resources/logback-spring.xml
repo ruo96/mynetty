@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="true" scan="true" scanPeriod="30 seconds">
+
+    <!-- 日志存放路径 -->
+    <property name="log.path" value="d:/logback" />
+    <!-- 日志输出格式 -->
+    <property name="log.pattern" value="%d{HH:mm:ss.SSS} [%thread] %-5level %logger{20} - [%method,%line] - %msg%n" />
+
     <!--
         org/springframework/boot/logging/logback/
         defaults.xml：提供了公共的日志配置，日志输出规则等。
@@ -19,7 +25,8 @@
         </filter>
         <encoder>
 <!--            <pattern>${SERIOUS_PATTERN}</pattern>-->
-            <pattern>[%d{yyyy-MM-dd' 'HH:mm:ss.sss}] [%C] [%t] [%L] [%-5p] %m%n</pattern>
+<!--            <pattern>[%d{yyyy-MM-dd' 'HH:mm:ss.sss}] [%C] [%t] [%L] [%-5p] %m%n</pattern>-->
+            <pattern>${log.pattern}</pattern>
             <charset>UTF-8</charset>
         </encoder>
     </appender>
@@ -51,7 +58,7 @@
             <MaxHistory>3</MaxHistory>
         </rollingPolicy>
         <encoder>
-            <pattern>${NORMAL_PATTERN}</pattern>
+            <pattern>${log.pattern}</pattern>
             <charset>UTF-8</charset>
         </encoder>
     </appender>

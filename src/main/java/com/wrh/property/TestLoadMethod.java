@@ -77,4 +77,24 @@ public class TestLoadMethod {
         log.info("username: {}", value);
     }
 
+    @Test
+    public void Test81() throws IOException {
+        Properties properties = new Properties();
+        Properties properties2 = new Properties();
+//        FileInputStream fis = new FileInputStream("src/main/resources/custom.properties");
+        InputStream fis = Object.class.getResourceAsStream("/custom.properties");
+        InputStream fis2 = TestLoadMethod.class.getClassLoader().getResourceAsStream("custom.properties");
+//        InputStream fis = Object.class.getClassLoader().getResourceAsStream("custom.properties");
+        properties.load(fis);
+        properties2.load(fis2);
+        String name  = properties.getProperty("userName");
+        String name2  = properties2.getProperty("userName");
+        System.out.println("name = " + name);
+        System.out.println("name2 = " + name2);
+
+       /* File file = new File(this.getClass().getResource("custom.properties").getPath());
+        System.out.println("file = " + file);*/
+
+
+    }
 }

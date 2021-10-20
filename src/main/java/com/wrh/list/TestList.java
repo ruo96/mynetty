@@ -378,7 +378,7 @@ public class TestList {
 
     }
 
-    private List<Student> getStudentList() {
+    public static List<Student> getStudentList() {
         List<Student> list = new ArrayList<>();
         Student s1 = new Student();
         s1.setName("w1");
@@ -1800,6 +1800,28 @@ public class TestList {
         }
         List<Student> newList2 = new ArrayList<>(treeSet);
         System.out.println("newList2 = " + newList2);
+
+    }
+
+    @Test
+    public void Test1807() {
+        List<Student> list = new ArrayList<>();
+        Student s1 = new Student();
+        s1.setId(1);
+        s1.setName("w1");
+
+        Student s2 = new Student();
+        s2.setId(1);
+        s2.setName("w1");
+
+        list.add(s1);
+        list.add(s2);
+
+        System.out.println("s1.hashCode() = " + s1.hashCode());
+        System.out.println("s2.hashCode() = " + s2.hashCode());
+
+        System.out.println("list.indexOf(s1) = " + list.indexOf(s1));
+        System.out.println("list.indexOf(s2) = " + list.indexOf(s2));
 
     }
 
