@@ -267,13 +267,20 @@ public class TestListStream {
     @Test
     public void Test268() {
         List<Student> list = getStudentList();
-        List<String> list2 = getStudentList().stream().map(Student::getName).collect(Collectors.toList());
+        System.out.println("list1 = " + list);
+
+        list.stream().forEach(e->e.setName("wwww"));
+        System.out.println("list2 = " + list);
+
+        list.forEach(e->{e.setName("rrr");});
+        System.out.println("list3 = " + list);
+        /*List<String> list2 = getStudentList().stream().map(Student::getName).collect(Collectors.toList());
 
         list.forEach(o ->{
             if (list2.contains(o.getName())) {
                 list.remove(o);
             }
-        });
+        });*/
 
     }
 

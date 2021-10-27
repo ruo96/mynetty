@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -47,9 +48,11 @@ public class MynettyApplication {
 	@Autowired
     private RedisTemplate redisTemplate;
 
+	public static ConfigurableApplicationContext ac;
+
 
 	public static void main(String[] args) {
-		SpringApplication.run(MynettyApplication.class, args);
+		ac = SpringApplication.run(MynettyApplication.class, args);
 	}
 
     /*@Bean
