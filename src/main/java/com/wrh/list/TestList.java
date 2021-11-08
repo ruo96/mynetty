@@ -387,7 +387,7 @@ public class TestList {
 
         Student s2 = new Student();
         s2.setName("w2");
-        s2.setId(1);
+        s2.setId(2);
         s2.setGrade(1);
 
         Student s3 = new Student();
@@ -397,7 +397,7 @@ public class TestList {
 
         Student s4 = new Student();
         s4.setName("w4");
-        s4.setId(2);
+        s4.setId(4);
         s4.setGrade(4);
 
         list.add(s1);
@@ -1822,6 +1822,51 @@ public class TestList {
 
         System.out.println("list.indexOf(s1) = " + list.indexOf(s1));
         System.out.println("list.indexOf(s2) = " + list.indexOf(s2));
+
+    }
+
+    @Test
+    public void Test1829() {
+        List<Student> list = new ArrayList<>();
+        Student s1 = new Student();
+        s1.setId(1);
+        s1.setName("w1");
+
+        Student s2 = new Student();
+        s2.setId(1);
+        s2.setName("w1");
+
+        list.add(s1);
+        list.add(s2);
+
+        System.out.println("list = " + list);
+        /** list去重*/
+        list = list.stream().collect(Collectors.collectingAndThen(Collectors.toCollection(()->new TreeSet<>(Comparator.comparing(Student::getName))), ArrayList::new));
+        System.out.println("list = " + list);
+
+    }
+
+    @Test
+    public void Test1850() {
+        Student s1 = new Student();
+        s1.setId(1);
+        s1.setName("w1");
+        Map<String, String> map = new HashMap<>();
+        map.put("name", s1.getName());
+        System.out.println("map = " + map);
+
+        s1 = new Student();
+        s1.setName("w2");
+        System.out.println("map = " + map);
+
+    }
+
+    @Test
+    public void Test1865() {
+        List<Student> list = new ArrayList<>();
+        Map<String, Integer> payMap = list.stream().collect(Collectors.toMap(Student::getName, Student::getId));
+        System.out.println("payMap = " + payMap);
+
 
     }
 

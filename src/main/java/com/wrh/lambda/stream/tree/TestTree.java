@@ -18,6 +18,9 @@ import java.util.stream.Collectors;
 @Slf4j
 public class TestTree {
 
+    /**
+     * 树形结构  树形排序   父子结构
+     */
     @Test
     public void Test15() {
         List<Menu> menus = Arrays.asList(

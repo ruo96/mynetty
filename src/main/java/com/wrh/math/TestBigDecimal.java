@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Objects;
 
 /**
@@ -221,6 +222,67 @@ public class TestBigDecimal {
     public void Test220() {
         System.out.println("ArithmeticUtils.add(\"123.23\",\"1231\") = " + ArithmeticUtils.add("123.23", "1231"));
 
+    }
+
+    @Test
+    public void Test227() {
+        BigDecimal a = new BigDecimal("0.1");
+        BigDecimal b = new BigDecimal("0.2");
+        System.out.println("a.compareTo(b) = " + a.compareTo(b));
+
+    }
+
+    @Test
+    public void Test235() {
+        /** 计算百分比的新方式*/
+        NumberFormat currency = NumberFormat.getCurrencyInstance(); //建立货币格式化引用
+        NumberFormat usaCurrency = NumberFormat.getCurrencyInstance(Locale.US); //建立货币格式化引用
+        NumberFormat ukCurrency = NumberFormat.getCurrencyInstance(Locale.UK); //建立货币格式化引用
+        NumberFormat geCurrency = NumberFormat.getCurrencyInstance(Locale.GERMAN); //建立货币格式化引用
+        NumberFormat JACurrency = NumberFormat.getCurrencyInstance(Locale.JAPAN); //建立货币格式化引用
+        NumberFormat percent = NumberFormat.getPercentInstance();  //建立百分比格式化引用
+        percent.setMaximumFractionDigits(3); //百分比小数点最多3位
+
+        BigDecimal loanAmount = new BigDecimal("15000.48"); //贷款金额
+        BigDecimal interestRate = new BigDecimal("0.008"); //利率
+        BigDecimal interest = loanAmount.multiply(interestRate); //相乘
+
+        System.out.println("贷款金额:\t" + currency.format(loanAmount));
+        System.out.println("贷款金额(美元):\t" + usaCurrency.format(loanAmount));
+        System.out.println("贷款金额(英镑):\t" + ukCurrency.format(loanAmount));
+        System.out.println("贷款金额(德国马克):\t" + geCurrency.format(loanAmount));
+        System.out.println("贷款金额(日元):\t" + JACurrency.format(loanAmount));
+        System.out.println("利率:\t" + percent.format(interestRate));
+        System.out.println("利息:\t" + currency.format(interest));
+    }
+    
+    @Test
+    public void Test260() {
+        System.out.println(formatToNumber(new BigDecimal("3.435")));
+        System.out.println(formatToNumber(new BigDecimal(0)));
+        System.out.println(formatToNumber(new BigDecimal("0.00")));
+        System.out.println(formatToNumber(new BigDecimal("0.001")));
+        System.out.println(formatToNumber(new BigDecimal("0.006")));
+        System.out.println(formatToNumber(new BigDecimal("0.206")));
+        
+    }
+
+    /**
+     * @desc 1.0~1之间的BigDecimal小数，格式化后失去前面的0,则前面直接加上0。
+     * 2.传入的参数等于0，则直接返回字符串"0.00"
+     * 3.大于1的小数，直接格式化返回字符串
+     * @param
+     * @return
+     */
+    public static String formatToNumber(BigDecimal obj) {
+        DecimalFormat df = new DecimalFormat("#.00");
+        if(obj.compareTo(BigDecimal.ZERO)==0) {
+            return "0.00";
+        }else if(obj.compareTo(BigDecimal.ZERO)>0&&obj.compareTo(new BigDecimal(1))<0){
+            return "0"+df.format(obj).toString();
+        }else {
+            return df.format(obj).toString();
+        }
     }
 
 

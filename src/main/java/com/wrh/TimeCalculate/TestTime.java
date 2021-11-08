@@ -1532,7 +1532,154 @@ public class TestTime {
 
     }
 
+    @Test
+    public void Test1536() {
+        System.out.println("LocalDate.now() = " + LocalDate.now());
+        System.out.println("LocalDate.now().minusDays(2).toString() = " + LocalDate.now().minusDays(2).toString());
 
+    }
+
+    @Test
+    public void Test1543() {
+        LocalDate s = LocalDate.now();
+        System.out.println("DateUtils.daysBetweenPeriod(s.toString(),s.toString()) = " + DateUtils.daysBetweenPeriod(s.minusDays(2).toString(), s.toString()));
+
+    }
+
+    @Test
+    public void Test1550() {
+        String ds = "2021-10-10";
+        System.out.println("getYesterdayByDs(ds, true) = " + getYesterdayByDs(ds, true));
+        System.out.println("getYesterdayByDs(ds,false) = " + getYesterdayByDs(ds, false));
+
+        String ds1 = getYesterdayByDs(ds,true).toString();
+        LocalDate ds2 ;
+        ds2 = (LocalDate) getYesterdayByDs(ds, true);
+        System.out.println("ds1 = " + ds1);
+        System.out.println("ds2 = " + ds2);
+
+    }
+
+    public static Object getYesterdayByDs(String ds, boolean returnFlag) {
+        LocalDate date = LocalDate.parse(ds, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        return returnFlag ? date.minusDays(1) : date.minusDays(1).toString();
+    }
+
+    @Test
+    public void Test1569() {
+        String dsS = "2021-07-01";
+        String dsE = "2021-07-08";
+        LocalDate dsStart = LocalDate.parse(dsS, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDate dsEnd = LocalDate.parse(dsE, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDate momEnd = dsStart.minusDays(1);
+//        LocalDate momStart = momEnd.minusDays(DateTimeUtil.getElapsedDaysOfDimension(dsEnd.toString(), "month")-1);
+        LocalDate momStart = momEnd.minusDays(DateTimeUtil.getElapsedDaysOfDimension(dsEnd.toString(), "season")-1);
+        System.out.println("momStart = " + momStart);
+        System.out.println("momEnd = " + momEnd);
+
+    }
+
+    @Test
+    public void Test1583() {
+        String dsS = "2020-01-01";
+        String dsE = "2020-03-31";
+        String dimension = "season";
+        LocalDate dsStart = LocalDate.parse(dsS, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDate dsEnd = LocalDate.parse(dsE, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDate yoyStart = DateTimeUtil.getFirstDayOfDimensionV2(DateTimeUtil.getPreviousDayOfDimension(dsStart.toString(),DIMENSION_YEAR).toString(),dimension);
+        LocalDate yoyEnd = yoyStart.plusDays(DateTimeUtil.getElapsedDaysOfDimension(dsEnd.toString(), dimension) - 1);
+        System.out.println("yoyStart = " + yoyStart);
+        System.out.println("yoyEnd = " + yoyEnd);
+    }
+
+    @Test
+    public void Test1596() {
+        String dsS = "2020-03-29";
+        String dsE = "2020-03-31";
+        LocalDate dsStart = LocalDate.parse(dsS, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDate dsEnd = LocalDate.parse(dsE, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDate momEnd = dsStart.minusDays(1);
+        LocalDate momStart = momEnd.minusDays(Math.abs(ChronoUnit.DAYS.between(dsStart,dsEnd)));
+
+        System.out.println("momStart = " + momStart);
+        System.out.println("momEnd = " + momEnd);
+    }
+
+    @Test
+    public void Test1609() {
+        String dsS = "2020-02-27";
+        LocalDate dsStart = LocalDate.parse(dsS, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        System.out.println("dsStart.minusYears(1) = " + dsStart.minusYears(1));
+    }
+
+    @Test
+    public void Test1616() {
+        String dsS = "2020-03-21";
+        String dsE = "2020-05-22";
+        LocalDate dsStart = LocalDate.parse(dsS, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDate dsEnd = LocalDate.parse(dsE, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDate monthDsStart = DateTimeUtil.getFirstDayOfDimensionV2(dsStart.toString(), DIMENSION_MONTH);
+        LocalDate monthDsEnd = DateTimeUtil.getLastDayOfDimension(dsEnd.toString(), DIMENSION_MONTH);
+
+        LocalDate momEnd = monthDsStart.minusDays(1);
+        LocalDate momStart = DateTimeUtil.getFirstDayOfDimensionV2(momEnd.minusMonths(Math.abs(ChronoUnit.MONTHS.between(monthDsStart,monthDsEnd))).toString(), DIMENSION_MONTH);
+
+
+        System.out.println("monthDsStart = " + monthDsStart);
+        System.out.println("monthDsEnd = " + monthDsEnd);
+        System.out.println("momStart = " + momStart);
+        System.out.println("momEnd = " + momEnd);
+
+
+    }
+
+    @Test
+    public void Test1640() {
+        String dsS = "2020-02-28";
+        String dsE = "2020-04-15";
+        LocalDate dsStart = LocalDate.parse(dsS, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDate dsEnd = LocalDate.parse(dsE, DateTimeFormatter.ofPattern(DATE_FORMAT));
+
+        LocalDate weekDsStart = DateTimeUtil.getFirstDayOfDimensionV2(dsStart.toString(), DIMENSION_WEEK);
+        LocalDate weekDsEnd = DateTimeUtil.getLastDayOfDimension(dsEnd.toString(), DIMENSION_WEEK);
+
+        LocalDate momEnd = weekDsStart.minusDays(1);
+        LocalDate momStart = momEnd.minusDays(Math.abs(ChronoUnit.DAYS.between(weekDsStart,weekDsEnd)));
+
+        LocalDate minusYear = dsStart.minusYears(1);
+        System.out.println("minusYear = " + minusYear);
+
+        LocalDate yoyStart = DateTimeUtil.getFirstDayOfDimensionV2(dsStart.minusYears(1).toString(), DIMENSION_WEEK);
+        LocalDate yoyEnd = yoyStart.plusDays(Math.abs(ChronoUnit.DAYS.between(weekDsStart,weekDsEnd)));
+
+        System.out.println("weekDsStart = " + weekDsStart);
+        System.out.println("weekDsEnd = " + weekDsEnd);
+        System.out.println("momStart = " + momStart);
+        System.out.println("momEnd = " + momEnd);
+        System.out.println("yoyStart = " + yoyStart);
+        System.out.println("yoyEnd = " + yoyEnd);
+
+    }
+
+    @Test
+    public void Test1665() {
+        String dsS = "2019-12-28";
+        String dsE = "2021-04-15";
+        LocalDate dsStart = LocalDate.parse(dsS, DateTimeFormatter.ofPattern(DATE_FORMAT));
+        LocalDate dsEnd = LocalDate.parse(dsE, DateTimeFormatter.ofPattern(DATE_FORMAT));
+
+        LocalDate yearDsStart = DateTimeUtil.getFirstDayOfDimensionV2(dsStart.toString(), DIMENSION_YEAR);
+        LocalDate yearDsEnd = DateTimeUtil.getLastDayOfDimension(dsEnd.toString(), DIMENSION_YEAR);
+
+        LocalDate momEnd = yearDsStart.minusDays(1);
+        LocalDate momStart = DateTimeUtil.getFirstDayOfDimensionV2(momEnd.minusYears(Math.abs(ChronoUnit.YEARS.between(yearDsStart,yearDsEnd))).toString(), DIMENSION_YEAR);
+
+        System.out.println("yearDsStart = " + yearDsStart);
+        System.out.println("yearDsEnd = " + yearDsEnd);
+        System.out.println("momStart = " + momStart);
+        System.out.println("momEnd = " + momEnd);
+
+    }
 
 
 }

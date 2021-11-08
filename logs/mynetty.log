@@ -1,103 +1,103 @@
-2021-10-27 17:00:35.784 DEBUG 3784 --- [main] .c.l.ClasspathLoggingApplicationListener : Application started with classpath: [file:/C:/Users/wuruohong/AppData/Local/Temp/classpath1299825601.jar, file:/D:/tools/java/idea/IntelliJ%20IDEA%202019.3.1/lib/idea_rt.jar]
-2021-10-27 17:00:36.030  INFO 3784 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 3784 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
-2021-10-27 17:00:36.033  INFO 3784 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
-2021-10-27 17:00:36.034 DEBUG 3784 --- [main] o.s.boot.SpringApplication               : Loading source class com.wrh.MynettyApplication
-2021-10-27 17:00:36.188 DEBUG 3784 --- [main] o.s.b.c.c.ConfigFileApplicationListener  : Loaded config file 'file:/D:/pro/mynetty/target/classes/application.yml' (classpath:/application.yml)
-2021-10-27 17:00:36.195  INFO 3784 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@304bb45b: startup date [Wed Oct 27 17:00:36 CST 2021]; root of context hierarchy
-2021-10-27 17:00:36.205 DEBUG 3784 --- [main] ConfigServletWebServerApplicationContext : Bean factory for org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@304bb45b: org.springframework.beans.factory.support.DefaultListableBeanFactory@6a57ae10: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.event.internalEventListenerProcessor,org.springframework.context.event.internalEventListenerFactory,mynettyApplication]; root of factory hierarchy
-2021-10-27 17:00:51.859 DEBUG 3784 --- [main] o.s.b.a.AutoConfigurationPackages        : @EnableAutoConfiguration was declared on a class in the package 'com.wrh'. Automatic @Repository and @Entity scanning is enabled.
-2021-10-27 17:00:53.322  INFO 3784 --- [main] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
-2021-10-27 17:00:53.433  INFO 3784 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
-2021-10-27 17:00:53.445  INFO 3784 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
-2021-10-27 17:00:53.446  INFO 3784 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
-2021-10-27 17:00:53.446  INFO 3784 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
-2021-10-27 17:00:53.446  INFO 3784 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
-2021-10-27 17:00:53.446  INFO 3784 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
-2021-10-27 17:00:53.446  INFO 3784 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.yml] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
-2021-10-27 17:00:53.447  INFO 3784 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [app1.properties] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
-2021-10-27 17:00:53.447  INFO 3784 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [myproperty.yml] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
-2021-10-27 17:00:53.657  INFO 3784 --- [main] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
-2021-10-27 17:00:54.015  INFO 3784 --- [main] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
-2021-10-27 17:00:54.016  INFO 3784 --- [main] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
-2021-10-27 17:00:54.030 DEBUG 3784 --- [main] ConfigServletWebServerApplicationContext : Using MessageSource [org.springframework.context.support.ResourceBundleMessageSource: basenames=[i18n/messages]]
-2021-10-27 17:00:54.030 DEBUG 3784 --- [main] ConfigServletWebServerApplicationContext : Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@60cb1ed6]
-2021-10-27 17:00:54.623 DEBUG 3784 --- [main] .s.b.w.e.t.TomcatServletWebServerFactory : Code archive: D:\tools\java\maven\apache-maven-3.6.3\repository\org\springframework\boot\spring-boot\2.0.4.RELEASE\spring-boot-2.0.4.RELEASE.jar
-2021-10-27 17:00:54.623 DEBUG 3784 --- [main] .s.b.w.e.t.TomcatServletWebServerFactory : Code archive: D:\tools\java\maven\apache-maven-3.6.3\repository\org\springframework\boot\spring-boot\2.0.4.RELEASE\spring-boot-2.0.4.RELEASE.jar
-2021-10-27 17:00:54.624 DEBUG 3784 --- [main] .s.b.w.e.t.TomcatServletWebServerFactory : None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
-2021-10-27 17:00:54.680  INFO 3784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9988 (http)
-2021-10-27 17:00:54.701  INFO 3784 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-10-27 17:00:54.701  INFO 3784 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
-2021-10-27 17:00:54.713  INFO 3784 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2021-10-27 17:00:54.713  INFO 3784 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-10-27 17:00:54.713  INFO 3784 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-10-27 17:00:54.748  INFO 3784 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2021-10-27 17:00:54.839  INFO 3784 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-10-27 17:00:54.929 DEBUG 3784 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Added existing Filter initializer bean 'registFilter'; order=1, resource=class path resource [com/wrh/config/FilterConfig.class]
-2021-10-27 17:00:54.929 DEBUG 3784 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Added existing Filter initializer bean 'registFilter1'; order=2, resource=class path resource [com/wrh/config/FilterConfig.class]
-2021-10-27 17:00:54.929 DEBUG 3784 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Added existing Servlet initializer bean 'dispatcherServletRegistration'; order=2147483647, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration.class]
-2021-10-27 17:00:54.929 DEBUG 3784 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Added existing Servlet initializer bean 'statViewServletRegistrationBean'; order=2147483647, resource=class path resource [com/alibaba/druid/spring/boot/autoconfigure/stat/DruidStatViewServletConfiguration.class]
-2021-10-27 17:00:54.929 DEBUG 3784 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Added existing Servlet initializer bean 'com.wrh.servlet.AnnotationServlet'; order=2147483647, resource=null
-2021-10-27 17:00:55.268 DEBUG 3784 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'characterEncodingFilter'; order=-2147483648, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/HttpEncodingAutoConfiguration.class]
-2021-10-27 17:00:55.268 DEBUG 3784 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'hiddenHttpMethodFilter'; order=-10000, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration.class]
-2021-10-27 17:00:55.269 DEBUG 3784 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'httpPutFormContentFilter'; order=-9900, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration.class]
-2021-10-27 17:00:55.269 DEBUG 3784 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'requestContextFilter'; order=-105, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]
-2021-10-27 17:00:55.269 DEBUG 3784 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'braveServletFilter'; order=2147483647, resource=class path resource [com/wrh/zipkin/ZipkinConfig.class]
-2021-10-27 17:00:55.269 DEBUG 3784 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'resourceUrlEncodingFilter'; order=2147483647, resource=class path resource [org/springframework/boot/autoconfigure/freemarker/FreeMarkerServletWebConfiguration.class]
-2021-10-27 17:00:55.281  INFO 3784 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
-2021-10-27 17:00:55.281  INFO 3784 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2021-10-27 17:00:55.281  INFO 3784 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2021-10-27 17:00:55.282  INFO 3784 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
-2021-10-27 17:00:55.282  INFO 3784 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'LogCostFilter' to urls: [/gogogo]
-2021-10-27 17:00:55.282  INFO 3784 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestFilter' to urls: [/*]
-2021-10-27 17:00:55.282  INFO 3784 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'braveServletFilter' to: [/*]
-2021-10-27 17:00:55.282  INFO 3784 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
-2021-10-27 17:00:55.282  INFO 3784 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
-2021-10-27 17:00:55.283  INFO 3784 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet statViewServlet mapped to [/druid/*]
-2021-10-27 17:00:55.283  INFO 3784 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet com.wrh.servlet.AnnotationServlet mapped to [/annotation]
-2021-10-27 17:00:55.321 DEBUG 3784 --- [localhost-startStop-1] o.s.b.w.s.f.OrderedRequestContextFilter  : Initializing filter 'requestContextFilter'
-2021-10-27 17:00:55.322 DEBUG 3784 --- [localhost-startStop-1] o.s.b.w.s.f.OrderedRequestContextFilter  : Filter 'requestContextFilter' configured successfully
-2021-10-27 17:00:55.322  INFO 3784 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
-2021-10-27 17:00:55.322 DEBUG 3784 --- [localhost-startStop-1] .b.w.s.f.OrderedHttpPutFormContentFilter : Initializing filter 'httpPutFormContentFilter'
-2021-10-27 17:00:55.322 DEBUG 3784 --- [localhost-startStop-1] .b.w.s.f.OrderedHttpPutFormContentFilter : Filter 'httpPutFormContentFilter' configured successfully
-2021-10-27 17:00:55.322 DEBUG 3784 --- [localhost-startStop-1] .s.b.w.s.f.OrderedHiddenHttpMethodFilter : Initializing filter 'hiddenHttpMethodFilter'
-2021-10-27 17:00:55.322 DEBUG 3784 --- [localhost-startStop-1] .s.b.w.s.f.OrderedHiddenHttpMethodFilter : Filter 'hiddenHttpMethodFilter' configured successfully
-2021-10-27 17:00:55.322 DEBUG 3784 --- [localhost-startStop-1] s.b.w.s.f.OrderedCharacterEncodingFilter : Initializing filter 'characterEncodingFilter'
-2021-10-27 17:00:55.323 DEBUG 3784 --- [localhost-startStop-1] s.b.w.s.f.OrderedCharacterEncodingFilter : Filter 'characterEncodingFilter' configured successfully
-2021-10-27 17:00:55.354  INFO 3784 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
-2021-10-27 17:00:55.798  INFO 3784 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2021-10-27 17:00:56.233  INFO 3784 --- [main] com.wrh.bean.NormalBean                  : >>> construct start
-2021-10-27 17:00:56.235  INFO 3784 --- [main] com.wrh.bean.NormalBean                  : >>> postconstruct start
-2021-10-27 17:00:56.235  INFO 3784 --- [main] com.wrh.bean.NormalBean                  : >>> afterPropertiesSet start
-2021-10-27 17:00:56.572  INFO 3784 --- [main] c.wrh.cloud.sentinel.LoadSentinelRules   : 加载了流控规则.
-2021-10-27 17:00:56.573  INFO 3784 --- [main] c.wrh.cloud.sentinel.LoadSentinelRules   : 加载了熔断降级规则.
-2021-10-27 17:00:56.932  INFO 3784 --- [main] c.u.j.encryptor.DefaultLazyEncryptor     : String Encryptor custom Bean not found with name 'jasyptStringEncryptor'. Initializing Default String Encryptor
-2021-10-27 17:00:56.949  INFO 3784 --- [main] c.u.j.encryptor.DefaultLazyEncryptor     : Encryptor config not found for property jasypt.encryptor.algorithm, using default value: PBEWithMD5AndDES
-2021-10-27 17:00:56.950  INFO 3784 --- [main] c.u.j.encryptor.DefaultLazyEncryptor     : Encryptor config not found for property jasypt.encryptor.keyObtentionIterations, using default value: 1000
-2021-10-27 17:00:56.950  INFO 3784 --- [main] c.u.j.encryptor.DefaultLazyEncryptor     : Encryptor config not found for property jasypt.encryptor.poolSize, using default value: 1
-2021-10-27 17:00:56.950  INFO 3784 --- [main] c.u.j.encryptor.DefaultLazyEncryptor     : Encryptor config not found for property jasypt.encryptor.providerName, using default value: null
-2021-10-27 17:00:56.950  INFO 3784 --- [main] c.u.j.encryptor.DefaultLazyEncryptor     : Encryptor config not found for property jasypt.encryptor.providerClassName, using default value: null
-2021-10-27 17:00:56.951  INFO 3784 --- [main] c.u.j.encryptor.DefaultLazyEncryptor     : Encryptor config not found for property jasypt.encryptor.saltGeneratorClassname, using default value: org.jasypt.salt.RandomSaltGenerator
-2021-10-27 17:00:56.952  INFO 3784 --- [main] c.u.j.encryptor.DefaultLazyEncryptor     : Encryptor config not found for property jasypt.encryptor.stringOutputType, using default value: base64
-2021-10-27 17:00:57.502  INFO 3784 --- [main] com.wrh.controller.WebsocketController   : [applicationcontext]>>> org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@304bb45b: startup date [Wed Oct 27 17:00:36 CST 2021]; root of context hierarchy
-2021-10-27 17:00:57.502  INFO 3784 --- [main] com.wrh.controller.WebsocketController   : [applicationcontext]>>>getDisplayName org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@304bb45b
-2021-10-27 17:00:57.502  INFO 3784 --- [main] com.wrh.controller.WebsocketController   : [applicationcontext]>>>getId mynetty
-2021-10-27 17:00:57.502  INFO 3784 --- [main] com.wrh.controller.WebsocketController   : [applicationcontext]>>>getParent null
-2021-10-27 17:00:57.503  INFO 3784 --- [main] com.wrh.controller.WebsocketController   : [applicationcontext]>>>getApplicationName 
-2021-10-27 17:00:57.503  INFO 3784 --- [main] com.wrh.controller.WebsocketController   : [applicationcontext]>>>getStartupDate 1635325236195
-2021-10-27 17:00:57.503  INFO 3784 --- [main] com.wrh.controller.WebsocketController   : [applicationcontext]>>>getClassLoader sun.misc.Launcher$AppClassLoader@18b4aac2
-2021-10-27 17:00:57.503  INFO 3784 --- [main] com.wrh.controller.WebsocketController   : [applicationcontext]>>>getResources 1
-2021-10-27 17:00:57.882  INFO 3784 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
-2021-10-27 17:00:57.885  INFO 3784 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
-2021-10-27 17:00:58.882  INFO 3784 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
-2021-10-27 17:00:59.751  INFO 3784 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-2021-10-27 17:00:59.865  WARN 3784 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
-2021-10-27 17:01:00.886  INFO 3784 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2021-10-27 17:01:00.989 DEBUG 3784 --- [main] inMXBeanRegistrar$SpringApplicationAdmin : Application Admin MBean registered with name 'org.springframework.boot:type=Admin,name=SpringApplication'
-2021-10-27 17:01:02.008  INFO 3784 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
-2021-10-27 17:01:02.020  INFO 3784 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2021-10-27 17:01:02.021  INFO 3784 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
-2021-10-27 17:01:02.022  INFO 3784 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
-2021-10-27 17:01:02.023  INFO 3784 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2021-11-04 16:16:03.862 DEBUG 1352 --- [main] .c.l.ClasspathLoggingApplicationListener : Application started with classpath: [file:/C:/Users/wuruohong/AppData/Local/Temp/classpath164828063.jar, file:/D:/tools/java/idea/IntelliJ%20IDEA%202019.3.1/lib/idea_rt.jar]
+2021-11-04 16:16:04.113  INFO 1352 --- [main] com.wrh.MynettyApplication               : Starting MynettyApplication on CN210102099 with PID 1352 (D:\pro\mynetty\target\classes started by wuruohong in D:\pro\mynetty)
+2021-11-04 16:16:04.115  INFO 1352 --- [main] com.wrh.MynettyApplication               : No active profile set, falling back to default profiles: default
+2021-11-04 16:16:04.115 DEBUG 1352 --- [main] o.s.boot.SpringApplication               : Loading source class com.wrh.MynettyApplication
+2021-11-04 16:16:04.256 DEBUG 1352 --- [main] o.s.b.c.c.ConfigFileApplicationListener  : Loaded config file 'file:/D:/pro/mynetty/target/classes/application.yml' (classpath:/application.yml)
+2021-11-04 16:16:04.257  INFO 1352 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6f10d5b6: startup date [Thu Nov 04 16:16:04 CST 2021]; root of context hierarchy
+2021-11-04 16:16:04.260 DEBUG 1352 --- [main] ConfigServletWebServerApplicationContext : Bean factory for org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6f10d5b6: org.springframework.beans.factory.support.DefaultListableBeanFactory@5d99c6b5: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.event.internalEventListenerProcessor,org.springframework.context.event.internalEventListenerFactory,mynettyApplication]; root of factory hierarchy
+2021-11-04 16:16:16.256 DEBUG 1352 --- [main] o.s.b.a.AutoConfigurationPackages        : @EnableAutoConfiguration was declared on a class in the package 'com.wrh'. Automatic @Repository and @Entity scanning is enabled.
+2021-11-04 16:16:17.155  INFO 1352 --- [main] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2021-11-04 16:16:17.231  INFO 1352 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2021-11-04 16:16:17.242  INFO 1352 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2021-11-04 16:16:17.242  INFO 1352 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2021-11-04 16:16:17.243  INFO 1352 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2021-11-04 16:16:17.243  INFO 1352 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2021-11-04 16:16:17.243  INFO 1352 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2021-11-04 16:16:17.243  INFO 1352 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.yml] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2021-11-04 16:16:17.244  INFO 1352 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [app1.properties] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2021-11-04 16:16:17.244  INFO 1352 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [myproperty.yml] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2021-11-04 16:16:17.443  INFO 1352 --- [main] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2021-11-04 16:16:17.807  INFO 1352 --- [main] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2021-11-04 16:16:17.809  INFO 1352 --- [main] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2021-11-04 16:16:17.822 DEBUG 1352 --- [main] ConfigServletWebServerApplicationContext : Using MessageSource [org.springframework.context.support.ResourceBundleMessageSource: basenames=[i18n/messages]]
+2021-11-04 16:16:17.822 DEBUG 1352 --- [main] ConfigServletWebServerApplicationContext : Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@3bfae028]
+2021-11-04 16:16:18.240 DEBUG 1352 --- [main] .s.b.w.e.t.TomcatServletWebServerFactory : Code archive: D:\tools\java\maven\apache-maven-3.6.3\repository\org\springframework\boot\spring-boot\2.0.4.RELEASE\spring-boot-2.0.4.RELEASE.jar
+2021-11-04 16:16:18.240 DEBUG 1352 --- [main] .s.b.w.e.t.TomcatServletWebServerFactory : Code archive: D:\tools\java\maven\apache-maven-3.6.3\repository\org\springframework\boot\spring-boot\2.0.4.RELEASE\spring-boot-2.0.4.RELEASE.jar
+2021-11-04 16:16:18.240 DEBUG 1352 --- [main] .s.b.w.e.t.TomcatServletWebServerFactory : None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
+2021-11-04 16:16:18.277  INFO 1352 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9988 (http)
+2021-11-04 16:16:18.299  INFO 1352 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-04 16:16:18.299  INFO 1352 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2021-11-04 16:16:18.302  INFO 1352 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-11-04 16:16:18.302  INFO 1352 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-11-04 16:16:18.302  INFO 1352 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-11-04 16:16:18.347  INFO 1352 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-11-04 16:16:18.435  INFO 1352 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-04 16:16:18.528 DEBUG 1352 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Added existing Filter initializer bean 'registFilter'; order=1, resource=class path resource [com/wrh/config/FilterConfig.class]
+2021-11-04 16:16:18.528 DEBUG 1352 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Added existing Filter initializer bean 'registFilter1'; order=2, resource=class path resource [com/wrh/config/FilterConfig.class]
+2021-11-04 16:16:18.528 DEBUG 1352 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Added existing Servlet initializer bean 'dispatcherServletRegistration'; order=2147483647, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration.class]
+2021-11-04 16:16:18.529 DEBUG 1352 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Added existing Servlet initializer bean 'statViewServletRegistrationBean'; order=2147483647, resource=class path resource [com/alibaba/druid/spring/boot/autoconfigure/stat/DruidStatViewServletConfiguration.class]
+2021-11-04 16:16:18.529 DEBUG 1352 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Added existing Servlet initializer bean 'com.wrh.servlet.AnnotationServlet'; order=2147483647, resource=null
+2021-11-04 16:16:18.871 DEBUG 1352 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'characterEncodingFilter'; order=-2147483648, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/HttpEncodingAutoConfiguration.class]
+2021-11-04 16:16:18.871 DEBUG 1352 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'hiddenHttpMethodFilter'; order=-10000, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration.class]
+2021-11-04 16:16:18.871 DEBUG 1352 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'httpPutFormContentFilter'; order=-9900, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration.class]
+2021-11-04 16:16:18.871 DEBUG 1352 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'requestContextFilter'; order=-105, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]
+2021-11-04 16:16:18.871 DEBUG 1352 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'braveServletFilter'; order=2147483647, resource=class path resource [com/wrh/zipkin/ZipkinConfig.class]
+2021-11-04 16:16:18.871 DEBUG 1352 --- [localhost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'resourceUrlEncodingFilter'; order=2147483647, resource=class path resource [org/springframework/boot/autoconfigure/freemarker/FreeMarkerServletWebConfiguration.class]
+2021-11-04 16:16:18.884  INFO 1352 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2021-11-04 16:16:18.884  INFO 1352 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2021-11-04 16:16:18.884  INFO 1352 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2021-11-04 16:16:18.885  INFO 1352 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2021-11-04 16:16:18.885  INFO 1352 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'LogCostFilter' to urls: [/gogogo]
+2021-11-04 16:16:18.885  INFO 1352 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestFilter' to urls: [/*]
+2021-11-04 16:16:18.885  INFO 1352 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'braveServletFilter' to: [/*]
+2021-11-04 16:16:18.885  INFO 1352 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2021-11-04 16:16:18.885  INFO 1352 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2021-11-04 16:16:18.886  INFO 1352 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet statViewServlet mapped to [/druid/*]
+2021-11-04 16:16:18.887  INFO 1352 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet com.wrh.servlet.AnnotationServlet mapped to [/annotation]
+2021-11-04 16:16:18.912 DEBUG 1352 --- [localhost-startStop-1] o.s.b.w.s.f.OrderedRequestContextFilter  : Initializing filter 'requestContextFilter'
+2021-11-04 16:16:18.913 DEBUG 1352 --- [localhost-startStop-1] o.s.b.w.s.f.OrderedRequestContextFilter  : Filter 'requestContextFilter' configured successfully
+2021-11-04 16:16:18.913  INFO 1352 --- [localhost-startStop-1] com.wrh.filter.LogCosFilter              : ----------------------->过滤器 1 被创建
+2021-11-04 16:16:18.914 DEBUG 1352 --- [localhost-startStop-1] .b.w.s.f.OrderedHttpPutFormContentFilter : Initializing filter 'httpPutFormContentFilter'
+2021-11-04 16:16:18.914 DEBUG 1352 --- [localhost-startStop-1] .b.w.s.f.OrderedHttpPutFormContentFilter : Filter 'httpPutFormContentFilter' configured successfully
+2021-11-04 16:16:18.914 DEBUG 1352 --- [localhost-startStop-1] .s.b.w.s.f.OrderedHiddenHttpMethodFilter : Initializing filter 'hiddenHttpMethodFilter'
+2021-11-04 16:16:18.914 DEBUG 1352 --- [localhost-startStop-1] .s.b.w.s.f.OrderedHiddenHttpMethodFilter : Filter 'hiddenHttpMethodFilter' configured successfully
+2021-11-04 16:16:18.914 DEBUG 1352 --- [localhost-startStop-1] s.b.w.s.f.OrderedCharacterEncodingFilter : Initializing filter 'characterEncodingFilter'
+2021-11-04 16:16:18.914 DEBUG 1352 --- [localhost-startStop-1] s.b.w.s.f.OrderedCharacterEncodingFilter : Filter 'characterEncodingFilter' configured successfully
+2021-11-04 16:16:18.940  INFO 1352 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2021-11-04 16:16:19.350  INFO 1352 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-11-04 16:16:19.738  INFO 1352 --- [main] com.wrh.bean.NormalBean                  : >>> construct start
+2021-11-04 16:16:19.740  INFO 1352 --- [main] com.wrh.bean.NormalBean                  : >>> postconstruct start
+2021-11-04 16:16:19.740  INFO 1352 --- [main] com.wrh.bean.NormalBean                  : >>> afterPropertiesSet start
+2021-11-04 16:16:20.069  INFO 1352 --- [main] c.wrh.cloud.sentinel.LoadSentinelRules   : 加载了流控规则.
+2021-11-04 16:16:20.070  INFO 1352 --- [main] c.wrh.cloud.sentinel.LoadSentinelRules   : 加载了熔断降级规则.
+2021-11-04 16:16:20.350  INFO 1352 --- [main] c.u.j.encryptor.DefaultLazyEncryptor     : String Encryptor custom Bean not found with name 'jasyptStringEncryptor'. Initializing Default String Encryptor
+2021-11-04 16:16:20.367  INFO 1352 --- [main] c.u.j.encryptor.DefaultLazyEncryptor     : Encryptor config not found for property jasypt.encryptor.algorithm, using default value: PBEWithMD5AndDES
+2021-11-04 16:16:20.368  INFO 1352 --- [main] c.u.j.encryptor.DefaultLazyEncryptor     : Encryptor config not found for property jasypt.encryptor.keyObtentionIterations, using default value: 1000
+2021-11-04 16:16:20.368  INFO 1352 --- [main] c.u.j.encryptor.DefaultLazyEncryptor     : Encryptor config not found for property jasypt.encryptor.poolSize, using default value: 1
+2021-11-04 16:16:20.368  INFO 1352 --- [main] c.u.j.encryptor.DefaultLazyEncryptor     : Encryptor config not found for property jasypt.encryptor.providerName, using default value: null
+2021-11-04 16:16:20.368  INFO 1352 --- [main] c.u.j.encryptor.DefaultLazyEncryptor     : Encryptor config not found for property jasypt.encryptor.providerClassName, using default value: null
+2021-11-04 16:16:20.368  INFO 1352 --- [main] c.u.j.encryptor.DefaultLazyEncryptor     : Encryptor config not found for property jasypt.encryptor.saltGeneratorClassname, using default value: org.jasypt.salt.RandomSaltGenerator
+2021-11-04 16:16:20.369  INFO 1352 --- [main] c.u.j.encryptor.DefaultLazyEncryptor     : Encryptor config not found for property jasypt.encryptor.stringOutputType, using default value: base64
+2021-11-04 16:16:20.834  INFO 1352 --- [main] com.wrh.controller.WebsocketController   : [applicationcontext]>>> org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6f10d5b6: startup date [Thu Nov 04 16:16:04 CST 2021]; root of context hierarchy
+2021-11-04 16:16:20.834  INFO 1352 --- [main] com.wrh.controller.WebsocketController   : [applicationcontext]>>>getDisplayName org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6f10d5b6
+2021-11-04 16:16:20.834  INFO 1352 --- [main] com.wrh.controller.WebsocketController   : [applicationcontext]>>>getId mynetty
+2021-11-04 16:16:20.834  INFO 1352 --- [main] com.wrh.controller.WebsocketController   : [applicationcontext]>>>getParent null
+2021-11-04 16:16:20.834  INFO 1352 --- [main] com.wrh.controller.WebsocketController   : [applicationcontext]>>>getApplicationName 
+2021-11-04 16:16:20.835  INFO 1352 --- [main] com.wrh.controller.WebsocketController   : [applicationcontext]>>>getStartupDate 1636013764257
+2021-11-04 16:16:20.835  INFO 1352 --- [main] com.wrh.controller.WebsocketController   : [applicationcontext]>>>getClassLoader sun.misc.Launcher$AppClassLoader@18b4aac2
+2021-11-04 16:16:20.835  INFO 1352 --- [main] com.wrh.controller.WebsocketController   : [applicationcontext]>>>getResources 1
+2021-11-04 16:16:21.105  INFO 1352 --- [main] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2021-11-04 16:16:21.107  INFO 1352 --- [main] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2021-11-04 16:16:22.005  INFO 1352 --- [main] com.wrh.config.InterceptorConfig         : >>>  拦截器启动
+2021-11-04 16:16:22.433  INFO 1352 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2021-11-04 16:16:22.543  WARN 1352 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Neither 'urlMap' nor 'mappings' set on SimpleUrlHandlerMapping
+2021-11-04 16:16:23.076  INFO 1352 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-11-04 16:16:23.145 DEBUG 1352 --- [main] inMXBeanRegistrar$SpringApplicationAdmin : Application Admin MBean registered with name 'org.springframework.boot:type=Admin,name=SpringApplication'
+2021-11-04 16:16:23.853  INFO 1352 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2021-11-04 16:16:23.865  INFO 1352 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2021-11-04 16:16:23.866  INFO 1352 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.2.1 created.
+2021-11-04 16:16:23.866  INFO 1352 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2021-11-04 16:16:23.867  INFO 1352 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.2.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -105,40 +105,40 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2021-10-27 17:01:02.023  INFO 3784 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2021-10-27 17:01:02.023  INFO 3784 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
-2021-10-27 17:01:02.023  INFO 3784 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@2ab7f649
-2021-10-27 17:01:02.193 DEBUG 3784 --- [main] ConfigServletWebServerApplicationContext : Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@363fe35a]
-2021-10-27 17:01:02.195  INFO 3784 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2021-10-27 17:01:02.214  INFO 3784 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2021-10-27 17:01:02.264  INFO 3784 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-10-27 17:01:02.505  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingGET_1
-2021-10-27 17:01:02.505  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingHEAD_1
-2021-10-27 17:01:02.506  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPOST_1
-2021-10-27 17:01:02.506  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPUT_1
-2021-10-27 17:01:02.506  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPATCH_1
-2021-10-27 17:01:02.507  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingDELETE_1
-2021-10-27 17:01:02.507  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingOPTIONS_1
-2021-10-27 17:01:02.507  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingTRACE_1
-2021-10-27 17:01:02.518  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_1
-2021-10-27 17:01:02.519  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_1
-2021-10-27 17:01:02.519  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_1
-2021-10-27 17:01:02.519  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_1
-2021-10-27 17:01:02.520  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_1
-2021-10-27 17:01:02.520  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_1
-2021-10-27 17:01:02.520  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_1
-2021-10-27 17:01:02.521  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_1
-2021-10-27 17:01:02.524  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_2
-2021-10-27 17:01:02.524  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_2
-2021-10-27 17:01:02.525  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_2
-2021-10-27 17:01:02.525  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_2
-2021-10-27 17:01:02.525  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_2
-2021-10-27 17:01:02.526  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_2
-2021-10-27 17:01:02.526  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_2
-2021-10-27 17:01:02.526  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_2
-2021-10-27 17:01:02.563  INFO 3784 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: swagger2UsingPOST_1
-2021-10-27 17:01:02.627  INFO 3784 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2021-10-27 17:01:02.636 DEBUG 3784 --- [main] ConditionEvaluationReportLoggingListener : 
+2021-11-04 16:16:23.867  INFO 1352 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2021-11-04 16:16:23.867  INFO 1352 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.2.1
+2021-11-04 16:16:23.867  INFO 1352 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@5b2ff4df
+2021-11-04 16:16:24.037 DEBUG 1352 --- [main] ConfigServletWebServerApplicationContext : Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@43fbc2bf]
+2021-11-04 16:16:24.040  INFO 1352 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-04 16:16:24.061  INFO 1352 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-04 16:16:24.126  INFO 1352 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-04 16:16:24.360  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingGET_1
+2021-11-04 16:16:24.360  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingHEAD_1
+2021-11-04 16:16:24.360  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPOST_1
+2021-11-04 16:16:24.361  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPUT_1
+2021-11-04 16:16:24.362  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingPATCH_1
+2021-11-04 16:16:24.362  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingDELETE_1
+2021-11-04 16:16:24.362  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingOPTIONS_1
+2021-11-04 16:16:24.362  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: hiUsingTRACE_1
+2021-11-04 16:16:24.371  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_1
+2021-11-04 16:16:24.372  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_1
+2021-11-04 16:16:24.372  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_1
+2021-11-04 16:16:24.372  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_1
+2021-11-04 16:16:24.373  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_1
+2021-11-04 16:16:24.373  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_1
+2021-11-04 16:16:24.373  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_1
+2021-11-04 16:16:24.374  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_1
+2021-11-04 16:16:24.377  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingGET_2
+2021-11-04 16:16:24.378  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingHEAD_2
+2021-11-04 16:16:24.378  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPOST_2
+2021-11-04 16:16:24.378  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPUT_2
+2021-11-04 16:16:24.379  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingPATCH_2
+2021-11-04 16:16:24.379  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingDELETE_2
+2021-11-04 16:16:24.379  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingOPTIONS_2
+2021-11-04 16:16:24.379  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: propertyUsingTRACE_2
+2021-11-04 16:16:24.424  INFO 1352 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: swagger2UsingPOST_1
+2021-11-04 16:16:24.472  INFO 1352 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2021-11-04 16:16:24.480 DEBUG 1352 --- [main] ConditionEvaluationReportLoggingListener : 
 
 
 ============================
@@ -1269,5 +1269,5 @@ Unconditional classes:
 
 
 
-2021-10-27 17:01:02.669  INFO 3784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9988 (http) with context path ''
-2021-10-27 17:01:02.673  INFO 3784 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 27.5 seconds (JVM running for 29.032)
+2021-11-04 16:16:24.507  INFO 1352 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9988 (http) with context path ''
+2021-11-04 16:16:24.510  INFO 1352 --- [main] com.wrh.MynettyApplication               : Started MynettyApplication in 21.296 seconds (JVM running for 22.356)
