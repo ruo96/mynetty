@@ -2,7 +2,6 @@ package com.wrh.async;
 
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.AsyncConfigurer;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
@@ -15,7 +14,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @Description @Async使用的线程池其中一种方式  另外一种是  继承AsyncConfigurerSupport  还有：配置由自定义的TaskExecutor替代内置的任务执行器
  * @Date 2021/11/11 15:18
  */
-@Configuration
+//@Configuration
 // 需要使用时候打开
 public class AsyncConfiguration implements AsyncConfigurer {
 
