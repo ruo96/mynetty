@@ -1,8 +1,8 @@
 package com.wrh.thread.CompletableFutureTest;
 
-import akka.remote.artery.aeron.TaskRunner;
 import com.alibaba.fastjson.JSON;
 import com.wrh.list.TestList;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.util.StopWatch;
@@ -596,11 +596,15 @@ public class TestCompletableFuture {
 
     }
 
+    @SneakyThrows
     private String delayedLowerCase(String s) {
+        TimeUnit.SECONDS.sleep(1);
         return s.toLowerCase();
     }
 
+    @SneakyThrows
     private String delayedUpperCase(String s) {
+        TimeUnit.SECONDS.sleep(2);
         s = s.toUpperCase();
         return s;
     }
@@ -1083,11 +1087,13 @@ public class TestCompletableFuture {
         List<Car> messages = new ArrayList<>();
         Car c1 = new Car();
         c1.setName("w1");
+        c1.setManufactureId(1);
 //        c1.setRate(1);
         c1.setId(1);
 
         Car c2 = new Car();
         c2.setName("w2");
+        c2.setManufactureId(2);
 //        c2.setRate(2);
         c2.setId(2);
 
@@ -1182,6 +1188,231 @@ public class TestCompletableFuture {
         assertTrue("Result was empty", result.length() > 0);
         System.out.println("result = " + result);
         System.out.println("original = " + original);
+
+    }
+
+    @Test
+    public void Test1189() {
+        /**
+         * thenApply如果以Async结尾，就会异步执行，通过forkjoinpool来实现，使用守护线程来执行任务。
+         */
+        CompletableFuture cf = CompletableFuture.completedFuture("message").thenApply(s->{
+            assertFalse(Thread.currentThread().isDaemon());
+            return s.toUpperCase();
+        });
+
+        assertEquals("MESSAGE", cf.getNow(null));
+
+    }
+
+    @Test
+    public void Test1202() {
+        CompletableFuture cf = CompletableFuture.completedFuture("message").thenApplyAsync(s->{
+            assertTrue(Thread.currentThread().isDaemon());
+            try {
+                randomSleep();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return s.toUpperCase();
+        });
+
+        assertNull(cf.getNow(null));
+        assertEquals("MESSAGE", cf.join());
+
+    }
+
+    static ExecutorService executorService = Executors.newFixedThreadPool(3, new ThreadFactory() {
+        int count = 1;
+
+        @Override
+        public Thread newThread(Runnable runnable) {
+            return new Thread(runnable, "custom-executor-" + count++);
+        }
+    });
+
+    @Test
+    public void Test1219() {
+        CompletableFuture cf = CompletableFuture.completedFuture("message").thenApplyAsync(String::toUpperCase,
+                executor);
+        CompletableFuture exceptionHandler = cf.handle((s, th) -> { return (th != null) ? "message upon cancel" : ""; });
+        cf.completeExceptionally(new RuntimeException("completed exceptionally"));
+        assertTrue("Was not completed exceptionally", cf.isCompletedExceptionally());
+        try {
+            cf.join();
+            fail("Should have thrown an exception");
+        } catch(CompletionException ex) { // just for testing
+            assertEquals("completed exceptionally", ex.getCause().getMessage());
+        }
+
+        assertEquals("message upon cancel", exceptionHandler.join());
+
+    }
+    
+    @Test
+    public void Test1246() {
+        for (int i = 0; i < 100; i++) {
+            String original = "Message";
+            CompletableFuture cf1 = CompletableFuture.completedFuture(original)
+                    .thenApplyAsync(s -> delayedUpperCase(s));
+            CompletableFuture cf2 = cf1.applyToEither(
+                    CompletableFuture.completedFuture(original).thenApplyAsync(s -> delayedLowerCase(s)),
+                    s -> s + "abc");
+                    //s -> s + " from applyToEither");
+            System.out.println("cf2.join().toString() = " + cf2.join().toString());
+            //assertTrue(cf2.join().toString().endsWith(" from applyToEither"));
+        }
+
+
+    }
+    
+    @Test
+    public void Test1263() {
+        // 或者是大写，或者是小写， 后面+
+        for (int i = 0; i < 10; i++) {
+            String original = "Message";
+            StringBuilder result = new StringBuilder();
+            CompletableFuture cf = CompletableFuture.completedFuture(original)
+                    .thenApplyAsync(s -> delayedUpperCase(s))
+                     //这下面是整体和上面做either接收参数
+                     .acceptEither(CompletableFuture.completedFuture(original).thenApplyAsync(s -> delayedLowerCase(s)),
+                            s -> result.append(s).append("+acceptEither"));
+            cf.join();
+            //assertTrue("Result was empty", result.toString().endsWith("acceptEither"));
+            System.out.println("result.toString() = " + result.toString());
+        }
+        
+    }
+    
+    @Test
+    public void Test1281() {
+        String original = "Message";
+        StringBuilder change= new StringBuilder();
+        StringBuilder result = new StringBuilder();
+        CompletableFuture.completedFuture(original).thenApply(String::toUpperCase).runAfterBoth(
+                CompletableFuture.completedFuture(original).thenApply(String::toUpperCase).thenAccept(s-> System.out.println("now original is :"+ s)),
+                () -> result.append(original).append("+done"));
+        System.out.println("result = " + result);
+        System.out.println("original = " + original);
+
+    }
+    
+    @Test
+    public void Test1294() {
+        // 前后两个stage都执行完毕之后会执行合并操作  并且使用thenApply 或者 thenApplyAsync 必须要等了
+        long start = System.currentTimeMillis();
+        String original = "Message";
+        StringBuilder result = new StringBuilder();
+        //CompletableFuture cf =
+
+                CompletableFuture.completedFuture(original).thenApplyAsync(s-> delayedUpperCase(s) )
+                        .thenAcceptBoth(
+                        CompletableFuture.completedFuture(original).thenApplyAsync(s->delayedLowerCase(s)),
+                        (s1, s2) -> result.append(s1 +" === "+ s2)).join();
+        //cf.join();
+        System.out.println(result.toString());
+        long end = System.currentTimeMillis();
+
+        System.out.println("cost:  end - start = " + (end - start));
+    }
+    
+    @Test
+    public void Test1317() {
+        // 将Bifunction同时作用于两个阶段的结果  todo  现在还搞不太清楚和上面用法的区别，感觉都差不多  combine是对cf本身的改变
+        String original = "Message";
+        CompletableFuture cf = CompletableFuture.completedFuture(original).thenApplyAsync(s -> delayedUpperCase(s))
+                .thenCombine(CompletableFuture.completedFuture(original).thenApplyAsync(s -> delayedLowerCase(s)),
+                        (s1, s2) -> s1 + s2);
+        cf.join();
+        System.out.println("cf.getNow(null) = " + cf.getNow(null));
+
+    }
+    
+    @Test
+    public void Test1330() {
+        //可以使用thenCompose来完成前两个例子中的操作
+        String original = "Message";
+        CompletableFuture cf = CompletableFuture.completedFuture(original).thenApply(s -> delayedUpperCase(s))
+                .thenCompose(upper -> CompletableFuture.completedFuture(original).thenApply(s -> delayedLowerCase(s))
+                        .thenApply(s -> upper + s));
+        assertEquals("MESSAGEmessage", cf.join());
+        
+    }
+    
+    @Test
+    public void Test1341() {
+        //当多个阶段中有有何一个完成，即新建一个完成阶段
+        StringBuilder result = new StringBuilder();
+        List<String> messages = Arrays.asList("a", "b", "c");
+        List<CompletableFuture> futures = messages.stream()
+                .map(msg -> CompletableFuture.completedFuture(msg).thenApply(s -> delayedUpperCase(s)))
+                .collect(Collectors.toList());
+        CompletableFuture.anyOf(futures.toArray(new CompletableFuture[futures.size()])).whenComplete((res, th) -> {
+            if(th == null) {
+                assertTrue(isUpperCase((String) res));
+                result.append(res);
+            }
+        });
+        assertTrue("Result was empty", result.length() > 0);
+        
+    }
+    
+    @Test
+    public void Test1359() {
+        // 当所有的阶段完成，新建一个完成阶段
+        /*StringBuilder result = new StringBuilder();
+        List messages = Arrays.asList("a", "b", "c");
+        List<CompletableFuture> futures = messages.stream()
+                .map(msg -> CompletableFuture.completedFuture(msg).thenApply(s -> delayedUpperCase(s)))
+                .collect(Collectors.toList());
+        CompletableFuture.allOf(futures.toArray(new CompletableFuture[futures.size()]))
+                .whenComplete((v, th) -> {
+                    futures.forEach(cf -> assertTrue(isUpperCase(cf.getNow("null").toString())));
+                    result.append("done");
+                });
+        assertTrue("Result was empty", result.length() > 0);*/
+        
+    }
+    
+    @Test
+    public void Test1376() {
+        //当所有阶段完成以后，新建一个异步完成阶段
+        /*StringBuilder result = new StringBuilder();
+        List messages = Arrays.asList("a", "b", "c");
+        List<CompletableFuture> futures = messages.stream()
+                .map(msg -> CompletableFuture.completedFuture(msg).thenApplyAsync(s -> delayedUpperCase(s)))
+                .collect(Collectors.toList());
+        CompletableFuture allOf = CompletableFuture.allOf(futures.toArray(new CompletableFuture[futures.size()]))
+                .whenComplete((v, th) -> {
+                    futures.forEach(cf -> assertTrue(isUpperCase(cf.getNow("null").toString())));
+                    result.append("done");
+                });
+        allOf.join();
+        assertTrue("Result was empty", result.length() > 0);*/
+        
+    }
+
+    @Test
+    public void Test1394() {
+
+        cars().thenCompose(cars-> {
+            List<CompletionStage> updatedCars = cars.stream()
+                    .map(car -> rating(car.getManufactureId()).thenApply(r -> {
+                        car.setRating(r);
+                        return car;
+                    })).collect(Collectors.toList());
+            CompletableFuture done = CompletableFuture
+                    .allOf(updatedCars.toArray(new CompletableFuture[updatedCars.size()]));
+            return done.thenApply(v -> updatedCars.stream().map(CompletionStage::toCompletableFuture)
+                    .map(CompletableFuture::join).collect(Collectors.toList()));
+        }).whenComplete((cars, th) -> {
+            if (th == null) {
+                //(List<Car>)cars.fo
+                System.out.println("cars.toString() = " + cars.toString());
+            } else {
+                //throw new RuntimeException(th);
+            }
+        }).toCompletableFuture().join();
 
     }
 

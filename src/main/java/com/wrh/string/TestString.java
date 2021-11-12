@@ -3,8 +3,6 @@ package com.wrh.string;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -275,6 +273,19 @@ public class TestString {
         Integer a = Integer.valueOf("1200");
         System.out.println(a);
         System.out.println("a.intValue() = " + a.intValue());
+
+    }
+
+    @Test
+    public void Test280() {
+        String i = "A";
+        System.out.println("i.hashCode() = " + i.hashCode());
+
+        i = "B";
+        System.out.println("i.hashCode() = " + i.hashCode());
+
+        i = new String("B");
+        System.out.println("i.hashCode() = " + i.hashCode());
 
     }
 }

@@ -11,9 +11,13 @@ import lombok.Data;
 @Data
 public class Car {
 
+    private Integer manufactureId;
+
     private Integer id;
 
     private String name;
 
     private Integer rate;
+
+    private Integer rating;
 }

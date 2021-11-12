@@ -1,6 +1,12 @@
 package com.wrh.annotate;
 
+import com.wrh.elasticsearch.Student;
+import com.wrh.list.TestList;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
+
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @Created by wrh
@@ -35,6 +41,19 @@ public class TestFinal {
 
         thread1.start();
         thread2.start();
+
+    }
+
+    @Test
+    public void Test42() {
+        List<Student> list = TestList.getStudentList();
+        list = Collections.unmodifiableList(list);
+        System.out.println("list = " + list);
+        Student s = new Student();
+        s.setName("ww");
+        list.add(s);  // 编译不会报错，但是运行会
+        System.out.println("list = " + list);
+
 
     }
 }

@@ -7,6 +7,8 @@ import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import com.google.common.collect.*;
+import com.google.common.hash.BloomFilter;
+import com.google.common.hash.Funnels;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.*;
 import com.wrh.elasticsearch.Student;
@@ -14,9 +16,9 @@ import com.wrh.list.TestList;
 import com.wrh.serialize.User;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.flink.util.Preconditions;
-import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 import org.junit.Test;
 
+import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -255,5 +257,17 @@ public class TestGuava {
         List<List<Student>> newList = Lists.partition(list,2);
         System.out.println("newList = " + newList);
 
+    }
+
+    @Test
+    public void Test261() {
+        BloomFilter<CharSequence> bloomFilter = BloomFilter.create(Funnels.stringFunnel(Charset.forName("utf-8")),100000000,0.0001);
+        bloomFilter.put("java");
+        System.out.println("bloomFilter.mightContain(\"a\") = " + bloomFilter.mightContain("a"));
+        System.out.println("bloomFilter.mightContain(\"java\") = " + bloomFilter.mightContain("java"));
+    }
+
+    @Test
+    public void Test272() {
     }
 }

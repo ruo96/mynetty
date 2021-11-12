@@ -3,7 +3,6 @@ package com.wrh.math;
 import com.google.common.util.concurrent.RateLimiter;
 import com.wrh.elasticsearch.Student;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.hadoop.yarn.webapp.hamlet.Hamlet;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -481,6 +480,14 @@ public class TestInteger {
          System.out.println("a = " + a);
          System.out.println("b = " + b);
          System.out.println("c = " + c);
+     }
+
+     @Test
+     public void Test487() {
+        Long a = 2100000000838929999L;
+        int b = a.intValue();
+         System.out.println("b = " + b);
+
      }
 
 

@@ -16,7 +16,6 @@ import javax.annotation.Resource;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -1227,5 +1226,16 @@ public class TestMap {
         map.put("token","1234567");
         System.out.println("map.remove(\"token\") = " + map.remove("token"));
 
+    }
+    
+    @Test
+    public void Test1233() {
+        List<String> animals = Arrays.asList("dog", "cat", "cat", "dog", "fish", "dog");
+        Map<String, Integer> map = new HashMap<>();
+        for(String animal : animals){
+            map.compute(animal, (k, v) -> v == null ? 1 : ++v);
+        }
+        System.out.println(map);
+        
     }
 }

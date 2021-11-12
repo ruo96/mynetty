@@ -1,7 +1,5 @@
 package com.wrh.list;
 
-import akka.event.AddressTerminatedTopic;
-import cn.hutool.core.lang.Assert;
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -1867,6 +1865,44 @@ public class TestList {
         Map<String, Integer> payMap = list.stream().collect(Collectors.toMap(Student::getName, Student::getId));
         System.out.println("payMap = " + payMap);
 
+
+    }
+
+    @Test
+    public void Test1874() {
+        List<Student> list = getStudentList();
+        System.out.println("list = " + list);
+        Map<String, Integer> map = new HashMap<>();
+        map.put("w1", 100);
+        map.put("w3", 300);
+        list.forEach(e->{
+            if (map.containsKey(e.getName())) {
+                e.setGrade(map.get(e.getName()));
+            }
+        });
+        System.out.println("list = " + list);
+
+    }
+
+    @Test
+    public void Test1888() {
+        List<Student> list = getStudentList();
+        System.out.println("list = " + list);
+        list.stream().peek(e->{
+            System.out.println("e = " + e);
+            e.setName("www");
+        });
+        System.out.println("list = " + list);
+
+
+    }
+
+    @Test
+    public void Test1901() {
+        List<Student> list = getStudentList();
+        System.out.println("list = " + list);
+        list = list.stream().filter(e->e.getGrade() > 1).collect(Collectors.toList());
+        System.out.println("list = " + list);
 
     }
 
