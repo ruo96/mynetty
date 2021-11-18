@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author wuruohong
  * @Classname StaticMethodGetBean_3
- * @Description TODO
+ * @Description 获取bean的三种方式之一
  * @Date 2021/10/27 16:54
  */
 @Component

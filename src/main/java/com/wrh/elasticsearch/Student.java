@@ -31,9 +31,18 @@ public class Student implements Serializable {
 
     private boolean flag = true;
 
+
     @Override
     public boolean equals(Object obj) {
         return (this.hashCode() == obj.hashCode());
+    }
+
+    public static int compareByNameThenGrade(Student s1, Student s2) {
+        if (s1.name.equals(s2.name)) {
+            return Integer.compare(s1.grade, s2.grade);
+        } else {
+            return s1.name.compareTo(s2.name);
+        }
     }
 
 

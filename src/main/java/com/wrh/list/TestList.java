@@ -379,17 +379,17 @@ public class TestList {
     public static List<Student> getStudentList() {
         List<Student> list = new ArrayList<>();
         Student s1 = new Student();
-        s1.setName("w1");
+        s1.setName("w3");
         s1.setId(1);
-        s1.setGrade(1);
+        s1.setGrade(10);
 
         Student s2 = new Student();
-        s2.setName("w2");
+        s2.setName("w3");
         s2.setId(2);
         s2.setGrade(1);
 
         Student s3 = new Student();
-        s3.setName("w3");
+        s3.setName("w1");
         s3.setId(3);
         s3.setGrade(4);
 
@@ -1904,6 +1904,54 @@ public class TestList {
         list = list.stream().filter(e->e.getGrade() > 1).collect(Collectors.toList());
         System.out.println("list = " + list);
 
+    }
+
+    /** list排序*/
+    @Test
+    public void Test1910() {
+        List<Student> list = getStudentList();
+        System.out.println("list = " + list);
+        list.sort(Comparator.comparing(Student::getName));
+        System.out.println("list = " + list);
+
+        list.sort(Student::compareByNameThenGrade);
+        System.out.println("list = " + list);
+
+        /** 这个和上面是同样的计算逻辑*/
+        list.sort(Comparator.comparing(Student::getName).thenComparing(Student::getGrade));
+        System.out.println("list = " + list);
+
+    }
+
+    /**
+     * 前面的例子中都是有值元素排序，能够覆盖大部分场景，但有时候我们还是会碰到元素中存在null的情况：
+     *
+     * 列表中的元素是 null
+     * 列表中的元素参与排序条件的字段是 null
+     *
+     * 使用Comparator.nullsLast和Comparator.nullsFirst
+     * Comparator.nullsLast实现null在结尾 Comparator.nullsFirst实现null在开头
+     *
+     * 代码 1 是第一层 null-safe 逻辑，用于判断元素是否为 null；
+     * 代码 2 是第二层 null-safe 逻辑，用于判断元素的条件字段是否为 null；
+     * 代码 3 是条件Comparator，这里使用了Comparator.naturalOrder()，是因为使用了String排序，也可以写为String::compareTo。
+     * 如果是复杂判断，可以定义一个更加复杂的Comparator，组合模式就是这么好用，一层不够再套一层。
+     */
+    @Test
+    public void Test1927() {
+        List<Student> list = getStudentList();
+        final Comparator<Student> nullsLast = Comparator.nullsLast(
+                Comparator.nullsLast( // 1
+                        Comparator.comparing(
+                                Student::getName,
+                                Comparator.nullsLast( // 2
+                                        Comparator.naturalOrder() // 3
+                                )
+                        )
+                )
+        );
+
+        list.sort(nullsLast);
     }
 
 }

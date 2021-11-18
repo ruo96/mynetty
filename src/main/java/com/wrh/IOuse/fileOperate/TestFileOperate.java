@@ -1,6 +1,5 @@
 package com.wrh.IOuse.fileOperate;
 
-import clojure.main;
 import com.alibaba.fastjson.JSON;
 import com.google.common.base.Charsets;
 import com.google.common.io.CharStreams;
@@ -15,10 +14,8 @@ import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.ByteBuffer;
-import java.nio.MappedByteBuffer;
-import java.nio.channels.*;
-import java.nio.charset.StandardCharsets;
+import java.nio.channels.FileChannel;
+import java.nio.channels.SocketChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -719,7 +716,7 @@ public class TestFileOperate {
         System.out.println("content = " + content);
     }
 
-    /** inputStream转string*/
+    /** inputStream转string  读取文件的几种方法*/
     @Test
     public void Test718() {
         try {
