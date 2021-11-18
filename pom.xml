@@ -22,7 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-        <elsaticsearch.version>6.2.4</elsaticsearch.version>
+        <elsaticsearch.version>6.8.17</elsaticsearch.version>
 		<hystrix-version>1.5.11</hystrix-version>
 <!--		<spring-boot.version>2.3.2.RELEASE</spring-boot.version>-->
 		<!--<spring-cloud.version>Finchley.SR4</spring-cloud.version>
