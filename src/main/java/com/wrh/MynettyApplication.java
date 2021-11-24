@@ -19,7 +19,6 @@ import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 
-import javax.sql.DataSource;
 import java.util.Locale;
 
 @Slf4j
@@ -42,8 +41,8 @@ public class MynettyApplication {
 	@Autowired
     Environment environment;
 
-	@Autowired
-    private DataSource dataSource;
+	//@Autowired
+    //private DataSource dataSource;
 
 	@Autowired
     private RedisTemplate redisTemplate;

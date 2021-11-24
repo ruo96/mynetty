@@ -1,13 +1,12 @@
 package com.wrh.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.Ordered;
 import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
-import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * @author wuruohong
@@ -34,18 +33,6 @@ public class MVCConfiguration implements WebMvcConfigurer {
     }
 
     /**
-     * 添加静态资源文件，外部可以直接访问地址
-     * @param registry
-     */
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        //如下配置则能可以访问src/main/resources/mysource下面的文件
-        registry.addResourceHandler("/pic/**").addResourceLocations("classpath:/static/pic/");
-        //如访问mysource文件夹下的a.jpg，则输入：localhost:8080/myprofix/a.jpg
-        registry.addResourceHandler("/mypic/**").addResourceLocations("file:E:/mypic/");
-    }
-
-    /**
      * 跨域解决方式 4种   1，@CrossOrigin 加到类上或者方法上  2 实现 addCorsMappings   3. 注册bean
      */
     /*@Override
@@ -65,5 +52,17 @@ public class MVCConfiguration implements WebMvcConfigurer {
         cfg.addAllowedMethod("*");
         source.registerCorsConfiguration("/**",cfg);
         return new CorsFilter(source);
+    }
+
+    /**
+     * 添加静态资源文件，外部可以直接访问地址
+     * @param registry
+     */
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        //如下配置则能可以访问src/main/resources/mysource下面的文件
+        registry.addResourceHandler("/pic/**").addResourceLocations("classpath:/static/pic/");
+        //如访问mysource文件夹下的a.jpg，则输入：localhost:8080/myprofix/a.jpg
+        registry.addResourceHandler("/mypic/**").addResourceLocations("file:E:/mypic/");
     }
 }

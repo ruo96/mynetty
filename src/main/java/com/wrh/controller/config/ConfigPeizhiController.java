@@ -1,11 +1,8 @@
 package com.wrh.controller.config;
 
-import com.wrh.annotate.annotation.PassportTotal;
-import com.wrh.controller.service.ApiService;
 import com.wrh.encode.peizhijiami.ConfigJiamiService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,7 +24,7 @@ public class ConfigPeizhiController {
     @Autowired
     private ConfigJiamiService configJiamiService;
 
-    @Value("${data.encrypt}")
+    //@Value("${data.encrypt}")
     private String jiemi;
 
     @RequestMapping("jiami/{data}")

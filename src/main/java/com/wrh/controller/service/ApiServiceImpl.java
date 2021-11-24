@@ -19,7 +19,7 @@ import java.util.Set;
 @Service
 public class ApiServiceImpl implements ApiService {
 
-    @Value("${param.juzhen1}")
+    //@Value("${param.juzhen1}")
     private int[] testArray1;
 
     /*@Value("${param.juzhen3: 04,05,06}")
@@ -28,7 +28,7 @@ public class ApiServiceImpl implements ApiService {
     /**
      * 这个并非最终方法 当不配置该 key 值，默认值会为空串，它的 length = 1（不同于数组，length = 0），这样解析出来 list 的元素个数就不是空了
      */
-    @Value("#{'${param.list:}'.split(',')}")
+    //@Value("#{'${param.list:}'.split(',')}")
     private List<String> list1;
 
     @Value("#{'${param.emptylist:}'.split(',')}")
@@ -43,10 +43,10 @@ public class ApiServiceImpl implements ApiService {
     @Value("#{'${param.set:}'.empty ? null : '${param.set:}'.split(',')}")
     private Set<Integer> testSet;
 
-    @Value("#{${param.map1}}")
+    //@Value("#{${param.map1}}")
     private Map<String, String> map1;
 
-    @Value("#{${param.map2}}")
+    //@Value("#{${param.map2}}")
     private Map<String, Integer> map2;
 
 
