@@ -2,6 +2,8 @@ package com.wrh.controller;
 
 
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.*;
 import java.nio.file.Files;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.stream.Collectors;
 
 /**
@@ -24,6 +27,7 @@ import java.util.stream.Collectors;
 @RestController
 public class FileReadController {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(FileReadController.class);
     SimpleDateFormat sdf = new SimpleDateFormat("/yyyy/MM/dd/");
 
     @Value("classpath:data.txt")  // 重要，必须用spring的这个注解才行
@@ -45,6 +49,7 @@ public class FileReadController {
     @RequestMapping("/file/read/stream")
     public String readStream(HttpServletRequest req) throws IOException {
         System.out.println("ready to read stream");
+        LOGGER.info(" read file！ {}", LocalDateTime.now().toString());
         InputStream resource = new ClassPathResource("data.txt").getInputStream();
         String content="";
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(resource))) {

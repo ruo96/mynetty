@@ -1,5 +1,6 @@
 package com.wrh.list;
 
+import cn.hutool.core.collection.ListUtil;
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -13,6 +14,7 @@ import com.wrh.utils.GsonUtils;
 import com.wrh.utils.test.Dog;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.ListUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
@@ -1952,6 +1954,63 @@ public class TestList {
         );
 
         list.sort(nullsLast);
+    }
+
+    /**
+     * list分片
+     * 将一个 List 分成多个小 List 的过程，我们称之为分片，当然也可以叫做“List 分隔”，选一个你喜欢的、好理解的叫法就行。
+     *
+     * 在 Java 中，分片的常见实现方法有以下几种：
+     *
+     * 使用 Google 的 Guava 框架实现分片；
+     * 使用 Apache 的 commons 框架实现分片；
+     * 使用国产神级框架 Hutool 实现分片；
+     * 使用 JDK 8 中提供 Stream 实现分片；
+     * 自定义分片功能。
+     */
+
+    // 原集合
+    private static final List<String> OLD_LIST = Arrays.asList(
+            "唐僧,悟空,八戒,沙僧,曹操,刘备,孙权".split(","));
+
+    private static final List<Integer> OLD_LIST1 = Arrays.asList(
+            1, 2, 3, 4, 5, 6);
+
+    @Test
+    public void Test1958() {
+        // 集合分片   使用 Google 的 Guava 框架实现分片；
+        List<List<String>> newList = Lists.partition(OLD_LIST, 3);
+        // 打印分片集合
+        newList.forEach(i -> {
+            System.out.println("集合长度：" + i.size()+i);
+        });
+
+        // 集合分片  使用 Apache 的 commons 框架实现分片；
+        List<List<String>> newList1 = ListUtils.partition(OLD_LIST, 3);
+        newList1.forEach(i -> {
+            System.out.println("集合长度：" + i.size()+i);
+        });
+
+        // 分片处理  使用国产神级框架 Hutool 实现分片；
+        List<List<String>> newList2 = ListUtil.partition(OLD_LIST, 3);
+        newList2.forEach(i -> {
+            System.out.println("集合长度：" + i.size()+i);
+        });
+
+        // 集合分片：将大于 3 和小于等于 3 的数据分别分为两组  使用 JDK 8 中提供 Stream 实现分片；
+        Map<Boolean, List<Integer>> newMap = OLD_LIST1.stream().collect(
+                Collectors.partitioningBy(i -> i > 3)
+        );
+        // 打印结果
+        System.out.println(newMap);
+
+        // 集合分隔  自定义分片功能的关键实现方法是 JDK 自带的 subList 方法
+        List<String> list = OLD_LIST.subList(0, 3);
+        // 打印集合中的元素
+        list.forEach(i -> {
+            System.out.println(i);
+        });
+
     }
 
 }

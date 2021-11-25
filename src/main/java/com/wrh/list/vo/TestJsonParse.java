@@ -1,9 +1,9 @@
 package com.wrh.list.vo;
 import com.alibaba.fastjson.JSON;
-import com.google.common.collect.Lists;
-
+import com.alibaba.fastjson.JSONObject;
 import com.wrh.collection.list.thread.Car;
 import com.wrh.collection.list.thread.Person;
+import com.wrh.elasticsearch.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -54,5 +54,30 @@ public class TestJsonParse {
         list.add(p1);
 
         log.info("===>{}", JSON.toJSONString(list));
+    }
+
+    @Test
+    public void Test60() {
+        /*List<Student> s = TestList.getStudentList();
+        System.out.println("s = " + s);
+        String str = JSON.toJSONString(s);
+        List<Student> i = JSONObject.parseArray(str, Student.class);
+        System.out.println("i = " + i);*/
+        //List<Student> j = JSONObject.parseArray(str, Student.class, Feature.OrderedField);
+        //System.out.println("j = " + j);
+        Student s1 = new Student();
+        s1.setName("ww");
+        s1.setId(1);
+        s1.setGrade(2);
+        s1.setMoney(3L);
+        s1.setTitle("title");
+        s1.setFlag(true);
+
+        System.out.println("s1 = " + s1);
+        String str = JSON.toJSONString(s1);
+        Student s2 = JSONObject.parseObject(str, Student.class);
+        System.out.println("s2 = " + s2);
+
+
     }
 }
