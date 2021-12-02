@@ -1,5 +1,7 @@
 package com.wrh.jvm;
 
+import org.junit.Test;
+
 /**
  * @Created by wrh
  * @Description:
@@ -13,5 +15,10 @@ public class TestClassLoader {
             System.out.println(classLoader.toString());
             classLoader = classLoader.getParent();
         }
+    }
+
+    @Test
+    public void Test19() {
+        System.out.println("Thread.currentThread().getContextClassLoader() = " + Thread.currentThread().getContextClassLoader());
     }
 }
