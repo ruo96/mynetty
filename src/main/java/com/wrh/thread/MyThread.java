@@ -3,6 +3,7 @@ package com.wrh.thread;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
 
 import java.util.concurrent.*;
 
@@ -49,6 +50,13 @@ public class MyThread extends Thread {
 
         service.submit(task1);
         log.info("===> result: {}",String.valueOf(task1.get()));
+
+    }
+
+
+
+    @Test
+    public void Test66() {
 
     }
 }

@@ -1,6 +1,6 @@
 package com.wrh.speed;
 
-import ch.qos.logback.core.db.dialect.SybaseSqlAnywhereDialect;
+
 
 /**
  * @Created by wrh

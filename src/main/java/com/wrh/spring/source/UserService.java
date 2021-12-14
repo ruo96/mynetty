@@ -1,15 +1,13 @@
 package com.wrh.spring.source;
 
 
-import org.springframework.stereotype.Component;
-
 /**
  * @author wuruohong
  * @Classname UserService
  * @Description TODO
  * @Date 2021/12/2 11:53
  */
-@Component
+//@Component
 //@Scope("prototype")
 //@Lazy
 public class UserService {
@@ -22,17 +20,20 @@ public class UserService {
 
     }
 
+    //@Autowired(required = false)
     public UserService(OrderService orderService) {
         this.orderService = orderService;
         System.out.println("1");
     }
 
+    //@Autowired(required = false)
     public UserService(OrderService orderService, OrderService orderService1) {
         this.orderService = orderService;
         this.orderService1 = orderService1;
         System.out.println("2");
     }
 
+    //@Autowired(required = false)
     public UserService(OrderService orderService, OrderService orderService1, OrderService orderService2) {
         this.orderService = orderService;
         this.orderService1 = orderService1;

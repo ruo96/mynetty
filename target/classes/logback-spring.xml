@@ -128,9 +128,9 @@
     </logger>
 
     <root level="info">
-        <appender-ref ref="STDOUT" />
+<!--        <appender-ref ref="STDOUT" />-->
 <!--        <appender-ref ref="CONSOLE" />-->
-<!--        <appender-ref ref="INFO"/>-->
+        <appender-ref ref="INFO"/>
         <appender-ref ref="FILE-Appender" />
         <appender-ref ref="grpc-log" />
     </root>

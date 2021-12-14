@@ -1,10 +1,15 @@
 package com.wrh.utils;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.tomcat.util.buf.HexUtils;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * @author wuruohong
@@ -14,6 +19,29 @@ import java.io.*;
  */
 public class FileUtils {
     private String path;
+
+    /**
+     * 提取文件 checksum   用来校验两个文件是否相同
+     *
+     * @param path      文件全路径
+     * @param algorithm  算法名 例如 MD5、SHA-1、SHA-256等
+     * @return  checksum
+     * @throws NoSuchAlgorithmException the no such algorithm exception
+     * @throws IOException              the io exception
+     */
+    public static String extrackChecksum(String path, String algorithm) throws IOException, NoSuchAlgorithmException {
+        // 根据算法名称初始化摘要算法
+        MessageDigest digest = MessageDigest.getInstance(algorithm);
+        // 读取文件的所有比特
+        byte[] fileBytes = Files.readAllBytes(Paths.get(path));
+        // 摘要更新
+        digest.update(fileBytes);
+        //完成哈希摘要计算并返回特征值
+        byte[] digested = digest.digest();
+        // 进行十六进制的输出
+        return HexUtils.toHexString(digested);
+    }
+
 
     public static String readToString(String path) throws IOException {
         FileInputStream input = new FileInputStream(path);

@@ -1,7 +1,5 @@
 package com.wrh.configcenter;
 
-import ch.qos.logback.classic.Level;
-import ch.qos.logback.classic.Logger;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.client.config.RequestConfig;
@@ -9,7 +7,6 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -66,9 +63,9 @@ public class ConfigClient {
 
     public static void main(String[] args) {
         // httpClient 会打印很多 debug 日志，关闭掉
-        Logger logger = (Logger) LoggerFactory.getLogger("org.apache.http");
+        /*Logger logger = (Logger) LoggerFactory.getLogger("org.apache.http");
         logger.setLevel(Level.INFO);
-        logger.setAdditive(false);
+        logger.setAdditive(false);*/
 
         ConfigClient configClient = new ConfigClient();
         // ③ 对 dataId: user 进行配置监听
