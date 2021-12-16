@@ -19,7 +19,7 @@
 
     <!--name属性指定appender命名
     class属性指定输出策略，通常有两种，控制台输出和文件输出，文件输出就是将日志进行一个持久化。ConsoleAppender将日志输出到控制台-->
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>INFO</level>
         </filter>
@@ -127,11 +127,11 @@
         <appender-ref ref="INFO"/>
     </logger>
 
-    <root level="info">
+    <root level="INFO">
 <!--        <appender-ref ref="STDOUT" />-->
-<!--        <appender-ref ref="CONSOLE" />-->
-        <appender-ref ref="INFO"/>
+        <appender-ref ref="CONSOLE" />
+<!--        <appender-ref ref="INFO"/>-->
         <appender-ref ref="FILE-Appender" />
-        <appender-ref ref="grpc-log" />
+<!--        <appender-ref ref="grpc-log" />-->
     </root>
 </configuration>

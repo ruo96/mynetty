@@ -7,7 +7,6 @@ import com.wrh.utils.DateUtils;
 import com.wrh.utils.RowKeyHashUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.flink.util.TimeUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
 import org.junit.Test;
@@ -392,7 +391,7 @@ public class TestTime {
         System.out.println(date1.getMonth().toString());
         System.out.println(String.valueOf(date1.getYear()));
     }
-    
+
     @Test
     public void Test17() {
         String a = null;
@@ -687,7 +686,7 @@ public class TestTime {
         System.out.println(LocalDateTime.now().toString());
 
     }
-    
+
     @Test
     public void Test656() {
         Date now = new Date();
@@ -800,7 +799,7 @@ public class TestTime {
     public void Test765() {
         System.out.println(LocalDate.now().toString().substring(0,7));
     }
-    
+
     @Test
     public void Test801() {
         LocalDateTime now =  LocalDateTime.now();
@@ -1088,7 +1087,7 @@ public class TestTime {
         String ds = "2021-02-22";
         System.out.println("isFirstDayOfDimension(ds, \"week\") = " + isFirstDayOfDimension(ds, "week"));
     }
-    
+
     @Test
     public void Test1094() {
         String ds = "2021-02-13";
@@ -1197,7 +1196,7 @@ public class TestTime {
             return null;
         }
     }
-    
+
     @Test
     public void Test1197() {
         String ds = "2021-09-17";
@@ -1294,7 +1293,7 @@ public class TestTime {
         }
 
     }
-    
+
     @Test
     public void Test1274() {
         String d1 = "2021-03-31";
@@ -1678,6 +1677,19 @@ public class TestTime {
         System.out.println("yearDsEnd = " + yearDsEnd);
         System.out.println("momStart = " + momStart);
         System.out.println("momEnd = " + momEnd);
+
+    }
+
+    @Test
+    public void Test1685() {
+        String dimension ="year";
+        LocalDate dsEnd = LocalDate.now().minusDays(1);
+        LocalDate dsStart = DateTimeUtil.getFirstDayOfDimensionV2(dsEnd.toString(),dimension);
+        System.out.println(dsStart + "======" +dsEnd);
+        LocalDate momEnd = dsStart.minusDays(1);
+        LocalDate momStart = momEnd.minusDays(DateTimeUtil.getElapsedDaysOfDimension(dsEnd.toString(), dimension)-1);
+        System.out.println(momStart + "======" +momEnd);
+
 
     }
 

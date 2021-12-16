@@ -329,6 +329,18 @@
 			<classifier>jdk15</classifier>
 		</dependency>
 
+		<!--ASM-->
+		<dependency>
+			<groupId>org.ow2.asm</groupId>
+			<artifactId>asm</artifactId>
+			<version>7.1</version>
+		</dependency>
+		<dependency>
+			<artifactId>asm-commons</artifactId>
+			<groupId>org.ow2.asm</groupId>
+			<version>7.1</version>
+		</dependency>
+
 		<!-- Mock测试使用的json-path依赖 -->
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
