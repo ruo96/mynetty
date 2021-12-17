@@ -1,25 +1,17 @@
 package com.wrh.aspect;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.wrh.annotate.annotation.NeedDatav;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
-import java.util.List;
-import java.util.Objects;
 
 /**
  * @author wuruohong
@@ -32,6 +24,10 @@ import java.util.Objects;
 @Component
 public class DatavCheckAspect {
 
+    /**
+     * 第一个*代表返回类型不限  第二个*代表所有类  如果有第三个*代表所有方法   (..)代表参数不限**
+     * @Around→@Before→@Around→@After执行 ProceedingJoinPoint.proceed() 之后的操作→@AfterRunning(如果有异常→@AfterThrowing)
+     */
     @Pointcut(value = "execution(public * com.wrh.controller.ApiController.*(..))")
     public void allMethods() {
     }
@@ -77,6 +73,16 @@ public class DatavCheckAspect {
 
         log.info("[aspect]>>> Cost : {} ms", System.currentTimeMillis() - start);
         return result;
+    }
+
+    @After("within(com.wrh.controller.*Controller)")
+    public void after() {
+        System.out.println("controller 方法执行完之后的步骤 aop");
+    }
+
+    @AfterThrowing("within(com.wrh.controller.*Controller)")
+    public void afterThrow() {
+        System.out.println("controller 方法执行完之后 抛出异常后的步骤 aop");
     }
 
 }
