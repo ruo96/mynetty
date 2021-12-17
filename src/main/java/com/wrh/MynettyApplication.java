@@ -1,6 +1,7 @@
 package com.wrh;
 
 
+import com.wrh.listener.fourmethods.MyListener1;
 import com.wrh.server.EchoServer;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
@@ -52,6 +53,7 @@ public class MynettyApplication {
 
 	public static void main(String[] args) {
 		ac = SpringApplication.run(MynettyApplication.class, args);
+		ac.addApplicationListener(new MyListener1());
 	}
 
     /*@Bean

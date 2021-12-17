@@ -9,7 +9,12 @@ package com.wrh.thread.runbystep;
 public class MyService {
     private volatile int orderNum = 1;
 
+    private static String lock = "";
+
     public synchronized void methodA() {
+        synchronized (lock) {
+
+        }
         try {
             while (orderNum != 1) {
                 wait();

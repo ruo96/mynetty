@@ -14,7 +14,7 @@ public class UnsafeUtils {
 
     public static final Unsafe unsafe = getUnsafe();
 
-    static sun.misc.Unsafe getUnsafe() {
+    public static sun.misc.Unsafe getUnsafe() {
         try {
             Field field = Unsafe.class.getDeclaredField("theUnsafe");
             field.setAccessible(true);
