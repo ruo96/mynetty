@@ -4,24 +4,17 @@ import com.wrh.controller.domain.User;
 import com.wrh.mail.MailService;
 import com.wrh.utils.FileUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.kafka.common.utils.Java;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.List;
 
 /**
  * @author wuruohong
@@ -35,6 +28,14 @@ public class MailController {
 
     @Autowired
     MailService mailService;
+
+    @RequestMapping("/mail/send")
+    public ModelAndView sendMail(HttpServletRequest request, HttpServletResponse response){
+
+        ModelAndView mv = new ModelAndView("sendMail");
+        //mv.addObject("from", "wrh");
+        return mv;
+    }
 
 
     @RequestMapping("/mail")

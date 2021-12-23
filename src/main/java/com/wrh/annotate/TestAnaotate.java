@@ -1,9 +1,9 @@
 package com.wrh.annotate;
 
-import lombok.Data;
+import com.wrh.annotate.annotation.NeedDatav;
+import org.junit.Test;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
-import org.springframework.test.context.ContextConfiguration;
 
 /**
  * @Created by wrh
@@ -19,6 +19,12 @@ public class TestAnaotate {
 
         public  int address;
         public  int port;
+
+    }
+
+    @Test
+    public void Test24() {
+        System.out.println("needDatav.annotationType().getName() = " + NeedDatav.class.getName());
 
     }
 }
