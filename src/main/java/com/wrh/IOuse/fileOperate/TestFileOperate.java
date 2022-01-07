@@ -14,6 +14,7 @@ import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.channels.SocketChannel;
 import java.nio.file.Files;
@@ -47,13 +48,11 @@ public class TestFileOperate {
 
 
         String filePath = "e:\\file\\zijuan1.txt";
-//        File file = new File(filePath);
         Set<String> set = new HashSet<>();
         try (FileReader fileReader = new FileReader(filePath);
              BufferedReader br = new BufferedReader(fileReader)) {
             String line;
             while ((line = br.readLine()) != null) {
-//                System.out.println(line);
                 set.add(line);
 
             }
@@ -585,7 +584,7 @@ public class TestFileOperate {
         File file = new File("e:\\1.txt");
 
     }
-    
+
     @Test
     public void Test584() throws IOException {
         // 价格为 key，value 为 sku 出现的次数
@@ -617,7 +616,7 @@ public class TestFileOperate {
 
         }
         System.out.println("价格排序后在中间的价格为" + midPrice);
-        
+
     }
 
     @Test
@@ -727,7 +726,7 @@ public class TestFileOperate {
         }catch (IOException e){
             e.printStackTrace();
         }
-        
+
     }
 
     /** 1、使用 InputStreamReader 和 StringBuilder (JDK)*/
@@ -831,7 +830,7 @@ public class TestFileOperate {
             throw new Exception(message, e);
         }
         // 可以优化为下面方法
-        
+
     }
     @Test
     public void Test839() throws Exception {
@@ -839,7 +838,7 @@ public class TestFileOperate {
         readLine(fileName, line->{
             System.out.println("line = " + line);
         });
-        
+
     }
     public static void readLine(String fileName, Consumer<String> lineConsumer) throws Exception {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
@@ -852,5 +851,26 @@ public class TestFileOperate {
             log.error(message, e);
             throw new Exception(message, e);
         }
+    }
+
+    @Test
+    public void Test858() throws IOException {
+        RandomAccessFile accessFile = new RandomAccessFile("E:\\file\\data.txt","rw");
+        FileChannel fileChannel = accessFile.getChannel();
+
+        ByteBuffer buffer = ByteBuffer.allocate(1024);
+        int readCount = fileChannel.read(buffer);
+
+        System.out.println("readCount = " + readCount);
+        System.out.println("new String(buffer.array()) = " + new String(buffer.array()));
+
+        ByteBuffer buffer1 = ByteBuffer.allocate(1024);
+        String content = "\r\n这是写入的一段话";
+        buffer1.put(content.getBytes("UTF-8"));
+        buffer1.flip();
+        fileChannel.write(buffer1);
+        fileChannel.close();
+
+
     }
 }

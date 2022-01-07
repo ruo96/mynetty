@@ -9,6 +9,7 @@ import org.springframework.core.type.AnnotationMetadata;
  * @Date: Created in 上午 9:23 2019/12/2 0002
  * @Modified By:
  */
+// 通过实现ImportSelector接口导入指定类
 public class MyImportSelector implements ImportSelector {
     @Override
     public String[] selectImports(AnnotationMetadata annotationMetadata) {

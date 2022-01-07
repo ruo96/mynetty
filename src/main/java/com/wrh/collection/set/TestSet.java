@@ -1,11 +1,12 @@
 package com.wrh.collection.set;
 
+import com.alibaba.fastjson.JSON;
+import com.wrh.elasticsearch.Student;
 import io.netty.util.internal.ConcurrentSet;
 import org.junit.Test;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.stream.Collectors;
 
 /**
@@ -125,6 +126,93 @@ public class TestSet {
         System.out.println("s.add(1) = " + s.add(1));
         System.out.println("s.add(2) = " + s.add(2));
         System.out.println("s.add(2) = " + s.add(2));
+
+
+    }
+
+    @Test
+    public void Test132() {
+        Set<String> set = new HashSet<>();
+        Student s1 = new Student();
+        s1.setName("w1");
+        s1.setId(0);
+        s1.setGrade(0);
+        s1.setMoney(0L);
+        s1.setTitle("");
+        s1.setFlag(false);
+
+        Student s2 = new Student();
+        s2.setName("w2");
+        s2.setId(0);
+        s2.setGrade(0);
+        s2.setMoney(0L);
+        s2.setTitle("");
+        s2.setFlag(false);
+
+        set.add(JSON.toJSONString(s1));
+        set.add(JSON.toJSONString(s2));
+        System.out.println("set = " + set);
+
+        String setStr = JSON.toJSONString(set);
+        System.out.println("setStr = " + setStr);
+
+
+        List<Student> list = new ArrayList<>();
+        Student s3 = new Student();
+        s3.setName("w3");
+        s3.setId(0);
+        s3.setGrade(0);
+        s3.setMoney(0L);
+        s3.setTitle("");
+        s3.setFlag(false);
+
+        Student s4 = new Student();
+        s4.setName("w3");
+        s4.setId(0);
+        s4.setGrade(0);
+        s4.setMoney(0L);
+        s4.setTitle("");
+        s4.setFlag(false);
+
+        list.add(s3);
+        list.add(s4);
+
+        String listStr = JSON.toJSONString(list);
+
+        List<Student> list111 = JSON.parseArray(listStr, Student.class);
+        Set<Student> set1 = new HashSet<>(list111);
+        System.out.println("set1 = " + set1);
+
+
+    }
+
+    @Test
+    public void Test189() {
+        List<RuleInfo> list = new ArrayList<>();
+        RuleInfo r1 = new RuleInfo();
+        r1.setName("w2");
+        r1.setAge(0);
+
+        RuleInfo r2 = new RuleInfo();
+        r2.setName("w1");
+        r2.setAge(0);
+
+        list.add(r1);
+        list.add(r2);
+
+        //String listStr = JSON.toJSONString(list);
+        String listStr = JSON.toJSONString(JSON.toJSONString(r1));
+
+        List<RuleInfo> list111 = JSON.parseArray(listStr, RuleInfo.class);
+        Set<RuleInfo> set1 = new HashSet<>(list111);
+        System.out.println("set1 = " + set1);
+
+        RuleInfo r3 = new RuleInfo();
+        r3.setName("w1");
+        r3.setAge(1);
+
+        set1.add(r3);
+        System.out.println("set1 = " + set1);
 
 
     }

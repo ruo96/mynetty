@@ -1,6 +1,7 @@
 package com.wrh.thread.CompletableFutureTest;
 
 import com.alibaba.fastjson.JSON;
+import com.wrh.elasticsearch.Student;
 import com.wrh.list.TestList;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -564,7 +565,7 @@ public class TestCompletableFuture {
         System.out.println(cf.getNow(null));
 
     }
-    
+
     @Test
     public void Test568() {
         CompletableFuture cf = CompletableFuture.completedFuture("message").thenApplyAsync(String::toUpperCase
@@ -580,9 +581,9 @@ public class TestCompletableFuture {
         }
 
         assertEquals("message upon cancel", exceptionHandler.join());
-        
+
     }
-    
+
     @Test
     public void Test586() {
         String original = "Message";
@@ -643,7 +644,7 @@ public class TestCompletableFuture {
         System.out.println(cf.getNow(null));
 
     }
-    
+
     @Test
     public void Test643() {
         cars().thenCompose(cars -> {
@@ -664,7 +665,7 @@ public class TestCompletableFuture {
             }
         }).toCompletableFuture().join();
 
-        
+
     }
 
     @Test
@@ -932,7 +933,7 @@ public class TestCompletableFuture {
     private static void randomSleep() throws InterruptedException {
         TimeUnit.SECONDS.sleep(2);
     }
-    
+
     @Test
     public void Test828() {
         String original = "Message";
@@ -944,7 +945,7 @@ public class TestCompletableFuture {
         System.out.println("result = " + result);
 
     }
-    
+
     @Test
     public void Test840() {
         String original = "Message";
@@ -955,7 +956,7 @@ public class TestCompletableFuture {
         assertEquals("MESSAGEmessage", result.toString());
         System.out.println("result = " + result);
     }
-    
+
     @Test
     public void Test851() {
         String original = "Message";
@@ -963,7 +964,7 @@ public class TestCompletableFuture {
                 .thenCombine(CompletableFuture.completedFuture(original).thenApply(String::toLowerCase),
                         (s1, s2) -> s1 + s2);
         assertEquals("MESSAGEmessage", cf.getNow(null));
-        
+
     }
 
     @Test
@@ -1008,7 +1009,7 @@ public class TestCompletableFuture {
             }
         });
         assertTrue("Result was empty", result.length() > 0);
-        
+
     }
 
     /**
@@ -1026,7 +1027,7 @@ public class TestCompletableFuture {
             result.append("done");
         });
         assertTrue("Result was empty", result.length() > 0);
-        
+
     }
 
     /**
@@ -1047,9 +1048,9 @@ public class TestCompletableFuture {
                 });
         allOf.join();
         assertTrue("Result was empty", result.length() > 0);
-        
+
     }
-    
+
     @Test
     public void Test946() {
 
@@ -1075,7 +1076,7 @@ public class TestCompletableFuture {
                 throw new RuntimeException();
             }
         }).toCompletableFuture().join();
-        
+
     }
 
     private CompletionStage<Integer> rating(Integer id) {
@@ -1114,7 +1115,7 @@ public class TestCompletableFuture {
         System.out.println("result = " + result);
 
     }
-    
+
     @Test
     public void Test1112() throws ExecutionException, InterruptedException {
         CompletableFuture<Integer> cf = CompletableFuture.supplyAsync(() -> 10)
@@ -1133,7 +1134,7 @@ public class TestCompletableFuture {
 
         cf.join();
         System.out.println(cf.get());
-        
+
     }
 
     @Test
@@ -1158,7 +1159,7 @@ public class TestCompletableFuture {
         allCF.join();*/
 
     }
-    
+
     @Test
     public void Test1157() throws ExecutionException, InterruptedException {
         String original = "Message";
@@ -1248,7 +1249,7 @@ public class TestCompletableFuture {
         assertEquals("message upon cancel", exceptionHandler.join());
 
     }
-    
+
     @Test
     public void Test1246() {
         for (int i = 0; i < 100; i++) {
@@ -1265,7 +1266,7 @@ public class TestCompletableFuture {
 
 
     }
-    
+
     @Test
     public void Test1263() {
         // 或者是大写，或者是小写， 后面+
@@ -1281,9 +1282,9 @@ public class TestCompletableFuture {
             //assertTrue("Result was empty", result.toString().endsWith("acceptEither"));
             System.out.println("result.toString() = " + result.toString());
         }
-        
+
     }
-    
+
     @Test
     public void Test1281() {
         String original = "Message";
@@ -1296,7 +1297,7 @@ public class TestCompletableFuture {
         System.out.println("original = " + original);
 
     }
-    
+
     @Test
     public void Test1294() {
         // 前后两个stage都执行完毕之后会执行合并操作  并且使用thenApply 或者 thenApplyAsync 必须要等了
@@ -1315,7 +1316,7 @@ public class TestCompletableFuture {
 
         System.out.println("cost:  end - start = " + (end - start));
     }
-    
+
     @Test
     public void Test1317() {
         // 将Bifunction同时作用于两个阶段的结果  todo  现在还搞不太清楚和上面用法的区别，感觉都差不多  combine是对cf本身的改变
@@ -1327,7 +1328,7 @@ public class TestCompletableFuture {
         System.out.println("cf.getNow(null) = " + cf.getNow(null));
 
     }
-    
+
     @Test
     public void Test1330() {
         //可以使用thenCompose来完成前两个例子中的操作
@@ -1336,9 +1337,9 @@ public class TestCompletableFuture {
                 .thenCompose(upper -> CompletableFuture.completedFuture(original).thenApply(s -> delayedLowerCase(s))
                         .thenApply(s -> upper + s));
         assertEquals("MESSAGEmessage", cf.join());
-        
+
     }
-    
+
     @Test
     public void Test1341() {
         //当多个阶段中有有何一个完成，即新建一个完成阶段
@@ -1354,9 +1355,9 @@ public class TestCompletableFuture {
             }
         });
         assertTrue("Result was empty", result.length() > 0);
-        
+
     }
-    
+
     @Test
     public void Test1359() {
         // 当所有的阶段完成，新建一个完成阶段
@@ -1371,9 +1372,9 @@ public class TestCompletableFuture {
                     result.append("done");
                 });
         assertTrue("Result was empty", result.length() > 0);*/
-        
+
     }
-    
+
     @Test
     public void Test1376() {
         //当所有阶段完成以后，新建一个异步完成阶段
@@ -1389,7 +1390,7 @@ public class TestCompletableFuture {
                 });
         allOf.join();
         assertTrue("Result was empty", result.length() > 0);*/
-        
+
     }
 
     @Test
@@ -1414,6 +1415,80 @@ public class TestCompletableFuture {
             }
         }).toCompletableFuture().join();
 
+    }
+
+    @Test
+    public void Test1420() throws ExecutionException, InterruptedException {
+        CompletableFuture<List<Student>> result = CompletableFuture.supplyAsync(TestList::getStudentList).thenApply((i) -> {
+            i.get(0).setId(99999);
+            return i;
+        });
+        System.out.println(result.get());
+
+    }
+
+    @Test
+    public void Test1431() {
+        CompletableFuture.supplyAsync(TestList::getStudentList).thenAccept((i) -> {
+            i.get(0).setId(99999);
+        });
+
+    }
+
+    @Test
+    public void Test1439() {
+        long start = System.currentTimeMillis();
+        CompletableFuture<String> chartFuture = CompletableFuture.supplyAsync(()->{
+            return getString1();
+        });
+
+        CompletableFuture<String> detailFuture = CompletableFuture.supplyAsync(()->{
+            return getString2();
+        });
+
+        CompletableFuture.allOf(chartFuture, detailFuture).join();
+
+        String result = chartFuture.getNow("null1") + detailFuture.getNow("null2");
+
+        System.out.println("cost: "+ (System.currentTimeMillis() - start));
+        System.out.println("result = " + result);
+
+
+    }
+
+    @Test
+    public void Test1460() {
+        long start = System.currentTimeMillis();
+
+        Map<String, String> map = new HashMap<>();
+
+        CompletableFuture<String> mixFuture = CompletableFuture.completedFuture(getString1())
+                .thenCombineAsync(CompletableFuture.completedFuture(getString2()), (s1,s2)->{
+                    map.put("w1", s1+s2);
+                    return s1+s2;
+                });
+        mixFuture.join();
+        System.out.println("map = " + map);/**/
+        System.out.println("cost: "+ (System.currentTimeMillis() - start));
+        System.out.println("result = " + mixFuture.getNow("nulltotal"));
+    }
+
+    private String getString1() {
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "hello";
+    }
+
+    private String getString2() {
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "world";
     }
 
 

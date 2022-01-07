@@ -27,9 +27,9 @@ public class Student implements Serializable {
 
     private Long money;
 
-    private String title = "stu";
+    private String title;
 
-    private boolean flag = true;
+    private Boolean flag;
 
 
     @Override

@@ -1,13 +1,10 @@
 package com.wrh.aes;
 
-import cn.hutool.Hutool;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.PropertyFilter;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.alibaba.fastjson.serializer.ValueFilter;
 import com.wrh.elasticsearch.Student;
-import com.wrh.reflection.S;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
@@ -87,11 +84,11 @@ public class TestString {
         printDistinctCharWithCount(str);
 
     }
-    
+
     @Test
     public void Test83() {
 
-        
+
     }
 
     /**
@@ -220,7 +217,7 @@ public class TestString {
         }
         split(sb.toString());
         stringTokenizer(sb.toString());
-        
+
     }
 
     /**
@@ -253,5 +250,13 @@ public class TestString {
             }
         }
         System.out.printf("StringTokenizer 耗时 %s ms", System.currentTimeMillis() - start);
+    }
+
+    @Test
+    public void Test259() {
+        String a = " a b c   ";
+        System.out.println("a = " + "["+a+"]");
+        System.out.println("a.trim() = " + "["+ a.trim()+"]");
+
     }
 }

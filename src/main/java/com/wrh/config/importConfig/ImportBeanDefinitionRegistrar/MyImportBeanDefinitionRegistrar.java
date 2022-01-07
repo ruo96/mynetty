@@ -11,6 +11,7 @@ import org.springframework.core.type.AnnotationMetadata;
  * @Date: Created in 上午 9:30 2019/12/2 0002
  * @Modified By:
  */
+// 通过实现 ImportBeanDefinitionRegistrar 导入指定bean
 public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
     @Override
     public void registerBeanDefinitions(AnnotationMetadata annotationMetadata, BeanDefinitionRegistry beanDefinitionRegistry) {

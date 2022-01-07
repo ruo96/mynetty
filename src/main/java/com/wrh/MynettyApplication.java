@@ -10,6 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
@@ -31,6 +32,7 @@ import java.util.Locale;
 @EnableScheduling
 @EnableAsync
 @MapperScan("com.wrh.controller.mapper")
+@EnableCaching
 //@EnablePrometheusEndpoint
 //@EnableSpringBootMetricsCollector
 //@ServletComponentScan("com.wrh.filter")  // 这个是配合注解实现拦截器的

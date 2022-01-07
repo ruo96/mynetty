@@ -1,21 +1,7 @@
 package com.wrh.controller;
 
-import com.wrh.controller.mapper.TestMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.servlet.http.HttpServletRequest;
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
 
 /**
  * @author wuruohong
@@ -27,7 +13,7 @@ import java.util.UUID;
 @RestController
 public class DruidController {
 
-    @Autowired
+    /*@Autowired
     TestMapper testMapper;
 
 
@@ -37,5 +23,5 @@ public class DruidController {
         Integer count = testMapper.findCount();
         return String.valueOf(count);
 
-    }
+    }*/
 }

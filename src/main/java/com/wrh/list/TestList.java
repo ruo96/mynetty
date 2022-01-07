@@ -908,7 +908,7 @@ public class TestList {
         Student student = new Student();
         Student student1 = new Student();
         student1.setFlag(false);
-        if(student.isFlag()){
+        /*if(student.isFlag()){
             System.out.println("1 flag true");
         }else {
             System.out.println("1 flag false");
@@ -918,7 +918,7 @@ public class TestList {
             System.out.println("2 flag true");
         }else {
             System.out.println("2 flag false");
-        }
+        }*/
 
 
     }
@@ -2010,6 +2010,123 @@ public class TestList {
         list.forEach(i -> {
             System.out.println(i);
         });
+
+    }
+
+    @Test
+    public void Test2017() {
+        List<TotalInfo> list = new ArrayList<>();
+        TotalInfo t1 = new TotalInfo();
+        t1.setGameBaseId(-1);
+        t1.setPaySumMoney(200L);
+        t1.setFmtDs("2021-01-01");
+
+        TotalInfo t2 = new TotalInfo();
+        t2.setGameBaseId(-2);
+        t2.setPaySumMoney(200L);
+        t2.setFmtDs("2021-01-03");
+
+        TotalInfo t3 = new TotalInfo();
+        t3.setGameBaseId(1);
+        t3.setPaySumMoney(100L);
+        t3.setFmtDs("2021-01-01");
+
+        TotalInfo t4 = new TotalInfo();
+        t4.setGameBaseId(2);
+        t4.setPaySumMoney(200L);
+        t4.setFmtDs("2021-01-01");
+
+        list.add(t1);
+        list.add(t2);
+        list.add(t3);
+        list.add(t4);
+
+        System.out.println("list = " + list);
+
+
+        /*list = list.stream().sorted((o1,o2)->{
+            return compareByColumn(o1,o2,"paySumMoney");
+        }).sorted(Comparator.comparing(TotalInfo::getGameBaseId)).collect(Collectors.toList());*/
+
+        list = list.stream().sorted(Comparator.comparing(TotalInfo::getPaySumMoney).thenComparing(TotalInfo::getGameBaseId)).collect(Collectors.toList());
+        list = list.stream().sorted(Comparator.comparing(TotalInfo::getPaySumMoney).reversed().thenComparing(TotalInfo::getGameBaseId)).collect(Collectors.toList());
+
+        System.out.println("list = " + list);
+        list = list.stream().sorted(Comparator.comparing(TotalInfo::getPaySumMoney, Comparator.reverseOrder()).thenComparing(TotalInfo::getGameBaseId)).collect(Collectors.toList());
+
+    }
+
+    @Test
+    public void Test2060() {
+        Student s1 = new Student();
+        Student s2 = new Student();
+        Student s3 = new Student();
+
+        System.out.println("s1 = " + s1);
+        System.out.println("s2 = " + s2);
+        System.out.println("s3 = " + s3);
+
+        System.out.println("======================");
+
+        handleStuList(s1,s2,s3);
+        System.out.println("s1 = " + s1);
+        System.out.println("s2 = " + s2);
+        System.out.println("s3 = " + s3);
+
+
+
+    }
+
+    private void handleStuList(Student s1, Student s2, Student s3) {
+        s1.setId(1);
+        s2.setId(2);
+        s3.setId(3);
+        return;
+    }
+
+    @Test
+    public void Test2088() {
+        List<Student> list = new ArrayList<>();
+        if (org.apache.commons.collections4.CollectionUtils.isEmpty(list)) {
+            System.out.println("empty");
+        } else {
+            System.out.println("not empty");
+        }
+
+    }
+
+    private static List<String> NUMBERS_LIST = Arrays.asList("22", "19", "89", "90");
+
+    @Test
+    public void Test2101() {
+        System.out.println("=====map to long list=====");
+        /** 用map也可以实现，但是用mapToLong可以使用更多的计算函数 */
+        List<Long> longList = NUMBERS_LIST.stream().mapToLong(Long::valueOf).boxed().collect(Collectors.toList());
+        longList.forEach(System.out::println);
+        System.out.println("map to long list size: " + longList.size());
+        System.out.println();
+
+    }
+
+    @Test
+    public void Test2112() {
+        String[] arr1 = {"https://", "www", ".", "javastack", ".", "cn"};
+        String[] arr2 = {"公众号", ":", "Java技术栈"};
+        String[] arr3 = {"作者", ":", "栈长"};
+
+        System.out.println("=====arrays list=====");
+        List<String[]> list = Stream.of(arr1, arr2, arr3).collect(Collectors.toList());
+        list.forEach(e->{
+            System.out.println(Arrays.toString(e));
+        });
+        System.out.println("\narrays list size: " + list.size());
+        System.out.println();
+
+        System.out.println("=====flatmap list=====");
+        List<String> mapList = list.stream().flatMap(Arrays::stream).collect(Collectors.toList());
+        mapList.forEach(System.out::println);
+        System.out.println("\nflatmap list size: " + mapList.size());
+        System.out.println();
 
     }
 
