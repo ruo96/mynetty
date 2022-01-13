@@ -26,7 +26,7 @@ import java.util.Locale;
 @Slf4j
 @EnableWebSocket
 //@ServletComponentScan(value = {"com.wrh.filter", "com.wrh.listener"}) //用于支持过滤器、监听器注解
-@ServletComponentScan(value = {"com.wrh.listener","com.wrh.servlet"}) //用于支持过滤器、监听器注解
+@ServletComponentScan(value = {"com.wrh.listener","com.wrh.servlet"}) //用于支持过滤器、监听器注解 参数就是Filter所在的包路径，相当于告诉 SpringBoot，去哪里扫描 Filter
 @SpringBootApplication
 @EnableConfigurationProperties
 @EnableScheduling

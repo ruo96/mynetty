@@ -1,11 +1,9 @@
 package com.wrh.datetime;
 
-import com.wrh.TimeCalculate.DateTimeUtil;
 import com.wrh.datetime.utils.DateUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-import java.sql.Timestamp;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -127,7 +125,7 @@ public class TestDateTime {
     public void Test109() {
         System.out.println(LocalDateTime.now().format(DATE_TIME_FORMATTER));
     }
-    
+
     @Test
     public void Test117() {
         // 当月第一天
@@ -145,7 +143,7 @@ public class TestDateTime {
         // 当前周的第几天
         int dayOfWeek = dateTime.getDayOfWeek().getValue();
         System.out.println(dayOfWeek);
-        
+
     }
 
     @Test
@@ -306,5 +304,15 @@ public class TestDateTime {
         System.out.println("LocalDateTime.now().format(DateTimeFormatter.ofPattern(\"yyyy-MM-dd HH:mm:ss\")) = " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
 
     }
+
+    @Test
+    public void Test311() {
+        Long time = System.currentTimeMillis();
+        String datestr = new Date(time).toString();
+        System.out.println("datestr = " + datestr);
+
+    }
+    /** 雪花算法  分布式id比较长， long传到前端会有精度损失，因此需要在返回字段long型上面增加 @JsonSerialize(using=ToStringSerializer.class)*/
+
 
 }

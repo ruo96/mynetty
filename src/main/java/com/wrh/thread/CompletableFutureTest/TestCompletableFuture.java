@@ -1491,6 +1491,39 @@ public class TestCompletableFuture {
         return "world";
     }
 
+    @Test
+    public void Test1495() throws ExecutionException, InterruptedException {
+        /** thenCompose方法可以将两个异步操作进行流水操作 */
+        /** 以async结尾的方法将会在一个新的线程中执行组合操作   compose是组和的，组成的意思, 两个操作是有关系的*/
+        CompletableFuture<Integer> result = CompletableFuture.supplyAsync(TestCompletableFuture::getInteger)
+                .thenCompose(i -> CompletableFuture.supplyAsync(() -> i * 10));
+        System.out.println(result.get());
+
+    }
+
+    private static int getInteger() {
+        return 666;
+    }
+
+    private static int expandValue(int num) {
+        return num * 10;
+    }
+
+    @Test
+    public void Test1513() throws ExecutionException, InterruptedException {
+        /** thenCombine方法将两个无关的CompletableFuture组合起来，第二个Completable并不依赖第一个Completable的结果， 很多异步操作可以使用这两个方法， 或者用join*/
+        /** 如果需要两个异步的计算结果可以使用这个方法*/
+        CompletableFuture<Integer> result = CompletableFuture.supplyAsync(TestCompletableFuture::randomInteger).thenCombine(
+                CompletableFuture.supplyAsync(TestCompletableFuture::randomInteger), (i, j) -> i * j
+        );
+
+        System.out.println(result.get());
+    }
+    private static Random random = new Random();
+    public static Integer randomInteger() {
+        return random.nextInt(100);
+    }
+
 
 
 

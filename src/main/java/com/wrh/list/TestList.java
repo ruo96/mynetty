@@ -2130,4 +2130,15 @@ public class TestList {
 
     }
 
+    @Test
+    public void Test2134() {
+        List<Student> list = new ArrayList<>();
+        Student s1 = new Student();
+        s1.setName("w1");
+        list.add(s1);
+
+        System.out.println("JSON.toJSONString(list) = " + JSON.toJSONString(list));
+
+    }
+
 }

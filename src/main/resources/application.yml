@@ -52,7 +52,9 @@ spring:
   # Spring message
   messages:
     encoding: utf-8
+#    这个是因为没有配置到根目录下，所增加的相对路径
     basename: i18n/messages
+#    表示 messages 文件的缓存失效时间，如果不配置则缓存一直有效。
     cache-duration: 3600
 
   datasource:
@@ -236,3 +238,13 @@ jasypt:
 
 data:
   encrypt: ENC(4YOz0+Cu4hUBo6qBY4YEsg==)
+
+# 多数据源属性配置
+multi:
+  dbs:
+    db-a:
+      driver-class-name: org.h2.Driver
+      url: jdbc:h2:mem:dba;MODE=MYSQL;DATABASE_TO_UPPER=false;
+    db-b:
+      driver-class-name: org.h2.Driver
+      url: jdbc:h2:mem:dbb;MODE=MYSQL;DATABASE_TO_UPPER=false;
