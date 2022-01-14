@@ -35,6 +35,16 @@
       "sourceType": "com.wrh.security.SecurityProperties",
       "name": "spring.security",
       "type": "com.wrh.security.SecurityProperties"
+    },
+    {
+      "sourceType": "com.wrh.controller.config.AutoRefreshPropertyConfig",
+      "name": "test",
+      "type": "com.wrh.controller.config.AutoRefreshPropertyConfig"
+    },
+    {
+      "sourceType": "com.wrh.controller.config.ArrayPropertyConfig",
+      "name": "test.config",
+      "type": "com.wrh.controller.config.ArrayPropertyConfig"
     }
   ],
   "properties": [
@@ -69,6 +79,16 @@
       "defaultValue": "www.itboyhub.com",
       "name": "spring.encrypt.key",
       "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.wrh.controller.config.AutoRefreshPropertyConfig",
+      "name": "test.auto-config",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.wrh.controller.config.ArrayPropertyConfig",
+      "name": "test.config.elements",
+      "type": "java.lang.String[]"
     },
     {
       "sourceType": "com.wrh.config.ZidingyiConfig",

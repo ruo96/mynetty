@@ -153,6 +153,7 @@ mybatis:
   mapperLocations: classpath:mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true
+#  type-handlers-package: 配置文件中指定Typehandler的包路径
 
 # logging
 logging:
@@ -248,3 +249,17 @@ multi:
     db-b:
       driver-class-name: org.h2.Driver
       url: jdbc:h2:mem:dbb;MODE=MYSQL;DATABASE_TO_UPPER=false;
+
+test:
+  config:
+    elements:
+      - value1
+      - value2
+      - value3
+  autoconfig: 123
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: **
