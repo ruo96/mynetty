@@ -2141,4 +2141,43 @@ public class TestList {
 
     }
 
+    @Test
+    public void Test2145() {
+        List<Integer> list1 = new ArrayList<>();
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+
+        List<Integer> list2 = new ArrayList<>();
+        list2.add(2);
+        list2.add(1);
+        list2.add(3);
+
+        System.out.println("list1 = " + list1);
+        System.out.println("list2 = " + list2);
+
+        if (list1.containsAll(list2) && list2.containsAll(list1)) {
+            System.out.println("same list");
+        } else {
+            System.out.println("diff list");
+        }
+
+        System.out.println("isListsCompletelyEqual(list1, list2) = " + isListsCompletelyEqual(list1, list2));
+    }
+
+
+
+    public static boolean isListsCompletelyEqual(List<Integer> src, List<Integer> des){
+        System.out.println("src = " + src);
+        System.out.println("des = " + des);
+        System.out.println("========================");
+        Collections.sort(src);
+        Collections.sort(des);
+        System.out.println("src = " + src);
+        System.out.println("des = " + des);
+        return src.toString().equals(des.toString());
+    }
+
+
+
 }

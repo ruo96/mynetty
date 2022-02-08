@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.Iterator;
 import java.util.Set;
+import java.util.SortedMap;
 import java.util.TreeMap;
 
 /**
@@ -28,6 +29,25 @@ public class TestTreeMap {
             String key = iter.next();
             System.out.println(" "+key+":"+map.get(key));
         }
+
+    }
+
+    @Test
+    public void Test35() {
+        TreeMap<Integer, MyServer> treeMap = new TreeMap<>();
+        treeMap.put(1, new MyServer("1"));
+        treeMap.put(2, new MyServer("2"));
+        treeMap.put(3, new MyServer("3"));
+        treeMap.put(4, new MyServer("4"));
+        treeMap.put(5, new MyServer("5"));
+        treeMap.put(6, new MyServer("6"));
+
+        Integer clientHashCode = 3;
+        SortedMap<Integer, MyServer> tailMap = treeMap.tailMap(clientHashCode, false);
+        System.out.println("tailMap = " + tailMap);
+
+        MyServer server = tailMap.get(tailMap.firstKey());
+        System.out.println("server = " + server);
 
     }
 }

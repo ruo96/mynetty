@@ -222,7 +222,6 @@
     <orderEntry type="library" name="Maven: org.elasticsearch:elasticsearch-cli:6.2.4" level="project" />
     <orderEntry type="library" name="Maven: com.carrotsearch:hppc:0.7.1" level="project" />
     <orderEntry type="library" name="Maven: joda-time:joda-time:2.9.9" level="project" />
-    <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.19" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-smile:2.9.6" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.6" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.9.6" level="project" />
@@ -356,6 +355,7 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.6" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.10" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpmime:4.5.6" level="project" />
+    <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.23" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:bootstrap:3.3.7" level="project" />
     <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.9.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-java:1.10.0" level="project" />

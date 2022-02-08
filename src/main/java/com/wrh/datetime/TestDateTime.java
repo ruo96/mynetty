@@ -314,5 +314,26 @@ public class TestDateTime {
     }
     /** 雪花算法  分布式id比较长， long传到前端会有精度损失，因此需要在返回字段long型上面增加 @JsonSerialize(using=ToStringSerializer.class)*/
 
+    @Test
+    public void Test318() {
+        LocalDate a = LocalDate.of(2021, 1, 31);
+        LocalDate b = a.plus(1, ChronoUnit.MONTHS);
+        System.out.println("b.toString() = " + b.toString());
+
+    }
+
+    @Test
+    public void Test326() {
+        LocalDate a = LocalDate.now();
+        String b = a.toString();
+        System.out.println("b = " + b);
+
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println("now.toEpochSecond(ZoneOffset.of(\"+8\")) = " + now.toEpochSecond(ZoneOffset.of("+8")));
+        System.out.println("now.toInstant(ZoneOffset.of(\"+8\")).toEpochMilli() = " + now.toInstant(ZoneOffset.of("+8")).toEpochMilli());
+        System.out.println("System.currentTimeMillis() = " + System.currentTimeMillis());
+
+    }
+
 
 }

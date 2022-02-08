@@ -64,4 +64,28 @@ public class TestReflect {
         System.out.println("type1 = " + type1);
 
     }
+
+    @Test
+    public void Test69() throws InvocationTargetException, IllegalAccessException {
+        Reflect reflect = new Reflect("a");
+
+        Method[] methods = Reflect.class.getMethods();
+        Field[] fields = Reflect.class.getDeclaredFields();
+
+        for (int i = 0; i < fields.length; i ++) {
+            //fields[i].setAccessible(true);
+            System.out.println(fields[i].getName());
+        }
+
+        System.out.println("===================");
+
+        for (int j = 2; j < methods.length; j ++) {
+            methods[j].setAccessible(true);
+            System.out.println(methods[j].getName());
+
+            methods[j].invoke(reflect);
+            System.out.println(methods[j].getName());
+        }
+
+    }
 }

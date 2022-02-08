@@ -6,6 +6,8 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author wuruohong
@@ -56,6 +58,30 @@ public class TestNum {
 
             System.out.println("RandomUtils.nextLong() = " + RandomUtils.nextLong(100, 1000));
         }
+
+    }
+
+    @Test
+    public void Test63() {
+        Long a = 100L;
+        double rate = 0.475;
+        Long b = Double.valueOf(a * rate).longValue();
+        System.out.println("b = " + b);
+
+    }
+
+    @Test
+    public void Test72() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        StringBuffer sb = new StringBuffer();
+        for (Integer p : list) {
+            sb.append(p).append(",");
+        }
+        System.out.println("sb.toString() = " + sb.toString());
 
     }
 }

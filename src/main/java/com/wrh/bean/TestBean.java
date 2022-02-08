@@ -1,21 +1,24 @@
 package com.wrh.bean;
-import com.alibaba.fastjson.JSON;
-import com.wrh.functionInterfaceTest.Student;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import com.google.common.collect.Lists;
-import java.time.LocalDate;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
+import com.wrh.functionInterfaceTest.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.config.YamlMapFactoryBean;
+import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.env.MutablePropertySources;
+import org.springframework.core.io.ClassPathResource;
+import org.yaml.snakeyaml.Yaml;
+
+import java.time.LocalDate;
+import java.util.Map;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author wuruohong
@@ -134,6 +137,34 @@ public class TestBean implements BeanNameAware {
         System.out.println("propertySources = " + propertySources);
 
         System.out.println("====================================================");
+    }
+
+    /** 读取配置文件 方法2*/
+    @Test
+    public void Test140() {
+        YamlPropertiesFactoryBean yamlPropertiesFactoryBean = new YamlPropertiesFactoryBean();
+        yamlPropertiesFactoryBean.setResources(new ClassPathResource("myproperty.yml"));
+        Properties properties = yamlPropertiesFactoryBean.getObject();
+        System.out.println("properties.get(\"user\") = " + properties.get("user"));
+
+    }
+
+    /** 读取配置文件 方法3*/
+    @Test
+    public void Test141() {
+        YamlMapFactoryBean yamlMapFactoryBean = new YamlMapFactoryBean();
+        yamlMapFactoryBean.setResources(new ClassPathResource("myproperty.yml"));
+        Map<String, Object> map = yamlMapFactoryBean.getObject();
+        System.out.println(map);
+
+    }
+
+    @Test
+    public void Test162() {
+        Yaml yaml = new Yaml();
+        Object s = yaml.load(getClass().getClassLoader().getResourceAsStream("myproperty.yml"));
+        System.out.println(s);
+
     }
 
 }

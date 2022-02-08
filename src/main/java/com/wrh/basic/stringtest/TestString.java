@@ -1,5 +1,6 @@
 package com.wrh.basic.stringtest;
 
+import com.google.common.base.Joiner;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
@@ -51,6 +52,12 @@ public class TestString {
         stringJoiner.add("my");
         stringJoiner.add("world");
         System.out.println(stringJoiner.toString());
+
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        System.out.println("Joiner.on(\",\").join(list) = " + Joiner.on(",").join(list));
     }
 
     @Test

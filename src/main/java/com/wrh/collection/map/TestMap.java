@@ -6,6 +6,7 @@ import com.wrh.collection.map.vo.GameDayDataV2;
 import com.wrh.elasticsearch.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -922,14 +923,14 @@ public class TestMap {
 
 
     }
-    
+
     @Test
     public void Test916() {
         Long a = 100L;
         Long b = 33L;
         Double c = (double) a / (double) b;
         System.out.println(c);
-        
+
     }
 
     /**
@@ -1227,7 +1228,7 @@ public class TestMap {
         System.out.println("map.remove(\"token\") = " + map.remove("token"));
 
     }
-    
+
     @Test
     public void Test1233() {
         List<String> animals = Arrays.asList("dog", "cat", "cat", "dog", "fish", "dog");
@@ -1236,6 +1237,44 @@ public class TestMap {
             map.compute(animal, (k, v) -> v == null ? 1 : ++v);
         }
         System.out.println(map);
-        
+
+    }
+
+    @Test
+    public void Test1243() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("w1","v1");
+        map.put("w2","v2");
+        map.put("w3","v3");
+        System.out.println("map = " + map);
+        map.put("sign",getSign(map, "j0CQKP1B1G6XuQLsJy0YrhkkpGKcdeMY"));
+        System.out.println("map = " + map);
+
+    }
+
+    public static String getSign(HashMap<String, String> paramsMap, String secretKey) {
+        List<String> keys = new ArrayList<>(paramsMap.keySet());
+        Collections.sort(keys);
+        StringBuilder signCalc = new StringBuilder();
+        for (String key : keys) {
+            LOGGER.info("[getSign]>>> key:{} value:[{}]", key, paramsMap.get(key));
+            signCalc.append(paramsMap.get(key));
+        }
+        return DigestUtils.md5Hex(signCalc.append(secretKey).toString()).toLowerCase();
+    }
+
+    @Test
+    public void Test1267() {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("w1",123);
+
+        HashMap<String, Object> map1 = new HashMap<>();
+        map1.put("w2","123");
+        System.out.println("map = " + map);
+        System.out.println("JSON.toJSONString(map) = " + JSON.toJSONString(map));
+
+        //getSign(map, "j0CQKP1B1G6XuQLsJy0YrhkkpGKcdeMY")
+
+
     }
 }
