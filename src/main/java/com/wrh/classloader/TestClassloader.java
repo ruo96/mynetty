@@ -35,6 +35,7 @@ public class TestClassloader {
 //        System.out.println("SunEC classloader: " + SunEC.class.getClassLoader());
         System.out.println(System.getProperty("sun.boot.class.path"));
         System.out.println(System.getProperty("java.ext.dirs"));
+        System.out.println("-------------------");
         System.out.println(System.getProperty("java.class.path"));
     }
 
@@ -89,7 +90,7 @@ public class TestClassloader {
 
 
     }
-    
+
     @Test
     public void Test88() throws ClassNotFoundException, NoSuchMethodException, NoSuchFieldException {
         Class clazz = Class.forName("com.wrh.classloader.TestClassloader");
@@ -123,6 +124,25 @@ public class TestClassloader {
         // 获取方法的时候，可以把参数也丢进去，这样因为避免方法重载，而造成不知道加载那个方法
         Method method2 = clazz.getDeclaredMethod("setName", String.class);
 
+
+    }
+
+    @Test
+    public void Test130() {
+        System.out.println("String.class.getClassLoader() = " + String.class.getClassLoader());
+        System.out.println("TestClassloader.class.getClassLoader() = " + TestClassloader.class.getClassLoader());
+        System.out.println("ClassLoader.getSystemClassLoader() = " + ClassLoader.getSystemClassLoader());
+
+        URL[] urLs = Launcher.getBootstrapClassPath().getURLs();
+        for (int i = 0; i < urLs.length; i++) {
+            System.out.println("urLs[i] = " + urLs[i]);
+        }
+
+        System.out.println("==========extclassloader");
+        System.out.println("System.getProperty(\"java.ext.dirs\") = " + System.getProperty("java.ext.dirs"));
+
+        System.out.println("===========appclassloader");
+        System.out.println("System.getProperty(\"java.class.path\") = " + System.getProperty("java.class.path"));
 
     }
 

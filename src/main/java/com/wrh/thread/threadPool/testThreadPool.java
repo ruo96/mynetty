@@ -374,4 +374,10 @@ public class testThreadPool {
         es.execute(t8);
 
     }
+
+    @Test
+    public void Test379() {
+        System.out.println("Thread.currentThread().getContextClassLoader().getClass().getName() = " + Thread.currentThread().getContextClassLoader().getClass().getName());
+
+    }
 }

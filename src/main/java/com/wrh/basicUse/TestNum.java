@@ -84,4 +84,14 @@ public class TestNum {
         System.out.println("sb.toString() = " + sb.toString());
 
     }
+
+    @Test
+    public void Test89() {
+        int a = 20;
+        int b = a>>5;
+        int c = a>>>5;
+        System.out.println("b = " + b);
+        System.out.println("c = " + c);
+
+    }
 }

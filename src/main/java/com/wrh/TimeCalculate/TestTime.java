@@ -10,6 +10,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
 import org.junit.Test;
+import org.springframework.context.ApplicationEvent;
+import org.springframework.context.SmartLifecycle;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 import org.springframework.util.StopWatch;
 
@@ -1690,6 +1692,16 @@ public class TestTime {
         LocalDate momStart = momEnd.minusDays(DateTimeUtil.getElapsedDaysOfDimension(dsEnd.toString(), dimension)-1);
         System.out.println(momStart + "======" +momEnd);
 
+
+    }
+
+    @Test
+    public void Test1697() {
+        String timeZone = "UTC-4";
+        LocalDateTime now = LocalDateTime.now(ZoneId.of(timeZone));
+        System.out.println("now.toLocalDate().toString() = " + now.toLocalDate().toString());
+        ApplicationEvent enent;
+        SmartLifecycle smartLifecycle;
 
     }
 
