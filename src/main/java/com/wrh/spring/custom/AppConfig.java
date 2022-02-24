@@ -1,10 +1,16 @@
 package com.wrh.spring.custom;
 
+import com.wrh.spring.custom.service.User;
+import org.springframework.beans.factory.config.CustomEditorConfigurer;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
+
+import java.beans.PropertyEditor;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author wuruohong
@@ -13,7 +19,18 @@ import org.springframework.context.support.ResourceBundleMessageSource;
  * @Date 2022/2/22 14:56
  */
 @Configuration
-@ComponentScan(value = "com.wrh.spring.custom")
+@ComponentScan(value = "com.wrh.spring.custom"
+/*excludeFilters = {
+        @ComponentScan.Filter(
+                type = FilterType.ASSIGNABLE_TYPE,
+                classes = UserService.class
+)},*/
+/*includeFilters = {
+        @ComponentScan.Filter(
+                type = FilterType.ASSIGNABLE_TYPE,
+                classes = UserService.class
+        )
+}*/)
 public class AppConfig {
 
     @Bean
@@ -25,5 +42,16 @@ public class AppConfig {
 
         /** 国际化的使用*/
         //context.getMessage("自定义的展示，就是配置文件的key",null, new Locale("这个里面就是文件后缀"));
+    }
+
+    @Bean
+    public CustomEditorConfigurer customEditorConfigurer() {
+        CustomEditorConfigurer customEditorConfigurer = new CustomEditorConfigurer();
+
+        Map<Class<?>, Class<? extends PropertyEditor>> propertyEditorMap = new HashMap<>();
+        propertyEditorMap.put(User.class, StringToUserPropertyEditor.class);
+
+        customEditorConfigurer.setCustomEditors(propertyEditorMap);
+        return customEditorConfigurer;
     }
 }

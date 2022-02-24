@@ -1183,6 +1183,28 @@
 					<mainClass>com.wrh.flink.SocketTextStreamWordCount</mainClass>
 				</configuration>
 			</plugin>
+
+			<!-- Docker maven plugin -->
+			<!--<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>1.0.0</version>
+				<configuration>
+					<imageName>${project.artifactId}</imageName>
+					<imageTags>
+						<tag>1.0.1</tag>
+					</imageTags>
+					<dockerDirectory>src/main/docker</dockerDirectory>
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}.jar</include>
+						</resource>
+					</resources>
+				</configuration>
+			</plugin>-->
+			<!-- Docker maven plugin -->
 		</plugins>
 	</build>
 

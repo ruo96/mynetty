@@ -7,6 +7,7 @@ import com.google.common.collect.Lists;
 import com.wrh.collection.map.GameRealTimeData;
 import com.wrh.collection.map.vo.GameDayDataV2;
 import com.wrh.elasticsearch.Student;
+import com.wrh.list.vo.CrowdRuleEngineInfo;
 import com.wrh.list.vo.GameConfig;
 import com.wrh.list.vo.TotalInfo;
 import com.wrh.list.vo.TotalYearKpi;
@@ -2176,6 +2177,37 @@ public class TestList {
         System.out.println("src = " + src);
         System.out.println("des = " + des);
         return src.toString().equals(des.toString());
+    }
+
+    @Test
+    public void Test2182() {
+        List<CrowdRuleEngineInfo> list = new ArrayList<>();
+        CrowdRuleEngineInfo c1 = new CrowdRuleEngineInfo();
+        c1.setGameId(Arrays.asList(123,456));
+        c1.setChurnType(Arrays.asList(666,999));
+        c1.setBusinessType(0);
+
+        CrowdRuleEngineInfo c2 = new CrowdRuleEngineInfo();
+        c2.setGameId(Arrays.asList(333,444));
+        c2.setChurnType(Arrays.asList(777,999));
+        c2.setBusinessType(1);
+
+        list.add(c1);
+        list.add(c2);
+
+
+        List<String> keyList = new ArrayList<>();
+        list.forEach(e->{
+            for (Integer gameId : e.getGameId()) {
+                for (Integer churnType : e.getChurnType()) {
+                    String key = String.valueOf(gameId)+"--"+String.valueOf(churnType)+"--"+e.getBusinessType();
+                    keyList.add(key);
+                }
+            }
+        });
+
+        System.out.println("keyList = " + keyList);
+
     }
 
 

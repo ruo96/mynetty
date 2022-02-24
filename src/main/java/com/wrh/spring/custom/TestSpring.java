@@ -35,6 +35,9 @@ public class TestSpring {
         service.test();
 
         OrderService service1 = (OrderService) context.getBean("orderService");
+
+        /**  这种是用来推断构造方法 针对原型情况*/
+        //OrderService service1 = (OrderService) context.getBean("orderService","123");
         service1.test();
 
         /** 注解读取方式*/
@@ -91,6 +94,7 @@ public class TestSpring {
 
         Map<String, Object> map2 = context.getEnvironment().getSystemProperties();
         System.out.println("systemProperties = " + map2);
+        System.out.println("map2.get(\"java.security.manager\") = " + map2.get("java.security.manager"));
 
         /** 如果在类上加了注解  @PropertySource("classpath:spring.properties")  就可以通过下面的方法拿数据  这个里面包含了上面所有的resource*/
         MutablePropertySources propertySources = context.getEnvironment().getPropertySources();
@@ -98,6 +102,10 @@ public class TestSpring {
 
         /** 也可以直接从环境变量里面获取*/
         System.out.println("context.getEnvironment().getProperty(\"java.runtime.name\") = " + context.getEnvironment().getProperty("java.runtime.name"));
+
+        /** factorybean拿bean的方法*/
+        //context.getBean("wrhFactoryBean"); // 这个是拿到getObject()方法返回的bean
+        //context.getBean("&wrhFactoryBean"); // 这个是拿到工厂bean
 
 
     }

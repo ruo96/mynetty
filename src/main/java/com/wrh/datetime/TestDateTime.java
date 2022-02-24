@@ -335,5 +335,17 @@ public class TestDateTime {
 
     }
 
+    @Test
+    public void Test339() {
+        LocalDate date = LocalDate.of(2020,2,27);
+        LocalDate date1 = date.minusYears(1);
+        System.out.println("date1 = " + date1);
+
+        date = LocalDate.of(2020,2,27);
+        date1 = date.minusYears(1);
+        System.out.println("date1 = " + date1);
+
+    }
+
 
 }
