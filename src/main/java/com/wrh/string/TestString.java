@@ -4,6 +4,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import java.beans.BeanInfo;
+import java.beans.IntrospectionException;
+import java.beans.Introspector;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.time.LocalDate;
@@ -102,7 +105,7 @@ public class TestString {
         System.out.println(b);
 
     }
-    
+
     @Test
     public void Test101() {
         String s1="abc";//字符串常量存储在字符串常量池里，目的是共享，并且字符串常量池中是不会存储相同内容的字符串的。
@@ -124,9 +127,9 @@ public class TestString {
         String s6=s5.replace("a","m");//重写了指定内存区域赋值，重新指向内存区域赋值
         System.out.println(s5);//abc
         System.out.println(s6);
-        
+
     }
-    
+
     @Test
     public void Test125() {
         String s3=new String("abc");//字符串非常量对象存储在堆中，s3,s4保存的地址值，是数据在堆空间中开辟以后对应的地址值
@@ -137,9 +140,9 @@ public class TestString {
         System.out.println(s1==s3);//false
         System.out.println(s1==s4);//false
         System.out.println(s3==s4);//false
-        
+
     }
-    
+
     @Test
     public void Test138() {
         String s1 = "abc";
@@ -158,7 +161,7 @@ public class TestString {
          * ①常量与常量的拼接结果还在常量池中
          ②拼接双方只要有一个是变量，结果就在堆中，就new了
          ③若拼接结果调用String中的intern()方法，能把返回值转换成常量池中存在的结果*/
-        
+
     }
 
     @Test
@@ -286,6 +289,21 @@ public class TestString {
 
         i = new String("B");
         System.out.println("i.hashCode() = " + i.hashCode());
+
+    }
+
+    @Test
+    public void Test293() throws IntrospectionException {
+        String s = "DEpAbc";
+        String a = Introspector.decapitalize(s);
+        System.out.println("a = " + a);
+        BeanInfo beanInfo = Introspector.getBeanInfo(TestString.class);
+        System.out.println("beanInfo = " + beanInfo);
+        System.out.println("beanInfo.getBeanDescriptor().getName() = " + beanInfo.getBeanDescriptor().getName());
+        System.out.println("beanInfo.getDefaultPropertyIndex() = " + beanInfo.getDefaultPropertyIndex());
+        System.out.println("beanInfo.getBeanDescriptor().getDisplayName() = " + beanInfo.getBeanDescriptor().getDisplayName());
+        System.out.println("beanInfo.getBeanDescriptor().getShortDescription() = " + beanInfo.getBeanDescriptor().getShortDescription());
+        System.out.println("beanInfo.getBeanDescriptor().getBeanClass() = " + beanInfo.getBeanDescriptor().getBeanClass());
 
     }
 }

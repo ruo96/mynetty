@@ -2210,6 +2210,18 @@ public class TestList {
 
     }
 
+    @Test
+    public void Test2214() {
+        List<Student> list = new ArrayList<>();
+        Student s = new Student();
+        s.setName("w1");
+        s.setGrade(100);
+        list.add(s);
+
+        System.out.println("JSON.toJSONString(list) = " + JSON.toJSONString(list));
+
+    }
+
 
 
 }

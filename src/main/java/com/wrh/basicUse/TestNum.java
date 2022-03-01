@@ -94,4 +94,17 @@ public class TestNum {
         System.out.println("c = " + c);
 
     }
+
+    @Test
+    public void Test99() {
+
+        try {
+            int i = 10/0;
+        } catch (Exception e) {
+            System.out.println("e.getMessage() = " + e.getMessage());
+            System.out.println("e.getLocalizedMessage() = " + e.getLocalizedMessage());
+        }
+
+
+    }
 }
