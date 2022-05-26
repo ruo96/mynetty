@@ -3,7 +3,7 @@ package com.wrh.aes;
 //import com.zcsmart.aes.IAES;
 //import com.zcsmart.aes.en.AESModule;
 //i/mport com.zcsmart.aes.impl.AES192Impl;
-import org.apache.commons.codec.binary.Base64;
+//import org.apache.commons.codec.binary.Base64;
 
 /**
  * @Created by wrh

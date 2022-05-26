@@ -6,10 +6,10 @@
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/beans.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/beanSet.xml</file>
-          <file>jar://$USER_HOME$/.m2/repository/org/apache/flink/flink-runtime_2.11/1.10.0/flink-runtime_2.11-1.10.0.jar!/org/apache/flink/shaded/akka/org/jboss/netty/container/spring/beans.xml</file>
-          <file>file://$USER_HOME$/.m2/repository/org/apache/flink/flink-runtime_2.11/1.10.0/flink-runtime_2.11-1.10.0.jar</file>
-          <file>jar://$USER_HOME$/.m2/repository/org/apache/storm/storm-core/1.1.0/storm-core-1.1.0.jar!/org/apache/storm/shade/org/jboss/netty/container/spring/beans.xml</file>
-          <file>file://$USER_HOME$/.m2/repository/org/apache/storm/storm-core/1.1.0/storm-core-1.1.0.jar</file>
+          <file>jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-runtime_2.11/1.10.0/flink-runtime_2.11-1.10.0.jar!/org/apache/flink/shaded/akka/org/jboss/netty/container/spring/beans.xml</file>
+          <file>file://$MAVEN_REPOSITORY$/org/apache/flink/flink-runtime_2.11/1.10.0/flink-runtime_2.11-1.10.0.jar</file>
+          <file>jar://$MAVEN_REPOSITORY$/org/apache/storm/storm-core/1.1.0/storm-core-1.1.0.jar!/org/apache/storm/shade/org/jboss/netty/container/spring/beans.xml</file>
+          <file>file://$MAVEN_REPOSITORY$/org/apache/storm/storm-core/1.1.0/storm-core-1.1.0.jar</file>
         </fileset>
       </configuration>
     </facet>
@@ -95,10 +95,6 @@
     <orderEntry type="library" name="Maven: org.hibernate.validator:hibernate-validator:6.0.11.Final" level="project" />
     <orderEntry type="library" name="Maven: javax.validation:validation-api:2.0.1.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.logging:jboss-logging:3.3.2.Final" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx.base:11.0.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx.base:linux:11.0.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx.base:mac:11.0.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.openjfx:javafx.base:win:11.0.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:druid-spring-boot-starter:1.2.5" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:druid:1.2.5" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.0.4.RELEASE" level="project" />
@@ -305,6 +301,15 @@
     <orderEntry type="library" name="Maven: org.apache.directory.api:api-util:1.0.0-M20" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-common:2.8.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-annotations:2.8.5" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: jdk.tools:jdk.tools:1.8">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../tools/work/java/1.8/jre/../lib/tools.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Maven: commons-cli:commons-cli:1.2" level="project" />
     <orderEntry type="library" name="Maven: xmlenc:xmlenc:0.52" level="project" />
     <orderEntry type="library" name="Maven: commons-net:commons-net:3.1" level="project" />

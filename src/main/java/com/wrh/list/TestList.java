@@ -14,7 +14,7 @@ import com.wrh.list.vo.TotalYearKpi;
 import com.wrh.utils.GsonUtils;
 import com.wrh.utils.test.Dog;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.ListUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -2219,6 +2219,27 @@ public class TestList {
         list.add(s);
 
         System.out.println("JSON.toJSONString(list) = " + JSON.toJSONString(list));
+
+    }
+
+    @Test
+    public void Test2226() {
+        List<Student> list = new ArrayList<>();
+        Student s = new Student();
+        s.setName("1234");
+        s.setGrade(100);
+        list.add(s);
+
+        Student s1 = new Student();
+        s1.setName("w1");
+        s1.setGrade(100);
+        list.add(s1);
+
+        System.out.println("JSON.toJSONString(list) = " + JSON.toJSONString(list));
+
+        List<Long> list1  = list.stream().map(Student::getName).map(Long::valueOf).collect(Collectors.toList());
+        System.out.println("JSON.toJSONString(list1) = " + JSON.toJSONString(list1));
+
 
     }
 

@@ -114,6 +114,7 @@ public class TestString {
 
         }
         System.out.println(charsWithCountMap);
+        System.out.println("abc");
     }
 
     @Test
