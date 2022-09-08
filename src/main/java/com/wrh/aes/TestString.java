@@ -6,6 +6,9 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.PropertyFilter;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.serializer.ValueFilter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wrh.elasticsearch.Student;
 import com.wrh.reflection.S;
 import lombok.extern.slf4j.Slf4j;
@@ -253,5 +256,49 @@ public class TestString {
             }
         }
         System.out.printf("StringTokenizer 耗时 %s ms", System.currentTimeMillis() - start);
+    }
+
+    @Test
+    public void Test259() throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String s = objectMapper.writeValueAsString(new stu("s1", "n1", 18));
+        System.out.println("s = " + s);
+    }
+
+    class stu {
+        private String name;
+        @JsonIgnore
+        private String nickname;
+        private Integer age;
+
+        public stu(String name, String nickname, Integer age) {
+            this.name = name;
+            this.nickname = nickname;
+            this.age = age;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getNickname() {
+            return nickname;
+        }
+
+        public void setNickname(String nickname) {
+            this.nickname = nickname;
+        }
+
+        public Integer getAge() {
+            return age;
+        }
+
+        public void setAge(Integer age) {
+            this.age = age;
+        }
     }
 }

@@ -22,8 +22,8 @@ public class KafkaConsumer {
      * .\kafka-consumer-groups.bat --new-consumer --bootstrap-server 127.0.0.1:9092 --list       .\kafka-consumer-groups.bat --zookeeper 127.0.0.1:2181 --list  这个地方测试是有问题的
      * .\kafka-topics.bat --zookeeper 127.0.0.1:2181 --topic hellonetty4 --describe    查看topic的详情
      * .\kafka-server-start.bat D:\tools\mq\kafka\kafka_2.12-2.4.0\config\server.properties
-     * .\kafka-topics.bat --create --zookeeper 172.16.38.100:2181 --replication-factor 1 --partitions 1 --topic game-data-center-log-test     创建topic
-     * .\kafka-console-producer.bat --broker-list 172.16.38.100:9092 --topic  data-center-mobile-log-test  开启生产者
+     * .\kafka-topics.bat --create --zookeeper 127.0.0.1:2181 --replication-factor 1 --partitions 1 --topic test20220812     创建topic
+     * .\kafka-console-producer.bat --broker-list 127.0.0.1:9092 --topic  data-center-mobile-log-test  开启生产者
      * .\kafka-console-consumer.bat --zookeeper localhost:2181 --topic test   开启消费者
      * .\kafka-consumer-groups.sh --bootstrap-server XXX:9092 --group your-group-id --describe  查看组消费问题
      * bin/kafka-topics.sh --describe --zookeeper localhost:2181 --topic abc

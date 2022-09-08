@@ -490,6 +490,21 @@ public class TestInteger {
 
      }
 
+     @Test
+     public void Test494() {
+        Byte i = 8;
+        int j = i;
+         System.out.println("j = " + j);
+         System.out.println("i = " + i);
+     }
+
+     @Test
+     public void Test502() {
+        long i = 100;
+        int j = (int) i;
+         System.out.println("j = " + j);
+     }
+
 
 
 }

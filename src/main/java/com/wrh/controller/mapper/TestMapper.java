@@ -8,13 +8,13 @@ import org.springframework.stereotype.Repository;
  * @Description
  * @Date 2020/6/1
  */
-@Repository
-public interface TestMapper {
-
-    /**
-     * 查询统计信息
-     * @return
-     */
-    Integer findCount();
-
-}
+//@Repository
+//public interface TestMapper {
+//
+//    /**
+//     * 查询统计信息
+//     * @return
+//     */
+//    Integer findCount();
+//
+//}

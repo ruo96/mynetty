@@ -48,7 +48,7 @@ public class TestHook {
         ExecutorService service = new ThreadPoolExecutor(1, 1, 0, TimeUnit.MILLISECONDS,new LinkedBlockingQueue(10),factory);
 
 //3.提交任务
-        service.execute(()->{
+        service.submit(()->{
             int i=1/0;
         });
     }

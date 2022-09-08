@@ -3,9 +3,7 @@ package com.wrh.math;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.concurrent.atomic.LongAdder;
 import java.util.stream.LongStream;
 
@@ -80,6 +78,26 @@ public class TestLong {
         System.out.println("adder = " + adder);
         adder.increment();
         System.out.println("adder = " + adder);
+
+    }
+
+    @Test
+    public void Test87() {
+//        String b = "202208180852328645860";
+                      //9223372036854775807
+        String b = "202208180852";
+        Long aLong = Long.valueOf(b);
+        System.out.println("aLong = " + aLong);
+
+        List<String> list = new ArrayList<>();
+        list.add("wrh");
+
+        if (list.contains("Wrh")) {
+            System.out.println("contain");
+        } else {
+            System.out.println(" not contaion");
+        }
+
 
     }
 }

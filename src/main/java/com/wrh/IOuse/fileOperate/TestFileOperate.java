@@ -853,4 +853,15 @@ public class TestFileOperate {
             throw new Exception(message, e);
         }
     }
+
+    @Test
+    public void Test858() {
+        String filePath = "D:\\dataset\\dataset_guest99.csv";
+        File file = new File(filePath);
+        if (!file.exists()) {
+            System.out.println(" file not exist!");
+        } else {
+            System.out.println("file exist!");
+        }
+    }
 }

@@ -80,6 +80,26 @@
 			<version>0.0.26</version>
 		</dependency>-->
 
+		<!-- MySQL的JDBC数据库驱动 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.17</version>
+		</dependency>
+
+		<!--ip转换地址-->
+		<dependency>
+			<groupId>org.lionsoul</groupId>
+			<artifactId>ip2region</artifactId>
+			<version>2.6.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
@@ -576,12 +596,12 @@
 			</exclusions>
 		</dependency>
 
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-<!--			<scope>runtime</scope>-->
-			<version>5.1.38</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>mysql</groupId>-->
+<!--			<artifactId>mysql-connector-java</artifactId>-->
+<!--&lt;!&ndash;			<scope>runtime</scope>&ndash;&gt;-->
+<!--			<version>5.1.38</version>-->
+<!--		</dependency>-->
 
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>

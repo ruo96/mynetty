@@ -8,6 +8,7 @@ import org.springframework.util.StopWatch;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 /**
  * @Created by wrh
@@ -220,5 +221,50 @@ public class TestArrayList {
             }
         }
         System.out.println("After iterate : " + a);
+    }
+
+    @Test
+    public void Test226() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+
+        List<Integer> list2 = new ArrayList<>();
+        list2.add(1);
+        list2.add(3);
+
+        list.removeAll(list2);
+        System.out.println("list = " + list);
+    }
+
+    @Test
+    public void Test242() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+
+        List<Integer> list2 = new ArrayList<>();
+        list2.add(5);
+        list2.add(6);
+
+        list.addAll(list2);
+        System.out.println("list = " + list);
+    }
+
+    @Test
+    public void Test255() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        Map<Boolean, List<Integer>> collect = list.stream().collect(Collectors.partitioningBy(e -> e > 2));
+        System.out.println("collect = " + collect);
+        System.out.println("collect.get(Boolean.TRUE) = " + collect.get(Boolean.TRUE));
+        System.out.println("collect.get(Boolean.FALSE) = " + collect.get(Boolean.FALSE));
     }
 }

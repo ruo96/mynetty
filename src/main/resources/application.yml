@@ -57,10 +57,10 @@ spring:
 
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://172.16.39.148:3306/data_center?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://172.20.8.110:31002/fedx?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useSSL=false
     username: root
-    password: 1QWed$%&098pln@@_11
-    driver-class-name: com.mysql.jdbc.Driver
+    password: Wa@123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
     druid:
       initial-size: 5
       min-idle: 10

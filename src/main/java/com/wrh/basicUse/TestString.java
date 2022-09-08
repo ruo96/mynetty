@@ -3,6 +3,7 @@ package com.wrh.basicUse;
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Joiner;
+import com.google.gson.Gson;
 import com.wrh.basicUse.vo.OnLineCleanParamDto;
 import com.wrh.entity.Person;
 import com.wrh.functionInterfaceTest.Student;
@@ -15,6 +16,8 @@ import org.springframework.util.StopWatch;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Classname TestString
@@ -242,4 +245,104 @@ public class TestString {
         System.out.println("s1 = " + s1);
 
     }
+
+    @Test
+    public void Test247() {
+        String a = "abc_%s_%s";
+        String b = "model#version";
+        String format = String.format(a, b.replace("#", "_"), b.replace("#","*"));
+        System.out.println("format = " + format);
+
+
+    }
+
+    @Test
+    public void Test257() {
+        String str = "This is A Test String";
+        int upCount = 0;
+        int lowCount = 0;
+        int spaceCount = 0;
+
+        for(int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if(c >= 'a' && c <= 'z') {
+                lowCount++;
+            } else if(c >= 'A' && c <= 'Z') {
+                upCount++;
+            } else if(c == ' '){
+                spaceCount++;
+            }
+        }
+        System.out.println("大写之母个数：" + upCount);
+        System.out.println("小写字母个数：" + lowCount);
+        System.out.println("空格字符个数：" + spaceCount);
+
+    }
+
+    @Test
+    public void Test280() {
+        Student s = new Student("w1",1,1);
+        System.out.println("s = " + s);
+
+        Student s1 = new Student("w2",2,2);
+        s1.setName(s.getName().replace("w",""));
+        System.out.println("s1 = " + s1);
+
+    }
+    
+    @Test
+    public void Test291() {
+        String s = "{\n \"dsl_version\": 2,\n \"initiator\": {\n \"role\": \"guest\",\n \"party_id\": 1000\n },\n \"role\": {\n \"host\": [\n 1100,\n 2000\n ],\n \"guest\": [\n 1000\n ]\n },\n \"job_parameters\": {\n \"common\": {\n \"job_type\": \"train\",\n \"backend\": 0,\n \"work_mode\": 1,\n \"task_cores\": 4,\n \"spark_run\": {\n \"executor-memory\": \"12g\",\n \"executor-cores\": 8,\n \"total-executor-cores\": 24\n }\n }\n\",\n \"namespace\": \"6266858144891146240\"\n }\n },\n \"data_transform_0\": {\n \"with_label\": false\n }\n },\n \"1\": {\n \"reader_0\": {\n \"table\": {\n \"name\": \"6266859830934245376\",\n \"namespace\": \"6266858144891146240\"\n }\n },\n \"data_transform_0\": {\n \"with_label\": false\n }\n }\n }\n }\n }\n}";
+
+//        String s = "{  \"dsl_version\": 2,  \"initiator\": {  \"role\": \"guest\",  \"party_id\": 1000  },  \"role\": {  \"host\": [  1100,  2000  ],  \"guest\": [  1000  ]  },  \"job_parameters\": {  \"common\": {  \"job_type\": \"train\",  \"backend\": 0,  \"work_mode\": 1,  \"task_cores\": 4,  \"spark_run\": {  \"executor-memory\": \"12g\",  \"executor-cores\": 8,  \"total-executor-cores\": 24  }  } \",  \"namespace\": \"6266858144891146240\"  }  },  \"data_transform_0\": {  \"with_label\": false  }  },  \"1\": {  \"reader_0\": {  \"table\": {  \"name\": \"6266859830934245376\",  \"namespace\": \"6266858144891146240\"  }  },  \"data_transform_0\": {  \"with_label\": false  }  }  }  }  } }";
+
+//        s = "{\n\"name\":\"w1\"}";
+        s = "{\n  \"dsl_version\": 2,\n  \"initiator\": {\n    \"role\": \"guest\",\n    \"party_id\": 1000\n  },\n  \"role\": {\n    \"host\": [\n      1100,\n      2000\n    ],\n    \"guest\": [\n      1000\n    ]\n  },\n  \"job_parameters\": {\n    \"common\": {\n      \"job_type\": \"train\",\n      \"backend\": 0,\n      \"work_mode\": 1,\n      \"task_cores\": 4,\n      \"spark_run\": {\n        \"executor-memory\": \"12g\",\n        \"executor-cores\": 8,\n        \"total-executor-cores\": 24\n      }\n    }\n  },\n  \"component_parameters\": {\n    \"common\": {\n      \"hetero_secure_boost_0\": {\n        \"task_type\": \"classification\",\n        \"objective_param\": {\n          \"objective\": \"cross_entropy\"\n        },\n        \"num_trees\": 3,\n        \"validation_freqs\": 1,\n        \"encrypt_param\": {\n          \"method\": \"Paillier\"\n        },\n        \"tree_param\": {\n          \"max_depth\": 3\n        }\n      },\n      \"evaluation_0\": {\n        \"eval_type\": \"binary\",\n        \"unfold_multi_result\": false\n      },\n      \"intersection_0\": {\n        \"intersect_method\": \"rsa\",\n        \"rsa_params\": {\n          \"hash_method\": \"sha256\",\n          \"final_hash_method\": \"sha256\",\n          \"random_base_fraction\": 0.11,\n          \"key_length\": 1024,\n          \"random_bit\": 128\n        }\n      },\n      \"hetero_data_split_0\": {\n        \"train_size\": 0.6,\n        \"validate_size\": 0.4\n      }\n    },\n    \"role\": {\n      \"guest\": {\n        \"0\": {\n          \"reader_0\": {\n            \"table\": {\n              \"name\": \"6266858977225609216\",\n              \"namespace\": \"6266858144891146240\"\n            }\n          },\n          \"data_transform_0\": {\n            \"with_label\": true,\n            \"output_format\": \"dense\",\n            \"label_name\": \"y\",\n            \"label_type\": \"int\"\n          }\n        }\n      },\n      \"host\": {\n        \"0\": {\n          \"reader_0\": {\n            \"table\": {\n              \"name\": \"6266859455393042432\",\n              \"namespace\": \"6266858144891146240\"\n            }\n          },\n          \"data_transform_0\": {\n            \"with_label\": false\n          }\n        },\n        \"1\": {\n          \"reader_0\": {\n            \"table\": {\n              \"name\": \"6266859830934245376\",\n              \"namespace\": \"6266858144891146240\"\n            }\n          },\n          \"data_transform_0\": {\n            \"with_label\": false\n          }\n        }\n      }\n    }\n  }\n}";
+        Gson gson = new Gson();
+        Map<String, Object> map = new HashMap<>();
+//        map = gson.fromJson(s, map.getClass());
+        map = JSON.parseObject(s, Map.class);
+//        System.out.println("map.get(\"job_parameters\") = " + map.get("job_parameters"));
+//        System.out.println("((Map<String, Object>) map.get(\"job_parameters\")).get(\"common\") = " + ((Map<String, Object>) map.get("job_parameters")).get("common"));
+        System.out.println("s.indexOf(\"spark_run\") = " + s.indexOf("spark_run"));
+        int a = s.indexOf("{",s.indexOf("spark_run"));
+        int b = s.indexOf("}", s.indexOf("spark_run"));
+        String substring = s.substring(a, b+1 );
+        System.out.println("substring = [" + substring+"]");
+        Map<String, Object> rMap = JSON.parseObject(substring, Map.class);
+        System.out.println("rMap.get(\"executor-memory\") = " + rMap.get("executor-memory"));
+        System.out.println("rMap.get(\"total-executor-cores\") = " + rMap.get("total-executor-cores"));
+        int c = s.indexOf("1231231231");
+        System.out.println("c = " + c);
+//        System.out.println("map = " + map);
+
+    }
+
+    @Test
+    public void Test322() {
+        String s = "{\n  \"dsl_version\": 2,\n  \"initiator\": {\n    \"role\": \"guest\",\n    \"party_id\": 1000\n  },\n  \"role\": {\n    \"host\": [\n      1100,\n      2000\n    ],\n    \"guest\": [\n      1000\n    ]\n  },\n  \"job_parameters\": {\n    \"common\": {\n      \"job_type\": \"train\",\n      \"backend\": 0,\n      \"work_mode\": 1,\n      \"task_cores\": 4,\n      \"spark_run\": {\n        \"executor-memory\": \"12g\",\n        \"executor-cores\": 8,\n        \"total-executor-cores\": 24\n      }\n    }\n  },\n  \"component_parameters\": {\n    \"common\": {\n      \"hetero_secure_boost_0\": {\n        \"task_type\": \"classification\",\n        \"objective_param\": {\n          \"objective\": \"cross_entropy\"\n        },\n        \"num_trees\": 3,\n        \"validation_freqs\": 1,\n        \"encrypt_param\": {\n          \"method\": \"Paillier\"\n        },\n        \"tree_param\": {\n          \"max_depth\": 3\n        }\n      },\n      \"evaluation_0\": {\n        \"eval_type\": \"binary\",\n        \"unfold_multi_result\": false\n      },\n      \"intersection_0\": {\n        \"intersect_method\": \"rsa\",\n        \"rsa_params\": {\n          \"hash_method\": \"sha256\",\n          \"final_hash_method\": \"sha256\",\n          \"random_base_fraction\": 0.11,\n          \"key_length\": 1024,\n          \"random_bit\": 128\n        }\n      },\n      \"hetero_data_split_0\": {\n        \"train_size\": 0.6,\n        \"validate_size\": 0.4\n      }\n    },\n    \"role\": {\n      \"guest\": {\n        \"0\": {\n          \"reader_0\": {\n            \"table\": {\n              \"name\": \"6266858977225609216\",\n              \"namespace\": \"6266858144891146240\"\n            }\n          },\n          \"data_transform_0\": {\n            \"with_label\": true,\n            \"output_format\": \"dense\",\n            \"label_name\": \"y\",\n            \"label_type\": \"int\"\n          }\n        }\n      },\n      \"host\": {\n        \"0\": {\n          \"reader_0\": {\n            \"table\": {\n              \"name\": \"6266859455393042432\",\n              \"namespace\": \"6266858144891146240\"\n            }\n          },\n          \"data_transform_0\": {\n            \"with_label\": false\n          }\n        },\n        \"1\": {\n          \"reader_0\": {\n            \"table\": {\n              \"name\": \"6266859830934245376\",\n              \"namespace\": \"6266858144891146240\"\n            }\n          },\n          \"data_transform_0\": {\n            \"with_label\": false\n          }\n        }\n      }\n    }\n  }\n}";
+        checkSparkResource(s);
+    }
+
+    private void checkSparkResource(String configJson) {
+        int cpu = 10;
+        int mem = 10;
+        int sparkIndex = configJson.indexOf("spark_run");
+        if (sparkIndex < 0) {
+            log.info("[checkSparkResource]>>> configJson not contain spark_run params, please check");
+            throw new RuntimeException();  //
+        }
+        int a = configJson.indexOf("{", configJson.indexOf("spark_run"));
+        int b = configJson.indexOf("}", configJson.indexOf("spark_run"));
+        Map<String, Object> resourceMap = JSON.parseObject(configJson.substring(a, b + 1), Map.class);
+        if(cpu < Integer.parseInt(String.valueOf(resourceMap.get("total-executor-cores"))) ||
+                mem < Integer.parseInt(String.valueOf(resourceMap.get("executor-memory")))){
+            log.info("[checkSparkResource]>>> configJson exceed resource limit, please check");
+            throw new RuntimeException(
+                    String.format("项目资源限制 cpu:%sC 内存:%sG", cpu, mem));
+        }
+        return;
+    }
+
+
 }

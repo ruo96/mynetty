@@ -42,8 +42,8 @@ public class MynettyApplication {
 	@Autowired
     Environment environment;
 
-	@Autowired
-    private DataSource dataSource;
+//	@Autowired
+//    private DataSource dataSource;
 
 	@Autowired
     private RedisTemplate redisTemplate;

@@ -6,6 +6,7 @@ import com.google.common.collect.Lists;
 import com.wrh.collection.map.GameRealTimeData;
 import com.wrh.collection.map.vo.GameDayDataV2;
 import com.wrh.elasticsearch.Student;
+import com.wrh.list.vo.DataList;
 import com.wrh.list.vo.GameConfig;
 import com.wrh.list.vo.TotalInfo;
 import com.wrh.list.vo.TotalYearKpi;
@@ -21,6 +22,7 @@ import org.springframework.beans.BeanUtils;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -1952,6 +1954,23 @@ public class TestList {
         );
 
         list.sort(nullsLast);
+    }
+
+    @Test
+    public void Test1958() {
+        List<DataList> list = new ArrayList<>();
+        List<String> name = new ArrayList<>();
+        name.add("w1");
+        name.add("w2");
+        name.add("w3");
+
+        AtomicInteger index = new AtomicInteger();
+        name.stream().forEach(e->{
+            list.add(new DataList(e,index.getAndIncrement()));
+        });
+
+        System.out.println("list = " + list);
+
     }
 
 }

@@ -2,6 +2,7 @@ package com.wrh.thread.threadPool;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.scheduling.concurrent.CustomizableThreadFactory;
 
 import java.util.concurrent.*;
 
@@ -39,9 +40,11 @@ public class MyThreadPoolExecutor extends ThreadPoolExecutor {
      */
     static {
         ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("po-detail-pool-%d").build();
+        ThreadFactory threadFactory1 = new CustomizableThreadFactory("custom-thread-pool");
         pool = new ThreadPoolExecutor(4, 8, 60L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(512),
                 threadFactory, new ThreadPoolExecutor.AbortPolicy());
         pool.allowCoreThreadTimeOut(true);
+
     }
 
     @Override

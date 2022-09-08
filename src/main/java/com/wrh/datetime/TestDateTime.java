@@ -307,4 +307,15 @@ public class TestDateTime {
 
     }
 
+    @Test
+    public void Test311() {
+        LocalDateTime t1 = LocalDateTime.now();
+        LocalDateTime t2 = LocalDateTime.now().minusDays(1).plusHours(3);
+        System.out.println("t1 = " + t1);
+        System.out.println("t2 = " + t2);
+        System.out.println("Duration.between(t1, t2) = " + Duration.between(t1, t2).toDays());
+        System.out.println("Duration.between(t2, t1) = " + Duration.between(t2, t1).toDays());
+
+    }
+
 }
