@@ -36,6 +36,25 @@ import org.springframework.context.annotation.Configuration;
  *
  * 将http重定向到https  即为本示例代码
  *
+ * 二、
+ * 使用FreeSSL提供的证书
+ * FreeSSL.cn 是一个免费提供 HTTPS 证书申请、HTTPS 证书管理和 HTTPS 证书到期提醒服务的网站，旨在推进 HTTPS 证书的普及与应用，简化证书申请的流程。
+ *
+ * 1.首先你得有一个域名，推荐国外的GoDaddy，价格合适且不需要备案就可以进行解析；
+ * 2.FreeSSL网站上有对不同品牌的介绍了和证书生成方式的介绍，请参阅网站；
+ * 3.一顿操作之后，相信你已经下载证书到本地了，将证书放入resources目录中，并在配置文件中添加配置
+ * #https端口号.
+ * server.port: 443
+ * #证书的路径.
+ * server.ssl.key-store: classpath:***.jks
+ * #证书密码，请修改为您自己证书的密码.
+ * server.ssl.key-store-password: ***
+ * #秘钥库类型
+ * server.ssl.keyStoreType: JKS
+ *
+ * 4.将http重定向到https，代码同上
+ *
+ * 5.打包并部署
  * @Date : 2022/9/29 14:55
  */
 @Configuration

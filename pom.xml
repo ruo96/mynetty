@@ -100,7 +100,7 @@
 		</dependency>
 
 		<!--调用python-->
-		<dependency>java
+		<dependency>
 			<groupId>org.python</groupId>
 			<artifactId>jython-standalone</artifactId>
 			<version>2.7.0</version>
@@ -124,11 +124,11 @@
 			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
 
-		<dependency>
+		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
-		</dependency>
+		</dependency>-->
 
 		<dependency>
 			<groupId>us.codecraft</groupId>
@@ -140,12 +140,6 @@
 					<artifactId>slf4j-log4j12</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.9</version>
 		</dependency>
 
 		<!-- spring security -->
@@ -420,12 +414,12 @@
 			<scope>test</scope>
 		</dependency>-->
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
-		<dependency>
+		<!--<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.13.1</version>
 			<scope>test</scope>
-		</dependency>
+		</dependency>-->
 
 		<!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
 		<dependency>
@@ -762,11 +756,6 @@
 			<artifactId>spring-kafka-test</artifactId>
 		</dependency>-->
 
-		<dependency>
-			<groupId>redis.clients</groupId>
-			<artifactId>jedis</artifactId>
-			<version>2.9.0</version>
-		</dependency>
 
 		<!-- springboot 2.0 默认使用hikari 所以不用专门导入-->
 		<!--<dependency>
@@ -961,12 +950,6 @@
 			</exclusions>
 		</dependency>
 		<!-- zipkin-->
-
-		<dependency>
-			<groupId>com.squareup.okhttp3</groupId>
-			<artifactId>okhttp</artifactId>
-			<version>3.10.0</version>
-		</dependency>
 
 		<dependency>
 			<groupId>com.squareup.okhttp3</groupId>

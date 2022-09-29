@@ -1,11 +1,8 @@
 package com.wrh.cache.caffeine;
 
-import com.alibaba.fastjson.JSON;
 import com.github.benmanes.caffeine.cache.*;
-import com.sun.beans.util.Cache;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-import org.springframework.boot.autoconfigure.cache.CacheProperties;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 
@@ -20,10 +17,10 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class TestCaffeine {
 
-    @Test
+    /*@Test
     public void Test1() {
         Cache<String, Object> caffeineCache = (Cache<String, Object>) Caffeine.newBuilder().expireAfterWrite(1, TimeUnit.MINUTES).maximumSize(100).build();
-    }
+    }*/
 
     @Test
     public void Test2() throws InterruptedException {
