@@ -126,11 +126,19 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+  h2:
+    console:
+      enabled: true
 
 
 
 server:
-  port: 9988
+  port: 443
+  ssl:
+    key-store: classpath:keystore.p12
+    key-store-password: 123456
+    key-store-type: PKCS12
+#    key-alias: mynetty
 #  servlet:
 #    context-path: /mynetty
 

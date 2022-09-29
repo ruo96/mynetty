@@ -1973,4 +1973,14 @@ public class TestList {
 
     }
 
+    @Test
+    public void Test1977() {
+       List<Student> l = new ArrayList<>();
+        List<Student> collect = l.stream().filter(a -> a != null).map(x -> {
+            Student s = new Student();
+            return s;
+        }).collect(Collectors.toList());
+        System.out.println("collect = " + collect);
+    }
+
 }
