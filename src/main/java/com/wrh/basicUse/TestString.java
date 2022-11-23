@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Joiner;
 import com.google.gson.Gson;
 import com.wrh.basicUse.vo.OnLineCleanParamDto;
+import com.wrh.basicUse.vo.RetVo;
 import com.wrh.entity.Person;
 import com.wrh.functionInterfaceTest.Student;
 import com.wrh.utils.Md5Utils;
@@ -342,6 +343,19 @@ public class TestString {
                     String.format("项目资源限制 cpu:%sC 内存:%sG", cpu, mem));
         }
         return;
+    }
+
+    @Test
+    public void Test348() {
+        String a = "{\"code\":0,\"message\":\"成功\",\"data\":[\"2,2,1\\u0000\\u0000\\u0000\"]}";
+        RetVo vo = JSON.parseObject(a, RetVo.class);
+        System.out.println("vo = " + vo);
+
+        vo.setData(vo.getData().toString().replace("\\u0000",""));
+        System.out.println("vo = " + vo);
+
+
+
     }
 
 

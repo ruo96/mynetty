@@ -1,10 +1,10 @@
 package com.wrh.cache;
 
-import com.google.common.cache.CacheBuilder;
-import com.google.common.cache.CacheLoader;
-import com.google.common.cache.LoadingCache;
+import com.google.common.cache.*;
 import org.junit.Test;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
@@ -45,5 +45,34 @@ public class TestCache {
             System.out.println(System.currentTimeMillis());
             System.out.println(lc.get("w1"));
         }
+    }
+
+    @Test
+    public void Test51() throws InterruptedException {
+        Cache<String, String> cache = CacheBuilder.newBuilder()
+                .expireAfterWrite(3, TimeUnit.SECONDS)//写入多久没更新自动过期，先删除，后load
+                .removalListener(new RemovalListener<Object, Object>() {
+                    @Override
+                    public void onRemoval(RemovalNotification<Object, Object> notification) {
+                        System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")) + "===" + notification.getKey());
+                    }
+                })
+                .initialCapacity(20) //初始化容量
+                .concurrencyLevel(10) // 并发
+                .maximumSize(100) //最多缓存数量
+                .recordStats() // 开启统计
+                .build();
+
+        cache.put("w1","r1");
+        String w1 = cache.getIfPresent("w1");
+        System.out.println("w1 = " + w1);
+
+        String w2 = cache.getIfPresent("w2");
+        System.out.println("w2 = " + w2);
+
+        TimeUnit.SECONDS.sleep(4);
+        w1 = cache.getIfPresent("w1");
+        System.out.println("after 4 seconds w1 = " + w1);
+
     }
 }

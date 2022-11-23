@@ -1,8 +1,12 @@
 package com.wrh.jiamijiemi.md5;
 
+import cn.hutool.crypto.digest.BCrypt;
+import cn.hutool.crypto.digest.MD5;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.springframework.util.DigestUtils;
 
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,5 +41,30 @@ public class TestMd5 {
         String passwordMd5 = EncryptUtils.MD5(p1);
         log.info("===> 模拟登录时候的md5:{}", passwordMd5);
         log.info("==========================================");
+    }
+
+    @Test
+    public void Test43() {
+        /** 加盐 用户密码*/
+        String s = "abc123456";
+        System.out.println("DigestUtils.md5DigestAsHex(s) = " + DigestUtils.md5DigestAsHex(s.getBytes(StandardCharsets.UTF_8)));
+        System.out.println("MD5.create().digestHex(s) = " + MD5.create().digestHex(s));
+
+        String hashpw = BCrypt.hashpw(s, BCrypt.gensalt(10));
+        System.out.println("hashpw = " + hashpw);
+
+        String salt = BCrypt.gensalt(12);
+        System.out.println("salt = " + salt);
+
+        String a = "123";
+        String b = "456";
+        String ap = BCrypt.hashpw(a, salt);
+        String bp = BCrypt.hashpw(b, salt);
+        System.out.println("ap = " + ap);
+        System.out.println("bp = " + bp);
+
+        System.out.println("BCrypt.checkpw(a, ap) = " + BCrypt.checkpw(a, ap));
+        System.out.println("BCrypt.checkpw(b, bp) = " + BCrypt.checkpw(b, bp));
+
     }
 }

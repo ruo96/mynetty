@@ -1,5 +1,7 @@
 package com.wrh.IOuse.fileOperate;
 
+import cn.hutool.crypto.SmUtil;
+import cn.hutool.crypto.digest.MD5;
 import com.alibaba.fastjson.JSON;
 import com.google.common.base.Charsets;
 import com.google.common.io.CharStreams;
@@ -863,5 +865,24 @@ public class TestFileOperate {
         } else {
             System.out.println("file exist!");
         }
+    }
+
+    @Test
+    public void Test869() {
+        long s = System.currentTimeMillis();
+        String splitFile = "e:\\data\\test3.csv";
+        try(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(splitFile)))){
+            for (long i = 0; i <= 2000000; i++) {
+                writer.write(MD5.create().digestHex("test"+i));
+                writer.newLine();
+            }
+
+        }catch (IOException e) {
+            log.error("[split-task]>>> splitFile write exception: ", e);
+
+        }
+        long s2 = System.currentTimeMillis() - s;
+        System.out.println(s2);
+
     }
 }

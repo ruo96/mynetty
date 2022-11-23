@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * @Created by wrh
@@ -30,6 +31,8 @@ public class Student implements Serializable {
     private String title = "stu";
 
     private boolean flag = true;
+
+    private LocalDateTime time;
 
 
     @Override

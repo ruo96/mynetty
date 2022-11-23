@@ -10,6 +10,7 @@ import com.wrh.list.vo.DataList;
 import com.wrh.list.vo.GameConfig;
 import com.wrh.list.vo.TotalInfo;
 import com.wrh.list.vo.TotalYearKpi;
+import com.wrh.reflection.S;
 import com.wrh.utils.GsonUtils;
 import com.wrh.utils.test.Dog;
 import lombok.extern.slf4j.Slf4j;
@@ -20,6 +21,7 @@ import org.junit.Test;
 import org.springframework.beans.BeanUtils;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -1981,6 +1983,156 @@ public class TestList {
             return s;
         }).collect(Collectors.toList());
         System.out.println("collect = " + collect);
+    }
+
+    @Test
+    public void Test1987() {
+        List list = Arrays.asList(1,2,3);
+        System.out.println("list.size() = " + list.size());
+
+        /** 数组接收则为1*/
+        int[] a = {1,2,3};
+        list = Arrays.asList(a);
+        System.out.println("list.size() = " + list.size());
+
+        /** 解决方法1*/
+        list = Arrays.stream(a).boxed().collect(Collectors.toList());
+        System.out.println("list.size() = " + list.size());
+
+        /** 解决方法2 使用包装类型*/
+        Integer[] b = {1,2,3};
+        list = Arrays.asList(b);
+        System.out.println("list.size() = " + list.size());
+        b[0] = 0;
+        System.out.println("list = " + list);
+
+    }
+
+    @Test
+    public void Test2010() {
+        List<String> l1 = new ArrayList<>();
+        l1.add("1,2,3");
+        l1.add("4,5,6");
+        l1.add("7,8,9");
+
+        System.out.println("l1 = " + l1);
+    }
+
+    @Test
+    public void Test2020() {
+        List<Student> list = new ArrayList<>();
+        Student s1 = new Student();
+        s1.setName("w1");
+        s1.setId(1);
+        Student s2 = new Student();
+        s2.setName("w2");
+        s2.setId(2);
+        Student s3 = new Student();
+        s3.setName("w3");
+        s3.setId(3);
+        list.add(s1);
+        list.add(s2);
+        list.add(s3);
+        System.out.println("list = " + list);
+
+        Integer maxPort = 10005;
+        AtomicInteger insertBeginPort = Objects.isNull(maxPort) ? new AtomicInteger(10000) : new AtomicInteger(maxPort + 1);
+        list.stream().forEach(e -> {
+            e.setMoney(Long.valueOf(insertBeginPort.getAndIncrement()));
+        });
+
+        System.out.println("list = " + list);
+
+    }
+
+    @Test
+    public void Test2048() {
+        List<Student> list = new ArrayList<>();
+        Student s1 = new Student();
+        s1.setName("w1");
+        s1.setId(1);
+        s1.setTime(LocalDateTime.now());
+        Student s2 = new Student();
+        s2.setName("w2");
+        s2.setId(2);
+        s2.setTime(LocalDateTime.now().plusHours(1L));
+        Student s3 = new Student();
+        s3.setName("w3");
+        s3.setId(3);
+        s3.setTime(LocalDateTime.now().plusHours(2L));
+        list.add(s1);
+        list.add(s2);
+        list.add(s3);
+        System.out.println("list = " + list);
+        System.out.println("JSON.toJSONString(list) = " + JSON.toJSONString(list));
+        System.out.println("JSON.toJSONStringWithDateFormat(list, \"yyyy-MM-dd HH:mm:ss\") = " + JSON.toJSONStringWithDateFormat(list, "yyyy-MM-dd HH:mm:ss"));
+
+
+    }
+
+    @Test
+    public void Test2074() {
+        List<Student> list = new ArrayList<>();
+                Student s1 = new Student();
+                s1.setName("w1");
+                s1.setId(1);
+                Student s2 = new Student();
+                s2.setName("w2");
+                s2.setId(2);
+                Student s3 = new Student();
+                s3.setName("w3");
+                s3.setId(3);
+                list.add(s1);
+                list.add(s2);
+                list.add(s3);
+                System.out.println("list = " + list);
+
+                list.stream().forEach(e->{
+                    e.setName("change1");
+                });
+        System.out.println("list = " + list);
+
+    }
+
+    @Test
+    public void Test2098() {
+        List<String> list = new ArrayList<>();
+        list.add("2,2,1\\u0000\\u0000\\u0000");
+        System.out.println("list = " + list);
+
+        list = list.stream().map(e->e.replace("\\u0000","")).collect(Collectors.toList());
+        System.out.println("list = " + list);
+
+        String q1 = "2,2,1\u0000\u0000\u0000";
+        List<String> queryResult = new ArrayList<>();
+        queryResult.add(q1);
+        queryResult = queryResult.stream().map(e->e.replace("\u0000","")).collect(Collectors.toList());
+
+    }
+
+    @Test
+    public void Test2114() {
+        Integer maxPort = 10000;
+        AtomicInteger insertBeginPort = Objects.isNull(maxPort) ? new AtomicInteger(10000) : new AtomicInteger(maxPort + 1);
+        List<Student> list = new ArrayList<>();
+        Student s1 = new Student();
+        s1.setName("w1");
+        s1.setId(1);
+        Student s2 = new Student();
+        s2.setName("w2");
+        s2.setId(2);
+        Student s3 = new Student();
+        s3.setName("w3");
+        s3.setId(3);
+        list.add(s1);
+        list.add(s2);
+        list.add(s3);
+        System.out.println("list = " + list);
+        list.stream().forEach(e -> {
+            e.setGrade(insertBeginPort.getAndIncrement());
+        });
+        System.out.println(list);
+
     }
 
 }

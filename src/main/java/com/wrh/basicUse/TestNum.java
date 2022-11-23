@@ -58,4 +58,16 @@ public class TestNum {
         }
 
     }
+
+    @Test
+    public void Test63() {
+       int i = 10;
+       String a = String.format("%03d", i);
+        System.out.println("a = " + a);
+
+        Long a1 = null;
+        long a2 = a1;
+        System.out.println("a2 = " + a2);
+
+    }
 }

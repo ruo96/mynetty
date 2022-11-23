@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.text.DateFormat;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
 import java.util.Date;
@@ -48,9 +49,9 @@ public class TestBlockQueue {
             }
         });
 
-        queue.offer(new Student("w1",1,60,1L,"s1",false));
-        queue.offer(new Student("w2",1,30,1L,"s2",false));
-        queue.offer(new Student("w3",1,50,1L,"s3",false));
+        queue.offer(new Student("w1",1,60,1L,"s1",false, LocalDateTime.now()));
+        queue.offer(new Student("w2",1,30,1L,"s2",false, LocalDateTime.now()));
+        queue.offer(new Student("w3",1,50,1L,"s3",false, LocalDateTime.now()));
 
         while (!queue.isEmpty()){
             Student s = (Student) queue.poll();
