@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author : wuruohong
+ * @author : wuruohong  HTTPS
  * @description :SpringBoot两种方式配置 SSL证书，实现HTTPS安全访问
  * 使用JDK自带的工具生成证书
  * 使用FreeSSL提供的证书
@@ -57,10 +57,10 @@ import org.springframework.context.annotation.Configuration;
  * 5.打包并部署
  * @Date : 2022/9/29 14:55
  */
-@Configuration
+//@Configuration
 public class SSLUtils {
 
-    @Bean
+//    @Bean
     public Connector connector() {
         Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
         connector.setScheme("http");
@@ -70,7 +70,7 @@ public class SSLUtils {
         return  connector;
     }
 
-    @Bean
+//    @Bean
     public TomcatServletWebServerFactory tomcatServletWebServerFactory(Connector connector) {
         TomcatServletWebServerFactory webServerFactory = new TomcatServletWebServerFactory(){
             @Override

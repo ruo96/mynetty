@@ -25,13 +25,13 @@ public class FilterConfig {
         return registration;
     }
 
-    @Bean
-    public FilterRegistrationBean registFilter1()  {
-        FilterRegistrationBean registration =  new  FilterRegistrationBean();
-        registration.setFilter(new RequestParameterFilter());
-        registration.addUrlPatterns("/*");
-        registration.setName("requestFilter");
-        registration.setOrder(2);
-        return registration;
-    }
+//    @Bean
+//    public FilterRegistrationBean registFilter1()  {
+//        FilterRegistrationBean registration =  new  FilterRegistrationBean();
+//        registration.setFilter(new RequestParameterFilter());
+//        registration.addUrlPatterns("/*");
+//        registration.setName("requestFilter");
+//        registration.setOrder(2);
+//        return registration;
+//    }
 }

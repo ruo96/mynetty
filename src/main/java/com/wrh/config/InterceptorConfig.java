@@ -15,16 +15,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * @Modified By:
  */
 @Slf4j
-@Configuration
+//@Configuration
 public class InterceptorConfig implements WebMvcConfigurer {
 
     @Autowired
     private MyInterceptor myInterceptor;
 
     //注册拦截器
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        log.info(">>>  拦截器启动");
-        registry.addInterceptor(myInterceptor);
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        log.info(">>>  拦截器启动");
+//        registry.addInterceptor(myInterceptor);
+//    }
 }

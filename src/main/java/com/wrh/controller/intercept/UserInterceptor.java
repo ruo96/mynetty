@@ -17,7 +17,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * @Date 2020/8/4 17:06
  */
 @Slf4j
-@Component
+//@Component
 public class UserInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception{

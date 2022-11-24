@@ -133,11 +133,12 @@ spring:
 
 
 server:
-  port: 443
-  ssl:
-    key-store: classpath:keystore.p12
-    key-store-password: 123456
-    key-store-type: PKCS12
+  port: 9988
+#  port: 443
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: 123456
+#    key-store-type: PKCS12
 #    key-alias: mynetty
 #  servlet:
 #    context-path: /mynetty
@@ -240,3 +241,15 @@ jasypt:
 
 data:
   encrypt: ENC(4YOz0+Cu4hUBo6qBY4YEsg==)
+
+socketio:
+  host: localhost
+  port: 8503
+  maxFramePayloadLength: 1048576
+  maxHttpContentLength: 1048576
+  bossCount: 1
+  workCount: 100
+  allowCustomRequests: true
+  upgradeTimeout: 10000
+  pingTimeout: 60000
+  pingInterval: 25000

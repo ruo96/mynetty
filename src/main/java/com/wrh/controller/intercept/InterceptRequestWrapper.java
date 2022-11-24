@@ -32,14 +32,14 @@ public class InterceptRequestWrapper extends HttpServletRequestWrapper {
         super(request);
 
         //缓存请求body
-        try {
+
             log.debug("copy request");
-            requestBody = StreamUtils.copyToByteArray(request.getInputStream());
+//            requestBody = StreamUtils.copyToByteArray(request.getInputStream());
 //            log.debug("===>requestBody:{}", Arrays.toString(requestBody));
-        } catch (IOException e) {
+         /*catch (IOException e) {
             log.error("copy request filed:{}", e);
             throw e;
-        }
+        }*/
 
     }
 

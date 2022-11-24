@@ -910,6 +910,13 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!--socket通信-->
+		<dependency>
+			<groupId>com.corundumstudio.socketio</groupId>
+			<artifactId>netty-socketio</artifactId>
+			<version>1.7.7</version>
+		</dependency>
+
 		<!--  rabbitmq-->
 		<dependency>
 			<groupId>com.rabbitmq</groupId>
