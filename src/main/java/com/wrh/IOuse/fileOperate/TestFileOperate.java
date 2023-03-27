@@ -1,9 +1,11 @@
 package com.wrh.IOuse.fileOperate;
 
+import cn.hutool.core.io.FileUtil;
 import cn.hutool.crypto.SmUtil;
 import cn.hutool.crypto.digest.MD5;
 import com.alibaba.fastjson.JSON;
 import com.google.common.base.Charsets;
+import com.google.common.base.Joiner;
 import com.google.common.io.CharStreams;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
@@ -18,6 +20,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.channels.FileChannel;
 import java.nio.channels.SocketChannel;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -870,10 +873,17 @@ public class TestFileOperate {
     @Test
     public void Test869() {
         long s = System.currentTimeMillis();
-        String splitFile = "e:\\data\\test3.csv";
+        String splitFile = "e:\\data\\test200W.csv";
         try(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(splitFile)))){
-            for (long i = 0; i <= 2000000; i++) {
-                writer.write(MD5.create().digestHex("test"+i));
+            writer.write("id,x0,x1,x2,x3,x4,x5,x6,x7,x8,x9");
+            writer.newLine();
+            for (long i = 0; i < 1000000; i++) {
+                StringJoiner stringJoiner = new StringJoiner(",");
+                for (int j = 0; j < 10; j++) {
+                    stringJoiner.add(String.format("%.2f",RandomUtils.nextFloat(1,10000)));
+                }
+//                writer.write(MD5.create().digestHex("test" + i) + "," + stringJoiner);
+                writer.write(i + "," + stringJoiner);
                 writer.newLine();
             }
 
@@ -884,5 +894,19 @@ public class TestFileOperate {
         long s2 = System.currentTimeMillis() - s;
         System.out.println(s2);
 
+
+
+
     }
+
+    /**
+     * 删除目录
+     */
+    @Test
+    public void Test902() {
+//        File f = new File("d:\\data\\d.txt");
+        String path = "d:\\data\\d.txt";
+        FileUtil.del(new File(path));
+    }
+
 }

@@ -34,12 +34,12 @@ public class TestController {
         //群发
         if (SEND_TYPE_ALL.equals(myMessage.getType())){
             socketUtil.sendToAll( map,myMessage.getChannel());
-            return "success";
+            return "all success";
         }
         //指定单人
         if (SEND_TYPE_ALONE.equals(myMessage.getType())){
             socketUtil.sendToOne(myMessage.getTo(), map, myMessage.getChannel());
-            return "success";
+            return "alone success";
         }
 
         return "fail";

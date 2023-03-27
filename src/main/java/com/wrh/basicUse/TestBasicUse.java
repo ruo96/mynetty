@@ -10,11 +10,14 @@ import com.wrh.elasticsearch.Student;
 import com.wrh.utils.GsonUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.storm.command.list;
 import org.junit.Test;
 
+import java.io.File;
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 /**
  * @Created by wrh
@@ -678,6 +681,39 @@ public class TestBasicUse {
         } else {
             System.out.println("not equal 1");
         }
+
+    }
+
+    @Test
+    public void Test685() {
+        List<String> list = new ArrayList<>();
+        list.add("w1");
+        list.add("w2");
+        list.add("w3");
+
+        String CSV_CONCAT = "`";
+        String SQL_CONCAT = "toString(%s),'%s'";
+        list = list.stream().map(e->String.format(SQL_CONCAT, e, CSV_CONCAT)).collect(Collectors.toList());
+
+        String columnRaw = StringUtils.join(list.toArray(), ",");
+        System.out.println("columnRaw = " + columnRaw);
+
+
+    }
+
+    @Test
+    public void Test704() {
+        StringJoiner joiner = new StringJoiner(File.separator);
+        String path = joiner.add("data").add("psi")+".csv";
+        System.out.println("path = " + path);
+
+    }
+
+    @Test
+    public void Test713() {
+        String a = "123";
+        a = a + "abc";
+        System.out.println("a = " + a);
 
     }
 

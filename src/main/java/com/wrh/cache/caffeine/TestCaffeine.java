@@ -1,6 +1,7 @@
 package com.wrh.cache.caffeine;
 
 import com.github.benmanes.caffeine.cache.*;
+import com.wrh.elasticsearch.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.lang.NonNull;
@@ -119,5 +120,57 @@ public class TestCaffeine {
         String[] b = a.split("123");
         System.out.println(b[0]);
         System.out.println(b[1]);
+    }
+
+    @Test
+    public void Test125() {
+        String key = "key123";
+
+        Cache<String, Integer> cache = Caffeine.newBuilder().build();
+
+        Integer age1 = cache.getIfPresent("张三");
+        System.out.println(age1);
+
+        //当key不存在时，会立即创建出对象来返回，age2不会为空
+        Integer age2 = cache.get("张三", k -> {
+            System.out.println("k:" + k);
+            System.out.println("key = " + key);
+            return 18;
+        });
+        System.out.println(age2);
+
+    }
+
+    @Test
+    public void Test144() {
+        Cache<String, Student> cache = Caffeine.newBuilder().build();
+        /*Integer w1 = cache.get("w1", k -> {
+            return new Student();
+        });*/
+        /*System.out.println("1 w1 = " + w1);
+
+        w1 = cache.get("w1", k -> {
+            return 1;
+        });
+        System.out.println("2 w1 = " + w1);*/
+
+        Student w2 = (Student)cache.getIfPresent("w2");
+        System.out.println("w2 = " + w2);
+
+        Integer i = 1000;
+        long a = i;
+        System.out.println("a = " + a);
+
+
+    }
+
+    @Test
+    public void Test163() throws InterruptedException {
+        long s = System.currentTimeMillis();
+
+        TimeUnit.SECONDS.sleep(-1);
+        long s1 = System.currentTimeMillis();
+        System.out.println("s1-s = " + (s1 - s));
+
     }
 }

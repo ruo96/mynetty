@@ -2,6 +2,8 @@ package com.wrh.collection.map;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.alibaba.fastjson.JSON;
+import com.google.common.collect.HashBasedTable;
+import com.google.common.collect.Table;
 import com.wrh.collection.map.vo.GameDayDataV2;
 import com.wrh.elasticsearch.Student;
 import lombok.extern.slf4j.Slf4j;
@@ -1237,5 +1239,51 @@ public class TestMap {
         }
         System.out.println(map);
         
+    }
+
+    @Test
+    public void Test1243() {
+        Table<Integer,Integer,String> table = HashBasedTable.create();
+        table.put(1,2,"1-2");
+        table.put(2,2,"2-2");
+        table.put(3,2,"3-2");
+        table.put(4,2,"4-2");
+
+        String var = table.get(2,2);
+        System.out.println("var = " + var);
+        System.out.println("var = " + table);
+
+    }
+
+    @Test
+    public void Test1258() {
+        Table<Integer,Integer,String> table = HashBasedTable.create();
+        System.out.println("getParamJson(1000000) = " + getParamJson(1000000));
+        System.out.println("getParamJson(10000000) = " + getParamJson(10000000));
+        System.out.println("getParamJson(100000000) = " + getParamJson(100000000));
+
+    }
+    private String getParamJson(Integer splitMax) {
+        if (splitMax <= 1000000) {
+            return "小于100W";
+        } else if (splitMax <= 16000000) {
+            return "大于100W 小于1600w";
+        } else {
+            return "大于1600W";
+        }
+    }
+
+    @Test
+    public void Test1277() {
+        String str = "import spu\nimport secretflow as sf\nfrom secretflow.data.vertical import read_csv as v_read_csv\ntemp_dir = '/data/mpc/1'\ndata_path = os.path.join(temp_dir, 'data-v.csv')\nsf.shutdown()\nsf.init(address='mpc-1-1000-2000:30488')\np1000, p2000 = sf.PYU('1000'), sf.PYU('2000')\ncluster_def = {'nodes': [{'party': '1000', 'id': '1000', 'address': 'mpc-1-1000-2000:30488', 'listen_address': '0.0.0.0:9395'},{'party': '2000', 'id': '2000', 'address': 'mpc-1-1000-2000:30515', 'listen_address': '0.0.0.0:9395'}],'runtime_config': {'protocol': spu.spu_pb2.ABY3, 'field': spu.spu_pb2.FM64,},}\nspu = sf.SPU(cluster_def)\nvdf = v_read_csv({p1000: data_path, p2000: data_path}, keys='id', drop_keys='id', spu=spu)\nvdf.sum()['x1']\nvdf.max()['x2']";
+
+    }
+
+    @Test
+    public void Test1283() {
+        String add = "https://172.20.8.110:6443/";
+        String substring = add.substring(8, 20);
+        System.out.println("substring = " + substring);
+
     }
 }

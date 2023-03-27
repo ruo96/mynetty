@@ -2135,4 +2135,35 @@ public class TestList {
 
     }
 
+    @Test
+    public void Test2139() {
+        List<String> columnIn = new ArrayList<String>(){{
+            add("id");
+        }};
+        List<String> columnOut = new ArrayList<String>(){{
+            add("id");
+        }};
+        List<String> oriColumnIn = new ArrayList<>(columnIn);
+
+        columnIn.addAll(columnOut);
+//        columnIn = columnIn.stream().distinct().collect(Collectors.toList());
+
+        boolean allColumnFlag = false;
+        if (org.apache.commons.collections4.CollectionUtils.isEqualCollection(oriColumnIn, columnIn)) {
+            allColumnFlag = true;
+        }
+
+        System.out.println("columnIn = " + columnIn);
+        System.out.println("oriColumnIn = " + oriColumnIn);
+
+        System.out.println("allColumnFlag = " + allColumnFlag);
+
+    }
+
+    @Test
+    public void Test2161() {
+
+
+    }
+
 }

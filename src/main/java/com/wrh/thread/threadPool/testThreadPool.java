@@ -3,6 +3,7 @@ package com.wrh.thread.threadPool;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.lmax.disruptor.ExceptionHandler;
 import com.wrh.resttemplate.GoogleMapBean;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.storm.command.list;
 import org.apache.storm.shade.org.eclipse.jetty.util.thread.ExecutorThreadPool;
@@ -351,5 +352,35 @@ public class testThreadPool {
         }
 
 
+    }
+
+    // 初始化一个线程池
+    private static ExecutorService init(String poolName, int poolSize) {
+        return new ThreadPoolExecutor(poolSize, poolSize,
+                0L, TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<Runnable>(),
+                new ThreadFactoryBuilder().setNameFormat("Pool--%d--" + poolName).setUncaughtExceptionHandler(new testThreadPool.ExceptionHandler()).setDaemon(false).build(),
+                new ThreadPoolExecutor.CallerRunsPolicy());
+    }
+    
+
+    @Test
+    public void Test357() {
+        ExecutorService executorService = init("thread-", 10);
+        executorService.submit(new Runnable() {
+
+            @Override
+            public void run() {
+                try {
+                    TimeUnit.SECONDS.sleep(20);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("Thread.currentThread().getName() = " + Thread.currentThread().getName());
+            }
+        });
+
+        System.out.println("thread pool done");
+      
     }
 }
