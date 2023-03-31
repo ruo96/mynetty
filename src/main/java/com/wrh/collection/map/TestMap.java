@@ -1,7 +1,11 @@
 package com.wrh.collection.map;
+import java.time.LocalDateTime;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.crypto.SmUtil;
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
 import com.wrh.collection.map.vo.GameDayDataV2;
@@ -1284,6 +1288,76 @@ public class TestMap {
         String add = "https://172.20.8.110:6443/";
         String substring = add.substring(8, 20);
         System.out.println("substring = " + substring);
+
+    }
+    
+    @Test
+    public void Test1291() {
+        Student s = new Student();
+        s.setName("w1");
+        s.setId(0);
+        s.setGrade(0);
+        s.setMoney(0L);
+        s.setTitle("");
+        s.setFlag(false);
+        s.setTime(LocalDateTime.now());
+
+        System.out.println("s = " + s);
+        handelStu(s);
+        System.out.println("s = " + s);
+
+
+    }
+
+    private void handelStu(Student s) {
+        s.setName("w2");
+        return;
+    }
+
+    @Test
+    public void Test1315() {
+        String jsonString = "{\"data\":[{\"header\":[\"id\",\"y\",\"x0\",\"x1\",\"x2\",\"x3\",\"x4\",\"x5\",\"x6\",\"x7\",\"x8\",\"x9\"]},{\"content\":[[\"133\",\"1\",\"0.254879\",\"-1.046633\",\"0.209656\",\"0.074214\",\"-0.441366\",\"-0.377645\",\"-0.485934\",\"0.347072\",\"-0.287570\",\"-0.733474\"],[\"273\",\"1\",\"-1.142928\",\"-0.781198\",\"-1.166747\",\"-0.923578\",\"0.628230\",\"-1.021418\",\"-1.111867\",\"-0.959523\",\"-0.096672\",\"-0.121683\"],[\"175\",\"1\",\"-1.451067\",\"-1.406518\",\"-1.456564\",\"-1.092337\",\"-0.708765\",\"-1.168557\",\"-1.305831\",\"-1.745063\",\"-0.499499\",\"-0.302893\"],[\"551\",\"1\",\"-0.879933\",\"0.420589\",\"-0.877527\",\"-0.780484\",\"-1.037534\",\"-0.483880\",\"-0.555498\",\"-0.768581\",\"0.433960\",\"-0.200928\"],[\"199\",\"0\",\"0.426758\",\"0.723479\",\"0.316885\",\"0.287273\",\"1.000835\",\"0.962702\",\"1.077099\",\"1.053586\",\"2.996525\",\"0.961696\"]]}]}";
+
+        JSONObject jsonObject = JSON.parseObject(jsonString);
+        JSONArray dataArray = jsonObject.getJSONArray("data");
+
+        // Get header values
+        JSONArray headerArray = dataArray.getJSONObject(0).getJSONArray("header");
+        System.out.println("Header:");
+        for (int i = 0; i < headerArray.size(); i++) {
+            System.out.print(headerArray.getString(i) + "\t");
+        }
+
+        int encryIndex = headerArray.indexOf("id");
+
+        // Get content values
+        JSONArray contentArray = dataArray.getJSONObject(1).getJSONArray("content");
+        System.out.println("Content:");
+        System.out.println("contentArray.size() = " + contentArray.size());
+        for (int i = 0; i < contentArray.size(); i++) {
+            JSONArray rowArray = contentArray.getJSONArray(i);
+            System.out.println("rowArray.size() = " + rowArray.size());
+            for (int j = 0; j < rowArray.size(); j++) {
+                System.out.print(rowArray.getString(j) + "\t");
+                if (j == encryIndex) {
+                    rowArray.set(j, SmUtil.sm3(rowArray.get(j).toString()));
+                }
+            }
+            System.out.println();
+        }
+        System.out.println("jsonObject = " + jsonObject);
+        System.out.println("jsonObject.toJSONString() = " + jsonObject.toJSONString());
+        System.out.println("jsonObject.toString() = " + jsonObject.toString());
+        if (jsonObject.toJSONString().equals(jsonObject.toString())) {
+            System.out.println("is equal");
+        }
+
+    }
+
+    @Test
+    public void Test1355() {
+        String s = SmUtil.sm3("133");
+        System.out.println("s = " + s);
 
     }
 }
