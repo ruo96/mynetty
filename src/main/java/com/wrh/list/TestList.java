@@ -2162,7 +2162,15 @@ public class TestList {
 
     @Test
     public void Test2161() {
+        List<Student> studentList = getStudentList();
+        System.out.println("studentList = " + studentList);
 
+        studentList.stream().map(e->{
+            e.setName(e.getName() + " new");
+            return e;
+        }).collect(Collectors.toList());
+
+        System.out.println("studentList = " + studentList);
 
     }
 
