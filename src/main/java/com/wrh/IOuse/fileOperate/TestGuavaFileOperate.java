@@ -210,4 +210,14 @@ public class TestGuavaFileOperate {
         });
 
     }
+
+    @Test
+    public void Test215() {
+        String s = "0007887FEB0C11EDBACCC03C5902915700078880EB0C11EDA710C03C59029157";
+        String s1 = SmUtil.sm3(s);
+        System.out.println("s1 = " + s1);
+
+        boolean b = true;
+
+    }
 }

@@ -308,6 +308,14 @@ public class TestTime {
     }
 
     @Test
+    public void Test311() {
+        String yyyyMMddHHmmss = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
+        System.out.println(yyyyMMddHHmmss);
+
+
+    }
+
+    @Test
     public void Test10() {
         int i = Calendar.JANUARY;
         System.out.println(i);

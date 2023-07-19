@@ -2,6 +2,11 @@ package com.wrh.basicUse;
 
 import akka.remote.artery.aeron.TaskRunner;
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import com.wrh.basicUse.vo.ChangVo;
@@ -15,6 +20,11 @@ import org.junit.Test;
 
 import java.io.File;
 import java.math.BigDecimal;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -714,6 +724,235 @@ public class TestBasicUse {
         String a = "123";
         a = a + "abc";
         System.out.println("a = " + a);
+
+    }
+    
+    @Test
+    public void Test721() {
+        String jsonString = "[{\"auth\":\"PLAINTEXT_AFTER_JOIN\",\"columns\":[\"id\",\"x0\"]},{\"auth\":\"PLAINTEXT_AFTER_GROUP_BY\",\"columns\":[\"x1\",\"x2\",\"type\"]},{\"auth\":\"PLAINTEXT_AFTER_AGGREGATE\",\"columns\":[\"x3\",\"x4\"]},{\"auth\":\"PLAINTEXT_AFTER_COMPARE\",\"columns\":[\"x5\",\"x6\"]}]";
+
+        Map<String, List<String>> resultMap = parseJsonString(jsonString);
+        System.out.println(resultMap);
+
+        Map<String, List<String>> resultMap1 = parseJsonStringByFastjson(jsonString);
+        System.out.println(resultMap1);
+      
+    }
+
+    private Map<String, List<String>> parseJsonStringByFastjson(String jsonString) {
+        JSONArray jsonArray = JSON.parseArray(jsonString);
+        Map<String, List<String>> map = new HashMap<>();
+
+        for (int i = 0; i < jsonArray.size(); i++) {
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+            String auth = jsonObject.getString("auth");
+            JSONArray columnsArray = jsonObject.getJSONArray("columns");
+            List<String> columnsList = new ArrayList<>();
+
+            for (int j = 0; j < columnsArray.size(); j++) {
+                String column = columnsArray.getString(j);
+                columnsList.add(column);
+            }
+
+            map.put(auth, columnsList);
+        }
+
+        return map;
+    }
+
+    private static Map<String, List<String>> parseJsonString(String jsonString) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        Map<String, List<String>> resultMap = new HashMap<>();
+
+        try {
+            JsonNode rootNode = objectMapper.readTree(jsonString);
+            for (JsonNode node : rootNode) {
+                String auth = node.get("auth").asText();
+                JsonNode columnsNode = node.get("columns");
+                List<String> columns = objectMapper.readValue(columnsNode.toString(), List.class);
+                resultMap.put(auth, columns);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return resultMap;
+    }
+
+    @Test
+    public void Test752() {
+        String jsonString = "{\n" +
+                "    \"cols\":[\n" +
+                "        {\n" +
+                "            \"colName\":\"id\",\n" +
+                "            \"constraint\":\"PLAINTEXT_AFTER_JOIN\",\n" +
+                "            \"to\":\"null\",\n" +
+                "            \"type\":\"string\"\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"colName\":\"x0\",\n" +
+                "            \"constraint\":\"PLAINTEXT_AFTER_JOIN\",\n" +
+                "            \"to\":\"null\",\n" +
+                "            \"type\":\"float\"\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"colName\":\"x1\",\n" +
+                "            \"constraint\":\"PLAINTEXT_AFTER_GROUP_BY\",\n" +
+                "            \"to\":\"null\",\n" +
+                "            \"type\":\"float\"\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"colName\":\"x2\",\n" +
+                "            \"constraint\":\"PLAINTEXT_AFTER_GROUP_BY\",\n" +
+                "            \"to\":\"null\",\n" +
+                "            \"type\":\"float\"\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"colName\":\"type\",\n" +
+                "            \"constraint\":\"PLAINTEXT_AFTER_GROUP_BY\",\n" +
+                "            \"to\":\"null\",\n" +
+                "            \"type\":\"float\"\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"colName\":\"x3\",\n" +
+                "            \"constraint\":\"PLAINTEXT_AFTER_AGGREGATE\",\n" +
+                "            \"to\":\"null\",\n" +
+                "            \"type\":\"float\"\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"colName\":\"x4\",\n" +
+                "            \"constraint\":\"PLAINTEXT_AFTER_AGGREGATE\",\n" +
+                "            \"to\":\"null\",\n" +
+                "            \"type\":\"float\"\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"colName\":\"x5\",\n" +
+                "            \"constraint\":\"PLAINTEXT_AFTER_COMPARE\",\n" +
+                "            \"to\":\"null\",\n" +
+                "            \"type\":\"float\"\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"colName\":\"x6\",\n" +
+                "            \"constraint\":\"PLAINTEXT_AFTER_COMPARE\",\n" +
+                "            \"to\":\"null\",\n" +
+                "            \"type\":\"float\"\n" +
+                "        }\n" +
+                "    ],\n" +
+                "    \"dbName\":\"p_6702757040588066816\",\n" +
+                "    \"tblName\":\"d_6702764461452693504\"\n" +
+                "}";
+
+        JSONObject json = JSONObject.parseObject(jsonString);
+        JSONArray cols = json.getJSONArray("cols");
+
+        Map<String, List<String>> map = new HashMap<>();
+
+        for (int i = 0; i < cols.size(); i++) {
+            JSONObject col = cols.getJSONObject(i);
+            String colName = col.getString("colName");
+            String constraint = col.getString("constraint");
+
+            if (!map.containsKey(constraint)) {
+                map.put(constraint, new ArrayList<>());
+            }
+
+            map.get(constraint).add(colName);
+        }
+
+        // Print the map
+        for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+            String constraint = entry.getKey();
+            List<String> colNames = entry.getValue();
+
+            System.out.println("Constraint: " + constraint);
+            System.out.println("ColNames: " + colNames);
+        }
+
+    }
+
+
+    @Test
+    public void Test870() {
+        Map<String, List<String>> map1 = new HashMap<>();
+        map1.put("key1", Arrays.asList("value1", "value2"));
+        map1.put("key2", Arrays.asList("value3"));
+
+        Map<String, List<String>> map2 = new HashMap<>();
+        map2.put("key1", Arrays.asList("value2", "value1"));
+        map2.put("key2", Arrays.asList("value3"));
+
+        boolean isEqual = checkMapsEquality(map1, map2);
+        System.out.println("Are the maps equal? " + isEqual);
+      
+    }
+
+
+    private static boolean checkMapsEquality(Map<String, List<String>> map1, Map<String, List<String>> map2) {
+        if (map1.size() != map2.size()) {
+            return false; // 如果大小不同，则不相等
+        }
+
+        for (String key : map1.keySet()) {
+            if (!map2.containsKey(key)) {
+                return false; // 如果第二个Map不包含相同的键，不相等
+            }
+
+            List<String> value1 = map1.get(key);
+            List<String> value2 = map2.get(key);
+
+            if (!value1.equals(value2)) {
+                return false; // 如果键对应的值列表不相等，不相等
+            }
+        }
+
+        return true; // 如果经过所有检查，两个Map相等
+    }
+    
+    @Test
+    public void Test907() {
+        List<String> list1 = new ArrayList<>();
+        list1.add("apple");
+        list1.add("banana");
+        list1.add("cherry");
+
+        List<String> list2 = new ArrayList<>();
+        list2.add("banana");
+        list2.add("cherry");
+//        list2.add("apple1");
+
+        Set<String> set1 = new HashSet<>(list1);
+        Set<String> set2 = new HashSet<>(list2);
+
+        System.out.println("list1.equals(list2) = " + set1.equals(set2));
+        System.out.println("LocalDateTime.now().toString() = " + LocalDateTime.now().toString());
+        System.out.println("LocalDateTime.now().format(DateTimeFormatter.BASIC_ISO_DATE) = " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss")));
+
+    }
+
+    @Test
+    public void Test930() {
+        String a = "w123";
+        byte[] bytes = a.getBytes(StandardCharsets.UTF_8);
+
+        for (int i = 0; i < bytes.length; i++) {
+            System.out.println("first bytes[i] = " + bytes[i]);
+        }
+
+        ByteBuffer buffer = ByteBuffer.wrap(bytes);
+        buffer.order(ByteOrder.LITTLE_ENDIAN);
+//        buffer.order(ByteOrder.BIG_ENDIAN);
+
+        byte[] littleEndBytes = new byte[bytes.length];
+
+        buffer.get(littleEndBytes);
+
+        for (byte b : littleEndBytes) {
+//            System.out.println("b = " + b);
+            System.out.println("Integer.toHexString(b &0xFF) = " + (Integer.toHexString(b & 0xFF)+""));
+            System.out.println("Integer.toHexString(b) = " + Integer.toHexString(b));
+        }
+
+
 
     }
 

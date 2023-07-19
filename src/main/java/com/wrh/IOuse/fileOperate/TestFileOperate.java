@@ -21,10 +21,7 @@ import java.net.URL;
 import java.nio.channels.FileChannel;
 import java.nio.channels.SocketChannel;
 import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+import java.nio.file.*;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.function.Consumer;
@@ -907,6 +904,42 @@ public class TestFileOperate {
 //        File f = new File("d:\\data\\d.txt");
         String path = "d:\\data\\d.txt";
         FileUtil.del(new File(path));
+    }
+
+    @Test
+    public void Test913() {
+        File resultFile = new File("e:\\data\\test" + File.separator + "init-result.txt");
+
+        try (BufferedWriter resultWriter = new BufferedWriter(new FileWriter(resultFile))){
+
+            log.info("[after init]>>> wait end");
+        } catch (IOException e) {
+            log.error("[after init]>>> IOException error: ", e);
+        }
+
+    }
+
+    @Test
+    public void Test926() {
+        File resultFile = new File("e:\\data\\test\\dir");
+        /*File[] files = resultFile.listFiles();
+        for (File file : files) {
+            System.out.println("file.getName() = " + file.getName());
+            file.delete();
+        }*/
+
+        if (resultFile.exists() && resultFile.isDirectory()) {
+            System.out.println("delete: " + resultFile.getAbsolutePath());
+            resultFile.delete();
+        }
+    }
+
+    @Test
+    public void Test941() {
+        String path = "e:\\data\\1.txt";
+        String dir = "e:\\data\\bak";
+        FileUtil.copy(path, dir, true);
+
     }
 
 }

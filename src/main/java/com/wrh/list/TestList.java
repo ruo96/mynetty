@@ -1,15 +1,15 @@
 package com.wrh.list;
 
+import cn.hutool.Hutool;
+import cn.hutool.core.lang.TypeReference;
+import cn.hutool.json.JSONObject;
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.wrh.collection.map.GameRealTimeData;
 import com.wrh.collection.map.vo.GameDayDataV2;
 import com.wrh.elasticsearch.Student;
-import com.wrh.list.vo.DataList;
-import com.wrh.list.vo.GameConfig;
-import com.wrh.list.vo.TotalInfo;
-import com.wrh.list.vo.TotalYearKpi;
+import com.wrh.list.vo.*;
 import com.wrh.reflection.S;
 import com.wrh.utils.GsonUtils;
 import com.wrh.utils.test.Dog;
@@ -2171,6 +2171,49 @@ public class TestList {
         }).collect(Collectors.toList());
 
         System.out.println("studentList = " + studentList);
+
+        List<String> list = new ArrayList<>();
+        list.add("w1");
+        list.add("w2");
+        list.add("w3");
+        list.add("w4");
+        list.add("w5");
+
+        int w4 = list.indexOf("w4");
+        System.out.println("w4 = " + w4);
+
+    }
+
+    @Test
+    public void Test2188() {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(2); // 添加一个重复元素
+
+        if (list.stream().distinct().count() < list.size()) {
+            System.out.println("ArrayList 包含重复值");
+        } else {
+            System.out.println("ArrayList 没有重复值");
+        }
+
+    }
+
+    @Test
+    public void Test2204() {
+        String a = "[{\"cols\":[{\"colName\":\"id\",\"description\":\"This is description.\",\"type\":\"integer\"}],\"dbName\":\"p_20230601002\",\"tblName\":\"d_20230601002\"}]";
+        System.out.println("a = " + JSON.toJSONString(a));
+//        List<TableInfoItem> list = JSON.parseArray(a, TableInfoItem.class);
+        List<TableInfoItem> list = JSON.parseObject(a, new TypeReference<List<TableInfoItem>>(){});
+        System.out.println("list = " + JSON.toJSONString(list));
+
+
+
+    }
+
+    @Test
+    public void Test2216() {
 
     }
 

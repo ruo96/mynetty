@@ -20,6 +20,23 @@ public class TestPool {
         ExecutorService service = new ThreadPoolExecutor(8, 8, 0, TimeUnit.MINUTES, new LinkedBlockingQueue<>(),
                 new ThreadFactoryBuilder().setNameFormat("my thread").build(), new ThreadPoolExecutor.CallerRunsPolicy());
     }
+    
+    @Test
+    public void Test25() {
+        /** 在使用异步CompletableFuture时，无论是否有返回值都要调用get()/join()方法，避免程序执行报错了，仍然返回成功。
+         * 如果在程序报错时需要对上一个异步任务结果做其他操作，可以调用whenComplete()、handle()处理，如果只是对异常做处理，
+         * 不涉及对上一个异步任务结果的情况，调用exceptionally()处理。*/
+        int availableProcessors = Runtime.getRuntime().availableProcessors();
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(
+                availableProcessors,
+                availableProcessors,
+                0L,
+                TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<>(9999),
+                new ThreadFactoryBuilder().setNameFormat("custom-thread-pool-%d").build(),
+                new ThreadPoolExecutor.CallerRunsPolicy());
+      
+    }
 
     /**
      * 创建线程池
